@@ -15,6 +15,8 @@ cd team-context
 2. 저장소를 읽는 AI에는 아래 요청을 전달합니다.
 3. 내 준비 상태는 [updates/README.md](updates/README.md)의 양식으로 남깁니다.
 
+트랙을 비교할 때는 [트랙별 과제와 세부 리서치](tracks/README.md)에서 시작합니다. 10/9에 공식 과제 21개·특별 챌린지 3개와 기존 심층 리서치를 대조했고, 각 후보의 선택 조건과 미확인 항목을 정리했습니다.
+
 ```text
 이 저장소의 AGENTS.md를 읽고, 안내에 따라 최신 상태를 확인한 뒤
 CONTEXT.md와 TEAM_BRIEFING.md를 읽어 줘.
@@ -45,6 +47,7 @@ clone은 처음 한 번 받는 동작입니다. 이후 팀장이 변경 사항�
 |---|---|---|
 | [CONTEXT.md](CONTEXT.md) | AI와 팀이 공유하는 배경·규칙·결정 | 공식 공지 또는 팀장이 확인한 결정·상태 반영 |
 | [TEAM_BRIEFING.md](TEAM_BRIEFING.md) | 사람이 빠르게 읽는 브리핑 | 공통 컨텍스트가 바뀌면 함께 요약 갱신 |
+| [tracks/](tracks/README.md) | 공식 과제 21개·SC·세부 리서치·선택 조건 | 공식 요구 또는 확인한 근거가 바뀔 때 |
 | [AGENTS.md](AGENTS.md) | AI의 읽기·갱신·검증 방식 | 협업 방식이 바뀔 때 |
 | [updates/](updates/README.md) | 각 팀원의 준비 상태와 실행 근거 | 본인이 확인한 결과 기록 |
 
