@@ -1,0 +1,11 @@
+{
+  "release": "genguard-2.1.0-ml",
+  "full_payload_uploaded": false,
+  "uploaded_scope": "handoff, feature module, portable inference module, training requirements, model failure review",
+  "prepared_payload_files": 155,
+  "prepared_payload_bytes": 11147135,
+  "local_recheck": {"tests_passed": 107, "python": "3.13.5", "architecture": "x86_64"},
+  "actual_uno_q_validation": false,
+  "blocker": "Connector text writes are available, but no mounted-file bulk upload action is exposed; container Git/network access has DNS failure. Remaining exact files are in the GenGuard-GitHub-Upload package.",
+  "completion": "Run Upload-to-GitHub.command from the provided package. It verifies all file hashes and pushes only this branch without force or merging."
+}
