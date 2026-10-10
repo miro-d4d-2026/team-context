@@ -1,0 +1,31 @@
+{
+  "samples": 10608,
+  "duration_s": 50.703497,
+  "sensor_timing_rate_hz": 209.1966161623921,
+  "sequence_gaps": 0,
+  "dt_median_ms": 4.4010000000014315,
+  "dt_max_ms": 6.320000000002324,
+  "download_matches_saved_csv": true,
+  "sha256": "0878902f9a3d2a277b9f36a7bc830a8333fad2b2a75c250aa1dd5202357e1aa0",
+  "replay_sample_count": 10608,
+  "replay_metadata_count": 10608,
+  "gateway": {
+    "board": "Arduino UNO Q",
+    "transport": "QWIIC",
+    "router_connected": true,
+    "sensor_ready": true,
+    "sample_count": 23857,
+    "last_sample_age_s": 0.027869947999988653,
+    "led_ready": true,
+    "led_error": null,
+    "led_verification": "MCU matrix.begin() result; physical visibility unverified",
+    "acquired_count": 23865,
+    "ring_overflow_count": 0,
+    "queue_depth": 8,
+    "read_error_count": 0,
+    "led_level": 0,
+    "mcu_rms_g": 0.001248
+  },
+  "source": "unoq_qwiic",
+  "invalid_lines": 0
+}

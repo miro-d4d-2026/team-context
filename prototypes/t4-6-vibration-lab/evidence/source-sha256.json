@@ -1,0 +1,17 @@
+{
+  "dist/app.js": "bfc900417bf1cfd78b2b923449f09133a4f965a98f9a1a54aa83d58b4ce131b5",
+  "dist/index.html": "19bb8a0bb2ec4f550f27656b9d8390e84b565073dcec544cc0ee0ae2244ac17f",
+  "dist/style.css": "1e2f681417a9f9c1a11f0a1452021911c87cc3befe76644ee0074382f7342b53",
+  "firmware/nu40_imu/nu40_imu.ino": "b6527d2bfc4c7dab36566f62c3a34a9dceadad8e721969a04dfbcf4605b30649",
+  "gateway/test_gateway.py": "5c913e6aa916c13fcdc2be01fb3735e18006923e23f9f18da5c15a14e89703d2",
+  "gateway/test_qwiic_gateway.py": "ee4b7eba23a29faf24cf45e001b15d40390c36e0d2952d5a7760ef77a439f26a",
+  "gateway/unoq_gateway.py": "6a725e28107a3bc35312a4d2d498f4cf9df49934fcefabd384101eb3aee83c1d",
+  "gateway/unoq_imu/unoq_imu.ino": "36917a423b43d29548c411c7d0d8d493c68ad8950a5caf278f97c51c470561d4",
+  "gateway/unoq_led/unoq_led.ino": "ddbffb6d1553b4aebb4a0f1f768e41e8edeac70e2a0d45fc1c69954cf5349c9b",
+  "gateway/unoq_qwiic_gateway.py": "b49c089ec2da08386ca3e1739a86d4ed8358065129d7ad2a5cffdf66a3f4ab4e",
+  "launch.py": "0ef36e2fc2f289a9a0b40b1852791dbc66d3cd639d441cd8a992181e034c8ae6",
+  "server.py": "3fce1e011cd582ac7f3210638ef1b618f54e1e1b8af3e1a96e148c175a51b0f8",
+  "start.command": "e614c2f6a5f8d346f4a5c106899d7ffe80c5af1220345c778520c5bfe2f880a4",
+  "test_gateway_transport.py": "195eb4b18fba52b7c5e916886c8f4cf5971ac64c105b986306e6be1f5321651b",
+  "test_server.py": "5a501538c8b9d052dace5a2ee525ae03423ceed274c585877b433ed8db35a516"
+}

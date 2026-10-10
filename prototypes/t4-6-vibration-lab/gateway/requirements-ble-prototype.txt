@@ -1,0 +1,2 @@
+bleak==3.0.2
+arduino-router-bridge==0.5.1

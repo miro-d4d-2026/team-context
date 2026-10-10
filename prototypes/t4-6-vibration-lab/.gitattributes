@@ -1,0 +1,4 @@
+# Preserve measured CSV bytes and keep generated rows out of code reviews.
+evidence/recordings/*.csv -text -diff
+# Preserve the original compiler/upload logs, including their line endings.
+evidence/*.log -text whitespace=-blank-at-eol
