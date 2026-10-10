@@ -18,6 +18,8 @@
 
 사용자는 CLIKA 측에서 제공하는 **Arduino Uno Q를 이미 빌렸으며 Clika Runtime 사용을 권장받았다**고 확인했다. 확보한 보드를 선택지로 유지할 가치가 있다는 판단이며, 제품 선정·런타임 채택·SC1 참가 결정은 아니다. 현재 아이디어 발산을 계속한다.
 
+후속 답변에서 **설치 안내·예제 수령**도 확인했다. 링크·예제 이름·내용은 미공유이며 실제 보드 실행은 확인 전이다. 제공 예제를 검토할 경로가 확보된 상태로 해석한다.
+
 - [Arduino 공식 사양](https://docs.arduino.cc/resources/datasheets/ABX00162-ABX00173-datasheet.pdf): Uno Q는 Debian Linux를 실행하는 ARM64 MPU와 센서·실시간 I/O를 담당할 MCU를 함께 갖추고 Bridge RPC로 연결한다. RAM 2GB와 4GB 버전이 있으며 빌린 보드의 버전은 미확인이다. 필요한 외부 센서의 확보·연동도 별도다.
 - [ClikaRT 지원 플랫폼](https://docs.clika.io/clikart/system-requirements/): Linux ARM64 CPU 경로와 Vulkan 백엔드를 명시한다. Vulkan에는 호환 드라이버가 필요하다. 이것만으로 해당 Uno Q의 GPU 가속·성능이 확인된 것은 아니다. MCU에 직접 설치하는 아두이노 라이브러리로 가정하지 않는다.
 - [ONNX 실행 가이드](https://docs.clika.io/clikart/how-to/run-an-onnx-model/): ONNX 그래프의 컴파일·실행과 작은 신경망 예제가 있다. 특정 센서 모델의 연산·형상·메모리 호환성은 실제 실행으로 확인해야 한다. LLM 도입을 전제할 필요는 없다.
