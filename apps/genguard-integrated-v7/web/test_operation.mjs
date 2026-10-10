@@ -20,7 +20,7 @@ test('selected time must correspond to an actual measurement',()=>assert.throws(
 test('nonfinite or nonmonotonic samples cannot be submitted',()=>{const d=baseline();d.current_run.samples[1].coolant_c=NaN;assert.throws(()=>buildRequest(d),/숫자로/);const x=baseline();x.current_run.samples[1].elapsed_s=0;assert.throws(()=>buildRequest(x),/시간 순서/);});
 test('invalid conditions and auxiliary values cannot be submitted',()=>{assert.throws(()=>buildRequest(baseline(),{context:{load_pct:'62',ambient_c:28.5,engine_rpm:1800}}),/운전 조건/);assert.throws(()=>buildRequest(baseline(),{auxiliary:{battery_v:Infinity}}),/보조/);});
 test('replay index bounds preserve server catalog range',()=>{assert.throws(()=>buildRequest(baseline(),{mode:'replay',frameIndex:48}),/구간/);assert.throws(()=>buildRequest(baseline(),{mode:'replay',frameIndex:-1}),/구간/);assert.throws(()=>buildRequest(baseline(),{mode:'replay',frameIndex:1.2}),/구간/);});
-test('source labels keep recorded, live, mock, missing and computed apart',()=>{assert.equal(sourceLabel('recorded_imu'),'실측 기록');assert.equal(sourceLabel('live_imu'),'실측 IMU');assert.equal(sourceLabel('scenario'),'모의 값');assert.equal(sourceLabel('derived'),'계산값');assert.equal(sourceLabel('missing'),'미수신');});
+test('source labels keep recorded, live, mock, missing and computed apart',()=>{assert.equal(sourceLabel('recorded_imu'),'과거 실측 재생');assert.equal(sourceLabel('live_imu'),'실측 IMU');assert.equal(sourceLabel('scenario'),'모의 값');assert.equal(sourceLabel('derived'),'계산값');assert.equal(sourceLabel('missing'),'미수신');});
 test('temperature summary reports interval deltas, not just absolute temperature',()=>{const c={field:'coolant_c',current:80,intervals:[{start_s:300,end_s:600,observed_delta:20,previous_change:8}]};assert.equal(channelChange(c),'5–10분 +20.0 °C · 이전 +8.0');});
 test('an earlier abnormal interval remains explicit after current slope normalizes',()=>{const c={field:'coolant_c',intervals:[{start_s:600,end_s:900,observed_delta:5,previous_change:5}],worst_interval:{start_s:300,end_s:600,observed_delta:20,previous_change:8}};assert.equal(channelChange(c),'5–10분 +20.0 °C · 이전 +8.0');});
 test('vibration comparison is ratio-based, not temperature-rate wording',()=>{const c={field:'vibration_rms_g',intervals:[{change_ratio:2,observed_rate:null,expected_rate:null}]};assert.equal(channelChange(c),'평소 진동의 2.00배');});
@@ -67,3 +67,19 @@ test('linked simulation does not erase the actual IMU baseline or claim generato
 test('learning view counts only confirmed history and retains missing training evidence',()=>{const w=workspaceLearning({view:{mode:'scenario'},records:[{confirmed_normal:true},{confirmed_normal:false}],analysis:{}},null);assert.equal(w.approved.length,1);assert.equal(w.ready,false);assert.equal(w.trainingCount,null);assert.equal(w.generatorModelInUse,false);});
 
 test('an empty-model hash or mismatched operating conditions never mark a usable learned generator baseline',()=>{for(const model of [{id:'empty-hash',training_record_count:0},{id:'empty-hash'}]){assert.equal(workspaceLearning({view:{mode:'scenario'},analysis:{model}},null).generatorModelInUse,false);}assert.equal(workspaceLearning({view:{mode:'scenario'},analysis:{model:{id:'trained',training_record_count:8},comparison_blocker:'operating_conditions_mismatch'}},null).generatorModelInUse,false);assert.equal(workspaceLearning({view:{mode:'scenario'},analysis:{model:{id:'trained',training_record_count:8}}},null).generatorModelInUse,true);});
+
+
+test('current operation modes exclude archived playback and reports retain its entry and exit',()=>{
+  const html=readFileSync(new URL('./operation.html',import.meta.url),'utf8');
+  const mainModes=html.match(/<div class="mode-switch"[\s\S]*?<\/div>/)[0];
+  assert.match(mainModes,/data-mode="scenario"[^>]*>모의 운전/);
+  assert.match(mainModes,/data-mode="hybrid"[^>]*>실측 운전/);
+  assert.equal((mainModes.match(/data-mode=/g)||[]).length,2);
+  assert.doesNotMatch(mainModes,/replay|실측 기록|IMU 연결/);
+  const reportPage=html.slice(html.indexOf('id="comparison-page"'),html.indexOf('id="connections-page"'));
+  assert.match(reportPage,/id="replay-archive"[\s\S]*?과거 진동 재생/);
+  assert.match(reportPage,/id="replay-enter"/);
+  assert.match(reportPage,/id="replay-exit"[^>]*hidden/);
+  assert.match(reportPage,/id="replay-content"[^>]*hidden/);
+  assert.match(reportPage,/현재 센서 입력과는 별개/);
+});
