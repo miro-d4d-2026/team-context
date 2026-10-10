@@ -1,5 +1,7 @@
 # 특별 챌린지 · CLIKA, NUCODE, Way to Oregon
 
+**10/10 오전 보완:** 공식 SC 요건은 10/9와 동일하다. CLIKA 가입·SDK 다운로드·라이선스와 NUCODE 보드·IMU 지원 공지는 [당일 점검](2026-10-10-day-of-check.md)에 추가했다. 아래 기술 조사와 팀 상태는 별도 확인일이 없는 한 10/9 기준이며, 공지 확인을 우리 팀의 확보·실행 성공으로 해석하지 않는다.
+
 확인일: 2026-10-09 KST. [공식 B-2 시트 SC1~3](https://docs.google.com/spreadsheets/d/1z-knlD7tXlieexed2eHruSseUu6dBYt3K-mT5NAbXHg/edit#gid=851891445&range=A26:J30)와 [Luma](https://luma.com/d4d_edth)를 대조했다. 메인 문제 해결에 추가하는 선택지이며, SC1·SC2는 어느 트랙에서도 도전할 수 있다.
 
 | 구분 | 공식 필수 조건 | 우대·선정 방식 | 현재 우리 상태 |
@@ -12,7 +14,7 @@
 
 CLIKA 공식 시스템 요구사항에는 Apple Silicon macOS의 CPU·Metal 지원이 명시돼 있다. 따라서 팀의 M5 Mac은 문서상 지원 플랫폼 범주에 들어간다. 메모리 요구는 모델에 따라 달라지고, 행사 배포본의 호환성·성능은 아직 실측하지 않았다. [시스템 요구사항](https://docs.clika.io/clikart/system-requirements/)
 
-현재 다운로드 안내는 공개 배포 페이지 준비 전까지 담당자가 평가용 패키지와 체크섬을 제공한다고 설명한다. 인터넷에서 이름이 비슷한 패키지를 찾는 것보다, 행사 담당자에게 정확한 macOS arm64 배포본·버전·예제를 받는 것이 먼저다. [Get ClikaRT](https://docs.clika.io/clikart/getting-started/get-clikart/)
+10/9 확인한 다운로드 문서는 담당자가 평가용 패키지와 체크섬을 제공하는 방식을 설명했다. **10/10 09:31 게시·09:53 수정된 행사 공지**는 팀 대표 1명 가입 후 팀원 초대, 라이선스 발급 후 프로필의 Download ClikaRT에서 플랫폼·언어를 선택하는 경로를 안내했다. 팀당 런타임 하드웨어 좌석 2개·오프라인 라이선스 2개다. 정확한 macOS arm64 배포본·버전·예제와 실제 실행은 별도로 확인한다. [CLIKA 채널](https://discord.com/channels/1508709817861013584/1556820800643014836), [Get ClikaRT](https://docs.clika.io/clikart/getting-started/get-clikart/)
 
 오프라인 실행은 모델 파일을 미리 받는 것만으로 끝나지 않는다. 공식 문서는 로컬 모델과 **오프라인 종류의 라이선스**를 요구한다. 온라인 종류의 라이선스는 네트워크가 없는 환경을 대체하지 못한다. 키·라이선스 파일을 저장소에 올리지 않는다. [완전 오프라인 실행](https://docs.clika.io/modelverse/how-to/run-fully-offline/)
 
@@ -22,7 +24,7 @@ Luma는 이번 행사에서 iPhone을 지원하지 않는다고 안내한다. Ma
 
 ## SC2 · ESP32 경험과 NUCODE 실동작을 구분
 
-NUCODE 보드가 데모에서 실제로 동작해야 한다. ESP32 실습이나 코드 컴파일만으로 SC2를 충족하지 않는다. Luma는 NU40·NU87을 언급하지만 현장 지원의 세부 사항은 추가 안내 대상으로 둔다. 보드가 안내에 나왔다는 사실은 우리 팀에게 이미 대여·배정됐다는 뜻이 아니다.
+NUCODE 보드가 데모에서 실제로 동작해야 한다. ESP32 실습이나 코드 컴파일만으로 SC2를 충족하지 않는다. 10/10 확인한 Discord 공지는 NU40·NU87 대여, 6축 IMU 현장 대여·구매, 추가 센서 개별 준비와 NU40 예제 코드를 안내한다. 보드가 안내에 나왔다는 사실은 우리 팀에게 이미 대여·배정됐다는 뜻이 아니다. [NUCODE 채널](https://discord.com/channels/1508709817861013584/1556821373601587260), [공식 예제](https://github.com/Nucode01)
 
 기존 조사에 따르면 NU40과 NU87은 보드 계열·개발 환경이 다르다. 이번 재조회에서는 세부 GitBook 두 페이지가 접근 오류여서, 핀맵·설치 명령을 새로 검증한 것으로 표시하지 않았다. 현물 모델·리비전과 행사 가이드를 대조한다. [NUCODE 공식 가이드](https://nucode.gitbook.io/nuseries)
 
