@@ -1,0 +1,3 @@
+# Only the training subprocess imports these. Runtime inference uses the stdlib.
+# Python >=3.11 required for this pinned training environment.
+scikit-learn==1.8.0
