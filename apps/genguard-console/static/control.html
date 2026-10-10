@@ -11,13 +11,11 @@
   .wrap { max-width:520px; margin:0 auto; padding:18px 16px 40px; }
   h1 { font-size:20px; margin:0 0 12px; }
   .seg { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-bottom:14px; }
-  button { font:inherit; padding:14px 10px; border:1px solid var(--line); background:var(--panel); color:var(--text); border-radius:10px; cursor:pointer; text-align:left; }
+  button { font:inherit; padding:14px 10px; border:1px solid var(--line); background:var(--panel); color:var(--text); border-radius:12px; cursor:pointer; text-align:left; }
   button.on { border:2px solid var(--ai); }
   .scenes { display:grid; gap:8px; }
   .scenes small { display:block; color:var(--muted); font-size:13px; }
   .row { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:14px; }
-  details { margin-top:16px; } summary { color:var(--muted); cursor:pointer; }
-  .all { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; } .all button { padding:8px 10px; font-size:14px; }
   .muted { color:var(--muted); font-size:13px; margin-top:12px; }
 </style>
 </head>
@@ -26,45 +24,25 @@
   <h1>발표자 조작</h1>
   <div class="seg" id="seg"></div>
   <div class="scenes" id="scenes"></div>
-  <div class="row"><button id="fast">시연 가속 ×10</button><button id="reset">새 운전 시작</button></div>
-  <h1 style="margin-top:22px">실측 진동 (1호기 IMU)</h1>
-  <div class="muted" id="ws" style="margin:0 0 8px">상태 확인 중</div>
-  <div class="row" style="margin-top:0"><button id="learn">기준 학습 시작</button><button id="wreset">기준 초기화</button></div>
-  <div class="muted">폰을 평소 진동으로 둔 채 학습을 시작하세요. 진동이 있는 45초를 모아 평소 범위를 정합니다. 쉬는 구간은 정지로 처리합니다.</div>
-  <details><summary>모든 장면</summary><div class="all" id="all"></div></details>
-  <div class="muted">버튼은 입력값만 바꿉니다. 경보와 AI 판정은 관제 화면이 실제 계산으로 정합니다.</div>
+  <div class="row"><button id="again">같은 장면 다시 운전</button><button id="rebase">기준 다시 잡기</button></div>
+  <div class="muted">장면을 누르면 그 호기가 새 모의 운전(15분, 화면에서는 15초)을 시작합니다. 판정은 관제 화면이 최초 정상 운전 4회와 비교해서 정합니다.</div>
 </div>
 <script type="module">
-import { SCENARIOS } from './vendor/engine.mjs';
+import { KINDS } from './runs.mjs';
 const $ = id => document.getElementById(id);
 const NAMES = { 'GEN-10K-001': '1호기', 'GEN-10K-002': '2호기', 'GEN-10K-003': '3호기' };
-const SCENES = [
-  ['normal', false, '정상', '모든 값 평소 수준'],
-  ['coolant_high', false, '수온 과열', '규칙 경보와 AI가 함께 잡음'],
-  ['joint_drift', false, '복합 변화', '각 값은 기준 안 · AI만 잡음'],
-  ['normal', true, '저유압 추세', '유압이 서서히 하락 · 가속과 함께'],
-  ['missing', false, '값 끊김', '정상으로 표시하지 않음'],
-];
 let asset = 'GEN-10K-001', state = null;
 const send = body => fetch('/api/control', { method: 'POST', body: JSON.stringify(body) }).then(r => r.json()).then(s => { state = s; render(); });
 function render() {
   $('seg').innerHTML = Object.entries(NAMES).map(([id, n]) => `<button data-a="${id}" class="${id === asset ? 'on' : ''}">${n}</button>`).join('');
   for (const b of $('seg').children) b.onclick = () => { asset = b.dataset.a; render(); };
-  const cur = state?.assets?.[asset];
-  $('scenes').innerHTML = SCENES.map(([s, ramp, t, d], i) => `<button data-i="${i}" class="${cur && cur.scenario === s && cur.ramp === ramp ? 'on' : ''}">${t}<small>${d}</small></button>`).join('');
-  for (const b of $('scenes').children) b.onclick = () => { const [s, ramp] = SCENES[b.dataset.i]; send({ asset, scenario: s, ramp, ...(ramp ? { fast: true } : {}) }); };
-  $('fast').className = state?.fast ? 'on' : '';
-  $('all').innerHTML = SCENARIOS.scenarios.map(s => `<button data-s="${s.id}">${s.label}</button>`).join('');
-  for (const b of $('all').children) b.onclick = () => send({ asset, scenario: b.dataset.s, ramp: false });
+  const cur = state?.assets?.[asset]?.scenario;
+  $('scenes').innerHTML = Object.entries(KINDS).map(([k, v]) => `<button data-k="${k}" class="${k === cur ? 'on' : ''}">${v.label}<small>${v.note ?? '최초 4회와 같은 방식으로 운전'}</small></button>`).join('');
+  for (const b of $('scenes').children) b.onclick = () => send({ asset, scenario: b.dataset.k });
 }
-$('fast').onclick = () => send({ fast: !state?.fast });
-$('reset').onclick = () => send({ asset, reset: true });
+$('again').onclick = () => send({ asset, reset: true });
+$('rebase').onclick = () => send({ asset, rebaseline: true });
 fetch('/api/control').then(r => r.json()).then(s => { state = s; render(); });
-const watchCall = action => fetch('/api/live/watch', { method: 'POST', body: JSON.stringify({ action }) });
-$('learn').onclick = () => watchCall('learn');
-$('wreset').onclick = () => watchCall('reset');
-setInterval(async () => { try { const l = await (await fetch('/api/live')).json(), w = l.watch;
-  $('ws').textContent = `${l.rms_g != null ? l.rms_g.toFixed(3) + ' g · ' : ''}${w.mode === 'learning' ? `학습 중 ${w.learned_s}/${w.learn_target_s}초` : w.mode === 'no_baseline' ? '기준 없음' : `기준 ${w.baseline_g.toFixed(3)} g · ${w.alarm ? '강한 진동 경보' : w.ratio == null ? '정지' : '평소 범위 ' + w.ratio.toFixed(1) + '배'}`}`; } catch {} }, 1000);
 </script>
 </body>
 </html>

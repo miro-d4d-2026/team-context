@@ -28,41 +28,40 @@
   .pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; font-size: 14px; }
   .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c, var(--ok)); display: inline-block; }
   .lvl-normal{--c:var(--ok)} .lvl-watch{--c:var(--watch)} .lvl-urgent{--c:var(--urgent)} .lvl-ai{--c:var(--ai)} .lvl-unknown{--c:var(--unknown)}
-
   .fleet { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-  .gen { padding: 20px 22px; cursor: pointer; transition: transform .15s ease, background .15s ease; position: relative; }
+  .gen { padding: 20px 22px; cursor: pointer; transition: background .15s ease; }
   .gen:hover { background: var(--glass-2); } .gen.open { outline: 2px solid var(--c); }
   .gen .top { display: flex; justify-content: space-between; align-items: center; }
-  .rank { font-size: 13px; color: var(--muted); }
-  .rank b { font-size: 15px; color: var(--text); }
+  .rank { font-size: 13px; color: var(--muted); } .rank b { font-size: 15px; color: var(--text); }
   .gen h2 { margin: 10px 0 2px; font-size: 24px; font-weight: 700; }
   .status { display: flex; align-items: center; gap: 8px; color: var(--c); font-weight: 600; }
   .gen .big { font-size: 44px; font-weight: 700; letter-spacing: -.02em; margin-top: 14px; line-height: 1; }
-  .gen .big small { font-size: 16px; color: var(--muted); font-weight: 500; margin-left: 6px; }
-  .track { height: 8px; border-radius: 999px; background: var(--edge); margin: 14px 0 10px; overflow: hidden; }
-  .track i { display: block; height: 100%; border-radius: 999px; background: var(--c); transition: width .4s ease; }
-  .gen .why { color: var(--muted); font-size: 14px; min-height: 20px; }
+  .gen .big small { font-size: 15px; color: var(--muted); font-weight: 500; margin-left: 6px; }
+  .track { height: 8px; border-radius: 999px; background: var(--edge); margin: 14px 0 6px; overflow: hidden; }
+  .track i { display: block; height: 100%; border-radius: 999px; background: var(--c); transition: width .5s ease; }
+  .prog { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
+  .gen .why { color: var(--muted); font-size: 14px; margin-top: 8px; min-height: 20px; }
   .gen .todo { margin-top: 10px; padding: 10px 12px; border-radius: 14px; background: var(--glass-2); font-size: 14px; font-weight: 600; }
-
   .bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
   .tile { padding: 18px 20px; min-width: 0; }
-  .tile .lab { color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; }
+  .tile .lab { color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; gap: 8px; }
   .tile .num { font-size: 40px; font-weight: 700; letter-spacing: -.02em; line-height: 1.1; margin-top: 8px; color: var(--c, var(--text)); }
   .tile .num small { font-size: 15px; color: var(--muted); font-weight: 500; margin-left: 4px; }
   .tile .was { color: var(--muted); font-size: 14px; margin-top: 4px; }
   .span2 { grid-column: span 2; } .span4 { grid-column: span 4; }
   .lead { font-size: 20px; font-weight: 600; margin: 6px 0 0; }
-  .ring { display: flex; align-items: center; gap: 18px; margin-top: 8px; }
-  .ring svg { width: 108px; height: 108px; flex: none; }
-  .ring .num { margin: 0; }
+  .lead small { display: block; font-size: 14px; font-weight: 400; color: var(--muted); margin-top: 4px; }
+  .chart { width: 100%; height: 170px; display: block; margin-top: 8px; }
+  .mrow { display: grid; grid-template-columns: 1fr 110px 74px; gap: 8px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--edge); font-size: 14px; }
+  .mrow:last-child { border-bottom: 0; }
+  .mrow .band { position: relative; height: 8px; border-radius: 999px; background: var(--edge); }
+  .mrow .band i { position: absolute; top: 0; bottom: 0; background: rgba(88,211,154,.45); border-radius: 999px; }
+  .mrow .band b { position: absolute; top: -4px; width: 4px; height: 16px; border-radius: 2px; background: var(--c); }
+  .mrow .v { text-align: right; font-variant-numeric: tabular-nums; color: var(--c); font-weight: 600; }
   ol { margin: 10px 0 0; padding: 0; list-style: none; counter-reset: s; }
   ol li { counter-increment: s; display: flex; gap: 10px; align-items: baseline; padding: 7px 0; border-bottom: 1px solid var(--edge); font-size: 15px; }
-  ol li::before { content: counter(s); font-weight: 700; color: var(--c); min-width: 14px; }
-  ol li:last-child { border-bottom: 0; }
-  .spark { width: 100%; height: 54px; display: block; margin-top: 10px; }
-  details { margin-top: 4px; } summary { cursor: pointer; color: var(--muted); font-size: 14px; }
-  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
-  td, th { text-align: left; padding: 6px 4px; border-bottom: 1px solid var(--edge); } th { color: var(--muted); font-weight: 500; }
+  ol li::before { content: counter(s); font-weight: 700; color: var(--c); min-width: 14px; } ol li:last-child { border-bottom: 0; }
+  .spark { width: 100%; height: 44px; display: block; margin-top: 8px; }
   .note { color: var(--faint); font-size: 12.5px; margin-top: 8px; }
   @media (max-width: 960px) { .fleet { grid-template-columns: 1fr; } .bento { grid-template-columns: repeat(2, minmax(0,1fr)); } .span4 { grid-column: span 2; } }
   @media (max-width: 560px) { .wrap { padding: 20px 16px 40px; } .bento { grid-template-columns: 1fr; } .span2, .span4 { grid-column: span 1; } header h1 { font-size: 24px; } }
@@ -71,152 +70,145 @@
 <body>
 <div class="wrap">
   <header>
-    <div><h1>정비 우선순위</h1><div class="sub">GenGuard · 발전기 3대 · 모의 운전 데이터</div></div>
+    <div><h1>정비 우선순위</h1><div class="sub">GenGuard · 발전기 3대 · 이번 운전을 최초 정상 운전 4회와 비교 (모의 데이터)</div></div>
     <span class="pill glass" id="chip"><span class="dot"></span>판정 엔진 확인 중</span>
   </header>
   <div class="fleet" id="fleet"></div>
   <div class="bento" id="bento"></div>
 </div>
 <script type="module">
-import { PROFILE, createDemoState, makeScenario, evaluate } from './vendor/engine.mjs';
-import { estimateOilLimitTime } from './vendor/trend.mjs';
+import { createDemoState, makeScenario, evaluate } from './vendor/engine.mjs';
+import { METRICS, KINDS, BASELINE_RUNS, RUN_MINUTES, simulateRun, summarize, baselineFrom, compare } from './runs.mjs';
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' })[c]);
-const KGF = 0.980665;
 const NAMES = { 'GEN-10K-001': '1호기', 'GEN-10K-002': '2호기', 'GEN-10K-003': '3호기' };
-const WATCH_TEXT = w => !w ? '' : w.mode === 'learning' ? `기준 학습 중 ${w.learned_s}/${w.learn_target_s}초` : w.mode === 'no_baseline' ? '기준 없음 · 발표자 화면에서 학습' : w.alarm ? `강한 진동 · 평소의 ${w.ratio?.toFixed(1)}배` : w.ratio == null ? '진동 없음 · 정지' : `평소 범위 · ${w.ratio.toFixed(1)}배`;
-const LABEL = { engine_rpm:['회전수','rpm',1], coolant_c:['냉각수 온도','°C',1], oil_bar:['윤활유 압력','kgf/cm²',1/KGF],
-  voltage_v:['출력 전압','V',1], vibration_rms_g:['진동 세기','g',1], envelope_cv:['진동 간헐성','',1] };
-const CHECKS = { coolant_c:'냉각수량·누수·라디에이터 통풍 확인', oil_bar:'윤활유량·누유·오일 필터 확인',
-  engine_rpm:'연료 공급·조속기 상태 확인', voltage_v:'전압조정기(AVR)·결선 확인',
-  vibration_rms_g:'고정 볼트·방진 마운트·센서 부착 확인', envelope_cv:'간헐 충격원·체결 상태 확인' };
-const assets = Object.keys(NAMES).map(id => ({ id, run: 0, scenario: 'normal', ramp: false, oil: null, t: 0,
-  state: createDemoState(), history: [], res: null, ai: null }));
-let open = null, fast = false, watch = null; const live = [];
-const LIVE_ASSET = 'GEN-10K-001';
-const LIVE_ALERT = { id: 'live_strong_vibration', severity: 'watch', live: true, title: '강한 진동 (실측 IMU)', fields: [],
-  checks: ['베어링 상태·윤활 확인', '고정 볼트·방진 마운트 확인', '센서 부착 상태 확인'] };
+const SEED = { 'GEN-10K-001': 100, 'GEN-10K-002': 200, 'GEN-10K-003': 300 };
+const fmt = (m, v) => v == null ? '—' : (+v).toFixed(m.digits);
+const assets = Object.keys(NAMES).map(id => ({ id, run: 0, baselineVer: 0, kind: 'normal', minute: 0, series: [], full: [],
+  base: null, baseRuns: [], cmp: null, res: null, ai: null, state: createDemoState() }));
+let open = null; const live = [];
+
+function rebuildBaseline(a, ver) {
+  a.baselineVer = ver;
+  a.baseRuns = Array.from({ length: BASELINE_RUNS }, (_, i) => simulateRun('normal', SEED[a.id] + ver * 10 + i));
+  a.base = baselineFrom(a.baseRuns.map(summarize));
+}
+function startRun(a, ctl) {
+  Object.assign(a, { run: ctl.run, kind: KINDS[ctl.scenario] ? ctl.scenario : 'normal', minute: 0, series: [], state: createDemoState(), ai: null });
+  a.full = simulateRun(a.kind, SEED[a.id] + 1000 + ctl.run);
+}
 
 function level(a) {
-  const al = a.res?.alerts ?? [], ai = a.ai?.display_state;
-  if (al.some(x => x.severity === 'urgent')) return ['urgent', '긴급', 'urgent'];
-  if (al.length && ai === 'inspection_suggested') return ['watch', '점검 필요', 'both'];
-  if (ai === 'inspection_suggested') return ['ai', '점검 필요', 'ai2'];
-  if (al.length) return ['watch', '점검', 'watch'];
-  if (ai === 'change_observed') return ['ai', '확인 중', 'ai1'];
-  if (ai === 'unknown' || a.res?.coverage?.complete === false) return ['unknown', '판단 보류', 'unk'];
-  return ['normal', '정상', 'ok'];
+  const urgent = (a.res?.alerts ?? []).some(x => x.severity === 'urgent');
+  if (urgent) return ['urgent', '긴급', 6];
+  if (a.cmp?.flagged.some(f => f.state === 'sharp')) return ['watch', '점검 필요', 5];
+  if (a.cmp?.flagged.length) return ['ai', '확인', 4];
+  if (a.cmp?.missing) return ['unknown', '판단 보류', 2];
+  if (a.minute < 5) return ['unknown', '예열 중', 1];
+  return ['normal', '평소와 같음', 0];
 }
-const ORDER = { urgent: 6, both: 5, ai2: 4, watch: 3, ai1: 2, unk: 1, ok: 0 };
-const ratio = a => a.ai?.score != null && a.ai?.threshold ? a.ai.score / a.ai.threshold : 0;
-const odd = a => (a.ai?.evidence ?? []).filter(e => Math.abs(e.standardized_residual) >= 3);
-const fmt = (k, v) => { const [, , f] = LABEL[k] ?? ['', '', 1]; const x = v * f; return Math.abs(x) < 1 ? x.toFixed(3) : +x.toFixed(1); };
-
-function summary(a) {
-  const [, , key] = level(a), al = a.res?.alerts ?? [];
-  if (al.length) return [al.map(x => x.title).join(' · '), al[0]?.checks?.[0] ?? ''];
-  if (key === 'ai2' || key === 'ai1') {
-    const o = odd(a); const what = o.map(e => `${LABEL[e.field]?.[0] ?? e.field} ${e.standardized_residual > 0 ? '↑' : '↓'}`).join(' ');
-    return [`${what || '여러 값'} · 같은 부하에서 평소와 다름`, o[0] ? CHECKS[o[0].field] : '지속 여부 확인'];
-  }
-  if (key === 'unk') return [a.ai?.reason?.startsWith('missing') ? '컨트롤러 값 미수신' : a.ai?.reason === 'unseen_operating_context' ? '학습하지 않은 운전 조건' : '예열·정지 중', '값 수신과 운전 상태 확인'];
-  return ['평소와 같은 패턴으로 운전 중', ''];
+function head(a) {
+  const f = a.cmp?.flagged[0];
+  if (f) { const signed = f.key === 'coolant_rise' ? `+${fmt(f, f.value)}` : fmt(f, f.value);
+    const usual = f.key === 'coolant_rise' ? `+${fmt(f, f.base.mean)}` : fmt(f, f.base.mean);
+    return [signed, `${f.unit} · ${f.label} · 평소 ${usual}`]; }
+  const p = a.series[a.series.length - 1];
+  return [p?.coolant_c != null ? (+p.coolant_c).toFixed(0) : '—', '℃ 냉각수 온도'];
 }
-function headline(a) {
-  const al = a.res?.alerts ?? [], o = odd(a);
-  if (al[0]?.live) return [(watch?.ratio ?? 0).toFixed(1), '배 · 평소 진동 대비'];
-  if (al[0]) { const k = al[0].fields?.[0], m = a.res.metrics[k]; if (m && typeof m.value === 'number') return [+m.value.toFixed(1), m.unit === 'degC' ? '°C' : m.unit]; }
-  if (o[0]) return [fmt(o[0].field, o[0].value), LABEL[o[0].field]?.[1] ?? ''];
-  const load = a.res?.metrics?.load_pct;
-  if (load && typeof load.value === 'number') return [Math.round(load.value), '% 부하 운전'];
-  return ['—', ''];
+function why(a) {
+  const f = a.cmp?.flagged;
+  if (f?.length) return [`${f.map(x => x.label.split(' (')[0]).join(' · ')} · 평소보다 ${f[0].state === 'sharp' ? '크게' : '조금'} 다름`, `${f[0].part} 점검: ${f[0].checks[0]}`];
+  if (a.cmp?.missing) return ['컨트롤러 값 미수신 · 비교 불가', '값 수신 상태 확인'];
+  if ((a.res?.alerts ?? []).length) return [a.res.alerts.map(x => x.title).join(' · '), a.res.alerts[0].checks?.[0] ?? ''];
+  return [a.minute < 5 ? '예열 구간 · 5분부터 비교' : '최초 정상 운전 4회 범위 안', ''];
 }
 
 function renderFleet() {
-  const sorted = [...assets].sort((x, y) => (ORDER[level(y)[2]] - ORDER[level(x)[2]]) || (ratio(y) - ratio(x)));
-  $('fleet').innerHTML = sorted.map((a, i) => { const [c, txt] = level(a), [why, todo] = summary(a), [n, u] = headline(a);
-    const pct = Math.min(100, ratio(a) / 3 * 100);
+  const sorted = [...assets].sort((x, y) => level(y)[2] - level(x)[2]);
+  $('fleet').innerHTML = sorted.map((a, i) => { const [c, txt] = level(a), [n, u] = head(a), [w, todo] = why(a);
     return `<div class="gen glass lvl-${c} ${open === a.id ? 'open' : ''}" data-id="${a.id}">
       <div class="top"><span class="rank">우선순위 <b>${i + 1}</b></span><span class="status"><span class="dot"></span>${txt}</span></div>
       <h2>${NAMES[a.id]}</h2>
       <div class="big">${esc(n)}<small>${esc(u)}</small></div>
-      <div class="track"><i style="width:${pct}%"></i></div>
-      <div class="why">${esc(why)}</div>
-      ${todo ? `<div class="todo">${esc(todo)}</div>` : ''}</div>`; }).join('');
+      <div class="track"><i style="width:${a.minute / RUN_MINUTES * 100}%"></i></div>
+      <div class="prog"><span>${esc(KINDS[a.kind]?.label ?? '')} · 운전 ${a.minute}/${RUN_MINUTES}분 (모의)</span><span>${a.minute >= RUN_MINUTES ? '운전 종료' : '운전 중'}</span></div>
+      <div class="why">${esc(w)}</div>${todo ? `<div class="todo">${esc(todo)}</div>` : ''}</div>`; }).join('');
   for (const el of $('fleet').children) el.onclick = () => { open = open === el.dataset.id ? null : el.dataset.id; render(); };
 }
 
-function ring(score, threshold) {
-  const max = Math.max(threshold * 3, score * 1.05), p = Math.min(1, score / max), C = 2 * Math.PI * 46;
-  const tp = threshold / max;
-  return `<svg viewBox="0 0 108 108"><circle cx="54" cy="54" r="46" fill="none" stroke="var(--edge)" stroke-width="10"/>
-    <circle cx="54" cy="54" r="46" fill="none" stroke="var(--c)" stroke-width="10" stroke-linecap="round" stroke-dasharray="${C * p} ${C}" transform="rotate(-90 54 54)"/>
-    <line x1="54" y1="2" x2="54" y2="16" stroke="var(--text)" stroke-width="2" transform="rotate(${tp * 360} 54 54)"/></svg>`;
+function chart(a) {
+  const W = 600, H = 170, P = 22, ymin = 20, ymax = 100;
+  const x = m => P + m / RUN_MINUTES * (W - 2 * P), y = v => H - P - (v - ymin) / (ymax - ymin) * (H - 2 * P);
+  const lo = [], hi = [];
+  for (let m = 0; m <= RUN_MINUTES; m++) { const v = a.baseRuns.map(s => s[m].coolant_c); lo.push(Math.min(...v)); hi.push(Math.max(...v)); }
+  const band = hi.map((v, m) => `${x(m)},${y(v + 1.5)}`).join(' ') + ' ' + lo.map((v, m) => [m, v]).reverse().map(([m, v]) => `${x(m)},${y(v - 1.5)}`).join(' ');
+  const cur = a.series.filter(p => p.coolant_c != null).map(p => `${x(p.minute)},${y(p.coolant_c)}`).join(' ');
+  const lim = [[92, 'var(--watch)', '92 점검'], [100, 'var(--urgent)', '100 보호']];
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+    <polygon points="${band}" fill="rgba(88,211,154,.22)"/>
+    ${lim.map(([v, c, t]) => `<line x1="${P}" x2="${W - P}" y1="${y(v)}" y2="${y(v)}" stroke="${c}" stroke-dasharray="5 5" stroke-width="1.2"/><text x="${W - P}" y="${y(v) - 4}" text-anchor="end" font-size="11" fill="${c}">${t}</text>`).join('')}
+    <polyline points="${cur}" fill="none" stroke="var(--c)" stroke-width="3" stroke-linejoin="round"/>
+    <text x="${P}" y="${H - 6}" font-size="11" fill="var(--muted)">0분</text><text x="${W - P}" y="${H - 6}" text-anchor="end" font-size="11" fill="var(--muted)">15분</text></svg>`;
 }
 
 function renderBento() {
   const a = assets.find(x => x.id === open);
-  const liveTile = `<div class="tile glass lvl-ai ${a ? 'span2' : 'span4'}"><div class="lab"><span>실측 진동 · UNO Q IMU · 1호기 부착</span><span id="lw">${esc(WATCH_TEXT(watch))}</span></div>
-    <div class="num" id="lv">${live.length ? live[live.length - 1].toFixed(3) : '—'}<small>g RMS</small></div>
-    <svg class="spark" viewBox="0 0 300 54" preserveAspectRatio="none"><polyline fill="none" stroke="var(--ai)" stroke-width="2.5" stroke-linejoin="round"
-      points="${live.map((v, i) => `${i * 300 / 119},${50 - v / Math.max(0.02, ...live) * 46}`).join(' ')}"/></svg></div>`;
-  if (!a || !a.res) { $('bento').innerHTML = liveTile; return; }
-  const [c, txt, key] = level(a), ai = a.ai ?? {}, al = a.res.alerts, o = odd(a);
-  const lead = key === 'ai2' || key === 'ai1' ? '고정 기준 안의 값이지만, 같은 부하·외기온에서 평소 관계와 다릅니다.'
-    : key === 'both' ? '정해진 기준을 넘었고, AI도 평소 관계와 지속적으로 다르다고 봅니다.'
-    : al.length ? '정해진 기준을 넘었습니다.' : key === 'unk' ? '판단할 값이 부족합니다. 정상으로 표시하지 않습니다.' : '규칙 기준과 평소 패턴 모두 이상 없습니다.';
-  const vals = (o.length ? o : (ai.evidence ?? []).slice(0, 2)).slice(0, 2).map(e => `<div class="tile glass lvl-${o.length ? c : 'normal'}">
-      <div class="lab"><span>${LABEL[e.field]?.[0] ?? e.field}</span></div>
-      <div class="num">${fmt(e.field, e.value)}<small>${LABEL[e.field]?.[1] ?? ''}</small></div>
-      <div class="was">평소 ${fmt(e.field, e.expected)} ${LABEL[e.field]?.[1] ?? ''}</div></div>`).join('');
-  const checks = [...new Set([...al.flatMap(x => x.checks ?? []), ...o.map(e => CHECKS[e.field]).filter(Boolean)])].slice(0, 3);
-  const tr = estimateOilLimitTime(a.history);
+  const liveTile = `<div class="tile glass lvl-ai ${a ? 'span2' : 'span4'}"><div class="lab"><span>실측 진동 · UNO Q IMU (센서 동작 표시)</span><span id="lv">${live.length ? live[live.length - 1].toFixed(3) + ' g' : '—'}</span></div>
+    <svg class="spark" viewBox="0 0 300 44" preserveAspectRatio="none"><polyline fill="none" stroke="var(--ai)" stroke-width="2.5" points="${live.map((v, i) => `${i * 300 / 119},${41 - v / Math.max(0.02, ...live) * 38}`).join(' ')}"/></svg></div>`;
+  if (!a || !a.cmp) { $('bento').innerHTML = liveTile; return; }
+  const [c, txt] = level(a), f = a.cmp.flagged;
+  const lead = f.length ? `${f[0].label}: 평소 ${fmt(f[0], f[0].base.mean)}${f[0].unit} → 이번 ${fmt(f[0], f[0].value)}${f[0].unit}`
+    : a.cmp.missing ? '중간부터 값이 들어오지 않아 비교할 수 없습니다.' : a.minute < 5 ? '예열 구간입니다. 5분 이후부터 비교합니다.' : '모든 항목이 최초 정상 운전 4회 범위 안입니다.';
+  const sub = f.length ? '값이 높다고 고장은 아닙니다. 평소 운전과 급격히 다르니 아래 부위를 먼저 점검하세요.' : '고정 한계(수온 92℃ 점검·100℃ 보호 등)는 따로 감시합니다.';
+  const rows = a.cmp.rows.map(r => { const b = r.base, lo = Math.min(b.lo, r.value ?? b.lo), hi = Math.max(b.hi, r.value ?? b.hi), span = (hi - lo) || 1, pad = span * 0.15;
+    const L = v => ((v - lo + pad) / (span + 2 * pad) * 100).toFixed(1);
+    const cc = r.state === 'sharp' ? 'watch' : r.state === 'outside' ? 'ai' : 'normal';
+    return `<div class="mrow lvl-${cc}"><span>${esc(r.label)}</span><span class="band"><i style="left:${L(b.lo)}%;right:${100 - L(b.hi)}%"></i>${r.value != null ? `<b style="left:calc(${L(r.value)}% - 2px)"></b>` : ''}</span>
+      <span class="v">${r.value == null ? '대기' : fmt(r, r.value)}</span></div>`; }).join('');
+  const checks = [...new Set(f.flatMap(x => x.checks))].slice(0, 3);
+  const ai = a.ai;
   $('bento').innerHTML = `
-    <div class="tile glass lvl-${c} span4"><div class="lab"><span>${NAMES[a.id]} · ${txt}</span><span>${esc(a.id)}</span></div><p class="lead">${esc(lead)}</p></div>
-    ${vals}
-    ${ai.score != null ? `<div class="tile glass lvl-${c === 'normal' ? 'normal' : 'ai'} span2"><div class="lab"><span>AI 판정 · 평소 관계와의 거리</span><span>연속 ${Math.min(ai.streak ?? 0, 99)}/${ai.persistence_windows ?? 3}</span></div>
-      <div class="ring">${ring(ai.score, ai.threshold)}<div><div class="num">${ai.score.toFixed(1)}<small>/ 기준선 ${ai.threshold.toFixed(1)}</small></div>
-      <div class="was">고장 확률이 아닙니다 · 추론 ${ai.inference_ms} ms</div></div></div></div>` : ''}
-    ${checks.length ? `<div class="tile glass lvl-${c} span2"><div class="lab"><span>점검 순서</span></div><ol>${checks.map(x => `<li>${esc(x)}</li>`).join('')}</ol></div>` : ''}
-    ${tr.status === 'estimated' ? `<div class="tile glass lvl-watch span2"><div class="lab"><span>${esc(tr.label)}</span></div>
-      <div class="num">${tr.minutes.toFixed(0)}<small>분</small></div><div class="was">현재 추세 유지 가정 · 고장 시점 아님</div></div>` : ''}
+    <div class="tile glass lvl-${c} span4"><div class="lab"><span>${NAMES[a.id]} · ${txt} · ${esc(KINDS[a.kind].label)}</span><span>운전 ${a.minute}/${RUN_MINUTES}분</span></div><p class="lead">${esc(lead)}<small>${esc(sub)}</small></p></div>
+    <div class="tile glass lvl-${c} span2"><div class="lab"><span>냉각수 온도 · 이번 운전 vs 최초 4회 범위</span><span>℃</span></div>${chart(a)}</div>
+    <div class="tile glass span2"><div class="lab"><span>항목별 비교 · 초록 막대 = 평소 범위(버퍼 포함)</span><span>이번 값</span></div>${rows}</div>
+    ${checks.length ? `<div class="tile glass lvl-${c} span2"><div class="lab"><span>점검 부위 · ${esc(f[0].part)}</span></div><ol>${checks.map(x => `<li>${esc(x)}</li>`).join('')}</ol></div>` : ''}
+    <div class="tile glass lvl-ai span2"><div class="lab"><span>보조 · ClikaRT 온디바이스 AI 조합 판정</span><span>${ai?.score != null ? `연속 ${Math.min(ai.streak, 99)}/${ai.persistence_windows}` : ''}</span></div>
+      ${ai?.score != null ? `<div class="num">${ai.score.toFixed(1)}<small>/ 기준선 ${ai.threshold.toFixed(1)}</small></div><div class="was">${ai.display_state === 'within_baseline' ? '평소 관계 안' : '평소 관계와 다름'} · 추론 ${ai.inference_ms} ms · 고장 확률 아님</div>`
+        : `<div class="was">${a.minute < 5 ? '예열 구간에는 판정하지 않습니다' : '판단 보류 · ' + esc(ai?.reason ?? '-')}</div>`}</div>
     ${liveTile}
-    <div class="tile glass span4"><details><summary>전체 계측값 · 기술 정보</summary>
-      <table><tr><th>항목</th><th>값</th><th>상태</th></tr>${Object.entries(a.res.metrics).map(([k, m]) => `<tr><td>${esc(PROFILE.fields.find(f => f.key === k)?.label ?? k)}</td><td>${typeof m.value === 'number' ? +m.value.toFixed(3) : '—'} ${esc(m.unit ?? '')}</td><td>${esc(m.status)}</td></tr>`).join('')}</table>
-      <div class="note">실측 진동 경보는 이 설치에서 학습한 기준의 1.5배를 3초 넘게 넘을 때입니다(시연 가정, AI 모델 아님). 발전기 값은 모의 입력입니다. AI ${esc(ai.engine ?? '-')} · 모델 ${esc(ai.model_id ?? '-')} · ${esc(tr.status !== 'estimated' ? '유압 추세: ' + (tr.message ?? tr.reason) : '')}</div></details></div>`;
+    <div class="tile glass span4 note">기준 = 이 발전기의 최초 정상 운전 ${BASELINE_RUNS}회(모의). 범위 = 평균 ± max(3σ, 항목별 최소 버퍼). 범위를 버퍼 한 폭 넘게 벗어나면 "점검 필요", 조금 벗어나면 "확인". 모든 값과 버퍼는 시연 가정이며 실제 장비에서는 같은 절차로 다시 잡습니다.</div>`;
 }
 function render() { renderFleet(); renderBento(); }
 
 async function stepAsset(a, ctl) {
-  if (ctl.run !== a.run) { Object.assign(a, { run: ctl.run, scenario: ctl.scenario, ramp: ctl.ramp, oil: null, t: 0, state: createDemoState(), history: [] }); }
-  a.t += fast ? 10 : 1;
-  const snap = makeScenario(a.scenario, a.t); snap.scenario_id = `${a.id}-${a.run}`;
-  if (a.ramp && snap.readings.oil_kgf_cm2) { a.oil = Math.max(0.3, (a.oil ?? snap.readings.oil_kgf_cm2.value) - 0.002 * (fast ? 10 : 1)); snap.readings.oil_kgf_cm2.value = +a.oil.toFixed(3); }
+  if (ctl.baseline !== a.baselineVer) rebuildBaseline(a, ctl.baseline);
+  if (ctl.run !== a.run) startRun(a, ctl);
+  if (a.minute < RUN_MINUTES || !a.series.length) { if (a.series.length) a.minute += 1; a.series = a.full.slice(0, a.minute + 1); }
+  else return;
+  a.cmp = a.minute >= 5 ? compare(summarize(a.series), a.base) : { rows: METRICS.map(m => ({ ...m, value: null, base: a.base[m.key], state: 'pending' })), flagged: [], missing: false };
+  const p = a.series[a.series.length - 1];
+  const snap = makeScenario(a.minute < 5 ? 'warming' : 'normal', a.minute * 60); snap.scenario_id = `${a.id}-${a.run}`;
+  for (const k of ['coolant_c', 'oil_kgf_cm2', 'engine_rpm', 'voltage_ll_v', 'vibration_rms_g'])
+    if (p[k] == null) delete snap.readings[k]; else snap.readings[k].value = p[k];
   a.res = evaluate(snap, a.state);
-  if (a.id === LIVE_ASSET && watch?.alarm) a.res.alerts = [LIVE_ALERT, ...a.res.alerts];
   try { a.ai = await (await fetch('/api/score', { method: 'POST', body: JSON.stringify({ asset_id: `${a.id}-${a.run}`, t_s: snap.t_s, phase: snap.phase, readings: snap.readings }) })).json(); }
-  catch { a.ai = { display_state: 'unknown', reason: 'server_unreachable' }; }
-  const r = snap.readings;
-  if (r.oil_kgf_cm2) { a.history.push({ t_s: snap.t_s, phase: snap.phase, oil_kgf_cm2: r.oil_kgf_cm2.value, engine_rpm: r.engine_rpm?.value, load_pct: r.load_pct?.value, ambient_c: r.ambient_c?.value, source: 'scenario', quality: 'ok' }); if (a.history.length > 90) a.history.shift(); }
+  catch { a.ai = null; }
 }
 async function loop() {
   let ctl; try { ctl = await (await fetch('/api/control')).json(); } catch { return; }
-  fast = ctl.fast;
   for (const a of assets) await stepAsset(a, ctl.assets[a.id]);
   render();
 }
-async function head() {
+async function status() {
   try { const s = await (await fetch('/api/status')).json(); const on = s.engine.startsWith('clikart');
     $('chip').innerHTML = `<span class="dot" style="--c:${s.network_reachable ? 'var(--watch)' : 'var(--ok)'}"></span>${on ? 'ClikaRT 온디바이스 AI' : esc(s.engine)} · ${s.network_reachable ? '온라인' : '오프라인 동작'}`; } catch {}
 }
 async function liveLoop() {
-  try { const l = await (await fetch('/api/live')).json();
-    if (l.rms_g != null && l.age_s < 3) live.push(l.rms_g); if (live.length > 120) live.shift();
-    watch = l.watch ?? null; const w = $('lw'); if (w) w.textContent = WATCH_TEXT(watch);
-    const el = $('lv'); if (el && live.length) el.innerHTML = `${live[live.length - 1].toFixed(3)}<small>g RMS</small>`; } catch {}
+  try { const l = await (await fetch('/api/live')).json(); if (l.rms_g != null && l.age_s < 3) live.push(l.rms_g); if (live.length > 120) live.shift();
+    const el = $('lv'); if (el && live.length) el.textContent = live[live.length - 1].toFixed(3) + ' g'; } catch {}
 }
-head(); setInterval(head, 10000); setInterval(loop, 1000); setInterval(liveLoop, 500);
+status(); setInterval(status, 10000); setInterval(loop, 1000); setInterval(liveLoop, 500);
 </script>
 </body>
 </html>
