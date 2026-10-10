@@ -511,7 +511,9 @@ dialog::backdrop { background: #142b3f70; backdrop-filter: blur(3px); }
 .lw-record-table .text-button { margin-right: 10px; }
 .lw-record-table input[type=checkbox] { width: 16px; height: 16px; accent-color: var(--teal); }
 .lw-empty { padding: 20px 12px; color: #8295a1; font-size: 12px; line-height: 1.8; text-align: center; }
-.lw-training-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 24px; }
+.lw-training-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 24px; }
+.lw-training-grid > * { min-width: 0; }
+.lw-training-grid select { width: 100%; min-width: 0; max-width: 100%; }
 .lw-training-grid .full-field { margin-bottom: 12px; }
 .lw-role-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 13px 0; }
 .lw-role-summary > div { border: 1px solid #e0ebe8; border-radius: 9px; padding: 11px 14px; background: #f5faf8; }
@@ -585,6 +587,7 @@ dialog::backdrop { background: #142b3f70; backdrop-filter: blur(3px); }
 .lw-live-result span, .lw-live-result small { display: block; color: #8aa0ad; font-size: 11px; }
 .lw-live-result strong { display: block; margin: 5px 0; font-size: 13px; color: #476d64; }
 @media (max-width: 1100px) { .lw-candidates { grid-template-columns: 1fr; } }
+@media (max-width: 1000px) { .lw-training-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; } }
 @media (max-width: 780px) {
  .lw-training-grid, .lw-report-grid { grid-template-columns: 1fr; gap: 16px; }
  .lw-capture-form .button { flex: 1; }
