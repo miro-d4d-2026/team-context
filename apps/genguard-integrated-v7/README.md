@@ -71,3 +71,7 @@ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python deployment/verify_auto
 - [이전 README 보존본](docs/PRE_AUTO_LEARNING_README.md): 과거 버전 설명이며 최신 사용 순서는 본문과 자동 학습 안내를 따릅니다.
 
 모델·규칙 원본 출처와 해시는 `model_bundle/source-manifest.json`, 실험 특징 출처는 `replay_artifacts/frozen-original.json`에 보존합니다. 팀 제공 코드와 사용자 제공 화면 참고본을 통합한 작업이며 새 오픈소스 라이선스를 임의로 부여하지 않습니다. 새로운 분류기를 CLIKA로 실행했다고 주장하지 않습니다.
+
+## PC를 옮기거나 USB를 다시 연결할 때
+
+보드는 전원 부팅 때 자동 실행되지만 PC의 USB 화면 연결은 다시 열어야 합니다. [팀원 접속 안내](deployment/pc-access/README.md)를 참고하세요. Mac 접속 도구는 보드 연결·부팅·서버 준비를 기다리고 접속을 복구합니다. 모델과 DB를 새 PC로 복사하지 않습니다. GitHub에는 접속 스크립트만 포함하며 Google Platform Tools 바이너리는 로컬 공유 ZIP에 별도 포함했습니다.
