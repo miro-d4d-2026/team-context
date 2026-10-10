@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102c3b">
+  <title>GenGuard · 발전기 상태 예측</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#dashboard" aria-label="GenGuard 대시보드"><span class="brand-mark">G<span></span></span><span>GenGuard<small>PREDICTIVE AI</small></span></a>
+    <div class="nav-label">WORKSPACE</div>
+    <nav aria-label="주 메뉴">
+      <button class="nav-item active" data-view="dashboard"><span class="nav-icon">▦</span>운전 대시보드</button>
+      <button class="nav-item" data-view="analysis"><span class="nav-icon">↗</span>예측·판정 근거</button>
+      <button class="nav-item" data-view="vibration"><span class="nav-icon">≋</span>진동 센서</button>
+      <button class="nav-item" data-view="evaluation"><span class="nav-icon">✓</span>모델 검증</button>
+    </nav>
+    <div class="sidebar-bottom"><span class="online-dot"></span> LOCAL WORKSPACE<p>실측과 시연을 구분하는<br>설명 가능한 상태 모니터링</p><div class="sidebar-note">의사결정 지원용 시연<br>장비 보호제어를 대체하지 않습니다.</div></div>
+  </aside>
+  <main>
+    <header class="topbar"><div><div class="eyebrow">GENERATOR HEALTH MONITOR</div><h1 id="page-title">운전 대시보드</h1></div><div class="topbar-right"><span id="model-id" class="model-id">장비 정보 확인 중</span><span id="connection" class="connection"><i></i>연결 중</span></div></header>
+    <div id="connection-error" class="error-banner hidden" role="alert"></div>
+
+    <section class="replay-panel" aria-label="시연 재생 제어">
+      <div class="replay-title"><span class="replay-icon">▷</span><div><strong id="mode-title">시연 재생</strong><small id="mode-description">모의 계측 데이터 · 실제 장비와 분리</small></div></div>
+      <label class="sr-only" for="scenario">시연 시나리오</label><select id="scenario" aria-label="시연 시나리오"><option value="cooling_decline">냉각 성능 저하</option></select>
+      <button id="play" class="button button-primary" disabled><span>▶</span> 재생</button><button id="reset" class="button button-icon" title="처음으로" aria-label="처음으로">↺</button>
+      <label class="speed-label" for="speed">속도</label><select id="speed" class="speed-select" aria-label="재생 속도"><option value="1">1×</option><option value="10">10×</option><option value="30">30×</option><option value="60">60×</option></select>
+      <div class="replay-progress"><span id="replay-time">00:00 / --:--</span><div class="progress-track"><div id="replay-progress-fill"></div></div></div>
+    </section>
+
+    <div class="view active" id="view-dashboard">
+      <section class="overview-grid">
+        <div id="status-card" class="status-card state-unknown" role="status"><div class="status-symbol" id="status-symbol">–</div><div class="status-copy"><div class="card-eyebrow">현재 운전 상태 <span id="data-source" class="source-badge">데이터 확인 중</span></div><h2 id="status-title">연결 확인 중</h2><p id="status-description">데이터가 연결되면 상태 분석을 시작합니다.</p></div><span class="status-dot"></span></div>
+        <div class="next-card"><div class="card-eyebrow">예측에서 확인할 변화 <span class="ai-label">FORECAST</span></div><h3 id="next-title">예측 대기</h3><p id="next-description">유효한 운전 이력을 수집하고 있습니다.</p><span id="next-meta" class="muted-small">불확실성 구간과 함께 확인합니다.</span></div>
+      </section>
+      <section id="metrics" class="metrics-grid" aria-label="현재 계측값"></section>
+      <section class="detail-grid">
+        <article class="card chart-card"><div class="card-heading"><div><h2>운전 추이와 AI 예측</h2><p id="chart-subtitle">관측 이력에 연결된 미래 추정</p></div><select id="chart-field" aria-label="예측 그래프 항목"><option value="coolant_c">냉각수 온도</option><option value="oil_pressure_kgf_cm2">윤활유압</option><option value="voltage_v">출력 전압</option><option value="frequency_hz">출력 주파수</option><option value="engine_rpm">엔진 회전수</option><option value="current_a">A상 전류</option><option value="current_b">B상 전류</option><option value="current_c">C상 전류</option><option value="battery_v">배터리 전압</option><option value="fuel_pct">연료 잔량</option><option value="fuel_pressure_bar">연료 압력</option></select></div><div class="chart-legend"><span><i class="legend-line"></i>관측값</span><span><i class="legend-line forecast-line"></i>학습 모델 예측</span><span><i class="legend-band"></i>예측 구간</span><span><i class="legend-line threshold-line"></i>시연 기준</span></div><div class="chart-wrap"><svg id="forecast-chart" viewBox="0 0 800 245" role="img" aria-label="운전 이력과 미래 예측 그래프"></svg><div id="chart-tooltip" class="chart-tooltip hidden"></div></div><div class="chart-footer"><span id="chart-footnote">데이터 수신 대기</span><span>미래 추정은 확정 진단이 아닙니다.</span></div></article>
+        <article class="card evidence-card"><div class="card-heading"><div><h2>판정 근거</h2><p>관측된 변화와 다음 확인 사항</p></div><span class="tiny-pill" id="evidence-count">대기</span></div><p id="reason" class="reason-text">데이터가 연결되면 분석 근거를 표시합니다.</p><div id="model-evidence-title" class="model-evidence-title hidden">조건별 정상 모델 비교</div><div id="evidence-list" class="evidence-list"></div><div class="guidance-block"><h3>권장 확인 사항</h3><ul id="guidance-list"><li>계측 데이터 연결을 확인하세요.</li></ul></div><button class="text-link" data-view="analysis">전체 분석 보기 <span>↗</span></button></article>
+      </section>
+      <section class="event-strip"><span class="event-strip-label"><i></i>최근 상태 변화</span><span id="latest-event">아직 기록된 이벤트가 없습니다.</span><button class="text-link" data-view="analysis">이력 보기 →</button></section>
+    </div>
+
+    <div class="view" id="view-analysis">
+      <section class="section-intro"><div><h2>판정의 근거를 따라갑니다.</h2><p>계측 이상, 예측 도달 시점, 상태 변화를 각각 확인하세요.</p></div><span class="tiny-pill">분석 투명성</span></section>
+      <div class="analysis-grid"><article class="card"><div class="card-heading"><h2>탐지 모델</h2></div><div id="anomaly-summary" class="analysis-stats"></div><p id="observation" class="body-copy">분석 결과 수신 대기</p><div class="inline-note">이상 점수는 고장 확률이나 정확도가 아닙니다. 운전조건과 계측 품질을 함께 확인합니다.</div></article><article class="card"><div class="card-heading"><h2>예측 기준 도달</h2><span class="tiny-pill">시연 기준</span></div><div id="crossings-list" class="crossings-list"></div><p class="muted-small">예측 구간은 모델의 불확실성을 나타내며, 현장 안전한계를 보증하지 않습니다.</p></article></div>
+      <article class="card analysis-table-card"><div class="card-heading"><h2>조건별 정상 모델 비교</h2><span class="muted-small">모델 기대값과 현재값 · 시연 규칙 판정과 별도</span></div><div class="table-scroll"><table><thead><tr><th>항목</th><th>관측값</th><th>기대값</th><th>편차 지표</th></tr></thead><tbody id="evidence-table"></tbody></table></div></article>
+      <article class="card analysis-table-card"><div class="card-heading"><h2>상태 변화 이력</h2><span id="event-count" class="tiny-pill">0건</span></div><div id="events-list" class="events-list"></div></article>
+      <details class="card input-instructions"><summary>외부 계측 데이터 연결 안내</summary><p>이 화면은 서버의 계측 수신 결과를 표시합니다. 외부 JSONL 입력 방법은 배포 폴더의 README에 있는 실행 명령과 입력 스키마를 따르세요.</p><p>각 행은 측정 시각과 항목별 숫자 값을 포함해야 합니다. 누락된 값은 0으로 채우지 않으며, 실시간 입력 중에도 시연 데이터와 출처를 구분합니다.</p></details>
+    </div>
+
+    <div class="view" id="view-vibration">
+      <section class="section-intro"><div><h2>진동 데이터의 출처부터 확인합니다.</h2><p>실측 IMU 기록 재생과 실시간 센서 입력을 구분합니다.</p></div><span id="vibration-source" class="source-badge">연결 상태 확인 중</span></section>
+      <div class="vibration-grid"><article class="card vibration-control"><div class="card-heading"><h2>진동 입력</h2></div><div class="mode-buttons"><button class="button" data-vibration-mode="recorded">실측 기록 재생</button><button class="button" data-vibration-mode="live">실시간 센서</button><button class="button" data-vibration-mode="off">연결 해제</button></div><label class="form-label" for="imu-port">센서 수신 포트</label><input id="imu-port" type="number" min="1024" max="65535" value="8765"><label class="checkbox-label"><input id="profile-confirmed" type="checkbox">센서 장착 위치와 측정 프로필을 확인했습니다.</label><p id="vibration-message" class="muted-small" role="status">라이브 입력은 연결된 센서의 유효한 패킷이 필요합니다.</p><div class="inline-note">기록 재생은 현재 발전기의 실시간 진동이 아닙니다. 장착 위치·샘플링 조건이 다르면 해석을 재검증해야 합니다.</div></article><article class="card vibration-result"><div class="card-heading"><h2>진동 분석 결과</h2><span id="vibration-pattern" class="tiny-pill">대기</span></div><div id="vibration-stats" class="analysis-stats"></div><p id="vibration-label" class="body-copy">센서 데이터를 기다리고 있습니다.</p><ul id="vibration-quality" class="quality-list"></ul></article></div>
+    </div>
+
+    <div class="view" id="view-evaluation">
+      <section class="section-intro"><div><h2>모델이 얼마나 검증되었는지 확인합니다.</h2><p>서버가 실제 산출한 평가 결과와 학습 정보를 표시합니다.</p></div><button id="refresh-evaluation" class="button">검증 결과 새로고침</button></section>
+      <div class="inline-note evaluation-note">시연 데이터에서의 평가가 실제 장비의 고장 예측 성능을 의미하지는 않습니다. 평가 범위·표본·분할 방법을 함께 확인하세요.</div><div id="evaluation-results" class="evaluation-results"><div class="empty-state">검증 결과를 불러오는 중입니다.</div></div>
+    </div>
+    <footer class="page-footer"><span>GenGuard · 계측 → 이상 탐지 → 추이 예측 → 점검 지원</span><span id="recording-status" class="recording-status hidden"></span><span id="last-updated">수신 대기</span></footer>
+  </main>
+  <div id="toast" class="toast hidden" role="status"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

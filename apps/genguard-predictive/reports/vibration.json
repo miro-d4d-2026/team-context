@@ -1,0 +1,449 @@
+{
+  "model_id": "phone-pattern-repeat12-cal3-v1",
+  "data_source": "actual_phone_and_imu_recordings",
+  "fit_windows": 32,
+  "calibration_windows": 16,
+  "test_windows": 48,
+  "fit_cycles": [
+    1,
+    2
+  ],
+  "calibration_cycles": [
+    3
+  ],
+  "test_recordings": 1,
+  "test_used_for_training_or_radius": false,
+  "generator_health_evaluated": false,
+  "growing_pattern_training_examples": 0,
+  "uno_q_model_execution_measured": false,
+  "evaluation_scope": "48 correlated 2s windows in one separate random-order recording; not 48 independent trials",
+  "models": {
+    "rms_only": {
+      "repeat_calibration": {
+        "count": 16,
+        "correct": 16,
+        "fraction_correct_all_windows": 1.0,
+        "macro_recall_all_windows": 1.0,
+        "unknown": 0,
+        "accepted_count": 16,
+        "fraction_correct_accepted": 1.0,
+        "confusion_rows": [
+          "idle",
+          "baseline",
+          "increased",
+          "intermittent"
+        ],
+        "confusion_columns": [
+          "idle",
+          "baseline",
+          "increased",
+          "intermittent",
+          "unknown"
+        ],
+        "confusion": [
+          [
+            4,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            4,
+            0
+          ]
+        ],
+        "unknown_counts_as_incorrect_in_overall_metric": true,
+        "rejection_enabled": true
+      },
+      "random_with_unknown_rejection": {
+        "count": 48,
+        "correct": 36,
+        "fraction_correct_all_windows": 0.75,
+        "macro_recall_all_windows": 0.75,
+        "unknown": 0,
+        "accepted_count": 48,
+        "fraction_correct_accepted": 0.75,
+        "confusion_rows": [
+          "idle",
+          "baseline",
+          "increased",
+          "intermittent"
+        ],
+        "confusion_columns": [
+          "idle",
+          "baseline",
+          "increased",
+          "intermittent",
+          "unknown"
+        ],
+        "confusion": [
+          [
+            12,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          [
+            0,
+            0,
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            12,
+            0
+          ]
+        ],
+        "unknown_counts_as_incorrect_in_overall_metric": true,
+        "rejection_enabled": true
+      },
+      "random_forced_choice_comparator": {
+        "count": 48,
+        "correct": 36,
+        "fraction_correct_all_windows": 0.75,
+        "macro_recall_all_windows": 0.75,
+        "unknown": 0,
+        "accepted_count": 48,
+        "fraction_correct_accepted": 0.75,
+        "confusion_rows": [
+          "idle",
+          "baseline",
+          "increased",
+          "intermittent"
+        ],
+        "confusion_columns": [
+          "idle",
+          "baseline",
+          "increased",
+          "intermittent",
+          "unknown"
+        ],
+        "confusion": [
+          [
+            12,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            12,
+            0
+          ],
+          [
+            0,
+            0,
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            12,
+            0
+          ]
+        ],
+        "unknown_counts_as_incorrect_in_overall_metric": true,
+        "rejection_enabled": false
+      }
+    },
+    "rms_and_pattern": {
+      "repeat_calibration": {
+        "count": 16,
+        "correct": 16,
+        "fraction_correct_all_windows": 1.0,
+        "macro_recall_all_windows": 1.0,
+        "unknown": 0,
+        "accepted_count": 16,
+        "fraction_correct_accepted": 1.0,
+        "confusion_rows": [
+          "idle",
+          "baseline",
+          "increased",
+          "intermittent"
+        ],
+        "confusion_columns": [
+          "idle",
+          "baseline",
+          "increased",
+          "intermittent",
+          "unknown"
+        ],
+        "confusion": [
+          [
+            4,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            4,
+            0
+          ]
+        ],
+        "unknown_counts_as_incorrect_in_overall_metric": true,
+        "rejection_enabled": true
+      },
+      "random_with_unknown_rejection": {
+        "count": 48,
+        "correct": 48,
+        "fraction_correct_all_windows": 1.0,
+        "macro_recall_all_windows": 1.0,
+        "unknown": 0,
+        "accepted_count": 48,
+        "fraction_correct_accepted": 1.0,
+        "confusion_rows": [
+          "idle",
+          "baseline",
+          "increased",
+          "intermittent"
+        ],
+        "confusion_columns": [
+          "idle",
+          "baseline",
+          "increased",
+          "intermittent",
+          "unknown"
+        ],
+        "confusion": [
+          [
+            12,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            12,
+            0
+          ]
+        ],
+        "unknown_counts_as_incorrect_in_overall_metric": true,
+        "rejection_enabled": true
+      },
+      "random_forced_choice_comparator": {
+        "count": 48,
+        "correct": 48,
+        "fraction_correct_all_windows": 1.0,
+        "macro_recall_all_windows": 1.0,
+        "unknown": 0,
+        "accepted_count": 48,
+        "fraction_correct_accepted": 1.0,
+        "confusion_rows": [
+          "idle",
+          "baseline",
+          "increased",
+          "intermittent"
+        ],
+        "confusion_columns": [
+          "idle",
+          "baseline",
+          "increased",
+          "intermittent",
+          "unknown"
+        ],
+        "confusion": [
+          [
+            12,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            12,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            12,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            12,
+            0
+          ]
+        ],
+        "unknown_counts_as_incorrect_in_overall_metric": true,
+        "rejection_enabled": false
+      }
+    }
+  },
+  "provenance": {
+    "repeat": {
+      "source_feature_file": "repeat.json",
+      "source_feature_sha256": "cb892fc56ee90ede5dbdc80af79551f8ad1a8ce45477b409b1f685ac5542ce8e",
+      "source_raw_file": "repeat-raw.csv.gz",
+      "source_raw_gzip_sha256": "f483589b66479fe4c973db5ab693c703dff37801fa3ca8df03c576b08c8c44f0",
+      "source_uncompressed_csv_sha256": "5695094e0a8f23a3a72571ed85252beb23920afc61b99aeb1661df0a4319599a",
+      "recorded_at": "2026-10-10T10:15:56.161584+00:00",
+      "raw_samples": 46312,
+      "raw_duration_s": 221.55391800000007,
+      "sample_rate_hz": 209.02812470235796,
+      "alignment": {
+        "scale": 0.9989790341095126,
+        "offset_s": 1.8124637953427936,
+        "marker_sensor_s": [
+          6.807123000000047,
+          7.806337999999869,
+          8.807018999999855
+        ],
+        "marker_command_s": [
+          5.0,
+          6.0,
+          7.0
+        ],
+        "marker_residual_s": [
+          -0.00023596589030994153,
+          0.0,
+          0.0017019658904722235
+        ],
+        "threshold_g": 0.03,
+        "fixed_offset_s": 1.8070189999998547,
+        "host_sensor_fit_residual_p01_p99_s": [
+          -0.02871860037110501,
+          0.01260464167389191
+        ],
+        "method": "Offset: 3 sync pulses. Rate: host/sensor timestamps. Assumes phone and PC wall seconds have comparable rates; not physical latency calibration."
+      },
+      "full_scale_g": null,
+      "feature_recalculation_max_absolute_error": {
+        "rms_vector_g": 2.7755575615628914e-17,
+        "envelope_cv": 4.9960036108132044e-15
+      },
+      "label_source": "commanded phone stimulus, not measured actuator state or generator fault",
+      "feature_clock": "aligned phone command seconds",
+      "raw_input_unchanged": true
+    },
+    "random": {
+      "source_feature_file": "random.json",
+      "source_feature_sha256": "b861100ead7847478ae6e4ffd18fa75ffe3f5b2ea0c3fab685aa3d5e459d5f47",
+      "source_raw_file": "random-raw.csv.gz",
+      "source_raw_gzip_sha256": "d3f746f921594713f0b6c0b5c98e8ec1fcbbb338127ead077fa2435dd26a5359",
+      "source_uncompressed_csv_sha256": "13d48102e02e945fd57c0e71caf28372059e6a06f5165594675fa84f65140cc7",
+      "recorded_at": "2026-10-10T10:44:29.441636+00:00",
+      "raw_samples": 61098,
+      "raw_duration_s": 292.28289,
+      "sample_rate_hz": 209.0337891485882,
+      "alignment": {
+        "scale": 0.9989896662933497,
+        "offset_s": -2.228937997760098,
+        "marker_sensor_s": [
+          2.764399999999995,
+          3.7650000000000006,
+          4.764156
+        ],
+        "marker_command_s": [
+          5.0,
+          6.0,
+          7.0
+        ],
+        "marker_residual_s": [
+          -0.0016103337066555312,
+          0.0,
+          0.00016633370664909108
+        ],
+        "threshold_g": 0.03,
+        "fixed_offset_s": -2.235600000000005,
+        "host_sensor_fit_residual_p01_p99_s": [
+          -0.02784478833587116,
+          0.012556337939268757
+        ],
+        "method": "Offset: 3 sync pulses. Rate: host/sensor timestamps. Assumes phone and PC wall seconds have comparable rates; not physical latency calibration."
+      },
+      "full_scale_g": null,
+      "feature_recalculation_max_absolute_error": {
+        "rms_vector_g": 2.7755575615628914e-17,
+        "envelope_cv": 1.0699774399824946e-14
+      },
+      "label_source": "commanded phone stimulus, not measured actuator state or generator fault",
+      "feature_clock": "aligned phone command seconds",
+      "raw_input_unchanged": true
+    }
+  },
+  "limitations": [
+    "Command mode is label, not independently measured actuator state.",
+    "One recording split by cycles is not independent-installation calibration.",
+    "Unknown rejection is a small-sample distance guard, not reliable novelty coverage.",
+    "RMS is axis-demeaned vector RMS in g; contract RMS equals vector RMS / sqrt(3).",
+    "No rising-pattern training, generator diagnosis, failure probability or RUL."
+  ]
+}

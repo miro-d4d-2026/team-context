@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-11",
+  "unit_and_regression_tests": {
+    "count": 36,
+    "passed": 36,
+    "report": "reports/tests.txt"
+  },
+  "http_checks": {
+    "count": 13,
+    "passed": 13,
+    "report": "reports/http-verification.json"
+  },
+  "browser_checks": {
+    "main_page_renders": true,
+    "all_13_input_metrics_visible_in_dom": true,
+    "keyboard_menu_navigation_verified": true,
+    "validation_table_matches_report": true,
+    "continuous_replay_and_inspection_state_observed": true,
+    "threshold_eta_observed_in_browser_before_final_ui_copy_revision": true,
+    "recording_count_in_footer_verified": true,
+    "console_errors_observed": [],
+    "physical_sensor_live_not_connected": true
+  },
+  "hardware_execution": {
+    "host": "macOS development computer",
+    "uno_q_tested": false,
+    "actual_generator_tested": false
+  },
+  "training_inputs": "synthetic generator sequences and two supplied phone-vibration recordings",
+  "runtime_weights_frozen": true
+}

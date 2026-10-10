@@ -1,0 +1,1993 @@
+{
+  "schema_version": 1,
+  "data_source": "synthetic",
+  "algorithm": "78-input / 96-tanh / 64-tanh / 44-linear MLP; future-minus-current targets",
+  "feature_contract": "current values and differences at 10/30/60/120/180 seconds; no scenario labels or future data in features",
+  "split_policy": "Whole independent generated runs; different seeds in fit/validation/calibration/test; overlapping windows never cross splits.",
+  "splits": {
+    "fit": {
+      "runs": [
+        {
+          "run_id": "normal-10000",
+          "seed": 10000,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "normal-10001",
+          "seed": 10001,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "normal-10002",
+          "seed": 10002,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "normal-10003",
+          "seed": 10003,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "normal-10004",
+          "seed": 10004,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "normal-10005",
+          "seed": 10005,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "normal-10006",
+          "seed": 10006,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "normal-10007",
+          "seed": 10007,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "normal-10008",
+          "seed": 10008,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "normal-10009",
+          "seed": 10009,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "normal-10010",
+          "seed": 10010,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "normal-10011",
+          "seed": 10011,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-10100",
+          "seed": 10100,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-10101",
+          "seed": 10101,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-10102",
+          "seed": 10102,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-10103",
+          "seed": 10103,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-10104",
+          "seed": 10104,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-10105",
+          "seed": 10105,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-10106",
+          "seed": 10106,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-10107",
+          "seed": 10107,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-10108",
+          "seed": 10108,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-10109",
+          "seed": 10109,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-10110",
+          "seed": 10110,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-10111",
+          "seed": 10111,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-10200",
+          "seed": 10200,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-10201",
+          "seed": 10201,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-10202",
+          "seed": 10202,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-10203",
+          "seed": 10203,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-10204",
+          "seed": 10204,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-10205",
+          "seed": 10205,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-10206",
+          "seed": 10206,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-10207",
+          "seed": 10207,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-10208",
+          "seed": 10208,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-10209",
+          "seed": 10209,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-10210",
+          "seed": 10210,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-10211",
+          "seed": 10211,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-10300",
+          "seed": 10300,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-10301",
+          "seed": 10301,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-10302",
+          "seed": 10302,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-10303",
+          "seed": 10303,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-10304",
+          "seed": 10304,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-10305",
+          "seed": 10305,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-10306",
+          "seed": 10306,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-10307",
+          "seed": 10307,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-10308",
+          "seed": 10308,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-10309",
+          "seed": 10309,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-10310",
+          "seed": 10310,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-10311",
+          "seed": 10311,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-10400",
+          "seed": 10400,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-10401",
+          "seed": 10401,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-10402",
+          "seed": 10402,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-10403",
+          "seed": 10403,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-10404",
+          "seed": 10404,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-10405",
+          "seed": 10405,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-10406",
+          "seed": 10406,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-10407",
+          "seed": 10407,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-10408",
+          "seed": 10408,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-10409",
+          "seed": 10409,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-10410",
+          "seed": 10410,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-10411",
+          "seed": 10411,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-10500",
+          "seed": 10500,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-10501",
+          "seed": 10501,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-10502",
+          "seed": 10502,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-10503",
+          "seed": 10503,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-10504",
+          "seed": 10504,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-10505",
+          "seed": 10505,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-10506",
+          "seed": 10506,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-10507",
+          "seed": 10507,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-10508",
+          "seed": 10508,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-10509",
+          "seed": 10509,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-10510",
+          "seed": 10510,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-10511",
+          "seed": 10511,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-10600",
+          "seed": 10600,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-10601",
+          "seed": 10601,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-10602",
+          "seed": 10602,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-10603",
+          "seed": 10603,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-10604",
+          "seed": 10604,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-10605",
+          "seed": 10605,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-10606",
+          "seed": 10606,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-10607",
+          "seed": 10607,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-10608",
+          "seed": 10608,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-10609",
+          "seed": 10609,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-10610",
+          "seed": 10610,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-10611",
+          "seed": 10611,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-10700",
+          "seed": 10700,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-10701",
+          "seed": 10701,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-10702",
+          "seed": 10702,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-10703",
+          "seed": 10703,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-10704",
+          "seed": 10704,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-10705",
+          "seed": 10705,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-10706",
+          "seed": 10706,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-10707",
+          "seed": 10707,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-10708",
+          "seed": 10708,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-10709",
+          "seed": 10709,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-10710",
+          "seed": 10710,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-10711",
+          "seed": 10711,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-10800",
+          "seed": 10800,
+          "scenario": "recovery",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-10801",
+          "seed": 10801,
+          "scenario": "recovery",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-10802",
+          "seed": 10802,
+          "scenario": "recovery",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-10803",
+          "seed": 10803,
+          "scenario": "recovery",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-10804",
+          "seed": 10804,
+          "scenario": "recovery",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-10805",
+          "seed": 10805,
+          "scenario": "recovery",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-10806",
+          "seed": 10806,
+          "scenario": "recovery",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-10807",
+          "seed": 10807,
+          "scenario": "recovery",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-10808",
+          "seed": 10808,
+          "scenario": "recovery",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-10809",
+          "seed": 10809,
+          "scenario": "recovery",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-10810",
+          "seed": 10810,
+          "scenario": "recovery",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-10811",
+          "seed": 10811,
+          "scenario": "recovery",
+          "frames": 601
+        }
+      ],
+      "source_file": "data/telemetry-fit.jsonl.gz",
+      "sha256": "b2883e94a8fb0815d0ef775556f104da7e53579f17ce16e26c15e845f05fed84"
+    },
+    "validation": {
+      "runs": [
+        {
+          "run_id": "normal-20000",
+          "seed": 20000,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "normal-20001",
+          "seed": 20001,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "normal-20002",
+          "seed": 20002,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-20100",
+          "seed": 20100,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-20101",
+          "seed": 20101,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-20102",
+          "seed": 20102,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-20200",
+          "seed": 20200,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-20201",
+          "seed": 20201,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-20202",
+          "seed": 20202,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-20300",
+          "seed": 20300,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-20301",
+          "seed": 20301,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-20302",
+          "seed": 20302,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-20400",
+          "seed": 20400,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-20401",
+          "seed": 20401,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-20402",
+          "seed": 20402,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-20500",
+          "seed": 20500,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-20501",
+          "seed": 20501,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-20502",
+          "seed": 20502,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-20600",
+          "seed": 20600,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-20601",
+          "seed": 20601,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-20602",
+          "seed": 20602,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-20700",
+          "seed": 20700,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-20701",
+          "seed": 20701,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-20702",
+          "seed": 20702,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-20800",
+          "seed": 20800,
+          "scenario": "recovery",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-20801",
+          "seed": 20801,
+          "scenario": "recovery",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-20802",
+          "seed": 20802,
+          "scenario": "recovery",
+          "frames": 601
+        }
+      ],
+      "source_file": "data/telemetry-validation.jsonl.gz",
+      "sha256": "0cc3a3f1670371452911cd907437e7821eb0e217c92157aee32b0530d36d752c"
+    },
+    "calibration": {
+      "runs": [
+        {
+          "run_id": "normal-30000",
+          "seed": 30000,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "normal-30001",
+          "seed": 30001,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "normal-30002",
+          "seed": 30002,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-30100",
+          "seed": 30100,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-30101",
+          "seed": 30101,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-30102",
+          "seed": 30102,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-30200",
+          "seed": 30200,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-30201",
+          "seed": 30201,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-30202",
+          "seed": 30202,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-30300",
+          "seed": 30300,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-30301",
+          "seed": 30301,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-30302",
+          "seed": 30302,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-30400",
+          "seed": 30400,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-30401",
+          "seed": 30401,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-30402",
+          "seed": 30402,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-30500",
+          "seed": 30500,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-30501",
+          "seed": 30501,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-30502",
+          "seed": 30502,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-30600",
+          "seed": 30600,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-30601",
+          "seed": 30601,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-30602",
+          "seed": 30602,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-30700",
+          "seed": 30700,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-30701",
+          "seed": 30701,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-30702",
+          "seed": 30702,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-30800",
+          "seed": 30800,
+          "scenario": "recovery",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-30801",
+          "seed": 30801,
+          "scenario": "recovery",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-30802",
+          "seed": 30802,
+          "scenario": "recovery",
+          "frames": 601
+        }
+      ],
+      "source_file": "data/telemetry-calibration.jsonl.gz",
+      "sha256": "440ef570e106eb486615ec52f8ced38653488600b88c848f14efd1d6cbb3aeb1"
+    },
+    "test": {
+      "runs": [
+        {
+          "run_id": "normal-40000",
+          "seed": 40000,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "normal-40001",
+          "seed": 40001,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "normal-40002",
+          "seed": 40002,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "normal-40003",
+          "seed": 40003,
+          "scenario": "normal",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-40100",
+          "seed": 40100,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-40101",
+          "seed": 40101,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-40102",
+          "seed": 40102,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "load_transient-40103",
+          "seed": 40103,
+          "scenario": "load_transient",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-40200",
+          "seed": 40200,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-40201",
+          "seed": 40201,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-40202",
+          "seed": 40202,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "cooling_decline-40203",
+          "seed": 40203,
+          "scenario": "cooling_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-40300",
+          "seed": 40300,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-40301",
+          "seed": 40301,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-40302",
+          "seed": 40302,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "oil_decline-40303",
+          "seed": 40303,
+          "scenario": "oil_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-40400",
+          "seed": 40400,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-40401",
+          "seed": 40401,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-40402",
+          "seed": 40402,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "voltage_drift-40403",
+          "seed": 40403,
+          "scenario": "voltage_drift",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-40500",
+          "seed": 40500,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-40501",
+          "seed": 40501,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-40502",
+          "seed": 40502,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "imbalance-40503",
+          "seed": 40503,
+          "scenario": "imbalance",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-40600",
+          "seed": 40600,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-40601",
+          "seed": 40601,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-40602",
+          "seed": 40602,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "charging_decline-40603",
+          "seed": 40603,
+          "scenario": "charging_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-40700",
+          "seed": 40700,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-40701",
+          "seed": 40701,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-40702",
+          "seed": 40702,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "fuel_decline-40703",
+          "seed": 40703,
+          "scenario": "fuel_decline",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-40800",
+          "seed": 40800,
+          "scenario": "recovery",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-40801",
+          "seed": 40801,
+          "scenario": "recovery",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-40802",
+          "seed": 40802,
+          "scenario": "recovery",
+          "frames": 601
+        },
+        {
+          "run_id": "recovery-40803",
+          "seed": 40803,
+          "scenario": "recovery",
+          "frames": 601
+        }
+      ],
+      "source_file": "data/telemetry-test.jsonl.gz",
+      "sha256": "39d1c2360fec0018fb8754cd026114300e129053ca9dd8985a3e4c540679a4ac"
+    }
+  },
+  "epochs": 150,
+  "selected_epoch": 39,
+  "selection_criterion": "lowest validation standardized MSE only",
+  "training_log": [
+    {
+      "epoch": 1,
+      "train_standardized_mse": 0.7891815046079798,
+      "validation_standardized_mse": 0.6283700466156006
+    },
+    {
+      "epoch": 2,
+      "train_standardized_mse": 0.5364650292334214,
+      "validation_standardized_mse": 0.493843138217926
+    },
+    {
+      "epoch": 3,
+      "train_standardized_mse": 0.4562086074180852,
+      "validation_standardized_mse": 0.4418935775756836
+    },
+    {
+      "epoch": 4,
+      "train_standardized_mse": 0.4169641023367838,
+      "validation_standardized_mse": 0.4083172678947449
+    },
+    {
+      "epoch": 5,
+      "train_standardized_mse": 0.3880193935110678,
+      "validation_standardized_mse": 0.3861275613307953
+    },
+    {
+      "epoch": 6,
+      "train_standardized_mse": 0.3658112883957383,
+      "validation_standardized_mse": 0.374747097492218
+    },
+    {
+      "epoch": 7,
+      "train_standardized_mse": 0.35045557820719053,
+      "validation_standardized_mse": 0.36359497904777527
+    },
+    {
+      "epoch": 8,
+      "train_standardized_mse": 0.33802644232519313,
+      "validation_standardized_mse": 0.3567126989364624
+    },
+    {
+      "epoch": 9,
+      "train_standardized_mse": 0.32953457146688225,
+      "validation_standardized_mse": 0.3480011522769928
+    },
+    {
+      "epoch": 10,
+      "train_standardized_mse": 0.321246732995401,
+      "validation_standardized_mse": 0.3445180058479309
+    },
+    {
+      "epoch": 11,
+      "train_standardized_mse": 0.31430691523489607,
+      "validation_standardized_mse": 0.3394351899623871
+    },
+    {
+      "epoch": 12,
+      "train_standardized_mse": 0.30883773015994653,
+      "validation_standardized_mse": 0.34052327275276184
+    },
+    {
+      "epoch": 13,
+      "train_standardized_mse": 0.305811694478677,
+      "validation_standardized_mse": 0.3374234735965729
+    },
+    {
+      "epoch": 14,
+      "train_standardized_mse": 0.30175580553759157,
+      "validation_standardized_mse": 0.33705541491508484
+    },
+    {
+      "epoch": 15,
+      "train_standardized_mse": 0.2976245942069035,
+      "validation_standardized_mse": 0.3336118459701538
+    },
+    {
+      "epoch": 16,
+      "train_standardized_mse": 0.2940139700384701,
+      "validation_standardized_mse": 0.3322312533855438
+    },
+    {
+      "epoch": 17,
+      "train_standardized_mse": 0.29214648806970883,
+      "validation_standardized_mse": 0.3334394097328186
+    },
+    {
+      "epoch": 18,
+      "train_standardized_mse": 0.28863911480685467,
+      "validation_standardized_mse": 0.3264167904853821
+    },
+    {
+      "epoch": 19,
+      "train_standardized_mse": 0.2860151156880497,
+      "validation_standardized_mse": 0.32648560404777527
+    },
+    {
+      "epoch": 20,
+      "train_standardized_mse": 0.2850496204460368,
+      "validation_standardized_mse": 0.3249530792236328
+    },
+    {
+      "epoch": 21,
+      "train_standardized_mse": 0.28216973025035236,
+      "validation_standardized_mse": 0.32339298725128174
+    },
+    {
+      "epoch": 22,
+      "train_standardized_mse": 0.27899552864186905,
+      "validation_standardized_mse": 0.32132330536842346
+    },
+    {
+      "epoch": 23,
+      "train_standardized_mse": 0.27785535809261347,
+      "validation_standardized_mse": 0.32488471269607544
+    },
+    {
+      "epoch": 24,
+      "train_standardized_mse": 0.27591258996452384,
+      "validation_standardized_mse": 0.32643988728523254
+    },
+    {
+      "epoch": 25,
+      "train_standardized_mse": 0.2752908711729486,
+      "validation_standardized_mse": 0.32667917013168335
+    },
+    {
+      "epoch": 26,
+      "train_standardized_mse": 0.27504020041110466,
+      "validation_standardized_mse": 0.3172381818294525
+    },
+    {
+      "epoch": 27,
+      "train_standardized_mse": 0.27196173297813514,
+      "validation_standardized_mse": 0.32306230068206787
+    },
+    {
+      "epoch": 28,
+      "train_standardized_mse": 0.2699838138288922,
+      "validation_standardized_mse": 0.32607871294021606
+    },
+    {
+      "epoch": 29,
+      "train_standardized_mse": 0.2686185765889735,
+      "validation_standardized_mse": 0.31952595710754395
+    },
+    {
+      "epoch": 30,
+      "train_standardized_mse": 0.2659804725958631,
+      "validation_standardized_mse": 0.3189140260219574
+    },
+    {
+      "epoch": 31,
+      "train_standardized_mse": 0.26492158199837007,
+      "validation_standardized_mse": 0.31816181540489197
+    },
+    {
+      "epoch": 32,
+      "train_standardized_mse": 0.26406512696758594,
+      "validation_standardized_mse": 0.3179131746292114
+    },
+    {
+      "epoch": 33,
+      "train_standardized_mse": 0.26270927892011753,
+      "validation_standardized_mse": 0.3169305920600891
+    },
+    {
+      "epoch": 34,
+      "train_standardized_mse": 0.26384791529256535,
+      "validation_standardized_mse": 0.3183707594871521
+    },
+    {
+      "epoch": 35,
+      "train_standardized_mse": 0.26063717740033965,
+      "validation_standardized_mse": 0.31693241000175476
+    },
+    {
+      "epoch": 36,
+      "train_standardized_mse": 0.2588658558776955,
+      "validation_standardized_mse": 0.3148539364337921
+    },
+    {
+      "epoch": 37,
+      "train_standardized_mse": 0.25679931480900137,
+      "validation_standardized_mse": 0.3229042887687683
+    },
+    {
+      "epoch": 38,
+      "train_standardized_mse": 0.25725086027500677,
+      "validation_standardized_mse": 0.31920716166496277
+    },
+    {
+      "epoch": 39,
+      "train_standardized_mse": 0.25587943110590666,
+      "validation_standardized_mse": 0.31455060839653015
+    },
+    {
+      "epoch": 40,
+      "train_standardized_mse": 0.2531631160405726,
+      "validation_standardized_mse": 0.3179871141910553
+    },
+    {
+      "epoch": 41,
+      "train_standardized_mse": 0.2524455925997566,
+      "validation_standardized_mse": 0.31914740800857544
+    },
+    {
+      "epoch": 42,
+      "train_standardized_mse": 0.2512316253450182,
+      "validation_standardized_mse": 0.31614255905151367
+    },
+    {
+      "epoch": 43,
+      "train_standardized_mse": 0.24984442412463667,
+      "validation_standardized_mse": 0.3191191852092743
+    },
+    {
+      "epoch": 44,
+      "train_standardized_mse": 0.2505111466046252,
+      "validation_standardized_mse": 0.3228250741958618
+    },
+    {
+      "epoch": 45,
+      "train_standardized_mse": 0.24744336250560736,
+      "validation_standardized_mse": 0.3159909248352051
+    },
+    {
+      "epoch": 46,
+      "train_standardized_mse": 0.24741517624823875,
+      "validation_standardized_mse": 0.32075193524360657
+    },
+    {
+      "epoch": 47,
+      "train_standardized_mse": 0.24704379110164892,
+      "validation_standardized_mse": 0.3186606168746948
+    },
+    {
+      "epoch": 48,
+      "train_standardized_mse": 0.2446096445220748,
+      "validation_standardized_mse": 0.3175555467605591
+    },
+    {
+      "epoch": 49,
+      "train_standardized_mse": 0.2440978019845252,
+      "validation_standardized_mse": 0.3184061348438263
+    },
+    {
+      "epoch": 50,
+      "train_standardized_mse": 0.24264540652823605,
+      "validation_standardized_mse": 0.318845272064209
+    },
+    {
+      "epoch": 51,
+      "train_standardized_mse": 0.24338707421340194,
+      "validation_standardized_mse": 0.3176208436489105
+    },
+    {
+      "epoch": 52,
+      "train_standardized_mse": 0.24193518099442027,
+      "validation_standardized_mse": 0.32635122537612915
+    },
+    {
+      "epoch": 53,
+      "train_standardized_mse": 0.24176740182770623,
+      "validation_standardized_mse": 0.318930983543396
+    },
+    {
+      "epoch": 54,
+      "train_standardized_mse": 0.24059066036168267,
+      "validation_standardized_mse": 0.317220002412796
+    },
+    {
+      "epoch": 55,
+      "train_standardized_mse": 0.24013139985355678,
+      "validation_standardized_mse": 0.32801955938339233
+    },
+    {
+      "epoch": 56,
+      "train_standardized_mse": 0.23957514086969536,
+      "validation_standardized_mse": 0.3302375078201294
+    },
+    {
+      "epoch": 57,
+      "train_standardized_mse": 0.23934046766337227,
+      "validation_standardized_mse": 0.3200235068798065
+    },
+    {
+      "epoch": 58,
+      "train_standardized_mse": 0.23765451947068855,
+      "validation_standardized_mse": 0.32114142179489136
+    },
+    {
+      "epoch": 59,
+      "train_standardized_mse": 0.2372258623246274,
+      "validation_standardized_mse": 0.32064417004585266
+    },
+    {
+      "epoch": 60,
+      "train_standardized_mse": 0.23652086937739178,
+      "validation_standardized_mse": 0.32615864276885986
+    },
+    {
+      "epoch": 61,
+      "train_standardized_mse": 0.23599436645414315,
+      "validation_standardized_mse": 0.3199911415576935
+    },
+    {
+      "epoch": 62,
+      "train_standardized_mse": 0.23442935756608552,
+      "validation_standardized_mse": 0.3259612023830414
+    },
+    {
+      "epoch": 63,
+      "train_standardized_mse": 0.23415891526181715,
+      "validation_standardized_mse": 0.3201415240764618
+    },
+    {
+      "epoch": 64,
+      "train_standardized_mse": 0.23369060063284208,
+      "validation_standardized_mse": 0.32152384519577026
+    },
+    {
+      "epoch": 65,
+      "train_standardized_mse": 0.2331085812422185,
+      "validation_standardized_mse": 0.32752150297164917
+    },
+    {
+      "epoch": 66,
+      "train_standardized_mse": 0.2324981987086776,
+      "validation_standardized_mse": 0.3239918053150177
+    },
+    {
+      "epoch": 67,
+      "train_standardized_mse": 0.23277486332880906,
+      "validation_standardized_mse": 0.32750555872917175
+    },
+    {
+      "epoch": 68,
+      "train_standardized_mse": 0.2316333856847551,
+      "validation_standardized_mse": 0.3214186728000641
+    },
+    {
+      "epoch": 69,
+      "train_standardized_mse": 0.23096009387689478,
+      "validation_standardized_mse": 0.3216956555843353
+    },
+    {
+      "epoch": 70,
+      "train_standardized_mse": 0.23053198433389852,
+      "validation_standardized_mse": 0.3244391977787018
+    },
+    {
+      "epoch": 71,
+      "train_standardized_mse": 0.2290626703524122,
+      "validation_standardized_mse": 0.32512950897216797
+    },
+    {
+      "epoch": 72,
+      "train_standardized_mse": 0.230757647908591,
+      "validation_standardized_mse": 0.3293875455856323
+    },
+    {
+      "epoch": 73,
+      "train_standardized_mse": 0.228066805959527,
+      "validation_standardized_mse": 0.3282276690006256
+    },
+    {
+      "epoch": 74,
+      "train_standardized_mse": 0.22807426191622915,
+      "validation_standardized_mse": 0.32598018646240234
+    },
+    {
+      "epoch": 75,
+      "train_standardized_mse": 0.22828067961861107,
+      "validation_standardized_mse": 0.33572128415107727
+    },
+    {
+      "epoch": 76,
+      "train_standardized_mse": 0.2264496629144631,
+      "validation_standardized_mse": 0.33105525374412537
+    },
+    {
+      "epoch": 77,
+      "train_standardized_mse": 0.22743182147250457,
+      "validation_standardized_mse": 0.3401380479335785
+    },
+    {
+      "epoch": 78,
+      "train_standardized_mse": 0.22771606971235836,
+      "validation_standardized_mse": 0.3230757713317871
+    },
+    {
+      "epoch": 79,
+      "train_standardized_mse": 0.22561215113580615,
+      "validation_standardized_mse": 0.3261623978614807
+    },
+    {
+      "epoch": 80,
+      "train_standardized_mse": 0.22431994511021508,
+      "validation_standardized_mse": 0.3296874165534973
+    },
+    {
+      "epoch": 81,
+      "train_standardized_mse": 0.22352970932044236,
+      "validation_standardized_mse": 0.3248044550418854
+    },
+    {
+      "epoch": 82,
+      "train_standardized_mse": 0.22273784521358464,
+      "validation_standardized_mse": 0.3250028192996979
+    },
+    {
+      "epoch": 83,
+      "train_standardized_mse": 0.2224133206738366,
+      "validation_standardized_mse": 0.32566046714782715
+    },
+    {
+      "epoch": 84,
+      "train_standardized_mse": 0.22285678711981555,
+      "validation_standardized_mse": 0.32668888568878174
+    },
+    {
+      "epoch": 85,
+      "train_standardized_mse": 0.22102721150404486,
+      "validation_standardized_mse": 0.3343408405780792
+    },
+    {
+      "epoch": 86,
+      "train_standardized_mse": 0.2225128684363334,
+      "validation_standardized_mse": 0.3270663619041443
+    },
+    {
+      "epoch": 87,
+      "train_standardized_mse": 0.219473056232228,
+      "validation_standardized_mse": 0.3249686658382416
+    },
+    {
+      "epoch": 88,
+      "train_standardized_mse": 0.21814541964749107,
+      "validation_standardized_mse": 0.33375561237335205
+    },
+    {
+      "epoch": 89,
+      "train_standardized_mse": 0.21791706398811217,
+      "validation_standardized_mse": 0.332520991563797
+    },
+    {
+      "epoch": 90,
+      "train_standardized_mse": 0.2177427718062806,
+      "validation_standardized_mse": 0.3284360468387604
+    },
+    {
+      "epoch": 91,
+      "train_standardized_mse": 0.2177506184850643,
+      "validation_standardized_mse": 0.3326433002948761
+    },
+    {
+      "epoch": 92,
+      "train_standardized_mse": 0.21841726583593032,
+      "validation_standardized_mse": 0.3359425365924835
+    },
+    {
+      "epoch": 93,
+      "train_standardized_mse": 0.2191177450753505,
+      "validation_standardized_mse": 0.33021867275238037
+    },
+    {
+      "epoch": 94,
+      "train_standardized_mse": 0.21756028595313529,
+      "validation_standardized_mse": 0.3284810781478882
+    },
+    {
+      "epoch": 95,
+      "train_standardized_mse": 0.21603287678528454,
+      "validation_standardized_mse": 0.33391129970550537
+    },
+    {
+      "epoch": 96,
+      "train_standardized_mse": 0.2160604545493531,
+      "validation_standardized_mse": 0.33232614398002625
+    },
+    {
+      "epoch": 97,
+      "train_standardized_mse": 0.21466709761058583,
+      "validation_standardized_mse": 0.339429646730423
+    },
+    {
+      "epoch": 98,
+      "train_standardized_mse": 0.21311933838464076,
+      "validation_standardized_mse": 0.3341156542301178
+    },
+    {
+      "epoch": 99,
+      "train_standardized_mse": 0.21200424072399637,
+      "validation_standardized_mse": 0.3316631317138672
+    },
+    {
+      "epoch": 100,
+      "train_standardized_mse": 0.2129703025802288,
+      "validation_standardized_mse": 0.3329075872898102
+    },
+    {
+      "epoch": 101,
+      "train_standardized_mse": 0.21282413944699405,
+      "validation_standardized_mse": 0.33789733052253723
+    },
+    {
+      "epoch": 102,
+      "train_standardized_mse": 0.21271795001294877,
+      "validation_standardized_mse": 0.3340586721897125
+    },
+    {
+      "epoch": 103,
+      "train_standardized_mse": 0.21143983951191497,
+      "validation_standardized_mse": 0.33470529317855835
+    },
+    {
+      "epoch": 104,
+      "train_standardized_mse": 0.21053955506265554,
+      "validation_standardized_mse": 0.3399712145328522
+    },
+    {
+      "epoch": 105,
+      "train_standardized_mse": 0.21088286367506762,
+      "validation_standardized_mse": 0.33921971917152405
+    },
+    {
+      "epoch": 106,
+      "train_standardized_mse": 0.21150670221038892,
+      "validation_standardized_mse": 0.3455725312232971
+    },
+    {
+      "epoch": 107,
+      "train_standardized_mse": 0.2108127126701517,
+      "validation_standardized_mse": 0.33561062812805176
+    },
+    {
+      "epoch": 108,
+      "train_standardized_mse": 0.21036713113582212,
+      "validation_standardized_mse": 0.34229835867881775
+    },
+    {
+      "epoch": 109,
+      "train_standardized_mse": 0.2087751625604879,
+      "validation_standardized_mse": 0.33757340908050537
+    },
+    {
+      "epoch": 110,
+      "train_standardized_mse": 0.20767660553938422,
+      "validation_standardized_mse": 0.3356071412563324
+    },
+    {
+      "epoch": 111,
+      "train_standardized_mse": 0.20836697290925418,
+      "validation_standardized_mse": 0.3471197485923767
+    },
+    {
+      "epoch": 112,
+      "train_standardized_mse": 0.20985493151580586,
+      "validation_standardized_mse": 0.3352590799331665
+    },
+    {
+      "epoch": 113,
+      "train_standardized_mse": 0.2064601296303319,
+      "validation_standardized_mse": 0.34484225511550903
+    },
+    {
+      "epoch": 114,
+      "train_standardized_mse": 0.2061265817070319,
+      "validation_standardized_mse": 0.33658626675605774
+    },
+    {
+      "epoch": 115,
+      "train_standardized_mse": 0.2060090692799076,
+      "validation_standardized_mse": 0.33926546573638916
+    },
+    {
+      "epoch": 116,
+      "train_standardized_mse": 0.20544650482586008,
+      "validation_standardized_mse": 0.33923518657684326
+    },
+    {
+      "epoch": 117,
+      "train_standardized_mse": 0.20404679625252492,
+      "validation_standardized_mse": 0.34389200806617737
+    },
+    {
+      "epoch": 118,
+      "train_standardized_mse": 0.20341053186288846,
+      "validation_standardized_mse": 0.336174875497818
+    },
+    {
+      "epoch": 119,
+      "train_standardized_mse": 0.203507881850199,
+      "validation_standardized_mse": 0.34791120886802673
+    },
+    {
+      "epoch": 120,
+      "train_standardized_mse": 0.2032019315397038,
+      "validation_standardized_mse": 0.3461744487285614
+    },
+    {
+      "epoch": 121,
+      "train_standardized_mse": 0.2027144866636376,
+      "validation_standardized_mse": 0.3426492214202881
+    },
+    {
+      "epoch": 122,
+      "train_standardized_mse": 0.20215154093464996,
+      "validation_standardized_mse": 0.348100870847702
+    },
+    {
+      "epoch": 123,
+      "train_standardized_mse": 0.20081084970555274,
+      "validation_standardized_mse": 0.35025501251220703
+    },
+    {
+      "epoch": 124,
+      "train_standardized_mse": 0.2018242281441595,
+      "validation_standardized_mse": 0.3500312566757202
+    },
+    {
+      "epoch": 125,
+      "train_standardized_mse": 0.2010739250705133,
+      "validation_standardized_mse": 0.35225793719291687
+    },
+    {
+      "epoch": 126,
+      "train_standardized_mse": 0.2014947847018834,
+      "validation_standardized_mse": 0.34742259979248047
+    },
+    {
+      "epoch": 127,
+      "train_standardized_mse": 0.20308264770538978,
+      "validation_standardized_mse": 0.34484946727752686
+    },
+    {
+      "epoch": 128,
+      "train_standardized_mse": 0.20240662916033875,
+      "validation_standardized_mse": 0.3483792543411255
+    },
+    {
+      "epoch": 129,
+      "train_standardized_mse": 0.1992582792355344,
+      "validation_standardized_mse": 0.3475132882595062
+    },
+    {
+      "epoch": 130,
+      "train_standardized_mse": 0.199348367760384,
+      "validation_standardized_mse": 0.35313814878463745
+    },
+    {
+      "epoch": 131,
+      "train_standardized_mse": 0.20075240830580393,
+      "validation_standardized_mse": 0.354425847530365
+    },
+    {
+      "epoch": 132,
+      "train_standardized_mse": 0.19874664114581214,
+      "validation_standardized_mse": 0.34311532974243164
+    },
+    {
+      "epoch": 133,
+      "train_standardized_mse": 0.19931345336577472,
+      "validation_standardized_mse": 0.3446001708507538
+    },
+    {
+      "epoch": 134,
+      "train_standardized_mse": 0.19978410940544278,
+      "validation_standardized_mse": 0.352875679731369
+    },
+    {
+      "epoch": 135,
+      "train_standardized_mse": 0.19822522033663356,
+      "validation_standardized_mse": 0.3607948422431946
+    },
+    {
+      "epoch": 136,
+      "train_standardized_mse": 0.19824211813655554,
+      "validation_standardized_mse": 0.3551708161830902
+    },
+    {
+      "epoch": 137,
+      "train_standardized_mse": 0.1975583082125857,
+      "validation_standardized_mse": 0.34893110394477844
+    },
+    {
+      "epoch": 138,
+      "train_standardized_mse": 0.19581601913847954,
+      "validation_standardized_mse": 0.35967913269996643
+    },
+    {
+      "epoch": 139,
+      "train_standardized_mse": 0.19667493981473586,
+      "validation_standardized_mse": 0.3542322814464569
+    },
+    {
+      "epoch": 140,
+      "train_standardized_mse": 0.19703190782490898,
+      "validation_standardized_mse": 0.3564184904098511
+    },
+    {
+      "epoch": 141,
+      "train_standardized_mse": 0.19610856004010618,
+      "validation_standardized_mse": 0.3518919348716736
+    },
+    {
+      "epoch": 142,
+      "train_standardized_mse": 0.1949675796273487,
+      "validation_standardized_mse": 0.3567015826702118
+    },
+    {
+      "epoch": 143,
+      "train_standardized_mse": 0.194300241096347,
+      "validation_standardized_mse": 0.3497367203235626
+    },
+    {
+      "epoch": 144,
+      "train_standardized_mse": 0.19413342968700759,
+      "validation_standardized_mse": 0.35260388255119324
+    },
+    {
+      "epoch": 145,
+      "train_standardized_mse": 0.19478378401083105,
+      "validation_standardized_mse": 0.35609570145606995
+    },
+    {
+      "epoch": 146,
+      "train_standardized_mse": 0.19552024821050806,
+      "validation_standardized_mse": 0.35039669275283813
+    },
+    {
+      "epoch": 147,
+      "train_standardized_mse": 0.1933549859554939,
+      "validation_standardized_mse": 0.355258047580719
+    },
+    {
+      "epoch": 148,
+      "train_standardized_mse": 0.19308704889677708,
+      "validation_standardized_mse": 0.3565932810306549
+    },
+    {
+      "epoch": 149,
+      "train_standardized_mse": 0.1927971202953189,
+      "validation_standardized_mse": 0.3539862036705017
+    },
+    {
+      "epoch": 150,
+      "train_standardized_mse": 0.19146735021491457,
+      "validation_standardized_mse": 0.35688233375549316
+    }
+  ],
+  "model_sha256": "44482d342dd475b91804c9b7012211cbc25644fe700ab100aa06db19e6eab31f",
+  "model_bytes": 544416,
+  "parameter_count": 16652,
+  "export_max_abs_error_vs_torch": 1.0598848184661946e-06,
+  "numpy_inference_ms": {
+    "median": 0.24850000045262277,
+    "p95": 0.2567538438597694,
+    "uno_q_measured": false
+  },
+  "elapsed_s": 4.68475466700329,
+  "not_proven": [
+    "actual generator accuracy",
+    "UNO Q resource usage",
+    "failure cause",
+    "RUL",
+    "unseen generator generalization"
+  ]
+}

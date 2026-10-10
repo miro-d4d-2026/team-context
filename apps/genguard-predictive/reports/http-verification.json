@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "health endpoint identifies exported model",
+      "passed": true
+    },
+    {
+      "name": "offline static page served",
+      "passed": true
+    },
+    {
+      "name": "actual evaluation report served",
+      "passed": true
+    },
+    {
+      "name": "180-second history yields four real forecasts",
+      "passed": true
+    },
+    {
+      "name": "causal JSON streaming batch 91",
+      "passed": true
+    },
+    {
+      "name": "causal JSON streaming batch 171",
+      "passed": true
+    },
+    {
+      "name": "continuous deterioration produces learned warning",
+      "passed": true
+    },
+    {
+      "name": "recording persists exact input count",
+      "passed": true
+    },
+    {
+      "name": "NaN returns 400 and does not mutate stream",
+      "passed": true
+    },
+    {
+      "name": "missing run identity returns 400",
+      "passed": true
+    },
+    {
+      "name": "stale external stream suppresses predictions",
+      "passed": true
+    },
+    {
+      "name": "reset clears previous stream history",
+      "passed": true
+    },
+    {
+      "name": "no actual stop ETA claimed",
+      "passed": true
+    }
+  ],
+  "scope": "Temporary local HTTP server; synthetic generator stream. No physical generator or UNO Q tested."
+}

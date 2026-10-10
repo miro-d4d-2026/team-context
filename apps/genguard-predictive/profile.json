@@ -1,0 +1,31 @@
+{
+  "profile_id": "army-10kw-208v-predictive-demo-v1",
+  "rated_kw": 10,
+  "voltage_ll_v": 208,
+  "rated_hz": 60,
+  "rated_rpm": 1800,
+  "phase_connection": "3상 4선 · 선간 208V",
+  "scope": "육군 구매요구 참고 모의 발전기. 실물 특정 납품 제품의 설정을 인증한 프로필이 아님.",
+  "alarm_hold_s": 10,
+  "forecast_hold_s": 10,
+  "recovery_hold_s": 20,
+  "max_gap_s": 5,
+  "rules": [
+    {"field":"coolant_c","direction":"high","inspection":92,"urgent":100,"source":"92°C: 시연 정책. 100°C: 전달된 군 요구 참고 95~100°C 중 시연 선택","guidance":"냉각수량·누수·라디에이터 및 통풍 상태를 확인하세요."},
+    {"field":"oil_pressure_kgf_cm2","direction":"low","inspection":2.0,"urgent":0.6,"source":"2.0: 시연 정책. 0.6 kgf/cm²: 전달된 군 저유압 보호 참고","guidance":"윤활유량·누유·필터 및 압력 센서 상태를 확인하세요."},
+    {"field":"voltage_v","direction":"low","inspection":197.6,"source":"208V의 -5%, 시연 정책","guidance":"부하 변화·결선·전압 측정 상태와 전압 조정계통을 확인하세요."},
+    {"field":"voltage_v","direction":"high","inspection":218.4,"source":"208V의 +5%, 시연 정책","guidance":"출력 전압과 부하·전압 조정계통을 확인하세요."},
+    {"field":"frequency_hz","direction":"low","inspection":57,"source":"시연 정책","guidance":"부하 변화·회전수와 연료 공급 상태를 함께 확인하세요."},
+    {"field":"frequency_hz","direction":"high","inspection":63,"source":"시연 정책","guidance":"회전수·조속계통과 주파수 계측 상태를 확인하세요."},
+    {"field":"engine_rpm","direction":"high","inspection":1890,"urgent":1980,"source":"1890: 시연 정책. 1980: 정격1800의110% 보호 참고","guidance":"회전수·부하 변동 및 조속계통 상태를 확인하세요."},
+    {"field":"load_pct","direction":"high","inspection":100,"urgent":110,"source":"100: 시연 정책. 110%: 군 과부하 보호 참고","guidance":"연결 부하와 상별 부하 편중을 확인하세요."},
+    {"field":"battery_v","direction":"low","inspection":12.4,"source":"운전 중 12V 계통 모의 충전저하 점검값","guidance":"배터리 단자·배선과 충전계통 상태를 확인하세요."},
+    {"field":"fuel_pct","direction":"low","inspection":20,"source":"시연 잔량 정책","guidance":"연료 잔량·누유 및 연료 소비 조건을 확인하세요."},
+    {"field":"fuel_pressure_bar","direction":"low","inspection":1.3,"source":"가상 연료계통 시연 정책; 특정 장비 제조사 기준 아님","guidance":"연료량·공급 배관·필터와 압력 계측 상태를 확인하세요."}
+  ],
+  "sources": [
+    {"type":"reference_provenance","path":"source-notes.txt","meaning":"제공된 requirements audit와 README 기준. 실제 통신·보호 신호 미연결."},
+    {"type":"design_assumption","meaning":"온도·압력 정상 관계, 열화 속도, 경고 유지·복귀 시간 및 시연 점검 임계값은 개발 가정."}
+  ],
+  "model_state_note": "통계적 정상 유사도는 안전 인증이 아님. 실제 제어기 경보와 앱 추론을 구분함."
+}

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GenGuard AI — 실행과 모델 설명</title>
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:#20364b;background:#f3f6f8;line-height:1.7}body{max-width:980px;margin:36px auto;padding:0 24px 64px}header,section{background:white;padding:28px 34px;border:1px solid #dce5ec;border-radius:16px;margin:18px 0}header{border-top:5px solid #147f75}h1{margin:.25em 0;font-size:32px;letter-spacing:-1px}h2{font-size:22px;margin:0 0 12px}h3{font-size:17px;margin:24px 0 8px}p{margin:10px 0}small,.muted{color:#61758a}a{color:#087d72}code,pre{font-family:ui-monospace,Menlo,monospace;font-size:13px}pre{background:#102f3a;color:#ecf6f5;border-radius:10px;padding:18px;overflow:auto;line-height:1.65}code{background:#edf3f5;padding:2px 5px;border-radius:4px}pre code{background:none;padding:0}.tag{font-size:12px;font-weight:700;color:#12796f;letter-spacing:1px}.flow{padding:18px;background:#eef8f4;border-left:3px solid #198575;border-radius:6px}.note{padding:14px 18px;background:#fff7e9;border:1px solid #eddbb5;border-radius:8px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:10px 9px;text-align:left;border-bottom:1px solid #e0e8ed;vertical-align:top}th{background:#f1f6f8}ol,ul{padding-left:23px}.table{overflow:auto}@media(max-width:600px){body{padding:0 12px}header,section{padding:22px 18px}h1{font-size:27px}}
+</style>
+<header><span class="tag">GENGUARD · PREDICTIVE AI DEMO</span><h1>연속 계측을 읽고, 다음 변화를 예측합니다.</h1>
+<p>군 10 kW 구매요구를 참고한 <b>208 V · 60 Hz · 1,800 RPM 모의 운전</b>용 학습 모델과 실행 앱입니다. 정상 운전부터 점진적 악화·회복까지 2초마다 입력하고, 최근 3분의 이력으로 다음 30·60·120·180초 값을 예측합니다.</p>
+<p><a href="http://127.0.0.1:8768/">실행 중인 시연 화면 열기 ↗</a> · <a href="source-notes.txt">사양·데이터 출처</a> · <a href="reports/evaluation.json">예측 오차 보고서</a> · <a href="reports/operational-evaluation.json">시나리오 운용 평가</a></p>
+<small>2026-10-11 작성 · 실제 학습된 가중치 포함 · 발전기 계측은 합성 데이터 · 진동은 휴대폰 자극 실측 기록</small></header>
+
+<section><h2>바로 실행하기</h2>
+<ol><li>압축을 풀고 이 폴더에서 터미널을 엽니다. Python 3와 NumPy가 필요합니다.</li><li>아래 명령을 실행하고 브라우저에서 <code>http://127.0.0.1:8768/</code>를 엽니다.</li><li><b>냉각 성능 저하 → 재생 → 30×</b>로 시작합니다. 처음 3분(30배속에서 약 6초)은 이력 수집 구간입니다. 이후 정상 → 점검 → 시연 긴급 기준 도달까지 관찰합니다.</li></ol>
+<pre>python3 -m pip install -r requirements.txt
+python3 server.py --port 8768</pre>
+<p>현재 컴퓨터에는 필요한 패키지가 설치되어 있습니다. Mac에서는 <code>Start.command</code>도 사용할 수 있습니다. 종료는 실행한 터미널에서 Ctrl+C입니다. 포트가 사용 중이면 <code>--port 8769</code>처럼 다른 번호를 지정하세요.</p>
+<p>시나리오 선택은 입력 데이터 발생기를 바꿉니다. AI에 시나리오 이름·이상 시작 시각·정답 상태를 보내지 않습니다. 배속은 재생 속도만 바꾸며 모든 2초 표본을 순서대로 처리합니다.</p>
+<p>9개 시나리오: 정상 안정 운전, 정상 부하 변화, 냉각 성능 저하, 유압 저하, 전압 하락, 상별 전류 불균형, 충전 전압 저하, 연료 공급 압력 저하, 점검 후 냉각 회복.</p>
+</section>
+
+<section><h2>어떤 부분을 AI가 판단하나요?</h2>
+<div class="flow">계측 수신 → 품질·운전 단계 확인 → 최근 180초 이력 → 정상 관계 이탈 감지 + 미래 값 예측 → 지속성·기준 도달 확인 → 점검 안내</div>
+<div class="table"><table><tr><th>구성</th><th>실제로 하는 일</th><th>학습 여부</th></tr>
+<tr><td>조건별 정상 모델</td><td>부하·외기온·부하 변화 이력에 따른 예상 수온·유압 등과 현재값을 비교합니다.</td><td>정상/정상 부하 변화 데이터로 회귀 학습</td></tr>
+<tr><td>시계열 예측 모델</td><td>13개 입력의 현재값과 10/30/60/120/180초 전 대비 변화로 11개 항목의 미래값을 출력합니다.</td><td>78 → 96 → 64 → 44 MLP, 16,652개 파라미터</td></tr>
+<tr><td>경보 정책</td><td>이상 이탈·미래 기준 도달이 10초 지속되면 점검, 현재 긴급 기준 도달은 즉시 긴급 표시, 회복 후 20초 안정 확인.</td><td>설정 규칙. 정상/점검/긴급 자체를 지도학습한 분류기는 아님</td></tr>
+<tr><td>설명·점검 후보</td><td>어떤 항목이 달라졌는지, 무엇을 확인할지 근거에 연결된 문구를 제시합니다.</td><td>검토 가능한 템플릿. LLM 생성·부품 고장 확정 진단 아님</td></tr>
+<tr><td>진동 패턴 모델</td><td>정지 자극 / 기본 연속 / 강한 연속 / 간헐 자극을 구분합니다. 낯선 패턴은 미확인 처리합니다.</td><td>실측 RMS·진폭 변동 특징으로 중심점 분류 학습</td></tr></table></div>
+<p>추론 가중치는 고정되어 있습니다. 새 값이 들어올 때마다 이력과 예측을 갱신하고 기록을 누적합니다. 모델을 다시 학습하려면 운전 기록을 검토·라벨링하고 별도 검증을 거쳐야 합니다. <b>악화된 데이터를 자동으로 정상 학습에 섞지 않습니다.</b></p>
+<p>한 번 튄 값은 이상 후보 점수에 반영하지만 곧바로 발전기 고장으로 단정하지 않습니다. 누락·역순·5초 이상 공백·장비 프로필 불일치·학습 조건 밖에서는 예측을 보류합니다. 유효한 다른 채널의 현재 긴급 기준 경보는 유지합니다.</p>
+</section>
+
+<section><h2>예상 시간의 의미</h2>
+<p>화면의 예상 시간은 <b>학습한 미래 계측값이 profile.json의 시연 기준에 도달할 때까지의 시간</b>입니다. 예측 지점 사이를 보간하며 180초를 넘어서 외삽하지 않습니다. 이미 기준에 도달했다면 현재 도달 사실을 표시합니다.</p>
+<p>예측 범위 안에 도달점이 없으면 시간을 만들지 않습니다. <code>stop_eta_s</code>와 <code>failure_probability</code>는 항상 null입니다. 실제 정지시점·잔여수명·고장확률을 학습한 자료가 없기 때문입니다.</p>
+<p>그림의 음영은 별도 보정 데이터에서 구한 항목·시간별 절대 오차의 95백분위수를 적용한 구간입니다. 모든 미래 경로가 95% 확률로 들어온다는 보장이 아닙니다. 갑작스러운 부하 조작이나 정비는 발생 전 미리 알 수 없습니다.</p>
+</section>
+
+<section><h2>학습 데이터와 확인된 성능</h2>
+<p>운전 한 회 전체를 기준으로 학습 108회 / 검증 27회 / 오차 보정 27회 / 시험 36회로 분리했습니다. 한 회는 20분, 표본 주기는 2초입니다. 겹치는 이력 구간이 학습·시험에 나뉘어 섞이지 않습니다. 150 epoch 중 검증 손실이 가장 낮은 39 epoch를 선택했습니다.</p>
+<p>아래는 별도 시험 36회, 3,060개 이력 구간에서 <b>120초 뒤 예측의 평균 절대 오차</b>입니다. 모두 같은 합성 생성식 계열의 시험이며 실제 발전기 성능을 뜻하지 않습니다.</p>
+<div class="table"><table><tr><th>항목</th><th>학습 모델</th><th>현재값 유지</th><th>최근 30초 직선 연장</th></tr>
+<tr><td>냉각수 온도 (°C)</td><td>0.653</td><td>1.081</td><td>0.796</td></tr>
+<tr><td>윤활유압 (kgf/cm²)</td><td>0.0373</td><td>0.0556</td><td>0.0481</td></tr>
+<tr><td>선간 전압 (V)</td><td>0.282</td><td>0.367</td><td>0.486</td></tr>
+<tr><td>연료 압력 (bar)</td><td>0.0230</td><td>0.0387</td><td>0.0546</td></tr></table></div>
+<p>44개 항목×예측시간 조합 중 43개는 현재값 유지보다 MAE가 작았습니다. <b>배터리 180초 예측은 모델 0.0721 V, 현재값 유지 0.0641 V로 오히려 나빴습니다.</b> 전체 수치는 모델 검증 화면과 <code>reports/evaluation.json</code>에 있습니다.</p>
+<p>시험 운전의 정상·정상 부하 변화 8회에서는 점검/긴급 오경보가 없었고, 열화·회복 28회에서는 이상 시작 이후 점검이 발생했습니다. 최초 지속 기준 도달 예측 27건 중 24건이 그 뒤 180초 안에 실제 시연 기준에 도달했습니다. 냉각·연료 각 1건은 운전 종료까지 미도달, 유압 1건은 190초 후 도달했습니다. 경고 선행시간은 정상 모델 이탈 감지도 포함하므로 예측시간과 구분해야 합니다.</p>
+<p>휴대폰 진동은 반복 기록의 32개 구간으로 학습하고 16개 구간으로 미확인 경계를 정했습니다. 별도 무작위 순서 기록의 48개 구간에서 RMS+진폭 변동 특징이 48/48, RMS만 사용한 모델이 36/48을 구분했습니다. <b>시험 기록은 1회이며, 48번의 독립 실험도 발전기 고장 정확도도 아닙니다.</b></p>
+<p>가중치 JSON은 약 544 KB입니다. 현재 개발 컴퓨터의 NumPy 추론 중앙값은 약 0.249 ms였습니다. Arduino UNO Q에서 시간·메모리를 실측한 결과는 아직 없습니다.</p>
+</section>
+
+<section><h2>계측 입력 연결</h2>
+<p>앱은 <code>POST /api/telemetry</code>에서 <code>{"sample": {...}}</code> 또는 <code>{"samples": [{...}, ...]}</code>를 받습니다. 한 요청당 1~100개, 시각 오름차순으로 보냅니다. 새 운전마다 run_id를 바꾸고, 같은 운전에서 단조 증가하는 초 단위 시각을 사용하세요.</p>
+<pre>{
+  "sample": {
+    "run_id": "demo-run-001", "timestamp_s": 0,
+    "profile_id": "army-10kw-208v-predictive-demo-v1",
+    "phase": "running", "data_source": "simulated_adapter",
+    "coolant_c": 79.0, "oil_pressure_kgf_cm2": 3.2,
+    "voltage_v": 208.0, "frequency_hz": 60.0, "engine_rpm": 1800,
+    "current_a": 21.5, "current_b": 21.4, "current_c": 21.6,
+    "battery_v": 13.8, "fuel_pct": 75, "fuel_pressure_bar": 2.4,
+    "load_pct": 62, "ambient_c": 25
+  }
+}</pre>
+<p>이 예시는 한 표본의 형식입니다. 2초 간격의 연속 표본이 180초 이상 들어와야 예측합니다. 누락은 null로 표시하고 값을 만들어 채우지 마세요. 이 버전은 13개 입력 전체가 있어야 AI 예측을 진행합니다. 학습 부하 조건은 20~92%, 외기온은 11~37°C이며 실제 장비로의 일반화 범위를 의미하지 않습니다.</p>
+<p><b>단위:</b> 수온·외기온 °C, 윤활유압 kgf/cm², 출력 선간전압·배터리 V, 주파수 Hz, RPM, 상전류 A, 부하율·잔량 %, 연료압력 bar. 0.6 kgf/cm²를 0.6 bar로 바꾸면 안 됩니다. 모의 RPM은 주파수×30으로 생성되어 독립적인 증거가 아닙니다.</p>
+<p><b>수신 결과:</b> <code>GET /api/state</code>의 analysis에 상태, 이상 점수, 관측/예상값, 미래값, 기준 도달 후보, 점검 문구가 들어갑니다. 장비 통신 규격별 Modbus/CAN/시리얼 변환은 이 JSON 앞에 연결해야 합니다. 제어기 통신이 이미 검증됐다는 뜻은 아닙니다.</p>
+<p><b>누적 기록:</b> 서버의 <code>recordings/</code>에 원본 계측과 분석을 별도 JSONL로 저장합니다. 공통 record_id로 연결하고, 예측을 정답 라벨로 섞지 않습니다. 기록은 자동 재학습에 사용되지 않습니다. 20 MB 단위로 파일을 나누며 자동 삭제는 하지 않으므로 장기 운전 시 저장공간을 관리하세요.</p>
+<p>습도·표면 온도·실제 보호장치 신호는 이번 학습 입력에 포함되지 않았습니다. 연료압력·연료잔량·부하율은 추가 계측을 가정한 시연 항목이며 군 필수 계기 항목이라고 단정하지 않습니다.</p>
+</section>
+
+<section><h2>기존 진동 센서와 연결</h2>
+<p>진동 센서 화면에서 기본값은 <b>실측 기록 재생</b>입니다. 발전기 모의 열화와 별도로 녹화된 휴대폰 진동 기록이며, 둘이 같은 장비에서 동시에 측정됐다는 의미가 아닙니다.</p>
+<p>이미 구현된 센서 수집 서버가 <code>http://127.0.0.1:8765/api/samples?after=...</code>를 제공하면 실시간 입력을 선택할 수 있습니다. 연결 버튼에서 포트와 센서 부착·축·단위 조건을 확인합니다. 서버를 자동으로 시작하거나 기존 펌웨어를 변경하지는 않습니다.</p>
+<pre>{"samples":[
+  {"id":1,"seq":1,"elapsed_s":0.0048,"ax_g":0.01,"ay_g":0.00,"az_g":1.00}
+],"status":{"connected":true,"fresh":true,"meta":{"accel_range_g":2}}}</pre>
+<p>위는 형식 예시입니다. 약 209 Hz의 실제 가속도 표본이 2초 이상 필요합니다. g 단위의 3축 가속도에서 축별 평균을 제거해 벡터 RMS와 100 ms 진폭 변동을 산출합니다. 짧은 기록·표본 공백·포화·미수신·부착 조건 미확인에서는 판정을 보류합니다. full-scale이 없으면 포화 검증을 못했다는 품질 메모를 남깁니다.</p>
+<p>현재 학습 라벨의 ‘강한 연속 진동’은 점점 커지는 고장 진동이 아닙니다. 증가 추이는 별도의 12초 관측 규칙으로 표시합니다. 베어링 결함·축 정렬 불량처럼 실제 고장 종류를 학습하려면 해당 발전기의 실측 라벨 데이터가 추가로 필요합니다.</p>
+</section>
+
+<section><h2>Arduino UNO Q 적용과 재학습</h2>
+<p>이 실행본은 <b>UNO Q의 Linux 측에서 Python + NumPy로 추론하는 구성</b>입니다. MCU용 펌웨어 또는 TFLite Micro 바이너리는 아닙니다. 폴더를 복사하고 가상환경에서 NumPy를 설치한 뒤 같은 server.py 또는 replay.py를 실행하는 형태로 연결합니다. 보드에서는 아직 실행 검증하지 않았습니다.</p>
+<pre>python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
+python3 server.py --port 8768</pre>
+<p>서버는 해당 장치의 127.0.0.1에만 열립니다. PC 브라우저에서 보려면 장치 계정과 주소를 사용해 SSH 터널을 열 수 있습니다: <code>ssh -L 8768:127.0.0.1:8768 사용자@보드주소</code>. 사용 중인 포트와 장치 접속 환경에 맞춰 변경하세요.</p>
+<h3>화면 없이 연속 추론</h3><pre>python3 replay.py --scenario cooling_decline --events-only
+python3 replay.py --input data/telemetry-test.jsonl.gz --output result.jsonl</pre>
+<h3>동일 합성 데이터 실험을 다시 학습</h3><pre>python3 -m pip install -r requirements-training.txt
+python3 train.py
+python3 vibration.py --train
+python3 verify_scenarios.py
+python3 -m unittest discover -s tests -v</pre>
+<p>학습은 개발 PC에서 하고 생성된 models/ 파일을 보드로 옮기는 구성을 권합니다. <code>train.py</code>는 제공된 합성 시나리오를 재생성하며 models/·data/·reports/의 해당 결과를 덮어씁니다. 중요한 실험 결과는 먼저 복사하세요. 운전 기록을 넣으면 자동으로 올바른 모델이 만들어지는 범용 학습기는 아닙니다.</p>
+<p>실측 모델로 전환할 때는 정상/부하 변화/고장/센서 오류를 구분하고, 부착 위치·샘플링·단위·실제 경보 시각·정비 결과를 함께 기록해야 합니다. 운전 한 회 또는 장비 단위로 시험 데이터를 분리하고, 정상 오경보·고장 탐지 지연·미래 예측 오차를 다시 확인한 뒤 가중치를 교체하세요.</p>
+</section>
+
+<section><h2>파일 구성</h2><div class="table"><table>
+<tr><th>파일</th><th>역할</th></tr><tr><td>models/telemetry.json</td><td>학습된 예측 MLP, 정상 관계 모델, 정규화·오차 보정 값</td></tr>
+<tr><td>models/vibration.json</td><td>실측 휴대폰 진동 패턴 분류 모델</td></tr>
+<tr><td>contract.py · profile.json</td><td>입력 단위·이력 특징·시연 경보 정책</td></tr>
+<tr><td>simulator.py · train.py</td><td>연속 모의 운전 데이터 생성·학습·평가</td></tr>
+<tr><td>runtime.py · vibration.py</td><td>계측 예측·지속성 판단 / 진동 특징·패턴 판정</td></tr>
+<tr><td>server.py · static/</td><td>로컬 실행 앱과 JSON 연동 API</td></tr>
+<tr><td>recorder.py · recordings/</td><td>추가 입력·분석의 로컬 기록, 자동 재학습 없음</td></tr>
+<tr><td>data/ · reports/ · tests/</td><td>분리된 학습 자료, 실제 평가 수치, 회귀 검증</td></tr>
+<tr><td>replay.py · verify_scenarios.py</td><td>배치 추론과 별도 시험 시나리오 운용 평가</td></tr></table></div>
+<p class="note">이 결과로 확인한 것은 <b>합성 운전의 연속 추이 예측과 휴대폰 진동 패턴 구분이 실행된다는 것</b>입니다. 실제 SMG-10K 고장 검출률, 모든 발전기에서의 공통 안전 기준, 실제 정지까지 남은 시간은 검증하지 않았습니다. 실제 발전기의 안전장치에 연결하거나 정지 명령을 보내지 않습니다.</p>
+</section></html>

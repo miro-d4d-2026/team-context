@@ -1,0 +1,132 @@
+{
+  "schema_version": "genguard.phone-pattern/1",
+  "model_id": "phone-pattern-repeat12-cal3-v1",
+  "algorithm": "standardized-nearest-class-centroid",
+  "feature_definition": "axis-demean-vector-rms__100ms-bin-demean-cv-v1",
+  "scope": "Commanded phone vibration stimulus on recorded fixture; never generator faults",
+  "training": {
+    "dataset": "repeat",
+    "cycles": [
+      1,
+      2
+    ],
+    "windows": 32,
+    "calibration_cycles": [
+      3
+    ],
+    "calibration_windows": 16,
+    "fit_and_calibration_recordings": 1,
+    "growing_pattern_examples": 0
+  },
+  "signal_quality_policy": {
+    "window_s": 2,
+    "minimum_window_span_s": 1.85,
+    "max_gap_ms": 10,
+    "sample_rate_hz": [
+      180,
+      240
+    ],
+    "rate_bounds_source": "engineering guard around recorded ~209Hz; not learned safety limits"
+  },
+  "models": {
+    "rms_only": {
+      "features": [
+        "log_rms"
+      ],
+      "mean": [
+        -3.5587403939820828
+      ],
+      "std": [
+        1.7114496860110442
+      ],
+      "classes": [
+        "idle",
+        "baseline",
+        "increased",
+        "intermittent"
+      ],
+      "centroids": [
+        [
+          -1.5873925921593226
+        ],
+        [
+          0.4176279316753051
+        ],
+        [
+          1.118630084016836
+        ],
+        [
+          0.051134576467181045
+        ]
+      ],
+      "acceptance_radius": 0.691021750236722,
+      "rejection_calibration": {
+        "method": "1.25 * max(true_class_distance in fit + repeat calibration)",
+        "fit_max_distance": 0.5528174001893775,
+        "calibration_max_distance": 0.24409751550705883,
+        "engineering_margin": 1.25,
+        "calibration_windows": 16,
+        "probability_calibrated": false,
+        "random_test_used": false
+      }
+    },
+    "rms_and_pattern": {
+      "features": [
+        "log_rms",
+        "envelope_cv"
+      ],
+      "mean": [
+        -3.5587403939820828,
+        0.426309647046392
+      ],
+      "std": [
+        1.7114496860110442,
+        0.6257367800034453
+      ],
+      "classes": [
+        "idle",
+        "baseline",
+        "increased",
+        "intermittent"
+      ],
+      "centroids": [
+        [
+          -1.5873925921593226,
+          -0.4016410671879638
+        ],
+        [
+          0.4176279316753051,
+          -0.6539206347456141
+        ],
+        [
+          1.118630084016836,
+          -0.6581115333409963
+        ],
+        [
+          0.051134576467181045,
+          1.713673235274574
+        ]
+      ],
+      "acceptance_radius": 0.8712867533105626,
+      "rejection_calibration": {
+        "method": "1.25 * max(true_class_distance in fit + repeat calibration)",
+        "fit_max_distance": 0.69702940264845,
+        "calibration_max_distance": 0.403385651229864,
+        "engineering_margin": 1.25,
+        "calibration_windows": 16,
+        "probability_calibrated": false,
+        "random_test_used": false
+      }
+    }
+  },
+  "provenance": {
+    "repeat_features_sha256": "ecf90403d3df1b3d48e5058be1a493a2db917b1d84858a6e311d969ff5882c38"
+  },
+  "limitations": [
+    "Command mode is label, not independently measured actuator state.",
+    "One recording split by cycles is not independent-installation calibration.",
+    "Unknown rejection is a small-sample distance guard, not reliable novelty coverage.",
+    "RMS is axis-demeaned vector RMS in g; contract RMS equals vector RMS / sqrt(3).",
+    "No rising-pattern training, generator diagnosis, failure probability or RUL."
+  ]
+}
