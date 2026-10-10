@@ -1,0 +1,411 @@
+{
+  "schema_version": "genguard.measured-alarm-summary/1",
+  "strict_original_verdict": "failed_declared_synthetic_tests",
+  "not_a_replacement_acceptance_protocol": true,
+  "meaning": "Separates measured pointwise candidates from already-configured three-window alerts. Original failed strict test is preserved; no test-based tuning.",
+  "normal": {
+    "runs": 12,
+    "windows": 5400,
+    "change_windows": 2,
+    "persistent_alert_windows": 0,
+    "runs_with_open_alert": 0,
+    "unknown_windows": 0
+  },
+  "normal_isolated_observations": [
+    {
+      "session_id": "test-normal-02",
+      "t_s": 34.0,
+      "score": 2.0411147908124176,
+      "threshold": 2.0,
+      "persistent_change": false
+    },
+    {
+      "session_id": "test-normal-06",
+      "t_s": 740.0,
+      "score": 2.0021826285842352,
+      "threshold": 2.0,
+      "persistent_change": false
+    }
+  ],
+  "injections": [
+    {
+      "condition": "vibration",
+      "runs": 4,
+      "detected_runs": 4,
+      "delay_min_s": 4.0,
+      "delay_max_s": 4.0,
+      "pre_injection_pointwise_changes": 0,
+      "pre_injection_persistent_windows": 0,
+      "strict_protocol_passed_runs": 4,
+      "evidence_checks": [
+        {
+          "session_id": "test-vibration-01",
+          "expected_fields": [
+            "vibration_rms_g"
+          ],
+          "first_evidence_fields": [
+            "vibration_rms_g",
+            "oil_bar",
+            "engine_rpm"
+          ],
+          "all_injected_fields_in_top3": true
+        },
+        {
+          "session_id": "test-vibration-02",
+          "expected_fields": [
+            "vibration_rms_g"
+          ],
+          "first_evidence_fields": [
+            "vibration_rms_g",
+            "engine_rpm",
+            "voltage_v"
+          ],
+          "all_injected_fields_in_top3": true
+        },
+        {
+          "session_id": "test-vibration-03",
+          "expected_fields": [
+            "vibration_rms_g"
+          ],
+          "first_evidence_fields": [
+            "vibration_rms_g",
+            "voltage_v",
+            "coolant_c"
+          ],
+          "all_injected_fields_in_top3": true
+        },
+        {
+          "session_id": "test-vibration-04",
+          "expected_fields": [
+            "vibration_rms_g"
+          ],
+          "first_evidence_fields": [
+            "vibration_rms_g",
+            "engine_rpm",
+            "voltage_v"
+          ],
+          "all_injected_fields_in_top3": true
+        }
+      ]
+    },
+    {
+      "condition": "intermittent",
+      "runs": 4,
+      "detected_runs": 4,
+      "delay_min_s": 4.0,
+      "delay_max_s": 4.0,
+      "pre_injection_pointwise_changes": 0,
+      "pre_injection_persistent_windows": 0,
+      "strict_protocol_passed_runs": 4,
+      "evidence_checks": [
+        {
+          "session_id": "test-intermittent-01",
+          "expected_fields": [
+            "envelope_cv"
+          ],
+          "first_evidence_fields": [
+            "envelope_cv",
+            "voltage_v",
+            "oil_bar"
+          ],
+          "all_injected_fields_in_top3": true
+        },
+        {
+          "session_id": "test-intermittent-02",
+          "expected_fields": [
+            "envelope_cv"
+          ],
+          "first_evidence_fields": [
+            "envelope_cv",
+            "voltage_v",
+            "coolant_c"
+          ],
+          "all_injected_fields_in_top3": true
+        },
+        {
+          "session_id": "test-intermittent-03",
+          "expected_fields": [
+            "envelope_cv"
+          ],
+          "first_evidence_fields": [
+            "envelope_cv",
+            "coolant_c",
+            "voltage_v"
+          ],
+          "all_injected_fields_in_top3": true
+        },
+        {
+          "session_id": "test-intermittent-04",
+          "expected_fields": [
+            "envelope_cv"
+          ],
+          "first_evidence_fields": [
+            "envelope_cv",
+            "vibration_rms_g",
+            "voltage_v"
+          ],
+          "all_injected_fields_in_top3": true
+        }
+      ]
+    },
+    {
+      "condition": "coolant_high",
+      "runs": 4,
+      "detected_runs": 4,
+      "delay_min_s": 10.0,
+      "delay_max_s": 14.0,
+      "pre_injection_pointwise_changes": 0,
+      "pre_injection_persistent_windows": 0,
+      "strict_protocol_passed_runs": 4,
+      "evidence_checks": [
+        {
+          "session_id": "test-coolant_high-01",
+          "expected_fields": [
+            "coolant_c"
+          ],
+          "first_evidence_fields": [
+            "coolant_c",
+            "oil_bar",
+            "voltage_v"
+          ],
+          "all_injected_fields_in_top3": true
+        },
+        {
+          "session_id": "test-coolant_high-02",
+          "expected_fields": [
+            "coolant_c"
+          ],
+          "first_evidence_fields": [
+            "coolant_c",
+            "engine_rpm",
+            "oil_bar"
+          ],
+          "all_injected_fields_in_top3": true
+        },
+        {
+          "session_id": "test-coolant_high-03",
+          "expected_fields": [
+            "coolant_c"
+          ],
+          "first_evidence_fields": [
+            "coolant_c",
+            "oil_bar",
+            "engine_rpm"
+          ],
+          "all_injected_fields_in_top3": true
+        },
+        {
+          "session_id": "test-coolant_high-04",
+          "expected_fields": [
+            "coolant_c"
+          ],
+          "first_evidence_fields": [
+            "coolant_c",
+            "engine_rpm",
+            "vibration_rms_g"
+          ],
+          "all_injected_fields_in_top3": true
+        }
+      ]
+    },
+    {
+      "condition": "oil_low",
+      "runs": 4,
+      "detected_runs": 4,
+      "delay_min_s": 6.0,
+      "delay_max_s": 8.0,
+      "pre_injection_pointwise_changes": 0,
+      "pre_injection_persistent_windows": 0,
+      "strict_protocol_passed_runs": 4,
+      "evidence_checks": [
+        {
+          "session_id": "test-oil_low-01",
+          "expected_fields": [
+            "oil_bar"
+          ],
+          "first_evidence_fields": [
+            "oil_bar",
+            "engine_rpm",
+            "voltage_v"
+          ],
+          "all_injected_fields_in_top3": true
+        },
+        {
+          "session_id": "test-oil_low-02",
+          "expected_fields": [
+            "oil_bar"
+          ],
+          "first_evidence_fields": [
+            "oil_bar",
+            "vibration_rms_g",
+            "engine_rpm"
+          ],
+          "all_injected_fields_in_top3": true
+        },
+        {
+          "session_id": "test-oil_low-03",
+          "expected_fields": [
+            "oil_bar"
+          ],
+          "first_evidence_fields": [
+            "oil_bar",
+            "vibration_rms_g",
+            "envelope_cv"
+          ],
+          "all_injected_fields_in_top3": true
+        },
+        {
+          "session_id": "test-oil_low-04",
+          "expected_fields": [
+            "oil_bar"
+          ],
+          "first_evidence_fields": [
+            "oil_bar",
+            "coolant_c",
+            "envelope_cv"
+          ],
+          "all_injected_fields_in_top3": true
+        }
+      ]
+    },
+    {
+      "condition": "joint_inside_limits",
+      "runs": 4,
+      "detected_runs": 4,
+      "delay_min_s": 12.0,
+      "delay_max_s": 16.0,
+      "pre_injection_pointwise_changes": 1,
+      "pre_injection_persistent_windows": 0,
+      "strict_protocol_passed_runs": 3,
+      "evidence_checks": [
+        {
+          "session_id": "test-joint_inside_limits-01",
+          "expected_fields": [
+            "coolant_c",
+            "oil_bar"
+          ],
+          "first_evidence_fields": [
+            "oil_bar",
+            "coolant_c",
+            "engine_rpm"
+          ],
+          "all_injected_fields_in_top3": true
+        },
+        {
+          "session_id": "test-joint_inside_limits-02",
+          "expected_fields": [
+            "coolant_c",
+            "oil_bar"
+          ],
+          "first_evidence_fields": [
+            "oil_bar",
+            "coolant_c",
+            "engine_rpm"
+          ],
+          "all_injected_fields_in_top3": true
+        },
+        {
+          "session_id": "test-joint_inside_limits-03",
+          "expected_fields": [
+            "coolant_c",
+            "oil_bar"
+          ],
+          "first_evidence_fields": [
+            "oil_bar",
+            "coolant_c",
+            "vibration_rms_g"
+          ],
+          "all_injected_fields_in_top3": true
+        },
+        {
+          "session_id": "test-joint_inside_limits-04",
+          "expected_fields": [
+            "coolant_c",
+            "oil_bar"
+          ],
+          "first_evidence_fields": [
+            "oil_bar",
+            "coolant_c",
+            "voltage_v"
+          ],
+          "all_injected_fields_in_top3": true
+        }
+      ]
+    },
+    {
+      "condition": "thermal_pressure",
+      "runs": 4,
+      "detected_runs": 4,
+      "delay_min_s": 6.0,
+      "delay_max_s": 10.0,
+      "pre_injection_pointwise_changes": 0,
+      "pre_injection_persistent_windows": 0,
+      "strict_protocol_passed_runs": 4,
+      "evidence_checks": [
+        {
+          "session_id": "test-thermal_pressure-01",
+          "expected_fields": [
+            "coolant_c",
+            "oil_bar"
+          ],
+          "first_evidence_fields": [
+            "oil_bar",
+            "coolant_c",
+            "vibration_rms_g"
+          ],
+          "all_injected_fields_in_top3": true
+        },
+        {
+          "session_id": "test-thermal_pressure-02",
+          "expected_fields": [
+            "coolant_c",
+            "oil_bar"
+          ],
+          "first_evidence_fields": [
+            "oil_bar",
+            "coolant_c",
+            "voltage_v"
+          ],
+          "all_injected_fields_in_top3": true
+        },
+        {
+          "session_id": "test-thermal_pressure-03",
+          "expected_fields": [
+            "coolant_c",
+            "oil_bar"
+          ],
+          "first_evidence_fields": [
+            "oil_bar",
+            "coolant_c",
+            "envelope_cv"
+          ],
+          "all_injected_fields_in_top3": true
+        },
+        {
+          "session_id": "test-thermal_pressure-04",
+          "expected_fields": [
+            "coolant_c",
+            "oil_bar"
+          ],
+          "first_evidence_fields": [
+            "oil_bar",
+            "coolant_c",
+            "engine_rpm"
+          ],
+          "all_injected_fields_in_top3": true
+        }
+      ]
+    }
+  ],
+  "quality": {
+    "runs": 6,
+    "passed": 6
+  },
+  "not_proven": [
+    "physical-generator fault accuracy",
+    "real IMU transfer",
+    "UNO Q latency/RAM",
+    "RUL",
+    "fault-type classification"
+  ]
+}

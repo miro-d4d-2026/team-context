@@ -1,0 +1,5001 @@
+{
+  "schema_version": "genguard.trend.evaluation/1",
+  "source": "synthetic_held_out_runs",
+  "dataset_name": "test",
+  "model_selection_used_test": false,
+  "split": {
+    "fit_seeds": [
+      1000,
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008,
+      1009,
+      1010,
+      1011,
+      1012,
+      1013,
+      1014,
+      1015,
+      1016,
+      1017,
+      1018,
+      1019,
+      1020,
+      1021,
+      1022,
+      1023,
+      1024,
+      1025,
+      1026,
+      1027,
+      1028,
+      1029,
+      1030,
+      1031,
+      1032,
+      1033,
+      1034,
+      1035,
+      1036,
+      1037,
+      1038,
+      1039
+    ],
+    "calibration_seeds": [
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011
+    ],
+    "test_seeds": [
+      4000,
+      4001,
+      4002,
+      4003,
+      4004,
+      4005,
+      4006,
+      4007,
+      4008,
+      4009,
+      4010,
+      4011,
+      4012,
+      4013,
+      4014,
+      4015,
+      4016,
+      4017,
+      4018,
+      4019
+    ],
+    "unit": "complete simulated run identified by scenario and seed"
+  },
+  "test_runs": 160,
+  "test_windows": 10720,
+  "lookback_s": 120,
+  "horizon_s": 120,
+  "mae": {
+    "ridge": {
+      "coolant_c": 1.1958003438464306,
+      "oil_kgf_cm2": 0.11012964089946706
+    },
+    "linear": {
+      "coolant_c": 1.171202941764712,
+      "oil_kgf_cm2": 0.10964467155302453
+    },
+    "persistence": {
+      "coolant_c": 1.3549570106065851,
+      "oil_kgf_cm2": 0.13377428345656067
+    },
+    "selected": {
+      "coolant_c": 1.171202941764712,
+      "oil_kgf_cm2": 0.10964467155302453
+    }
+  },
+  "mae_by_scenario": {
+    "normal": {
+      "ridge": {
+        "coolant_c": 0.6037242797269657,
+        "oil_kgf_cm2": 0.05684600317892235
+      },
+      "linear": {
+        "coolant_c": 0.08602742826444651,
+        "oil_kgf_cm2": 0.007657562684059037
+      },
+      "persistence": {
+        "coolant_c": 0.05198400874190602,
+        "oil_kgf_cm2": 0.004502507376476726
+      },
+      "selected": {
+        "coolant_c": 0.08602742826444651,
+        "oil_kgf_cm2": 0.007657562684059037
+      }
+    },
+    "coolant_drift": {
+      "ridge": {
+        "coolant_c": 0.8921446544731773,
+        "oil_kgf_cm2": 0.04872960178395103
+      },
+      "linear": {
+        "coolant_c": 0.5936461257654901,
+        "oil_kgf_cm2": 0.00713695938452805
+      },
+      "persistence": {
+        "coolant_c": 2.9072095999196117,
+        "oil_kgf_cm2": 0.004257581705485513
+      },
+      "selected": {
+        "coolant_c": 0.5936461257654901,
+        "oil_kgf_cm2": 0.00713695938452805
+      }
+    },
+    "oil_drift": {
+      "ridge": {
+        "coolant_c": 0.3267161756087456,
+        "oil_kgf_cm2": 0.05817946149963954
+      },
+      "linear": {
+        "coolant_c": 0.09217317872587329,
+        "oil_kgf_cm2": 0.05882212749605572
+      },
+      "persistence": {
+        "coolant_c": 0.053871810825716925,
+        "oil_kgf_cm2": 0.2920470180912512
+      },
+      "selected": {
+        "coolant_c": 0.09217317872587329,
+        "oil_kgf_cm2": 0.05882212749605572
+      }
+    },
+    "joint_drift": {
+      "ridge": {
+        "coolant_c": 1.6214928814047864,
+        "oil_kgf_cm2": 0.15514580862436333
+      },
+      "linear": {
+        "coolant_c": 0.6260269773924579,
+        "oil_kgf_cm2": 0.06399562092343329
+      },
+      "persistence": {
+        "coolant_c": 2.9613732094336873,
+        "oil_kgf_cm2": 0.31091764768057323
+      },
+      "selected": {
+        "coolant_c": 0.6260269773924579,
+        "oil_kgf_cm2": 0.06399562092343329
+      }
+    },
+    "transient": {
+      "ridge": {
+        "coolant_c": 1.9490045316028202,
+        "oil_kgf_cm2": 0.18155241578369574
+      },
+      "linear": {
+        "coolant_c": 3.216859178981035,
+        "oil_kgf_cm2": 0.2974298605956878
+      },
+      "persistence": {
+        "coolant_c": 1.7110063702951557,
+        "oil_kgf_cm2": 0.1581019734469636
+      },
+      "selected": {
+        "coolant_c": 3.216859178981035,
+        "oil_kgf_cm2": 0.2974298605956878
+      }
+    },
+    "load_change": {
+      "ridge": {
+        "coolant_c": 0.4383176648893765,
+        "oil_kgf_cm2": 0.040174641330589
+      },
+      "linear": {
+        "coolant_c": 0.3234597607639702,
+        "oil_kgf_cm2": 0.015332849408914998
+      },
+      "persistence": {
+        "coolant_c": 0.22344993409261782,
+        "oil_kgf_cm2": 0.010501944698789425
+      },
+      "selected": {
+        "coolant_c": 0.3234597607639702,
+        "oil_kgf_cm2": 0.015332849408914998
+      }
+    },
+    "step": {
+      "ridge": {
+        "coolant_c": 1.860256933367388,
+        "oil_kgf_cm2": 0.15478095298459313
+      },
+      "linear": {
+        "coolant_c": 2.078920628494847,
+        "oil_kgf_cm2": 0.17562091553364315
+      },
+      "persistence": {
+        "coolant_c": 1.0539737069431152,
+        "oil_kgf_cm2": 0.0889453247944042
+      },
+      "selected": {
+        "coolant_c": 2.078920628494847,
+        "oil_kgf_cm2": 0.17562091553364315
+      }
+    },
+    "recovery": {
+      "ridge": {
+        "coolant_c": 1.8747456296981855,
+        "oil_kgf_cm2": 0.18562824200998249
+      },
+      "linear": {
+        "coolant_c": 2.3525102557295785,
+        "oil_kgf_cm2": 0.2511614763978743
+      },
+      "persistence": {
+        "coolant_c": 1.8767874446008699,
+        "oil_kgf_cm2": 0.20092026985854114
+      },
+      "selected": {
+        "coolant_c": 2.3525102557295785,
+        "oil_kgf_cm2": 0.2511614763978743
+      }
+    }
+  },
+  "selected_method": {
+    "coolant_c": "linear",
+    "oil_kgf_cm2": "linear"
+  },
+  "absolute_error_band": {
+    "coolant_c": 4.320878423817959,
+    "oil_kgf_cm2": 0.3992047815384713
+  },
+  "ridge_beats_linear_on_test": {
+    "coolant_c": false,
+    "oil_kgf_cm2": false
+  },
+  "advisory_summary": {
+    "normal": {
+      "runs": 20,
+      "threshold_reached_runs": 0,
+      "runs_with_advisory": 0,
+      "early_warning_runs": 0,
+      "missed_early_warning_runs": 0,
+      "runs_with_false_advisory": 0,
+      "unresolved_late_advisory_runs": 0,
+      "median_lead_s": null
+    },
+    "coolant_drift": {
+      "runs": 20,
+      "threshold_reached_runs": 20,
+      "runs_with_advisory": 20,
+      "early_warning_runs": 20,
+      "missed_early_warning_runs": 0,
+      "runs_with_false_advisory": 0,
+      "unresolved_late_advisory_runs": 0,
+      "median_lead_s": 90.0
+    },
+    "oil_drift": {
+      "runs": 20,
+      "threshold_reached_runs": 20,
+      "runs_with_advisory": 20,
+      "early_warning_runs": 20,
+      "missed_early_warning_runs": 0,
+      "runs_with_false_advisory": 0,
+      "unresolved_late_advisory_runs": 0,
+      "median_lead_s": 100.0
+    },
+    "joint_drift": {
+      "runs": 20,
+      "threshold_reached_runs": 20,
+      "runs_with_advisory": 20,
+      "early_warning_runs": 20,
+      "missed_early_warning_runs": 0,
+      "runs_with_false_advisory": 0,
+      "unresolved_late_advisory_runs": 0,
+      "median_lead_s": 90.0
+    },
+    "transient": {
+      "runs": 20,
+      "threshold_reached_runs": 0,
+      "runs_with_advisory": 14,
+      "early_warning_runs": 0,
+      "missed_early_warning_runs": 0,
+      "runs_with_false_advisory": 14,
+      "unresolved_late_advisory_runs": 0,
+      "median_lead_s": null
+    },
+    "load_change": {
+      "runs": 20,
+      "threshold_reached_runs": 0,
+      "runs_with_advisory": 0,
+      "early_warning_runs": 0,
+      "missed_early_warning_runs": 0,
+      "runs_with_false_advisory": 0,
+      "unresolved_late_advisory_runs": 0,
+      "median_lead_s": null
+    },
+    "step": {
+      "runs": 20,
+      "threshold_reached_runs": 0,
+      "runs_with_advisory": 0,
+      "early_warning_runs": 0,
+      "missed_early_warning_runs": 0,
+      "runs_with_false_advisory": 0,
+      "unresolved_late_advisory_runs": 0,
+      "median_lead_s": null
+    },
+    "recovery": {
+      "runs": 20,
+      "threshold_reached_runs": 0,
+      "runs_with_advisory": 0,
+      "early_warning_runs": 0,
+      "missed_early_warning_runs": 0,
+      "runs_with_false_advisory": 0,
+      "unresolved_late_advisory_runs": 0,
+      "median_lead_s": null
+    }
+  },
+  "run_results": [
+    {
+      "scenario": "normal",
+      "seed": 4000,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "normal",
+      "seed": 4001,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "normal",
+      "seed": 4002,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "normal",
+      "seed": 4003,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "normal",
+      "seed": 4004,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "normal",
+      "seed": 4005,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "normal",
+      "seed": 4006,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "normal",
+      "seed": 4007,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "normal",
+      "seed": 4008,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "normal",
+      "seed": 4009,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "normal",
+      "seed": 4010,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "normal",
+      "seed": 4011,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "normal",
+      "seed": 4012,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "normal",
+      "seed": 4013,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "normal",
+      "seed": 4014,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "normal",
+      "seed": 4015,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "normal",
+      "seed": 4016,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "normal",
+      "seed": 4017,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "normal",
+      "seed": 4018,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "normal",
+      "seed": 4019,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4000,
+      "first_advisory_s": 600.0,
+      "first_fixed_threshold_s": 690.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 600.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 690.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 90.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4001,
+      "first_advisory_s": 710.0,
+      "first_fixed_threshold_s": 810.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 710.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 810.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 100.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4002,
+      "first_advisory_s": 490.0,
+      "first_fixed_threshold_s": 590.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 490.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 590.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 100.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4003,
+      "first_advisory_s": 550.0,
+      "first_fixed_threshold_s": 650.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 550.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 650.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 100.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4004,
+      "first_advisory_s": 540.0,
+      "first_fixed_threshold_s": 630.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 540.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 630.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 90.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4005,
+      "first_advisory_s": 670.0,
+      "first_fixed_threshold_s": 770.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 670.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 770.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 100.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4006,
+      "first_advisory_s": 660.0,
+      "first_fixed_threshold_s": 750.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 660.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 750.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 90.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4007,
+      "first_advisory_s": 670.0,
+      "first_fixed_threshold_s": 760.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 670.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 760.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 90.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4008,
+      "first_advisory_s": 670.0,
+      "first_fixed_threshold_s": 770.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 670.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 770.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 100.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4009,
+      "first_advisory_s": 530.0,
+      "first_fixed_threshold_s": 620.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 530.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 620.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 90.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4010,
+      "first_advisory_s": 690.0,
+      "first_fixed_threshold_s": 780.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 690.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 780.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 90.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4011,
+      "first_advisory_s": 620.0,
+      "first_fixed_threshold_s": 710.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 620.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 710.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 90.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4012,
+      "first_advisory_s": 710.0,
+      "first_fixed_threshold_s": 810.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 710.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 810.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 100.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4013,
+      "first_advisory_s": 540.0,
+      "first_fixed_threshold_s": 630.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 540.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 630.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 90.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4014,
+      "first_advisory_s": 640.0,
+      "first_fixed_threshold_s": 730.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 640.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 730.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 90.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4015,
+      "first_advisory_s": 640.0,
+      "first_fixed_threshold_s": 720.0,
+      "lead_s": 80.0,
+      "advisory_updates": 8,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 640.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 720.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 80.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4016,
+      "first_advisory_s": 550.0,
+      "first_fixed_threshold_s": 640.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 550.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 640.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 90.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4017,
+      "first_advisory_s": 740.0,
+      "first_fixed_threshold_s": 840.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 740.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 840.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 100.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4018,
+      "first_advisory_s": 610.0,
+      "first_fixed_threshold_s": 710.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 610.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 710.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 100.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "coolant_drift",
+      "seed": 4019,
+      "first_advisory_s": 590.0,
+      "first_fixed_threshold_s": 680.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 590.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 680.0,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 90.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4000,
+      "first_advisory_s": 640.0,
+      "first_fixed_threshold_s": 740.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 640.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 740.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4001,
+      "first_advisory_s": 540.0,
+      "first_fixed_threshold_s": 630.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 540.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 630.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 90.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4002,
+      "first_advisory_s": 610.0,
+      "first_fixed_threshold_s": 690.0,
+      "lead_s": 80.0,
+      "advisory_updates": 8,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 610.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 690.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 80.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4003,
+      "first_advisory_s": 580.0,
+      "first_fixed_threshold_s": 670.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 580.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 670.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 90.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4004,
+      "first_advisory_s": 640.0,
+      "first_fixed_threshold_s": 730.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 640.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 730.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 90.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4005,
+      "first_advisory_s": 630.0,
+      "first_fixed_threshold_s": 730.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 630.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 730.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4006,
+      "first_advisory_s": 540.0,
+      "first_fixed_threshold_s": 640.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 540.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 640.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4007,
+      "first_advisory_s": 540.0,
+      "first_fixed_threshold_s": 640.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 540.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 640.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4008,
+      "first_advisory_s": 630.0,
+      "first_fixed_threshold_s": 730.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 630.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 730.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4009,
+      "first_advisory_s": 610.0,
+      "first_fixed_threshold_s": 710.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 610.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 710.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4010,
+      "first_advisory_s": 570.0,
+      "first_fixed_threshold_s": 670.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 570.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 670.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4011,
+      "first_advisory_s": 590.0,
+      "first_fixed_threshold_s": 680.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 590.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 680.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 90.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4012,
+      "first_advisory_s": 620.0,
+      "first_fixed_threshold_s": 710.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 620.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 710.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 90.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4013,
+      "first_advisory_s": 610.0,
+      "first_fixed_threshold_s": 700.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 610.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 700.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 90.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4014,
+      "first_advisory_s": 710.0,
+      "first_fixed_threshold_s": 810.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 710.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 810.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4015,
+      "first_advisory_s": 730.0,
+      "first_fixed_threshold_s": 830.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 730.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 830.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4016,
+      "first_advisory_s": 560.0,
+      "first_fixed_threshold_s": 660.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 560.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 660.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4017,
+      "first_advisory_s": 600.0,
+      "first_fixed_threshold_s": 680.0,
+      "lead_s": 80.0,
+      "advisory_updates": 8,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 600.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 680.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 80.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4018,
+      "first_advisory_s": 590.0,
+      "first_fixed_threshold_s": 680.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 590.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 680.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 90.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "oil_drift",
+      "seed": 4019,
+      "first_advisory_s": 580.0,
+      "first_fixed_threshold_s": 680.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 580.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 680.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4000,
+      "first_advisory_s": 540.0,
+      "first_fixed_threshold_s": 630.0,
+      "lead_s": 90.0,
+      "advisory_updates": 16,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 560.0,
+        "oil_kgf_cm2": 540.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 650.0,
+        "oil_kgf_cm2": 630.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 90.0,
+        "oil_kgf_cm2": 90.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4001,
+      "first_advisory_s": 580.0,
+      "first_fixed_threshold_s": 680.0,
+      "lead_s": 100.0,
+      "advisory_updates": 14,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 580.0,
+        "oil_kgf_cm2": 640.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 680.0,
+        "oil_kgf_cm2": 740.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 100.0,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4002,
+      "first_advisory_s": 520.0,
+      "first_fixed_threshold_s": 600.0,
+      "lead_s": 80.0,
+      "advisory_updates": 8,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 520.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 600.0,
+        "oil_kgf_cm2": 690.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 80.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4003,
+      "first_advisory_s": 570.0,
+      "first_fixed_threshold_s": 660.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 570.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 660.0,
+        "oil_kgf_cm2": 760.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 90.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4004,
+      "first_advisory_s": 620.0,
+      "first_fixed_threshold_s": 710.0,
+      "lead_s": 90.0,
+      "advisory_updates": 17,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 620.0,
+        "oil_kgf_cm2": 630.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 710.0,
+        "oil_kgf_cm2": 730.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 90.0,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4005,
+      "first_advisory_s": 660.0,
+      "first_fixed_threshold_s": 760.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 660.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 880.0,
+        "oil_kgf_cm2": 760.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4006,
+      "first_advisory_s": 570.0,
+      "first_fixed_threshold_s": 660.0,
+      "lead_s": 90.0,
+      "advisory_updates": 15,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 600.0,
+        "oil_kgf_cm2": 570.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 690.0,
+        "oil_kgf_cm2": 660.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 90.0,
+        "oil_kgf_cm2": 90.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4007,
+      "first_advisory_s": 560.0,
+      "first_fixed_threshold_s": 660.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 560.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 840.0,
+        "oil_kgf_cm2": 660.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4008,
+      "first_advisory_s": 580.0,
+      "first_fixed_threshold_s": 680.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 580.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 830.0,
+        "oil_kgf_cm2": 680.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4009,
+      "first_advisory_s": 600.0,
+      "first_fixed_threshold_s": 690.0,
+      "lead_s": 90.0,
+      "advisory_updates": 14,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 640.0,
+        "oil_kgf_cm2": 600.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 740.0,
+        "oil_kgf_cm2": 690.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 100.0,
+        "oil_kgf_cm2": 90.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4010,
+      "first_advisory_s": 560.0,
+      "first_fixed_threshold_s": 660.0,
+      "lead_s": 90.0,
+      "advisory_updates": 12,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 640.0,
+        "oil_kgf_cm2": 560.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 730.0,
+        "oil_kgf_cm2": 660.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 90.0,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4011,
+      "first_advisory_s": 550.0,
+      "first_fixed_threshold_s": 650.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 550.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 770.0,
+        "oil_kgf_cm2": 650.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4012,
+      "first_advisory_s": 470.0,
+      "first_fixed_threshold_s": 560.0,
+      "lead_s": 90.0,
+      "advisory_updates": 11,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 470.0,
+        "oil_kgf_cm2": 540.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 560.0,
+        "oil_kgf_cm2": 630.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 90.0,
+        "oil_kgf_cm2": 90.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4013,
+      "first_advisory_s": 590.0,
+      "first_fixed_threshold_s": 680.0,
+      "lead_s": 90.0,
+      "advisory_updates": 9,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 590.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 790.0,
+        "oil_kgf_cm2": 680.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 90.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4014,
+      "first_advisory_s": 520.0,
+      "first_fixed_threshold_s": 620.0,
+      "lead_s": 100.0,
+      "advisory_updates": 16,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 560.0,
+        "oil_kgf_cm2": 520.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 660.0,
+        "oil_kgf_cm2": 620.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 100.0,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4015,
+      "first_advisory_s": 540.0,
+      "first_fixed_threshold_s": 640.0,
+      "lead_s": 90.0,
+      "advisory_updates": 11,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 630.0,
+        "oil_kgf_cm2": 540.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 720.0,
+        "oil_kgf_cm2": 640.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 90.0,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4016,
+      "first_advisory_s": 590.0,
+      "first_fixed_threshold_s": 690.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 590.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 690.0,
+        "oil_kgf_cm2": 790.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 100.0,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4017,
+      "first_advisory_s": 520.0,
+      "first_fixed_threshold_s": 620.0,
+      "lead_s": 100.0,
+      "advisory_updates": 14,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 580.0,
+        "oil_kgf_cm2": 520.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 680.0,
+        "oil_kgf_cm2": 620.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": 100.0,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4018,
+      "first_advisory_s": 550.0,
+      "first_fixed_threshold_s": 630.0,
+      "lead_s": 80.0,
+      "advisory_updates": 8,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 550.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 730.0,
+        "oil_kgf_cm2": 630.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 80.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "joint_drift",
+      "seed": 4019,
+      "first_advisory_s": 520.0,
+      "first_fixed_threshold_s": 620.0,
+      "lead_s": 100.0,
+      "advisory_updates": 10,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 520.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": 740.0,
+        "oil_kgf_cm2": 620.0
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 100.0
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": true,
+      "early_warning": true,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4000,
+      "first_advisory_s": 410.0,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 2,
+      "false_advisory_updates_with_observed_future": 2,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 410.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 2,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4001,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4002,
+      "first_advisory_s": 470.0,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 3,
+      "false_advisory_updates_with_observed_future": 3,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 470.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 3,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4003,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4004,
+      "first_advisory_s": 430.0,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 4,
+      "false_advisory_updates_with_observed_future": 4,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 430.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 4,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4005,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4006,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4007,
+      "first_advisory_s": 400.0,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 7,
+      "false_advisory_updates_with_observed_future": 7,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 410.0,
+        "oil_kgf_cm2": 400.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 3,
+        "oil_kgf_cm2": 4
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4008,
+      "first_advisory_s": 420.0,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 2,
+      "false_advisory_updates_with_observed_future": 2,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 420.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 2
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4009,
+      "first_advisory_s": 490.0,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 2,
+      "false_advisory_updates_with_observed_future": 2,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 490.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 2
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4010,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4011,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4012,
+      "first_advisory_s": 490.0,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 4,
+      "false_advisory_updates_with_observed_future": 4,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 490.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 4,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4013,
+      "first_advisory_s": 430.0,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 7,
+      "false_advisory_updates_with_observed_future": 7,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 430.0,
+        "oil_kgf_cm2": 440.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 4,
+        "oil_kgf_cm2": 3
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4014,
+      "first_advisory_s": 460.0,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 3,
+      "false_advisory_updates_with_observed_future": 3,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 460.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 3
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4015,
+      "first_advisory_s": 450.0,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 2,
+      "false_advisory_updates_with_observed_future": 2,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 450.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 2
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4016,
+      "first_advisory_s": 440.0,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 6,
+      "false_advisory_updates_with_observed_future": 6,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 440.0,
+        "oil_kgf_cm2": 470.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 5,
+        "oil_kgf_cm2": 1
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4017,
+      "first_advisory_s": 450.0,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 2,
+      "false_advisory_updates_with_observed_future": 2,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": 450.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 2
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4018,
+      "first_advisory_s": 500.0,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 1,
+      "false_advisory_updates_with_observed_future": 1,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 500.0,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 1,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "transient",
+      "seed": 4019,
+      "first_advisory_s": 420.0,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 6,
+      "false_advisory_updates_with_observed_future": 6,
+      "first_advisory_by_channel_s": {
+        "coolant_c": 420.0,
+        "oil_kgf_cm2": 420.0
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 3,
+        "oil_kgf_cm2": 3
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4000,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4001,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4002,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4003,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4004,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4005,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4006,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4007,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4008,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4009,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4010,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4011,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4012,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4013,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4014,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4015,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4016,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4017,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4018,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "load_change",
+      "seed": 4019,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4000,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4001,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4002,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4003,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4004,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4005,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4006,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4007,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4008,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4009,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4010,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4011,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4012,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4013,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4014,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4015,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4016,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4017,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4018,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "step",
+      "seed": 4019,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": false,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4000,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4001,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4002,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4003,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4004,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4005,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4006,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4007,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4008,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4009,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4010,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4011,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4012,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4013,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4014,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4015,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4016,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4017,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4018,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    },
+    {
+      "scenario": "recovery",
+      "seed": 4019,
+      "first_advisory_s": null,
+      "first_fixed_threshold_s": null,
+      "lead_s": null,
+      "advisory_updates": 0,
+      "false_advisory_updates_with_observed_future": 0,
+      "first_advisory_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "first_threshold_by_channel_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "same_channel_lead_s": {
+        "coolant_c": null,
+        "oil_kgf_cm2": null
+      },
+      "false_advisory_by_channel": {
+        "coolant_c": 0,
+        "oil_kgf_cm2": 0
+      },
+      "recovery_state_seen": true,
+      "threshold_reached": false,
+      "early_warning": false,
+      "unresolved_late_advisory": false
+    }
+  ],
+  "interpretation": [
+    "MAE includes stable, drift, recovery and unexpected transitions. Selection used only calibration runs.",
+    "Repeated overlapping windows within each run are not independent samples; split is by whole run.",
+    "An early warning means before the demo fixed threshold, not before actual generator failure.",
+    "A false advisory has no threshold crossing within the stated 120-second horizon when that future is observed.",
+    "Warnings are evaluated against the SAME channel's boundary. lead_s is the minimum successful same-channel lead, not an unrelated first-system threshold.",
+    "Unannounced steps/interventions cannot be predicted reliably from history; recovery can make a reasonable trend extrapolation false.",
+    "This evaluates internally generated synthetic families, not transfer to real equipment. Do not report as field accuracy.",
+    "A learned forecast is not automatically more useful than current-state anomaly detection. Compare alert time and actionability separately."
+  ]
+}

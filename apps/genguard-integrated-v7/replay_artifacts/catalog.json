@@ -1,0 +1,293 @@
+{
+  "schema_version": "genguard.vibration-catalog/1",
+  "model_id": "iphone-imu-standardized-nearest-centroid/1",
+  "default_recording_id": "random",
+  "model": {
+    "training_recordings": 1,
+    "training_windows": 48,
+    "features": [
+      "RMS",
+      "100ms 세기 변동 CV"
+    ],
+    "baseline_rms_g": 0.05846554300842221,
+    "trained_with_test_data": false
+  },
+  "recordings": [
+    {
+      "id": "training",
+      "title": "반복 테스트 · 학습 기록",
+      "role": "training",
+      "run_id": "399032D5-A905-4B15-B7C5-F5367DEFAFAA",
+      "recorded_at": "2026-10-10T10:15:57.899Z",
+      "frame_count": 48,
+      "window_s": 2,
+      "recording_elapsed_s": 163,
+      "evaluated_duration_s": 96,
+      "source": "recorded_imu",
+      "scope": "각 10초 자극에서 0.5–8.5초의 2초 창 4개만 재생합니다. 구간 사이의 대기·전이는 미평가입니다.",
+      "evaluation": {
+        "rms_only": {
+          "correct": 47,
+          "count": 48,
+          "confusion": [
+            [
+              12,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              12,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              12,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              11
+            ]
+          ],
+          "class_order": [
+            "idle",
+            "baseline",
+            "increased",
+            "intermittent"
+          ],
+          "segment_majority_correct": 12,
+          "segment_count": 12
+        },
+        "rms_and_pattern": {
+          "correct": 48,
+          "count": 48,
+          "confusion": [
+            [
+              12,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              12,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              12,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              12
+            ]
+          ],
+          "class_order": [
+            "idle",
+            "baseline",
+            "increased",
+            "intermittent"
+          ],
+          "segment_majority_correct": 12,
+          "segment_count": 12
+        },
+        "role": "in_sample"
+      }
+    },
+    {
+      "id": "random",
+      "title": "랜덤 테스트 · 별도 검증 기록",
+      "role": "held_out_evaluation",
+      "run_id": "4EBCA240-73C0-4FEC-999C-136073E774E8",
+      "recorded_at": "2026-10-10T10:44:27.133Z",
+      "frame_count": 48,
+      "window_s": 2,
+      "recording_elapsed_s": 163,
+      "evaluated_duration_s": 96,
+      "source": "recorded_imu",
+      "scope": "각 10초 자극에서 0.5–8.5초의 2초 창 4개만 재생합니다. 구간 사이의 대기·전이는 미평가입니다.",
+      "evaluation": {
+        "rms_only": {
+          "correct": 36,
+          "count": 48,
+          "confusion": [
+            [
+              12,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              12
+            ],
+            [
+              0,
+              0,
+              12,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              12
+            ]
+          ],
+          "class_order": [
+            "idle",
+            "baseline",
+            "increased",
+            "intermittent"
+          ],
+          "segment_majority_correct": 9,
+          "segment_count": 12
+        },
+        "rms_and_pattern": {
+          "correct": 48,
+          "count": 48,
+          "confusion": [
+            [
+              12,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              12,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              12,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              12
+            ]
+          ],
+          "class_order": [
+            "idle",
+            "baseline",
+            "increased",
+            "intermittent"
+          ],
+          "segment_majority_correct": 12,
+          "segment_count": 12
+        },
+        "role": "held_out_recording"
+      }
+    }
+  ],
+  "evaluation": {
+    "rms_only": {
+      "correct": 36,
+      "count": 48,
+      "confusion": [
+        [
+          12,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          12
+        ],
+        [
+          0,
+          0,
+          12,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          12
+        ]
+      ],
+      "class_order": [
+        "idle",
+        "baseline",
+        "increased",
+        "intermittent"
+      ],
+      "segment_majority_correct": 9,
+      "segment_count": 12
+    },
+    "rms_and_pattern": {
+      "correct": 48,
+      "count": 48,
+      "confusion": [
+        [
+          12,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          12,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          12,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          12
+        ]
+      ],
+      "class_order": [
+        "idle",
+        "baseline",
+        "increased",
+        "intermittent"
+      ],
+      "segment_majority_correct": 12,
+      "segment_count": 12
+    },
+    "role": "held_out_recording"
+  },
+  "class_names": {
+    "idle": "진동 미감지",
+    "baseline": "기준 진동",
+    "increased": "강한 진동",
+    "intermittent": "간헐 진동"
+  },
+  "limits": [
+    "아이폰 진동 실험이며 실제 발전기의 고장 정답이 아닙니다.",
+    "별도 검증 기록은 1개이며, 48개 평가 창은 서로 연관된 데이터입니다.",
+    "자극의 시작·종료를 아는 2초 구간만 평가했습니다. 전이·대기 구간은 포함하지 않았습니다.",
+    "네 가지 중 가장 가까운 패턴을 고릅니다. 미지의 진동 거부나 신뢰도 보정은 없습니다.",
+    "모델 실행은 Mac에서 검증했습니다. UNO Q의 실제 실행 성능과 새로운 부착 조건은 별도 검증이 필요합니다."
+  ]
+}

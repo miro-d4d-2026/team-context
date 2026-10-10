@@ -1,0 +1,2482 @@
+[
+  {
+    "id": "inspection-2026-01",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-07-04T10:00:00+09:00",
+    "label": "정기 시험 운전",
+    "source": "scenario",
+    "confirmed_normal": true,
+    "installation_id": "demo-generator-mount-1",
+    "phase": "running",
+    "values": {
+      "coolant_c": 78.69333687881719,
+      "oil_kgf_cm2": 3.248684256060907,
+      "vibration_rms_g": 0.043527731483547175,
+      "load_pct": 57.98147783054561,
+      "ambient_c": 24.994501046153854,
+      "engine_rpm": 1789.6065876801315,
+      "elapsed_s": 579.0
+    },
+    "sources": {
+      "coolant_c": "scenario",
+      "oil_kgf_cm2": "scenario",
+      "vibration_rms_g": "scenario",
+      "load_pct": "scenario",
+      "ambient_c": "scenario",
+      "engine_rpm": "scenario",
+      "elapsed_s": "scenario"
+    },
+    "quality": {},
+    "samples": [
+      {
+        "load_pct": 58.28500221664329,
+        "ambient_c": 24.854169720532692,
+        "engine_rpm": 1792.5977459138105,
+        "elapsed_s": 550,
+        "coolant_c": 78.77255961647779,
+        "oil_kgf_cm2": 3.2519524105241464,
+        "vibration_rms_g": 0.044558519845550565
+      },
+      {
+        "load_pct": 58.11085891016969,
+        "ambient_c": 25.024519999675125,
+        "engine_rpm": 1791.731670746274,
+        "elapsed_s": 552,
+        "coolant_c": 78.53600899441997,
+        "oil_kgf_cm2": 3.2262442974760446,
+        "vibration_rms_g": 0.04315868208093672
+      },
+      {
+        "load_pct": 57.53634130483565,
+        "ambient_c": 25.180144683711504,
+        "engine_rpm": 1788.7667789395919,
+        "elapsed_s": 554,
+        "coolant_c": 78.58901137260824,
+        "oil_kgf_cm2": 3.2114309124698486,
+        "vibration_rms_g": 0.043988936345445435
+      },
+      {
+        "load_pct": 57.75091933577121,
+        "ambient_c": 24.850624155682492,
+        "engine_rpm": 1789.8443973586707,
+        "elapsed_s": 556,
+        "coolant_c": 78.80650079383575,
+        "oil_kgf_cm2": 3.220909064707722,
+        "vibration_rms_g": 0.04310430385626044
+      },
+      {
+        "load_pct": 58.09545049695038,
+        "ambient_c": 25.13152622704061,
+        "engine_rpm": 1788.2118909017333,
+        "elapsed_s": 558,
+        "coolant_c": 79.02660110387033,
+        "oil_kgf_cm2": 3.263886727554508,
+        "vibration_rms_g": 0.0438949019034278
+      },
+      {
+        "load_pct": 58.17702687609324,
+        "ambient_c": 24.908083442639537,
+        "engine_rpm": 1792.9090460267867,
+        "elapsed_s": 560,
+        "coolant_c": 78.83912817972866,
+        "oil_kgf_cm2": 3.2863003099746546,
+        "vibration_rms_g": 0.04228706135248475
+      },
+      {
+        "load_pct": 57.76033490312195,
+        "ambient_c": 24.900181589157114,
+        "engine_rpm": 1787.647329036994,
+        "elapsed_s": 562,
+        "coolant_c": 78.57070956267901,
+        "oil_kgf_cm2": 3.2812710039595463,
+        "vibration_rms_g": 0.043337817058781446
+      },
+      {
+        "load_pct": 57.84802491491015,
+        "ambient_c": 25.180020446328996,
+        "engine_rpm": 1790.44446955032,
+        "elapsed_s": 564,
+        "coolant_c": 78.95201434915795,
+        "oil_kgf_cm2": 3.2601366554862854,
+        "vibration_rms_g": 0.0440316887843549
+      },
+      {
+        "load_pct": 58.03645542965734,
+        "ambient_c": 24.898765737067084,
+        "engine_rpm": 1792.2222077068154,
+        "elapsed_s": 566,
+        "coolant_c": 78.67868990629006,
+        "oil_kgf_cm2": 3.229953523866048,
+        "vibration_rms_g": 0.044412044898047266
+      },
+      {
+        "load_pct": 58.12551763658338,
+        "ambient_c": 24.838202604610636,
+        "engine_rpm": 1787.6359759824545,
+        "elapsed_s": 568,
+        "coolant_c": 78.39002824395568,
+        "oil_kgf_cm2": 3.2570887569660796,
+        "vibration_rms_g": 0.043910432652936544
+      },
+      {
+        "load_pct": 58.25852398915614,
+        "ambient_c": 25.159778277634533,
+        "engine_rpm": 1789.037025056149,
+        "elapsed_s": 570,
+        "coolant_c": 78.9250246350553,
+        "oil_kgf_cm2": 3.2495320279899502,
+        "vibration_rms_g": 0.04347635814952359
+      },
+      {
+        "load_pct": 57.90425266341952,
+        "ambient_c": 24.82026449232473,
+        "engine_rpm": 1787.2988949832315,
+        "elapsed_s": 572,
+        "coolant_c": 78.48431855067135,
+        "oil_kgf_cm2": 3.2635602102217596,
+        "vibration_rms_g": 0.04268935865408129
+      },
+      {
+        "load_pct": 57.55194081777043,
+        "ambient_c": 25.02271010972376,
+        "engine_rpm": 1789.9596501742126,
+        "elapsed_s": 574,
+        "coolant_c": 78.44770660360005,
+        "oil_kgf_cm2": 3.274289181123872,
+        "vibration_rms_g": 0.04444954544970962
+      },
+      {
+        "load_pct": 57.55216082176096,
+        "ambient_c": 25.142033311381766,
+        "engine_rpm": 1790.4559995645868,
+        "elapsed_s": 576,
+        "coolant_c": 78.88101492988545,
+        "oil_kgf_cm2": 3.2435037887122267,
+        "vibration_rms_g": 0.04310989649103272
+      },
+      {
+        "load_pct": 58.04068302123371,
+        "ambient_c": 24.999053365630896,
+        "engine_rpm": 1787.1351271579967,
+        "elapsed_s": 578,
+        "coolant_c": 78.48682295321349,
+        "oil_kgf_cm2": 3.2619066782219344,
+        "vibration_rms_g": 0.04385098833782756
+      },
+      {
+        "load_pct": 57.63634525364352,
+        "ambient_c": 25.151213495348692,
+        "engine_rpm": 1789.6137790467933,
+        "elapsed_s": 580,
+        "coolant_c": 78.80512467981004,
+        "oil_kgf_cm2": 3.2373719952605122,
+        "vibration_rms_g": 0.04222455839830471
+      },
+      {
+        "load_pct": 58.19879774670807,
+        "ambient_c": 24.9356292226731,
+        "engine_rpm": 1788.96447508208,
+        "elapsed_s": 582,
+        "coolant_c": 78.69929759100002,
+        "oil_kgf_cm2": 3.2498518689670246,
+        "vibration_rms_g": 0.04299576276397284
+      },
+      {
+        "load_pct": 58.20373793118157,
+        "ambient_c": 25.041591918339638,
+        "engine_rpm": 1787.4017408655684,
+        "elapsed_s": 584,
+        "coolant_c": 78.7545521972126,
+        "oil_kgf_cm2": 3.2292294534285673,
+        "vibration_rms_g": 0.042480045197442626
+      },
+      {
+        "load_pct": 58.23485596756078,
+        "ambient_c": 24.862676762679644,
+        "engine_rpm": 1792.9547088811328,
+        "elapsed_s": 586,
+        "coolant_c": 78.8688089372266,
+        "oil_kgf_cm2": 3.240185559989119,
+        "vibration_rms_g": 0.0434662799808935
+      },
+      {
+        "load_pct": 58.271843844876884,
+        "ambient_c": 25.043010203012717,
+        "engine_rpm": 1792.7254110653666,
+        "elapsed_s": 588,
+        "coolant_c": 78.74747702253659,
+        "oil_kgf_cm2": 3.2565285997933833,
+        "vibration_rms_g": 0.04246876826505936
+      },
+      {
+        "load_pct": 57.56227675757824,
+        "ambient_c": 24.933875205999982,
+        "engine_rpm": 1788.5139506266223,
+        "elapsed_s": 590,
+        "coolant_c": 78.32604688026849,
+        "oil_kgf_cm2": 3.288685998861596,
+        "vibration_rms_g": 0.042049515317007694
+      },
+      {
+        "load_pct": 58.045735662408546,
+        "ambient_c": 25.153451684364896,
+        "engine_rpm": 1791.031690531873,
+        "elapsed_s": 592,
+        "coolant_c": 78.36826847114584,
+        "oil_kgf_cm2": 3.2422331866163603,
+        "vibration_rms_g": 0.04271264878541111
+      },
+      {
+        "load_pct": 58.13040927534152,
+        "ambient_c": 25.04692117565635,
+        "engine_rpm": 1791.8577786155422,
+        "elapsed_s": 594,
+        "coolant_c": 78.99539048907315,
+        "oil_kgf_cm2": 3.263977514920144,
+        "vibration_rms_g": 0.04377640343383544
+      },
+      {
+        "load_pct": 57.93922109890375,
+        "ambient_c": 25.094425176249747,
+        "engine_rpm": 1788.3022898535146,
+        "elapsed_s": 596,
+        "coolant_c": 78.91103059998056,
+        "oil_kgf_cm2": 3.2470785566186717,
+        "vibration_rms_g": 0.045824231671608616
+      },
+      {
+        "load_pct": 58.47732069990181,
+        "ambient_c": 24.868470152339917,
+        "engine_rpm": 1789.8387459487608,
+        "elapsed_s": 598,
+        "coolant_c": 78.93726395923242,
+        "oil_kgf_cm2": 3.2337757021897677,
+        "vibration_rms_g": 0.04210113776686954
+      },
+      {
+        "load_pct": 57.53721831584834,
+        "ambient_c": 24.846636028756013,
+        "engine_rpm": 1787.0776310038193,
+        "elapsed_s": 600,
+        "coolant_c": 78.56422238568689,
+        "oil_kgf_cm2": 3.2496728969967985,
+        "vibration_rms_g": 0.04459204141250059
+      },
+      {
+        "load_pct": 58.301158425014876,
+        "ambient_c": 25.073732063470512,
+        "engine_rpm": 1790.1368356249347,
+        "elapsed_s": 602,
+        "coolant_c": 78.88047169113347,
+        "oil_kgf_cm2": 3.2539187239449068,
+        "vibration_rms_g": 0.04447256425711957
+      },
+      {
+        "load_pct": 58.04202057398482,
+        "ambient_c": 24.941550265321972,
+        "engine_rpm": 1787.5361002195493,
+        "elapsed_s": 604,
+        "coolant_c": 78.68828906813033,
+        "oil_kgf_cm2": 3.213080093531013,
+        "vibration_rms_g": 0.04438337512252732
+      },
+      {
+        "load_pct": 57.86910921077191,
+        "ambient_c": 24.97207995451477,
+        "engine_rpm": 1788.4709358478424,
+        "elapsed_s": 606,
+        "coolant_c": 78.32061179950468,
+        "oil_kgf_cm2": 3.2504723358050693,
+        "vibration_rms_g": 0.043501451908139165
+      },
+      {
+        "load_pct": 57.960790814566465,
+        "ambient_c": 24.95968991274614,
+        "engine_rpm": 1787.8733480909148,
+        "elapsed_s": 608,
+        "coolant_c": 78.54711079712503,
+        "oil_kgf_cm2": 3.2224996456496613,
+        "vibration_rms_g": 0.04452262436532254
+      }
+    ],
+    "sample_duration_s": 2,
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "provenance": "합성 점검 기록. 실제 발전기 측정값 및 제조사 기준이 아님."
+  },
+  {
+    "id": "inspection-2026-02",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-07-18T10:00:00+09:00",
+    "label": "정기 시험 운전",
+    "source": "scenario",
+    "confirmed_normal": true,
+    "installation_id": "demo-generator-mount-1",
+    "phase": "running",
+    "values": {
+      "coolant_c": 80.57255250846525,
+      "oil_kgf_cm2": 3.220463348158816,
+      "vibration_rms_g": 0.04601251004226366,
+      "load_pct": 65.95379306219164,
+      "ambient_c": 29.97106195121041,
+      "engine_rpm": 1809.3930961847593,
+      "elapsed_s": 619.0
+    },
+    "sources": {
+      "coolant_c": "scenario",
+      "oil_kgf_cm2": "scenario",
+      "vibration_rms_g": "scenario",
+      "load_pct": "scenario",
+      "ambient_c": "scenario",
+      "engine_rpm": "scenario",
+      "elapsed_s": "scenario"
+    },
+    "quality": {},
+    "samples": [
+      {
+        "load_pct": 66.45891001928062,
+        "ambient_c": 30.051783015016056,
+        "engine_rpm": 1807.8967106528578,
+        "elapsed_s": 590,
+        "coolant_c": 80.67142739378396,
+        "oil_kgf_cm2": 3.2402408957488094,
+        "vibration_rms_g": 0.04539826595673943
+      },
+      {
+        "load_pct": 66.35091953836584,
+        "ambient_c": 29.88786380081182,
+        "engine_rpm": 1807.70346901085,
+        "elapsed_s": 592,
+        "coolant_c": 80.6109981182293,
+        "oil_kgf_cm2": 3.203167332054913,
+        "vibration_rms_g": 0.044985728992834165
+      },
+      {
+        "load_pct": 66.30399871779264,
+        "ambient_c": 29.878038009560036,
+        "engine_rpm": 1808.8435991133192,
+        "elapsed_s": 594,
+        "coolant_c": 80.37571200535339,
+        "oil_kgf_cm2": 3.1905676718610074,
+        "vibration_rms_g": 0.05002789539842178
+      },
+      {
+        "load_pct": 66.11618577403712,
+        "ambient_c": 29.947532014856524,
+        "engine_rpm": 1807.161613805832,
+        "elapsed_s": 596,
+        "coolant_c": 80.8399074762472,
+        "oil_kgf_cm2": 3.2050733411305408,
+        "vibration_rms_g": 0.04611433574448687
+      },
+      {
+        "load_pct": 65.52468618797468,
+        "ambient_c": 30.19429508070822,
+        "engine_rpm": 1810.9858632536402,
+        "elapsed_s": 598,
+        "coolant_c": 80.65646542320543,
+        "oil_kgf_cm2": 3.2091959729786534,
+        "vibration_rms_g": 0.04819703304164655
+      },
+      {
+        "load_pct": 65.65012624193407,
+        "ambient_c": 30.0202383632004,
+        "engine_rpm": 1810.4494709491846,
+        "elapsed_s": 600,
+        "coolant_c": 80.28807496642321,
+        "oil_kgf_cm2": 3.2242526133760463,
+        "vibration_rms_g": 0.045328769092088494
+      },
+      {
+        "load_pct": 65.67938118410434,
+        "ambient_c": 29.85316602603336,
+        "engine_rpm": 1807.1302889498595,
+        "elapsed_s": 602,
+        "coolant_c": 80.64477899783638,
+        "oil_kgf_cm2": 3.2174078357986944,
+        "vibration_rms_g": 0.0447127933736655
+      },
+      {
+        "load_pct": 65.80666840621055,
+        "ambient_c": 30.01533453721328,
+        "engine_rpm": 1808.6313441928846,
+        "elapsed_s": 604,
+        "coolant_c": 80.47565214414698,
+        "oil_kgf_cm2": 3.233589988787279,
+        "vibration_rms_g": 0.04633066803046091
+      },
+      {
+        "load_pct": 65.97781108758541,
+        "ambient_c": 29.93812075380827,
+        "engine_rpm": 1807.741778221528,
+        "elapsed_s": 606,
+        "coolant_c": 80.35416646695349,
+        "oil_kgf_cm2": 3.239788778540166,
+        "vibration_rms_g": 0.0437677704733333
+      },
+      {
+        "load_pct": 66.00594062639384,
+        "ambient_c": 30.029149651053682,
+        "engine_rpm": 1810.0441593806947,
+        "elapsed_s": 608,
+        "coolant_c": 80.62588618592483,
+        "oil_kgf_cm2": 3.232547050136917,
+        "vibration_rms_g": 0.045693808431673234
+      },
+      {
+        "load_pct": 66.09699801802512,
+        "ambient_c": 29.97282490788101,
+        "engine_rpm": 1809.0995400927347,
+        "elapsed_s": 610,
+        "coolant_c": 80.74534096601755,
+        "oil_kgf_cm2": 3.259960995310842,
+        "vibration_rms_g": 0.045239838373449116
+      },
+      {
+        "load_pct": 65.76850130006814,
+        "ambient_c": 30.124230182174962,
+        "engine_rpm": 1809.9639507255397,
+        "elapsed_s": 612,
+        "coolant_c": 80.35630594410404,
+        "oil_kgf_cm2": 3.2201127099412643,
+        "vibration_rms_g": 0.04460878942508822
+      },
+      {
+        "load_pct": 65.59098242989774,
+        "ambient_c": 29.822824519498305,
+        "engine_rpm": 1807.2592356098708,
+        "elapsed_s": 614,
+        "coolant_c": 80.26330582070577,
+        "oil_kgf_cm2": 3.209741384056501,
+        "vibration_rms_g": 0.04491714814292447
+      },
+      {
+        "load_pct": 65.5502602808988,
+        "ambient_c": 30.133639003591327,
+        "engine_rpm": 1811.2719237036458,
+        "elapsed_s": 616,
+        "coolant_c": 80.44179228798257,
+        "oil_kgf_cm2": 3.2096329688546428,
+        "vibration_rms_g": 0.04594554229407748
+      },
+      {
+        "load_pct": 65.86668053259633,
+        "ambient_c": 29.999493919033053,
+        "engine_rpm": 1809.3468912849305,
+        "elapsed_s": 618,
+        "coolant_c": 80.55375766219032,
+        "oil_kgf_cm2": 3.2217771027696935,
+        "vibration_rms_g": 0.04550908973836968
+      },
+      {
+        "load_pct": 66.22609031604499,
+        "ambient_c": 30.00160267006558,
+        "engine_rpm": 1812.1574683261997,
+        "elapsed_s": 620,
+        "coolant_c": 80.87594215019921,
+        "oil_kgf_cm2": 3.195885271418693,
+        "vibration_rms_g": 0.04765773736477828
+      },
+      {
+        "load_pct": 66.07484947734558,
+        "ambient_c": 30.040812462200506,
+        "engine_rpm": 1807.3289699208653,
+        "elapsed_s": 622,
+        "coolant_c": 80.35056265385874,
+        "oil_kgf_cm2": 3.2249686857515405,
+        "vibration_rms_g": 0.04514539580991186
+      },
+      {
+        "load_pct": 66.0610938922196,
+        "ambient_c": 29.815090510157287,
+        "engine_rpm": 1812.8257132255917,
+        "elapsed_s": 624,
+        "coolant_c": 80.64270018423493,
+        "oil_kgf_cm2": 3.2129620101077845,
+        "vibration_rms_g": 0.044532084373577065
+      },
+      {
+        "load_pct": 66.30852930860667,
+        "ambient_c": 30.143641485953008,
+        "engine_rpm": 1809.5080981524347,
+        "elapsed_s": 626,
+        "coolant_c": 80.52059942621915,
+        "oil_kgf_cm2": 3.2312026408711456,
+        "vibration_rms_g": 0.04563562828158227
+      },
+      {
+        "load_pct": 66.1551993639614,
+        "ambient_c": 29.89411737294109,
+        "engine_rpm": 1810.76964089124,
+        "elapsed_s": 628,
+        "coolant_c": 80.62284502416394,
+        "oil_kgf_cm2": 3.2275310117172014,
+        "vibration_rms_g": 0.04820099892344638
+      },
+      {
+        "load_pct": 65.91685651113555,
+        "ambient_c": 29.91077716577709,
+        "engine_rpm": 1809.1812276350104,
+        "elapsed_s": 630,
+        "coolant_c": 80.5786593305589,
+        "oil_kgf_cm2": 3.254191821309533,
+        "vibration_rms_g": 0.046578517421369224
+      },
+      {
+        "load_pct": 66.10857150088822,
+        "ambient_c": 29.9816576210599,
+        "engine_rpm": 1809.3210406822498,
+        "elapsed_s": 632,
+        "coolant_c": 80.5949706631979,
+        "oil_kgf_cm2": 3.2227117460068584,
+        "vibration_rms_g": 0.04675035917225255
+      },
+      {
+        "load_pct": 65.7298842397186,
+        "ambient_c": 29.83845907910456,
+        "engine_rpm": 1811.0297869322328,
+        "elapsed_s": 634,
+        "coolant_c": 80.76003957063756,
+        "oil_kgf_cm2": 3.1953783072228563,
+        "vibration_rms_g": 0.04634935953079538
+      },
+      {
+        "load_pct": 66.36025449027592,
+        "ambient_c": 29.95356769169269,
+        "engine_rpm": 1808.5682689585997,
+        "elapsed_s": 636,
+        "coolant_c": 80.86566882278767,
+        "oil_kgf_cm2": 3.2278572656868585,
+        "vibration_rms_g": 0.04678645430097528
+      },
+      {
+        "load_pct": 66.050548251159,
+        "ambient_c": 29.870958741592137,
+        "engine_rpm": 1808.6684902189404,
+        "elapsed_s": 638,
+        "coolant_c": 80.80541584927087,
+        "oil_kgf_cm2": 3.2223975802035367,
+        "vibration_rms_g": 0.04488276645416757
+      },
+      {
+        "load_pct": 65.98306190181334,
+        "ambient_c": 30.16985883648203,
+        "engine_rpm": 1808.0546309390218,
+        "elapsed_s": 640,
+        "coolant_c": 80.96358311556962,
+        "oil_kgf_cm2": 3.216250344359468,
+        "vibration_rms_g": 0.0447802661928649
+      },
+      {
+        "load_pct": 65.72742528033638,
+        "ambient_c": 29.8094975215952,
+        "engine_rpm": 1812.0860826079922,
+        "elapsed_s": 642,
+        "coolant_c": 80.2844686585758,
+        "oil_kgf_cm2": 3.203651208279709,
+        "vibration_rms_g": 0.04682120583465996
+      },
+      {
+        "load_pct": 65.95749395769954,
+        "ambient_c": 30.10264032512986,
+        "engine_rpm": 1809.809497292527,
+        "elapsed_s": 644,
+        "coolant_c": 80.63712616113891,
+        "oil_kgf_cm2": 3.2044427283483126,
+        "vibration_rms_g": 0.0468057662112706
+      },
+      {
+        "load_pct": 65.5499182516825,
+        "ambient_c": 29.903585432900563,
+        "engine_rpm": 1811.7115263428304,
+        "elapsed_s": 646,
+        "coolant_c": 80.22948469670574,
+        "oil_kgf_cm2": 3.237017830067875,
+        "vibration_rms_g": 0.04634910351974008
+      },
+      {
+        "load_pct": 65.65596477769635,
+        "ambient_c": 29.82705783522052,
+        "engine_rpm": 1807.2426044696745,
+        "elapsed_s": 648,
+        "coolant_c": 80.54093708773453,
+        "oil_kgf_cm2": 3.220395352067144,
+        "vibration_rms_g": 0.04632218136725906
+      }
+    ],
+    "sample_duration_s": 2,
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "provenance": "합성 점검 기록. 실제 발전기 측정값 및 제조사 기준이 아님."
+  },
+  {
+    "id": "inspection-2026-03",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-08-01T10:00:00+09:00",
+    "label": "정기 시험 운전",
+    "source": "scenario",
+    "confirmed_normal": true,
+    "installation_id": "demo-generator-mount-1",
+    "phase": "running",
+    "values": {
+      "coolant_c": 80.37607237200619,
+      "oil_kgf_cm2": 3.185911990191456,
+      "vibration_rms_g": 0.04396580937196573,
+      "load_pct": 59.999471191580895,
+      "ambient_c": 31.007244572213065,
+      "engine_rpm": 1804.2806144551396,
+      "elapsed_s": 549.0
+    },
+    "sources": {
+      "coolant_c": "scenario",
+      "oil_kgf_cm2": "scenario",
+      "vibration_rms_g": "scenario",
+      "load_pct": "scenario",
+      "ambient_c": "scenario",
+      "engine_rpm": "scenario",
+      "elapsed_s": "scenario"
+    },
+    "quality": {},
+    "samples": [
+      {
+        "load_pct": 60.272751454401416,
+        "ambient_c": 30.96572645134087,
+        "engine_rpm": 1802.962453448552,
+        "elapsed_s": 520,
+        "coolant_c": 79.93148718688818,
+        "oil_kgf_cm2": 3.1840794553876046,
+        "vibration_rms_g": 0.04318231638383388
+      },
+      {
+        "load_pct": 60.17370625710983,
+        "ambient_c": 30.900650971128623,
+        "engine_rpm": 1805.736886972312,
+        "elapsed_s": 522,
+        "coolant_c": 80.10934975828222,
+        "oil_kgf_cm2": 3.185369744084533,
+        "vibration_rms_g": 0.04186700651158471
+      },
+      {
+        "load_pct": 60.298795907047015,
+        "ambient_c": 31.13621040555098,
+        "engine_rpm": 1803.5617674150708,
+        "elapsed_s": 524,
+        "coolant_c": 80.35151812185946,
+        "oil_kgf_cm2": 3.2111314956121664,
+        "vibration_rms_g": 0.04589197408205075
+      },
+      {
+        "load_pct": 60.29389285070812,
+        "ambient_c": 30.879625481683135,
+        "engine_rpm": 1802.7158175287032,
+        "elapsed_s": 526,
+        "coolant_c": 80.52023341429852,
+        "oil_kgf_cm2": 3.1866550789886454,
+        "vibration_rms_g": 0.043612337514746115
+      },
+      {
+        "load_pct": 59.70562832488331,
+        "ambient_c": 31.00543694435606,
+        "engine_rpm": 1804.5077125202927,
+        "elapsed_s": 528,
+        "coolant_c": 80.49631788517411,
+        "oil_kgf_cm2": 3.1990799595390134,
+        "vibration_rms_g": 0.04295287690678727
+      },
+      {
+        "load_pct": 59.873239970234295,
+        "ambient_c": 31.002027437622218,
+        "engine_rpm": 1805.236587530204,
+        "elapsed_s": 530,
+        "coolant_c": 80.35581123378087,
+        "oil_kgf_cm2": 3.182648182586158,
+        "vibration_rms_g": 0.04423229224097074
+      },
+      {
+        "load_pct": 60.00719358482728,
+        "ambient_c": 30.813123415909747,
+        "engine_rpm": 1802.7257075328341,
+        "elapsed_s": 532,
+        "coolant_c": 80.13922280573271,
+        "oil_kgf_cm2": 3.178518486573135,
+        "vibration_rms_g": 0.0449837252567575
+      },
+      {
+        "load_pct": 60.406284211044934,
+        "ambient_c": 31.111959362751435,
+        "engine_rpm": 1802.8711667499635,
+        "elapsed_s": 534,
+        "coolant_c": 80.64979470054651,
+        "oil_kgf_cm2": 3.1893715764673347,
+        "vibration_rms_g": 0.043533936882202307
+      },
+      {
+        "load_pct": 60.30435542086225,
+        "ambient_c": 30.93939767499856,
+        "engine_rpm": 1806.8930455246962,
+        "elapsed_s": 536,
+        "coolant_c": 80.70317193891873,
+        "oil_kgf_cm2": 3.166063773232065,
+        "vibration_rms_g": 0.044173255432930415
+      },
+      {
+        "load_pct": 59.71553594719063,
+        "ambient_c": 30.93287301958531,
+        "engine_rpm": 1803.530613716243,
+        "elapsed_s": 538,
+        "coolant_c": 80.1984485039329,
+        "oil_kgf_cm2": 3.167534260172481,
+        "vibration_rms_g": 0.04485086436522865
+      },
+      {
+        "load_pct": 59.905442247847944,
+        "ambient_c": 30.911681498482483,
+        "engine_rpm": 1804.2546207882735,
+        "elapsed_s": 540,
+        "coolant_c": 80.2801588207091,
+        "oil_kgf_cm2": 3.210926951791937,
+        "vibration_rms_g": 0.044964512170248744
+      },
+      {
+        "load_pct": 59.7871381939391,
+        "ambient_c": 30.988396297198893,
+        "engine_rpm": 1803.884790609538,
+        "elapsed_s": 542,
+        "coolant_c": 79.99610419752935,
+        "oil_kgf_cm2": 3.192050916669598,
+        "vibration_rms_g": 0.0445585216238476
+      },
+      {
+        "load_pct": 60.45613580494835,
+        "ambient_c": 31.001053396015863,
+        "engine_rpm": 1804.9911989780476,
+        "elapsed_s": 544,
+        "coolant_c": 80.644040590793,
+        "oil_kgf_cm2": 3.1716874583897092,
+        "vibration_rms_g": 0.04423255177952711
+      },
+      {
+        "load_pct": 60.1084919327606,
+        "ambient_c": 31.016637656560214,
+        "engine_rpm": 1806.5038516564593,
+        "elapsed_s": 546,
+        "coolant_c": 80.37480123155117,
+        "oil_kgf_cm2": 3.188616824332266,
+        "vibration_rms_g": 0.04326217108333121
+      },
+      {
+        "load_pct": 59.95885913672042,
+        "ambient_c": 31.17423531082893,
+        "engine_rpm": 1806.5933736813197,
+        "elapsed_s": 548,
+        "coolant_c": 80.31059492750943,
+        "oil_kgf_cm2": 3.192806248054085,
+        "vibration_rms_g": 0.04563033612860658
+      },
+      {
+        "load_pct": 60.096046509805966,
+        "ambient_c": 31.075681903074152,
+        "engine_rpm": 1802.9930282995865,
+        "elapsed_s": 550,
+        "coolant_c": 80.53206970509616,
+        "oil_kgf_cm2": 3.1670385759861586,
+        "vibration_rms_g": 0.042727290810277596
+      },
+      {
+        "load_pct": 60.267705681092615,
+        "ambient_c": 30.827649337802036,
+        "engine_rpm": 1804.8433109700486,
+        "elapsed_s": 552,
+        "coolant_c": 80.10762408727159,
+        "oil_kgf_cm2": 3.1700546860164396,
+        "vibration_rms_g": 0.04584994777799522
+      },
+      {
+        "load_pct": 59.55829255319531,
+        "ambient_c": 31.176074014884346,
+        "engine_rpm": 1804.0826833955937,
+        "elapsed_s": 554,
+        "coolant_c": 80.24057425884465,
+        "oil_kgf_cm2": 3.177565326704714,
+        "vibration_rms_g": 0.04590960682992274
+      },
+      {
+        "load_pct": 59.803735843954335,
+        "ambient_c": 31.028365304767494,
+        "engine_rpm": 1806.5362589419915,
+        "elapsed_s": 556,
+        "coolant_c": 80.67240471355555,
+        "oil_kgf_cm2": 3.1971837649255024,
+        "vibration_rms_g": 0.04314908618481456
+      },
+      {
+        "load_pct": 59.76392356665687,
+        "ambient_c": 31.15632299796583,
+        "engine_rpm": 1804.2646660562784,
+        "elapsed_s": 558,
+        "coolant_c": 79.87168441759056,
+        "oil_kgf_cm2": 3.167013685730614,
+        "vibration_rms_g": 0.045275086465077
+      },
+      {
+        "load_pct": 59.90084271384024,
+        "ambient_c": 30.910521217888828,
+        "engine_rpm": 1803.3160774942046,
+        "elapsed_s": 560,
+        "coolant_c": 80.25424548672281,
+        "oil_kgf_cm2": 3.199062068852484,
+        "vibration_rms_g": 0.045251753206398064
+      },
+      {
+        "load_pct": 60.158837021185164,
+        "ambient_c": 31.051130751676137,
+        "engine_rpm": 1803.6963128556908,
+        "elapsed_s": 562,
+        "coolant_c": 80.4092663554908,
+        "oil_kgf_cm2": 3.2070748260048525,
+        "vibration_rms_g": 0.04499360811145068
+      },
+      {
+        "load_pct": 59.84368616730248,
+        "ambient_c": 31.113115589057365,
+        "engine_rpm": 1804.3809831761318,
+        "elapsed_s": 564,
+        "coolant_c": 80.50320523124999,
+        "oil_kgf_cm2": 3.196426995918179,
+        "vibration_rms_g": 0.04249398636914703
+      },
+      {
+        "load_pct": 59.5565932421998,
+        "ambient_c": 31.115085179469723,
+        "engine_rpm": 1802.3812275949367,
+        "elapsed_s": 566,
+        "coolant_c": 80.46839719602221,
+        "oil_kgf_cm2": 3.16412027815656,
+        "vibration_rms_g": 0.04185320860318534
+      },
+      {
+        "load_pct": 59.544019912123524,
+        "ambient_c": 30.8000656205691,
+        "engine_rpm": 1802.2351825515802,
+        "elapsed_s": 568,
+        "coolant_c": 80.36509990567431,
+        "oil_kgf_cm2": 3.1891289782475916,
+        "vibration_rms_g": 0.042942020123162485
+      },
+      {
+        "load_pct": 60.2991530050015,
+        "ambient_c": 31.12345939647477,
+        "engine_rpm": 1805.599754110457,
+        "elapsed_s": 570,
+        "coolant_c": 80.54995229810429,
+        "oil_kgf_cm2": 3.2034823244423367,
+        "vibration_rms_g": 0.043984372646717285
+      },
+      {
+        "load_pct": 59.731017625020016,
+        "ambient_c": 30.975924444781025,
+        "engine_rpm": 1802.0375006410172,
+        "elapsed_s": 572,
+        "coolant_c": 80.36956834748933,
+        "oil_kgf_cm2": 3.16299601340184,
+        "vibration_rms_g": 0.04267273456577733
+      },
+      {
+        "load_pct": 59.679294496304045,
+        "ambient_c": 30.850372314657445,
+        "engine_rpm": 1805.3047732562884,
+        "elapsed_s": 574,
+        "coolant_c": 80.44838959443045,
+        "oil_kgf_cm2": 3.2023095624671423,
+        "vibration_rms_g": 0.04286401905047057
+      },
+      {
+        "load_pct": 60.08700026071583,
+        "ambient_c": 31.16271228489933,
+        "engine_rpm": 1807.559313833637,
+        "elapsed_s": 576,
+        "coolant_c": 80.65957413410676,
+        "oil_kgf_cm2": 3.210728320664783,
+        "vibration_rms_g": 0.04311528055480432
+      },
+      {
+        "load_pct": 60.426535904503474,
+        "ambient_c": 31.07182148441108,
+        "engine_rpm": 1802.2177658242338,
+        "elapsed_s": 578,
+        "coolant_c": 80.76906011103029,
+        "oil_kgf_cm2": 3.156633886343738,
+        "vibration_rms_g": 0.04396360149711824
+      }
+    ],
+    "sample_duration_s": 2,
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "provenance": "합성 점검 기록. 실제 발전기 측정값 및 제조사 기준이 아님."
+  },
+  {
+    "id": "inspection-2026-04",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-08-15T10:00:00+09:00",
+    "label": "정기 시험 운전",
+    "source": "scenario",
+    "confirmed_normal": true,
+    "installation_id": "demo-generator-mount-1",
+    "phase": "running",
+    "values": {
+      "coolant_c": 79.29520056748521,
+      "oil_kgf_cm2": 3.2217340550468525,
+      "vibration_rms_g": 0.043098728266948876,
+      "load_pct": 65.07435404783459,
+      "ambient_c": 25.00622940555409,
+      "engine_rpm": 1795.0995811344103,
+      "elapsed_s": 649.0
+    },
+    "sources": {
+      "coolant_c": "scenario",
+      "oil_kgf_cm2": "scenario",
+      "vibration_rms_g": "scenario",
+      "load_pct": "scenario",
+      "ambient_c": "scenario",
+      "engine_rpm": "scenario",
+      "elapsed_s": "scenario"
+    },
+    "quality": {},
+    "samples": [
+      {
+        "load_pct": 65.13855093470868,
+        "ambient_c": 24.87792576277056,
+        "engine_rpm": 1796.795903809381,
+        "elapsed_s": 620,
+        "coolant_c": 79.29287336775907,
+        "oil_kgf_cm2": 3.2349240830793407,
+        "vibration_rms_g": 0.044200492791725096
+      },
+      {
+        "load_pct": 65.30618805816168,
+        "ambient_c": 24.964064322793767,
+        "engine_rpm": 1794.0765446709568,
+        "elapsed_s": 622,
+        "coolant_c": 79.39238950622857,
+        "oil_kgf_cm2": 3.241222037612743,
+        "vibration_rms_g": 0.04225726172910553
+      },
+      {
+        "load_pct": 64.93813558023362,
+        "ambient_c": 24.928204302359394,
+        "engine_rpm": 1797.478088816955,
+        "elapsed_s": 624,
+        "coolant_c": 78.85704681587866,
+        "oil_kgf_cm2": 3.2457178476866417,
+        "vibration_rms_g": 0.04131999368441983
+      },
+      {
+        "load_pct": 65.20848935954773,
+        "ambient_c": 25.062578946519945,
+        "engine_rpm": 1794.1147110610848,
+        "elapsed_s": 626,
+        "coolant_c": 79.21187159530743,
+        "oil_kgf_cm2": 3.2251753423200866,
+        "vibration_rms_g": 0.041273131481339785
+      },
+      {
+        "load_pct": 64.69257059452288,
+        "ambient_c": 24.945122896125927,
+        "engine_rpm": 1795.457298476604,
+        "elapsed_s": 628,
+        "coolant_c": 78.99701198388178,
+        "oil_kgf_cm2": 3.2591068623514605,
+        "vibration_rms_g": 0.04355411127142814
+      },
+      {
+        "load_pct": 64.69963407421328,
+        "ambient_c": 25.141145041760403,
+        "engine_rpm": 1795.9175665789014,
+        "elapsed_s": 630,
+        "coolant_c": 79.36940696411597,
+        "oil_kgf_cm2": 3.222196062965737,
+        "vibration_rms_g": 0.043152973185997985
+      },
+      {
+        "load_pct": 64.79675001889925,
+        "ambient_c": 25.195993597054624,
+        "engine_rpm": 1793.4745885407076,
+        "elapsed_s": 632,
+        "coolant_c": 79.10836856357334,
+        "oil_kgf_cm2": 3.2216889399485598,
+        "vibration_rms_g": 0.043829916172922055
+      },
+      {
+        "load_pct": 64.90585435202277,
+        "ambient_c": 24.874931734328072,
+        "engine_rpm": 1793.7505399786276,
+        "elapsed_s": 634,
+        "coolant_c": 79.45079672156255,
+        "oil_kgf_cm2": 3.2454298047815144,
+        "vibration_rms_g": 0.0419641138904607
+      },
+      {
+        "load_pct": 64.69784859359666,
+        "ambient_c": 24.883621847052495,
+        "engine_rpm": 1793.745745373643,
+        "elapsed_s": 636,
+        "coolant_c": 79.2178462504256,
+        "oil_kgf_cm2": 3.2137659272841423,
+        "vibration_rms_g": 0.042822846828111875
+      },
+      {
+        "load_pct": 65.22273410892804,
+        "ambient_c": 25.18575772068149,
+        "engine_rpm": 1796.4976931048416,
+        "elapsed_s": 638,
+        "coolant_c": 79.49777787858949,
+        "oil_kgf_cm2": 3.211456998144348,
+        "vibration_rms_g": 0.044223607511816754
+      },
+      {
+        "load_pct": 64.77927909724498,
+        "ambient_c": 25.199348148979034,
+        "engine_rpm": 1792.5817473776121,
+        "elapsed_s": 640,
+        "coolant_c": 79.1784317667022,
+        "oil_kgf_cm2": 3.2122002612458753,
+        "vibration_rms_g": 0.04241560685797374
+      },
+      {
+        "load_pct": 65.32488902476702,
+        "ambient_c": 25.126940829094288,
+        "engine_rpm": 1795.8895449074491,
+        "elapsed_s": 642,
+        "coolant_c": 79.40633263955148,
+        "oil_kgf_cm2": 3.2309779104849943,
+        "vibration_rms_g": 0.04219908644207668
+      },
+      {
+        "load_pct": 65.3603020742571,
+        "ambient_c": 24.877275174075184,
+        "engine_rpm": 1793.577809355177,
+        "elapsed_s": 644,
+        "coolant_c": 79.20544970583053,
+        "oil_kgf_cm2": 3.2047816995832275,
+        "vibration_rms_g": 0.043781585346262857
+      },
+      {
+        "load_pct": 65.22972103623763,
+        "ambient_c": 24.983453228071514,
+        "engine_rpm": 1797.666124189866,
+        "elapsed_s": 646,
+        "coolant_c": 79.23781148156154,
+        "oil_kgf_cm2": 3.2354663788537383,
+        "vibration_rms_g": 0.04418473915859324
+      },
+      {
+        "load_pct": 65.2196478690641,
+        "ambient_c": 25.0035922928524,
+        "engine_rpm": 1793.8802699873943,
+        "elapsed_s": 648,
+        "coolant_c": 79.28686181194428,
+        "oil_kgf_cm2": 3.2088757266054513,
+        "vibration_rms_g": 0.043063139646081154
+      },
+      {
+        "load_pct": 65.20813900190093,
+        "ambient_c": 25.059592686674513,
+        "engine_rpm": 1797.1658849991045,
+        "elapsed_s": 650,
+        "coolant_c": 79.31213220899286,
+        "oil_kgf_cm2": 3.2086079310233746,
+        "vibration_rms_g": 0.042859945031941446
+      },
+      {
+        "load_pct": 65.11525132365324,
+        "ambient_c": 24.919636847666432,
+        "engine_rpm": 1793.3336913333544,
+        "elapsed_s": 652,
+        "coolant_c": 79.01433447508977,
+        "oil_kgf_cm2": 3.2142057139979086,
+        "vibration_rms_g": 0.04227324993970112
+      },
+      {
+        "load_pct": 64.85554435244373,
+        "ambient_c": 24.88118733324631,
+        "engine_rpm": 1794.5404490779981,
+        "elapsed_s": 654,
+        "coolant_c": 78.7826801785629,
+        "oil_kgf_cm2": 3.2577199972962836,
+        "vibration_rms_g": 0.04284383675467521
+      },
+      {
+        "load_pct": 64.86189479192387,
+        "ambient_c": 24.829699708808377,
+        "engine_rpm": 1797.5584567050914,
+        "elapsed_s": 656,
+        "coolant_c": 79.31277571510616,
+        "oil_kgf_cm2": 3.2215930948477562,
+        "vibration_rms_g": 0.04475532387370087
+      },
+      {
+        "load_pct": 65.05001410297376,
+        "ambient_c": 25.030294058574434,
+        "engine_rpm": 1797.5007139355394,
+        "elapsed_s": 658,
+        "coolant_c": 79.77907147823076,
+        "oil_kgf_cm2": 3.2171487202361146,
+        "vibration_rms_g": 0.043411874437508595
+      },
+      {
+        "load_pct": 65.33793368976136,
+        "ambient_c": 25.186269503809115,
+        "engine_rpm": 1794.3401195243384,
+        "elapsed_s": 660,
+        "coolant_c": 79.14355103509295,
+        "oil_kgf_cm2": 3.208986874971702,
+        "vibration_rms_g": 0.043464075203608586
+      },
+      {
+        "load_pct": 65.42609394458356,
+        "ambient_c": 25.157346092145687,
+        "engine_rpm": 1797.1192945368098,
+        "elapsed_s": 662,
+        "coolant_c": 79.94006457663635,
+        "oil_kgf_cm2": 3.192001645976635,
+        "vibration_rms_g": 0.044096262648468415
+      },
+      {
+        "load_pct": 65.4861766712696,
+        "ambient_c": 24.860508607400035,
+        "engine_rpm": 1792.096725436399,
+        "elapsed_s": 664,
+        "coolant_c": 79.2962985737139,
+        "oil_kgf_cm2": 3.2528808512069993,
+        "vibration_rms_g": 0.04505511175255355
+      },
+      {
+        "load_pct": 64.78856211660374,
+        "ambient_c": 25.156688546526798,
+        "engine_rpm": 1793.0088529977368,
+        "elapsed_s": 666,
+        "coolant_c": 79.64690743109854,
+        "oil_kgf_cm2": 3.1956246599200524,
+        "vibration_rms_g": 0.04285092662970889
+      },
+      {
+        "load_pct": 65.29821760619785,
+        "ambient_c": 25.19181573387629,
+        "engine_rpm": 1796.8215141511848,
+        "elapsed_s": 668,
+        "coolant_c": 79.38316064872674,
+        "oil_kgf_cm2": 3.21050812406717,
+        "vibration_rms_g": 0.04219725690670567
+      },
+      {
+        "load_pct": 64.61908585670886,
+        "ambient_c": 24.813446638447793,
+        "engine_rpm": 1792.956891324768,
+        "elapsed_s": 670,
+        "coolant_c": 79.12355594011692,
+        "oil_kgf_cm2": 3.2321511732408883,
+        "vibration_rms_g": 0.043063474702961645
+      },
+      {
+        "load_pct": 65.26918660947548,
+        "ambient_c": 25.063612180994685,
+        "engine_rpm": 1795.3524034627287,
+        "elapsed_s": 672,
+        "coolant_c": 79.24551250990763,
+        "oil_kgf_cm2": 3.1696670237154287,
+        "vibration_rms_g": 0.04230586653845991
+      },
+      {
+        "load_pct": 64.64042141009644,
+        "ambient_c": 25.046391914785485,
+        "engine_rpm": 1793.4972499813357,
+        "elapsed_s": 674,
+        "coolant_c": 79.45291800860437,
+        "oil_kgf_cm2": 3.2184672735907625,
+        "vibration_rms_g": 0.042538005940737755
+      },
+      {
+        "load_pct": 65.38483339398944,
+        "ambient_c": 24.911046022135757,
+        "engine_rpm": 1796.6870084953805,
+        "elapsed_s": 676,
+        "coolant_c": 79.18798811237383,
+        "oil_kgf_cm2": 3.244468163038998,
+        "vibration_rms_g": 0.04385207960962884
+      },
+      {
+        "load_pct": 65.36867178705042,
+        "ambient_c": 24.82939044701187,
+        "engine_rpm": 1796.1040018413364,
+        "elapsed_s": 678,
+        "coolant_c": 79.5247890793904,
+        "oil_kgf_cm2": 3.195004521327635,
+        "vibration_rms_g": 0.043151952039790484
+      }
+    ],
+    "sample_duration_s": 2,
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "provenance": "합성 점검 기록. 실제 발전기 측정값 및 제조사 기준이 아님."
+  },
+  {
+    "id": "inspection-2026-05",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-08-29T10:00:00+09:00",
+    "label": "정기 시험 운전",
+    "source": "scenario",
+    "confirmed_normal": true,
+    "installation_id": "demo-generator-mount-1",
+    "phase": "running",
+    "values": {
+      "coolant_c": 79.8036268146155,
+      "oil_kgf_cm2": 3.2475453715967624,
+      "vibration_rms_g": 0.04599885405925189,
+      "load_pct": 58.98734981391793,
+      "ambient_c": 28.994226665051787,
+      "engine_rpm": 1809.5092962675483,
+      "elapsed_s": 609.0
+    },
+    "sources": {
+      "coolant_c": "scenario",
+      "oil_kgf_cm2": "scenario",
+      "vibration_rms_g": "scenario",
+      "load_pct": "scenario",
+      "ambient_c": "scenario",
+      "engine_rpm": "scenario",
+      "elapsed_s": "scenario"
+    },
+    "quality": {},
+    "samples": [
+      {
+        "load_pct": 58.81795354180623,
+        "ambient_c": 29.18730921468568,
+        "engine_rpm": 1809.309109058612,
+        "elapsed_s": 580,
+        "coolant_c": 79.96020268962498,
+        "oil_kgf_cm2": 3.265123151765379,
+        "vibration_rms_g": 0.046017646267897665
+      },
+      {
+        "load_pct": 58.685100775910094,
+        "ambient_c": 28.88454286160854,
+        "engine_rpm": 1808.956450654171,
+        "elapsed_s": 582,
+        "coolant_c": 79.71413611995611,
+        "oil_kgf_cm2": 3.257021866026234,
+        "vibration_rms_g": 0.04538984655221726
+      },
+      {
+        "load_pct": 58.94446308450137,
+        "ambient_c": 29.08779919288074,
+        "engine_rpm": 1807.5568751125966,
+        "elapsed_s": 584,
+        "coolant_c": 79.86007464718398,
+        "oil_kgf_cm2": 3.2479390558431342,
+        "vibration_rms_g": 0.04664747532137296
+      },
+      {
+        "load_pct": 58.72881027737561,
+        "ambient_c": 29.12662464549111,
+        "engine_rpm": 1812.3250118790463,
+        "elapsed_s": 586,
+        "coolant_c": 79.7471649707979,
+        "oil_kgf_cm2": 3.2463168334292094,
+        "vibration_rms_g": 0.046777790465914695
+      },
+      {
+        "load_pct": 59.20141283650918,
+        "ambient_c": 28.889953805634597,
+        "engine_rpm": 1807.4666774657805,
+        "elapsed_s": 588,
+        "coolant_c": 79.7030280760958,
+        "oil_kgf_cm2": 3.2513756548256243,
+        "vibration_rms_g": 0.046274583082296636
+      },
+      {
+        "load_pct": 59.12560596641328,
+        "ambient_c": 28.86056021553284,
+        "engine_rpm": 1807.8935224965824,
+        "elapsed_s": 590,
+        "coolant_c": 79.58590056517633,
+        "oil_kgf_cm2": 3.248602782943571,
+        "vibration_rms_g": 0.04436623829142881
+      },
+      {
+        "load_pct": 59.04582338741267,
+        "ambient_c": 28.965850742053938,
+        "engine_rpm": 1811.8918983422238,
+        "elapsed_s": 592,
+        "coolant_c": 79.55800303674546,
+        "oil_kgf_cm2": 3.220691741639948,
+        "vibration_rms_g": 0.04539291819772143
+      },
+      {
+        "load_pct": 59.045110272875434,
+        "ambient_c": 29.122057271141827,
+        "engine_rpm": 1807.0747876877745,
+        "elapsed_s": 594,
+        "coolant_c": 79.96099285635724,
+        "oil_kgf_cm2": 3.242454713066301,
+        "vibration_rms_g": 0.046263601423181075
+      },
+      {
+        "load_pct": 59.43237158080768,
+        "ambient_c": 29.074552771692577,
+        "engine_rpm": 1812.399923048281,
+        "elapsed_s": 596,
+        "coolant_c": 79.7778674609033,
+        "oil_kgf_cm2": 3.237964948490484,
+        "vibration_rms_g": 0.04645780319915116
+      },
+      {
+        "load_pct": 58.715617031755265,
+        "ambient_c": 28.980898483982926,
+        "engine_rpm": 1809.0707772492283,
+        "elapsed_s": 598,
+        "coolant_c": 79.66587498239011,
+        "oil_kgf_cm2": 3.2532155747000453,
+        "vibration_rms_g": 0.04689466738171089
+      },
+      {
+        "load_pct": 59.033653137629706,
+        "ambient_c": 28.97379873436848,
+        "engine_rpm": 1807.640340137673,
+        "elapsed_s": 600,
+        "coolant_c": 80.14239348836969,
+        "oil_kgf_cm2": 3.2285196487177736,
+        "vibration_rms_g": 0.04683420720524712
+      },
+      {
+        "load_pct": 58.67195627268344,
+        "ambient_c": 29.050944423168602,
+        "engine_rpm": 1808.8609108439061,
+        "elapsed_s": 602,
+        "coolant_c": 79.64542144099596,
+        "oil_kgf_cm2": 3.2625415561409796,
+        "vibration_rms_g": 0.04317010315894245
+      },
+      {
+        "load_pct": 59.39549634866561,
+        "ambient_c": 28.802446680599374,
+        "engine_rpm": 1812.7633238113904,
+        "elapsed_s": 604,
+        "coolant_c": 79.38636022466314,
+        "oil_kgf_cm2": 3.2609692801384527,
+        "vibration_rms_g": 0.04578502983469362
+      },
+      {
+        "load_pct": 58.75451371688291,
+        "ambient_c": 29.127250286526536,
+        "engine_rpm": 1811.9284641511813,
+        "elapsed_s": 606,
+        "coolant_c": 79.67981140499292,
+        "oil_kgf_cm2": 3.2357729116708094,
+        "vibration_rms_g": 0.04651590780202546
+      },
+      {
+        "load_pct": 58.63017524470913,
+        "ambient_c": 29.142518066138717,
+        "engine_rpm": 1812.1517328547784,
+        "elapsed_s": 608,
+        "coolant_c": 80.04220696358962,
+        "oil_kgf_cm2": 3.275676011187109,
+        "vibration_rms_g": 0.044457588405393086
+      },
+      {
+        "load_pct": 59.32794597801372,
+        "ambient_c": 28.820287616163192,
+        "engine_rpm": 1810.8968340904612,
+        "elapsed_s": 610,
+        "coolant_c": 79.82031683737264,
+        "oil_kgf_cm2": 3.2406642674963146,
+        "vibration_rms_g": 0.0455066221295785
+      },
+      {
+        "load_pct": 59.16327780825345,
+        "ambient_c": 29.192577300428773,
+        "engine_rpm": 1807.610120439198,
+        "elapsed_s": 612,
+        "coolant_c": 79.93697300138682,
+        "oil_kgf_cm2": 3.234387363495006,
+        "vibration_rms_g": 0.04631333370823485
+      },
+      {
+        "load_pct": 59.33276435704128,
+        "ambient_c": 29.042070560100854,
+        "engine_rpm": 1808.4065910228526,
+        "elapsed_s": 614,
+        "coolant_c": 79.76055152939296,
+        "oil_kgf_cm2": 3.2659657982671906,
+        "vibration_rms_g": 0.047083268849930124
+      },
+      {
+        "load_pct": 59.29086939483466,
+        "ambient_c": 29.107883962582406,
+        "engine_rpm": 1808.527202327436,
+        "elapsed_s": 616,
+        "coolant_c": 79.80312336299028,
+        "oil_kgf_cm2": 3.2368162107998875,
+        "vibration_rms_g": 0.045977731682621314
+      },
+      {
+        "load_pct": 59.03829957225523,
+        "ambient_c": 29.168186762904284,
+        "engine_rpm": 1809.9532108699493,
+        "elapsed_s": 618,
+        "coolant_c": 79.85134477038912,
+        "oil_kgf_cm2": 3.224127758835044,
+        "vibration_rms_g": 0.04455840168581203
+      },
+      {
+        "load_pct": 58.71004159494725,
+        "ambient_c": 29.056985230712424,
+        "engine_rpm": 1807.058926966222,
+        "elapsed_s": 620,
+        "coolant_c": 79.88434498421695,
+        "oil_kgf_cm2": 3.29046999103784,
+        "vibration_rms_g": 0.046556186131417696
+      },
+      {
+        "load_pct": 59.11723474235933,
+        "ambient_c": 28.902448507552652,
+        "engine_rpm": 1810.2688450052538,
+        "elapsed_s": 622,
+        "coolant_c": 79.69790812224934,
+        "oil_kgf_cm2": 3.2240793004718236,
+        "vibration_rms_g": 0.04755899209928089
+      },
+      {
+        "load_pct": 58.73687072739945,
+        "ambient_c": 28.897731509316486,
+        "engine_rpm": 1808.9072325394459,
+        "elapsed_s": 624,
+        "coolant_c": 80.12826914753201,
+        "oil_kgf_cm2": 3.2267006561428127,
+        "vibration_rms_g": 0.044042008705857394
+      },
+      {
+        "load_pct": 59.24700957003763,
+        "ambient_c": 29.01963906375837,
+        "engine_rpm": 1809.1063268137566,
+        "elapsed_s": 626,
+        "coolant_c": 79.80708362346525,
+        "oil_kgf_cm2": 3.261296294061512,
+        "vibration_rms_g": 0.04596092928208185
+      },
+      {
+        "load_pct": 59.091595646895904,
+        "ambient_c": 28.82730663362791,
+        "engine_rpm": 1808.9710117119516,
+        "elapsed_s": 628,
+        "coolant_c": 79.80230157126404,
+        "oil_kgf_cm2": 3.2158236427403972,
+        "vibration_rms_g": 0.04582489742833298
+      },
+      {
+        "load_pct": 58.65744616364379,
+        "ambient_c": 28.8903851675331,
+        "engine_rpm": 1808.601178198409,
+        "elapsed_s": 630,
+        "coolant_c": 79.68577355150713,
+        "oil_kgf_cm2": 3.27046647761969,
+        "vibration_rms_g": 0.0473379947990804
+      },
+      {
+        "load_pct": 58.64237709372524,
+        "ambient_c": 29.038707831097906,
+        "engine_rpm": 1810.1202874913151,
+        "elapsed_s": 632,
+        "coolant_c": 79.80708802582663,
+        "oil_kgf_cm2": 3.2247132162423733,
+        "vibration_rms_g": 0.045964865348314725
+      },
+      {
+        "load_pct": 59.29155263572824,
+        "ambient_c": 28.800766229695476,
+        "engine_rpm": 1811.6064469460725,
+        "elapsed_s": 634,
+        "coolant_c": 80.06765076377235,
+        "oil_kgf_cm2": 3.2398218052497056,
+        "vibration_rms_g": 0.048489253267230394
+      },
+      {
+        "load_pct": 58.649022076251065,
+        "ambient_c": 28.879366599859836,
+        "engine_rpm": 1807.6689791313804,
+        "elapsed_s": 636,
+        "coolant_c": 79.66418996194193,
+        "oil_kgf_cm2": 3.259439837336318,
+        "vibration_rms_g": 0.04560055639953696
+      },
+      {
+        "load_pct": 59.096123580213934,
+        "ambient_c": 28.905349580713494,
+        "engine_rpm": 1810.2858896795165,
+        "elapsed_s": 638,
+        "coolant_c": 79.96244625731504,
+        "oil_kgf_cm2": 3.277402797521899,
+        "vibration_rms_g": 0.04594517367105228
+      }
+    ],
+    "sample_duration_s": 2,
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "provenance": "합성 점검 기록. 실제 발전기 측정값 및 제조사 기준이 아님."
+  },
+  {
+    "id": "inspection-2026-06",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-09-12T10:00:00+09:00",
+    "label": "정기 시험 운전",
+    "source": "scenario",
+    "confirmed_normal": true,
+    "installation_id": "demo-generator-mount-1",
+    "phase": "running",
+    "values": {
+      "coolant_c": 79.68720097772058,
+      "oil_kgf_cm2": 3.1941710637009977,
+      "vibration_rms_g": 0.044839090940784844,
+      "load_pct": 63.98152640389882,
+      "ambient_c": 26.96281237554452,
+      "engine_rpm": 1790.0885653130138,
+      "elapsed_s": 579.0
+    },
+    "sources": {
+      "coolant_c": "scenario",
+      "oil_kgf_cm2": "scenario",
+      "vibration_rms_g": "scenario",
+      "load_pct": "scenario",
+      "ambient_c": "scenario",
+      "engine_rpm": "scenario",
+      "elapsed_s": "scenario"
+    },
+    "quality": {},
+    "samples": [
+      {
+        "load_pct": 63.65339132139219,
+        "ambient_c": 26.888311927503256,
+        "engine_rpm": 1791.0937359707464,
+        "elapsed_s": 550,
+        "coolant_c": 79.55452396501079,
+        "oil_kgf_cm2": 3.177743708757204,
+        "vibration_rms_g": 0.04558507333419524
+      },
+      {
+        "load_pct": 64.25058588190774,
+        "ambient_c": 26.958506200254458,
+        "engine_rpm": 1791.9720893011854,
+        "elapsed_s": 552,
+        "coolant_c": 79.76321252565168,
+        "oil_kgf_cm2": 3.2064095329307154,
+        "vibration_rms_g": 0.045007796256306035
+      },
+      {
+        "load_pct": 63.68383478292174,
+        "ambient_c": 27.10735862467397,
+        "engine_rpm": 1787.2584291155445,
+        "elapsed_s": 554,
+        "coolant_c": 79.90306644282829,
+        "oil_kgf_cm2": 3.180193421659238,
+        "vibration_rms_g": 0.044415126424085585
+      },
+      {
+        "load_pct": 63.793526139002395,
+        "ambient_c": 26.836213874435195,
+        "engine_rpm": 1787.2367114822598,
+        "elapsed_s": 556,
+        "coolant_c": 79.72590992558659,
+        "oil_kgf_cm2": 3.2035800617476213,
+        "vibration_rms_g": 0.04362635242658444
+      },
+      {
+        "load_pct": 63.51219803061304,
+        "ambient_c": 27.163784216434415,
+        "engine_rpm": 1787.5435602036123,
+        "elapsed_s": 558,
+        "coolant_c": 79.54738848437313,
+        "oil_kgf_cm2": 3.214961517809262,
+        "vibration_rms_g": 0.04549582083448474
+      },
+      {
+        "load_pct": 64.14019038971747,
+        "ambient_c": 27.132549682294613,
+        "engine_rpm": 1791.827638009022,
+        "elapsed_s": 560,
+        "coolant_c": 79.75924484863849,
+        "oil_kgf_cm2": 3.2155238101114882,
+        "vibration_rms_g": 0.043319683007316874
+      },
+      {
+        "load_pct": 64.46242636208993,
+        "ambient_c": 27.00101278984335,
+        "engine_rpm": 1790.2354176201743,
+        "elapsed_s": 562,
+        "coolant_c": 80.02046164920793,
+        "oil_kgf_cm2": 3.203951768368453,
+        "vibration_rms_g": 0.04336972584191491
+      },
+      {
+        "load_pct": 64.40723634291639,
+        "ambient_c": 26.998250728484837,
+        "engine_rpm": 1792.7772754438306,
+        "elapsed_s": 564,
+        "coolant_c": 79.46444137108146,
+        "oil_kgf_cm2": 3.2072418555543876,
+        "vibration_rms_g": 0.045706347367011714
+      },
+      {
+        "load_pct": 63.77487617338317,
+        "ambient_c": 27.016922101860217,
+        "engine_rpm": 1787.02377023449,
+        "elapsed_s": 566,
+        "coolant_c": 79.44525426157915,
+        "oil_kgf_cm2": 3.2128725855603335,
+        "vibration_rms_g": 0.04645660004643732
+      },
+      {
+        "load_pct": 63.696345085808716,
+        "ambient_c": 27.12139167336125,
+        "engine_rpm": 1791.1698855403254,
+        "elapsed_s": 568,
+        "coolant_c": 79.61470475475541,
+        "oil_kgf_cm2": 3.180691548392101,
+        "vibration_rms_g": 0.04490907780569933
+      },
+      {
+        "load_pct": 63.73501837703285,
+        "ambient_c": 26.800305728976596,
+        "engine_rpm": 1791.2018452023576,
+        "elapsed_s": 570,
+        "coolant_c": 79.6677485510218,
+        "oil_kgf_cm2": 3.178495538959207,
+        "vibration_rms_g": 0.04444287269151818
+      },
+      {
+        "load_pct": 64.14080260879868,
+        "ambient_c": 26.84422700988696,
+        "engine_rpm": 1788.6498515480735,
+        "elapsed_s": 572,
+        "coolant_c": 79.35322004925145,
+        "oil_kgf_cm2": 3.200933369475073,
+        "vibration_rms_g": 0.043773398698667636
+      },
+      {
+        "load_pct": 64.12290606718491,
+        "ambient_c": 27.075334403744773,
+        "engine_rpm": 1791.8525323837866,
+        "elapsed_s": 574,
+        "coolant_c": 79.81297847119109,
+        "oil_kgf_cm2": 3.192022879561415,
+        "vibration_rms_g": 0.04619470459497485
+      },
+      {
+        "load_pct": 64.20729088259135,
+        "ambient_c": 26.912784035041057,
+        "engine_rpm": 1789.533443325199,
+        "elapsed_s": 576,
+        "coolant_c": 79.69267919269457,
+        "oil_kgf_cm2": 3.1822100344081856,
+        "vibration_rms_g": 0.04465920333129342
+      },
+      {
+        "load_pct": 64.16097204504884,
+        "ambient_c": 27.028028905724554,
+        "engine_rpm": 1790.2783850684452,
+        "elapsed_s": 578,
+        "coolant_c": 79.93448208339525,
+        "oil_kgf_cm2": 3.1745339333175755,
+        "vibration_rms_g": 0.045386356077340595
+      },
+      {
+        "load_pct": 63.977954307483266,
+        "ambient_c": 26.836046443018187,
+        "engine_rpm": 1792.7437591933822,
+        "elapsed_s": 580,
+        "coolant_c": 79.71577556412466,
+        "oil_kgf_cm2": 3.1990607720721047,
+        "vibration_rms_g": 0.04530640897758244
+      },
+      {
+        "load_pct": 63.94280230548581,
+        "ambient_c": 26.994770525449216,
+        "engine_rpm": 1787.282895360067,
+        "elapsed_s": 582,
+        "coolant_c": 79.61872728195303,
+        "oil_kgf_cm2": 3.206324414702045,
+        "vibration_rms_g": 0.047125598622745034
+      },
+      {
+        "load_pct": 63.66522206911841,
+        "ambient_c": 26.83081873291515,
+        "engine_rpm": 1792.2121493675395,
+        "elapsed_s": 584,
+        "coolant_c": 79.2949837455544,
+        "oil_kgf_cm2": 3.1908258595704786,
+        "vibration_rms_g": 0.043020729357661006
+      },
+      {
+        "load_pct": 63.76058192599338,
+        "ambient_c": 26.885444152810194,
+        "engine_rpm": 1791.2634794848152,
+        "elapsed_s": 586,
+        "coolant_c": 79.94633123836226,
+        "oil_kgf_cm2": 3.1880573489257,
+        "vibration_rms_g": 0.04541546590643204
+      },
+      {
+        "load_pct": 64.34928490426024,
+        "ambient_c": 27.082615131575484,
+        "engine_rpm": 1788.7067442575235,
+        "elapsed_s": 588,
+        "coolant_c": 79.55044377598078,
+        "oil_kgf_cm2": 3.175427054375458,
+        "vibration_rms_g": 0.04414502696131358
+      },
+      {
+        "load_pct": 64.38430516585366,
+        "ambient_c": 26.947019896218155,
+        "engine_rpm": 1788.7124764762598,
+        "elapsed_s": 590,
+        "coolant_c": 79.76830739637197,
+        "oil_kgf_cm2": 3.2095364290983444,
+        "vibration_rms_g": 0.04495254479923204
+      },
+      {
+        "load_pct": 63.96910201226739,
+        "ambient_c": 26.844079645378113,
+        "engine_rpm": 1789.752338950531,
+        "elapsed_s": 592,
+        "coolant_c": 79.91106314593522,
+        "oil_kgf_cm2": 3.1917398945857363,
+        "vibration_rms_g": 0.043949782139743654
+      },
+      {
+        "load_pct": 63.76832706446624,
+        "ambient_c": 26.81538872714577,
+        "engine_rpm": 1792.4140762651145,
+        "elapsed_s": 594,
+        "coolant_c": 79.72334400197528,
+        "oil_kgf_cm2": 3.2036137893748875,
+        "vibration_rms_g": 0.04543654777912863
+      },
+      {
+        "load_pct": 64.03233866636799,
+        "ambient_c": 26.998533565780438,
+        "engine_rpm": 1791.6724805755011,
+        "elapsed_s": 596,
+        "coolant_c": 79.64247480966132,
+        "oil_kgf_cm2": 3.2268468935861585,
+        "vibration_rms_g": 0.04566831994887063
+      },
+      {
+        "load_pct": 63.53252732957141,
+        "ambient_c": 26.91248481243925,
+        "engine_rpm": 1790.1783427477953,
+        "elapsed_s": 598,
+        "coolant_c": 79.676378528128,
+        "oil_kgf_cm2": 3.179898116885574,
+        "vibration_rms_g": 0.04469063389461325
+      },
+      {
+        "load_pct": 64.222397358998,
+        "ambient_c": 26.91853281141797,
+        "engine_rpm": 1789.2042013977116,
+        "elapsed_s": 600,
+        "coolant_c": 79.7964308496709,
+        "oil_kgf_cm2": 3.188427476940558,
+        "vibration_rms_g": 0.04419383520294298
+      },
+      {
+        "load_pct": 64.22887945714706,
+        "ambient_c": 26.82931377678187,
+        "engine_rpm": 1791.7892919465792,
+        "elapsed_s": 602,
+        "coolant_c": 79.5296918787767,
+        "oil_kgf_cm2": 3.18163869442965,
+        "vibration_rms_g": 0.043452116716171454
+      },
+      {
+        "load_pct": 63.790337466193726,
+        "ambient_c": 27.139355426810532,
+        "engine_rpm": 1790.8843116092974,
+        "elapsed_s": 604,
+        "coolant_c": 79.94111073673501,
+        "oil_kgf_cm2": 3.1835202119202943,
+        "vibration_rms_g": 0.04555945824103755
+      },
+      {
+        "load_pct": 63.792217522390395,
+        "ambient_c": 27.05694561030857,
+        "engine_rpm": 1788.4835472673442,
+        "elapsed_s": 606,
+        "coolant_c": 79.5009481964032,
+        "oil_kgf_cm2": 3.19413963106269,
+        "vibration_rms_g": 0.04417894984387209
+      },
+      {
+        "load_pct": 64.2879140709582,
+        "ambient_c": 26.908040105767185,
+        "engine_rpm": 1787.7022940419017,
+        "elapsed_s": 608,
+        "coolant_c": 79.74070160571772,
+        "oil_kgf_cm2": 3.1747097568879883,
+        "vibration_rms_g": 0.04572917109436799
+      }
+    ],
+    "sample_duration_s": 2,
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "provenance": "합성 점검 기록. 실제 발전기 측정값 및 제조사 기준이 아님."
+  },
+  {
+    "id": "inspection-2026-07",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-09-26T10:00:00+09:00",
+    "label": "정기 시험 운전",
+    "source": "scenario",
+    "confirmed_normal": true,
+    "installation_id": "demo-generator-mount-1",
+    "phase": "running",
+    "values": {
+      "coolant_c": 80.21787272996326,
+      "oil_kgf_cm2": 3.1993897594376497,
+      "vibration_rms_g": 0.047134449590852334,
+      "load_pct": 60.96891756371527,
+      "ambient_c": 30.00478547196509,
+      "engine_rpm": 1800.6981149826352,
+      "elapsed_s": 619.0
+    },
+    "sources": {
+      "coolant_c": "scenario",
+      "oil_kgf_cm2": "scenario",
+      "vibration_rms_g": "scenario",
+      "load_pct": "scenario",
+      "ambient_c": "scenario",
+      "engine_rpm": "scenario",
+      "elapsed_s": "scenario"
+    },
+    "quality": {},
+    "samples": [
+      {
+        "load_pct": 60.71583635811818,
+        "ambient_c": 30.15961455409338,
+        "engine_rpm": 1798.3050825348596,
+        "elapsed_s": 590,
+        "coolant_c": 80.15594472048409,
+        "oil_kgf_cm2": 3.220018598024648,
+        "vibration_rms_g": 0.04501444747558261
+      },
+      {
+        "load_pct": 60.79151269065491,
+        "ambient_c": 29.845303232214153,
+        "engine_rpm": 1800.2961535793565,
+        "elapsed_s": 592,
+        "coolant_c": 79.71172345882023,
+        "oil_kgf_cm2": 3.2013085160684347,
+        "vibration_rms_g": 0.04946007549190422
+      },
+      {
+        "load_pct": 60.62168994397818,
+        "ambient_c": 29.82291135772814,
+        "engine_rpm": 1801.9742783697407,
+        "elapsed_s": 594,
+        "coolant_c": 80.09923455897997,
+        "oil_kgf_cm2": 3.184444043783145,
+        "vibration_rms_g": 0.04820325850679194
+      },
+      {
+        "load_pct": 60.527261537129434,
+        "ambient_c": 29.82269495206505,
+        "engine_rpm": 1801.906650438177,
+        "elapsed_s": 596,
+        "coolant_c": 80.12738387648459,
+        "oil_kgf_cm2": 3.212111561253531,
+        "vibration_rms_g": 0.04661941095734164
+      },
+      {
+        "load_pct": 61.165669373041155,
+        "ambient_c": 30.183839345143994,
+        "engine_rpm": 1797.7285737305147,
+        "elapsed_s": 598,
+        "coolant_c": 80.16639360065022,
+        "oil_kgf_cm2": 3.218059670371681,
+        "vibration_rms_g": 0.048412659903122934
+      },
+      {
+        "load_pct": 61.335939431175085,
+        "ambient_c": 30.06186619739566,
+        "engine_rpm": 1802.5335530087852,
+        "elapsed_s": 600,
+        "coolant_c": 80.33321737448878,
+        "oil_kgf_cm2": 3.206977991896218,
+        "vibration_rms_g": 0.047133969121157096
+      },
+      {
+        "load_pct": 60.98929536717805,
+        "ambient_c": 29.951501570207686,
+        "engine_rpm": 1802.8789659723043,
+        "elapsed_s": 602,
+        "coolant_c": 80.39032451021795,
+        "oil_kgf_cm2": 3.188808023766104,
+        "vibration_rms_g": 0.04627212501197686
+      },
+      {
+        "load_pct": 61.4645008320188,
+        "ambient_c": 29.95946076747283,
+        "engine_rpm": 1800.3986231485133,
+        "elapsed_s": 604,
+        "coolant_c": 80.11055831002147,
+        "oil_kgf_cm2": 3.226156939278206,
+        "vibration_rms_g": 0.046856094628781306
+      },
+      {
+        "load_pct": 61.284005740253335,
+        "ambient_c": 29.892587183840362,
+        "engine_rpm": 1801.9375498637862,
+        "elapsed_s": 606,
+        "coolant_c": 80.06488970232537,
+        "oil_kgf_cm2": 3.1942963662905117,
+        "vibration_rms_g": 0.04732639867949408
+      },
+      {
+        "load_pct": 60.9004773968331,
+        "ambient_c": 29.899665268191065,
+        "engine_rpm": 1801.3964366539567,
+        "elapsed_s": 608,
+        "coolant_c": 79.95354453849772,
+        "oil_kgf_cm2": 3.1850783290554947,
+        "vibration_rms_g": 0.0463995604149095
+      },
+      {
+        "load_pct": 61.14524999824659,
+        "ambient_c": 29.85038802789869,
+        "engine_rpm": 1802.751282776493,
+        "elapsed_s": 610,
+        "coolant_c": 80.04592109233819,
+        "oil_kgf_cm2": 3.168510094947052,
+        "vibration_rms_g": 0.04871939821304354
+      },
+      {
+        "load_pct": 60.65268306727736,
+        "ambient_c": 30.037396255474167,
+        "engine_rpm": 1801.8883344644275,
+        "elapsed_s": 612,
+        "coolant_c": 80.10071804021972,
+        "oil_kgf_cm2": 3.1845042562296535,
+        "vibration_rms_g": 0.04497024376636024
+      },
+      {
+        "load_pct": 60.77861420374565,
+        "ambient_c": 30.186903476251093,
+        "engine_rpm": 1797.0466685102647,
+        "elapsed_s": 614,
+        "coolant_c": 80.11908251511173,
+        "oil_kgf_cm2": 3.2194780270270726,
+        "vibration_rms_g": 0.046885105079363006
+      },
+      {
+        "load_pct": 60.88250308551481,
+        "ambient_c": 30.14097292988818,
+        "engine_rpm": 1801.432588153786,
+        "elapsed_s": 616,
+        "coolant_c": 80.38136404160302,
+        "oil_kgf_cm2": 3.1646671970108438,
+        "vibration_rms_g": 0.04768550647613277
+      },
+      {
+        "load_pct": 60.94517419546163,
+        "ambient_c": 30.188245011900577,
+        "engine_rpm": 1797.871389439895,
+        "elapsed_s": 618,
+        "coolant_c": 80.38529404190601,
+        "oil_kgf_cm2": 3.186775206918197,
+        "vibration_rms_g": 0.04681794129187183
+      },
+      {
+        "load_pct": 60.97582384069728,
+        "ambient_c": 29.86697019446551,
+        "engine_rpm": 1802.0839528854342,
+        "elapsed_s": 620,
+        "coolant_c": 80.2933309599193,
+        "oil_kgf_cm2": 3.1873070611948107,
+        "vibration_rms_g": 0.04923157359007101
+      },
+      {
+        "load_pct": 61.05474420820509,
+        "ambient_c": 30.076484615681565,
+        "engine_rpm": 1797.3891724422492,
+        "elapsed_s": 622,
+        "coolant_c": 80.03987304716317,
+        "oil_kgf_cm2": 3.1864472054544946,
+        "vibration_rms_g": 0.04627410654078549
+      },
+      {
+        "load_pct": 60.61727388104843,
+        "ambient_c": 30.03034025020677,
+        "engine_rpm": 1800.5701007708435,
+        "elapsed_s": 624,
+        "coolant_c": 80.31038116839241,
+        "oil_kgf_cm2": 3.233199964409425,
+        "vibration_rms_g": 0.04628584862156036
+      },
+      {
+        "load_pct": 60.59690405838525,
+        "ambient_c": 30.13446432783497,
+        "engine_rpm": 1801.965767000091,
+        "elapsed_s": 626,
+        "coolant_c": 80.31908579186128,
+        "oil_kgf_cm2": 3.2090795700945387,
+        "vibration_rms_g": 0.04602741859443735
+      },
+      {
+        "load_pct": 61.19611119077252,
+        "ambient_c": 30.086262942958815,
+        "engine_rpm": 1802.393711665191,
+        "elapsed_s": 628,
+        "coolant_c": 80.2398941758857,
+        "oil_kgf_cm2": 3.2152054129196794,
+        "vibration_rms_g": 0.04847993911581957
+      },
+      {
+        "load_pct": 61.30634176606362,
+        "ambient_c": 29.815119110020966,
+        "engine_rpm": 1800.9672899034895,
+        "elapsed_s": 630,
+        "coolant_c": 80.11090786706319,
+        "oil_kgf_cm2": 3.192964596526984,
+        "vibration_rms_g": 0.04793378188100357
+      },
+      {
+        "load_pct": 60.796129006802516,
+        "ambient_c": 30.008608527302602,
+        "engine_rpm": 1802.4279542104425,
+        "elapsed_s": 632,
+        "coolant_c": 80.39280054934673,
+        "oil_kgf_cm2": 3.2225712516412055,
+        "vibration_rms_g": 0.04659926195607322
+      },
+      {
+        "load_pct": 61.134680574785754,
+        "ambient_c": 29.979716317718502,
+        "engine_rpm": 1797.192114954055,
+        "elapsed_s": 634,
+        "coolant_c": 80.29267701860819,
+        "oil_kgf_cm2": 3.1840986251877266,
+        "vibration_rms_g": 0.047836832465100745
+      },
+      {
+        "load_pct": 60.51773756039401,
+        "ambient_c": 30.109347722422953,
+        "engine_rpm": 1801.3702636033051,
+        "elapsed_s": 636,
+        "coolant_c": 80.1688195248497,
+        "oil_kgf_cm2": 3.192248661782001,
+        "vibration_rms_g": 0.04590604814562789
+      },
+      {
+        "load_pct": 60.90972739417426,
+        "ambient_c": 29.897838743514015,
+        "engine_rpm": 1802.9455651079852,
+        "elapsed_s": 638,
+        "coolant_c": 80.54837803937568,
+        "oil_kgf_cm2": 3.2047851446798497,
+        "vibration_rms_g": 0.046542595470294185
+      },
+      {
+        "load_pct": 61.31251676850104,
+        "ambient_c": 30.198325568573,
+        "engine_rpm": 1798.1926961963086,
+        "elapsed_s": 640,
+        "coolant_c": 80.22644964720277,
+        "oil_kgf_cm2": 3.177402491865549,
+        "vibration_rms_g": 0.04596734255732751
+      },
+      {
+        "load_pct": 61.43263164252829,
+        "ambient_c": 29.888874366364632,
+        "engine_rpm": 1802.7855726962741,
+        "elapsed_s": 642,
+        "coolant_c": 80.43568155861662,
+        "oil_kgf_cm2": 3.190043457766023,
+        "vibration_rms_g": 0.04877069745526412
+      },
+      {
+        "load_pct": 61.01569980629174,
+        "ambient_c": 29.937027196452092,
+        "engine_rpm": 1802.5394760725437,
+        "elapsed_s": 644,
+        "coolant_c": 80.5637715382387,
+        "oil_kgf_cm2": 3.1799110960347186,
+        "vibration_rms_g": 0.04808154245332517
+      },
+      {
+        "load_pct": 61.464863595593,
+        "ambient_c": 30.0577628726701,
+        "engine_rpm": 1797.8559889727446,
+        "elapsed_s": 646,
+        "coolant_c": 80.06249930502308,
+        "oil_kgf_cm2": 3.205895823986874,
+        "vibration_rms_g": 0.046743163731311196
+      },
+      {
+        "load_pct": 60.53592839658907,
+        "ambient_c": 30.053071273001237,
+        "engine_rpm": 1799.9176923532355,
+        "elapsed_s": 648,
+        "coolant_c": 80.38603732520191,
+        "oil_kgf_cm2": 3.2393375976648207,
+        "vibration_rms_g": 0.046577140129735066
+      }
+    ],
+    "sample_duration_s": 2,
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "provenance": "합성 점검 기록. 실제 발전기 측정값 및 제조사 기준이 아님."
+  },
+  {
+    "id": "inspection-2026-08",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-10-10T10:00:00+09:00",
+    "label": "정기 시험 운전",
+    "source": "scenario",
+    "confirmed_normal": true,
+    "installation_id": "demo-generator-mount-1",
+    "phase": "running",
+    "values": {
+      "coolant_c": 79.85582373068026,
+      "oil_kgf_cm2": 3.178287340932148,
+      "vibration_rms_g": 0.04394706914133016,
+      "load_pct": 61.94943898682977,
+      "ambient_c": 28.519103812338745,
+      "engine_rpm": 1800.0142141744136,
+      "elapsed_s": 599.0
+    },
+    "sources": {
+      "coolant_c": "scenario",
+      "oil_kgf_cm2": "scenario",
+      "vibration_rms_g": "scenario",
+      "load_pct": "scenario",
+      "ambient_c": "scenario",
+      "engine_rpm": "scenario",
+      "elapsed_s": "scenario"
+    },
+    "quality": {},
+    "samples": [
+      {
+        "load_pct": 62.17473639667039,
+        "ambient_c": 28.661041782530393,
+        "engine_rpm": 1797.422944218035,
+        "elapsed_s": 570,
+        "coolant_c": 79.96516839883547,
+        "oil_kgf_cm2": 3.2011359538604904,
+        "vibration_rms_g": 0.041639835896093796
+      },
+      {
+        "load_pct": 61.84588808018316,
+        "ambient_c": 28.52876794610783,
+        "engine_rpm": 1799.4369880395877,
+        "elapsed_s": 572,
+        "coolant_c": 79.86003584241153,
+        "oil_kgf_cm2": 3.18787126525971,
+        "vibration_rms_g": 0.04513696684507893
+      },
+      {
+        "load_pct": 61.98404754589915,
+        "ambient_c": 28.457710403704684,
+        "engine_rpm": 1802.2449739031385,
+        "elapsed_s": 574,
+        "coolant_c": 79.6123744193268,
+        "oil_kgf_cm2": 3.172635707677912,
+        "vibration_rms_g": 0.0442969558447323
+      },
+      {
+        "load_pct": 61.55059294925498,
+        "ambient_c": 28.370198180927378,
+        "engine_rpm": 1800.832656226522,
+        "elapsed_s": 576,
+        "coolant_c": 79.65355006668987,
+        "oil_kgf_cm2": 3.173679377162074,
+        "vibration_rms_g": 0.046214801783131434
+      },
+      {
+        "load_pct": 61.695341562548315,
+        "ambient_c": 28.40128844609478,
+        "engine_rpm": 1799.3059403538452,
+        "elapsed_s": 578,
+        "coolant_c": 79.50888192995231,
+        "oil_kgf_cm2": 3.16569394946044,
+        "vibration_rms_g": 0.04518442399016582
+      },
+      {
+        "load_pct": 61.67557349843637,
+        "ambient_c": 28.410771956201305,
+        "engine_rpm": 1798.5849387793744,
+        "elapsed_s": 580,
+        "coolant_c": 79.69573497358961,
+        "oil_kgf_cm2": 3.1863559921419253,
+        "vibration_rms_g": 0.043616531700524395
+      },
+      {
+        "load_pct": 62.22425404667974,
+        "ambient_c": 28.522699212075594,
+        "engine_rpm": 1797.89130274331,
+        "elapsed_s": 582,
+        "coolant_c": 79.96883683552494,
+        "oil_kgf_cm2": 3.1506841760139457,
+        "vibration_rms_g": 0.04259491049210265
+      },
+      {
+        "load_pct": 62.092992077228644,
+        "ambient_c": 28.55369554244319,
+        "engine_rpm": 1802.5218997815944,
+        "elapsed_s": 584,
+        "coolant_c": 80.05790843136255,
+        "oil_kgf_cm2": 3.1790320002686268,
+        "vibration_rms_g": 0.04378626848702257
+      },
+      {
+        "load_pct": 61.904894284142486,
+        "ambient_c": 28.54572616008401,
+        "engine_rpm": 1799.5005334662249,
+        "elapsed_s": 586,
+        "coolant_c": 79.6104938005521,
+        "oil_kgf_cm2": 3.1682136796846314,
+        "vibration_rms_g": 0.0453267379934333
+      },
+      {
+        "load_pct": 62.46279549860066,
+        "ambient_c": 28.677265916656037,
+        "engine_rpm": 1798.851827948586,
+        "elapsed_s": 588,
+        "coolant_c": 79.83970723958622,
+        "oil_kgf_cm2": 3.167742075952286,
+        "vibration_rms_g": 0.04347777669535342
+      },
+      {
+        "load_pct": 62.3643020134131,
+        "ambient_c": 28.580672917192455,
+        "engine_rpm": 1802.2592129873863,
+        "elapsed_s": 590,
+        "coolant_c": 79.86396098463696,
+        "oil_kgf_cm2": 3.180877905568665,
+        "vibration_rms_g": 0.041863635292711775
+      },
+      {
+        "load_pct": 61.61868087927219,
+        "ambient_c": 28.62510813050111,
+        "engine_rpm": 1799.1661173339767,
+        "elapsed_s": 592,
+        "coolant_c": 80.01828131278388,
+        "oil_kgf_cm2": 3.1763081658559895,
+        "vibration_rms_g": 0.04492167410489955
+      },
+      {
+        "load_pct": 61.97887795287172,
+        "ambient_c": 28.464257038305405,
+        "engine_rpm": 1801.7829461723184,
+        "elapsed_s": 594,
+        "coolant_c": 79.950710573464,
+        "oil_kgf_cm2": 3.172842650232224,
+        "vibration_rms_g": 0.04356756162086136
+      },
+      {
+        "load_pct": 61.90257982407586,
+        "ambient_c": 28.660912355873194,
+        "engine_rpm": 1802.6465867145128,
+        "elapsed_s": 596,
+        "coolant_c": 79.88837915547424,
+        "oil_kgf_cm2": 3.199855855747068,
+        "vibration_rms_g": 0.04639478951394733
+      },
+      {
+        "load_pct": 61.79915577630724,
+        "ambient_c": 28.636931545931596,
+        "engine_rpm": 1798.733973268404,
+        "elapsed_s": 598,
+        "coolant_c": 79.81520878270086,
+        "oil_kgf_cm2": 3.1663190093945337,
+        "vibration_rms_g": 0.04350765129452772
+      },
+      {
+        "load_pct": 61.89635150948372,
+        "ambient_c": 28.502615862361722,
+        "engine_rpm": 1800.0336662425966,
+        "elapsed_s": 600,
+        "coolant_c": 79.95428864497444,
+        "oil_kgf_cm2": 3.185523135790042,
+        "vibration_rms_g": 0.04448864358079117
+      },
+      {
+        "load_pct": 62.175608469904724,
+        "ambient_c": 28.433430951641252,
+        "engine_rpm": 1802.9748881999076,
+        "elapsed_s": 602,
+        "coolant_c": 79.69438822641372,
+        "oil_kgf_cm2": 3.1637978396270863,
+        "vibration_rms_g": 0.04625794858888335
+      },
+      {
+        "load_pct": 62.42128233642709,
+        "ambient_c": 28.520975929464647,
+        "engine_rpm": 1801.2818017998238,
+        "elapsed_s": 604,
+        "coolant_c": 80.04187508409521,
+        "oil_kgf_cm2": 3.1997363127737084,
+        "vibration_rms_g": 0.04341088717643804
+      },
+      {
+        "load_pct": 61.887494872181,
+        "ambient_c": 28.643670100156907,
+        "engine_rpm": 1799.046304214154,
+        "elapsed_s": 606,
+        "coolant_c": 79.8052882277437,
+        "oil_kgf_cm2": 3.1812984343712607,
+        "vibration_rms_g": 0.04264553336487188
+      },
+      {
+        "load_pct": 61.871432786759186,
+        "ambient_c": 28.416729280789482,
+        "engine_rpm": 1797.1970715640928,
+        "elapsed_s": 608,
+        "coolant_c": 79.76251677981706,
+        "oil_kgf_cm2": 3.1615950962374986,
+        "vibration_rms_g": 0.0440657548857753
+      },
+      {
+        "load_pct": 62.27137794542027,
+        "ambient_c": 28.39107783887329,
+        "engine_rpm": 1802.9928937223215,
+        "elapsed_s": 610,
+        "coolant_c": 79.92080093623154,
+        "oil_kgf_cm2": 3.1896296946993834,
+        "vibration_rms_g": 0.04517875457130205
+      },
+      {
+        "load_pct": 61.667333103343005,
+        "ambient_c": 28.615491696063167,
+        "engine_rpm": 1798.480144853985,
+        "elapsed_s": 612,
+        "coolant_c": 79.59154616503407,
+        "oil_kgf_cm2": 3.176132235960749,
+        "vibration_rms_g": 0.04396892892783041
+      },
+      {
+        "load_pct": 62.45833911603842,
+        "ambient_c": 28.40044079692595,
+        "engine_rpm": 1802.8542498926786,
+        "elapsed_s": 614,
+        "coolant_c": 79.95564554788102,
+        "oil_kgf_cm2": 3.1658828056682418,
+        "vibration_rms_g": 0.04370794816240879
+      },
+      {
+        "load_pct": 62.12716694032096,
+        "ambient_c": 28.611445984528302,
+        "engine_rpm": 1797.83788806069,
+        "elapsed_s": 616,
+        "coolant_c": 80.02714426974568,
+        "oil_kgf_cm2": 3.1597924212461863,
+        "vibration_rms_g": 0.04252499801400079
+      },
+      {
+        "load_pct": 61.82229442920558,
+        "ambient_c": 28.51374239778834,
+        "engine_rpm": 1797.4473248730571,
+        "elapsed_s": 618,
+        "coolant_c": 79.91632946966855,
+        "oil_kgf_cm2": 3.18116890729666,
+        "vibration_rms_g": 0.042614507069396075
+      },
+      {
+        "load_pct": 61.9584545529319,
+        "ambient_c": 28.586966890640742,
+        "engine_rpm": 1798.4555137505865,
+        "elapsed_s": 620,
+        "coolant_c": 79.94520351962908,
+        "oil_kgf_cm2": 3.20849224263372,
+        "vibration_rms_g": 0.04286248222563204
+      },
+      {
+        "load_pct": 61.522200224045115,
+        "ambient_c": 28.431469789066895,
+        "engine_rpm": 1801.7547186016561,
+        "elapsed_s": 622,
+        "coolant_c": 79.83009464839095,
+        "oil_kgf_cm2": 3.2004971244465854,
+        "vibration_rms_g": 0.044559946356317735
+      },
+      {
+        "load_pct": 61.722001313146514,
+        "ambient_c": 28.614083912123206,
+        "engine_rpm": 1799.353108593983,
+        "elapsed_s": 624,
+        "coolant_c": 79.98294704805153,
+        "oil_kgf_cm2": 3.1451615734185516,
+        "vibration_rms_g": 0.042455123942475394
+      },
+      {
+        "load_pct": 61.718494543941084,
+        "ambient_c": 28.42728699512283,
+        "engine_rpm": 1798.2360134720518,
+        "elapsed_s": 626,
+        "coolant_c": 79.83424605269474,
+        "oil_kgf_cm2": 3.182499198349822,
+        "vibration_rms_g": 0.04353578521832944
+      },
+      {
+        "load_pct": 61.688625076160484,
+        "ambient_c": 28.366638409986614,
+        "engine_rpm": 1801.297995454008,
+        "elapsed_s": 628,
+        "coolant_c": 80.10316455314519,
+        "oil_kgf_cm2": 3.1981654411644187,
+        "vibration_rms_g": 0.044604310600866025
+      }
+    ],
+    "sample_duration_s": 2,
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "provenance": "합성 점검 기록. 실제 발전기 측정값 및 제조사 기준이 아님."
+  }
+]

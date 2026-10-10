@@ -1,0 +1,190 @@
+{
+  "algorithm": "inspection-context-ridge-residual/1",
+  "model_id": "inspection-5043e3d164e1d5f8",
+  "trained": true,
+  "training_record_ids": [
+    "inspection-2026-01",
+    "inspection-2026-02",
+    "inspection-2026-03",
+    "inspection-2026-04",
+    "inspection-2026-05",
+    "inspection-2026-06",
+    "inspection-2026-07",
+    "inspection-2026-08"
+  ],
+  "training_record_count": 8,
+  "training_sample_count": 240,
+  "channel_sample_counts": {
+    "coolant_c": 240,
+    "oil_kgf_cm2": 240,
+    "vibration_rms_g": 240
+  },
+  "source": "confirmed_historical_normal_only",
+  "current_used_for_training": false,
+  "meaning": "조건별 정상값을 학습한 회귀 모델 + 잔차 점검 정책. 고장 원인·수명 예측 모델이 아님.",
+  "models": {
+    "coolant_c": {
+      "field": "coolant_c",
+      "context": [
+        "load_pct",
+        "ambient_c",
+        "engine_rpm",
+        "elapsed_s"
+      ],
+      "mean": [
+        61.86204111256431,
+        28.182495662503957,
+        1799.8362587740064,
+        600.25
+      ],
+      "scale": [
+        2.7326608866797777,
+        2.1539793241988083,
+        7.523176683068762,
+        33.698726484344576
+      ],
+      "weights": [
+        79.81271082246921,
+        0.20534276064352894,
+        0.5460930290968011,
+        -0.0033640589554771567,
+        0.03304032909197599
+      ],
+      "residual_scale": 0.4,
+      "context_low": [
+        57.53634130483565,
+        24.813446638447793,
+        1787.02377023449,
+        520.0
+      ],
+      "context_high": [
+        66.45891001928062,
+        31.176074014884346,
+        1812.8257132255917,
+        678.0
+      ],
+      "training_record_ids": [
+        "inspection-2026-08",
+        "inspection-2026-07",
+        "inspection-2026-06",
+        "inspection-2026-05",
+        "inspection-2026-04",
+        "inspection-2026-03",
+        "inspection-2026-02",
+        "inspection-2026-01"
+      ],
+      "training_sample_count": 240,
+      "threshold": 2.0,
+      "pair_threshold": 2.0
+    },
+    "oil_kgf_cm2": {
+      "field": "oil_kgf_cm2",
+      "context": [
+        "load_pct",
+        "ambient_c",
+        "engine_rpm",
+        "elapsed_s"
+      ],
+      "mean": [
+        61.86204111256431,
+        28.182495662503957,
+        1799.8362587740064,
+        600.25
+      ],
+      "scale": [
+        2.7326608866797777,
+        2.1539793241988083,
+        7.523176683068762,
+        33.698726484344576
+      ],
+      "weights": [
+        3.212023398140698,
+        -0.009965559508478309,
+        -0.028320435610472906,
+        0.02244480131395019,
+        0.000647484845735254
+      ],
+      "residual_scale": 0.035,
+      "context_low": [
+        57.53634130483565,
+        24.813446638447793,
+        1787.02377023449,
+        520.0
+      ],
+      "context_high": [
+        66.45891001928062,
+        31.176074014884346,
+        1812.8257132255917,
+        678.0
+      ],
+      "training_record_ids": [
+        "inspection-2026-08",
+        "inspection-2026-07",
+        "inspection-2026-06",
+        "inspection-2026-05",
+        "inspection-2026-04",
+        "inspection-2026-03",
+        "inspection-2026-02",
+        "inspection-2026-01"
+      ],
+      "training_sample_count": 240,
+      "threshold": 0.2,
+      "pair_threshold": 0.2
+    },
+    "vibration_rms_g": {
+      "field": "vibration_rms_g",
+      "context": [
+        "load_pct",
+        "ambient_c",
+        "engine_rpm",
+        "elapsed_s"
+      ],
+      "mean": [
+        61.86204111256431,
+        28.182495662503957,
+        1799.8362587740064,
+        600.25
+      ],
+      "scale": [
+        2.7326608866797777,
+        2.1539793241988083,
+        7.523176683068762,
+        33.698726484344576
+      ],
+      "weights": [
+        -3.105944414936316,
+        -0.003437164444624261,
+        0.02164391891354721,
+        -0.0014007853517614241,
+        0.011777692343148863
+      ],
+      "residual_scale": 0.06,
+      "context_low": [
+        57.53634130483565,
+        24.813446638447793,
+        1787.02377023449,
+        520.0
+      ],
+      "context_high": [
+        66.45891001928062,
+        31.176074014884346,
+        1812.8257132255917,
+        678.0
+      ],
+      "training_record_ids": [
+        "inspection-2026-08",
+        "inspection-2026-07",
+        "inspection-2026-06",
+        "inspection-2026-05",
+        "inspection-2026-04",
+        "inspection-2026-03",
+        "inspection-2026-02",
+        "inspection-2026-01"
+      ],
+      "training_sample_count": 240,
+      "threshold": 0.22314355131420976,
+      "pair_threshold": 0.25455844122715715
+    }
+  },
+  "threshold_provenance": "시연용 개발 설정. 제조사 한계값이 아님."
+}

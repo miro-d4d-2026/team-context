@@ -1,0 +1,434 @@
+[
+  {
+    "id": "operation-2026-01",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-07-04T10:00:00+09:00",
+    "label": "정기 시험 운전",
+    "confirmed_normal": true,
+    "source": "scenario",
+    "context": {
+      "load_pct": 58,
+      "ambient_c": 25,
+      "engine_rpm": 1790
+    },
+    "samples": [
+      {
+        "elapsed_s": 0,
+        "coolant_c": 48.9923,
+        "oil_kgf_cm2": 4.03932,
+        "vibration_rms_g": 0.044578
+      },
+      {
+        "elapsed_s": 300,
+        "coolant_c": 58.3882,
+        "oil_kgf_cm2": 3.65242,
+        "vibration_rms_g": 0.044063
+      },
+      {
+        "elapsed_s": 600,
+        "coolant_c": 65.6323,
+        "oil_kgf_cm2": 3.3483,
+        "vibration_rms_g": 0.044589
+      },
+      {
+        "elapsed_s": 900,
+        "coolant_c": 70.076,
+        "oil_kgf_cm2": 3.24831,
+        "vibration_rms_g": 0.044865
+      },
+      {
+        "elapsed_s": 1200,
+        "coolant_c": 74.2296,
+        "oil_kgf_cm2": 3.25095,
+        "vibration_rms_g": 0.044261
+      }
+    ],
+    "installation_id": "demo-generator",
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "provenance": "모의 운전 기록. 실제 발전기 계측 및 제조사 정상 범위가 아님."
+  },
+  {
+    "id": "operation-2026-02",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-07-18T10:00:00+09:00",
+    "label": "정기 시험 운전",
+    "confirmed_normal": true,
+    "source": "scenario",
+    "context": {
+      "load_pct": 66,
+      "ambient_c": 30,
+      "engine_rpm": 1810
+    },
+    "samples": [
+      {
+        "elapsed_s": 0,
+        "coolant_c": 50.3311,
+        "oil_kgf_cm2": 3.99302,
+        "vibration_rms_g": 0.046392
+      },
+      {
+        "elapsed_s": 300,
+        "coolant_c": 60.784,
+        "oil_kgf_cm2": 3.60031,
+        "vibration_rms_g": 0.046243
+      },
+      {
+        "elapsed_s": 600,
+        "coolant_c": 69.4932,
+        "oil_kgf_cm2": 3.28553,
+        "vibration_rms_g": 0.045862
+      },
+      {
+        "elapsed_s": 900,
+        "coolant_c": 74.932,
+        "oil_kgf_cm2": 3.16998,
+        "vibration_rms_g": 0.045638
+      },
+      {
+        "elapsed_s": 1200,
+        "coolant_c": 80.4633,
+        "oil_kgf_cm2": 3.16696,
+        "vibration_rms_g": 0.045681
+      }
+    ],
+    "installation_id": "demo-generator",
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "provenance": "모의 운전 기록. 실제 발전기 계측 및 제조사 정상 범위가 아님."
+  },
+  {
+    "id": "operation-2026-03",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-08-01T10:00:00+09:00",
+    "label": "정기 시험 운전",
+    "confirmed_normal": true,
+    "source": "scenario",
+    "context": {
+      "load_pct": 60,
+      "ambient_c": 31,
+      "engine_rpm": 1805
+    },
+    "samples": [
+      {
+        "elapsed_s": 0,
+        "coolant_c": 50.8063,
+        "oil_kgf_cm2": 3.97154,
+        "vibration_rms_g": 0.045205
+      },
+      {
+        "elapsed_s": 300,
+        "coolant_c": 60.7613,
+        "oil_kgf_cm2": 3.57145,
+        "vibration_rms_g": 0.045356
+      },
+      {
+        "elapsed_s": 600,
+        "coolant_c": 68.5695,
+        "oil_kgf_cm2": 3.27748,
+        "vibration_rms_g": 0.045201
+      },
+      {
+        "elapsed_s": 900,
+        "coolant_c": 73.5078,
+        "oil_kgf_cm2": 3.18034,
+        "vibration_rms_g": 0.044199
+      },
+      {
+        "elapsed_s": 1200,
+        "coolant_c": 78.5047,
+        "oil_kgf_cm2": 3.17507,
+        "vibration_rms_g": 0.045341
+      }
+    ],
+    "installation_id": "demo-generator",
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "provenance": "모의 운전 기록. 실제 발전기 계측 및 제조사 정상 범위가 아님."
+  },
+  {
+    "id": "operation-2026-04",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-08-15T10:00:00+09:00",
+    "label": "정기 시험 운전",
+    "confirmed_normal": true,
+    "source": "scenario",
+    "context": {
+      "load_pct": 65,
+      "ambient_c": 25,
+      "engine_rpm": 1795
+    },
+    "samples": [
+      {
+        "elapsed_s": 0,
+        "coolant_c": 49.0529,
+        "oil_kgf_cm2": 4.02112,
+        "vibration_rms_g": 0.04537
+      },
+      {
+        "elapsed_s": 300,
+        "coolant_c": 59.3379,
+        "oil_kgf_cm2": 3.61534,
+        "vibration_rms_g": 0.045019
+      },
+      {
+        "elapsed_s": 600,
+        "coolant_c": 67.6148,
+        "oil_kgf_cm2": 3.31688,
+        "vibration_rms_g": 0.044796
+      },
+      {
+        "elapsed_s": 900,
+        "coolant_c": 72.7563,
+        "oil_kgf_cm2": 3.22438,
+        "vibration_rms_g": 0.045014
+      },
+      {
+        "elapsed_s": 1200,
+        "coolant_c": 77.9509,
+        "oil_kgf_cm2": 3.21381,
+        "vibration_rms_g": 0.045636
+      }
+    ],
+    "installation_id": "demo-generator",
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "provenance": "모의 운전 기록. 실제 발전기 계측 및 제조사 정상 범위가 아님."
+  },
+  {
+    "id": "operation-2026-05",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-08-29T10:00:00+09:00",
+    "label": "정기 시험 운전",
+    "confirmed_normal": true,
+    "source": "scenario",
+    "context": {
+      "load_pct": 59,
+      "ambient_c": 29,
+      "engine_rpm": 1810
+    },
+    "samples": [
+      {
+        "elapsed_s": 0,
+        "coolant_c": 50.1882,
+        "oil_kgf_cm2": 4.01934,
+        "vibration_rms_g": 0.04453
+      },
+      {
+        "elapsed_s": 300,
+        "coolant_c": 59.9183,
+        "oil_kgf_cm2": 3.62398,
+        "vibration_rms_g": 0.045167
+      },
+      {
+        "elapsed_s": 600,
+        "coolant_c": 67.6334,
+        "oil_kgf_cm2": 3.33666,
+        "vibration_rms_g": 0.045325
+      },
+      {
+        "elapsed_s": 900,
+        "coolant_c": 72.4321,
+        "oil_kgf_cm2": 3.24737,
+        "vibration_rms_g": 0.044417
+      },
+      {
+        "elapsed_s": 1200,
+        "coolant_c": 77.241,
+        "oil_kgf_cm2": 3.25407,
+        "vibration_rms_g": 0.044957
+      }
+    ],
+    "installation_id": "demo-generator",
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "provenance": "모의 운전 기록. 실제 발전기 계측 및 제조사 정상 범위가 아님."
+  },
+  {
+    "id": "operation-2026-06",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-09-12T10:00:00+09:00",
+    "label": "정기 시험 운전",
+    "confirmed_normal": true,
+    "source": "scenario",
+    "context": {
+      "load_pct": 64,
+      "ambient_c": 27,
+      "engine_rpm": 1790
+    },
+    "samples": [
+      {
+        "elapsed_s": 0,
+        "coolant_c": 49.6087,
+        "oil_kgf_cm2": 4.00428,
+        "vibration_rms_g": 0.045373
+      },
+      {
+        "elapsed_s": 300,
+        "coolant_c": 59.8927,
+        "oil_kgf_cm2": 3.59085,
+        "vibration_rms_g": 0.045087
+      },
+      {
+        "elapsed_s": 600,
+        "coolant_c": 68.0793,
+        "oil_kgf_cm2": 3.27978,
+        "vibration_rms_g": 0.044933
+      },
+      {
+        "elapsed_s": 900,
+        "coolant_c": 73.3216,
+        "oil_kgf_cm2": 3.17131,
+        "vibration_rms_g": 0.045502
+      },
+      {
+        "elapsed_s": 1200,
+        "coolant_c": 78.5001,
+        "oil_kgf_cm2": 3.1581,
+        "vibration_rms_g": 0.045235
+      }
+    ],
+    "installation_id": "demo-generator",
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "provenance": "모의 운전 기록. 실제 발전기 계측 및 제조사 정상 범위가 아님."
+  },
+  {
+    "id": "operation-2026-07",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-09-26T10:00:00+09:00",
+    "label": "정기 시험 운전",
+    "confirmed_normal": true,
+    "source": "scenario",
+    "context": {
+      "load_pct": 61,
+      "ambient_c": 30,
+      "engine_rpm": 1800
+    },
+    "samples": [
+      {
+        "elapsed_s": 0,
+        "coolant_c": 50.35,
+        "oil_kgf_cm2": 3.98838,
+        "vibration_rms_g": 0.044441
+      },
+      {
+        "elapsed_s": 300,
+        "coolant_c": 60.4753,
+        "oil_kgf_cm2": 3.59817,
+        "vibration_rms_g": 0.044383
+      },
+      {
+        "elapsed_s": 600,
+        "coolant_c": 68.472,
+        "oil_kgf_cm2": 3.30251,
+        "vibration_rms_g": 0.045372
+      },
+      {
+        "elapsed_s": 900,
+        "coolant_c": 73.4384,
+        "oil_kgf_cm2": 3.21098,
+        "vibration_rms_g": 0.044802
+      },
+      {
+        "elapsed_s": 1200,
+        "coolant_c": 78.4832,
+        "oil_kgf_cm2": 3.22042,
+        "vibration_rms_g": 0.045453
+      }
+    ],
+    "installation_id": "demo-generator",
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "provenance": "모의 운전 기록. 실제 발전기 계측 및 제조사 정상 범위가 아님."
+  },
+  {
+    "id": "operation-2026-08",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-10-10T10:00:00+09:00",
+    "label": "정기 시험 운전",
+    "confirmed_normal": true,
+    "source": "scenario",
+    "context": {
+      "load_pct": 62,
+      "ambient_c": 28.5,
+      "engine_rpm": 1800
+    },
+    "samples": [
+      {
+        "elapsed_s": 0,
+        "coolant_c": 49.9129,
+        "oil_kgf_cm2": 4.00093,
+        "vibration_rms_g": 0.0453
+      },
+      {
+        "elapsed_s": 300,
+        "coolant_c": 59.822,
+        "oil_kgf_cm2": 3.60971,
+        "vibration_rms_g": 0.044324
+      },
+      {
+        "elapsed_s": 600,
+        "coolant_c": 67.7268,
+        "oil_kgf_cm2": 3.31537,
+        "vibration_rms_g": 0.044761
+      },
+      {
+        "elapsed_s": 900,
+        "coolant_c": 72.6136,
+        "oil_kgf_cm2": 3.208,
+        "vibration_rms_g": 0.045
+      },
+      {
+        "elapsed_s": 1200,
+        "coolant_c": 77.4853,
+        "oil_kgf_cm2": 3.19762,
+        "vibration_rms_g": 0.044592
+      }
+    ],
+    "installation_id": "demo-generator",
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "provenance": "모의 운전 기록. 실제 발전기 계측 및 제조사 정상 범위가 아님."
+  }
+]

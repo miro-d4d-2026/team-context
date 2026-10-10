@@ -1,0 +1,692 @@
+{
+  "schema_version": "genguard.operation-model/1",
+  "algorithm": "operation-phase-context-ridge/1",
+  "models": {
+    "coolant_c": {
+      "1": {
+        "features": [
+          "load_pct",
+          "ambient_c",
+          "engine_rpm",
+          "initial_coolant_c"
+        ],
+        "mean": [
+          61.875,
+          28.1875,
+          1800.0,
+          49.9053
+        ],
+        "scale": [
+          2.7128168017763383,
+          2.14967294023998,
+          7.5,
+          0.6040572427344946
+        ],
+        "weights": [
+          2.0034324999999993,
+          0.05403397281436066,
+          0.008948157314752802,
+          -0.0064212382206815626,
+          0.01283295802969791
+        ],
+        "residual_scale": 0.06,
+        "threshold": 0.5,
+        "floor": 0.5,
+        "training_record_ids": [
+          "operation-2026-08",
+          "operation-2026-07",
+          "operation-2026-06",
+          "operation-2026-05",
+          "operation-2026-04",
+          "operation-2026-03",
+          "operation-2026-02",
+          "operation-2026-01"
+        ],
+        "sample_count": 8
+      },
+      "2": {
+        "features": [
+          "load_pct",
+          "ambient_c",
+          "engine_rpm",
+          "initial_coolant_c"
+        ],
+        "mean": [
+          61.875,
+          28.1875,
+          1800.0,
+          49.9053
+        ],
+        "scale": [
+          2.7128168017763383,
+          2.14967294023998,
+          7.5,
+          0.6040572427344946
+        ],
+        "weights": [
+          1.5960400000000001,
+          0.06819636099171349,
+          0.008013062778748912,
+          0.011159236188358068,
+          0.0057661286040833915
+        ],
+        "residual_scale": 0.06,
+        "threshold": 0.5,
+        "floor": 0.5,
+        "training_record_ids": [
+          "operation-2026-08",
+          "operation-2026-07",
+          "operation-2026-06",
+          "operation-2026-05",
+          "operation-2026-04",
+          "operation-2026-03",
+          "operation-2026-02",
+          "operation-2026-01"
+        ],
+        "sample_count": 8
+      },
+      "3": {
+        "features": [
+          "load_pct",
+          "ambient_c",
+          "engine_rpm",
+          "initial_coolant_c"
+        ],
+        "mean": [
+          61.875,
+          28.1875,
+          1800.0,
+          49.9053
+        ],
+        "scale": [
+          2.7128168017763383,
+          2.14967294023998,
+          7.5,
+          0.6040572427344946
+        ],
+        "weights": [
+          0.9964125000000003,
+          0.04700377662178946,
+          0.0062663672749649,
+          0.0002784763045465004,
+          0.010867989886829377
+        ],
+        "residual_scale": 0.06,
+        "threshold": 0.5,
+        "floor": 0.5,
+        "training_record_ids": [
+          "operation-2026-08",
+          "operation-2026-07",
+          "operation-2026-06",
+          "operation-2026-05",
+          "operation-2026-04",
+          "operation-2026-03",
+          "operation-2026-02",
+          "operation-2026-01"
+        ],
+        "sample_count": 8
+      },
+      "4": {
+        "features": [
+          "load_pct",
+          "ambient_c",
+          "engine_rpm",
+          "initial_coolant_c"
+        ],
+        "mean": [
+          61.875,
+          28.1875,
+          1800.0,
+          49.9053
+        ],
+        "scale": [
+          2.7128168017763383,
+          2.14967294023998,
+          7.5,
+          0.6040572427344946
+        ],
+        "weights": [
+          0.9945074999999997,
+          0.05823743295532667,
+          0.010110913048067941,
+          0.006368279774635231,
+          0.017526455495105085
+        ],
+        "residual_scale": 0.06,
+        "threshold": 0.5,
+        "floor": 0.5,
+        "training_record_ids": [
+          "operation-2026-08",
+          "operation-2026-07",
+          "operation-2026-06",
+          "operation-2026-05",
+          "operation-2026-04",
+          "operation-2026-03",
+          "operation-2026-02",
+          "operation-2026-01"
+        ],
+        "sample_count": 8
+      }
+    },
+    "oil_kgf_cm2": {
+      "1": {
+        "features": [
+          "load_pct",
+          "ambient_c",
+          "engine_rpm",
+          "initial_coolant_c"
+        ],
+        "mean": [
+          61.875,
+          28.1875,
+          1800.0,
+          49.9053
+        ],
+        "scale": [
+          2.7128168017763383,
+          2.14967294023998,
+          7.5,
+          0.6040572427344946
+        ],
+        "weights": [
+          -0.07939249999999998,
+          -0.0007596474695023746,
+          0.00039286928000185103,
+          0.0006092991615204537,
+          -0.0006006718203491784
+        ],
+        "residual_scale": 0.004,
+        "threshold": 0.035,
+        "floor": 0.035,
+        "training_record_ids": [
+          "operation-2026-08",
+          "operation-2026-07",
+          "operation-2026-06",
+          "operation-2026-05",
+          "operation-2026-04",
+          "operation-2026-03",
+          "operation-2026-02",
+          "operation-2026-01"
+        ],
+        "sample_count": 8,
+        "level": {
+          "features": [
+            "load_pct",
+            "ambient_c",
+            "engine_rpm",
+            "initial_coolant_c"
+          ],
+          "mean": [
+            61.875,
+            28.1875,
+            1800.0,
+            49.9053
+          ],
+          "scale": [
+            2.7128168017763383,
+            2.14967294023998,
+            7.5,
+            0.6040572427344946
+          ],
+          "weights": [
+            3.60777875,
+            -0.009015933793686426,
+            -0.007812977238301587,
+            0.009461800442602787,
+            -0.014433718931765059
+          ],
+          "residual_scale": 0.025,
+          "threshold": 0.25,
+          "floor": 0.25,
+          "training_record_ids": [
+            "operation-2026-08",
+            "operation-2026-07",
+            "operation-2026-06",
+            "operation-2026-05",
+            "operation-2026-04",
+            "operation-2026-03",
+            "operation-2026-02",
+            "operation-2026-01"
+          ],
+          "sample_count": 8
+        }
+      },
+      "2": {
+        "features": [
+          "load_pct",
+          "ambient_c",
+          "engine_rpm",
+          "initial_coolant_c"
+        ],
+        "mean": [
+          61.875,
+          28.1875,
+          1800.0,
+          49.9053
+        ],
+        "scale": [
+          2.7128168017763383,
+          2.14967294023998,
+          7.5,
+          0.6040572427344946
+        ],
+        "weights": [
+          -0.059993000000000005,
+          -0.0009506147063873506,
+          -0.0001754046033699671,
+          0.000511730562018764,
+          0.0001305339064466558
+        ],
+        "residual_scale": 0.004,
+        "threshold": 0.035,
+        "floor": 0.035,
+        "training_record_ids": [
+          "operation-2026-08",
+          "operation-2026-07",
+          "operation-2026-06",
+          "operation-2026-05",
+          "operation-2026-04",
+          "operation-2026-03",
+          "operation-2026-02",
+          "operation-2026-01"
+        ],
+        "sample_count": 8,
+        "level": {
+          "features": [
+            "load_pct",
+            "ambient_c",
+            "engine_rpm",
+            "initial_coolant_c"
+          ],
+          "mean": [
+            61.875,
+            28.1875,
+            1800.0,
+            49.9053
+          ],
+          "scale": [
+            2.7128168017763383,
+            2.14967294023998,
+            7.5,
+            0.6040572427344946
+          ],
+          "weights": [
+            3.30781375,
+            -0.013769007325623236,
+            -0.008690000255151625,
+            0.012020453252696664,
+            -0.01378104939953165
+          ],
+          "residual_scale": 0.025,
+          "threshold": 0.25,
+          "floor": 0.25,
+          "training_record_ids": [
+            "operation-2026-08",
+            "operation-2026-07",
+            "operation-2026-06",
+            "operation-2026-05",
+            "operation-2026-04",
+            "operation-2026-03",
+            "operation-2026-02",
+            "operation-2026-01"
+          ],
+          "sample_count": 8
+        }
+      },
+      "3": {
+        "features": [
+          "load_pct",
+          "ambient_c",
+          "engine_rpm",
+          "initial_coolant_c"
+        ],
+        "mean": [
+          61.875,
+          28.1875,
+          1800.0,
+          49.9053
+        ],
+        "scale": [
+          2.7128168017763383,
+          2.14967294023998,
+          7.5,
+          0.6040572427344946
+        ],
+        "weights": [
+          -0.020045999999999998,
+          -0.0008644594470148619,
+          -0.0004454574269297357,
+          0.00031176618017568654,
+          8.366404050015922e-05
+        ],
+        "residual_scale": 0.004,
+        "threshold": 0.035,
+        "floor": 0.035,
+        "training_record_ids": [
+          "operation-2026-08",
+          "operation-2026-07",
+          "operation-2026-06",
+          "operation-2026-05",
+          "operation-2026-04",
+          "operation-2026-03",
+          "operation-2026-02",
+          "operation-2026-01"
+        ],
+        "sample_count": 8,
+        "level": {
+          "features": [
+            "load_pct",
+            "ambient_c",
+            "engine_rpm",
+            "initial_coolant_c"
+          ],
+          "mean": [
+            61.875,
+            28.1875,
+            1800.0,
+            49.9053
+          ],
+          "scale": [
+            2.7128168017763383,
+            2.14967294023998,
+            7.5,
+            0.6040572427344946
+          ],
+          "weights": [
+            3.20758375,
+            -0.018091304560697474,
+            -0.010917287389800015,
+            0.013579284153574834,
+            -0.013362729197030906
+          ],
+          "residual_scale": 0.025,
+          "threshold": 0.25,
+          "floor": 0.25,
+          "training_record_ids": [
+            "operation-2026-08",
+            "operation-2026-07",
+            "operation-2026-06",
+            "operation-2026-05",
+            "operation-2026-04",
+            "operation-2026-03",
+            "operation-2026-02",
+            "operation-2026-01"
+          ],
+          "sample_count": 8
+        }
+      },
+      "4": {
+        "features": [
+          "load_pct",
+          "ambient_c",
+          "engine_rpm",
+          "initial_coolant_c"
+        ],
+        "mean": [
+          61.875,
+          28.1875,
+          1800.0,
+          49.9053
+        ],
+        "scale": [
+          2.7128168017763383,
+          2.14967294023998,
+          7.5,
+          0.6040572427344946
+        ],
+        "weights": [
+          -0.0005917500000000119,
+          -0.0008611923333333734,
+          0.00020218130160546435,
+          0.0005249091417708886,
+          -0.00020421918299039435
+        ],
+        "residual_scale": 0.004,
+        "threshold": 0.035,
+        "floor": 0.035,
+        "training_record_ids": [
+          "operation-2026-08",
+          "operation-2026-07",
+          "operation-2026-06",
+          "operation-2026-05",
+          "operation-2026-04",
+          "operation-2026-03",
+          "operation-2026-02",
+          "operation-2026-01"
+        ],
+        "sample_count": 8,
+        "level": {
+          "features": [
+            "load_pct",
+            "ambient_c",
+            "engine_rpm",
+            "initial_coolant_c"
+          ],
+          "mean": [
+            61.875,
+            28.1875,
+            1800.0,
+            49.9053
+          ],
+          "scale": [
+            2.7128168017763383,
+            2.14967294023998,
+            7.5,
+            0.6040572427344946
+          ],
+          "weights": [
+            3.204625,
+            -0.022397266227364352,
+            -0.009906380881772573,
+            0.0162038298624294,
+            -0.014383825111983137
+          ],
+          "residual_scale": 0.025,
+          "threshold": 0.25,
+          "floor": 0.25,
+          "training_record_ids": [
+            "operation-2026-08",
+            "operation-2026-07",
+            "operation-2026-06",
+            "operation-2026-05",
+            "operation-2026-04",
+            "operation-2026-03",
+            "operation-2026-02",
+            "operation-2026-01"
+          ],
+          "sample_count": 8
+        }
+      }
+    },
+    "vibration_rms_g": {
+      "1": {
+        "features": [
+          "load_pct",
+          "ambient_c",
+          "engine_rpm",
+          "initial_coolant_c"
+        ],
+        "mean": [
+          61.875,
+          28.1875,
+          1800.0,
+          49.9053
+        ],
+        "scale": [
+          2.7128168017763383,
+          2.14967294023998,
+          7.5,
+          0.6040572427344946
+        ],
+        "weights": [
+          -3.10219263938228,
+          0.007484294004404743,
+          -0.0012259665070089188,
+          0.0066988360663765905,
+          0.0027874884880270357
+        ],
+        "residual_scale": 0.025,
+        "threshold": 0.30010459245033816,
+        "floor": 0.30010459245033816,
+        "training_record_ids": [
+          "operation-2026-08",
+          "operation-2026-07",
+          "operation-2026-06",
+          "operation-2026-05",
+          "operation-2026-04",
+          "operation-2026-03",
+          "operation-2026-02",
+          "operation-2026-01"
+        ],
+        "sample_count": 8
+      },
+      "2": {
+        "features": [
+          "load_pct",
+          "ambient_c",
+          "engine_rpm",
+          "initial_coolant_c"
+        ],
+        "mean": [
+          61.875,
+          28.1875,
+          1800.0,
+          49.9053
+        ],
+        "scale": [
+          2.7128168017763383,
+          2.14967294023998,
+          7.5,
+          0.6040572427344946
+        ],
+        "weights": [
+          -3.0988020556315834,
+          0.002495189596164266,
+          0.002119268652158523,
+          0.0036532863630316156,
+          0.001374096461709436
+        ],
+        "residual_scale": 0.025,
+        "threshold": 0.30010459245033816,
+        "floor": 0.30010459245033816,
+        "training_record_ids": [
+          "operation-2026-08",
+          "operation-2026-07",
+          "operation-2026-06",
+          "operation-2026-05",
+          "operation-2026-04",
+          "operation-2026-03",
+          "operation-2026-02",
+          "operation-2026-01"
+        ],
+        "sample_count": 8
+      },
+      "3": {
+        "features": [
+          "load_pct",
+          "ambient_c",
+          "engine_rpm",
+          "initial_coolant_c"
+        ],
+        "mean": [
+          61.875,
+          28.1875,
+          1800.0,
+          49.9053
+        ],
+        "scale": [
+          2.7128168017763383,
+          2.14967294023998,
+          7.5,
+          0.6040572427344946
+        ],
+        "weights": [
+          -3.1027092500332794,
+          0.006865490952964798,
+          0.0010067477955090424,
+          -0.00161194710125077,
+          -0.0024324319353765996
+        ],
+        "residual_scale": 0.025,
+        "threshold": 0.30010459245033816,
+        "floor": 0.30010459245033816,
+        "training_record_ids": [
+          "operation-2026-08",
+          "operation-2026-07",
+          "operation-2026-06",
+          "operation-2026-05",
+          "operation-2026-04",
+          "operation-2026-03",
+          "operation-2026-02",
+          "operation-2026-01"
+        ],
+        "sample_count": 8
+      },
+      "4": {
+        "features": [
+          "load_pct",
+          "ambient_c",
+          "engine_rpm",
+          "initial_coolant_c"
+        ],
+        "mean": [
+          61.875,
+          28.1875,
+          1800.0,
+          49.9053
+        ],
+        "scale": [
+          2.7128168017763383,
+          2.14967294023998,
+          7.5,
+          0.6040572427344946
+        ],
+        "weights": [
+          -3.09794204642558,
+          0.006717390338485792,
+          0.0003967651133564863,
+          0.0007622786493473503,
+          0.00301318196462274
+        ],
+        "residual_scale": 0.025,
+        "threshold": 0.30010459245033816,
+        "floor": 0.30010459245033816,
+        "training_record_ids": [
+          "operation-2026-08",
+          "operation-2026-07",
+          "operation-2026-06",
+          "operation-2026-05",
+          "operation-2026-04",
+          "operation-2026-03",
+          "operation-2026-02",
+          "operation-2026-01"
+        ],
+        "sample_count": 8
+      }
+    }
+  },
+  "metadata": {
+    "id": "operation-phase-context-ridge/1:77f98078313d",
+    "algorithm": "operation-phase-context-ridge/1",
+    "training_count": 8,
+    "training_record_count": 8,
+    "training_record_ids": [
+      "operation-2026-01",
+      "operation-2026-02",
+      "operation-2026-03",
+      "operation-2026-04",
+      "operation-2026-05",
+      "operation-2026-06",
+      "operation-2026-07",
+      "operation-2026-08"
+    ],
+    "training_sample_count": 32,
+    "current_used_for_training": false,
+    "training_source": "scenario",
+    "synthetic": true,
+    "phase_interval_s": 300,
+    "scope": "승인된 과거 정상 운전에서 구간별 변화 패턴을 학습합니다. 고장 부위·수명 예측이 아닙니다.",
+    "threshold_provenance": "모의 탐지 허용차. 실제 발전기 검증 및 제조사 안전 기준이 아님."
+  },
+  "criteria_provenance": "학습값과 탐지 허용차는 합성 운전 시연 기준이며 제조사 한계값이 아닙니다."
+}

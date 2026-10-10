@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>GenGuard · 현재 상태와 악화 추세</title><link rel="stylesheet" href="./style.css"></head>
+<body>
+<main>
+  <header><div><div class="eyebrow">GENERATOR INTELLIGENCE</div><h1>GenGuard<span>.</span></h1><p>진동은 센서에서, 발전기 값은 웹에서. 판단은 UNO Q에서.</p></div><span class="badge">IMU + 모의 발전기 합동 시연</span></header>
+  <section class="card connection" aria-labelledby="connection-title">
+    <div class="section-head"><h2 id="connection-title">UNO Q API 연결</h2><span id="connection-state" class="muted">연결 전</span></div>
+    <div class="connection-grid"><label>이 웹을 제공하는 API 주소<input id="api-url" type="url" readonly autocomplete="off" spellcheck="false" aria-describedby="connection-note"></label><label>접속 토큰<input id="api-token" type="password" autocomplete="off" placeholder="LAN 접속 시 서버에서 설정한 토큰"></label><button id="connect-button">연결 · 시험 시작</button><button id="close-button" class="secondary" disabled>내 시험 종료</button></div>
+    <p class="hint" id="connection-note">이 데모는 같은 주소의 API에 연결합니다. 다른 기기를 쓰려면 그 기기의 웹 주소를 여세요. 토큰은 브라우저 메모리에만 보관합니다.</p>
+    <div class="metadata"><span>발전기 모델 <code id="model-id">—</code></span><span>시험 <code id="session-id">—</code></span></div>
+    <div id="error-box" role="alert" hidden></div>
+  </section>
+  <section class="card imu-card" aria-labelledby="imu-title">
+    <div class="section-head"><h2 id="imu-title">IMU 진동 수신</h2><div class="source-status"><span id="imu-source" class="badge source unknown">센서 미연결</span><span id="imu-state" class="muted">수신 대기</span></div></div>
+    <div class="imu-layout"><div><div class="imu-values"><div><span>진동 RMS</span><strong id="imu-rms">—</strong><small>g</small></div><div><span>진동 간헐성</span><strong id="imu-cv">—</strong><small>비율</small></div></div><p class="hint" id="imu-detail">진동값은 기기가 수신한 IMU 특징값으로 채웁니다. 웹에서 수정할 수 없습니다.</p><div class="metadata"><span>부착 ID <code id="installation-id">—</code></span><span>수집 창 <code id="window-id">—</code></span></div></div>
+      <div class="calibration"><div class="section-head"><h3>현재 부착 상태의 정상 기준</h3><span id="calibration-state" class="badge quiet">미학습</span></div><progress id="calibration-progress" max="15" value="0" aria-label="정상 기준 수집 진행률"></progress><p class="hint" id="calibration-note">IMU를 고정하고 정상으로 사용할 진동을 유지한 뒤 기준을 등록하세요.</p><label class="check-label"><input type="checkbox" id="normal-confirmation">현재 진동과 부착 상태를 정상 기준으로 사용합니다.</label><button id="calibrate-button" class="secondary" disabled>정상 기준 수집 시작</button><p class="hint">기본 15개 고유 창을 수집합니다. 2초 창 기준 약 30초입니다. 부착 위치나 받침을 바꾸면 기준을 다시 등록하세요.</p></div>
+    </div>
+  </section>
+  <div class="layout">
+    <section class="card controls" aria-labelledby="controls-title"><div class="section-head"><h2 id="controls-title">발전기 모의 계측값</h2><span class="badge source scenario">웹 입력 · 모의</span></div>
+      <p class="hint">이 영역만 웹에서 바꿉니다. 진동은 위 IMU에서 자동으로 합쳐집니다. 프리셋 선택 후 값을 전송하세요.</p>
+      <div id="presets" class="presets"><button class="chip" data-preset="normal" disabled>정상 기본값</button><button class="chip" data-preset="coolant" disabled>수온 상승</button><button class="chip" data-preset="oil" disabled>유압 하락</button><button class="chip" data-preset="joint" disabled>범위 안 복합 변화</button><button class="chip" data-preset="overspeed" disabled>과속</button><button class="chip" data-preset="fuel" disabled>연료 부족</button></div>
+      <p id="preset-note" class="hint">정상 기본값은 합성 학습 기준입니다. 실제 발전기 정상값이 아닙니다.</p>
+      <form id="values-form"><div id="fields" class="fields"><p class="muted">연결하면 서버에서 모의 입력 항목과 단위를 받아옵니다.</p></div></form>
+      <div class="actions"><button id="send-button" disabled>한 번 분석</button><button id="auto-button" class="secondary" disabled>2초마다 자동 분석</button><button id="retry-button" class="secondary" disabled>미확인 요청 재전송</button></div>
+      <p class="time-note">서버의 실제 경과 시간을 사용합니다. 같은 IMU 창을 다시 분석해도 진동의 연속 변화 횟수를 늘리지 않습니다.</p>
+    </section>
+    <section class="results" aria-labelledby="results-title">
+      <div class="card status-card" id="status-card" data-status="unknown"><div class="section-head"><h2 id="results-title">합동 분석 결과</h2><span id="sample-age">미수신</span></div><div id="status-text" role="status">판단 대기</div><p id="status-detail">기기 연결 후 정상 진동 기준을 등록하고 값을 보내세요.</p><div class="result-meta"><span>시험 경과 <strong id="elapsed">—</strong></span><span>수락 순번 <strong id="seq">—</strong></span></div></div>
+      <div class="card"><div class="section-head"><h2>두 분석의 근거</h2><span id="ai-label" class="badge quiet">미분석</span></div><p id="ai-summary" class="hint">발전기 모델과 IMU 정상 기준을 각각 분석해 점검 결과로 합칩니다.</p>
+        <div class="component-scores"><div><h3>발전기 패턴 <span class="mini-source scenario">모의</span></h3><p id="generator-state" class="hint">미분석</p><div class="score"><span>점수 <strong id="generator-score">—</strong></span><span>기준 <strong id="generator-threshold">—</strong></span><span>연속 <strong id="generator-streak">—</strong></span></div></div><div><h3>IMU 기준 비교 <span id="vibration-source" class="mini-source unknown">미연결</span></h3><p id="vibration-state" class="hint">미분석</p><div class="score"><span>점수 <strong id="vibration-score">—</strong></span><span>기준 <strong id="vibration-threshold">—</strong></span><span>연속 <strong id="vibration-streak">—</strong></span></div></div></div>
+        <div class="table-wrap"><table><thead><tr><th>변화 근거</th><th>출처</th><th>입력값</th><th>기대값</th><th>단위</th></tr></thead><tbody id="evidence"><tr><td colspan="5" class="muted">수신 후 표시됩니다.</td></tr></tbody></table></div><p class="hint">발전기 기대값은 모의 모델, 진동 기대값은 현재 부착 상태에서 등록한 기준입니다. 서로의 상관관계를 학습한 하나의 모델은 아닙니다.</p><ul id="checks" class="checks"></ul></div>
+      <div class="card live-trend" id="live-trend-card" data-state="collecting"><div class="section-head"><h2>입력 이력의 악화 추세</h2><span class="badge source scenario">실험용 보조 · 모의</span></div><p class="trend-experiment-only">실험 기능 · 기존 경보에 반영하지 않음</p><h3 id="live-trend-state">이력 수집 대기</h3><p id="live-trend-summary" class="hint">수온·유압을 실제 시간에 따라 누적합니다. 한 번 바꾼 값만으로 미래를 판단하지 않습니다.</p><p id="live-trend-detail" class="hint">최소 120초의 유효 이력이 필요합니다.</p><div id="live-trend-values" class="live-trend-values"></div><ul id="live-trend-checks" class="checks"></ul></div>
+      <div class="card"><div class="section-head"><h2>고정 규칙 경고</h2><span class="badge source scenario">발전기 모의 값</span></div><div id="fixed-alerts" class="alert-list muted">아직 수신한 결과가 없습니다.</div></div>
+    </section>
+  </div>
+  <section class="card"><div class="section-head"><h2>이번 시험 알림 기록</h2><span class="muted">이력은 현재 상태와 별개</span></div><ul id="notification-log" class="notification-log"><li class="muted">경고 진입 시 한 번 기록됩니다. 순간 변화 관측은 경고 알림과 구분합니다.</li></ul></section>
+  <section class="card trend-lab" aria-labelledby="trend-lab-title">
+    <div class="section-head"><div><div class="eyebrow">OPTIONAL TREND EXPERIMENT</div><h2 id="trend-lab-title">악화 추세 실험</h2></div><span class="badge source scenario">별도 모의 운전 · 실측과 분리</span></div>
+    <p class="trend-experiment-only">실험 기능 · 기존 경보에 반영하지 않음</p>
+    <p class="trend-intro">현재 이상을 찾는 것이 먼저입니다. 추세는 <strong>지금의 악화 흐름이 이어질 경우</strong> 점검을 서둘러야 하는지 보조합니다. 기존 이상 탐지보다 실제로 도움이 되는지 같은 시나리오에서 비교하세요.</p>
+    <div class="trend-setup"><label>모의 운전 시나리오<select id="trend-scenario" disabled><option>API 연결 후 불러옵니다</option></select></label><button id="trend-load" disabled>실험 불러오기</button><label>차트 항목<select id="trend-channel"><option value="coolant_c">냉각수 온도</option><option value="oil_kgf_cm2">윤활유 압력</option></select></label></div>
+    <p id="trend-scenario-note" class="hint">실험을 실행해도 위 IMU 센서값이나 모의 입력란은 바뀌지 않습니다.</p>
+    <div id="trend-error" role="alert" hidden></div>
+    <div id="trend-experiment" hidden>
+      <div class="trend-playback"><button id="trend-play" disabled>재생</button><label>재생 속도<select id="trend-speed"><option value="1">1배</option><option value="10" selected>10배</option><option value="30">30배</option></select></label><div><strong id="trend-clock">모의 운전 0:00</strong><p class="hint" id="trend-clock-detail">기기 운전 시간과 별개입니다.</p></div></div>
+      <label class="trend-scrubber">모의 운전 시점<input id="trend-position" type="range" min="0" max="0" value="0" step="1" aria-label="모의 운전 시점"></label>
+      <div class="trend-results"><div id="trend-current" class="trend-result"><span>기존 모델 · 현재 상태</span><strong id="trend-current-state">분석 대기</strong><small id="trend-current-score"></small></div><div id="trend-outlook" class="trend-result"><span>실험용 보조 · 악화 흐름</span><strong id="trend-outlook-state">이력 수집 중</strong><small id="trend-outlook-summary"></small></div><div id="trend-fixed" class="trend-result"><span>고정 기준 경고</span><strong id="trend-fixed-state">대기</strong><small>발전기 보호 제어가 아닌 시연용 판단</small></div></div>
+      <div id="trend-chart" class="trend-chart" aria-live="off"></div>
+      <div class="trend-legend"><span class="observed-key">현재 시점까지 관측 · 모의</span><span class="forecast-key">앞으로의 추세 추정</span><span class="band-key">검증 오차를 반영한 범위</span><span class="limit-key">시연용 고정 경계</span></div>
+      <p id="trend-assumption" class="hint">예상선은 고장 시점이나 잔여수명이 아닙니다.</p>
+      <ul id="trend-experiment-checks" class="checks"></ul>
+      <div class="trend-comparison"><h3>현재 이상 탐지와 비교</h3><p id="trend-comparison-summary">마지막 시점까지 재생하면 전체 비교를 표시합니다.</p><div id="trend-milestones"></div><p id="trend-evaluation" class="hint"></p></div>
+    </div>
+    <p class="time-note">모든 추세 실험 값은 서버가 만든 모의 데이터입니다. 고장 수명·정비 시간의 실제 검증 결과가 아니며, 예측 모델이 기존 이상 탐지보다 우수하다는 전제도 두지 않습니다.</p>
+  </section>
+  <footer>분석은 API 호스트에서 실행됩니다. IMU 실측과 발전기 모의 데이터를 구분하는 기능 시연이며 실제 발전기 고장 진단 검증은 아닙니다. 기록 파일을 재생하면 진동 카드에도 ‘IMU 기록 재생’으로 표시됩니다.</footer>
+</main><script type="module" src="./demo.mjs"></script>
+</body></html>

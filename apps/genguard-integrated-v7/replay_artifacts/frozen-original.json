@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0.0",
+  "training_run_id": "399032D5-A905-4B15-B7C5-F5367DEFAFAA",
+  "training_samples": 48,
+  "training_recordings": 1,
+  "sources": [
+    {
+      "original": "/Users/changwoo/Downloads/20261010T101556-f934655e.csv",
+      "preserved": "/Users/changwoo/Desktop/Codexin/D4D헤커톤/research/t4-6/iphone-imu/20261010T101556/inputs/20261010T101556-f934655e.csv",
+      "sha256": "5695094e0a8f23a3a72571ed85252beb23920afc61b99aeb1661df0a4319599a",
+      "bytes": 6985161
+    },
+    {
+      "original": "/Users/changwoo/Downloads/399032D5-A905-4B15-B7C5-F5367DEFAFAA.json",
+      "preserved": "/Users/changwoo/Desktop/Codexin/D4D헤커톤/research/t4-6/iphone-imu/20261010T101556/inputs/399032D5-A905-4B15-B7C5-F5367DEFAFAA.json",
+      "sha256": "9cce93b375381750d77d8b9ffb3e20b417c2596c688e79854af46d145f7eb099",
+      "bytes": 3209
+    }
+  ],
+  "models": {
+    "rms_only": {
+      "features": [
+        "log_rms"
+      ],
+      "mean": [
+        -3.546137706346874
+      ],
+      "std": [
+        1.6796590467588324
+      ],
+      "classes": [
+        "idle",
+        "baseline",
+        "increased",
+        "intermittent"
+      ],
+      "centroids": [
+        [
+          -1.5803971708478262
+        ],
+        [
+          0.4255867750690802
+        ],
+        [
+          1.1305051587241872
+        ],
+        [
+          0.024305237054558494
+        ]
+      ]
+    },
+    "rms_and_pattern": {
+      "features": [
+        "log_rms",
+        "envelope_cv"
+      ],
+      "mean": [
+        -3.546137706346874,
+        0.4157472961577238
+      ],
+      "std": [
+        1.6796590467588324,
+        0.597225191149049
+      ],
+      "classes": [
+        "idle",
+        "baseline",
+        "increased",
+        "intermittent"
+      ],
+      "centroids": [
+        [
+          -1.5803971708478262,
+          -0.3663848545258275
+        ],
+        [
+          0.4255867750690803,
+          -0.6676646885573826
+        ],
+        [
+          1.130505158724187,
+          -0.6718269787183663
+        ],
+        [
+          0.024305237054558494,
+          1.7058765218015763
+        ]
+      ]
+    }
+  },
+  "preprocessing": {
+    "window_s": 2,
+    "axis_demean_per_window": true,
+    "rms": "sqrt(mean(sum((a-mean(a,axis=0))**2,axis=1)))",
+    "log_rms": "natural log, floor1e-9",
+    "envelope_cv": "population std/mean of 100ms axis-demeaned RMS bins, minimum5samples perbin",
+    "scaling": "(feature-mean)/std, fitted on this training recording only",
+    "decision": "nearest squared Euclidean centroid; no calibrated confidence or unknown rejection"
+  },
+  "test_status": "No independent recording evaluated. Freeze before next blind-test recording; do not refit with test labels.",
+  "scope": "Commanded iPhone stimulus classes on this fixture; no generator diagnosis; not installed on UNO Q."
+}

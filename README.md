@@ -1,5 +1,7 @@
 # D4D 2026 팀 컨텍스트
 
+**10/11 우지 요청 구현 반영:** [GenGuard UNO Q 통합 앱](apps/genguard-integrated-v7/README.md)을 별도 폴더로 추가했습니다. 정비사는 정상·비정상만 검토하고, `AI 학습`이 운전 회차 분리·학습·성능 평가를 수행합니다. 새 모델은 성능 확인 뒤 다음 운전부터 명시적으로 적용합니다. 기존 실측 진동 기준과 기록을 유지했습니다. [자동 학습 사용법](apps/genguard-integrated-v7/AUTO_LEARNING_GUIDE.md) · [검증 및 인수 기록](updates/woozy-2026-10-11.md). 실제 발전기 성능 검증이나 대회 제출 완료를 뜻하지 않습니다. 아래 10/10 설명은 당시 결정 이력입니다.
+
 **10/10 23시대 최신 결정:** 발산을 끝내고 T4-6을 구현합니다. GenGuard v2.1을 기준 앱으로 시연 5장면을 만들고 정비 우선순위·잔여수명 표시를 보강합니다. 역할 시작은 [TEAM_START.md](TEAM_START.md), 결정 상세는 [CONTEXT.md](CONTEXT.md) 앞부분을 읽어 주세요. 새로 올린 자료는 [contracts/v1](contracts/v1/README.md)과 [우지 감시 항목·기준·AI 역할 연구](research/t4-6/genguard-monitoring-spec-v2/README.md)입니다. 아래 낮 시간 항목은 이력입니다.
 
 **10/10 지정 자료 검토:** [Edge Impulse 14299와 gym-pybullet-drones](tracks/2026-10-10-edge-impulse-pybullet-review.md). 99.8%의 분모·지연 추정·동작 전환 한계, 시뮬레이터의 지원·유지 상태를 확인했습니다. 모델 학습과 사람의 조작 학습을 구분하며 설치·실험·후보 선정은 하지 않았습니다.

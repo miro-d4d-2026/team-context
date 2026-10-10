@@ -1,0 +1,16 @@
+{
+  "builder": "build_vibration_replay.py",
+  "builder_sha256": "39831a0b366d6cdd876a2cdbf0327c531bb9787c0a21286aef1ade52cadc352f",
+  "source_zip_bytes_verified": true,
+  "raw_recomputed": true,
+  "frozen_parameters_reproduced": true,
+  "reproduction_max_parameter_error": 2.220446049250313e-16,
+  "artifacts": {
+    "catalog.json": "04f0b69bd40871d057cdafe8d5824f5dab98f7a501bf689d5e32dea6cfd9becb",
+    "frozen-original.json": "43590d31f824e1bea4b795d007a88d3a27cefd8dae76f9d96d305da27b524e19",
+    "model.json": "5258e1d96d90ddd895e10f3ba0b5a0fedd8184dd704873037c529b3b3a32e4b8",
+    "random.json": "26136758475f767e619b0b16dd890f77aeaeb999344ee2490a823d5e8467ec53",
+    "training.json": "006a0fac8400d29e149ebeb6100c6752bb4503e93ca75721566e30f870fe00eb"
+  },
+  "note": "Original frozen artifact retains its historical pre-evaluation status. Current evaluation is catalog.json and random.json."
+}

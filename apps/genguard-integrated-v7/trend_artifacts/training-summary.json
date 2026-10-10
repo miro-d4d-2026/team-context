@@ -1,0 +1,108 @@
+{
+  "training_runs": 320,
+  "test_runs": 160,
+  "selected_method": {
+    "coolant_c": "linear",
+    "oil_kgf_cm2": "linear"
+  },
+  "mae": {
+    "ridge": {
+      "coolant_c": 1.1958003438464306,
+      "oil_kgf_cm2": 0.11012964089946706
+    },
+    "linear": {
+      "coolant_c": 1.171202941764712,
+      "oil_kgf_cm2": 0.10964467155302453
+    },
+    "persistence": {
+      "coolant_c": 1.3549570106065851,
+      "oil_kgf_cm2": 0.13377428345656067
+    },
+    "selected": {
+      "coolant_c": 1.171202941764712,
+      "oil_kgf_cm2": 0.10964467155302453
+    }
+  },
+  "advisory_summary": {
+    "normal": {
+      "runs": 20,
+      "threshold_reached_runs": 0,
+      "runs_with_advisory": 0,
+      "early_warning_runs": 0,
+      "missed_early_warning_runs": 0,
+      "runs_with_false_advisory": 0,
+      "unresolved_late_advisory_runs": 0,
+      "median_lead_s": null
+    },
+    "coolant_drift": {
+      "runs": 20,
+      "threshold_reached_runs": 20,
+      "runs_with_advisory": 20,
+      "early_warning_runs": 20,
+      "missed_early_warning_runs": 0,
+      "runs_with_false_advisory": 0,
+      "unresolved_late_advisory_runs": 0,
+      "median_lead_s": 90.0
+    },
+    "oil_drift": {
+      "runs": 20,
+      "threshold_reached_runs": 20,
+      "runs_with_advisory": 20,
+      "early_warning_runs": 20,
+      "missed_early_warning_runs": 0,
+      "runs_with_false_advisory": 0,
+      "unresolved_late_advisory_runs": 0,
+      "median_lead_s": 100.0
+    },
+    "joint_drift": {
+      "runs": 20,
+      "threshold_reached_runs": 20,
+      "runs_with_advisory": 20,
+      "early_warning_runs": 20,
+      "missed_early_warning_runs": 0,
+      "runs_with_false_advisory": 0,
+      "unresolved_late_advisory_runs": 0,
+      "median_lead_s": 90.0
+    },
+    "transient": {
+      "runs": 20,
+      "threshold_reached_runs": 0,
+      "runs_with_advisory": 14,
+      "early_warning_runs": 0,
+      "missed_early_warning_runs": 0,
+      "runs_with_false_advisory": 14,
+      "unresolved_late_advisory_runs": 0,
+      "median_lead_s": null
+    },
+    "load_change": {
+      "runs": 20,
+      "threshold_reached_runs": 0,
+      "runs_with_advisory": 0,
+      "early_warning_runs": 0,
+      "missed_early_warning_runs": 0,
+      "runs_with_false_advisory": 0,
+      "unresolved_late_advisory_runs": 0,
+      "median_lead_s": null
+    },
+    "step": {
+      "runs": 20,
+      "threshold_reached_runs": 0,
+      "runs_with_advisory": 0,
+      "early_warning_runs": 0,
+      "missed_early_warning_runs": 0,
+      "runs_with_false_advisory": 0,
+      "unresolved_late_advisory_runs": 0,
+      "median_lead_s": null
+    },
+    "recovery": {
+      "runs": 20,
+      "threshold_reached_runs": 0,
+      "runs_with_advisory": 0,
+      "early_warning_runs": 0,
+      "missed_early_warning_runs": 0,
+      "runs_with_false_advisory": 0,
+      "unresolved_late_advisory_runs": 0,
+      "median_lead_s": null
+    }
+  }
+}

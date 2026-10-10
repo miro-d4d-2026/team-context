@@ -1,0 +1,77 @@
+{
+  "sources": [
+    {
+      "delivered": "runtime/genguard/__init__.py",
+      "original": "research/t4-6/genguard-edge-v1/genguard/__init__.py",
+      "sha256": "b962a3aee3df478cb4ad4b47fe532179a7c870142bcdfd772cad83bddf3d1a8f",
+      "unchanged": true
+    },
+    {
+      "delivered": "runtime/genguard/__main__.py",
+      "original": "research/t4-6/genguard-edge-v1/genguard/__main__.py",
+      "sha256": "9e9bd2120f80adb8e7d6b2ae5c42eb3657c070046c41c516ac69a906a9d8f5bf",
+      "unchanged": true
+    },
+    {
+      "delivered": "runtime/genguard/core.py",
+      "original": "research/t4-6/genguard-edge-v1/genguard/core.py",
+      "sha256": "6a3979cba167d8f04358407471b0867c07a25e8d3ffd4dbf085f818dbadc790e",
+      "unchanged": true
+    },
+    {
+      "delivered": "runtime/genguard/demo.py",
+      "original": "research/t4-6/genguard-edge-v1/genguard/demo.py",
+      "sha256": "175cef0fb52160cc6e3efa97de95ada1e7b6fcd750806ec7a630212562930ef5",
+      "unchanged": true
+    },
+    {
+      "delivered": "runtime/genguard/model.py",
+      "original": "research/t4-6/genguard-edge-v1/genguard/model.py",
+      "sha256": "a47bac5ba1399bacafb931b35e250db0362a81c5f1b0ebff7a0fcc446ea54772",
+      "unchanged": true
+    },
+    {
+      "delivered": "runtime/genguard/stream.py",
+      "original": "research/t4-6/genguard-edge-v1/genguard/stream.py",
+      "sha256": "81587cf113e20d50a414aea4bf2efdfd61387fbc76e156ac0a1cb4494bcd8a56",
+      "unchanged": true
+    },
+    {
+      "delivered": "runtime/genguard/web.py",
+      "original": "research/t4-6/genguard-edge-v1/genguard/web.py",
+      "sha256": "ff9d1033809a4d6d05a802eb8dd982c18419e3ef17888a5bd62eeefb0cbbb0b4",
+      "unchanged": true
+    },
+    {
+      "delivered": "rules/engine.mjs",
+      "original": "research/t4-6/genguard-alarm-demo-v1/engine.mjs",
+      "sha256": "f1b2a5f27307640e5be840b9cbf40a00f4acb611bd340d7f86934c7f2095a726",
+      "unchanged": true
+    },
+    {
+      "delivered": "rules/profile.json",
+      "original": "research/t4-6/genguard-alarm-demo-v1/profile.json",
+      "sha256": "b66d86cff25e5e1b0ff2d5bd265544e6f9a95516d08b3ad38bcf20bf941cb800",
+      "unchanged": true
+    },
+    {
+      "delivered": "rules/scenarios.json",
+      "original": "research/t4-6/genguard-alarm-demo-v1/scenarios.json",
+      "sha256": "ae983703679a8adc6cd79898ccd3f508ba9e6d836244d811e574fcd749b6dc9e",
+      "unchanged": true
+    },
+    {
+      "delivered": "rules/sources-audit.md",
+      "original": "research/t4-6/genguard-alarm-demo-v1/sources-audit.md",
+      "sha256": "ec5e7622ea712786b7c8b78ddf5ea53ded2059bca82a2aa17f8cbe053ca88069",
+      "unchanged": true
+    },
+    {
+      "delivered": "profile.json",
+      "original": "research/t4-6/genguard-frozen-handoff-v1/profiles/army10kw-208v-scenario.json",
+      "sha256": "89cef61051914eee258437200adafbb6e80e30c797940b0d9b38f681e4b366b5",
+      "unchanged": true
+    }
+  ],
+  "note": "Original implementations/configuration preserved; new synthetic model learned in this package."
+}

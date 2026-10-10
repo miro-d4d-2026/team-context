@@ -1,0 +1,17 @@
+{
+  "source_repository": "https://github.com/miro-d4d-2026/team-context",
+  "source_commit": "91d0f578cf5288ba6449ce8daa7c50d8d91fe752",
+  "source_path": "apps/genguard-predictive/models/vibration.json",
+  "source_zip": "GenGuard-Predictive-AI.zip",
+  "file_sha256": "e2c9717bbbdfb7741530bab40a4bf838c8d039b5dfbee24423ba059f523a736e",
+  "file_bytes_unchanged": true,
+  "repository_and_zip_all_40_files_identical": true,
+  "training_feature_equivalence": {
+    "repeat_count": 48,
+    "random_count": 48,
+    "maximum_rms_difference": 0.0,
+    "maximum_envelope_cv_difference": 0.0
+  },
+  "reuse_scope": "User-authorized integration of team-provided code/model; no external redistribution license inferred.",
+  "source_notes": "This imported model replaces runtime nearest-centroid parameters only. Original v5/v6 artifacts and manifests remain unchanged."
+}

@@ -1,0 +1,159 @@
+{
+  "schema_version": "genguard.alarm-demo-scenarios/1",
+  "note": "프리셋은 입력값만 바꾼다. 알람 상태·문구는 engine.evaluate가 계산한다.",
+  "scenarios": [
+    {
+      "id": "normal",
+      "label": "정상 운전",
+      "values": {},
+      "phase": "running",
+      "missing_fields": []
+    },
+    {
+      "id": "vibration",
+      "label": "진동 강도 증가",
+      "values": {
+        "vibration_rms_g": 0.09
+      },
+      "phase": "running",
+      "missing_fields": []
+    },
+    {
+      "id": "intermittent",
+      "label": "간헐 진동 변화",
+      "values": {
+        "envelope_cv": 0.8
+      },
+      "phase": "running",
+      "missing_fields": []
+    },
+    {
+      "id": "rpm_deviation",
+      "label": "RPM 범위 이탈",
+      "values": {
+        "engine_rpm": 1950,
+        "frequency_hz": 65
+      },
+      "phase": "running",
+      "missing_fields": []
+    },
+    {
+      "id": "overspeed",
+      "label": "과속 보호 참고 도달",
+      "values": {
+        "engine_rpm": 2000,
+        "frequency_hz": 66.6667
+      },
+      "phase": "running",
+      "missing_fields": []
+    },
+    {
+      "id": "coolant_high",
+      "label": "냉각수 96°C",
+      "values": {
+        "coolant_c": 96
+      },
+      "phase": "running",
+      "missing_fields": []
+    },
+    {
+      "id": "coolant_urgent",
+      "label": "냉각수 100°C",
+      "values": {
+        "coolant_c": 100
+      },
+      "phase": "running",
+      "missing_fields": []
+    },
+    {
+      "id": "oil_low",
+      "label": "유압 1.5 kgf/cm²",
+      "values": {
+        "oil_kgf_cm2": 1.5
+      },
+      "phase": "running",
+      "missing_fields": []
+    },
+    {
+      "id": "oil_urgent",
+      "label": "유압 0.5 kgf/cm²",
+      "values": {
+        "oil_kgf_cm2": 0.5
+      },
+      "phase": "running",
+      "missing_fields": []
+    },
+    {
+      "id": "joint_drift",
+      "label": "개별 범위 안 · 복합 변화",
+      "values": {
+        "coolant_c": 89,
+        "oil_kgf_cm2": 2.6
+      },
+      "phase": "running",
+      "missing_fields": []
+    },
+    {
+      "id": "rpm_normal_temperature_high",
+      "label": "RPM 정상 · 냉각수 이상",
+      "values": {
+        "coolant_c": 96,
+        "engine_rpm": 1800
+      },
+      "phase": "running",
+      "missing_fields": []
+    },
+    {
+      "id": "fuel_low",
+      "label": "연료 15%",
+      "values": {
+        "fuel_pct": 15
+      },
+      "phase": "running",
+      "missing_fields": []
+    },
+    {
+      "id": "overload",
+      "label": "부하 111%",
+      "values": {
+        "load_pct": 111
+      },
+      "phase": "running",
+      "missing_fields": []
+    },
+    {
+      "id": "missing",
+      "label": "컨트롤러 값 미수신",
+      "values": {},
+      "phase": "running",
+      "missing_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "engine_rpm"
+      ]
+    },
+    {
+      "id": "warming",
+      "label": "예열 중 · 판단 보류",
+      "values": {
+        "coolant_c": 40,
+        "oil_kgf_cm2": 1
+      },
+      "phase": "warming",
+      "missing_fields": []
+    },
+    {
+      "id": "stopped",
+      "label": "정지 · 판단 보류",
+      "values": {
+        "engine_rpm": 0,
+        "frequency_hz": 0,
+        "voltage_ll_v": 0,
+        "load_pct": 0,
+        "oil_kgf_cm2": 0
+      },
+      "phase": "stopped",
+      "missing_fields": []
+    }
+  ]
+}

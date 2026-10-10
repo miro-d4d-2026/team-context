@@ -1,0 +1,144 @@
+{
+  "architecture": "arm64",
+  "python": "3.12.14",
+  "source": "isolated_synthetic",
+  "live_state_modified": false,
+  "normal_runs": 6,
+  "abnormal_runs": 4,
+  "no_manual_roles": true,
+  "normal_only_initial_learning": true,
+  "retraining_keeps_holdout": true,
+  "explicit_activation_required": true,
+  "incumbent_comparison": {
+    "available": true,
+    "incumbent_id": "review-d22c53e21a0f",
+    "incumbent": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 300,
+      "fn": 0,
+      "unknown_windows": 0,
+      "total_windows": 300,
+      "false_positive_rate": 0.0,
+      "abnormal_recall": null,
+      "coverage": 1.0,
+      "unit": "analysis_window"
+    },
+    "candidate": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 300,
+      "fn": 0,
+      "unknown_windows": 0,
+      "total_windows": 300,
+      "false_positive_rate": 0.0,
+      "abnormal_recall": null,
+      "coverage": 1.0,
+      "unit": "analysis_window"
+    },
+    "session_ids": [
+      "run-9feb0aefc021"
+    ],
+    "result": "unchanged",
+    "meaning": "같은 회차의 미학습 평가 창에서 비교. 개선 결과만으로 자동 교체하지 않습니다."
+  },
+  "final_models": {
+    "normal": {
+      "id": "review-ace3fa21b242",
+      "training_seconds": 0.011736915999790654,
+      "evaluation": {
+        "tp": 0,
+        "fp": 0,
+        "tn": 300,
+        "fn": 0,
+        "unknown_windows": 0,
+        "total_windows": 300,
+        "false_positive_rate": 0.0,
+        "abnormal_recall": null,
+        "coverage": 1.0,
+        "unit": "analysis_window"
+      },
+      "split_counts": {
+        "fit": {
+          "sessions": 4,
+          "windows": 1200,
+          "normal_sessions": 4,
+          "abnormal_sessions": 0,
+          "normal_windows": 1200,
+          "abnormal_windows": 0,
+          "segmented_sessions": 0
+        },
+        "calibration": {
+          "sessions": 1,
+          "windows": 300,
+          "normal_sessions": 1,
+          "abnormal_sessions": 0,
+          "normal_windows": 300,
+          "abnormal_windows": 0,
+          "segmented_sessions": 0
+        },
+        "validation": {
+          "sessions": 1,
+          "windows": 300,
+          "normal_sessions": 1,
+          "abnormal_sessions": 0,
+          "normal_windows": 300,
+          "abnormal_windows": 0,
+          "segmented_sessions": 0
+        }
+      }
+    },
+    "feedback": {
+      "id": "fb-c35b55c0fc69",
+      "training_seconds": 0.02636991698818747,
+      "evaluation": {
+        "tp": 300,
+        "fp": 0,
+        "tn": 300,
+        "fn": 0,
+        "unknown_windows": 0,
+        "total_windows": 600,
+        "false_positive_rate": 0.0,
+        "abnormal_recall": 1.0,
+        "coverage": 1.0,
+        "unit": "analysis_window"
+      },
+      "split_counts": {
+        "fit": {
+          "sessions": 6,
+          "windows": 1800,
+          "normal_sessions": 4,
+          "abnormal_sessions": 2,
+          "normal_windows": 1200,
+          "abnormal_windows": 600,
+          "segmented_sessions": 0
+        },
+        "calibration": {
+          "sessions": 2,
+          "windows": 600,
+          "normal_sessions": 1,
+          "abnormal_sessions": 1,
+          "normal_windows": 300,
+          "abnormal_windows": 300,
+          "segmented_sessions": 0
+        },
+        "validation": {
+          "sessions": 2,
+          "windows": 600,
+          "normal_sessions": 1,
+          "abnormal_sessions": 1,
+          "normal_windows": 300,
+          "abnormal_windows": 300,
+          "segmented_sessions": 0
+        }
+      }
+    }
+  },
+  "next_run": {
+    "normal": "normal_like",
+    "changed": "abnormal_like",
+    "warning": "attention"
+  },
+  "restart_preserved_report": true,
+  "scope": "Actual ML training and automatic per-run splitting on synthetic inputs; not real generator accuracy."
+}

@@ -1,0 +1,3304 @@
+{
+  "normal": {
+    "schema_version": "genguard.operation-comparison/1",
+    "state": "normal",
+    "headline": "평소 운전 변화와 비슷합니다",
+    "summary": "수온의 상승 속도, 예열 중 유압 변화, 진동 크기를 각각의 기준으로 비교했습니다.",
+    "comparison_blocker": null,
+    "channels": [
+      {
+        "field": "coolant_c",
+        "label": "냉각수 온도",
+        "unit": "°C",
+        "state": "normal",
+        "method": "phase_rise_rate",
+        "method_label": "운전 구간별 상승 속도",
+        "current": 78,
+        "previous": 77.4853,
+        "delta": 0.5147000000000048,
+        "interval": {
+          "start_s": 900,
+          "end_s": 1200
+        },
+        "observed_rate": 1.0,
+        "expected_rate": 1.0014084512018842,
+        "rate_unit": "°C/분",
+        "rate_delta": -0.0014084512018841533,
+        "threshold": 0.5,
+        "expected_range": [
+          0.5014084512018842,
+          1.5014084512018842
+        ],
+        "observed_delta": 5,
+        "expected_delta": 5.007042256009421,
+        "change_ratio": null,
+        "model_expected": 1.0014084512018842,
+        "reason": "normal_phase_pattern",
+        "summary": "온도는 올랐지만 각 구간의 상승 속도는 이전 정상 운전과 비슷합니다.",
+        "checks": [],
+        "intervals": [
+          {
+            "interval": {
+              "start_s": 0,
+              "end_s": 300
+            },
+            "start_s": 0,
+            "end_s": 300,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 60,
+            "previous": 59.822,
+            "observed_rate": 2.0,
+            "expected_rate": 2.0092349203570796,
+            "rate_delta": -0.009234920357079623,
+            "threshold": 0.5,
+            "expected_range": [
+              1.5092349203570796,
+              2.5092349203570796
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 2.0092349203570796,
+            "delta": 0.17799999999999727,
+            "severity_score": 0.018469840714159247,
+            "rate_unit": "°C/분",
+            "current_change": 10,
+            "previous_change": 9.909100000000002,
+            "observed_delta": 10,
+            "expected_delta": 10.046174601785399
+          },
+          {
+            "interval": {
+              "start_s": 300,
+              "end_s": 600
+            },
+            "start_s": 300,
+            "end_s": 600,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 68,
+            "previous": 67.7268,
+            "observed_rate": 1.6,
+            "expected_rate": 1.6012511635599707,
+            "rate_delta": -0.0012511635599705695,
+            "threshold": 0.5,
+            "expected_range": [
+              1.1012511635599707,
+              2.1012511635599704
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 1.6012511635599707,
+            "delta": 0.2732000000000028,
+            "severity_score": 0.002502327119941139,
+            "rate_unit": "°C/분",
+            "current_change": 8,
+            "previous_change": 7.9047999999999945,
+            "observed_delta": 8,
+            "expected_delta": 8.006255817799854
+          },
+          {
+            "interval": {
+              "start_s": 600,
+              "end_s": 900
+            },
+            "start_s": 600,
+            "end_s": 900,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 73,
+            "previous": 72.6136,
+            "observed_rate": 1.0,
+            "expected_rate": 1.0011930772605921,
+            "rate_delta": -0.0011930772605921458,
+            "threshold": 0.5,
+            "expected_range": [
+              0.5011930772605921,
+              1.5011930772605921
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 1.0011930772605921,
+            "delta": 0.38639999999999475,
+            "severity_score": 0.0023861545211842916,
+            "rate_unit": "°C/분",
+            "current_change": 5,
+            "previous_change": 4.886800000000008,
+            "observed_delta": 5,
+            "expected_delta": 5.005965386302961
+          },
+          {
+            "interval": {
+              "start_s": 900,
+              "end_s": 1200
+            },
+            "start_s": 900,
+            "end_s": 1200,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 78,
+            "previous": 77.4853,
+            "observed_rate": 1.0,
+            "expected_rate": 1.0014084512018842,
+            "rate_delta": -0.0014084512018841533,
+            "threshold": 0.5,
+            "expected_range": [
+              0.5014084512018842,
+              1.5014084512018842
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 1.0014084512018842,
+            "delta": 0.5147000000000048,
+            "severity_score": 0.0028169024037683066,
+            "rate_unit": "°C/분",
+            "current_change": 5,
+            "previous_change": 4.87169999999999,
+            "observed_delta": 5,
+            "expected_delta": 5.007042256009421
+          }
+        ],
+        "source": "scenario",
+        "reference_source": "scenario",
+        "worst_interval": null,
+        "current_change": 5,
+        "previous_change": 4.87169999999999,
+        "step_ratio": null
+      },
+      {
+        "field": "oil_kgf_cm2",
+        "label": "윤활유 압력",
+        "unit": "kgf/cm²",
+        "state": "normal",
+        "method": "warmup_rate_and_level",
+        "method_label": "예열 구간별 하락 속도·압력",
+        "current": 3.2,
+        "previous": 3.19762,
+        "delta": 0.0023800000000000487,
+        "interval": {
+          "start_s": 900,
+          "end_s": 1200
+        },
+        "observed_rate": 0.0,
+        "expected_rate": -0.0006340564592101901,
+        "rate_unit": "kgf/cm²/분",
+        "rate_delta": 0.0006340564592101901,
+        "threshold": 0.035,
+        "expected_range": [
+          -0.035634056459210195,
+          0.03436594354078981
+        ],
+        "observed_delta": 0.0,
+        "expected_delta": -0.00317028229605095,
+        "change_ratio": null,
+        "model_expected": -0.0006340564592101901,
+        "reason": "normal_phase_pattern",
+        "summary": "예열에 따른 압력 하락과 이후 안정화가 평소 패턴 안에 있습니다.",
+        "checks": [],
+        "intervals": [
+          {
+            "interval": {
+              "start_s": 0,
+              "end_s": 300
+            },
+            "start_s": 0,
+            "end_s": 300,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 3.6,
+            "previous": 3.60971,
+            "observed_rate": -0.07999999999999999,
+            "expected_rate": -0.07946456018326012,
+            "rate_delta": -0.0005354398167398688,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.11446456018326012,
+              -0.044464560183260116
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.07946456018326012,
+            "delta": -0.009710000000000107,
+            "severity_score": 0.015858868599988085,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": -0.3999999999999999,
+            "previous_change": -0.3912200000000001,
+            "observed_delta": -0.3999999999999999,
+            "expected_delta": -0.39732280091630057,
+            "expected_level": 3.603964717149997,
+            "level_delta": -0.003964717149997021,
+            "level_threshold": 0.25
+          },
+          {
+            "interval": {
+              "start_s": 300,
+              "end_s": 600
+            },
+            "start_s": 300,
+            "end_s": 600,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 3.3,
+            "previous": 3.31537,
+            "observed_rate": -0.06000000000000005,
+            "expected_rate": -0.06004183652652776,
+            "rate_delta": 4.183652652770681e-05,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.09504183652652776,
+              -0.025041836526527757
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.06004183652652776,
+            "delta": -0.015370000000000328,
+            "severity_score": 0.015022138069436863,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": -0.30000000000000027,
+            "previous_change": -0.29434000000000005,
+            "observed_delta": -0.30000000000000027,
+            "expected_delta": -0.3002091826326388,
+            "expected_level": 3.303755534517359,
+            "level_delta": -0.003755534517359216,
+            "level_threshold": 0.25
+          },
+          {
+            "interval": {
+              "start_s": 600,
+              "end_s": 900
+            },
+            "start_s": 600,
+            "end_s": 900,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 3.2,
+            "previous": 3.208,
+            "observed_rate": -0.019999999999999928,
+            "expected_rate": -0.020137472477432278,
+            "rate_delta": 0.0001374724774323502,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.05513747247743228,
+              0.014862527522567726
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.020137472477432278,
+            "delta": -0.008000000000000007,
+            "severity_score": 0.012272688520786446,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": -0.09999999999999964,
+            "previous_change": -0.10736999999999997,
+            "observed_delta": -0.09999999999999964,
+            "expected_delta": -0.10068736238716139,
+            "expected_level": 3.203068172130197,
+            "level_delta": -0.0030681721301966114,
+            "level_threshold": 0.25
+          },
+          {
+            "interval": {
+              "start_s": 900,
+              "end_s": 1200
+            },
+            "start_s": 900,
+            "end_s": 1200,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 3.2,
+            "previous": 3.19762,
+            "observed_rate": 0.0,
+            "expected_rate": -0.0006340564592101901,
+            "rate_delta": 0.0006340564592101901,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.035634056459210195,
+              0.03436594354078981
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.0006340564592101901,
+            "delta": 0.0023800000000000487,
+            "severity_score": 0.018115898834576857,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": 0.0,
+            "previous_change": -0.010380000000000056,
+            "observed_delta": 0.0,
+            "expected_delta": -0.00317028229605095,
+            "expected_level": 3.199897889834146,
+            "level_delta": 0.00010211016585426336,
+            "level_threshold": 0.25
+          }
+        ],
+        "source": "scenario",
+        "reference_source": "scenario",
+        "worst_interval": null,
+        "current_change": 0.0,
+        "previous_change": -0.010380000000000056,
+        "step_ratio": null
+      },
+      {
+        "field": "vibration_rms_g",
+        "label": "진동 RMS",
+        "unit": "g",
+        "state": "normal",
+        "method": "amplitude_ratio_and_step",
+        "method_label": "진동 크기·급변",
+        "current": 0.045,
+        "previous": 0.044592,
+        "delta": 0.00040799999999999864,
+        "interval": {
+          "start_s": 900,
+          "end_s": 1200
+        },
+        "observed_rate": null,
+        "expected_rate": null,
+        "rate_unit": null,
+        "rate_delta": null,
+        "threshold": 0.30010459245033816,
+        "expected_range": [
+          0.03346661000400294,
+          0.06099289673229537
+        ],
+        "observed_delta": 0.0010000000000000009,
+        "expected_delta": null,
+        "change_ratio": 0.9960176226198689,
+        "model_expected": 0.04517992350540397,
+        "reason": "normal_phase_pattern",
+        "summary": "진동 크기가 평소 범위에서 유지되고 급격한 변화가 없습니다.",
+        "checks": [],
+        "intervals": [
+          {
+            "interval": {
+              "start_s": 0,
+              "end_s": 300
+            },
+            "start_s": 0,
+            "end_s": 300,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 0.046,
+            "previous": 0.044324,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03331679715393539,
+              0.06071986281304725
+            ],
+            "change_ratio": 1.022729583418232,
+            "step_ratio": 1.0222222222222221,
+            "model_expected": 0.04497767615781277,
+            "delta": 0.001675999999999997,
+            "severity_score": 0.07489094054932446,
+            "rate_unit": null,
+            "current_change": 0.0010000000000000009,
+            "previous_change": -0.0009759999999999977,
+            "observed_delta": 0.0010000000000000009,
+            "expected_delta": null
+          },
+          {
+            "interval": {
+              "start_s": 300,
+              "end_s": 600
+            },
+            "start_s": 300,
+            "end_s": 600,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 0.045,
+            "previous": 0.044761,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03343111672656586,
+              0.06092821023416629
+            ],
+            "change_ratio": 0.9970750784656013,
+            "step_ratio": 0.9782608695652174,
+            "model_expected": 0.045132007580863914,
+            "delta": 0.00023899999999999616,
+            "severity_score": 0.054206653739763966,
+            "rate_unit": null,
+            "current_change": -0.0010000000000000009,
+            "previous_change": 0.0004369999999999999,
+            "observed_delta": -0.0010000000000000009,
+            "expected_delta": null
+          },
+          {
+            "interval": {
+              "start_s": 600,
+              "end_s": 900
+            },
+            "start_s": 600,
+            "end_s": 900,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 0.044,
+            "previous": 0.045,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03328220245554165,
+              0.06065681397522466
+            ],
+            "change_ratio": 0.9792799210367691,
+            "step_ratio": 0.9777777777777777,
+            "model_expected": 0.04493097331498123,
+            "delta": -0.0010000000000000009,
+            "severity_score": 0.06976818207910229,
+            "rate_unit": null,
+            "current_change": -0.0010000000000000009,
+            "previous_change": 0.00023899999999999616,
+            "observed_delta": -0.0010000000000000009,
+            "expected_delta": null
+          },
+          {
+            "interval": {
+              "start_s": 900,
+              "end_s": 1200
+            },
+            "start_s": 900,
+            "end_s": 1200,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 0.045,
+            "previous": 0.044592,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03346661000400294,
+              0.06099289673229537
+            ],
+            "change_ratio": 0.9960176226198689,
+            "step_ratio": 1.0227272727272727,
+            "model_expected": 0.04517992350540397,
+            "delta": 0.00040799999999999864,
+            "severity_score": 0.05542488219741852,
+            "rate_unit": null,
+            "current_change": 0.0010000000000000009,
+            "previous_change": -0.00040799999999999864,
+            "observed_delta": 0.0010000000000000009,
+            "expected_delta": null
+          }
+        ],
+        "source": "scenario",
+        "reference_source": "scenario",
+        "worst_interval": null,
+        "current_change": 0.0010000000000000009,
+        "previous_change": -0.00040799999999999864,
+        "step_ratio": 1.0227272727272727
+      }
+    ],
+    "recommendations": [],
+    "reference_id": "operation-2026-08",
+    "reference_run": {
+      "id": "operation-2026-08",
+      "equipment_id": "GEN-10K-001",
+      "inspected_at": "2026-10-10T10:00:00+09:00",
+      "label": "정기 시험 운전",
+      "confirmed_normal": true,
+      "source": "scenario",
+      "context": {
+        "load_pct": 62,
+        "ambient_c": 28.5,
+        "engine_rpm": 1800
+      },
+      "samples": [
+        {
+          "elapsed_s": 0,
+          "coolant_c": 49.9129,
+          "oil_kgf_cm2": 4.00093,
+          "vibration_rms_g": 0.0453
+        },
+        {
+          "elapsed_s": 300,
+          "coolant_c": 59.822,
+          "oil_kgf_cm2": 3.60971,
+          "vibration_rms_g": 0.044324
+        },
+        {
+          "elapsed_s": 600,
+          "coolant_c": 67.7268,
+          "oil_kgf_cm2": 3.31537,
+          "vibration_rms_g": 0.044761
+        },
+        {
+          "elapsed_s": 900,
+          "coolant_c": 72.6136,
+          "oil_kgf_cm2": 3.208,
+          "vibration_rms_g": 0.045
+        },
+        {
+          "elapsed_s": 1200,
+          "coolant_c": 77.4853,
+          "oil_kgf_cm2": 3.19762,
+          "vibration_rms_g": 0.044592
+        }
+      ],
+      "installation_id": "demo-generator",
+      "acquisition": {
+        "sample_rate_hz": 833,
+        "window_s": 2,
+        "dc_removed": true,
+        "feature_version": "rms-ac-3axis/1",
+        "accel_range_g": 8
+      },
+      "provenance": "모의 운전 기록. 실제 발전기 계측 및 제조사 정상 범위가 아님."
+    },
+    "reference_at": "2026-10-10T10:00:00+09:00",
+    "conditions": {
+      "current": {
+        "load_pct": 62,
+        "ambient_c": 28.5,
+        "engine_rpm": 1800,
+        "initial_coolant_c": 50
+      },
+      "previous": {
+        "load_pct": 62,
+        "ambient_c": 28.5,
+        "engine_rpm": 1800,
+        "initial_coolant_c": 49.9129
+      },
+      "tolerances": {
+        "load_pct": 5,
+        "ambient_c": 5,
+        "engine_rpm": 50,
+        "initial_coolant_c": 5
+      },
+      "matched": true
+    },
+    "model": {
+      "id": "operation-phase-context-ridge/1:77f98078313d",
+      "algorithm": "operation-phase-context-ridge/1",
+      "training_count": 8,
+      "training_record_count": 8,
+      "training_record_ids": [
+        "operation-2026-01",
+        "operation-2026-02",
+        "operation-2026-03",
+        "operation-2026-04",
+        "operation-2026-05",
+        "operation-2026-06",
+        "operation-2026-07",
+        "operation-2026-08"
+      ],
+      "training_sample_count": 32,
+      "current_used_for_training": false,
+      "training_source": "scenario",
+      "synthetic": true,
+      "phase_interval_s": 300,
+      "scope": "승인된 과거 정상 운전에서 구간별 변화 패턴을 학습합니다. 고장 부위·수명 예측이 아닙니다.",
+      "threshold_provenance": "모의 탐지 허용차. 실제 발전기 검증 및 제조사 안전 기준이 아님."
+    },
+    "history_count": 8,
+    "source": "scenario",
+    "observed_until_s": 1200
+  },
+  "coolant_rise": {
+    "schema_version": "genguard.operation-comparison/1",
+    "state": "inspect",
+    "headline": "냉각수 온도 점검이 필요합니다",
+    "summary": "같은 운전 조건의 과거 정상 기록과 다른 변화가 관찰되었습니다. 아래 구간과 근거를 확인하세요.",
+    "comparison_blocker": null,
+    "channels": [
+      {
+        "field": "coolant_c",
+        "label": "냉각수 온도",
+        "unit": "°C",
+        "state": "inspect",
+        "method": "phase_rise_rate",
+        "method_label": "운전 구간별 상승 속도",
+        "current": 90,
+        "previous": 77.4853,
+        "delta": 12.514700000000005,
+        "interval": {
+          "start_s": 900,
+          "end_s": 1200
+        },
+        "observed_rate": 1.0,
+        "expected_rate": 1.0014084512018842,
+        "rate_unit": "°C/분",
+        "rate_delta": -0.0014084512018841533,
+        "threshold": 0.5,
+        "expected_range": [
+          0.5014084512018842,
+          1.5014084512018842
+        ],
+        "observed_delta": 5,
+        "expected_delta": 5.007042256009421,
+        "change_ratio": null,
+        "model_expected": 1.0014084512018842,
+        "reason": "coolant_rise_accelerated",
+        "summary": "5–10분 수온 상승 속도 4.00°C/분 · 평소 예상 1.60°C/분. 현재 구간은 평소 변화로 돌아왔지만 앞선 이상 구간은 확인이 필요합니다.",
+        "checks": [
+          "냉각수량·누수 여부 확인",
+          "라디에이터·통풍 상태 확인",
+          "같은 부하와 초기 수온에서 다시 비교"
+        ],
+        "intervals": [
+          {
+            "interval": {
+              "start_s": 0,
+              "end_s": 300
+            },
+            "start_s": 0,
+            "end_s": 300,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 60,
+            "previous": 59.822,
+            "observed_rate": 2.0,
+            "expected_rate": 2.0092349203570796,
+            "rate_delta": -0.009234920357079623,
+            "threshold": 0.5,
+            "expected_range": [
+              1.5092349203570796,
+              2.5092349203570796
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 2.0092349203570796,
+            "delta": 0.17799999999999727,
+            "severity_score": 0.018469840714159247,
+            "rate_unit": "°C/분",
+            "current_change": 10,
+            "previous_change": 9.909100000000002,
+            "observed_delta": 10,
+            "expected_delta": 10.046174601785399
+          },
+          {
+            "interval": {
+              "start_s": 300,
+              "end_s": 600
+            },
+            "start_s": 300,
+            "end_s": 600,
+            "state": "inspect",
+            "reason": "coolant_rise_accelerated",
+            "current": 80,
+            "previous": 67.7268,
+            "observed_rate": 4.0,
+            "expected_rate": 1.6012511635599707,
+            "rate_delta": 2.3987488364400296,
+            "threshold": 0.5,
+            "expected_range": [
+              1.1012511635599707,
+              2.1012511635599704
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 1.6012511635599707,
+            "delta": 12.273200000000003,
+            "severity_score": 4.797497672880059,
+            "rate_unit": "°C/분",
+            "current_change": 20,
+            "previous_change": 7.9047999999999945,
+            "observed_delta": 20,
+            "expected_delta": 8.006255817799854
+          },
+          {
+            "interval": {
+              "start_s": 600,
+              "end_s": 900
+            },
+            "start_s": 600,
+            "end_s": 900,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 85,
+            "previous": 72.6136,
+            "observed_rate": 1.0,
+            "expected_rate": 1.0011930772605921,
+            "rate_delta": -0.0011930772605921458,
+            "threshold": 0.5,
+            "expected_range": [
+              0.5011930772605921,
+              1.5011930772605921
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 1.0011930772605921,
+            "delta": 12.386399999999995,
+            "severity_score": 0.0023861545211842916,
+            "rate_unit": "°C/분",
+            "current_change": 5,
+            "previous_change": 4.886800000000008,
+            "observed_delta": 5,
+            "expected_delta": 5.005965386302961
+          },
+          {
+            "interval": {
+              "start_s": 900,
+              "end_s": 1200
+            },
+            "start_s": 900,
+            "end_s": 1200,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 90,
+            "previous": 77.4853,
+            "observed_rate": 1.0,
+            "expected_rate": 1.0014084512018842,
+            "rate_delta": -0.0014084512018841533,
+            "threshold": 0.5,
+            "expected_range": [
+              0.5014084512018842,
+              1.5014084512018842
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 1.0014084512018842,
+            "delta": 12.514700000000005,
+            "severity_score": 0.0028169024037683066,
+            "rate_unit": "°C/분",
+            "current_change": 5,
+            "previous_change": 4.87169999999999,
+            "observed_delta": 5,
+            "expected_delta": 5.007042256009421
+          }
+        ],
+        "source": "scenario",
+        "reference_source": "scenario",
+        "worst_interval": {
+          "interval": {
+            "start_s": 300,
+            "end_s": 600
+          },
+          "start_s": 300,
+          "end_s": 600,
+          "state": "inspect",
+          "reason": "coolant_rise_accelerated",
+          "current": 80,
+          "previous": 67.7268,
+          "observed_rate": 4.0,
+          "expected_rate": 1.6012511635599707,
+          "rate_delta": 2.3987488364400296,
+          "threshold": 0.5,
+          "expected_range": [
+            1.1012511635599707,
+            2.1012511635599704
+          ],
+          "change_ratio": null,
+          "step_ratio": null,
+          "model_expected": 1.6012511635599707,
+          "delta": 12.273200000000003,
+          "severity_score": 4.797497672880059,
+          "rate_unit": "°C/분",
+          "current_change": 20,
+          "previous_change": 7.9047999999999945,
+          "observed_delta": 20,
+          "expected_delta": 8.006255817799854
+        },
+        "current_change": 5,
+        "previous_change": 4.87169999999999,
+        "step_ratio": null
+      },
+      {
+        "field": "oil_kgf_cm2",
+        "label": "윤활유 압력",
+        "unit": "kgf/cm²",
+        "state": "normal",
+        "method": "warmup_rate_and_level",
+        "method_label": "예열 구간별 하락 속도·압력",
+        "current": 3.2,
+        "previous": 3.19762,
+        "delta": 0.0023800000000000487,
+        "interval": {
+          "start_s": 900,
+          "end_s": 1200
+        },
+        "observed_rate": 0.0,
+        "expected_rate": -0.0006340564592101901,
+        "rate_unit": "kgf/cm²/분",
+        "rate_delta": 0.0006340564592101901,
+        "threshold": 0.035,
+        "expected_range": [
+          -0.035634056459210195,
+          0.03436594354078981
+        ],
+        "observed_delta": 0.0,
+        "expected_delta": -0.00317028229605095,
+        "change_ratio": null,
+        "model_expected": -0.0006340564592101901,
+        "reason": "normal_phase_pattern",
+        "summary": "예열에 따른 압력 하락과 이후 안정화가 평소 패턴 안에 있습니다.",
+        "checks": [],
+        "intervals": [
+          {
+            "interval": {
+              "start_s": 0,
+              "end_s": 300
+            },
+            "start_s": 0,
+            "end_s": 300,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 3.6,
+            "previous": 3.60971,
+            "observed_rate": -0.07999999999999999,
+            "expected_rate": -0.07946456018326012,
+            "rate_delta": -0.0005354398167398688,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.11446456018326012,
+              -0.044464560183260116
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.07946456018326012,
+            "delta": -0.009710000000000107,
+            "severity_score": 0.015858868599988085,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": -0.3999999999999999,
+            "previous_change": -0.3912200000000001,
+            "observed_delta": -0.3999999999999999,
+            "expected_delta": -0.39732280091630057,
+            "expected_level": 3.603964717149997,
+            "level_delta": -0.003964717149997021,
+            "level_threshold": 0.25
+          },
+          {
+            "interval": {
+              "start_s": 300,
+              "end_s": 600
+            },
+            "start_s": 300,
+            "end_s": 600,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 3.3,
+            "previous": 3.31537,
+            "observed_rate": -0.06000000000000005,
+            "expected_rate": -0.06004183652652776,
+            "rate_delta": 4.183652652770681e-05,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.09504183652652776,
+              -0.025041836526527757
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.06004183652652776,
+            "delta": -0.015370000000000328,
+            "severity_score": 0.015022138069436863,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": -0.30000000000000027,
+            "previous_change": -0.29434000000000005,
+            "observed_delta": -0.30000000000000027,
+            "expected_delta": -0.3002091826326388,
+            "expected_level": 3.303755534517359,
+            "level_delta": -0.003755534517359216,
+            "level_threshold": 0.25
+          },
+          {
+            "interval": {
+              "start_s": 600,
+              "end_s": 900
+            },
+            "start_s": 600,
+            "end_s": 900,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 3.2,
+            "previous": 3.208,
+            "observed_rate": -0.019999999999999928,
+            "expected_rate": -0.020137472477432278,
+            "rate_delta": 0.0001374724774323502,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.05513747247743228,
+              0.014862527522567726
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.020137472477432278,
+            "delta": -0.008000000000000007,
+            "severity_score": 0.012272688520786446,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": -0.09999999999999964,
+            "previous_change": -0.10736999999999997,
+            "observed_delta": -0.09999999999999964,
+            "expected_delta": -0.10068736238716139,
+            "expected_level": 3.203068172130197,
+            "level_delta": -0.0030681721301966114,
+            "level_threshold": 0.25
+          },
+          {
+            "interval": {
+              "start_s": 900,
+              "end_s": 1200
+            },
+            "start_s": 900,
+            "end_s": 1200,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 3.2,
+            "previous": 3.19762,
+            "observed_rate": 0.0,
+            "expected_rate": -0.0006340564592101901,
+            "rate_delta": 0.0006340564592101901,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.035634056459210195,
+              0.03436594354078981
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.0006340564592101901,
+            "delta": 0.0023800000000000487,
+            "severity_score": 0.018115898834576857,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": 0.0,
+            "previous_change": -0.010380000000000056,
+            "observed_delta": 0.0,
+            "expected_delta": -0.00317028229605095,
+            "expected_level": 3.199897889834146,
+            "level_delta": 0.00010211016585426336,
+            "level_threshold": 0.25
+          }
+        ],
+        "source": "scenario",
+        "reference_source": "scenario",
+        "worst_interval": null,
+        "current_change": 0.0,
+        "previous_change": -0.010380000000000056,
+        "step_ratio": null
+      },
+      {
+        "field": "vibration_rms_g",
+        "label": "진동 RMS",
+        "unit": "g",
+        "state": "normal",
+        "method": "amplitude_ratio_and_step",
+        "method_label": "진동 크기·급변",
+        "current": 0.045,
+        "previous": 0.044592,
+        "delta": 0.00040799999999999864,
+        "interval": {
+          "start_s": 900,
+          "end_s": 1200
+        },
+        "observed_rate": null,
+        "expected_rate": null,
+        "rate_unit": null,
+        "rate_delta": null,
+        "threshold": 0.30010459245033816,
+        "expected_range": [
+          0.03346661000400294,
+          0.06099289673229537
+        ],
+        "observed_delta": 0.0010000000000000009,
+        "expected_delta": null,
+        "change_ratio": 0.9960176226198689,
+        "model_expected": 0.04517992350540397,
+        "reason": "normal_phase_pattern",
+        "summary": "진동 크기가 평소 범위에서 유지되고 급격한 변화가 없습니다.",
+        "checks": [],
+        "intervals": [
+          {
+            "interval": {
+              "start_s": 0,
+              "end_s": 300
+            },
+            "start_s": 0,
+            "end_s": 300,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 0.046,
+            "previous": 0.044324,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03331679715393539,
+              0.06071986281304725
+            ],
+            "change_ratio": 1.022729583418232,
+            "step_ratio": 1.0222222222222221,
+            "model_expected": 0.04497767615781277,
+            "delta": 0.001675999999999997,
+            "severity_score": 0.07489094054932446,
+            "rate_unit": null,
+            "current_change": 0.0010000000000000009,
+            "previous_change": -0.0009759999999999977,
+            "observed_delta": 0.0010000000000000009,
+            "expected_delta": null
+          },
+          {
+            "interval": {
+              "start_s": 300,
+              "end_s": 600
+            },
+            "start_s": 300,
+            "end_s": 600,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 0.045,
+            "previous": 0.044761,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03343111672656586,
+              0.06092821023416629
+            ],
+            "change_ratio": 0.9970750784656013,
+            "step_ratio": 0.9782608695652174,
+            "model_expected": 0.045132007580863914,
+            "delta": 0.00023899999999999616,
+            "severity_score": 0.054206653739763966,
+            "rate_unit": null,
+            "current_change": -0.0010000000000000009,
+            "previous_change": 0.0004369999999999999,
+            "observed_delta": -0.0010000000000000009,
+            "expected_delta": null
+          },
+          {
+            "interval": {
+              "start_s": 600,
+              "end_s": 900
+            },
+            "start_s": 600,
+            "end_s": 900,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 0.044,
+            "previous": 0.045,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03328220245554165,
+              0.06065681397522466
+            ],
+            "change_ratio": 0.9792799210367691,
+            "step_ratio": 0.9777777777777777,
+            "model_expected": 0.04493097331498123,
+            "delta": -0.0010000000000000009,
+            "severity_score": 0.06976818207910229,
+            "rate_unit": null,
+            "current_change": -0.0010000000000000009,
+            "previous_change": 0.00023899999999999616,
+            "observed_delta": -0.0010000000000000009,
+            "expected_delta": null
+          },
+          {
+            "interval": {
+              "start_s": 900,
+              "end_s": 1200
+            },
+            "start_s": 900,
+            "end_s": 1200,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 0.045,
+            "previous": 0.044592,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03346661000400294,
+              0.06099289673229537
+            ],
+            "change_ratio": 0.9960176226198689,
+            "step_ratio": 1.0227272727272727,
+            "model_expected": 0.04517992350540397,
+            "delta": 0.00040799999999999864,
+            "severity_score": 0.05542488219741852,
+            "rate_unit": null,
+            "current_change": 0.0010000000000000009,
+            "previous_change": -0.00040799999999999864,
+            "observed_delta": 0.0010000000000000009,
+            "expected_delta": null
+          }
+        ],
+        "source": "scenario",
+        "reference_source": "scenario",
+        "worst_interval": null,
+        "current_change": 0.0010000000000000009,
+        "previous_change": -0.00040799999999999864,
+        "step_ratio": 1.0227272727272727
+      }
+    ],
+    "recommendations": [
+      {
+        "field": "coolant_c",
+        "title": "냉각수 온도 변화 확인",
+        "reason": "5–10분 수온 상승 속도 4.00°C/분 · 평소 예상 1.60°C/분. 현재 구간은 평소 변화로 돌아왔지만 앞선 이상 구간은 확인이 필요합니다.",
+        "checks": [
+          "냉각수량·누수 여부 확인",
+          "라디에이터·통풍 상태 확인",
+          "같은 부하와 초기 수온에서 다시 비교"
+        ],
+        "interval": {
+          "start_s": 300,
+          "end_s": 600
+        }
+      }
+    ],
+    "reference_id": "operation-2026-08",
+    "reference_run": {
+      "id": "operation-2026-08",
+      "equipment_id": "GEN-10K-001",
+      "inspected_at": "2026-10-10T10:00:00+09:00",
+      "label": "정기 시험 운전",
+      "confirmed_normal": true,
+      "source": "scenario",
+      "context": {
+        "load_pct": 62,
+        "ambient_c": 28.5,
+        "engine_rpm": 1800
+      },
+      "samples": [
+        {
+          "elapsed_s": 0,
+          "coolant_c": 49.9129,
+          "oil_kgf_cm2": 4.00093,
+          "vibration_rms_g": 0.0453
+        },
+        {
+          "elapsed_s": 300,
+          "coolant_c": 59.822,
+          "oil_kgf_cm2": 3.60971,
+          "vibration_rms_g": 0.044324
+        },
+        {
+          "elapsed_s": 600,
+          "coolant_c": 67.7268,
+          "oil_kgf_cm2": 3.31537,
+          "vibration_rms_g": 0.044761
+        },
+        {
+          "elapsed_s": 900,
+          "coolant_c": 72.6136,
+          "oil_kgf_cm2": 3.208,
+          "vibration_rms_g": 0.045
+        },
+        {
+          "elapsed_s": 1200,
+          "coolant_c": 77.4853,
+          "oil_kgf_cm2": 3.19762,
+          "vibration_rms_g": 0.044592
+        }
+      ],
+      "installation_id": "demo-generator",
+      "acquisition": {
+        "sample_rate_hz": 833,
+        "window_s": 2,
+        "dc_removed": true,
+        "feature_version": "rms-ac-3axis/1",
+        "accel_range_g": 8
+      },
+      "provenance": "모의 운전 기록. 실제 발전기 계측 및 제조사 정상 범위가 아님."
+    },
+    "reference_at": "2026-10-10T10:00:00+09:00",
+    "conditions": {
+      "current": {
+        "load_pct": 62,
+        "ambient_c": 28.5,
+        "engine_rpm": 1800,
+        "initial_coolant_c": 50
+      },
+      "previous": {
+        "load_pct": 62,
+        "ambient_c": 28.5,
+        "engine_rpm": 1800,
+        "initial_coolant_c": 49.9129
+      },
+      "tolerances": {
+        "load_pct": 5,
+        "ambient_c": 5,
+        "engine_rpm": 50,
+        "initial_coolant_c": 5
+      },
+      "matched": true
+    },
+    "model": {
+      "id": "operation-phase-context-ridge/1:77f98078313d",
+      "algorithm": "operation-phase-context-ridge/1",
+      "training_count": 8,
+      "training_record_count": 8,
+      "training_record_ids": [
+        "operation-2026-01",
+        "operation-2026-02",
+        "operation-2026-03",
+        "operation-2026-04",
+        "operation-2026-05",
+        "operation-2026-06",
+        "operation-2026-07",
+        "operation-2026-08"
+      ],
+      "training_sample_count": 32,
+      "current_used_for_training": false,
+      "training_source": "scenario",
+      "synthetic": true,
+      "phase_interval_s": 300,
+      "scope": "승인된 과거 정상 운전에서 구간별 변화 패턴을 학습합니다. 고장 부위·수명 예측이 아닙니다.",
+      "threshold_provenance": "모의 탐지 허용차. 실제 발전기 검증 및 제조사 안전 기준이 아님."
+    },
+    "history_count": 8,
+    "source": "scenario",
+    "observed_until_s": 1200
+  },
+  "oil_drop": {
+    "schema_version": "genguard.operation-comparison/1",
+    "state": "inspect",
+    "headline": "윤활유 압력 점검이 필요합니다",
+    "summary": "같은 운전 조건의 과거 정상 기록과 다른 변화가 관찰되었습니다. 아래 구간과 근거를 확인하세요.",
+    "comparison_blocker": null,
+    "channels": [
+      {
+        "field": "coolant_c",
+        "label": "냉각수 온도",
+        "unit": "°C",
+        "state": "normal",
+        "method": "phase_rise_rate",
+        "method_label": "운전 구간별 상승 속도",
+        "current": 78,
+        "previous": 77.4853,
+        "delta": 0.5147000000000048,
+        "interval": {
+          "start_s": 900,
+          "end_s": 1200
+        },
+        "observed_rate": 1.0,
+        "expected_rate": 1.0014084512018842,
+        "rate_unit": "°C/분",
+        "rate_delta": -0.0014084512018841533,
+        "threshold": 0.5,
+        "expected_range": [
+          0.5014084512018842,
+          1.5014084512018842
+        ],
+        "observed_delta": 5,
+        "expected_delta": 5.007042256009421,
+        "change_ratio": null,
+        "model_expected": 1.0014084512018842,
+        "reason": "normal_phase_pattern",
+        "summary": "온도는 올랐지만 각 구간의 상승 속도는 이전 정상 운전과 비슷합니다.",
+        "checks": [],
+        "intervals": [
+          {
+            "interval": {
+              "start_s": 0,
+              "end_s": 300
+            },
+            "start_s": 0,
+            "end_s": 300,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 60,
+            "previous": 59.822,
+            "observed_rate": 2.0,
+            "expected_rate": 2.0092349203570796,
+            "rate_delta": -0.009234920357079623,
+            "threshold": 0.5,
+            "expected_range": [
+              1.5092349203570796,
+              2.5092349203570796
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 2.0092349203570796,
+            "delta": 0.17799999999999727,
+            "severity_score": 0.018469840714159247,
+            "rate_unit": "°C/분",
+            "current_change": 10,
+            "previous_change": 9.909100000000002,
+            "observed_delta": 10,
+            "expected_delta": 10.046174601785399
+          },
+          {
+            "interval": {
+              "start_s": 300,
+              "end_s": 600
+            },
+            "start_s": 300,
+            "end_s": 600,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 68,
+            "previous": 67.7268,
+            "observed_rate": 1.6,
+            "expected_rate": 1.6012511635599707,
+            "rate_delta": -0.0012511635599705695,
+            "threshold": 0.5,
+            "expected_range": [
+              1.1012511635599707,
+              2.1012511635599704
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 1.6012511635599707,
+            "delta": 0.2732000000000028,
+            "severity_score": 0.002502327119941139,
+            "rate_unit": "°C/분",
+            "current_change": 8,
+            "previous_change": 7.9047999999999945,
+            "observed_delta": 8,
+            "expected_delta": 8.006255817799854
+          },
+          {
+            "interval": {
+              "start_s": 600,
+              "end_s": 900
+            },
+            "start_s": 600,
+            "end_s": 900,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 73,
+            "previous": 72.6136,
+            "observed_rate": 1.0,
+            "expected_rate": 1.0011930772605921,
+            "rate_delta": -0.0011930772605921458,
+            "threshold": 0.5,
+            "expected_range": [
+              0.5011930772605921,
+              1.5011930772605921
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 1.0011930772605921,
+            "delta": 0.38639999999999475,
+            "severity_score": 0.0023861545211842916,
+            "rate_unit": "°C/분",
+            "current_change": 5,
+            "previous_change": 4.886800000000008,
+            "observed_delta": 5,
+            "expected_delta": 5.005965386302961
+          },
+          {
+            "interval": {
+              "start_s": 900,
+              "end_s": 1200
+            },
+            "start_s": 900,
+            "end_s": 1200,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 78,
+            "previous": 77.4853,
+            "observed_rate": 1.0,
+            "expected_rate": 1.0014084512018842,
+            "rate_delta": -0.0014084512018841533,
+            "threshold": 0.5,
+            "expected_range": [
+              0.5014084512018842,
+              1.5014084512018842
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 1.0014084512018842,
+            "delta": 0.5147000000000048,
+            "severity_score": 0.0028169024037683066,
+            "rate_unit": "°C/분",
+            "current_change": 5,
+            "previous_change": 4.87169999999999,
+            "observed_delta": 5,
+            "expected_delta": 5.007042256009421
+          }
+        ],
+        "source": "scenario",
+        "reference_source": "scenario",
+        "worst_interval": null,
+        "current_change": 5,
+        "previous_change": 4.87169999999999,
+        "step_ratio": null
+      },
+      {
+        "field": "oil_kgf_cm2",
+        "label": "윤활유 압력",
+        "unit": "kgf/cm²",
+        "state": "inspect",
+        "method": "warmup_rate_and_level",
+        "method_label": "예열 구간별 하락 속도·압력",
+        "current": 2.2,
+        "previous": 3.19762,
+        "delta": -0.99762,
+        "interval": {
+          "start_s": 900,
+          "end_s": 1200
+        },
+        "observed_rate": -0.019999999999999928,
+        "expected_rate": -0.0006340564592101901,
+        "rate_unit": "kgf/cm²/분",
+        "rate_delta": -0.019365943540789736,
+        "threshold": 0.035,
+        "expected_range": [
+          -0.035634056459210195,
+          0.03436594354078981
+        ],
+        "observed_delta": -0.09999999999999964,
+        "expected_delta": -0.00317028229605095,
+        "change_ratio": null,
+        "model_expected": -0.0006340564592101901,
+        "reason": "oil_pressure_drop_accelerated",
+        "summary": "10–15분 유압 변화 -0.200kgf/cm²/분 · 평소 예상 -0.020kgf/cm²/분",
+        "checks": [
+          "오일량·누유 여부 확인",
+          "윤활유 필터·압력 센서 확인",
+          "제조사 절차에 따라 윤활계통 점검"
+        ],
+        "intervals": [
+          {
+            "interval": {
+              "start_s": 0,
+              "end_s": 300
+            },
+            "start_s": 0,
+            "end_s": 300,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 3.6,
+            "previous": 3.60971,
+            "observed_rate": -0.07999999999999999,
+            "expected_rate": -0.07946456018326012,
+            "rate_delta": -0.0005354398167398688,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.11446456018326012,
+              -0.044464560183260116
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.07946456018326012,
+            "delta": -0.009710000000000107,
+            "severity_score": 0.015858868599988085,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": -0.3999999999999999,
+            "previous_change": -0.3912200000000001,
+            "observed_delta": -0.3999999999999999,
+            "expected_delta": -0.39732280091630057,
+            "expected_level": 3.603964717149997,
+            "level_delta": -0.003964717149997021,
+            "level_threshold": 0.25
+          },
+          {
+            "interval": {
+              "start_s": 300,
+              "end_s": 600
+            },
+            "start_s": 300,
+            "end_s": 600,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 3.3,
+            "previous": 3.31537,
+            "observed_rate": -0.06000000000000005,
+            "expected_rate": -0.06004183652652776,
+            "rate_delta": 4.183652652770681e-05,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.09504183652652776,
+              -0.025041836526527757
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.06004183652652776,
+            "delta": -0.015370000000000328,
+            "severity_score": 0.015022138069436863,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": -0.30000000000000027,
+            "previous_change": -0.29434000000000005,
+            "observed_delta": -0.30000000000000027,
+            "expected_delta": -0.3002091826326388,
+            "expected_level": 3.303755534517359,
+            "level_delta": -0.003755534517359216,
+            "level_threshold": 0.25
+          },
+          {
+            "interval": {
+              "start_s": 600,
+              "end_s": 900
+            },
+            "start_s": 600,
+            "end_s": 900,
+            "state": "inspect",
+            "reason": "oil_pressure_drop_accelerated",
+            "current": 2.3,
+            "previous": 3.208,
+            "observed_rate": -0.2,
+            "expected_rate": -0.020137472477432278,
+            "rate_delta": -0.17986252752256773,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.05513747247743228,
+              0.014862527522567726
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.020137472477432278,
+            "delta": -0.9080000000000004,
+            "severity_score": 5.138929357787649,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": -1.0,
+            "previous_change": -0.10736999999999997,
+            "observed_delta": -1.0,
+            "expected_delta": -0.10068736238716139,
+            "expected_level": 3.203068172130197,
+            "level_delta": -0.903068172130197,
+            "level_threshold": 0.25
+          },
+          {
+            "interval": {
+              "start_s": 900,
+              "end_s": 1200
+            },
+            "start_s": 900,
+            "end_s": 1200,
+            "state": "inspect",
+            "reason": "oil_pressure_phase_level_changed",
+            "current": 2.2,
+            "previous": 3.19762,
+            "observed_rate": -0.019999999999999928,
+            "expected_rate": -0.0006340564592101901,
+            "rate_delta": -0.019365943540789736,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.035634056459210195,
+              0.03436594354078981
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.0006340564592101901,
+            "delta": -0.99762,
+            "severity_score": 3.999591559336583,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": -0.09999999999999964,
+            "previous_change": -0.010380000000000056,
+            "observed_delta": -0.09999999999999964,
+            "expected_delta": -0.00317028229605095,
+            "expected_level": 3.199897889834146,
+            "level_delta": -0.9998978898341457,
+            "level_threshold": 0.25
+          }
+        ],
+        "source": "scenario",
+        "reference_source": "scenario",
+        "worst_interval": {
+          "interval": {
+            "start_s": 600,
+            "end_s": 900
+          },
+          "start_s": 600,
+          "end_s": 900,
+          "state": "inspect",
+          "reason": "oil_pressure_drop_accelerated",
+          "current": 2.3,
+          "previous": 3.208,
+          "observed_rate": -0.2,
+          "expected_rate": -0.020137472477432278,
+          "rate_delta": -0.17986252752256773,
+          "threshold": 0.035,
+          "expected_range": [
+            -0.05513747247743228,
+            0.014862527522567726
+          ],
+          "change_ratio": null,
+          "step_ratio": null,
+          "model_expected": -0.020137472477432278,
+          "delta": -0.9080000000000004,
+          "severity_score": 5.138929357787649,
+          "rate_unit": "kgf/cm²/분",
+          "current_change": -1.0,
+          "previous_change": -0.10736999999999997,
+          "observed_delta": -1.0,
+          "expected_delta": -0.10068736238716139,
+          "expected_level": 3.203068172130197,
+          "level_delta": -0.903068172130197,
+          "level_threshold": 0.25
+        },
+        "current_change": -0.09999999999999964,
+        "previous_change": -0.010380000000000056,
+        "step_ratio": null
+      },
+      {
+        "field": "vibration_rms_g",
+        "label": "진동 RMS",
+        "unit": "g",
+        "state": "normal",
+        "method": "amplitude_ratio_and_step",
+        "method_label": "진동 크기·급변",
+        "current": 0.045,
+        "previous": 0.044592,
+        "delta": 0.00040799999999999864,
+        "interval": {
+          "start_s": 900,
+          "end_s": 1200
+        },
+        "observed_rate": null,
+        "expected_rate": null,
+        "rate_unit": null,
+        "rate_delta": null,
+        "threshold": 0.30010459245033816,
+        "expected_range": [
+          0.03346661000400294,
+          0.06099289673229537
+        ],
+        "observed_delta": 0.0010000000000000009,
+        "expected_delta": null,
+        "change_ratio": 0.9960176226198689,
+        "model_expected": 0.04517992350540397,
+        "reason": "normal_phase_pattern",
+        "summary": "진동 크기가 평소 범위에서 유지되고 급격한 변화가 없습니다.",
+        "checks": [],
+        "intervals": [
+          {
+            "interval": {
+              "start_s": 0,
+              "end_s": 300
+            },
+            "start_s": 0,
+            "end_s": 300,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 0.046,
+            "previous": 0.044324,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03331679715393539,
+              0.06071986281304725
+            ],
+            "change_ratio": 1.022729583418232,
+            "step_ratio": 1.0222222222222221,
+            "model_expected": 0.04497767615781277,
+            "delta": 0.001675999999999997,
+            "severity_score": 0.07489094054932446,
+            "rate_unit": null,
+            "current_change": 0.0010000000000000009,
+            "previous_change": -0.0009759999999999977,
+            "observed_delta": 0.0010000000000000009,
+            "expected_delta": null
+          },
+          {
+            "interval": {
+              "start_s": 300,
+              "end_s": 600
+            },
+            "start_s": 300,
+            "end_s": 600,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 0.045,
+            "previous": 0.044761,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03343111672656586,
+              0.06092821023416629
+            ],
+            "change_ratio": 0.9970750784656013,
+            "step_ratio": 0.9782608695652174,
+            "model_expected": 0.045132007580863914,
+            "delta": 0.00023899999999999616,
+            "severity_score": 0.054206653739763966,
+            "rate_unit": null,
+            "current_change": -0.0010000000000000009,
+            "previous_change": 0.0004369999999999999,
+            "observed_delta": -0.0010000000000000009,
+            "expected_delta": null
+          },
+          {
+            "interval": {
+              "start_s": 600,
+              "end_s": 900
+            },
+            "start_s": 600,
+            "end_s": 900,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 0.044,
+            "previous": 0.045,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03328220245554165,
+              0.06065681397522466
+            ],
+            "change_ratio": 0.9792799210367691,
+            "step_ratio": 0.9777777777777777,
+            "model_expected": 0.04493097331498123,
+            "delta": -0.0010000000000000009,
+            "severity_score": 0.06976818207910229,
+            "rate_unit": null,
+            "current_change": -0.0010000000000000009,
+            "previous_change": 0.00023899999999999616,
+            "observed_delta": -0.0010000000000000009,
+            "expected_delta": null
+          },
+          {
+            "interval": {
+              "start_s": 900,
+              "end_s": 1200
+            },
+            "start_s": 900,
+            "end_s": 1200,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 0.045,
+            "previous": 0.044592,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03346661000400294,
+              0.06099289673229537
+            ],
+            "change_ratio": 0.9960176226198689,
+            "step_ratio": 1.0227272727272727,
+            "model_expected": 0.04517992350540397,
+            "delta": 0.00040799999999999864,
+            "severity_score": 0.05542488219741852,
+            "rate_unit": null,
+            "current_change": 0.0010000000000000009,
+            "previous_change": -0.00040799999999999864,
+            "observed_delta": 0.0010000000000000009,
+            "expected_delta": null
+          }
+        ],
+        "source": "scenario",
+        "reference_source": "scenario",
+        "worst_interval": null,
+        "current_change": 0.0010000000000000009,
+        "previous_change": -0.00040799999999999864,
+        "step_ratio": 1.0227272727272727
+      }
+    ],
+    "recommendations": [
+      {
+        "field": "oil_kgf_cm2",
+        "title": "윤활유 압력 변화 확인",
+        "reason": "10–15분 유압 변화 -0.200kgf/cm²/분 · 평소 예상 -0.020kgf/cm²/분",
+        "checks": [
+          "오일량·누유 여부 확인",
+          "윤활유 필터·압력 센서 확인",
+          "제조사 절차에 따라 윤활계통 점검"
+        ],
+        "interval": {
+          "start_s": 600,
+          "end_s": 900
+        }
+      }
+    ],
+    "reference_id": "operation-2026-08",
+    "reference_run": {
+      "id": "operation-2026-08",
+      "equipment_id": "GEN-10K-001",
+      "inspected_at": "2026-10-10T10:00:00+09:00",
+      "label": "정기 시험 운전",
+      "confirmed_normal": true,
+      "source": "scenario",
+      "context": {
+        "load_pct": 62,
+        "ambient_c": 28.5,
+        "engine_rpm": 1800
+      },
+      "samples": [
+        {
+          "elapsed_s": 0,
+          "coolant_c": 49.9129,
+          "oil_kgf_cm2": 4.00093,
+          "vibration_rms_g": 0.0453
+        },
+        {
+          "elapsed_s": 300,
+          "coolant_c": 59.822,
+          "oil_kgf_cm2": 3.60971,
+          "vibration_rms_g": 0.044324
+        },
+        {
+          "elapsed_s": 600,
+          "coolant_c": 67.7268,
+          "oil_kgf_cm2": 3.31537,
+          "vibration_rms_g": 0.044761
+        },
+        {
+          "elapsed_s": 900,
+          "coolant_c": 72.6136,
+          "oil_kgf_cm2": 3.208,
+          "vibration_rms_g": 0.045
+        },
+        {
+          "elapsed_s": 1200,
+          "coolant_c": 77.4853,
+          "oil_kgf_cm2": 3.19762,
+          "vibration_rms_g": 0.044592
+        }
+      ],
+      "installation_id": "demo-generator",
+      "acquisition": {
+        "sample_rate_hz": 833,
+        "window_s": 2,
+        "dc_removed": true,
+        "feature_version": "rms-ac-3axis/1",
+        "accel_range_g": 8
+      },
+      "provenance": "모의 운전 기록. 실제 발전기 계측 및 제조사 정상 범위가 아님."
+    },
+    "reference_at": "2026-10-10T10:00:00+09:00",
+    "conditions": {
+      "current": {
+        "load_pct": 62,
+        "ambient_c": 28.5,
+        "engine_rpm": 1800,
+        "initial_coolant_c": 50
+      },
+      "previous": {
+        "load_pct": 62,
+        "ambient_c": 28.5,
+        "engine_rpm": 1800,
+        "initial_coolant_c": 49.9129
+      },
+      "tolerances": {
+        "load_pct": 5,
+        "ambient_c": 5,
+        "engine_rpm": 50,
+        "initial_coolant_c": 5
+      },
+      "matched": true
+    },
+    "model": {
+      "id": "operation-phase-context-ridge/1:77f98078313d",
+      "algorithm": "operation-phase-context-ridge/1",
+      "training_count": 8,
+      "training_record_count": 8,
+      "training_record_ids": [
+        "operation-2026-01",
+        "operation-2026-02",
+        "operation-2026-03",
+        "operation-2026-04",
+        "operation-2026-05",
+        "operation-2026-06",
+        "operation-2026-07",
+        "operation-2026-08"
+      ],
+      "training_sample_count": 32,
+      "current_used_for_training": false,
+      "training_source": "scenario",
+      "synthetic": true,
+      "phase_interval_s": 300,
+      "scope": "승인된 과거 정상 운전에서 구간별 변화 패턴을 학습합니다. 고장 부위·수명 예측이 아닙니다.",
+      "threshold_provenance": "모의 탐지 허용차. 실제 발전기 검증 및 제조사 안전 기준이 아님."
+    },
+    "history_count": 8,
+    "source": "scenario",
+    "observed_until_s": 1200
+  },
+  "vibration_increase": {
+    "schema_version": "genguard.operation-comparison/1",
+    "state": "inspect",
+    "headline": "진동 RMS 점검이 필요합니다",
+    "summary": "같은 운전 조건의 과거 정상 기록과 다른 변화가 관찰되었습니다. 아래 구간과 근거를 확인하세요.",
+    "comparison_blocker": null,
+    "channels": [
+      {
+        "field": "coolant_c",
+        "label": "냉각수 온도",
+        "unit": "°C",
+        "state": "normal",
+        "method": "phase_rise_rate",
+        "method_label": "운전 구간별 상승 속도",
+        "current": 78,
+        "previous": 77.4853,
+        "delta": 0.5147000000000048,
+        "interval": {
+          "start_s": 900,
+          "end_s": 1200
+        },
+        "observed_rate": 1.0,
+        "expected_rate": 1.0014084512018842,
+        "rate_unit": "°C/분",
+        "rate_delta": -0.0014084512018841533,
+        "threshold": 0.5,
+        "expected_range": [
+          0.5014084512018842,
+          1.5014084512018842
+        ],
+        "observed_delta": 5,
+        "expected_delta": 5.007042256009421,
+        "change_ratio": null,
+        "model_expected": 1.0014084512018842,
+        "reason": "normal_phase_pattern",
+        "summary": "온도는 올랐지만 각 구간의 상승 속도는 이전 정상 운전과 비슷합니다.",
+        "checks": [],
+        "intervals": [
+          {
+            "interval": {
+              "start_s": 0,
+              "end_s": 300
+            },
+            "start_s": 0,
+            "end_s": 300,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 60,
+            "previous": 59.822,
+            "observed_rate": 2.0,
+            "expected_rate": 2.0092349203570796,
+            "rate_delta": -0.009234920357079623,
+            "threshold": 0.5,
+            "expected_range": [
+              1.5092349203570796,
+              2.5092349203570796
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 2.0092349203570796,
+            "delta": 0.17799999999999727,
+            "severity_score": 0.018469840714159247,
+            "rate_unit": "°C/분",
+            "current_change": 10,
+            "previous_change": 9.909100000000002,
+            "observed_delta": 10,
+            "expected_delta": 10.046174601785399
+          },
+          {
+            "interval": {
+              "start_s": 300,
+              "end_s": 600
+            },
+            "start_s": 300,
+            "end_s": 600,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 68,
+            "previous": 67.7268,
+            "observed_rate": 1.6,
+            "expected_rate": 1.6012511635599707,
+            "rate_delta": -0.0012511635599705695,
+            "threshold": 0.5,
+            "expected_range": [
+              1.1012511635599707,
+              2.1012511635599704
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 1.6012511635599707,
+            "delta": 0.2732000000000028,
+            "severity_score": 0.002502327119941139,
+            "rate_unit": "°C/분",
+            "current_change": 8,
+            "previous_change": 7.9047999999999945,
+            "observed_delta": 8,
+            "expected_delta": 8.006255817799854
+          },
+          {
+            "interval": {
+              "start_s": 600,
+              "end_s": 900
+            },
+            "start_s": 600,
+            "end_s": 900,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 73,
+            "previous": 72.6136,
+            "observed_rate": 1.0,
+            "expected_rate": 1.0011930772605921,
+            "rate_delta": -0.0011930772605921458,
+            "threshold": 0.5,
+            "expected_range": [
+              0.5011930772605921,
+              1.5011930772605921
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 1.0011930772605921,
+            "delta": 0.38639999999999475,
+            "severity_score": 0.0023861545211842916,
+            "rate_unit": "°C/분",
+            "current_change": 5,
+            "previous_change": 4.886800000000008,
+            "observed_delta": 5,
+            "expected_delta": 5.005965386302961
+          },
+          {
+            "interval": {
+              "start_s": 900,
+              "end_s": 1200
+            },
+            "start_s": 900,
+            "end_s": 1200,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 78,
+            "previous": 77.4853,
+            "observed_rate": 1.0,
+            "expected_rate": 1.0014084512018842,
+            "rate_delta": -0.0014084512018841533,
+            "threshold": 0.5,
+            "expected_range": [
+              0.5014084512018842,
+              1.5014084512018842
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 1.0014084512018842,
+            "delta": 0.5147000000000048,
+            "severity_score": 0.0028169024037683066,
+            "rate_unit": "°C/분",
+            "current_change": 5,
+            "previous_change": 4.87169999999999,
+            "observed_delta": 5,
+            "expected_delta": 5.007042256009421
+          }
+        ],
+        "source": "scenario",
+        "reference_source": "scenario",
+        "worst_interval": null,
+        "current_change": 5,
+        "previous_change": 4.87169999999999,
+        "step_ratio": null
+      },
+      {
+        "field": "oil_kgf_cm2",
+        "label": "윤활유 압력",
+        "unit": "kgf/cm²",
+        "state": "normal",
+        "method": "warmup_rate_and_level",
+        "method_label": "예열 구간별 하락 속도·압력",
+        "current": 3.2,
+        "previous": 3.19762,
+        "delta": 0.0023800000000000487,
+        "interval": {
+          "start_s": 900,
+          "end_s": 1200
+        },
+        "observed_rate": 0.0,
+        "expected_rate": -0.0006340564592101901,
+        "rate_unit": "kgf/cm²/분",
+        "rate_delta": 0.0006340564592101901,
+        "threshold": 0.035,
+        "expected_range": [
+          -0.035634056459210195,
+          0.03436594354078981
+        ],
+        "observed_delta": 0.0,
+        "expected_delta": -0.00317028229605095,
+        "change_ratio": null,
+        "model_expected": -0.0006340564592101901,
+        "reason": "normal_phase_pattern",
+        "summary": "예열에 따른 압력 하락과 이후 안정화가 평소 패턴 안에 있습니다.",
+        "checks": [],
+        "intervals": [
+          {
+            "interval": {
+              "start_s": 0,
+              "end_s": 300
+            },
+            "start_s": 0,
+            "end_s": 300,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 3.6,
+            "previous": 3.60971,
+            "observed_rate": -0.07999999999999999,
+            "expected_rate": -0.07946456018326012,
+            "rate_delta": -0.0005354398167398688,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.11446456018326012,
+              -0.044464560183260116
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.07946456018326012,
+            "delta": -0.009710000000000107,
+            "severity_score": 0.015858868599988085,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": -0.3999999999999999,
+            "previous_change": -0.3912200000000001,
+            "observed_delta": -0.3999999999999999,
+            "expected_delta": -0.39732280091630057,
+            "expected_level": 3.603964717149997,
+            "level_delta": -0.003964717149997021,
+            "level_threshold": 0.25
+          },
+          {
+            "interval": {
+              "start_s": 300,
+              "end_s": 600
+            },
+            "start_s": 300,
+            "end_s": 600,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 3.3,
+            "previous": 3.31537,
+            "observed_rate": -0.06000000000000005,
+            "expected_rate": -0.06004183652652776,
+            "rate_delta": 4.183652652770681e-05,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.09504183652652776,
+              -0.025041836526527757
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.06004183652652776,
+            "delta": -0.015370000000000328,
+            "severity_score": 0.015022138069436863,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": -0.30000000000000027,
+            "previous_change": -0.29434000000000005,
+            "observed_delta": -0.30000000000000027,
+            "expected_delta": -0.3002091826326388,
+            "expected_level": 3.303755534517359,
+            "level_delta": -0.003755534517359216,
+            "level_threshold": 0.25
+          },
+          {
+            "interval": {
+              "start_s": 600,
+              "end_s": 900
+            },
+            "start_s": 600,
+            "end_s": 900,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 3.2,
+            "previous": 3.208,
+            "observed_rate": -0.019999999999999928,
+            "expected_rate": -0.020137472477432278,
+            "rate_delta": 0.0001374724774323502,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.05513747247743228,
+              0.014862527522567726
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.020137472477432278,
+            "delta": -0.008000000000000007,
+            "severity_score": 0.012272688520786446,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": -0.09999999999999964,
+            "previous_change": -0.10736999999999997,
+            "observed_delta": -0.09999999999999964,
+            "expected_delta": -0.10068736238716139,
+            "expected_level": 3.203068172130197,
+            "level_delta": -0.0030681721301966114,
+            "level_threshold": 0.25
+          },
+          {
+            "interval": {
+              "start_s": 900,
+              "end_s": 1200
+            },
+            "start_s": 900,
+            "end_s": 1200,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 3.2,
+            "previous": 3.19762,
+            "observed_rate": 0.0,
+            "expected_rate": -0.0006340564592101901,
+            "rate_delta": 0.0006340564592101901,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.035634056459210195,
+              0.03436594354078981
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.0006340564592101901,
+            "delta": 0.0023800000000000487,
+            "severity_score": 0.018115898834576857,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": 0.0,
+            "previous_change": -0.010380000000000056,
+            "observed_delta": 0.0,
+            "expected_delta": -0.00317028229605095,
+            "expected_level": 3.199897889834146,
+            "level_delta": 0.00010211016585426336,
+            "level_threshold": 0.25
+          }
+        ],
+        "source": "scenario",
+        "reference_source": "scenario",
+        "worst_interval": null,
+        "current_change": 0.0,
+        "previous_change": -0.010380000000000056,
+        "step_ratio": null
+      },
+      {
+        "field": "vibration_rms_g",
+        "label": "진동 RMS",
+        "unit": "g",
+        "state": "inspect",
+        "method": "amplitude_ratio_and_step",
+        "method_label": "진동 크기·급변",
+        "current": 0.09,
+        "previous": 0.044592,
+        "delta": 0.045408,
+        "interval": {
+          "start_s": 900,
+          "end_s": 1200
+        },
+        "observed_rate": null,
+        "expected_rate": null,
+        "rate_unit": null,
+        "rate_delta": null,
+        "threshold": 0.30010459245033816,
+        "expected_range": [
+          0.03346661000400294,
+          0.06099289673229537
+        ],
+        "observed_delta": 0.0,
+        "expected_delta": null,
+        "change_ratio": 1.9920352452397379,
+        "model_expected": 0.04517992350540397,
+        "reason": "vibration_amplitude_increase",
+        "summary": "10–15분 진동 2.00배 · 같은 조건의 평소 진동 대비",
+        "checks": [
+          "센서 부착 위치·고정 상태 확인",
+          "장비 체결·받침 상태 확인",
+          "같은 운전 조건에서 진동을 다시 측정"
+        ],
+        "intervals": [
+          {
+            "interval": {
+              "start_s": 0,
+              "end_s": 300
+            },
+            "start_s": 0,
+            "end_s": 300,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 0.046,
+            "previous": 0.044324,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03331679715393539,
+              0.06071986281304725
+            ],
+            "change_ratio": 1.022729583418232,
+            "step_ratio": 1.0222222222222221,
+            "model_expected": 0.04497767615781277,
+            "delta": 0.001675999999999997,
+            "severity_score": 0.07489094054932446,
+            "rate_unit": null,
+            "current_change": 0.0010000000000000009,
+            "previous_change": -0.0009759999999999977,
+            "observed_delta": 0.0010000000000000009,
+            "expected_delta": null
+          },
+          {
+            "interval": {
+              "start_s": 300,
+              "end_s": 600
+            },
+            "start_s": 300,
+            "end_s": 600,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 0.045,
+            "previous": 0.044761,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03343111672656586,
+              0.06092821023416629
+            ],
+            "change_ratio": 0.9970750784656013,
+            "step_ratio": 0.9782608695652174,
+            "model_expected": 0.045132007580863914,
+            "delta": 0.00023899999999999616,
+            "severity_score": 0.054206653739763966,
+            "rate_unit": null,
+            "current_change": -0.0010000000000000009,
+            "previous_change": 0.0004369999999999999,
+            "observed_delta": -0.0010000000000000009,
+            "expected_delta": null
+          },
+          {
+            "interval": {
+              "start_s": 600,
+              "end_s": 900
+            },
+            "start_s": 600,
+            "end_s": 900,
+            "state": "inspect",
+            "reason": "vibration_amplitude_increase",
+            "current": 0.09,
+            "previous": 0.045,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03328220245554165,
+              0.06065681397522466
+            ],
+            "change_ratio": 2.003072565757028,
+            "step_ratio": 2.0,
+            "model_expected": 0.04493097331498123,
+            "delta": 0.045,
+            "severity_score": 2.3148005796616102,
+            "rate_unit": null,
+            "current_change": 0.045,
+            "previous_change": 0.00023899999999999616,
+            "observed_delta": 0.045,
+            "expected_delta": null
+          },
+          {
+            "interval": {
+              "start_s": 900,
+              "end_s": 1200
+            },
+            "start_s": 900,
+            "end_s": 1200,
+            "state": "inspect",
+            "reason": "vibration_amplitude_increase",
+            "current": 0.09,
+            "previous": 0.044592,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03346661000400294,
+              0.06099289673229537
+            ],
+            "change_ratio": 1.9920352452397379,
+            "step_ratio": 1.0,
+            "model_expected": 0.04517992350540397,
+            "delta": 0.045408,
+            "severity_score": 2.296388891527429,
+            "rate_unit": null,
+            "current_change": 0.0,
+            "previous_change": -0.00040799999999999864,
+            "observed_delta": 0.0,
+            "expected_delta": null
+          }
+        ],
+        "source": "scenario",
+        "reference_source": "scenario",
+        "worst_interval": {
+          "interval": {
+            "start_s": 600,
+            "end_s": 900
+          },
+          "start_s": 600,
+          "end_s": 900,
+          "state": "inspect",
+          "reason": "vibration_amplitude_increase",
+          "current": 0.09,
+          "previous": 0.045,
+          "observed_rate": null,
+          "expected_rate": null,
+          "rate_delta": null,
+          "threshold": 0.30010459245033816,
+          "expected_range": [
+            0.03328220245554165,
+            0.06065681397522466
+          ],
+          "change_ratio": 2.003072565757028,
+          "step_ratio": 2.0,
+          "model_expected": 0.04493097331498123,
+          "delta": 0.045,
+          "severity_score": 2.3148005796616102,
+          "rate_unit": null,
+          "current_change": 0.045,
+          "previous_change": 0.00023899999999999616,
+          "observed_delta": 0.045,
+          "expected_delta": null
+        },
+        "current_change": 0.0,
+        "previous_change": -0.00040799999999999864,
+        "step_ratio": 1.0
+      }
+    ],
+    "recommendations": [
+      {
+        "field": "vibration_rms_g",
+        "title": "진동 RMS 변화 확인",
+        "reason": "10–15분 진동 2.00배 · 같은 조건의 평소 진동 대비",
+        "checks": [
+          "센서 부착 위치·고정 상태 확인",
+          "장비 체결·받침 상태 확인",
+          "같은 운전 조건에서 진동을 다시 측정"
+        ],
+        "interval": {
+          "start_s": 600,
+          "end_s": 900
+        }
+      }
+    ],
+    "reference_id": "operation-2026-08",
+    "reference_run": {
+      "id": "operation-2026-08",
+      "equipment_id": "GEN-10K-001",
+      "inspected_at": "2026-10-10T10:00:00+09:00",
+      "label": "정기 시험 운전",
+      "confirmed_normal": true,
+      "source": "scenario",
+      "context": {
+        "load_pct": 62,
+        "ambient_c": 28.5,
+        "engine_rpm": 1800
+      },
+      "samples": [
+        {
+          "elapsed_s": 0,
+          "coolant_c": 49.9129,
+          "oil_kgf_cm2": 4.00093,
+          "vibration_rms_g": 0.0453
+        },
+        {
+          "elapsed_s": 300,
+          "coolant_c": 59.822,
+          "oil_kgf_cm2": 3.60971,
+          "vibration_rms_g": 0.044324
+        },
+        {
+          "elapsed_s": 600,
+          "coolant_c": 67.7268,
+          "oil_kgf_cm2": 3.31537,
+          "vibration_rms_g": 0.044761
+        },
+        {
+          "elapsed_s": 900,
+          "coolant_c": 72.6136,
+          "oil_kgf_cm2": 3.208,
+          "vibration_rms_g": 0.045
+        },
+        {
+          "elapsed_s": 1200,
+          "coolant_c": 77.4853,
+          "oil_kgf_cm2": 3.19762,
+          "vibration_rms_g": 0.044592
+        }
+      ],
+      "installation_id": "demo-generator",
+      "acquisition": {
+        "sample_rate_hz": 833,
+        "window_s": 2,
+        "dc_removed": true,
+        "feature_version": "rms-ac-3axis/1",
+        "accel_range_g": 8
+      },
+      "provenance": "모의 운전 기록. 실제 발전기 계측 및 제조사 정상 범위가 아님."
+    },
+    "reference_at": "2026-10-10T10:00:00+09:00",
+    "conditions": {
+      "current": {
+        "load_pct": 62,
+        "ambient_c": 28.5,
+        "engine_rpm": 1800,
+        "initial_coolant_c": 50
+      },
+      "previous": {
+        "load_pct": 62,
+        "ambient_c": 28.5,
+        "engine_rpm": 1800,
+        "initial_coolant_c": 49.9129
+      },
+      "tolerances": {
+        "load_pct": 5,
+        "ambient_c": 5,
+        "engine_rpm": 50,
+        "initial_coolant_c": 5
+      },
+      "matched": true
+    },
+    "model": {
+      "id": "operation-phase-context-ridge/1:77f98078313d",
+      "algorithm": "operation-phase-context-ridge/1",
+      "training_count": 8,
+      "training_record_count": 8,
+      "training_record_ids": [
+        "operation-2026-01",
+        "operation-2026-02",
+        "operation-2026-03",
+        "operation-2026-04",
+        "operation-2026-05",
+        "operation-2026-06",
+        "operation-2026-07",
+        "operation-2026-08"
+      ],
+      "training_sample_count": 32,
+      "current_used_for_training": false,
+      "training_source": "scenario",
+      "synthetic": true,
+      "phase_interval_s": 300,
+      "scope": "승인된 과거 정상 운전에서 구간별 변화 패턴을 학습합니다. 고장 부위·수명 예측이 아닙니다.",
+      "threshold_provenance": "모의 탐지 허용차. 실제 발전기 검증 및 제조사 안전 기준이 아님."
+    },
+    "history_count": 8,
+    "source": "scenario",
+    "observed_until_s": 1200
+  },
+  "combined": {
+    "schema_version": "genguard.operation-comparison/1",
+    "state": "inspect",
+    "headline": "냉각수 온도 · 윤활유 압력 · 진동 RMS 점검이 필요합니다",
+    "summary": "같은 운전 조건의 과거 정상 기록과 다른 변화가 관찰되었습니다. 아래 구간과 근거를 확인하세요.",
+    "comparison_blocker": null,
+    "channels": [
+      {
+        "field": "coolant_c",
+        "label": "냉각수 온도",
+        "unit": "°C",
+        "state": "inspect",
+        "method": "phase_rise_rate",
+        "method_label": "운전 구간별 상승 속도",
+        "current": 90,
+        "previous": 77.4853,
+        "delta": 12.514700000000005,
+        "interval": {
+          "start_s": 900,
+          "end_s": 1200
+        },
+        "observed_rate": 1.0,
+        "expected_rate": 1.0014084512018842,
+        "rate_unit": "°C/분",
+        "rate_delta": -0.0014084512018841533,
+        "threshold": 0.5,
+        "expected_range": [
+          0.5014084512018842,
+          1.5014084512018842
+        ],
+        "observed_delta": 5,
+        "expected_delta": 5.007042256009421,
+        "change_ratio": null,
+        "model_expected": 1.0014084512018842,
+        "reason": "coolant_rise_accelerated",
+        "summary": "5–10분 수온 상승 속도 4.00°C/분 · 평소 예상 1.60°C/분. 현재 구간은 평소 변화로 돌아왔지만 앞선 이상 구간은 확인이 필요합니다.",
+        "checks": [
+          "냉각수량·누수 여부 확인",
+          "라디에이터·통풍 상태 확인",
+          "같은 부하와 초기 수온에서 다시 비교"
+        ],
+        "intervals": [
+          {
+            "interval": {
+              "start_s": 0,
+              "end_s": 300
+            },
+            "start_s": 0,
+            "end_s": 300,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 60,
+            "previous": 59.822,
+            "observed_rate": 2.0,
+            "expected_rate": 2.0092349203570796,
+            "rate_delta": -0.009234920357079623,
+            "threshold": 0.5,
+            "expected_range": [
+              1.5092349203570796,
+              2.5092349203570796
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 2.0092349203570796,
+            "delta": 0.17799999999999727,
+            "severity_score": 0.018469840714159247,
+            "rate_unit": "°C/분",
+            "current_change": 10,
+            "previous_change": 9.909100000000002,
+            "observed_delta": 10,
+            "expected_delta": 10.046174601785399
+          },
+          {
+            "interval": {
+              "start_s": 300,
+              "end_s": 600
+            },
+            "start_s": 300,
+            "end_s": 600,
+            "state": "inspect",
+            "reason": "coolant_rise_accelerated",
+            "current": 80,
+            "previous": 67.7268,
+            "observed_rate": 4.0,
+            "expected_rate": 1.6012511635599707,
+            "rate_delta": 2.3987488364400296,
+            "threshold": 0.5,
+            "expected_range": [
+              1.1012511635599707,
+              2.1012511635599704
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 1.6012511635599707,
+            "delta": 12.273200000000003,
+            "severity_score": 4.797497672880059,
+            "rate_unit": "°C/분",
+            "current_change": 20,
+            "previous_change": 7.9047999999999945,
+            "observed_delta": 20,
+            "expected_delta": 8.006255817799854
+          },
+          {
+            "interval": {
+              "start_s": 600,
+              "end_s": 900
+            },
+            "start_s": 600,
+            "end_s": 900,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 85,
+            "previous": 72.6136,
+            "observed_rate": 1.0,
+            "expected_rate": 1.0011930772605921,
+            "rate_delta": -0.0011930772605921458,
+            "threshold": 0.5,
+            "expected_range": [
+              0.5011930772605921,
+              1.5011930772605921
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 1.0011930772605921,
+            "delta": 12.386399999999995,
+            "severity_score": 0.0023861545211842916,
+            "rate_unit": "°C/분",
+            "current_change": 5,
+            "previous_change": 4.886800000000008,
+            "observed_delta": 5,
+            "expected_delta": 5.005965386302961
+          },
+          {
+            "interval": {
+              "start_s": 900,
+              "end_s": 1200
+            },
+            "start_s": 900,
+            "end_s": 1200,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 90,
+            "previous": 77.4853,
+            "observed_rate": 1.0,
+            "expected_rate": 1.0014084512018842,
+            "rate_delta": -0.0014084512018841533,
+            "threshold": 0.5,
+            "expected_range": [
+              0.5014084512018842,
+              1.5014084512018842
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": 1.0014084512018842,
+            "delta": 12.514700000000005,
+            "severity_score": 0.0028169024037683066,
+            "rate_unit": "°C/분",
+            "current_change": 5,
+            "previous_change": 4.87169999999999,
+            "observed_delta": 5,
+            "expected_delta": 5.007042256009421
+          }
+        ],
+        "source": "scenario",
+        "reference_source": "scenario",
+        "worst_interval": {
+          "interval": {
+            "start_s": 300,
+            "end_s": 600
+          },
+          "start_s": 300,
+          "end_s": 600,
+          "state": "inspect",
+          "reason": "coolant_rise_accelerated",
+          "current": 80,
+          "previous": 67.7268,
+          "observed_rate": 4.0,
+          "expected_rate": 1.6012511635599707,
+          "rate_delta": 2.3987488364400296,
+          "threshold": 0.5,
+          "expected_range": [
+            1.1012511635599707,
+            2.1012511635599704
+          ],
+          "change_ratio": null,
+          "step_ratio": null,
+          "model_expected": 1.6012511635599707,
+          "delta": 12.273200000000003,
+          "severity_score": 4.797497672880059,
+          "rate_unit": "°C/분",
+          "current_change": 20,
+          "previous_change": 7.9047999999999945,
+          "observed_delta": 20,
+          "expected_delta": 8.006255817799854
+        },
+        "current_change": 5,
+        "previous_change": 4.87169999999999,
+        "step_ratio": null
+      },
+      {
+        "field": "oil_kgf_cm2",
+        "label": "윤활유 압력",
+        "unit": "kgf/cm²",
+        "state": "inspect",
+        "method": "warmup_rate_and_level",
+        "method_label": "예열 구간별 하락 속도·압력",
+        "current": 2.2,
+        "previous": 3.19762,
+        "delta": -0.99762,
+        "interval": {
+          "start_s": 900,
+          "end_s": 1200
+        },
+        "observed_rate": -0.019999999999999928,
+        "expected_rate": -0.0006340564592101901,
+        "rate_unit": "kgf/cm²/분",
+        "rate_delta": -0.019365943540789736,
+        "threshold": 0.035,
+        "expected_range": [
+          -0.035634056459210195,
+          0.03436594354078981
+        ],
+        "observed_delta": -0.09999999999999964,
+        "expected_delta": -0.00317028229605095,
+        "change_ratio": null,
+        "model_expected": -0.0006340564592101901,
+        "reason": "oil_pressure_drop_accelerated",
+        "summary": "10–15분 유압 변화 -0.200kgf/cm²/분 · 평소 예상 -0.020kgf/cm²/분",
+        "checks": [
+          "오일량·누유 여부 확인",
+          "윤활유 필터·압력 센서 확인",
+          "제조사 절차에 따라 윤활계통 점검"
+        ],
+        "intervals": [
+          {
+            "interval": {
+              "start_s": 0,
+              "end_s": 300
+            },
+            "start_s": 0,
+            "end_s": 300,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 3.6,
+            "previous": 3.60971,
+            "observed_rate": -0.07999999999999999,
+            "expected_rate": -0.07946456018326012,
+            "rate_delta": -0.0005354398167398688,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.11446456018326012,
+              -0.044464560183260116
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.07946456018326012,
+            "delta": -0.009710000000000107,
+            "severity_score": 0.015858868599988085,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": -0.3999999999999999,
+            "previous_change": -0.3912200000000001,
+            "observed_delta": -0.3999999999999999,
+            "expected_delta": -0.39732280091630057,
+            "expected_level": 3.603964717149997,
+            "level_delta": -0.003964717149997021,
+            "level_threshold": 0.25
+          },
+          {
+            "interval": {
+              "start_s": 300,
+              "end_s": 600
+            },
+            "start_s": 300,
+            "end_s": 600,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 3.3,
+            "previous": 3.31537,
+            "observed_rate": -0.06000000000000005,
+            "expected_rate": -0.06004183652652776,
+            "rate_delta": 4.183652652770681e-05,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.09504183652652776,
+              -0.025041836526527757
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.06004183652652776,
+            "delta": -0.015370000000000328,
+            "severity_score": 0.015022138069436863,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": -0.30000000000000027,
+            "previous_change": -0.29434000000000005,
+            "observed_delta": -0.30000000000000027,
+            "expected_delta": -0.3002091826326388,
+            "expected_level": 3.303755534517359,
+            "level_delta": -0.003755534517359216,
+            "level_threshold": 0.25
+          },
+          {
+            "interval": {
+              "start_s": 600,
+              "end_s": 900
+            },
+            "start_s": 600,
+            "end_s": 900,
+            "state": "inspect",
+            "reason": "oil_pressure_drop_accelerated",
+            "current": 2.3,
+            "previous": 3.208,
+            "observed_rate": -0.2,
+            "expected_rate": -0.020137472477432278,
+            "rate_delta": -0.17986252752256773,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.05513747247743228,
+              0.014862527522567726
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.020137472477432278,
+            "delta": -0.9080000000000004,
+            "severity_score": 5.138929357787649,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": -1.0,
+            "previous_change": -0.10736999999999997,
+            "observed_delta": -1.0,
+            "expected_delta": -0.10068736238716139,
+            "expected_level": 3.203068172130197,
+            "level_delta": -0.903068172130197,
+            "level_threshold": 0.25
+          },
+          {
+            "interval": {
+              "start_s": 900,
+              "end_s": 1200
+            },
+            "start_s": 900,
+            "end_s": 1200,
+            "state": "inspect",
+            "reason": "oil_pressure_phase_level_changed",
+            "current": 2.2,
+            "previous": 3.19762,
+            "observed_rate": -0.019999999999999928,
+            "expected_rate": -0.0006340564592101901,
+            "rate_delta": -0.019365943540789736,
+            "threshold": 0.035,
+            "expected_range": [
+              -0.035634056459210195,
+              0.03436594354078981
+            ],
+            "change_ratio": null,
+            "step_ratio": null,
+            "model_expected": -0.0006340564592101901,
+            "delta": -0.99762,
+            "severity_score": 3.999591559336583,
+            "rate_unit": "kgf/cm²/분",
+            "current_change": -0.09999999999999964,
+            "previous_change": -0.010380000000000056,
+            "observed_delta": -0.09999999999999964,
+            "expected_delta": -0.00317028229605095,
+            "expected_level": 3.199897889834146,
+            "level_delta": -0.9998978898341457,
+            "level_threshold": 0.25
+          }
+        ],
+        "source": "scenario",
+        "reference_source": "scenario",
+        "worst_interval": {
+          "interval": {
+            "start_s": 600,
+            "end_s": 900
+          },
+          "start_s": 600,
+          "end_s": 900,
+          "state": "inspect",
+          "reason": "oil_pressure_drop_accelerated",
+          "current": 2.3,
+          "previous": 3.208,
+          "observed_rate": -0.2,
+          "expected_rate": -0.020137472477432278,
+          "rate_delta": -0.17986252752256773,
+          "threshold": 0.035,
+          "expected_range": [
+            -0.05513747247743228,
+            0.014862527522567726
+          ],
+          "change_ratio": null,
+          "step_ratio": null,
+          "model_expected": -0.020137472477432278,
+          "delta": -0.9080000000000004,
+          "severity_score": 5.138929357787649,
+          "rate_unit": "kgf/cm²/분",
+          "current_change": -1.0,
+          "previous_change": -0.10736999999999997,
+          "observed_delta": -1.0,
+          "expected_delta": -0.10068736238716139,
+          "expected_level": 3.203068172130197,
+          "level_delta": -0.903068172130197,
+          "level_threshold": 0.25
+        },
+        "current_change": -0.09999999999999964,
+        "previous_change": -0.010380000000000056,
+        "step_ratio": null
+      },
+      {
+        "field": "vibration_rms_g",
+        "label": "진동 RMS",
+        "unit": "g",
+        "state": "inspect",
+        "method": "amplitude_ratio_and_step",
+        "method_label": "진동 크기·급변",
+        "current": 0.09,
+        "previous": 0.044592,
+        "delta": 0.045408,
+        "interval": {
+          "start_s": 900,
+          "end_s": 1200
+        },
+        "observed_rate": null,
+        "expected_rate": null,
+        "rate_unit": null,
+        "rate_delta": null,
+        "threshold": 0.30010459245033816,
+        "expected_range": [
+          0.03346661000400294,
+          0.06099289673229537
+        ],
+        "observed_delta": 0.0,
+        "expected_delta": null,
+        "change_ratio": 1.9920352452397379,
+        "model_expected": 0.04517992350540397,
+        "reason": "vibration_amplitude_increase",
+        "summary": "10–15분 진동 2.00배 · 같은 조건의 평소 진동 대비",
+        "checks": [
+          "센서 부착 위치·고정 상태 확인",
+          "장비 체결·받침 상태 확인",
+          "같은 운전 조건에서 진동을 다시 측정"
+        ],
+        "intervals": [
+          {
+            "interval": {
+              "start_s": 0,
+              "end_s": 300
+            },
+            "start_s": 0,
+            "end_s": 300,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 0.046,
+            "previous": 0.044324,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03331679715393539,
+              0.06071986281304725
+            ],
+            "change_ratio": 1.022729583418232,
+            "step_ratio": 1.0222222222222221,
+            "model_expected": 0.04497767615781277,
+            "delta": 0.001675999999999997,
+            "severity_score": 0.07489094054932446,
+            "rate_unit": null,
+            "current_change": 0.0010000000000000009,
+            "previous_change": -0.0009759999999999977,
+            "observed_delta": 0.0010000000000000009,
+            "expected_delta": null
+          },
+          {
+            "interval": {
+              "start_s": 300,
+              "end_s": 600
+            },
+            "start_s": 300,
+            "end_s": 600,
+            "state": "normal",
+            "reason": "normal_phase_pattern",
+            "current": 0.045,
+            "previous": 0.044761,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03343111672656586,
+              0.06092821023416629
+            ],
+            "change_ratio": 0.9970750784656013,
+            "step_ratio": 0.9782608695652174,
+            "model_expected": 0.045132007580863914,
+            "delta": 0.00023899999999999616,
+            "severity_score": 0.054206653739763966,
+            "rate_unit": null,
+            "current_change": -0.0010000000000000009,
+            "previous_change": 0.0004369999999999999,
+            "observed_delta": -0.0010000000000000009,
+            "expected_delta": null
+          },
+          {
+            "interval": {
+              "start_s": 600,
+              "end_s": 900
+            },
+            "start_s": 600,
+            "end_s": 900,
+            "state": "inspect",
+            "reason": "vibration_amplitude_increase",
+            "current": 0.09,
+            "previous": 0.045,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03328220245554165,
+              0.06065681397522466
+            ],
+            "change_ratio": 2.003072565757028,
+            "step_ratio": 2.0,
+            "model_expected": 0.04493097331498123,
+            "delta": 0.045,
+            "severity_score": 2.3148005796616102,
+            "rate_unit": null,
+            "current_change": 0.045,
+            "previous_change": 0.00023899999999999616,
+            "observed_delta": 0.045,
+            "expected_delta": null
+          },
+          {
+            "interval": {
+              "start_s": 900,
+              "end_s": 1200
+            },
+            "start_s": 900,
+            "end_s": 1200,
+            "state": "inspect",
+            "reason": "vibration_amplitude_increase",
+            "current": 0.09,
+            "previous": 0.044592,
+            "observed_rate": null,
+            "expected_rate": null,
+            "rate_delta": null,
+            "threshold": 0.30010459245033816,
+            "expected_range": [
+              0.03346661000400294,
+              0.06099289673229537
+            ],
+            "change_ratio": 1.9920352452397379,
+            "step_ratio": 1.0,
+            "model_expected": 0.04517992350540397,
+            "delta": 0.045408,
+            "severity_score": 2.296388891527429,
+            "rate_unit": null,
+            "current_change": 0.0,
+            "previous_change": -0.00040799999999999864,
+            "observed_delta": 0.0,
+            "expected_delta": null
+          }
+        ],
+        "source": "scenario",
+        "reference_source": "scenario",
+        "worst_interval": {
+          "interval": {
+            "start_s": 600,
+            "end_s": 900
+          },
+          "start_s": 600,
+          "end_s": 900,
+          "state": "inspect",
+          "reason": "vibration_amplitude_increase",
+          "current": 0.09,
+          "previous": 0.045,
+          "observed_rate": null,
+          "expected_rate": null,
+          "rate_delta": null,
+          "threshold": 0.30010459245033816,
+          "expected_range": [
+            0.03328220245554165,
+            0.06065681397522466
+          ],
+          "change_ratio": 2.003072565757028,
+          "step_ratio": 2.0,
+          "model_expected": 0.04493097331498123,
+          "delta": 0.045,
+          "severity_score": 2.3148005796616102,
+          "rate_unit": null,
+          "current_change": 0.045,
+          "previous_change": 0.00023899999999999616,
+          "observed_delta": 0.045,
+          "expected_delta": null
+        },
+        "current_change": 0.0,
+        "previous_change": -0.00040799999999999864,
+        "step_ratio": 1.0
+      }
+    ],
+    "recommendations": [
+      {
+        "field": "coolant_c",
+        "title": "냉각수 온도 변화 확인",
+        "reason": "5–10분 수온 상승 속도 4.00°C/분 · 평소 예상 1.60°C/분. 현재 구간은 평소 변화로 돌아왔지만 앞선 이상 구간은 확인이 필요합니다.",
+        "checks": [
+          "냉각수량·누수 여부 확인",
+          "라디에이터·통풍 상태 확인",
+          "같은 부하와 초기 수온에서 다시 비교"
+        ],
+        "interval": {
+          "start_s": 300,
+          "end_s": 600
+        }
+      },
+      {
+        "field": "oil_kgf_cm2",
+        "title": "윤활유 압력 변화 확인",
+        "reason": "10–15분 유압 변화 -0.200kgf/cm²/분 · 평소 예상 -0.020kgf/cm²/분",
+        "checks": [
+          "오일량·누유 여부 확인",
+          "윤활유 필터·압력 센서 확인",
+          "제조사 절차에 따라 윤활계통 점검"
+        ],
+        "interval": {
+          "start_s": 600,
+          "end_s": 900
+        }
+      },
+      {
+        "field": "vibration_rms_g",
+        "title": "진동 RMS 변화 확인",
+        "reason": "10–15분 진동 2.00배 · 같은 조건의 평소 진동 대비",
+        "checks": [
+          "센서 부착 위치·고정 상태 확인",
+          "장비 체결·받침 상태 확인",
+          "같은 운전 조건에서 진동을 다시 측정"
+        ],
+        "interval": {
+          "start_s": 600,
+          "end_s": 900
+        }
+      }
+    ],
+    "reference_id": "operation-2026-08",
+    "reference_run": {
+      "id": "operation-2026-08",
+      "equipment_id": "GEN-10K-001",
+      "inspected_at": "2026-10-10T10:00:00+09:00",
+      "label": "정기 시험 운전",
+      "confirmed_normal": true,
+      "source": "scenario",
+      "context": {
+        "load_pct": 62,
+        "ambient_c": 28.5,
+        "engine_rpm": 1800
+      },
+      "samples": [
+        {
+          "elapsed_s": 0,
+          "coolant_c": 49.9129,
+          "oil_kgf_cm2": 4.00093,
+          "vibration_rms_g": 0.0453
+        },
+        {
+          "elapsed_s": 300,
+          "coolant_c": 59.822,
+          "oil_kgf_cm2": 3.60971,
+          "vibration_rms_g": 0.044324
+        },
+        {
+          "elapsed_s": 600,
+          "coolant_c": 67.7268,
+          "oil_kgf_cm2": 3.31537,
+          "vibration_rms_g": 0.044761
+        },
+        {
+          "elapsed_s": 900,
+          "coolant_c": 72.6136,
+          "oil_kgf_cm2": 3.208,
+          "vibration_rms_g": 0.045
+        },
+        {
+          "elapsed_s": 1200,
+          "coolant_c": 77.4853,
+          "oil_kgf_cm2": 3.19762,
+          "vibration_rms_g": 0.044592
+        }
+      ],
+      "installation_id": "demo-generator",
+      "acquisition": {
+        "sample_rate_hz": 833,
+        "window_s": 2,
+        "dc_removed": true,
+        "feature_version": "rms-ac-3axis/1",
+        "accel_range_g": 8
+      },
+      "provenance": "모의 운전 기록. 실제 발전기 계측 및 제조사 정상 범위가 아님."
+    },
+    "reference_at": "2026-10-10T10:00:00+09:00",
+    "conditions": {
+      "current": {
+        "load_pct": 62,
+        "ambient_c": 28.5,
+        "engine_rpm": 1800,
+        "initial_coolant_c": 50
+      },
+      "previous": {
+        "load_pct": 62,
+        "ambient_c": 28.5,
+        "engine_rpm": 1800,
+        "initial_coolant_c": 49.9129
+      },
+      "tolerances": {
+        "load_pct": 5,
+        "ambient_c": 5,
+        "engine_rpm": 50,
+        "initial_coolant_c": 5
+      },
+      "matched": true
+    },
+    "model": {
+      "id": "operation-phase-context-ridge/1:77f98078313d",
+      "algorithm": "operation-phase-context-ridge/1",
+      "training_count": 8,
+      "training_record_count": 8,
+      "training_record_ids": [
+        "operation-2026-01",
+        "operation-2026-02",
+        "operation-2026-03",
+        "operation-2026-04",
+        "operation-2026-05",
+        "operation-2026-06",
+        "operation-2026-07",
+        "operation-2026-08"
+      ],
+      "training_sample_count": 32,
+      "current_used_for_training": false,
+      "training_source": "scenario",
+      "synthetic": true,
+      "phase_interval_s": 300,
+      "scope": "승인된 과거 정상 운전에서 구간별 변화 패턴을 학습합니다. 고장 부위·수명 예측이 아닙니다.",
+      "threshold_provenance": "모의 탐지 허용차. 실제 발전기 검증 및 제조사 안전 기준이 아님."
+    },
+    "history_count": 8,
+    "source": "scenario",
+    "observed_until_s": 1200
+  }
+}

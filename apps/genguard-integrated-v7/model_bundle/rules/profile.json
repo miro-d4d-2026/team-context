@@ -1,0 +1,490 @@
+{
+  "schema_version": "genguard.alarm-demo/1",
+  "profile_id": "army-10kw-208v-demo",
+  "header": {
+    "name": "GEN-10K-001 · 군 구매요구 참고 모의 발전기",
+    "rated_kw": 10,
+    "rated_rpm": 1800,
+    "rated_hz": 60,
+    "voltage_ll_v": 208,
+    "phases": 3,
+    "wires": 4,
+    "power_factor": 0.8,
+    "battery_nominal_v": 12,
+    "rating_source": "군 구매요구의 10 kW 이상·1800 rpm·60 Hz·120/208 V 중 10 kW·208 V 선간을 시연 선택",
+    "actual_generator_connected": false,
+    "control_action": "none"
+  },
+  "fields": [
+    {
+      "key": "engine_rpm",
+      "label": "엔진 회전수",
+      "unit": "rpm",
+      "default": 1800,
+      "min": 0,
+      "max": 4000,
+      "step": 10,
+      "normal_display": "1710–1890 rpm (시연)",
+      "source": "scenario",
+      "provenance": "시연 설계값; 실제 장비의 정상 한계가 아님"
+    },
+    {
+      "key": "coolant_c",
+      "label": "냉각수 온도",
+      "unit": "degC",
+      "default": 80,
+      "min": -30,
+      "max": 150,
+      "step": 0.1,
+      "normal_display": "92°C 미만 (시연 경고 기준; 하한 정상 판정 아님)",
+      "source": "scenario",
+      "provenance": "시연 설계값; 실제 장비의 정상 한계가 아님",
+      "graph_reference_range": [
+        70,
+        90
+      ],
+      "graph_reference_provenance": "demo_assumption",
+      "graph_reference_note": "모의 그래프의 참고밴드; 경보 기준 및 학습한 예상 범위와 별개"
+    },
+    {
+      "key": "oil_kgf_cm2",
+      "label": "윤활유 압력",
+      "unit": "kgf/cm²",
+      "default": 3.2,
+      "min": 0,
+      "max": 10,
+      "step": 0.01,
+      "normal_display": "2.0–4.5 kgf/cm² (시연)",
+      "source": "scenario",
+      "provenance": "시연 설계값; 실제 장비의 정상 한계가 아님",
+      "graph_reference_range": [
+        2.5,
+        4.0
+      ],
+      "graph_reference_provenance": "demo_assumption",
+      "graph_reference_note": "모의 그래프의 참고밴드; 경보 기준 및 학습한 예상 범위와 별개"
+    },
+    {
+      "key": "voltage_ll_v",
+      "label": "출력 전압 · 선간",
+      "unit": "V",
+      "default": 208,
+      "min": 0,
+      "max": 500,
+      "step": 0.1,
+      "normal_display": "197.6–218.4 V (정격 ±5% 시연)",
+      "source": "scenario",
+      "provenance": "시연 설계값; 실제 장비의 정상 한계가 아님"
+    },
+    {
+      "key": "frequency_hz",
+      "label": "출력 주파수",
+      "unit": "Hz",
+      "default": 60,
+      "min": 0,
+      "max": 100,
+      "step": 0.01,
+      "normal_display": "57–63 Hz (정격 ±5% 시연)",
+      "source": "scenario",
+      "provenance": "시연 설계값; 실제 장비의 정상 한계가 아님"
+    },
+    {
+      "key": "load_pct",
+      "label": "출력 / 부하율",
+      "unit": "%",
+      "default": 62,
+      "min": 0,
+      "max": 150,
+      "step": 1,
+      "normal_display": "100% 이하 (시연)",
+      "source": "scenario",
+      "provenance": "시연 설계값; 실제 장비의 정상 한계가 아님"
+    },
+    {
+      "key": "ambient_c",
+      "label": "주변 온도",
+      "unit": "degC",
+      "default": 28.5,
+      "min": -30,
+      "max": 80,
+      "step": 0.1,
+      "normal_display": "운전 조건 비교용; 단독 고장 판정 없음",
+      "source": "scenario",
+      "provenance": "시연 설계값; 실제 장비의 정상 한계가 아님"
+    },
+    {
+      "key": "vibration_rms_g",
+      "label": "진동 RMS · 중력 제거",
+      "unit": "g",
+      "default": 0.045,
+      "min": 0,
+      "max": 2,
+      "step": 0.001,
+      "normal_display": "모의 정상 기준 0.045 g 대비; 절대 안전 한계 없음",
+      "source": "scenario",
+      "provenance": "시연 설계값; 실제 장비의 정상 한계가 아님"
+    },
+    {
+      "key": "envelope_cv",
+      "label": "진동 간헐성 · 포락선 CV",
+      "unit": "ratio",
+      "default": 0.12,
+      "min": 0,
+      "max": 5,
+      "step": 0.01,
+      "normal_display": "모의 정상 이력과 비교; 절대 안전 한계 없음",
+      "source": "scenario",
+      "provenance": "시연 설계값; 실제 장비의 정상 한계가 아님"
+    },
+    {
+      "key": "battery_v",
+      "label": "배터리 전압",
+      "unit": "V_DC",
+      "default": 13.8,
+      "min": 0,
+      "max": 30,
+      "step": 0.1,
+      "normal_display": "12.5–15 V (12 V 계통 시연 가정)",
+      "source": "scenario",
+      "provenance": "시연 설계값; 실제 장비의 정상 한계가 아님"
+    },
+    {
+      "key": "fuel_pct",
+      "label": "연료 잔량",
+      "unit": "%",
+      "default": 70,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "normal_display": "20% 이상 (시연)",
+      "source": "scenario",
+      "provenance": "시연 설계값; 실제 장비의 정상 한계가 아님"
+    },
+    {
+      "key": "pf",
+      "label": "역률 · 모의 계산 조건",
+      "unit": "ratio",
+      "default": 0.8,
+      "min": 0,
+      "max": 1,
+      "step": 0.01,
+      "normal_display": "유효전력·전류 환산용; 단독 고장 판정 없음",
+      "source": "scenario",
+      "provenance": "시연 설계값; 실제 장비의 정상 한계가 아님"
+    }
+  ],
+  "rules": [
+    {
+      "id": "rpm_deviation",
+      "field": "engine_rpm",
+      "operator": "outside",
+      "threshold": [
+        1710,
+        1890
+      ],
+      "hold_s": 10,
+      "clear_hold_s": 5,
+      "severity": "watch",
+      "title": "회전수 범위 이탈",
+      "checks": [
+        "부하 변화와 회전수 센서값을 먼저 확인",
+        "연료 공급 및 조속기 점검 요청"
+      ],
+      "basis": {
+        "kind": "demo_assumption",
+        "label": "시연 가정",
+        "ref": null,
+        "note": "알림만 생성하며 실제 보호기·자동정지를 대체하지 않음"
+      }
+    },
+    {
+      "id": "oil_deviation",
+      "field": "oil_kgf_cm2",
+      "operator": "outside",
+      "threshold": [
+        2,
+        4.5
+      ],
+      "hold_s": 5,
+      "clear_hold_s": 5,
+      "severity": "watch",
+      "title": "윤활유 압력 범위 이탈",
+      "checks": [
+        "유압 센서 및 배선값 확인",
+        "윤활유량·누유·필터·펌프 점검 요청"
+      ],
+      "basis": {
+        "kind": "demo_assumption",
+        "label": "시연 가정",
+        "ref": null,
+        "note": "알림만 생성하며 실제 보호기·자동정지를 대체하지 않음"
+      }
+    },
+    {
+      "id": "coolant_high",
+      "field": "coolant_c",
+      "operator": "gte",
+      "threshold": 92,
+      "hold_s": 5,
+      "clear_hold_s": 5,
+      "severity": "watch",
+      "title": "냉각수 온도 상승",
+      "checks": [
+        "동일 부하·외기온 조건인지 확인",
+        "냉각수량·누수·라디에이터·냉각팬 점검 요청"
+      ],
+      "basis": {
+        "kind": "demo_assumption",
+        "label": "시연 가정",
+        "ref": null,
+        "note": "알림만 생성하며 실제 보호기·자동정지를 대체하지 않음"
+      }
+    },
+    {
+      "id": "voltage_deviation",
+      "field": "voltage_ll_v",
+      "operator": "outside",
+      "threshold": [
+        197.6,
+        218.4
+      ],
+      "hold_s": 5,
+      "clear_hold_s": 5,
+      "severity": "watch",
+      "title": "출력 전압 범위 이탈",
+      "checks": [
+        "선간 측정값과 결선 조건 확인",
+        "부하 변화·배선·전압 조정기 점검 요청"
+      ],
+      "basis": {
+        "kind": "demo_assumption",
+        "label": "시연 가정",
+        "ref": null,
+        "note": "알림만 생성하며 실제 보호기·자동정지를 대체하지 않음"
+      }
+    },
+    {
+      "id": "frequency_deviation",
+      "field": "frequency_hz",
+      "operator": "outside",
+      "threshold": [
+        57,
+        63
+      ],
+      "hold_s": 10,
+      "clear_hold_s": 5,
+      "severity": "watch",
+      "title": "출력 주파수 범위 이탈",
+      "checks": [
+        "RPM·주파수 데이터 동시 확인",
+        "부하 및 조속기 점검 요청"
+      ],
+      "basis": {
+        "kind": "demo_assumption",
+        "label": "시연 가정",
+        "ref": null,
+        "note": "알림만 생성하며 실제 보호기·자동정지를 대체하지 않음"
+      }
+    },
+    {
+      "id": "fuel_low",
+      "field": "fuel_pct",
+      "operator": "lt",
+      "threshold": 20,
+      "hold_s": 5,
+      "clear_hold_s": 5,
+      "severity": "watch",
+      "title": "연료 부족 점검",
+      "checks": [
+        "연료량 표시와 잔량 센서 확인",
+        "보급 및 대체 전원 준비 검토"
+      ],
+      "basis": {
+        "kind": "demo_assumption",
+        "label": "시연 가정",
+        "ref": null,
+        "note": "알림만 생성하며 실제 보호기·자동정지를 대체하지 않음"
+      }
+    },
+    {
+      "id": "battery_deviation",
+      "field": "battery_v",
+      "operator": "outside",
+      "threshold": [
+        12.5,
+        15
+      ],
+      "hold_s": 5,
+      "clear_hold_s": 5,
+      "severity": "watch",
+      "title": "배터리 전압 점검",
+      "checks": [
+        "12 V 계통과 운전 상태 확인",
+        "충전 계통·단자·배터리 점검 요청"
+      ],
+      "basis": {
+        "kind": "demo_assumption",
+        "label": "시연 가정",
+        "ref": null,
+        "note": "알림만 생성하며 실제 보호기·자동정지를 대체하지 않음"
+      }
+    },
+    {
+      "id": "load_high",
+      "field": "load_pct",
+      "operator": "gt",
+      "threshold": 100,
+      "hold_s": 5,
+      "clear_hold_s": 5,
+      "severity": "watch",
+      "title": "정격 부하 초과",
+      "checks": [
+        "명판 정격과 부하율 계산 확인",
+        "부하 분산 및 대체 전원 필요 여부 점검"
+      ],
+      "basis": {
+        "kind": "demo_assumption",
+        "label": "시연 가정",
+        "ref": null,
+        "note": "알림만 생성하며 실제 보호기·자동정지를 대체하지 않음"
+      }
+    },
+    {
+      "id": "vibration_relative",
+      "field": "vibration_rms_g",
+      "operator": "ratio_gt",
+      "threshold": 1.5,
+      "hold_s": 6,
+      "clear_hold_s": 5,
+      "severity": "watch",
+      "title": "진동 증가 감지",
+      "checks": [
+        "센서 부착 위치·고정 상태가 같은지 확인",
+        "장비 체결·회전체 상태 추가 점검 요청"
+      ],
+      "basis": {
+        "kind": "demo_assumption",
+        "label": "시연 가정",
+        "ref": null,
+        "note": "알림만 생성하며 실제 보호기·자동정지를 대체하지 않음"
+      }
+    },
+    {
+      "id": "overspeed_reference",
+      "field": "engine_rpm",
+      "operator": "gte",
+      "threshold": 1980,
+      "hold_s": 0,
+      "clear_hold_s": 5,
+      "severity": "urgent",
+      "title": "과속 보호 참고값 도달",
+      "checks": [
+        "부하 변화와 회전수 센서값을 먼저 확인",
+        "연료 공급 및 조속기 점검 요청"
+      ],
+      "basis": {
+        "kind": "procurement_reference",
+        "label": "군 구매요구 보호 참고 · 앱 알림",
+        "ref": "A3.4.1.2: 정격 110%, 보호기 10초 이내 응답 요구",
+        "note": "알림만 생성하며 실제 보호기·자동정지를 대체하지 않음"
+      }
+    },
+    {
+      "id": "oil_low_reference",
+      "field": "oil_kgf_cm2",
+      "operator": "lte",
+      "threshold": 0.6,
+      "hold_s": 0,
+      "clear_hold_s": 5,
+      "severity": "urgent",
+      "title": "저유압 보호 참고값 도달",
+      "checks": [
+        "유압 센서 및 배선값 확인",
+        "윤활유량·누유·필터·펌프 점검 요청"
+      ],
+      "basis": {
+        "kind": "procurement_reference",
+        "label": "군 구매요구 보호 참고 · 앱 알림",
+        "ref": "A3.4.1.3: 0.6 kg/cm² 이하, 보호기 1분 이내 응답 요구; 단위를 kgf/cm²로 해석",
+        "note": "알림만 생성하며 실제 보호기·자동정지를 대체하지 않음"
+      }
+    },
+    {
+      "id": "coolant_protection_reference",
+      "field": "coolant_c",
+      "operator": "gte",
+      "threshold": 100,
+      "hold_s": 0,
+      "clear_hold_s": 5,
+      "severity": "urgent",
+      "title": "과열 보호 참고값 도달",
+      "checks": [
+        "동일 부하·외기온 조건인지 확인",
+        "냉각수량·누수·라디에이터·냉각팬 점검 요청"
+      ],
+      "basis": {
+        "kind": "procurement_reference_with_demo_selection",
+        "label": "군 구매요구 보호 참고 · 앱 알림",
+        "ref": "A3.4.1.4: 95–100°C 중 100°C를 시연 선택. 정확한 장비 설정 아님; 보호기 1분 이내 응답 요구",
+        "note": "알림만 생성하며 실제 보호기·자동정지를 대체하지 않음"
+      }
+    },
+    {
+      "id": "overload_reference",
+      "field": "load_pct",
+      "operator": "gte",
+      "threshold": 110,
+      "hold_s": 0,
+      "clear_hold_s": 5,
+      "severity": "urgent",
+      "title": "과부하 보호 참고값 도달",
+      "checks": [
+        "명판 정격과 부하율 계산 확인",
+        "부하 분산 및 대체 전원 필요 여부 점검"
+      ],
+      "basis": {
+        "kind": "procurement_reference",
+        "label": "군 구매요구 보호 참고 · 앱 알림",
+        "ref": "A3.4.2.2: 정격 110% 이상, 보호기 1분 이내 차단 요구",
+        "note": "알림만 생성하며 실제 보호기·자동정지를 대체하지 않음"
+      }
+    }
+  ],
+  "timer_policy": {
+    "freshness_max_age_s": 5,
+    "max_contiguous_gap_s": 2,
+    "clear_hold_s": 5
+  },
+  "vibration_baseline": {
+    "rms_g": 0.045,
+    "source": "scenario",
+    "metric_definition": "vector_ac_rms_g",
+    "note": "모의 기준. 실측 IMU에는 동일 부착·샘플링·운전 조건의 별도 정상 기준 필요"
+  },
+  "pattern_policy": {
+    "kind": "statistical_baseline_demo",
+    "min_samples": 30,
+    "min_context_samples": 15,
+    "load_tolerance_pct": 5,
+    "ambient_tolerance_c": 3,
+    "hold_s": 5,
+    "floors": {
+      "coolant_c": 2,
+      "oil_kgf_cm2": 0.3,
+      "vibration_rms_g": 0.01,
+      "engine_rpm": 30,
+      "voltage_ll_v": 5,
+      "envelope_cv": 0.08
+    },
+    "sources_allowed": [
+      "scenario"
+    ],
+    "automatic_retraining": false
+  },
+  "source_notes": [
+    "군 구매요구 원문과 기존 source-index는 ../genguard-monitoring-spec-v2/ 참조",
+    "정상 평균 실측치가 없는 가상 10 kW 발전기. 경고 한계·정상 학습 로그·지연은 시연 설계값",
+    "제조사 7.5HDKAL의 정상 범위를 이 모의 발전기에 제조사 승인값으로 적용하지 않음",
+    "문서상 보호기 응답시간은 앱 대기시간이 아님. 본 엔진은 참고값 도달 즉시 긴급 알림만 생성"
+  ]
+}

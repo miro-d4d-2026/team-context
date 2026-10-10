@@ -1,0 +1,182 @@
+{
+  "state": "fresh",
+  "source": "live_imu",
+  "installation_id": "phone-fixed-20261011",
+  "age_s": 0.406,
+  "features": {
+    "vibration_rms_g": 0.05561549952512151,
+    "envelope_cv": 0.014154329797242649
+  },
+  "quality": {
+    "valid": true,
+    "flags": []
+  },
+  "sample_rate_hz": 209.12643824576537,
+  "sample_count": 418,
+  "configured_sample_rate_hz": 208.0,
+  "calibration": {
+    "state": "ready",
+    "count": 15,
+    "required": 15,
+    "baseline_id": "imu-0fae3df2976d9c082319",
+    "error": null
+  },
+  "checked_at": "2026-10-10T17:48:13.965684+00:00",
+  "analysis_host": "Mac localhost API; not UNO Q inference",
+  "baseline": {
+    "ready": true,
+    "rms_g": 0.054974940497991245
+  },
+  "vibration_analysis": {
+    "field": "vibration_rms_g",
+    "label": "진동 RMS",
+    "unit": "g",
+    "state": "normal",
+    "method": "installation_baseline",
+    "method_label": "실측 부착 기준",
+    "current": 0.05561549952512151,
+    "previous": null,
+    "delta": null,
+    "interval": {
+      "start_s": 0,
+      "end_s": 300
+    },
+    "observed_rate": null,
+    "expected_rate": null,
+    "rate_unit": null,
+    "rate_delta": null,
+    "threshold": null,
+    "expected_range": null,
+    "observed_delta": null,
+    "expected_delta": null,
+    "change_ratio": null,
+    "model_expected": null,
+    "reason": "등록한 부착 기준과 비슷합니다.",
+    "summary": "등록한 부착 기준과 비슷합니다.",
+    "checks": [],
+    "intervals": [],
+    "source": "live_imu",
+    "reference_source": "scenario",
+    "worst_interval": null,
+    "current_change": null,
+    "previous_change": null,
+    "step_ratio": null
+  },
+  "user_confirmed_strong_vibration_check": [
+    {
+      "checked_at": "2026-10-10T17:49:10.773995+00:00",
+      "window_id": "imu-1c241dc62c344d1dbcb5b3cff1611c42:55",
+      "features": {
+        "vibration_rms_g": 0.15623821952500738,
+        "envelope_cv": 0.015742782666302
+      },
+      "quality": {
+        "valid": true,
+        "flags": []
+      },
+      "vibration_state": "inspect",
+      "summary": "등록 기준과 다른 진동이 이어집니다.",
+      "operational_status": "inspect"
+    },
+    {
+      "checked_at": "2026-10-10T17:49:12.980994+00:00",
+      "window_id": "imu-1c241dc62c344d1dbcb5b3cff1611c42:56",
+      "features": {
+        "vibration_rms_g": 0.15603188478783503,
+        "envelope_cv": 0.018169996635701458
+      },
+      "quality": {
+        "valid": true,
+        "flags": []
+      },
+      "vibration_state": "inspect",
+      "summary": "등록 기준과 다른 진동이 이어집니다.",
+      "operational_status": "inspect"
+    },
+    {
+      "checked_at": "2026-10-10T17:49:15.189311+00:00",
+      "window_id": "imu-1c241dc62c344d1dbcb5b3cff1611c42:57",
+      "features": {
+        "vibration_rms_g": 0.15624262123403534,
+        "envelope_cv": 0.014920305462987475
+      },
+      "quality": {
+        "valid": true,
+        "flags": []
+      },
+      "vibration_state": "inspect",
+      "summary": "등록 기준과 다른 진동이 이어집니다.",
+      "operational_status": "inspect"
+    }
+  ],
+  "strong_inspect_unique_windows": 3,
+  "user_confirmed_return_to_baseline_check": [
+    {
+      "checked_at": "2026-10-10T17:52:00.495735+00:00",
+      "window_id": "imu-1c241dc62c344d1dbcb5b3cff1611c42:140",
+      "features": {
+        "vibration_rms_g": 0.05429044741030146,
+        "envelope_cv": 0.013462806493304509
+      },
+      "quality": {
+        "valid": true,
+        "flags": []
+      },
+      "calibration": {
+        "state": "ready",
+        "count": 15,
+        "required": 15,
+        "baseline_id": "imu-0fae3df2976d9c082319",
+        "error": null
+      },
+      "vibration_state": "normal",
+      "summary": "등록한 부착 기준과 비슷합니다.",
+      "operational_status": "normal"
+    },
+    {
+      "checked_at": "2026-10-10T17:52:02.705053+00:00",
+      "window_id": "imu-1c241dc62c344d1dbcb5b3cff1611c42:141",
+      "features": {
+        "vibration_rms_g": 0.05432489936551895,
+        "envelope_cv": 0.014492378874159727
+      },
+      "quality": {
+        "valid": true,
+        "flags": []
+      },
+      "calibration": {
+        "state": "ready",
+        "count": 15,
+        "required": 15,
+        "baseline_id": "imu-0fae3df2976d9c082319",
+        "error": null
+      },
+      "vibration_state": "normal",
+      "summary": "등록한 부착 기준과 비슷합니다.",
+      "operational_status": "normal"
+    },
+    {
+      "checked_at": "2026-10-10T17:52:04.916070+00:00",
+      "window_id": "imu-1c241dc62c344d1dbcb5b3cff1611c42:142",
+      "features": {
+        "vibration_rms_g": 0.054314860334943454,
+        "envelope_cv": 0.013711636165186704
+      },
+      "quality": {
+        "valid": true,
+        "flags": []
+      },
+      "calibration": {
+        "state": "ready",
+        "count": 15,
+        "required": 15,
+        "baseline_id": "imu-0fae3df2976d9c082319",
+        "error": null
+      },
+      "vibration_state": "normal",
+      "summary": "등록한 부착 기준과 비슷합니다.",
+      "operational_status": "normal"
+    }
+  ],
+  "normal_return_unique_windows": 3
+}

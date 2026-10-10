@@ -1,0 +1,1408 @@
+{
+  "schema_version": "genguard.frozen-model-evaluation/1",
+  "status": "failed_declared_synthetic_tests",
+  "scope": "Entirely synthetic 208V fixture; same generation family, held-out run seeds. Not physical-generator fault accuracy or UNO Q performance.",
+  "algorithm": "context-ridge-residual-covariance/1",
+  "model_id": "gg-61d42414c27fc19fa7a5",
+  "profile_hash": "ea4542d4233dd6180609c5b661747cb76a20f6fc81756df24078f6862bc7877a",
+  "installation_id": "synthetic-208v-fixture-v1",
+  "data_domain": "scenario",
+  "training_windows": {
+    "fit": 1800,
+    "calibration": 900,
+    "validation": 900
+  },
+  "training_seconds": 0.11893712500750553,
+  "model_bytes": 4154,
+  "normal_tests": {
+    "runs": 12,
+    "windows": 5400,
+    "change_windows": 2,
+    "persistent_alert_windows": 0,
+    "runs_with_open_alert": 0,
+    "unknown_windows": 0
+  },
+  "injection_tests": {
+    "runs": 24,
+    "passed": 23,
+    "missed_runs": 0
+  },
+  "quality_tests": {
+    "runs": 6,
+    "passed": 6
+  },
+  "hardware": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "uno_q_measured": false
+  },
+  "ingest_including_sqlite_ms": {
+    "median": 0.17058300727512687,
+    "p95": 0.22229200112633407,
+    "max": 100.87491599551868
+  },
+  "process_peak_rss_mib": 73.046875,
+  "trials": [
+    {
+      "session_id": "test-normal-01",
+      "seed": 401,
+      "condition": "normal",
+      "kind": "normal",
+      "windows": 450,
+      "change_windows": 0,
+      "persistent_alert_windows": 0,
+      "ever_open_alert": false,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": null,
+      "post_injection_delay_s": null,
+      "first_evidence": null,
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-normal-02",
+      "seed": 402,
+      "condition": "normal",
+      "kind": "normal",
+      "windows": 450,
+      "change_windows": 1,
+      "persistent_alert_windows": 0,
+      "ever_open_alert": false,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 1,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": null,
+      "post_injection_delay_s": null,
+      "first_evidence": null,
+      "post_unknown_fraction": 0.0,
+      "passed": false
+    },
+    {
+      "session_id": "test-normal-03",
+      "seed": 403,
+      "condition": "normal",
+      "kind": "normal",
+      "windows": 450,
+      "change_windows": 0,
+      "persistent_alert_windows": 0,
+      "ever_open_alert": false,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": null,
+      "post_injection_delay_s": null,
+      "first_evidence": null,
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-normal-04",
+      "seed": 404,
+      "condition": "normal",
+      "kind": "normal",
+      "windows": 450,
+      "change_windows": 0,
+      "persistent_alert_windows": 0,
+      "ever_open_alert": false,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": null,
+      "post_injection_delay_s": null,
+      "first_evidence": null,
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-normal-05",
+      "seed": 405,
+      "condition": "normal",
+      "kind": "normal",
+      "windows": 450,
+      "change_windows": 0,
+      "persistent_alert_windows": 0,
+      "ever_open_alert": false,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": null,
+      "post_injection_delay_s": null,
+      "first_evidence": null,
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-normal-06",
+      "seed": 406,
+      "condition": "normal",
+      "kind": "normal",
+      "windows": 450,
+      "change_windows": 1,
+      "persistent_alert_windows": 0,
+      "ever_open_alert": false,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": null,
+      "post_injection_delay_s": null,
+      "first_evidence": null,
+      "post_unknown_fraction": 0.0,
+      "passed": false
+    },
+    {
+      "session_id": "test-normal-07",
+      "seed": 407,
+      "condition": "normal",
+      "kind": "normal",
+      "windows": 450,
+      "change_windows": 0,
+      "persistent_alert_windows": 0,
+      "ever_open_alert": false,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": null,
+      "post_injection_delay_s": null,
+      "first_evidence": null,
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-normal-08",
+      "seed": 408,
+      "condition": "normal",
+      "kind": "normal",
+      "windows": 450,
+      "change_windows": 0,
+      "persistent_alert_windows": 0,
+      "ever_open_alert": false,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": null,
+      "post_injection_delay_s": null,
+      "first_evidence": null,
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-normal-09",
+      "seed": 409,
+      "condition": "normal_low_load",
+      "kind": "normal",
+      "windows": 450,
+      "change_windows": 0,
+      "persistent_alert_windows": 0,
+      "ever_open_alert": false,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": null,
+      "post_injection_delay_s": null,
+      "first_evidence": null,
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-normal-10",
+      "seed": 410,
+      "condition": "normal_low_load",
+      "kind": "normal",
+      "windows": 450,
+      "change_windows": 0,
+      "persistent_alert_windows": 0,
+      "ever_open_alert": false,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": null,
+      "post_injection_delay_s": null,
+      "first_evidence": null,
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-normal-11",
+      "seed": 411,
+      "condition": "normal_high_load",
+      "kind": "normal",
+      "windows": 450,
+      "change_windows": 0,
+      "persistent_alert_windows": 0,
+      "ever_open_alert": false,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": null,
+      "post_injection_delay_s": null,
+      "first_evidence": null,
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-normal-12",
+      "seed": 412,
+      "condition": "normal_high_load",
+      "kind": "normal",
+      "windows": 450,
+      "change_windows": 0,
+      "persistent_alert_windows": 0,
+      "ever_open_alert": false,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": null,
+      "post_injection_delay_s": null,
+      "first_evidence": null,
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-vibration-01",
+      "seed": 501,
+      "condition": "vibration",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 301,
+      "persistent_alert_windows": 299,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 304.0,
+      "post_injection_delay_s": 4.0,
+      "first_evidence": [
+        {
+          "field": "vibration_rms_g",
+          "value": 0.09098739904977746,
+          "expected": 0.044401538261719414,
+          "unit": "g",
+          "standardized_residual": 23.914897019199845,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "oil_bar",
+          "value": 3.1784247119432214,
+          "expected": 3.156845101697121,
+          "unit": "bar",
+          "standardized_residual": 2.1484992399470375,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "engine_rpm",
+          "value": 1799.4146196769789,
+          "expected": 1800.0463999524377,
+          "unit": "rpm",
+          "standardized_residual": -1.0610325693222626,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-vibration-02",
+      "seed": 502,
+      "condition": "vibration",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 301,
+      "persistent_alert_windows": 299,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 304.0,
+      "post_injection_delay_s": 4.0,
+      "first_evidence": [
+        {
+          "field": "vibration_rms_g",
+          "value": 0.08542084851435922,
+          "expected": 0.043921500473671965,
+          "unit": "g",
+          "standardized_residual": 22.17287461316436,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "engine_rpm",
+          "value": 1799.7244781339746,
+          "expected": 1800.1266165783804,
+          "unit": "rpm",
+          "standardized_residual": -0.6753645269810601,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "voltage_v",
+          "value": 208.08950405850285,
+          "expected": 208.1814030098393,
+          "unit": "V",
+          "standardized_residual": -0.4594947566822327,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-vibration-03",
+      "seed": 503,
+      "condition": "vibration",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 301,
+      "persistent_alert_windows": 299,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 304.0,
+      "post_injection_delay_s": 4.0,
+      "first_evidence": [
+        {
+          "field": "vibration_rms_g",
+          "value": 0.08897452237912772,
+          "expected": 0.045011598099811825,
+          "unit": "g",
+          "standardized_residual": 22.71432904112422,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "voltage_v",
+          "value": 208.39234323042433,
+          "expected": 208.00383907461892,
+          "unit": "V",
+          "standardized_residual": 1.942520779027035,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "coolant_c",
+          "value": 80.0086157879411,
+          "expected": 79.63778564681124,
+          "unit": "degC",
+          "standardized_residual": 1.8439028616641226,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-vibration-04",
+      "seed": 504,
+      "condition": "vibration",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 301,
+      "persistent_alert_windows": 299,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 304.0,
+      "post_injection_delay_s": 4.0,
+      "first_evidence": [
+        {
+          "field": "vibration_rms_g",
+          "value": 0.09064462306824289,
+          "expected": 0.04433438906164576,
+          "unit": "g",
+          "standardized_residual": 23.839532248434026,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "engine_rpm",
+          "value": 1799.3255728706376,
+          "expected": 1800.0608786215982,
+          "unit": "rpm",
+          "standardized_residual": -1.2348966570894742,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "voltage_v",
+          "value": 208.18775484894573,
+          "expected": 208.10197003376118,
+          "unit": "V",
+          "standardized_residual": 0.42892407592276527,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-intermittent-01",
+      "seed": 505,
+      "condition": "intermittent",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 301,
+      "persistent_alert_windows": 299,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 304.0,
+      "post_injection_delay_s": 4.0,
+      "first_evidence": [
+        {
+          "field": "envelope_cv",
+          "value": 0.5061390044007456,
+          "expected": 0.12139339822247464,
+          "unit": "1",
+          "standardized_residual": 25.649707078551394,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "voltage_v",
+          "value": 208.132345763274,
+          "expected": 207.91998419729276,
+          "unit": "V",
+          "standardized_residual": 1.0618078299062006,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "oil_bar",
+          "value": 3.1274041947294657,
+          "expected": 3.1174527267320498,
+          "unit": "bar",
+          "standardized_residual": 0.990783484269333,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-intermittent-02",
+      "seed": 506,
+      "condition": "intermittent",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 301,
+      "persistent_alert_windows": 299,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 304.0,
+      "post_injection_delay_s": 4.0,
+      "first_evidence": [
+        {
+          "field": "envelope_cv",
+          "value": 0.495098403541652,
+          "expected": 0.11834944680622297,
+          "unit": "1",
+          "standardized_residual": 25.116597115695274,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "voltage_v",
+          "value": 207.95697165042768,
+          "expected": 208.12266496098349,
+          "unit": "V",
+          "standardized_residual": -0.828466552779048,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "coolant_c",
+          "value": 78.91957976117521,
+          "expected": 79.08081050870867,
+          "unit": "degC",
+          "standardized_residual": -0.8016981463787505,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-intermittent-03",
+      "seed": 507,
+      "condition": "intermittent",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 301,
+      "persistent_alert_windows": 299,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 304.0,
+      "post_injection_delay_s": 4.0,
+      "first_evidence": [
+        {
+          "field": "envelope_cv",
+          "value": 0.49602299819068346,
+          "expected": 0.11777317985143705,
+          "unit": "1",
+          "standardized_residual": 25.216654555949763,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "coolant_c",
+          "value": 79.30272309377588,
+          "expected": 79.06279003838017,
+          "unit": "degC",
+          "standardized_residual": 1.1930347573797708,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "voltage_v",
+          "value": 208.34358691168367,
+          "expected": 208.15449706749197,
+          "unit": "V",
+          "standardized_residual": 0.9454492209584942,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-intermittent-04",
+      "seed": 508,
+      "condition": "intermittent",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 301,
+      "persistent_alert_windows": 299,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 304.0,
+      "post_injection_delay_s": 4.0,
+      "first_evidence": [
+        {
+          "field": "envelope_cv",
+          "value": 0.49672103726812256,
+          "expected": 0.12143990914277888,
+          "unit": "1",
+          "standardized_residual": 25.01874187502291,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "vibration_rms_g",
+          "value": 0.047270311344461434,
+          "expected": 0.04538542075741273,
+          "unit": "g",
+          "standardized_residual": 1.3563835504396624,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "voltage_v",
+          "value": 208.16649021391072,
+          "expected": 207.91686902639358,
+          "unit": "V",
+          "standardized_residual": 1.2481059375856773,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-coolant_high-01",
+      "seed": 509,
+      "condition": "coolant_high",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 297,
+      "persistent_alert_windows": 295,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 312.0,
+      "post_injection_delay_s": 12.0,
+      "first_evidence": [
+        {
+          "field": "coolant_c",
+          "value": 81.23001638711997,
+          "expected": 79.75320071386247,
+          "unit": "degC",
+          "standardized_residual": 7.343266752193051,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "oil_bar",
+          "value": 3.154586776791045,
+          "expected": 3.146483871749151,
+          "unit": "bar",
+          "standardized_residual": 0.8067377086672881,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "voltage_v",
+          "value": 207.8988407482515,
+          "expected": 208.02619354781382,
+          "unit": "V",
+          "standardized_residual": -0.6367639978115847,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-coolant_high-02",
+      "seed": 510,
+      "condition": "coolant_high",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 297,
+      "persistent_alert_windows": 295,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 312.0,
+      "post_injection_delay_s": 12.0,
+      "first_evidence": [
+        {
+          "field": "coolant_c",
+          "value": 82.36710514132619,
+          "expected": 80.84147174298963,
+          "unit": "degC",
+          "standardized_residual": 7.586006305938473,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "engine_rpm",
+          "value": 1801.1731156047722,
+          "expected": 1799.863670709441,
+          "unit": "rpm",
+          "standardized_residual": 2.199124815459135,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "oil_bar",
+          "value": 3.1084016730922195,
+          "expected": 3.1010414866243976,
+          "unit": "bar",
+          "standardized_residual": 0.732791503259028,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-coolant_high-03",
+      "seed": 511,
+      "condition": "coolant_high",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 297,
+      "persistent_alert_windows": 294,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 314.0,
+      "post_injection_delay_s": 14.0,
+      "first_evidence": [
+        {
+          "field": "coolant_c",
+          "value": 81.64262295038792,
+          "expected": 79.823004587626,
+          "unit": "degC",
+          "standardized_residual": 9.047806890805978,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "oil_bar",
+          "value": 3.159002412490599,
+          "expected": 3.1485852830732735,
+          "unit": "bar",
+          "standardized_residual": 1.0371454525967905,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "engine_rpm",
+          "value": 1799.7919167127045,
+          "expected": 1800.0192509391418,
+          "unit": "rpm",
+          "standardized_residual": -0.3817925752690832,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-coolant_high-04",
+      "seed": 512,
+      "condition": "coolant_high",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 298,
+      "persistent_alert_windows": 296,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 310.0,
+      "post_injection_delay_s": 10.0,
+      "first_evidence": [
+        {
+          "field": "coolant_c",
+          "value": 80.07758717994277,
+          "expected": 78.77626912255464,
+          "unit": "degC",
+          "standardized_residual": 6.4706285272342745,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "engine_rpm",
+          "value": 1801.6073461397646,
+          "expected": 1800.1323911531294,
+          "unit": "rpm",
+          "standardized_residual": 2.4770879052334953,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "vibration_rms_g",
+          "value": 0.04372491965751158,
+          "expected": 0.04394343635868278,
+          "unit": "g",
+          "standardized_residual": -0.16616953834673137,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-oil_low-01",
+      "seed": 513,
+      "condition": "oil_low",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 300,
+      "persistent_alert_windows": 298,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 306.0,
+      "post_injection_delay_s": 6.0,
+      "first_evidence": [
+        {
+          "field": "oil_bar",
+          "value": 3.0597284958250084,
+          "expected": 3.1499125961110095,
+          "unit": "bar",
+          "standardized_residual": -8.978867954985208,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "engine_rpm",
+          "value": 1801.0654644346905,
+          "expected": 1800.0184211066494,
+          "unit": "rpm",
+          "standardized_residual": 1.7584389948489572,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "voltage_v",
+          "value": 207.7873411026945,
+          "expected": 208.0348790386249,
+          "unit": "V",
+          "standardized_residual": -1.2376896796519077,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-oil_low-02",
+      "seed": 514,
+      "condition": "oil_low",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 299,
+      "persistent_alert_windows": 297,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 308.0,
+      "post_injection_delay_s": 8.0,
+      "first_evidence": [
+        {
+          "field": "oil_bar",
+          "value": 2.9822418384647817,
+          "expected": 3.0910859866732046,
+          "unit": "bar",
+          "standardized_residual": -10.83669107233939,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "vibration_rms_g",
+          "value": 0.04703531775544863,
+          "expected": 0.04603075809940958,
+          "unit": "g",
+          "standardized_residual": 0.7196311250028546,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "engine_rpm",
+          "value": 1800.1275815807664,
+          "expected": 1799.834904745393,
+          "unit": "rpm",
+          "standardized_residual": 0.4915311013656383,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-oil_low-03",
+      "seed": 515,
+      "condition": "oil_low",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 299,
+      "persistent_alert_windows": 297,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 308.0,
+      "post_injection_delay_s": 8.0,
+      "first_evidence": [
+        {
+          "field": "oil_bar",
+          "value": 2.9914755069028574,
+          "expected": 3.0932813201289937,
+          "unit": "bar",
+          "standardized_residual": -10.135943598799278,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "vibration_rms_g",
+          "value": 0.04532932629627746,
+          "expected": 0.04605842893822684,
+          "unit": "g",
+          "standardized_residual": -0.5318860715353887,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "envelope_cv",
+          "value": 0.13091152652897955,
+          "expected": 0.12320402872223875,
+          "unit": "1",
+          "standardized_residual": 0.5138331871160539,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-oil_low-04",
+      "seed": 516,
+      "condition": "oil_low",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 299,
+      "persistent_alert_windows": 297,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 308.0,
+      "post_injection_delay_s": 8.0,
+      "first_evidence": [
+        {
+          "field": "oil_bar",
+          "value": 3.088090981621206,
+          "expected": 3.176240466561779,
+          "unit": "bar",
+          "standardized_residual": -8.776298516826488,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "coolant_c",
+          "value": 78.95313632442493,
+          "expected": 79.13610238954783,
+          "unit": "degC",
+          "standardized_residual": -0.9097740815771338,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "envelope_cv",
+          "value": 0.1290524063141932,
+          "expected": 0.11761734213880992,
+          "unit": "1",
+          "standardized_residual": 0.7623376116922191,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-joint_inside_limits-01",
+      "seed": 517,
+      "condition": "joint_inside_limits",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 297,
+      "persistent_alert_windows": 295,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 312.0,
+      "post_injection_delay_s": 12.0,
+      "first_evidence": [
+        {
+          "field": "oil_bar",
+          "value": 3.0532168980780994,
+          "expected": 3.1038204153318065,
+          "unit": "bar",
+          "standardized_residual": -5.038164133566025,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "coolant_c",
+          "value": 81.76236541654971,
+          "expected": 80.95150319135955,
+          "unit": "degC",
+          "standardized_residual": 4.031903051051901,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "engine_rpm",
+          "value": 1800.3921230842716,
+          "expected": 1799.8779318025815,
+          "unit": "rpm",
+          "standardized_residual": 0.8635497465293297,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-joint_inside_limits-02",
+      "seed": 518,
+      "condition": "joint_inside_limits",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 297,
+      "persistent_alert_windows": 294,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 1,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 314.0,
+      "post_injection_delay_s": 14.0,
+      "first_evidence": [
+        {
+          "field": "oil_bar",
+          "value": 3.121827294821508,
+          "expected": 3.180775498903272,
+          "unit": "bar",
+          "standardized_residual": -5.868974009333678,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "coolant_c",
+          "value": 80.00112906347606,
+          "expected": 78.94091778762083,
+          "unit": "degC",
+          "standardized_residual": 5.271757574941673,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "engine_rpm",
+          "value": 1799.734780900359,
+          "expected": 1800.1187216764251,
+          "unit": "rpm",
+          "standardized_residual": -0.6448027643805904,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": false
+    },
+    {
+      "session_id": "test-joint_inside_limits-03",
+      "seed": 519,
+      "condition": "joint_inside_limits",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 296,
+      "persistent_alert_windows": 294,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 314.0,
+      "post_injection_delay_s": 14.0,
+      "first_evidence": [
+        {
+          "field": "oil_bar",
+          "value": 3.103390343893822,
+          "expected": 3.1839795436300364,
+          "unit": "bar",
+          "standardized_residual": -8.023584875101538,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "coolant_c",
+          "value": 80.02929894989988,
+          "expected": 78.8745118457326,
+          "unit": "degC",
+          "standardized_residual": 5.742023125464423,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "vibration_rms_g",
+          "value": 0.04277529339235503,
+          "expected": 0.04391021664806642,
+          "unit": "g",
+          "standardized_residual": -0.8728779916843621,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-joint_inside_limits-04",
+      "seed": 520,
+      "condition": "joint_inside_limits",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 297,
+      "persistent_alert_windows": 293,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 316.0,
+      "post_injection_delay_s": 16.0,
+      "first_evidence": [
+        {
+          "field": "oil_bar",
+          "value": 3.0820942394626343,
+          "expected": 3.172235897070744,
+          "unit": "bar",
+          "standardized_residual": -8.974642296590506,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "coolant_c",
+          "value": 80.10837566678632,
+          "expected": 79.06903922749962,
+          "unit": "degC",
+          "standardized_residual": 5.167960265563865,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "voltage_v",
+          "value": 208.27194912172538,
+          "expected": 208.12500433102986,
+          "unit": "V",
+          "standardized_residual": 0.7347239534776406,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-thermal_pressure-01",
+      "seed": 521,
+      "condition": "thermal_pressure",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 299,
+      "persistent_alert_windows": 297,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 308.0,
+      "post_injection_delay_s": 8.0,
+      "first_evidence": [
+        {
+          "field": "oil_bar",
+          "value": 2.9750498535240406,
+          "expected": 3.1033720897845707,
+          "unit": "bar",
+          "standardized_residual": -12.775959525213159,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "coolant_c",
+          "value": 81.79100698463584,
+          "expected": 80.9533413938759,
+          "unit": "degC",
+          "standardized_residual": 4.16517917128786,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "vibration_rms_g",
+          "value": 0.04388224582785743,
+          "expected": 0.045651535296459246,
+          "unit": "g",
+          "standardized_residual": -1.3175807718641095,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-thermal_pressure-02",
+      "seed": 522,
+      "condition": "thermal_pressure",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 299,
+      "persistent_alert_windows": 297,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 308.0,
+      "post_injection_delay_s": 8.0,
+      "first_evidence": [
+        {
+          "field": "oil_bar",
+          "value": 3.0427834538422514,
+          "expected": 3.1623875195027504,
+          "unit": "bar",
+          "standardized_residual": -11.907965029748159,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "coolant_c",
+          "value": 80.4568602304702,
+          "expected": 79.46922798583132,
+          "unit": "degC",
+          "standardized_residual": 4.9108681311955875,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "voltage_v",
+          "value": 207.89588973161074,
+          "expected": 208.10382584900495,
+          "unit": "V",
+          "standardized_residual": -1.039680586971059,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-thermal_pressure-03",
+      "seed": 523,
+      "condition": "thermal_pressure",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 300,
+      "persistent_alert_windows": 298,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 306.0,
+      "post_injection_delay_s": 6.0,
+      "first_evidence": [
+        {
+          "field": "oil_bar",
+          "value": 3.0683199650013266,
+          "expected": 3.163383000735651,
+          "unit": "bar",
+          "standardized_residual": -9.464622284323376,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "coolant_c",
+          "value": 79.92716333339631,
+          "expected": 79.3800190863075,
+          "unit": "degC",
+          "standardized_residual": 2.7206009734705625,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "envelope_cv",
+          "value": 0.10541330612990457,
+          "expected": 0.11862704246062211,
+          "unit": "1",
+          "standardized_residual": -0.8809157553811694,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-thermal_pressure-04",
+      "seed": 524,
+      "condition": "thermal_pressure",
+      "kind": "injection",
+      "windows": 450,
+      "change_windows": 299,
+      "persistent_alert_windows": 296,
+      "ever_open_alert": true,
+      "unknown_windows": 0,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": 310.0,
+      "post_injection_delay_s": 10.0,
+      "first_evidence": [
+        {
+          "field": "oil_bar",
+          "value": 3.0392724961813427,
+          "expected": 3.18067428895384,
+          "unit": "bar",
+          "standardized_residual": -14.078180320877651,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "coolant_c",
+          "value": 80.35213148990803,
+          "expected": 78.99316104302017,
+          "unit": "degC",
+          "standardized_residual": 6.757297258250701,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        },
+        {
+          "field": "engine_rpm",
+          "value": 1800.6524905245149,
+          "expected": 1800.119916547645,
+          "unit": "rpm",
+          "standardized_residual": 0.8944222492890527,
+          "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+        }
+      ],
+      "post_unknown_fraction": 0.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-stale-01",
+      "seed": 601,
+      "condition": "stale",
+      "kind": "quality",
+      "windows": 450,
+      "change_windows": 0,
+      "persistent_alert_windows": 0,
+      "ever_open_alert": false,
+      "unknown_windows": 301,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": null,
+      "post_injection_delay_s": null,
+      "first_evidence": null,
+      "post_unknown_fraction": 1.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-missing-01",
+      "seed": 602,
+      "condition": "missing",
+      "kind": "quality",
+      "windows": 450,
+      "change_windows": 0,
+      "persistent_alert_windows": 0,
+      "ever_open_alert": false,
+      "unknown_windows": 301,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": null,
+      "post_injection_delay_s": null,
+      "first_evidence": null,
+      "post_unknown_fraction": 1.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-unseen_load-01",
+      "seed": 603,
+      "condition": "unseen_load",
+      "kind": "quality",
+      "windows": 450,
+      "change_windows": 0,
+      "persistent_alert_windows": 0,
+      "ever_open_alert": false,
+      "unknown_windows": 301,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": null,
+      "post_injection_delay_s": null,
+      "first_evidence": null,
+      "post_unknown_fraction": 1.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-warming-01",
+      "seed": 604,
+      "condition": "warming",
+      "kind": "quality",
+      "windows": 450,
+      "change_windows": 0,
+      "persistent_alert_windows": 0,
+      "ever_open_alert": false,
+      "unknown_windows": 301,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": null,
+      "post_injection_delay_s": null,
+      "first_evidence": null,
+      "post_unknown_fraction": 1.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-wrong_unit-01",
+      "seed": 605,
+      "condition": "wrong_unit",
+      "kind": "quality",
+      "windows": 450,
+      "change_windows": 0,
+      "persistent_alert_windows": 0,
+      "ever_open_alert": false,
+      "unknown_windows": 301,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": null,
+      "post_injection_delay_s": null,
+      "first_evidence": null,
+      "post_unknown_fraction": 1.0,
+      "passed": true
+    },
+    {
+      "session_id": "test-wrong_source-01",
+      "seed": 606,
+      "condition": "wrong_source",
+      "kind": "quality",
+      "windows": 450,
+      "change_windows": 0,
+      "persistent_alert_windows": 0,
+      "ever_open_alert": false,
+      "unknown_windows": 301,
+      "pre_injection_change_windows": 0,
+      "pre_injection_persistent_windows": 0,
+      "first_persistent_s": null,
+      "post_injection_delay_s": null,
+      "first_evidence": null,
+      "post_unknown_fraction": 1.0,
+      "passed": true
+    }
+  ],
+  "no_test_based_tuning": true,
+  "training_review_note": "All approvals belong to declared synthetic normal records, not real maintenance inspection.",
+  "fixed_rules_evaluated_separately": true
+}

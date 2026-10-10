@@ -1,0 +1,1211 @@
+{
+  "data_source": "synthetic",
+  "training_record_count": 8,
+  "training_intervals": 32,
+  "evaluation_kind": "학습과 다른 난수로 만든 합성 시나리오의 동작 확인. 실제 발전기 진단 정확도 평가가 아님.",
+  "cases": [
+    {
+      "id": "operation-evaluation-0",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-0",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-0",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-0",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-0",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-1",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-1",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-1",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-1",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-1",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-2",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-2",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-2",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-2",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-2",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-3",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-3",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-3",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-3",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-3",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-4",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-4",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-4",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-4",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-4",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-5",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-5",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-5",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-5",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-5",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-6",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-6",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-6",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-6",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-6",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-7",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-7",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-7",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-7",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-7",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-8",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-8",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-8",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-8",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-8",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-9",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-9",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-9",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-9",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-9",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-10",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-10",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-10",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-10",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-10",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-11",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-11",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-11",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-11",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-11",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-12",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-12",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-12",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-12",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-12",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-13",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-13",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-13",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-13",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-13",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-14",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-14",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-14",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-14",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-14",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-15",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-15",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-15",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-15",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-15",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-16",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-16",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-16",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-16",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-16",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-17",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-17",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-17",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-17",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-17",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-18",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-18",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-18",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-18",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-18",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-19",
+      "scenario": "normal",
+      "expected_fields": [],
+      "observed_fields": [],
+      "state": "normal",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-19",
+      "scenario": "coolant_rise",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "observed_fields": [
+        "coolant_c"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-19",
+      "scenario": "oil_drop",
+      "expected_fields": [
+        "oil_kgf_cm2"
+      ],
+      "observed_fields": [
+        "oil_kgf_cm2"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-19",
+      "scenario": "vibration_increase",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    },
+    {
+      "id": "operation-evaluation-19",
+      "scenario": "combined",
+      "expected_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "observed_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "state": "inspect",
+      "passed": true
+    }
+  ],
+  "passed": 100,
+  "total": 100,
+  "normal_false_alerts": 0
+}

@@ -1,0 +1,601 @@
+{
+  "id": "random",
+  "title": "랜덤 테스트 · 별도 검증 기록",
+  "role": "held_out_evaluation",
+  "run_id": "4EBCA240-73C0-4FEC-999C-136073E774E8",
+  "recorded_at": "2026-10-10T10:44:27.133Z",
+  "frame_count": 48,
+  "window_s": 2,
+  "recording_elapsed_s": 163,
+  "evaluated_duration_s": 96,
+  "source": "recorded_imu",
+  "scope": "각 10초 자극에서 0.5–8.5초의 2초 창 4개만 재생합니다. 구간 사이의 대기·전이는 미평가입니다.",
+  "alignment": {
+    "scale": 0.9989896662933497,
+    "offset_s": -2.228937997760098,
+    "marker_sensor_s": [
+      2.764399999999995,
+      3.7650000000000006,
+      4.764156
+    ],
+    "method": "Three sync pulses for offset; host/sensor timestamps for scale. No class labels or classification result used."
+  },
+  "quality": {
+    "raw_rows": 61098,
+    "sensor_duration_s": 292.28289,
+    "effective_hz": 209.0337891485882,
+    "missing_sequence_count": 0,
+    "gaps_over_10ms": 0,
+    "window_samples_min": 417,
+    "window_samples_max": 418
+  },
+  "frames": [
+    {
+      "index": 0,
+      "start_s": 10.5,
+      "end_s": 12.5,
+      "samples": 418,
+      "rms_g": 0.20758103458993932,
+      "envelope_cv": 0.014747509871154483,
+      "segment_index": 1,
+      "expected_label": "increased"
+    },
+    {
+      "index": 1,
+      "start_s": 12.5,
+      "end_s": 14.5,
+      "samples": 417,
+      "rms_g": 0.20926805834196613,
+      "envelope_cv": 0.013475613045190049,
+      "segment_index": 1,
+      "expected_label": "increased"
+    },
+    {
+      "index": 2,
+      "start_s": 14.5,
+      "end_s": 16.5,
+      "samples": 418,
+      "rms_g": 0.20937403855533435,
+      "envelope_cv": 0.0140285098597197,
+      "segment_index": 1,
+      "expected_label": "increased"
+    },
+    {
+      "index": 3,
+      "start_s": 16.5,
+      "end_s": 18.5,
+      "samples": 418,
+      "rms_g": 0.20970219910554802,
+      "envelope_cv": 0.014872733912521453,
+      "segment_index": 1,
+      "expected_label": "increased"
+    },
+    {
+      "index": 4,
+      "start_s": 23.5,
+      "end_s": 25.5,
+      "samples": 418,
+      "rms_g": 0.04080813103694009,
+      "envelope_cv": 0.013809487755195965,
+      "segment_index": 2,
+      "expected_label": "baseline"
+    },
+    {
+      "index": 5,
+      "start_s": 25.5,
+      "end_s": 27.5,
+      "samples": 417,
+      "rms_g": 0.04056516516271802,
+      "envelope_cv": 0.014148920514461222,
+      "segment_index": 2,
+      "expected_label": "baseline"
+    },
+    {
+      "index": 6,
+      "start_s": 27.5,
+      "end_s": 29.5,
+      "samples": 418,
+      "rms_g": 0.040542122999803774,
+      "envelope_cv": 0.01495187926794922,
+      "segment_index": 2,
+      "expected_label": "baseline"
+    },
+    {
+      "index": 7,
+      "start_s": 29.5,
+      "end_s": 31.5,
+      "samples": 417,
+      "rms_g": 0.040324553337481014,
+      "envelope_cv": 0.013116295419631408,
+      "segment_index": 2,
+      "expected_label": "baseline"
+    },
+    {
+      "index": 8,
+      "start_s": 36.5,
+      "end_s": 38.5,
+      "samples": 417,
+      "rms_g": 0.0012323750085835824,
+      "envelope_cv": 0.08981447342695006,
+      "segment_index": 3,
+      "expected_label": "idle"
+    },
+    {
+      "index": 9,
+      "start_s": 38.5,
+      "end_s": 40.5,
+      "samples": 418,
+      "rms_g": 0.0012219611529396216,
+      "envelope_cv": 0.09743559441647522,
+      "segment_index": 3,
+      "expected_label": "idle"
+    },
+    {
+      "index": 10,
+      "start_s": 40.5,
+      "end_s": 42.5,
+      "samples": 417,
+      "rms_g": 0.0011690836411533804,
+      "envelope_cv": 0.0848665892962567,
+      "segment_index": 3,
+      "expected_label": "idle"
+    },
+    {
+      "index": 11,
+      "start_s": 42.5,
+      "end_s": 44.5,
+      "samples": 418,
+      "rms_g": 0.0012139521457835538,
+      "envelope_cv": 0.08371095450540919,
+      "segment_index": 3,
+      "expected_label": "idle"
+    },
+    {
+      "index": 12,
+      "start_s": 49.5,
+      "end_s": 51.5,
+      "samples": 418,
+      "rms_g": 0.01723183747041063,
+      "envelope_cv": 1.5616946362113429,
+      "segment_index": 4,
+      "expected_label": "intermittent"
+    },
+    {
+      "index": 13,
+      "start_s": 51.5,
+      "end_s": 53.5,
+      "samples": 418,
+      "rms_g": 0.017276113414625458,
+      "envelope_cv": 1.5937897303488817,
+      "segment_index": 4,
+      "expected_label": "intermittent"
+    },
+    {
+      "index": 14,
+      "start_s": 53.5,
+      "end_s": 55.5,
+      "samples": 417,
+      "rms_g": 0.01737018960035443,
+      "envelope_cv": 1.5934119957739323,
+      "segment_index": 4,
+      "expected_label": "intermittent"
+    },
+    {
+      "index": 15,
+      "start_s": 55.5,
+      "end_s": 57.5,
+      "samples": 418,
+      "rms_g": 0.017191151816183917,
+      "envelope_cv": 1.559581146163813,
+      "segment_index": 4,
+      "expected_label": "intermittent"
+    },
+    {
+      "index": 16,
+      "start_s": 62.5,
+      "end_s": 64.5,
+      "samples": 417,
+      "rms_g": 0.2118665899362464,
+      "envelope_cv": 0.014394501539203398,
+      "segment_index": 5,
+      "expected_label": "increased"
+    },
+    {
+      "index": 17,
+      "start_s": 64.5,
+      "end_s": 66.5,
+      "samples": 418,
+      "rms_g": 0.21128443951701184,
+      "envelope_cv": 0.014450567939367087,
+      "segment_index": 5,
+      "expected_label": "increased"
+    },
+    {
+      "index": 18,
+      "start_s": 66.5,
+      "end_s": 68.5,
+      "samples": 418,
+      "rms_g": 0.21122442337733957,
+      "envelope_cv": 0.014264224900600827,
+      "segment_index": 5,
+      "expected_label": "increased"
+    },
+    {
+      "index": 19,
+      "start_s": 68.5,
+      "end_s": 70.5,
+      "samples": 417,
+      "rms_g": 0.21097345826340544,
+      "envelope_cv": 0.013858894778599069,
+      "segment_index": 5,
+      "expected_label": "increased"
+    },
+    {
+      "index": 20,
+      "start_s": 75.5,
+      "end_s": 77.5,
+      "samples": 417,
+      "rms_g": 0.0012112069091480384,
+      "envelope_cv": 0.12343745924453689,
+      "segment_index": 6,
+      "expected_label": "idle"
+    },
+    {
+      "index": 21,
+      "start_s": 77.5,
+      "end_s": 79.5,
+      "samples": 418,
+      "rms_g": 0.0012379949608121515,
+      "envelope_cv": 0.08319836013672043,
+      "segment_index": 6,
+      "expected_label": "idle"
+    },
+    {
+      "index": 22,
+      "start_s": 79.5,
+      "end_s": 81.5,
+      "samples": 417,
+      "rms_g": 0.0012934609531922827,
+      "envelope_cv": 0.10525656875010973,
+      "segment_index": 6,
+      "expected_label": "idle"
+    },
+    {
+      "index": 23,
+      "start_s": 81.5,
+      "end_s": 83.5,
+      "samples": 418,
+      "rms_g": 0.0012516686125902932,
+      "envelope_cv": 0.08852317073548743,
+      "segment_index": 6,
+      "expected_label": "idle"
+    },
+    {
+      "index": 24,
+      "start_s": 88.5,
+      "end_s": 90.5,
+      "samples": 418,
+      "rms_g": 0.03950599219574077,
+      "envelope_cv": 0.015189941848533764,
+      "segment_index": 7,
+      "expected_label": "baseline"
+    },
+    {
+      "index": 25,
+      "start_s": 90.5,
+      "end_s": 92.5,
+      "samples": 417,
+      "rms_g": 0.039573252003978,
+      "envelope_cv": 0.015049341340230208,
+      "segment_index": 7,
+      "expected_label": "baseline"
+    },
+    {
+      "index": 26,
+      "start_s": 92.5,
+      "end_s": 94.5,
+      "samples": 418,
+      "rms_g": 0.039507825556107684,
+      "envelope_cv": 0.013975204834697988,
+      "segment_index": 7,
+      "expected_label": "baseline"
+    },
+    {
+      "index": 27,
+      "start_s": 94.5,
+      "end_s": 96.5,
+      "samples": 418,
+      "rms_g": 0.03940168543463814,
+      "envelope_cv": 0.013171061775111839,
+      "segment_index": 7,
+      "expected_label": "baseline"
+    },
+    {
+      "index": 28,
+      "start_s": 101.5,
+      "end_s": 103.5,
+      "samples": 417,
+      "rms_g": 0.017192953530921457,
+      "envelope_cv": 1.6417393428797382,
+      "segment_index": 8,
+      "expected_label": "intermittent"
+    },
+    {
+      "index": 29,
+      "start_s": 103.5,
+      "end_s": 105.5,
+      "samples": 418,
+      "rms_g": 0.017093723917716953,
+      "envelope_cv": 1.5318017400353203,
+      "segment_index": 8,
+      "expected_label": "intermittent"
+    },
+    {
+      "index": 30,
+      "start_s": 105.5,
+      "end_s": 107.5,
+      "samples": 418,
+      "rms_g": 0.01704081123422467,
+      "envelope_cv": 1.5764348681250373,
+      "segment_index": 8,
+      "expected_label": "intermittent"
+    },
+    {
+      "index": 31,
+      "start_s": 107.5,
+      "end_s": 109.5,
+      "samples": 417,
+      "rms_g": 0.017149983375080564,
+      "envelope_cv": 1.6291464962958633,
+      "segment_index": 8,
+      "expected_label": "intermittent"
+    },
+    {
+      "index": 32,
+      "start_s": 114.5,
+      "end_s": 116.5,
+      "samples": 417,
+      "rms_g": 0.03829858139728221,
+      "envelope_cv": 0.014310070572874182,
+      "segment_index": 9,
+      "expected_label": "baseline"
+    },
+    {
+      "index": 33,
+      "start_s": 116.5,
+      "end_s": 118.5,
+      "samples": 418,
+      "rms_g": 0.03847644838103768,
+      "envelope_cv": 0.014381646876557876,
+      "segment_index": 9,
+      "expected_label": "baseline"
+    },
+    {
+      "index": 34,
+      "start_s": 118.5,
+      "end_s": 120.5,
+      "samples": 417,
+      "rms_g": 0.03835740206877296,
+      "envelope_cv": 0.0131414569454155,
+      "segment_index": 9,
+      "expected_label": "baseline"
+    },
+    {
+      "index": 35,
+      "start_s": 120.5,
+      "end_s": 122.5,
+      "samples": 418,
+      "rms_g": 0.0383537639675861,
+      "envelope_cv": 0.015207624303557396,
+      "segment_index": 9,
+      "expected_label": "baseline"
+    },
+    {
+      "index": 36,
+      "start_s": 127.5,
+      "end_s": 129.5,
+      "samples": 418,
+      "rms_g": 0.01687321609358623,
+      "envelope_cv": 1.583436878512129,
+      "segment_index": 10,
+      "expected_label": "intermittent"
+    },
+    {
+      "index": 37,
+      "start_s": 129.5,
+      "end_s": 131.5,
+      "samples": 417,
+      "rms_g": 0.01703811580387935,
+      "envelope_cv": 1.6266935168761636,
+      "segment_index": 10,
+      "expected_label": "intermittent"
+    },
+    {
+      "index": 38,
+      "start_s": 131.5,
+      "end_s": 133.5,
+      "samples": 418,
+      "rms_g": 0.01688515314828877,
+      "envelope_cv": 1.553218769591232,
+      "segment_index": 10,
+      "expected_label": "intermittent"
+    },
+    {
+      "index": 39,
+      "start_s": 133.5,
+      "end_s": 135.5,
+      "samples": 418,
+      "rms_g": 0.016821638211239078,
+      "envelope_cv": 1.600903781461009,
+      "segment_index": 10,
+      "expected_label": "intermittent"
+    },
+    {
+      "index": 40,
+      "start_s": 140.5,
+      "end_s": 142.5,
+      "samples": 417,
+      "rms_g": 0.001264883285387465,
+      "envelope_cv": 0.10396492959734027,
+      "segment_index": 11,
+      "expected_label": "idle"
+    },
+    {
+      "index": 41,
+      "start_s": 142.5,
+      "end_s": 144.5,
+      "samples": 418,
+      "rms_g": 0.001193479413140412,
+      "envelope_cv": 0.09353042262719134,
+      "segment_index": 11,
+      "expected_label": "idle"
+    },
+    {
+      "index": 42,
+      "start_s": 144.5,
+      "end_s": 146.5,
+      "samples": 418,
+      "rms_g": 0.0011898351368059806,
+      "envelope_cv": 0.09761941377760443,
+      "segment_index": 11,
+      "expected_label": "idle"
+    },
+    {
+      "index": 43,
+      "start_s": 146.5,
+      "end_s": 148.5,
+      "samples": 417,
+      "rms_g": 0.0012245026090776387,
+      "envelope_cv": 0.0667679259588885,
+      "segment_index": 11,
+      "expected_label": "idle"
+    },
+    {
+      "index": 44,
+      "start_s": 153.5,
+      "end_s": 155.5,
+      "samples": 417,
+      "rms_g": 0.21515406796653355,
+      "envelope_cv": 0.014991075113413304,
+      "segment_index": 12,
+      "expected_label": "increased"
+    },
+    {
+      "index": 45,
+      "start_s": 155.5,
+      "end_s": 157.5,
+      "samples": 418,
+      "rms_g": 0.21347267716847543,
+      "envelope_cv": 0.014300474616080127,
+      "segment_index": 12,
+      "expected_label": "increased"
+    },
+    {
+      "index": 46,
+      "start_s": 157.5,
+      "end_s": 159.5,
+      "samples": 417,
+      "rms_g": 0.2129805679357332,
+      "envelope_cv": 0.01373176660916262,
+      "segment_index": 12,
+      "expected_label": "increased"
+    },
+    {
+      "index": 47,
+      "start_s": 159.5,
+      "end_s": 161.5,
+      "samples": 418,
+      "rms_g": 0.2129837484006395,
+      "envelope_cv": 0.014225404478746363,
+      "segment_index": 12,
+      "expected_label": "increased"
+    }
+  ],
+  "provenance": {
+    "csv": "20261010T104429-70687ed6.csv",
+    "csv_sha256": "13d48102e02e945fd57c0e71caf28372059e6a06f5165594675fa84f65140cc7",
+    "log": "4EBCA240-73C0-4FEC-999C-136073E774E8.json",
+    "log_sha256": "6a04ebc1b085ccf5078edbf947600dbbfc62d48fe83195a04a1ecce1cf4601b7",
+    "zip": "랜덤테스트.zip",
+    "zip_sha256": "b320dca0e2d4ae37b83fa9acb3ed4baab2795390579554c2632274ae5f6fe84f"
+  },
+  "evaluation": {
+    "rms_only": {
+      "correct": 36,
+      "count": 48,
+      "confusion": [
+        [
+          12,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          12
+        ],
+        [
+          0,
+          0,
+          12,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          12
+        ]
+      ],
+      "class_order": [
+        "idle",
+        "baseline",
+        "increased",
+        "intermittent"
+      ],
+      "segment_majority_correct": 9,
+      "segment_count": 12
+    },
+    "rms_and_pattern": {
+      "correct": 48,
+      "count": 48,
+      "confusion": [
+        [
+          12,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          12,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          12,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          12
+        ]
+      ],
+      "class_order": [
+        "idle",
+        "baseline",
+        "increased",
+        "intermittent"
+      ],
+      "segment_majority_correct": 12,
+      "segment_count": 12
+    },
+    "role": "held_out_recording"
+  }
+}

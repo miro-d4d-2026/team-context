@@ -1,0 +1,272 @@
+{
+  "normal": {
+    "id": "current-operation",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-10-11T10:00:00+09:00",
+    "label": "이번 시험 운전",
+    "confirmed_normal": false,
+    "source": "scenario",
+    "context": {
+      "load_pct": 62,
+      "ambient_c": 28.5,
+      "engine_rpm": 1800
+    },
+    "installation_id": "demo-generator",
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "samples": [
+      {
+        "elapsed_s": 0,
+        "coolant_c": 50,
+        "oil_kgf_cm2": 4,
+        "vibration_rms_g": 0.045
+      },
+      {
+        "elapsed_s": 300,
+        "coolant_c": 60,
+        "oil_kgf_cm2": 3.6,
+        "vibration_rms_g": 0.046
+      },
+      {
+        "elapsed_s": 600,
+        "coolant_c": 68,
+        "oil_kgf_cm2": 3.3,
+        "vibration_rms_g": 0.045
+      },
+      {
+        "elapsed_s": 900,
+        "coolant_c": 73,
+        "oil_kgf_cm2": 3.2,
+        "vibration_rms_g": 0.044
+      },
+      {
+        "elapsed_s": 1200,
+        "coolant_c": 78,
+        "oil_kgf_cm2": 3.2,
+        "vibration_rms_g": 0.045
+      }
+    ],
+    "provenance": "직접 수정하는 모의 운전 값. 실측 발전기 데이터가 아님."
+  },
+  "coolant_rise": {
+    "id": "current-operation",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-10-11T10:00:00+09:00",
+    "label": "5–10분 수온 급상승",
+    "confirmed_normal": false,
+    "source": "scenario",
+    "context": {
+      "load_pct": 62,
+      "ambient_c": 28.5,
+      "engine_rpm": 1800
+    },
+    "installation_id": "demo-generator",
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "samples": [
+      {
+        "elapsed_s": 0,
+        "coolant_c": 50,
+        "oil_kgf_cm2": 4,
+        "vibration_rms_g": 0.045
+      },
+      {
+        "elapsed_s": 300,
+        "coolant_c": 60,
+        "oil_kgf_cm2": 3.6,
+        "vibration_rms_g": 0.046
+      },
+      {
+        "elapsed_s": 600,
+        "coolant_c": 80,
+        "oil_kgf_cm2": 3.3,
+        "vibration_rms_g": 0.045
+      },
+      {
+        "elapsed_s": 900,
+        "coolant_c": 85,
+        "oil_kgf_cm2": 3.2,
+        "vibration_rms_g": 0.044
+      },
+      {
+        "elapsed_s": 1200,
+        "coolant_c": 90,
+        "oil_kgf_cm2": 3.2,
+        "vibration_rms_g": 0.045
+      }
+    ],
+    "provenance": "직접 수정하는 모의 운전 값. 실측 발전기 데이터가 아님."
+  },
+  "oil_drop": {
+    "id": "current-operation",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-10-11T10:00:00+09:00",
+    "label": "10–15분 유압 급락",
+    "confirmed_normal": false,
+    "source": "scenario",
+    "context": {
+      "load_pct": 62,
+      "ambient_c": 28.5,
+      "engine_rpm": 1800
+    },
+    "installation_id": "demo-generator",
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "samples": [
+      {
+        "elapsed_s": 0,
+        "coolant_c": 50,
+        "oil_kgf_cm2": 4,
+        "vibration_rms_g": 0.045
+      },
+      {
+        "elapsed_s": 300,
+        "coolant_c": 60,
+        "oil_kgf_cm2": 3.6,
+        "vibration_rms_g": 0.046
+      },
+      {
+        "elapsed_s": 600,
+        "coolant_c": 68,
+        "oil_kgf_cm2": 3.3,
+        "vibration_rms_g": 0.045
+      },
+      {
+        "elapsed_s": 900,
+        "coolant_c": 73,
+        "oil_kgf_cm2": 2.3,
+        "vibration_rms_g": 0.044
+      },
+      {
+        "elapsed_s": 1200,
+        "coolant_c": 78,
+        "oil_kgf_cm2": 2.2,
+        "vibration_rms_g": 0.045
+      }
+    ],
+    "provenance": "직접 수정하는 모의 운전 값. 실측 발전기 데이터가 아님."
+  },
+  "vibration_increase": {
+    "id": "current-operation",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-10-11T10:00:00+09:00",
+    "label": "10–15분 진동 증가",
+    "confirmed_normal": false,
+    "source": "scenario",
+    "context": {
+      "load_pct": 62,
+      "ambient_c": 28.5,
+      "engine_rpm": 1800
+    },
+    "installation_id": "demo-generator",
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "samples": [
+      {
+        "elapsed_s": 0,
+        "coolant_c": 50,
+        "oil_kgf_cm2": 4,
+        "vibration_rms_g": 0.045
+      },
+      {
+        "elapsed_s": 300,
+        "coolant_c": 60,
+        "oil_kgf_cm2": 3.6,
+        "vibration_rms_g": 0.046
+      },
+      {
+        "elapsed_s": 600,
+        "coolant_c": 68,
+        "oil_kgf_cm2": 3.3,
+        "vibration_rms_g": 0.045
+      },
+      {
+        "elapsed_s": 900,
+        "coolant_c": 73,
+        "oil_kgf_cm2": 3.2,
+        "vibration_rms_g": 0.09
+      },
+      {
+        "elapsed_s": 1200,
+        "coolant_c": 78,
+        "oil_kgf_cm2": 3.2,
+        "vibration_rms_g": 0.09
+      }
+    ],
+    "provenance": "직접 수정하는 모의 운전 값. 실측 발전기 데이터가 아님."
+  },
+  "combined": {
+    "id": "current-operation",
+    "equipment_id": "GEN-10K-001",
+    "inspected_at": "2026-10-11T10:00:00+09:00",
+    "label": "복합 상태 변화",
+    "confirmed_normal": false,
+    "source": "scenario",
+    "context": {
+      "load_pct": 62,
+      "ambient_c": 28.5,
+      "engine_rpm": 1800
+    },
+    "installation_id": "demo-generator",
+    "acquisition": {
+      "sample_rate_hz": 833,
+      "window_s": 2,
+      "dc_removed": true,
+      "feature_version": "rms-ac-3axis/1",
+      "accel_range_g": 8
+    },
+    "samples": [
+      {
+        "elapsed_s": 0,
+        "coolant_c": 50,
+        "oil_kgf_cm2": 4,
+        "vibration_rms_g": 0.045
+      },
+      {
+        "elapsed_s": 300,
+        "coolant_c": 60,
+        "oil_kgf_cm2": 3.6,
+        "vibration_rms_g": 0.046
+      },
+      {
+        "elapsed_s": 600,
+        "coolant_c": 80,
+        "oil_kgf_cm2": 3.3,
+        "vibration_rms_g": 0.045
+      },
+      {
+        "elapsed_s": 900,
+        "coolant_c": 85,
+        "oil_kgf_cm2": 2.3,
+        "vibration_rms_g": 0.09
+      },
+      {
+        "elapsed_s": 1200,
+        "coolant_c": 90,
+        "oil_kgf_cm2": 2.2,
+        "vibration_rms_g": 0.09
+      }
+    ],
+    "provenance": "직접 수정하는 모의 운전 값. 실측 발전기 데이터가 아님."
+  }
+}

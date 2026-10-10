@@ -1,0 +1,100 @@
+{
+  "schema_version": "genguard.vibration-fixture-model/1",
+  "model_id": "iphone-imu-standardized-nearest-centroid/1",
+  "training_run_id": "399032D5-A905-4B15-B7C5-F5367DEFAFAA",
+  "training_recordings": 1,
+  "training_samples": 48,
+  "held_out_run_id": "4EBCA240-73C0-4FEC-999C-136073E774E8",
+  "models": {
+    "rms_only": {
+      "features": [
+        "log_rms"
+      ],
+      "mean": [
+        -3.546137706346874
+      ],
+      "std": [
+        1.6796590467588324
+      ],
+      "classes": [
+        "idle",
+        "baseline",
+        "increased",
+        "intermittent"
+      ],
+      "centroids": [
+        [
+          -1.5803971708478262
+        ],
+        [
+          0.4255867750690802
+        ],
+        [
+          1.1305051587241872
+        ],
+        [
+          0.024305237054558494
+        ]
+      ]
+    },
+    "rms_and_pattern": {
+      "features": [
+        "log_rms",
+        "envelope_cv"
+      ],
+      "mean": [
+        -3.546137706346874,
+        0.4157472961577238
+      ],
+      "std": [
+        1.6796590467588324,
+        0.597225191149049
+      ],
+      "classes": [
+        "idle",
+        "baseline",
+        "increased",
+        "intermittent"
+      ],
+      "centroids": [
+        [
+          -1.5803971708478262,
+          -0.3663848545258275
+        ],
+        [
+          0.4255867750690803,
+          -0.6676646885573826
+        ],
+        [
+          1.130505158724187,
+          -0.6718269787183663
+        ],
+        [
+          0.024305237054558494,
+          1.7058765218015763
+        ]
+      ]
+    }
+  },
+  "preprocessing": {
+    "window_s": 2,
+    "axis_demean_per_window": true,
+    "rms": "sqrt(mean(sum((a-mean(a,axis=0))**2,axis=1)))",
+    "log_rms": "natural log, floor1e-9",
+    "envelope_cv": "population std/mean of 100ms axis-demeaned RMS bins, minimum5samples perbin",
+    "scaling": "(feature-mean)/std, fitted on this training recording only",
+    "decision": "nearest squared Euclidean centroid; no calibrated confidence or unknown rejection"
+  },
+  "baseline_training_rms_median_g": 0.05846554300842221,
+  "reproduction_max_parameter_error": 2.220446049250313e-16,
+  "frozen_source_sha256": "43590d31f824e1bea4b795d007a88d3a27cefd8dae76f9d96d305da27b524e19",
+  "original_extractor_sha256": "bf6ccbcd5e4cc186610894f7544defbf406d395a762bfe5d2be4cdddf6ac8c52",
+  "trained_with_test_data": false,
+  "limits": [
+    "아이폰 진동 실험이며 실제 발전기의 고장 정답이 아닙니다.",
+    "별도 검증 기록은 1개이며, 48개 평가 창은 서로 연관된 데이터입니다.",
+    "자극의 시작·종료를 아는 2초 구간만 평가했습니다. 전이·대기 구간은 포함하지 않았습니다.",
+    "네 가지 중 가장 가까운 패턴을 고릅니다. 미지의 진동 거부나 신뢰도 보정은 없습니다.",
+    "모델 실행은 Mac에서 검증했습니다. UNO Q의 실제 실행 성능과 새로운 부착 조건은 별도 검증이 필요합니다."
+  ]
+}

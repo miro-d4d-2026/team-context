@@ -1,0 +1,155 @@
+{
+  "schema_version": "genguard.edge.profile/1",
+  "profile_id": "army10kw-208v-normal-scenario-v1",
+  "asset_id": "GEN-10K-001",
+  "data_domain": "scenario",
+  "description": "고정 README 10kW·208V의 전체 모의 정상 모델 설정. 학습된 모델 파일이 아님.",
+  "phases": [
+    "running"
+  ],
+  "context": [
+    "load_pct",
+    "ambient_c"
+  ],
+  "context_tolerance": {
+    "load_pct": 5,
+    "ambient_c": 3
+  },
+  "targets": [
+    "engine_rpm",
+    "coolant_c",
+    "oil_bar",
+    "voltage_v",
+    "vibration_rms_g",
+    "envelope_cv"
+  ],
+  "max_window_gap_s": 5,
+  "fields": {
+    "load_pct": {
+      "unit": "%",
+      "max_age_s": 5,
+      "valid_min": 0,
+      "valid_max": 150,
+      "allowed_sources": [
+        "scenario"
+      ]
+    },
+    "ambient_c": {
+      "unit": "degC",
+      "max_age_s": 5,
+      "valid_min": -50,
+      "valid_max": 100,
+      "allowed_sources": [
+        "scenario"
+      ]
+    },
+    "engine_rpm": {
+      "unit": "rpm",
+      "max_age_s": 5,
+      "valid_min": 0,
+      "valid_max": 10000,
+      "scale_floor": 0.5,
+      "checks": [
+        "부하 변화와 RPM 수신 상태를 확인하세요.",
+        "연료 공급 및 조속기 점검 필요성을 검토하세요."
+      ],
+      "allowed_sources": [
+        "scenario"
+      ]
+    },
+    "coolant_c": {
+      "unit": "degC",
+      "max_age_s": 5,
+      "valid_min": -50,
+      "valid_max": 200,
+      "scale_floor": 0.2,
+      "checks": [
+        "냉각수량·누수·라디에이터 및 온도 센서를 확인하세요."
+      ],
+      "allowed_sources": [
+        "scenario"
+      ]
+    },
+    "oil_bar": {
+      "unit": "bar",
+      "max_age_s": 5,
+      "valid_min": 0,
+      "valid_max": 20,
+      "scale_floor": 0.01,
+      "checks": [
+        "윤활유량·누유·필터 및 압력 센서를 확인하세요. 압력만으로 오일 부족을 확정하지 않습니다."
+      ],
+      "allowed_sources": [
+        "scenario"
+      ]
+    },
+    "voltage_v": {
+      "unit": "V",
+      "max_age_s": 5,
+      "valid_min": 0,
+      "valid_max": 1000,
+      "scale_floor": 0.2,
+      "checks": [
+        "부하 변동·결선·전압 측정 상태와 조정장치를 확인하세요."
+      ],
+      "allowed_sources": [
+        "scenario"
+      ],
+      "measurement_point": "line_to_line",
+      "nominal_reference_v": 208
+    },
+    "vibration_rms_g": {
+      "unit": "g",
+      "max_age_s": 5,
+      "valid_min": 0,
+      "valid_max": 30,
+      "transform": "log",
+      "scale_floor": 0.03,
+      "checks": [
+        "IMU 부착 상태와 장비 고정 상태를 확인하세요. 진동만으로 결함 부위를 확정하지 않습니다."
+      ],
+      "allowed_sources": [
+        "scenario"
+      ]
+    },
+    "envelope_cv": {
+      "unit": "1",
+      "max_age_s": 5,
+      "valid_min": 0,
+      "valid_max": 100,
+      "scale_floor": 0.015,
+      "checks": [
+        "간헐 충격·외부 접촉·운전 전환 여부를 확인하세요."
+      ],
+      "allowed_sources": [
+        "scenario"
+      ]
+    }
+  },
+  "model": {
+    "ridge_alpha": 1.0,
+    "covariance_shrinkage": 0.15,
+    "calibration_quantile": 0.99,
+    "threshold_margin": 1.1,
+    "minimum_score_threshold": 2.0,
+    "persistence_windows": 3,
+    "min_rows_per_session": 30,
+    "max_rows_per_session": 2000,
+    "max_sessions_per_training": 30,
+    "max_invalid_fraction": 0.05,
+    "max_validation_alert_fraction": 0.05
+  },
+  "parameter_provenance": "모델 하이퍼파라미터·입력 측정범위·품질 나이·지속시간은 모두 개발 가정. 제조사 보호 한계값 아님. 실제 장비 검증 후 별도 버전으로 변경.",
+  "manufacturer_protection": "본 패키지는 자동 정지/기존 보호제어를 대체하지 않는다. 제조사 한계 규칙은 병렬 적용한다.",
+  "context_design": "기본 v1은 running 안정운전만 분석한다. elapsed_s는 수집 세션 시간이라 실제 시동 후 경과 시간을 보장하지 않아 모델 입력에서 제외한다. 시동/예열 모델은 해당 단계와 실제 엔진 경과 시간을 별도 수집하여 새 프로필로 검증해야 한다.",
+  "display_profile_id": "army-10kw-208v-demo",
+  "rating_reference": {
+    "rated_kw": 10,
+    "voltage_ll_v": 208,
+    "voltage_point": "L1-L2",
+    "rated_hz": 60,
+    "rated_rpm": 1800,
+    "power_factor_demo": 0.8
+  },
+  "freeze_note": "계산 전류/출력 및 RPM에서 파생한 주파수는 학습 타깃에서 제외. 208V 기준의 독립 정상 세션으로 재학습 필요. 이전 모델/DB 재사용 금지."
+}

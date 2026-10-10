@@ -1,0 +1,1136 @@
+{
+  "schema_version": "genguard.inspection-evaluation/1",
+  "data_source": "synthetic",
+  "training": {
+    "whole_runs": 8,
+    "windows": 240,
+    "seeds": [
+      1100,
+      1107
+    ]
+  },
+  "evaluation": {
+    "whole_runs": 120,
+    "seeds": {
+      "normal": [
+        3000,
+        3019
+      ],
+      "condition_change": [
+        3100,
+        3119
+      ],
+      "coolant_rise": [
+        3200,
+        3219
+      ],
+      "oil_drop": [
+        3300,
+        3319
+      ],
+      "vibration_increase": [
+        3400,
+        3419
+      ],
+      "combined": [
+        3500,
+        3519
+      ]
+    },
+    "split": "Complete unseen runs; no shuffled-row split, no test rows used for fitting."
+  },
+  "policy_frozen_before_evaluation": true,
+  "summary": {
+    "normal": {
+      "runs": 20,
+      "inspect": 0,
+      "normal": 20,
+      "unavailable": 0,
+      "exact_target_match": 20
+    },
+    "condition_change": {
+      "runs": 20,
+      "inspect": 0,
+      "normal": 20,
+      "unavailable": 0,
+      "exact_target_match": 20
+    },
+    "coolant_rise": {
+      "runs": 20,
+      "inspect": 20,
+      "normal": 0,
+      "unavailable": 0,
+      "exact_target_match": 20
+    },
+    "oil_drop": {
+      "runs": 20,
+      "inspect": 20,
+      "normal": 0,
+      "unavailable": 0,
+      "exact_target_match": 20
+    },
+    "vibration_increase": {
+      "runs": 20,
+      "inspect": 20,
+      "normal": 0,
+      "unavailable": 0,
+      "exact_target_match": 20
+    },
+    "combined": {
+      "runs": 20,
+      "inspect": 20,
+      "normal": 0,
+      "unavailable": 0,
+      "exact_target_match": 20
+    }
+  },
+  "runs": [
+    {
+      "id": "inspection-heldout-normal-0",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 0.035929091289943926,
+      "coolant_adjusted_delta": 0.040397260679682745
+    },
+    {
+      "id": "inspection-heldout-normal-1",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 0.06802988739413252,
+      "coolant_adjusted_delta": 0.06697672057956083
+    },
+    {
+      "id": "inspection-heldout-normal-2",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 0.20692674708104164,
+      "coolant_adjusted_delta": 0.20670083697972075
+    },
+    {
+      "id": "inspection-heldout-normal-3",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": -0.07920658776794198,
+      "coolant_adjusted_delta": -0.08029258544785023
+    },
+    {
+      "id": "inspection-heldout-normal-4",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 0.06105035245599311,
+      "coolant_adjusted_delta": 0.05939182497293416
+    },
+    {
+      "id": "inspection-heldout-normal-5",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 0.07972425303158559,
+      "coolant_adjusted_delta": 0.08449806238593283
+    },
+    {
+      "id": "inspection-heldout-normal-6",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 0.11231091575125163,
+      "coolant_adjusted_delta": 0.10667347461179588
+    },
+    {
+      "id": "inspection-heldout-normal-7",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 0.032900055162684794,
+      "coolant_adjusted_delta": 0.036792679229492364
+    },
+    {
+      "id": "inspection-heldout-normal-8",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 0.11984520782844754,
+      "coolant_adjusted_delta": 0.12479416178496194
+    },
+    {
+      "id": "inspection-heldout-normal-9",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 0.002271190982057192,
+      "coolant_adjusted_delta": 0.0061772423694606005
+    },
+    {
+      "id": "inspection-heldout-normal-10",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": -0.017958583663144623,
+      "coolant_adjusted_delta": -0.008688226188979797
+    },
+    {
+      "id": "inspection-heldout-normal-11",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 0.11157169553395363,
+      "coolant_adjusted_delta": 0.11146028189438084
+    },
+    {
+      "id": "inspection-heldout-normal-12",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 0.10570572261632094,
+      "coolant_adjusted_delta": 0.11109047533085459
+    },
+    {
+      "id": "inspection-heldout-normal-13",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": -0.06970664414909322,
+      "coolant_adjusted_delta": -0.059864051473994095
+    },
+    {
+      "id": "inspection-heldout-normal-14",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 0.28765681391269027,
+      "coolant_adjusted_delta": 0.29079205263836627
+    },
+    {
+      "id": "inspection-heldout-normal-15",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 0.07700674295959686,
+      "coolant_adjusted_delta": 0.07609418205362317
+    },
+    {
+      "id": "inspection-heldout-normal-16",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 0.09214573764570844,
+      "coolant_adjusted_delta": 0.10258727918110822
+    },
+    {
+      "id": "inspection-heldout-normal-17",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 0.09636439306358113,
+      "coolant_adjusted_delta": 0.08443544182256346
+    },
+    {
+      "id": "inspection-heldout-normal-18",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 0.032628085931179385,
+      "coolant_adjusted_delta": 0.023213387122083873
+    },
+    {
+      "id": "inspection-heldout-normal-19",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": -0.03775860286491195,
+      "coolant_adjusted_delta": -0.03923003472729647
+    },
+    {
+      "id": "inspection-heldout-condition_change-0",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 1.873048437739456,
+      "coolant_adjusted_delta": 0.43460527598554677
+    },
+    {
+      "id": "inspection-heldout-condition_change-1",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 2.1816203231985014,
+      "coolant_adjusted_delta": 0.7462625245595262
+    },
+    {
+      "id": "inspection-heldout-condition_change-2",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 1.9605521464130504,
+      "coolant_adjusted_delta": 0.5282359789628543
+    },
+    {
+      "id": "inspection-heldout-condition_change-3",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 1.424185101792915,
+      "coolant_adjusted_delta": -0.012578532987546964
+    },
+    {
+      "id": "inspection-heldout-condition_change-4",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 2.277772781519971,
+      "coolant_adjusted_delta": 0.8567834079295551
+    },
+    {
+      "id": "inspection-heldout-condition_change-5",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 2.1277654306608866,
+      "coolant_adjusted_delta": 0.6657555057106777
+    },
+    {
+      "id": "inspection-heldout-condition_change-6",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 2.202416268497103,
+      "coolant_adjusted_delta": 0.7697464915268455
+    },
+    {
+      "id": "inspection-heldout-condition_change-7",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 2.2165116737257904,
+      "coolant_adjusted_delta": 0.7748637396476425
+    },
+    {
+      "id": "inspection-heldout-condition_change-8",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 2.0387473772382236,
+      "coolant_adjusted_delta": 0.5992238427894705
+    },
+    {
+      "id": "inspection-heldout-condition_change-9",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 2.270513368071107,
+      "coolant_adjusted_delta": 0.8427378378265047
+    },
+    {
+      "id": "inspection-heldout-condition_change-10",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 2.1457685566141436,
+      "coolant_adjusted_delta": 0.7085796121349546
+    },
+    {
+      "id": "inspection-heldout-condition_change-11",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 2.136910537898828,
+      "coolant_adjusted_delta": 0.6901685674513374
+    },
+    {
+      "id": "inspection-heldout-condition_change-12",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 2.3278529097773912,
+      "coolant_adjusted_delta": 0.8958486334687024
+    },
+    {
+      "id": "inspection-heldout-condition_change-13",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 2.2780443832965886,
+      "coolant_adjusted_delta": 0.8431821161351394
+    },
+    {
+      "id": "inspection-heldout-condition_change-14",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 2.1458370708953822,
+      "coolant_adjusted_delta": 0.7092586121131319
+    },
+    {
+      "id": "inspection-heldout-condition_change-15",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 2.3117951063512976,
+      "coolant_adjusted_delta": 0.8823269821781565
+    },
+    {
+      "id": "inspection-heldout-condition_change-16",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 2.004483802208796,
+      "coolant_adjusted_delta": 0.5619902805429859
+    },
+    {
+      "id": "inspection-heldout-condition_change-17",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 2.0645774057389588,
+      "coolant_adjusted_delta": 0.6396313799595958
+    },
+    {
+      "id": "inspection-heldout-condition_change-18",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 2.585726142218846,
+      "coolant_adjusted_delta": 1.1440273025343828
+    },
+    {
+      "id": "inspection-heldout-condition_change-19",
+      "state": "normal",
+      "flagged_fields": [],
+      "coolant_raw_delta": 2.274466331296182,
+      "coolant_adjusted_delta": 0.8366602841628321
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-0",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 6.898821289454446,
+      "coolant_adjusted_delta": 6.908540361913239
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-1",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 7.13706206482766,
+      "coolant_adjusted_delta": 7.147780658997604
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-2",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 7.052804581215909,
+      "coolant_adjusted_delta": 7.041994212354808
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-3",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 7.209103621164516,
+      "coolant_adjusted_delta": 7.211496730134854
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-4",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 7.397690363052675,
+      "coolant_adjusted_delta": 7.392784836326584
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-5",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 7.278730099295117,
+      "coolant_adjusted_delta": 7.281599798598705
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-6",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 7.1245597993338095,
+      "coolant_adjusted_delta": 7.115262634583601
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-7",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 7.187092445273393,
+      "coolant_adjusted_delta": 7.182692061620088
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-8",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 7.067266935303877,
+      "coolant_adjusted_delta": 7.067706467323447
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-9",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 7.247248977679149,
+      "coolant_adjusted_delta": 7.247969239038781
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-10",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 7.1185359777681185,
+      "coolant_adjusted_delta": 7.120135855109353
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-11",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 7.213041224933875,
+      "coolant_adjusted_delta": 7.2118857843299935
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-12",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 7.151024934417009,
+      "coolant_adjusted_delta": 7.155028615805577
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-13",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 6.95094853254588,
+      "coolant_adjusted_delta": 6.957749123391935
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-14",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 7.099799889153402,
+      "coolant_adjusted_delta": 7.104185996931221
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-15",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 7.3911638606640935,
+      "coolant_adjusted_delta": 7.401362757566574
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-16",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 7.322276281818347,
+      "coolant_adjusted_delta": 7.322262047400287
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-17",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 7.061878019129935,
+      "coolant_adjusted_delta": 7.062721882119604
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-18",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 7.347639819489444,
+      "coolant_adjusted_delta": 7.3487929108840575
+    },
+    {
+      "id": "inspection-heldout-coolant_rise-19",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c"
+      ],
+      "coolant_raw_delta": 6.757940688168475,
+      "coolant_adjusted_delta": 6.756541130135602
+    },
+    {
+      "id": "inspection-heldout-oil_drop-0",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": -0.14545649688207618,
+      "coolant_adjusted_delta": -0.15063382978009088
+    },
+    {
+      "id": "inspection-heldout-oil_drop-1",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": 0.1410933859623924,
+      "coolant_adjusted_delta": 0.14364650653872957
+    },
+    {
+      "id": "inspection-heldout-oil_drop-2",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": 0.20294327929795486,
+      "coolant_adjusted_delta": 0.20577468400732357
+    },
+    {
+      "id": "inspection-heldout-oil_drop-3",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": 0.08965133196412012,
+      "coolant_adjusted_delta": 0.10035896419178414
+    },
+    {
+      "id": "inspection-heldout-oil_drop-4",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": 0.22342768693609116,
+      "coolant_adjusted_delta": 0.22300472962947993
+    },
+    {
+      "id": "inspection-heldout-oil_drop-5",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": -0.11058562427714946,
+      "coolant_adjusted_delta": -0.12171340394799302
+    },
+    {
+      "id": "inspection-heldout-oil_drop-6",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": 0.07034137869345614,
+      "coolant_adjusted_delta": 0.062259389530211706
+    },
+    {
+      "id": "inspection-heldout-oil_drop-7",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": 0.02989676239229766,
+      "coolant_adjusted_delta": 0.027273873883487454
+    },
+    {
+      "id": "inspection-heldout-oil_drop-8",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": 0.07708320374275957,
+      "coolant_adjusted_delta": 0.07267287713310111
+    },
+    {
+      "id": "inspection-heldout-oil_drop-9",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": 0.05643871774488218,
+      "coolant_adjusted_delta": 0.06965890904086791
+    },
+    {
+      "id": "inspection-heldout-oil_drop-10",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": -0.08629488027678178,
+      "coolant_adjusted_delta": -0.09128119486123865
+    },
+    {
+      "id": "inspection-heldout-oil_drop-11",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": 0.17265291154997442,
+      "coolant_adjusted_delta": 0.18272763853619267
+    },
+    {
+      "id": "inspection-heldout-oil_drop-12",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": 0.24535973880057327,
+      "coolant_adjusted_delta": 0.24367363112254736
+    },
+    {
+      "id": "inspection-heldout-oil_drop-13",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": -0.162020014571155,
+      "coolant_adjusted_delta": -0.1643439228007253
+    },
+    {
+      "id": "inspection-heldout-oil_drop-14",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": 0.033744473881966996,
+      "coolant_adjusted_delta": 0.0336793864807845
+    },
+    {
+      "id": "inspection-heldout-oil_drop-15",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": 0.1641005544032481,
+      "coolant_adjusted_delta": 0.1627196717137167
+    },
+    {
+      "id": "inspection-heldout-oil_drop-16",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": 0.12841175163676155,
+      "coolant_adjusted_delta": 0.13182550093213763
+    },
+    {
+      "id": "inspection-heldout-oil_drop-17",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": 0.057684615305362286,
+      "coolant_adjusted_delta": 0.06011155003817237
+    },
+    {
+      "id": "inspection-heldout-oil_drop-18",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": 0.03906771634034101,
+      "coolant_adjusted_delta": 0.03650080102119091
+    },
+    {
+      "id": "inspection-heldout-oil_drop-19",
+      "state": "inspect",
+      "flagged_fields": [
+        "oil_kgf_cm2"
+      ],
+      "coolant_raw_delta": 0.2796043737796623,
+      "coolant_adjusted_delta": 0.27548200059092665
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-0",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 0.3612375320755632,
+      "coolant_adjusted_delta": 0.3569480567939962
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-1",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 0.30292565915806335,
+      "coolant_adjusted_delta": 0.30055282993500043
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-2",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 0.17826541924148387,
+      "coolant_adjusted_delta": 0.18636244577204764
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-3",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 0.407245859733365,
+      "coolant_adjusted_delta": 0.4034959842856978
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-4",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 0.2337050914458132,
+      "coolant_adjusted_delta": 0.23974540667460076
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-5",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 0.2867494270041817,
+      "coolant_adjusted_delta": 0.29522427960304753
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-6",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 0.10114372422557949,
+      "coolant_adjusted_delta": 0.09583590326739966
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-7",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 0.207397389174929,
+      "coolant_adjusted_delta": 0.21444808530212356
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-8",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 0.15183672151694338,
+      "coolant_adjusted_delta": 0.15750300842142906
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-9",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 0.20176265275830474,
+      "coolant_adjusted_delta": 0.1955378972324553
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-10",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 0.37031184702830444,
+      "coolant_adjusted_delta": 0.35987097764612486
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-11",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 0.22918176588130734,
+      "coolant_adjusted_delta": 0.22252378847662158
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-12",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 0.07536182221805632,
+      "coolant_adjusted_delta": 0.07662446411350743
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-13",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 0.37184553189386804,
+      "coolant_adjusted_delta": 0.36517053876934824
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-14",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 0.09161516861908581,
+      "coolant_adjusted_delta": 0.08849661608324766
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-15",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 0.04731543442974839,
+      "coolant_adjusted_delta": 0.05654756635918545
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-16",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": -0.12127482404575574,
+      "coolant_adjusted_delta": -0.12088478896831134
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-17",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 0.5014793734960961,
+      "coolant_adjusted_delta": 0.49887338086521993
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-18",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 0.36083831900880625,
+      "coolant_adjusted_delta": 0.36317865867366095
+    },
+    {
+      "id": "inspection-heldout-vibration_increase-19",
+      "state": "inspect",
+      "flagged_fields": [
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 0.22447479267074755,
+      "coolant_adjusted_delta": 0.23297395967323098
+    },
+    {
+      "id": "inspection-heldout-combined-0",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 6.937375367345368,
+      "coolant_adjusted_delta": 6.926789824550909
+    },
+    {
+      "id": "inspection-heldout-combined-1",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 7.179985454793822,
+      "coolant_adjusted_delta": 7.1793101665762435
+    },
+    {
+      "id": "inspection-heldout-combined-2",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 7.124664123049399,
+      "coolant_adjusted_delta": 7.128299793255408
+    },
+    {
+      "id": "inspection-heldout-combined-3",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 7.310019083972961,
+      "coolant_adjusted_delta": 7.317575992012451
+    },
+    {
+      "id": "inspection-heldout-combined-4",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 7.174431299897307,
+      "coolant_adjusted_delta": 7.170864011289524
+    },
+    {
+      "id": "inspection-heldout-combined-5",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 6.799898324601358,
+      "coolant_adjusted_delta": 6.793418084707923
+    },
+    {
+      "id": "inspection-heldout-combined-6",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 7.118630808611314,
+      "coolant_adjusted_delta": 7.116454514584973
+    },
+    {
+      "id": "inspection-heldout-combined-7",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 7.2863026867797345,
+      "coolant_adjusted_delta": 7.293792065053481
+    },
+    {
+      "id": "inspection-heldout-combined-8",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 7.460033727129044,
+      "coolant_adjusted_delta": 7.44790015718408
+    },
+    {
+      "id": "inspection-heldout-combined-9",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 7.003486787105217,
+      "coolant_adjusted_delta": 7.002995808094141
+    },
+    {
+      "id": "inspection-heldout-combined-10",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 7.072484106242584,
+      "coolant_adjusted_delta": 7.075029542741959
+    },
+    {
+      "id": "inspection-heldout-combined-11",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 7.34076356467439,
+      "coolant_adjusted_delta": 7.3279117511534935
+    },
+    {
+      "id": "inspection-heldout-combined-12",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 6.892672135108981,
+      "coolant_adjusted_delta": 6.900425565566849
+    },
+    {
+      "id": "inspection-heldout-combined-13",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 6.907756038937777,
+      "coolant_adjusted_delta": 6.912088606160452
+    },
+    {
+      "id": "inspection-heldout-combined-14",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 7.225450005939649,
+      "coolant_adjusted_delta": 7.2249675196375875
+    },
+    {
+      "id": "inspection-heldout-combined-15",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 6.88446268117454,
+      "coolant_adjusted_delta": 6.885805825248539
+    },
+    {
+      "id": "inspection-heldout-combined-16",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 7.025307453275559,
+      "coolant_adjusted_delta": 7.0309818585336785
+    },
+    {
+      "id": "inspection-heldout-combined-17",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 6.972590997958264,
+      "coolant_adjusted_delta": 6.957465988342577
+    },
+    {
+      "id": "inspection-heldout-combined-18",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 7.224064120549997,
+      "coolant_adjusted_delta": 7.231505325328513
+    },
+    {
+      "id": "inspection-heldout-combined-19",
+      "state": "inspect",
+      "flagged_fields": [
+        "coolant_c",
+        "oil_kgf_cm2",
+        "vibration_rms_g"
+      ],
+      "coolant_raw_delta": 7.203752490076113,
+      "coolant_adjusted_delta": 7.205942506014381
+    }
+  ],
+  "limitations": [
+    "The same synthetic equation family creates training and evaluation; no generator validation.",
+    "Each test record is a 30-window mean. Single-window real-time noise is covered only by targeted tests, not this performance table.",
+    "Demonstration inspection thresholds are not OEM protection limits.",
+    "Physical IMU plus simulated generator context is excluded from contextual vibration fitting.",
+    "No failure timing, remaining life, or fault-cause classification is measured."
+  ]
+}

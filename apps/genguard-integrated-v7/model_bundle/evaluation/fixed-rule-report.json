@@ -1,0 +1,1186 @@
+{
+  "schema_version": "genguard.frozen-fixed-rule-evaluation/1",
+  "status": "passed_fixed_rule_checks",
+  "scope": "Fixed-rule comparator only, using the same 36 held-out synthetic normal/injection runs. Quality tests are excluded. This does not change or replace the strict model evaluation result.",
+  "profile_id": "army-10kw-208v-demo",
+  "comparator": {
+    "engine": "rules/engine.mjs",
+    "pattern_baseline_passed": false,
+    "pattern_change_counted": false,
+    "overall_engine_status_used": false,
+    "sample_interval_s": 2,
+    "supplemented_fields": [
+      "frequency_hz",
+      "battery_v",
+      "fuel_pct",
+      "pf"
+    ],
+    "supplemental_data": "Unmodified makeScenario(normal) defaults, all synthetic. Frequency is 60Hz rather than an independently measured channel.",
+    "model_to_rule_unit_conversion": {
+      "oil_bar": "oil_kgf_cm2 = oil_bar / 0.980665",
+      "voltage_v": "voltage_ll_v = voltage_v, line-to-line",
+      "envelope_cv": "unit 1 becomes ratio"
+    }
+  },
+  "original_model_evaluation": {
+    "sha256": "8aa33c2315cb69c23ac6368b5f1f708e83f2a48b682a2853211158bb293d4bd1",
+    "status": "failed_declared_synthetic_tests",
+    "untouched": true
+  },
+  "checks": {
+    "expected_run_counts": true,
+    "normal_fixed_alarm_free": true,
+    "joint_inside_limits_fixed_alarm_free": true,
+    "no_fixed_alarms_before_injection": true,
+    "every_injection_evidence_includes_affected_fields": true
+  },
+  "normal_tests": {
+    "runs": 12,
+    "windows": 5400,
+    "fixed_alert_windows": 0
+  },
+  "by_condition": [
+    {
+      "condition": "normal",
+      "runs": 8,
+      "runs_with_fixed_alarm": 0,
+      "fixed_alert_windows": 0,
+      "first_delay_min_s": null,
+      "first_delay_max_s": null,
+      "alert_ids": []
+    },
+    {
+      "condition": "normal_low_load",
+      "runs": 2,
+      "runs_with_fixed_alarm": 0,
+      "fixed_alert_windows": 0,
+      "first_delay_min_s": null,
+      "first_delay_max_s": null,
+      "alert_ids": []
+    },
+    {
+      "condition": "normal_high_load",
+      "runs": 2,
+      "runs_with_fixed_alarm": 0,
+      "fixed_alert_windows": 0,
+      "first_delay_min_s": null,
+      "first_delay_max_s": null,
+      "alert_ids": []
+    },
+    {
+      "condition": "vibration",
+      "runs": 4,
+      "runs_with_fixed_alarm": 4,
+      "fixed_alert_windows": 1192,
+      "first_delay_min_s": 6,
+      "first_delay_max_s": 6,
+      "alert_ids": [
+        "vibration_relative"
+      ]
+    },
+    {
+      "condition": "intermittent",
+      "runs": 4,
+      "runs_with_fixed_alarm": 0,
+      "fixed_alert_windows": 0,
+      "first_delay_min_s": null,
+      "first_delay_max_s": null,
+      "alert_ids": []
+    },
+    {
+      "condition": "coolant_high",
+      "runs": 4,
+      "runs_with_fixed_alarm": 4,
+      "fixed_alert_windows": 1010,
+      "first_delay_min_s": 90,
+      "first_delay_max_s": 104,
+      "alert_ids": [
+        "coolant_high"
+      ]
+    },
+    {
+      "condition": "oil_low",
+      "runs": 4,
+      "runs_with_fixed_alarm": 4,
+      "fixed_alert_windows": 1021,
+      "first_delay_min_s": 90,
+      "first_delay_max_s": 96,
+      "alert_ids": [
+        "oil_deviation"
+      ]
+    },
+    {
+      "condition": "joint_inside_limits",
+      "runs": 4,
+      "runs_with_fixed_alarm": 0,
+      "fixed_alert_windows": 0,
+      "first_delay_min_s": null,
+      "first_delay_max_s": null,
+      "alert_ids": []
+    },
+    {
+      "condition": "thermal_pressure",
+      "runs": 4,
+      "runs_with_fixed_alarm": 4,
+      "fixed_alert_windows": 1014,
+      "first_delay_min_s": 92,
+      "first_delay_max_s": 96,
+      "alert_ids": [
+        "coolant_high",
+        "oil_deviation"
+      ]
+    }
+  ],
+  "trials": [
+    {
+      "session_id": "test-normal-01",
+      "seed": 401,
+      "condition": "normal",
+      "kind": "normal",
+      "windows": 450,
+      "data_sha256": "18e398042c8c145853a88f63d7de24e1f996d8ecddf6fe85586760c3632ee985",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-normal-02",
+      "seed": 402,
+      "condition": "normal",
+      "kind": "normal",
+      "windows": 450,
+      "data_sha256": "bba904042f4cdc821b2f614e77cbac3448fd345393faedeae517c03fef662dd0",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-normal-03",
+      "seed": 403,
+      "condition": "normal",
+      "kind": "normal",
+      "windows": 450,
+      "data_sha256": "413ecf0049094362844d71c15e013908378ea551a7bb066f53200b5657ccbd9f",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-normal-04",
+      "seed": 404,
+      "condition": "normal",
+      "kind": "normal",
+      "windows": 450,
+      "data_sha256": "e6041223c9ea3fc0b6f15f8324d7e0d072b93ad7c8efad20e509f24cac9f924b",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-normal-05",
+      "seed": 405,
+      "condition": "normal",
+      "kind": "normal",
+      "windows": 450,
+      "data_sha256": "6c8c7b6923890ee6e817f07f99661622db2b5c23083652db3b03a59610cacf45",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-normal-06",
+      "seed": 406,
+      "condition": "normal",
+      "kind": "normal",
+      "windows": 450,
+      "data_sha256": "bf02cc583da4be932053688ec634d9324cc752bce4e60a4829d7f8220672a71a",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-normal-07",
+      "seed": 407,
+      "condition": "normal",
+      "kind": "normal",
+      "windows": 450,
+      "data_sha256": "ae00e4617f8762021c50565e2e2538be44c4d168c3d942e1c3237ad24d55f5fe",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-normal-08",
+      "seed": 408,
+      "condition": "normal",
+      "kind": "normal",
+      "windows": 450,
+      "data_sha256": "0a2a49ed8ae62bda007f445c13d01fbdda3dc943098cc783aa5a328f1daf1b61",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-normal-09",
+      "seed": 409,
+      "condition": "normal_low_load",
+      "kind": "normal",
+      "windows": 450,
+      "data_sha256": "faa48aa321400bfb0344367896b6427bdca4ed8b66668bc74b791e319161ba4c",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-normal-10",
+      "seed": 410,
+      "condition": "normal_low_load",
+      "kind": "normal",
+      "windows": 450,
+      "data_sha256": "39465ff29ed6eda2d33ca88840969bd4c586cf6adf5646a0a55448fdd5a2c85b",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-normal-11",
+      "seed": 411,
+      "condition": "normal_high_load",
+      "kind": "normal",
+      "windows": 450,
+      "data_sha256": "e0ab6626934c7913d2da8d19d8fc3a2b4158407c4097ff3631cb913c4efa99d6",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-normal-12",
+      "seed": 412,
+      "condition": "normal_high_load",
+      "kind": "normal",
+      "windows": 450,
+      "data_sha256": "09191e137c0c4a59f23a4150f7020ed2aed9fdb48ce60b583df43eaf59f0107c",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-vibration-01",
+      "seed": 501,
+      "condition": "vibration",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "4a09fc79961fd10cb2698d70064aca301821cfc8d3fcc23f9720dc17f7943d3b",
+      "fixed_alert_windows": 298,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 3,
+      "first_fixed_alert_s": 306,
+      "first_fixed_delay_s": 6,
+      "alert_ids": [
+        "vibration_relative"
+      ],
+      "first_alert_by_rule": [
+        {
+          "id": "vibration_relative",
+          "first_alert_s": 306,
+          "delay_from_injection_s": 6,
+          "value": 0.08821220312158541,
+          "unit": "g",
+          "severity": "watch"
+        }
+      ]
+    },
+    {
+      "session_id": "test-vibration-02",
+      "seed": 502,
+      "condition": "vibration",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "86e7223a7d7b23f02ba2dee75a2cc5a32663af7f3d5b9fdc4b018001999d0ad9",
+      "fixed_alert_windows": 298,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 3,
+      "first_fixed_alert_s": 306,
+      "first_fixed_delay_s": 6,
+      "alert_ids": [
+        "vibration_relative"
+      ],
+      "first_alert_by_rule": [
+        {
+          "id": "vibration_relative",
+          "first_alert_s": 306,
+          "delay_from_injection_s": 6,
+          "value": 0.08822601780241571,
+          "unit": "g",
+          "severity": "watch"
+        }
+      ]
+    },
+    {
+      "session_id": "test-vibration-03",
+      "seed": 503,
+      "condition": "vibration",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "d460d008a30828819c818a1422596d2f259d050fdb1f8fbcde604051aa2aaedf",
+      "fixed_alert_windows": 298,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 3,
+      "first_fixed_alert_s": 306,
+      "first_fixed_delay_s": 6,
+      "alert_ids": [
+        "vibration_relative"
+      ],
+      "first_alert_by_rule": [
+        {
+          "id": "vibration_relative",
+          "first_alert_s": 306,
+          "delay_from_injection_s": 6,
+          "value": 0.09013719491968131,
+          "unit": "g",
+          "severity": "watch"
+        }
+      ]
+    },
+    {
+      "session_id": "test-vibration-04",
+      "seed": 504,
+      "condition": "vibration",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "07f8d9efb7a278d5bd7168a7f14e1ff5f0627ec98fd44bce3545dfe0be07feea",
+      "fixed_alert_windows": 298,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 3,
+      "first_fixed_alert_s": 306,
+      "first_fixed_delay_s": 6,
+      "alert_ids": [
+        "vibration_relative"
+      ],
+      "first_alert_by_rule": [
+        {
+          "id": "vibration_relative",
+          "first_alert_s": 306,
+          "delay_from_injection_s": 6,
+          "value": 0.08678857201046977,
+          "unit": "g",
+          "severity": "watch"
+        }
+      ]
+    },
+    {
+      "session_id": "test-intermittent-01",
+      "seed": 505,
+      "condition": "intermittent",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "0c56480b8682e3a035a0f0c822cdc38489d9345d99d7839b22ab6b1e38ea4086",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-intermittent-02",
+      "seed": 506,
+      "condition": "intermittent",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "ab8b2aa729120aa760e934e74f4cb094ede45c06d068ac225ccd8a19f8b078e4",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-intermittent-03",
+      "seed": 507,
+      "condition": "intermittent",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "f001df1cbd1f9b61c210b4fe3c9562f702f4c89ad0bccb52631b27b984b1025a",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-intermittent-04",
+      "seed": 508,
+      "condition": "intermittent",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "d4bacef63a4ee5b379e42a432b49f67b32c87d22b27e8a0fd00c1ea597c1da67",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-coolant_high-01",
+      "seed": 509,
+      "condition": "coolant_high",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "f13fddb323a73febd6b02dd597d516e8de67650340d4d9a3eef53989d4e479f0",
+      "fixed_alert_windows": 255,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 3,
+      "first_fixed_alert_s": 392,
+      "first_fixed_delay_s": 92,
+      "alert_ids": [
+        "coolant_high"
+      ],
+      "first_alert_by_rule": [
+        {
+          "id": "coolant_high",
+          "first_alert_s": 392,
+          "delay_from_injection_s": 92,
+          "value": 92.97543650746793,
+          "unit": "degC",
+          "severity": "watch"
+        }
+      ]
+    },
+    {
+      "session_id": "test-coolant_high-02",
+      "seed": 510,
+      "condition": "coolant_high",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "4f732a10c7af66395e8e82a17171b78c736e0eb3377f792640e2a387776f7902",
+      "fixed_alert_windows": 256,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 3,
+      "first_fixed_alert_s": 390,
+      "first_fixed_delay_s": 90,
+      "alert_ids": [
+        "coolant_high"
+      ],
+      "first_alert_by_rule": [
+        {
+          "id": "coolant_high",
+          "first_alert_s": 390,
+          "delay_from_injection_s": 90,
+          "value": 92.99826068472512,
+          "unit": "degC",
+          "severity": "watch"
+        }
+      ]
+    },
+    {
+      "session_id": "test-coolant_high-03",
+      "seed": 511,
+      "condition": "coolant_high",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "471cc7810b500b30761dd9f2b5fafe6cfe5ec55b18c6aa837339e8f92a7423f1",
+      "fixed_alert_windows": 249,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 3,
+      "first_fixed_alert_s": 404,
+      "first_fixed_delay_s": 104,
+      "alert_ids": [
+        "coolant_high"
+      ],
+      "first_alert_by_rule": [
+        {
+          "id": "coolant_high",
+          "first_alert_s": 404,
+          "delay_from_injection_s": 104,
+          "value": 92.72396266946606,
+          "unit": "degC",
+          "severity": "watch"
+        }
+      ]
+    },
+    {
+      "session_id": "test-coolant_high-04",
+      "seed": 512,
+      "condition": "coolant_high",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "49279642dc3dda9fba254e5838ebdd91b5366fdfcbd4c0e272adf2e4ce95d0b8",
+      "fixed_alert_windows": 250,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 3,
+      "first_fixed_alert_s": 402,
+      "first_fixed_delay_s": 102,
+      "alert_ids": [
+        "coolant_high"
+      ],
+      "first_alert_by_rule": [
+        {
+          "id": "coolant_high",
+          "first_alert_s": 402,
+          "delay_from_injection_s": 102,
+          "value": 92.95357587663078,
+          "unit": "degC",
+          "severity": "watch"
+        }
+      ]
+    },
+    {
+      "session_id": "test-oil_low-01",
+      "seed": 513,
+      "condition": "oil_low",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "a56cd9a57e1d6bb6aea771429450b9b0cc20ab9cd19392c722a7ab8d16317679",
+      "fixed_alert_windows": 256,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 3,
+      "first_fixed_alert_s": 390,
+      "first_fixed_delay_s": 90,
+      "alert_ids": [
+        "oil_deviation"
+      ],
+      "first_alert_by_rule": [
+        {
+          "id": "oil_deviation",
+          "first_alert_s": 390,
+          "delay_from_injection_s": 90,
+          "value": 1.8837695931203429,
+          "unit": "kgf/cm²",
+          "severity": "watch"
+        }
+      ]
+    },
+    {
+      "session_id": "test-oil_low-02",
+      "seed": 514,
+      "condition": "oil_low",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "65aff90c4cf39be89d49efef97c467ac3a0f9686f7d6c8528fa52184450e36bd",
+      "fixed_alert_windows": 256,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 3,
+      "first_fixed_alert_s": 390,
+      "first_fixed_delay_s": 90,
+      "alert_ids": [
+        "oil_deviation"
+      ],
+      "first_alert_by_rule": [
+        {
+          "id": "oil_deviation",
+          "first_alert_s": 390,
+          "delay_from_injection_s": 90,
+          "value": 1.8920371958892812,
+          "unit": "kgf/cm²",
+          "severity": "watch"
+        }
+      ]
+    },
+    {
+      "session_id": "test-oil_low-03",
+      "seed": 515,
+      "condition": "oil_low",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "590de13d63d5524cdd765ac51246541fe4a367380f22d094e4a8e2a6bc896b52",
+      "fixed_alert_windows": 256,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 3,
+      "first_fixed_alert_s": 390,
+      "first_fixed_delay_s": 90,
+      "alert_ids": [
+        "oil_deviation"
+      ],
+      "first_alert_by_rule": [
+        {
+          "id": "oil_deviation",
+          "first_alert_s": 390,
+          "delay_from_injection_s": 90,
+          "value": 1.901127067566314,
+          "unit": "kgf/cm²",
+          "severity": "watch"
+        }
+      ]
+    },
+    {
+      "session_id": "test-oil_low-04",
+      "seed": 516,
+      "condition": "oil_low",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "ed8a2951c423125308ee9282399d68bdf308128330129941c372ac0f1dd202a9",
+      "fixed_alert_windows": 253,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 3,
+      "first_fixed_alert_s": 396,
+      "first_fixed_delay_s": 96,
+      "alert_ids": [
+        "oil_deviation"
+      ],
+      "first_alert_by_rule": [
+        {
+          "id": "oil_deviation",
+          "first_alert_s": 396,
+          "delay_from_injection_s": 96,
+          "value": 1.8922984642617626,
+          "unit": "kgf/cm²",
+          "severity": "watch"
+        }
+      ]
+    },
+    {
+      "session_id": "test-joint_inside_limits-01",
+      "seed": 517,
+      "condition": "joint_inside_limits",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "bd244a447f8c31d4c9ea125f94354f56a5b06b58c980755ae48e2cda6abea892",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-joint_inside_limits-02",
+      "seed": 518,
+      "condition": "joint_inside_limits",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "4f14dfad582fcd55b71add0f341d3332467025055a5ba087842236c724d177cd",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-joint_inside_limits-03",
+      "seed": 519,
+      "condition": "joint_inside_limits",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "1e291043ed4f68b0e9b495e0d4fe169b34f2fce7f9ddfd544fa7c57596ee58bb",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-joint_inside_limits-04",
+      "seed": 520,
+      "condition": "joint_inside_limits",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "c44e477c0888a0b8c8978d42167a165c2bc55cedbe77f27b4c2dbfc831054a83",
+      "fixed_alert_windows": 0,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 0,
+      "first_fixed_alert_s": null,
+      "first_fixed_delay_s": null,
+      "alert_ids": [],
+      "first_alert_by_rule": []
+    },
+    {
+      "session_id": "test-thermal_pressure-01",
+      "seed": 521,
+      "condition": "thermal_pressure",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "7b4556a32a88f5b1b8b593df8d94f0347c76b3caca6a2874051ab95c30cd6795",
+      "fixed_alert_windows": 255,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 6,
+      "first_fixed_alert_s": 392,
+      "first_fixed_delay_s": 92,
+      "alert_ids": [
+        "coolant_high",
+        "oil_deviation"
+      ],
+      "first_alert_by_rule": [
+        {
+          "id": "oil_deviation",
+          "first_alert_s": 392,
+          "delay_from_injection_s": 92,
+          "value": 1.9186111144444156,
+          "unit": "kgf/cm²",
+          "severity": "watch"
+        },
+        {
+          "id": "coolant_high",
+          "first_alert_s": 398,
+          "delay_from_injection_s": 98,
+          "value": 92.59674850302675,
+          "unit": "degC",
+          "severity": "watch"
+        }
+      ]
+    },
+    {
+      "session_id": "test-thermal_pressure-02",
+      "seed": 522,
+      "condition": "thermal_pressure",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "fda8f788e811d297e0a6863cfe6cccd337001e79611426f59a7ba2aac07251b6",
+      "fixed_alert_windows": 253,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 6,
+      "first_fixed_alert_s": 396,
+      "first_fixed_delay_s": 96,
+      "alert_ids": [
+        "coolant_high",
+        "oil_deviation"
+      ],
+      "first_alert_by_rule": [
+        {
+          "id": "oil_deviation",
+          "first_alert_s": 396,
+          "delay_from_injection_s": 96,
+          "value": 1.904224579344503,
+          "unit": "kgf/cm²",
+          "severity": "watch"
+        },
+        {
+          "id": "coolant_high",
+          "first_alert_s": 406,
+          "delay_from_injection_s": 106,
+          "value": 92.63007669532203,
+          "unit": "degC",
+          "severity": "watch"
+        }
+      ]
+    },
+    {
+      "session_id": "test-thermal_pressure-03",
+      "seed": 523,
+      "condition": "thermal_pressure",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "1c08c95f6f3ac65697976367fa6d7dd2ce4a9751dbd1599c8e687fa081339e6d",
+      "fixed_alert_windows": 253,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 6,
+      "first_fixed_alert_s": 396,
+      "first_fixed_delay_s": 96,
+      "alert_ids": [
+        "coolant_high",
+        "oil_deviation"
+      ],
+      "first_alert_by_rule": [
+        {
+          "id": "oil_deviation",
+          "first_alert_s": 396,
+          "delay_from_injection_s": 96,
+          "value": 1.8694404435203549,
+          "unit": "kgf/cm²",
+          "severity": "watch"
+        },
+        {
+          "id": "coolant_high",
+          "first_alert_s": 408,
+          "delay_from_injection_s": 108,
+          "value": 92.9884164118714,
+          "unit": "degC",
+          "severity": "watch"
+        }
+      ]
+    },
+    {
+      "session_id": "test-thermal_pressure-04",
+      "seed": 524,
+      "condition": "thermal_pressure",
+      "kind": "injection",
+      "windows": 450,
+      "data_sha256": "0cd8c16e680375b25d88ad06dc06eeb69acf32689a06458390e2daf90cec4f95",
+      "fixed_alert_windows": 253,
+      "pre_injection_fixed_alert_windows": 0,
+      "fixed_pending_windows": 6,
+      "first_fixed_alert_s": 396,
+      "first_fixed_delay_s": 96,
+      "alert_ids": [
+        "coolant_high",
+        "oil_deviation"
+      ],
+      "first_alert_by_rule": [
+        {
+          "id": "oil_deviation",
+          "first_alert_s": 396,
+          "delay_from_injection_s": 96,
+          "value": 1.881086773072522,
+          "unit": "kgf/cm²",
+          "severity": "watch"
+        },
+        {
+          "id": "coolant_high",
+          "first_alert_s": 404,
+          "delay_from_injection_s": 104,
+          "value": 92.94028687766917,
+          "unit": "degC",
+          "severity": "watch"
+        }
+      ]
+    }
+  ],
+  "model_first_evidence_checks": [
+    {
+      "session_id": "test-vibration-01",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "actual_fields": [
+        "vibration_rms_g",
+        "oil_bar",
+        "engine_rpm"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-vibration-02",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "actual_fields": [
+        "vibration_rms_g",
+        "engine_rpm",
+        "voltage_v"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-vibration-03",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "actual_fields": [
+        "vibration_rms_g",
+        "voltage_v",
+        "coolant_c"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-vibration-04",
+      "expected_fields": [
+        "vibration_rms_g"
+      ],
+      "actual_fields": [
+        "vibration_rms_g",
+        "engine_rpm",
+        "voltage_v"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-intermittent-01",
+      "expected_fields": [
+        "envelope_cv"
+      ],
+      "actual_fields": [
+        "envelope_cv",
+        "voltage_v",
+        "oil_bar"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-intermittent-02",
+      "expected_fields": [
+        "envelope_cv"
+      ],
+      "actual_fields": [
+        "envelope_cv",
+        "voltage_v",
+        "coolant_c"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-intermittent-03",
+      "expected_fields": [
+        "envelope_cv"
+      ],
+      "actual_fields": [
+        "envelope_cv",
+        "coolant_c",
+        "voltage_v"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-intermittent-04",
+      "expected_fields": [
+        "envelope_cv"
+      ],
+      "actual_fields": [
+        "envelope_cv",
+        "vibration_rms_g",
+        "voltage_v"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-coolant_high-01",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "actual_fields": [
+        "coolant_c",
+        "oil_bar",
+        "voltage_v"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-coolant_high-02",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "actual_fields": [
+        "coolant_c",
+        "engine_rpm",
+        "oil_bar"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-coolant_high-03",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "actual_fields": [
+        "coolant_c",
+        "oil_bar",
+        "engine_rpm"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-coolant_high-04",
+      "expected_fields": [
+        "coolant_c"
+      ],
+      "actual_fields": [
+        "coolant_c",
+        "engine_rpm",
+        "vibration_rms_g"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-oil_low-01",
+      "expected_fields": [
+        "oil_bar"
+      ],
+      "actual_fields": [
+        "oil_bar",
+        "engine_rpm",
+        "voltage_v"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-oil_low-02",
+      "expected_fields": [
+        "oil_bar"
+      ],
+      "actual_fields": [
+        "oil_bar",
+        "vibration_rms_g",
+        "engine_rpm"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-oil_low-03",
+      "expected_fields": [
+        "oil_bar"
+      ],
+      "actual_fields": [
+        "oil_bar",
+        "vibration_rms_g",
+        "envelope_cv"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-oil_low-04",
+      "expected_fields": [
+        "oil_bar"
+      ],
+      "actual_fields": [
+        "oil_bar",
+        "coolant_c",
+        "envelope_cv"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-joint_inside_limits-01",
+      "expected_fields": [
+        "coolant_c",
+        "oil_bar"
+      ],
+      "actual_fields": [
+        "oil_bar",
+        "coolant_c",
+        "engine_rpm"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-joint_inside_limits-02",
+      "expected_fields": [
+        "coolant_c",
+        "oil_bar"
+      ],
+      "actual_fields": [
+        "oil_bar",
+        "coolant_c",
+        "engine_rpm"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-joint_inside_limits-03",
+      "expected_fields": [
+        "coolant_c",
+        "oil_bar"
+      ],
+      "actual_fields": [
+        "oil_bar",
+        "coolant_c",
+        "vibration_rms_g"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-joint_inside_limits-04",
+      "expected_fields": [
+        "coolant_c",
+        "oil_bar"
+      ],
+      "actual_fields": [
+        "oil_bar",
+        "coolant_c",
+        "voltage_v"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-thermal_pressure-01",
+      "expected_fields": [
+        "coolant_c",
+        "oil_bar"
+      ],
+      "actual_fields": [
+        "oil_bar",
+        "coolant_c",
+        "vibration_rms_g"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-thermal_pressure-02",
+      "expected_fields": [
+        "coolant_c",
+        "oil_bar"
+      ],
+      "actual_fields": [
+        "oil_bar",
+        "coolant_c",
+        "voltage_v"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-thermal_pressure-03",
+      "expected_fields": [
+        "coolant_c",
+        "oil_bar"
+      ],
+      "actual_fields": [
+        "oil_bar",
+        "coolant_c",
+        "envelope_cv"
+      ],
+      "passed": true
+    },
+    {
+      "session_id": "test-thermal_pressure-04",
+      "expected_fields": [
+        "coolant_c",
+        "oil_bar"
+      ],
+      "actual_fields": [
+        "oil_bar",
+        "coolant_c",
+        "engine_rpm"
+      ],
+      "passed": true
+    }
+  ]
+}

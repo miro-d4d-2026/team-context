@@ -1,0 +1,474 @@
+{
+  "schema_version": "genguard.trend.model/1",
+  "algorithm": "calibration-selected-short-horizon/1",
+  "learned_candidate": "ridge-future-delta/1",
+  "feature_mean": [
+    81.85569341806536,
+    0.0669987990655055,
+    0.19787058843076627,
+    0.3862214392162055,
+    0.7361807696400917,
+    0.3499582838239549,
+    0.38622305744687324,
+    2.9768139781779066,
+    -0.006707935687118014,
+    -0.019820521618585035,
+    -0.03869829449023625,
+    -0.07368721024772326,
+    -0.03498492070104041,
+    -0.03870168391155698,
+    57.912536002111054,
+    0.24674946171534987,
+    27.982862104577976,
+    0.0,
+    1800.057991343256,
+    -0.004583711114265723
+  ],
+  "feature_scale": [
+    3.71797295883245,
+    0.30028491091060455,
+    0.6647576931314797,
+    1.1369490039676748,
+    1.8604005325062305,
+    1.1436961995179675,
+    1.1605193451554792,
+    0.37928849533722153,
+    0.02748898734871176,
+    0.06240212722096103,
+    0.10833580607877992,
+    0.1808885884765934,
+    0.10854851866435457,
+    0.11038657601315424,
+    5.197813233363401,
+    1.6325044746349175,
+    1.7652791119277145,
+    1e-08,
+    0.39729861808125283,
+    0.5466686334511771
+  ],
+  "weights": [
+    [
+      0.8778087166318974,
+      -0.08800423992343924
+    ],
+    [
+      0.3378273987946517,
+      -0.005616497223119936
+    ],
+    [
+      0.1638462651037597,
+      0.010716566761146889
+    ],
+    [
+      0.32382092815658,
+      0.019454269897099374
+    ],
+    [
+      -0.05228733621836241,
+      0.015115634185337842
+    ],
+    [
+      0.20070437590821,
+      0.025535302171208297
+    ],
+    [
+      0.07583929857724049,
+      0.006059872692596851
+    ],
+    [
+      0.17606455430177076,
+      0.015569463001414588
+    ],
+    [
+      0.05948830620867518,
+      0.019329216945650193
+    ],
+    [
+      -0.05666886122774563,
+      0.03176130336411766
+    ],
+    [
+      -0.02893579382445304,
+      0.05402897764330837
+    ],
+    [
+      0.11544886334909833,
+      0.00213344095234827
+    ],
+    [
+      0.29358261523798246,
+      0.0206373710258986
+    ],
+    [
+      0.07468047715434593,
+      0.00600850231869708
+    ],
+    [
+      0.041522829558510436,
+      0.027559376100254197
+    ],
+    [
+      -0.08360751034678955,
+      0.005028241056610874
+    ],
+    [
+      -0.04076346605622948,
+      0.0032802909321400036
+    ],
+    [
+      -0.08207821351271428,
+      0.005914460955582099
+    ],
+    [
+      0.0,
+      0.0
+    ],
+    [
+      0.0003409888641354788,
+      9.051056628933239e-05
+    ],
+    [
+      -0.001075949260428096,
+      0.00026461471212646
+    ]
+  ],
+  "ridge_alpha": 10.0,
+  "source": "synthetic_scenarios_only",
+  "lookback_s": 120,
+  "horizon_s": 120,
+  "context_bounds": {
+    "load_pct": [
+      48.00789968136474,
+      77.3271228433725
+    ],
+    "ambient_c": [
+      24.018895197165428,
+      31.981228784588335
+    ],
+    "engine_rpm": [
+      1793.5033486788564,
+      1806.6365433084077
+    ]
+  },
+  "context_bound_method": "Fit-set observed min/max plus demo margins load2 percentage points, ambient1C, rpm5.",
+  "normal_background_source": "research/t4-6/genguard-trained-208v-v1/generator.py; normal coolant/oil context formulas reused. New drift and interventions are synthetic assumptions.",
+  "target_fields": [
+    "coolant_c",
+    "oil_kgf_cm2"
+  ],
+  "training_examples": 21440,
+  "training_runs": 320,
+  "selected_method": {
+    "coolant_c": "linear",
+    "oil_kgf_cm2": "linear"
+  },
+  "absolute_error_band": {
+    "coolant_c": 4.320878423817959,
+    "oil_kgf_cm2": 0.3992047815384713
+  },
+  "split": {
+    "fit_seeds": [
+      1000,
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008,
+      1009,
+      1010,
+      1011,
+      1012,
+      1013,
+      1014,
+      1015,
+      1016,
+      1017,
+      1018,
+      1019,
+      1020,
+      1021,
+      1022,
+      1023,
+      1024,
+      1025,
+      1026,
+      1027,
+      1028,
+      1029,
+      1030,
+      1031,
+      1032,
+      1033,
+      1034,
+      1035,
+      1036,
+      1037,
+      1038,
+      1039
+    ],
+    "calibration_seeds": [
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011
+    ],
+    "test_seeds": [
+      4000,
+      4001,
+      4002,
+      4003,
+      4004,
+      4005,
+      4006,
+      4007,
+      4008,
+      4009,
+      4010,
+      4011,
+      4012,
+      4013,
+      4014,
+      4015,
+      4016,
+      4017,
+      4018,
+      4019
+    ],
+    "unit": "complete simulated run identified by scenario and seed"
+  },
+  "selection_rule": "Per channel minimum calibration MAE among ridge, linear, persistence. Never select from test.",
+  "exploratory_seeds_excluded": [
+    3000,
+    3001,
+    3002,
+    3003,
+    3004,
+    3005,
+    3006,
+    3007,
+    3008,
+    3009,
+    3010,
+    3011,
+    3012,
+    3013,
+    3014,
+    3015,
+    3016,
+    3017,
+    3018,
+    3019
+  ],
+  "interval_method": "90th percentile absolute error on independent calibration runs, selected method; not physical confidence.",
+  "limits": {
+    "coolant_c": 92.0,
+    "oil_kgf_cm2": 2.0
+  },
+  "assumptions": "All scenario equations, thresholds, persistence and timing are demo assumptions; no real generator failure validation.",
+  "calibration_mae": {
+    "ridge": {
+      "coolant_c": 1.2122332738007944,
+      "oil_kgf_cm2": 0.11034834018920203
+    },
+    "linear": {
+      "coolant_c": 1.1814491539711842,
+      "oil_kgf_cm2": 0.10648665687129238
+    },
+    "persistence": {
+      "coolant_c": 1.3987302112479751,
+      "oil_kgf_cm2": 0.13278595082419012
+    }
+  },
+  "advisory_policy": "point_forecast",
+  "advisory_policy_selection": {
+    "dataset": "calibration runs only",
+    "candidates": {
+      "empirical_band": {
+        "summary": {
+          "normal": {
+            "runs": 12,
+            "threshold_reached_runs": 0,
+            "runs_with_advisory": 0,
+            "early_warning_runs": 0,
+            "missed_early_warning_runs": 0,
+            "runs_with_false_advisory": 0,
+            "unresolved_late_advisory_runs": 0,
+            "median_lead_s": null
+          },
+          "coolant_drift": {
+            "runs": 12,
+            "threshold_reached_runs": 12,
+            "runs_with_advisory": 0,
+            "early_warning_runs": 0,
+            "missed_early_warning_runs": 12,
+            "runs_with_false_advisory": 0,
+            "unresolved_late_advisory_runs": 0,
+            "median_lead_s": null
+          },
+          "oil_drift": {
+            "runs": 12,
+            "threshold_reached_runs": 12,
+            "runs_with_advisory": 0,
+            "early_warning_runs": 0,
+            "missed_early_warning_runs": 12,
+            "runs_with_false_advisory": 0,
+            "unresolved_late_advisory_runs": 0,
+            "median_lead_s": null
+          },
+          "joint_drift": {
+            "runs": 12,
+            "threshold_reached_runs": 12,
+            "runs_with_advisory": 0,
+            "early_warning_runs": 0,
+            "missed_early_warning_runs": 12,
+            "runs_with_false_advisory": 0,
+            "unresolved_late_advisory_runs": 0,
+            "median_lead_s": null
+          },
+          "transient": {
+            "runs": 12,
+            "threshold_reached_runs": 0,
+            "runs_with_advisory": 0,
+            "early_warning_runs": 0,
+            "missed_early_warning_runs": 0,
+            "runs_with_false_advisory": 0,
+            "unresolved_late_advisory_runs": 0,
+            "median_lead_s": null
+          },
+          "load_change": {
+            "runs": 12,
+            "threshold_reached_runs": 0,
+            "runs_with_advisory": 0,
+            "early_warning_runs": 0,
+            "missed_early_warning_runs": 0,
+            "runs_with_false_advisory": 0,
+            "unresolved_late_advisory_runs": 0,
+            "median_lead_s": null
+          },
+          "step": {
+            "runs": 12,
+            "threshold_reached_runs": 0,
+            "runs_with_advisory": 0,
+            "early_warning_runs": 0,
+            "missed_early_warning_runs": 0,
+            "runs_with_false_advisory": 0,
+            "unresolved_late_advisory_runs": 0,
+            "median_lead_s": null
+          },
+          "recovery": {
+            "runs": 12,
+            "threshold_reached_runs": 0,
+            "runs_with_advisory": 0,
+            "early_warning_runs": 0,
+            "missed_early_warning_runs": 0,
+            "runs_with_false_advisory": 0,
+            "unresolved_late_advisory_runs": 0,
+            "median_lead_s": null
+          }
+        },
+        "early_warning_runs": 0,
+        "runs_with_false_advisory": 0,
+        "selection_score": 0
+      },
+      "point_forecast": {
+        "summary": {
+          "normal": {
+            "runs": 12,
+            "threshold_reached_runs": 0,
+            "runs_with_advisory": 0,
+            "early_warning_runs": 0,
+            "missed_early_warning_runs": 0,
+            "runs_with_false_advisory": 0,
+            "unresolved_late_advisory_runs": 0,
+            "median_lead_s": null
+          },
+          "coolant_drift": {
+            "runs": 12,
+            "threshold_reached_runs": 12,
+            "runs_with_advisory": 12,
+            "early_warning_runs": 12,
+            "missed_early_warning_runs": 0,
+            "runs_with_false_advisory": 0,
+            "unresolved_late_advisory_runs": 0,
+            "median_lead_s": 90.0
+          },
+          "oil_drift": {
+            "runs": 12,
+            "threshold_reached_runs": 12,
+            "runs_with_advisory": 12,
+            "early_warning_runs": 12,
+            "missed_early_warning_runs": 0,
+            "runs_with_false_advisory": 0,
+            "unresolved_late_advisory_runs": 0,
+            "median_lead_s": 100.0
+          },
+          "joint_drift": {
+            "runs": 12,
+            "threshold_reached_runs": 12,
+            "runs_with_advisory": 12,
+            "early_warning_runs": 12,
+            "missed_early_warning_runs": 0,
+            "runs_with_false_advisory": 0,
+            "unresolved_late_advisory_runs": 0,
+            "median_lead_s": 90.0
+          },
+          "transient": {
+            "runs": 12,
+            "threshold_reached_runs": 0,
+            "runs_with_advisory": 8,
+            "early_warning_runs": 0,
+            "missed_early_warning_runs": 0,
+            "runs_with_false_advisory": 8,
+            "unresolved_late_advisory_runs": 0,
+            "median_lead_s": null
+          },
+          "load_change": {
+            "runs": 12,
+            "threshold_reached_runs": 0,
+            "runs_with_advisory": 0,
+            "early_warning_runs": 0,
+            "missed_early_warning_runs": 0,
+            "runs_with_false_advisory": 0,
+            "unresolved_late_advisory_runs": 0,
+            "median_lead_s": null
+          },
+          "step": {
+            "runs": 12,
+            "threshold_reached_runs": 0,
+            "runs_with_advisory": 0,
+            "early_warning_runs": 0,
+            "missed_early_warning_runs": 0,
+            "runs_with_false_advisory": 0,
+            "unresolved_late_advisory_runs": 0,
+            "median_lead_s": null
+          },
+          "recovery": {
+            "runs": 12,
+            "threshold_reached_runs": 0,
+            "runs_with_advisory": 0,
+            "early_warning_runs": 0,
+            "missed_early_warning_runs": 0,
+            "runs_with_false_advisory": 0,
+            "unresolved_late_advisory_runs": 0,
+            "median_lead_s": null
+          }
+        },
+        "early_warning_runs": 36,
+        "runs_with_false_advisory": 8,
+        "selection_score": 20
+      }
+    },
+    "criterion": "early-warning runs minus twice false-advisory runs; demo utility assumption, not operational cost estimate"
+  }
+}
