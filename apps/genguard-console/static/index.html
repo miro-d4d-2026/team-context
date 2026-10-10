@@ -5,57 +5,77 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GenGuard 관제</title>
 <style>
-  :root { --bg:#f5f6f7; --panel:#fff; --line:#dfe4e7; --text:#14202a; --muted:#61707a;
-          --ok:#2f9e6f; --watch:#d18a12; --urgent:#d6453d; --ai:#2f6fd6; --unknown:#8a959c; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-          --bg:#0f1418; --panel:#172026; --line:#28343c; --text:#e8eef1; --muted:#93a3ac; } }
+  :root {
+    --bg: #1d2428; --glass: rgba(255,255,255,.08); --glass-2: rgba(255,255,255,.13); --edge: rgba(255,255,255,.14);
+    --text: #f2f5f6; --muted: rgba(242,245,246,.62); --faint: rgba(242,245,246,.38);
+    --ok: #58d39a; --watch: #f2b44c; --urgent: #ff6b5e; --ai: #6fa8ff; --unknown: #a7b1b7;
+    --r: 26px;
+  }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) {
+    --bg: #e9ecee; --glass: rgba(255,255,255,.62); --glass-2: rgba(255,255,255,.85); --edge: rgba(20,32,42,.08);
+    --text: #15202a; --muted: rgba(21,32,42,.6); --faint: rgba(21,32,42,.38); } }
   * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--text);
-         font:17px/1.5 -apple-system,"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif; }
-  .wrap { max-width:1100px; margin:0 auto; padding:24px 20px 40px; }
-  header { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:20px; }
-  header h1 { margin:0; font-size:24px; }
-  .chip { font-size:14px; padding:4px 12px; border-radius:999px; border:1px solid var(--line); color:var(--muted); }
+  body { margin: 0; min-height: 100vh; color: var(--text); background: var(--bg);
+         background-image: radial-gradient(1200px 600px at 15% -10%, rgba(111,168,255,.18), transparent 60%),
+                           radial-gradient(900px 500px at 100% 110%, rgba(88,211,154,.12), transparent 60%);
+         font: 16px/1.45 -apple-system, "SF Pro Display", "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 24px 48px; }
+  .glass { background: var(--glass); border: 1px solid var(--edge); border-radius: var(--r);
+           backdrop-filter: blur(24px) saturate(140%); -webkit-backdrop-filter: blur(24px) saturate(140%); }
+  header { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 22px; }
+  header h1 { margin: 0; font-size: 30px; font-weight: 700; letter-spacing: -.01em; }
+  header .sub { color: var(--muted); margin-top: 2px; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; font-size: 14px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c, var(--ok)); display: inline-block; }
   .lvl-normal{--c:var(--ok)} .lvl-watch{--c:var(--watch)} .lvl-urgent{--c:var(--urgent)} .lvl-ai{--c:var(--ai)} .lvl-unknown{--c:var(--unknown)}
-  .item { display:grid; grid-template-columns:56px 1fr auto; gap:16px; align-items:center; background:var(--panel);
-          border:1px solid var(--line); border-left:8px solid var(--c); padding:18px 20px; margin-bottom:12px; cursor:pointer; }
-  .item .no { font-size:34px; font-weight:700; color:var(--c); text-align:center; }
-  .item .name { font-size:22px; font-weight:700; }
-  .item .state { color:var(--c); font-weight:700; }
-  .item .why { color:var(--muted); margin-top:2px; }
-  .item .todo { font-weight:600; margin-top:4px; }
-  .item .go { color:var(--muted); font-size:14px; }
-  .live { display:flex; align-items:center; gap:14px; background:var(--panel); border:1px solid var(--line); padding:12px 18px; margin-top:6px; }
-  .live svg { flex:1; height:36px; }
-  .live b { font-size:20px; min-width:80px; }
-  .muted { color:var(--muted); font-size:14px; }
-  .detail { background:var(--panel); border:1px solid var(--line); border-top:8px solid var(--c); padding:22px; margin-top:18px; }
-  .detail h2 { margin:0 0 6px; font-size:24px; }
-  .lead { font-size:19px; margin:4px 0 16px; }
-  .cmp { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-bottom:16px; }
-  .cmp > div { border:1px solid var(--line); padding:12px 14px; }
-  .cmp .v { font-size:26px; font-weight:700; color:var(--c); }
-  .cmp .u { font-size:14px; color:var(--muted); }
-  .bar { height:12px; background:var(--line); position:relative; margin:6px 0 4px; }
-  .bar i { position:absolute; inset:0 auto 0 0; background:var(--c); }
-  .bar s { position:absolute; top:-4px; bottom:-4px; width:2px; background:var(--text); }
-  ol { margin:6px 0 16px 22px; padding:0; } ol li { margin:3px 0; }
-  .sec { font-size:14px; color:var(--muted); font-weight:600; margin:16px 0 4px; }
-  details { margin-top:16px; } summary { cursor:pointer; color:var(--muted); font-size:15px; }
-  table { width:100%; border-collapse:collapse; font-size:14px; margin-top:8px; }
-  td,th { text-align:left; padding:5px 4px; border-bottom:1px solid var(--line); } th { color:var(--muted); font-weight:500; }
-  @media (max-width:640px) { .item { grid-template-columns:40px 1fr; } .item .go { display:none; } .item .no { font-size:26px; } }
+
+  .fleet { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .gen { padding: 20px 22px; cursor: pointer; transition: transform .15s ease, background .15s ease; position: relative; }
+  .gen:hover { background: var(--glass-2); } .gen.open { outline: 2px solid var(--c); }
+  .gen .top { display: flex; justify-content: space-between; align-items: center; }
+  .rank { font-size: 13px; color: var(--muted); }
+  .rank b { font-size: 15px; color: var(--text); }
+  .gen h2 { margin: 10px 0 2px; font-size: 24px; font-weight: 700; }
+  .status { display: flex; align-items: center; gap: 8px; color: var(--c); font-weight: 600; }
+  .gen .big { font-size: 44px; font-weight: 700; letter-spacing: -.02em; margin-top: 14px; line-height: 1; }
+  .gen .big small { font-size: 16px; color: var(--muted); font-weight: 500; margin-left: 6px; }
+  .track { height: 8px; border-radius: 999px; background: var(--edge); margin: 14px 0 10px; overflow: hidden; }
+  .track i { display: block; height: 100%; border-radius: 999px; background: var(--c); transition: width .4s ease; }
+  .gen .why { color: var(--muted); font-size: 14px; min-height: 20px; }
+  .gen .todo { margin-top: 10px; padding: 10px 12px; border-radius: 14px; background: var(--glass-2); font-size: 14px; font-weight: 600; }
+
+  .bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+  .tile { padding: 18px 20px; min-width: 0; }
+  .tile .lab { color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; }
+  .tile .num { font-size: 40px; font-weight: 700; letter-spacing: -.02em; line-height: 1.1; margin-top: 8px; color: var(--c, var(--text)); }
+  .tile .num small { font-size: 15px; color: var(--muted); font-weight: 500; margin-left: 4px; }
+  .tile .was { color: var(--muted); font-size: 14px; margin-top: 4px; }
+  .span2 { grid-column: span 2; } .span4 { grid-column: span 4; }
+  .lead { font-size: 20px; font-weight: 600; margin: 6px 0 0; }
+  .ring { display: flex; align-items: center; gap: 18px; margin-top: 8px; }
+  .ring svg { width: 108px; height: 108px; flex: none; }
+  .ring .num { margin: 0; }
+  ol { margin: 10px 0 0; padding: 0; list-style: none; counter-reset: s; }
+  ol li { counter-increment: s; display: flex; gap: 10px; align-items: baseline; padding: 7px 0; border-bottom: 1px solid var(--edge); font-size: 15px; }
+  ol li::before { content: counter(s); font-weight: 700; color: var(--c); min-width: 14px; }
+  ol li:last-child { border-bottom: 0; }
+  .spark { width: 100%; height: 54px; display: block; margin-top: 10px; }
+  details { margin-top: 4px; } summary { cursor: pointer; color: var(--muted); font-size: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
+  td, th { text-align: left; padding: 6px 4px; border-bottom: 1px solid var(--edge); } th { color: var(--muted); font-weight: 500; }
+  .note { color: var(--faint); font-size: 12.5px; margin-top: 8px; }
+  @media (max-width: 960px) { .fleet { grid-template-columns: 1fr; } .bento { grid-template-columns: repeat(2, minmax(0,1fr)); } .span4 { grid-column: span 2; } }
+  @media (max-width: 560px) { .wrap { padding: 20px 16px 40px; } .bento { grid-template-columns: 1fr; } .span2, .span4 { grid-column: span 1; } header h1 { font-size: 24px; } }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <h1>GenGuard · 정비 우선순위</h1>
-    <span class="chip" id="chip">판정 엔진 확인 중</span>
+    <div><h1>정비 우선순위</h1><div class="sub">GenGuard · 발전기 3대 · 모의 운전 데이터</div></div>
+    <span class="pill glass" id="chip"><span class="dot"></span>판정 엔진 확인 중</span>
   </header>
-  <div id="list"></div>
-  <div class="live"><span class="muted">실측 진동 (UNO Q IMU)</span><b id="lv">-</b><svg id="ls" viewBox="0 0 300 36" preserveAspectRatio="none"></svg></div>
-  <div class="detail" id="detail" hidden></div>
+  <div class="fleet" id="fleet"></div>
+  <div class="bento" id="bento"></div>
 </div>
 <script type="module">
 import { PROFILE, createDemoState, makeScenario, evaluate } from './vendor/engine.mjs';
@@ -97,43 +117,71 @@ function summary(a) {
     return [`${what || '여러 값'} · 같은 부하에서 평소와 다름`, o[0] ? CHECKS[o[0].field] : '지속 여부 확인'];
   }
   if (key === 'unk') return [a.ai?.reason?.startsWith('missing') ? '컨트롤러 값 미수신' : a.ai?.reason === 'unseen_operating_context' ? '학습하지 않은 운전 조건' : '예열·정지 중', '값 수신과 운전 상태 확인'];
-  return ['이상 없음', ''];
+  return ['평소와 같은 패턴으로 운전 중', ''];
+}
+function headline(a) {
+  const al = a.res?.alerts ?? [], o = odd(a);
+  if (al[0]) { const k = al[0].fields?.[0], m = a.res.metrics[k]; if (m && typeof m.value === 'number') return [+m.value.toFixed(1), m.unit === 'degC' ? '°C' : m.unit]; }
+  if (o[0]) return [fmt(o[0].field, o[0].value), LABEL[o[0].field]?.[1] ?? ''];
+  const load = a.res?.metrics?.load_pct;
+  if (load && typeof load.value === 'number') return [Math.round(load.value), '% 부하 운전'];
+  return ['—', ''];
 }
 
-function renderList() {
+function renderFleet() {
   const sorted = [...assets].sort((x, y) => (ORDER[level(y)[2]] - ORDER[level(x)[2]]) || (ratio(y) - ratio(x)));
-  $('list').innerHTML = sorted.map((a, i) => { const [c, txt] = level(a), [why, todo] = summary(a);
-    return `<div class="item lvl-${c}" data-id="${a.id}"><div class="no">${i + 1}</div>
-      <div><div class="name">${NAMES[a.id]} <span class="state">· ${txt}</span></div><div class="why">${esc(why)}</div>
-      ${todo ? `<div class="todo">→ ${esc(todo)}</div>` : ''}</div><div class="go">${open === a.id ? '닫기' : '자세히'}</div></div>`; }).join('');
-  for (const el of $('list').children) el.onclick = () => { open = open === el.dataset.id ? null : el.dataset.id; renderList(); renderDetail(); };
+  $('fleet').innerHTML = sorted.map((a, i) => { const [c, txt] = level(a), [why, todo] = summary(a), [n, u] = headline(a);
+    const pct = Math.min(100, ratio(a) / 3 * 100);
+    return `<div class="gen glass lvl-${c} ${open === a.id ? 'open' : ''}" data-id="${a.id}">
+      <div class="top"><span class="rank">우선순위 <b>${i + 1}</b></span><span class="status"><span class="dot"></span>${txt}</span></div>
+      <h2>${NAMES[a.id]}</h2>
+      <div class="big">${esc(n)}<small>${esc(u)}</small></div>
+      <div class="track"><i style="width:${pct}%"></i></div>
+      <div class="why">${esc(why)}</div>
+      ${todo ? `<div class="todo">${esc(todo)}</div>` : ''}</div>`; }).join('');
+  for (const el of $('fleet').children) el.onclick = () => { open = open === el.dataset.id ? null : el.dataset.id; render(); };
 }
 
-function renderDetail() {
+function ring(score, threshold) {
+  const max = Math.max(threshold * 3, score * 1.05), p = Math.min(1, score / max), C = 2 * Math.PI * 46;
+  const tp = threshold / max;
+  return `<svg viewBox="0 0 108 108"><circle cx="54" cy="54" r="46" fill="none" stroke="var(--edge)" stroke-width="10"/>
+    <circle cx="54" cy="54" r="46" fill="none" stroke="var(--c)" stroke-width="10" stroke-linecap="round" stroke-dasharray="${C * p} ${C}" transform="rotate(-90 54 54)"/>
+    <line x1="54" y1="2" x2="54" y2="16" stroke="var(--text)" stroke-width="2" transform="rotate(${tp * 360} 54 54)"/></svg>`;
+}
+
+function renderBento() {
   const a = assets.find(x => x.id === open);
-  if (!a || !a.res) { $('detail').hidden = true; return; }
-  const [c, txt, key] = level(a), [why] = summary(a), ai = a.ai ?? {}, al = a.res.alerts;
+  const liveTile = `<div class="tile glass lvl-ai ${a ? 'span2' : 'span4'}"><div class="lab"><span>실측 진동 · UNO Q IMU</span><span>판정 모델 입력 아님</span></div>
+    <div class="num" id="lv">${live.length ? live[live.length - 1].toFixed(3) : '—'}<small>g RMS</small></div>
+    <svg class="spark" viewBox="0 0 300 54" preserveAspectRatio="none"><polyline fill="none" stroke="var(--ai)" stroke-width="2.5" stroke-linejoin="round"
+      points="${live.map((v, i) => `${i * 300 / 119},${50 - v / Math.max(0.02, ...live) * 46}`).join(' ')}"/></svg></div>`;
+  if (!a || !a.res) { $('bento').innerHTML = liveTile; return; }
+  const [c, txt, key] = level(a), ai = a.ai ?? {}, al = a.res.alerts, o = odd(a);
   const lead = key === 'ai2' || key === 'ai1' ? '고정 기준 안의 값이지만, 같은 부하·외기온에서 평소 관계와 다릅니다.'
-    : key === 'both' ? '정해진 기준을 넘었고, AI도 평소 관계와 지속적으로 다르다고 판단했습니다.'
-    : al.length ? '정해진 기준을 넘었습니다.' : key === 'unk' ? '판단할 수 있는 값이 부족합니다. 정상으로 표시하지 않습니다.' : '규칙 기준과 평소 패턴 모두 이상 없습니다.';
-  const o = odd(a);
-  const cmp = (o.length ? o : (ai.evidence ?? []).slice(0, 2)).map(e => `<div><div class="muted">${LABEL[e.field]?.[0] ?? e.field}</div>
-    <div><span class="v">${fmt(e.field, e.value)}</span> <span class="u">${LABEL[e.field]?.[1] ?? ''} · 평소 ${fmt(e.field, e.expected)}</span></div></div>`).join('');
+    : key === 'both' ? '정해진 기준을 넘었고, AI도 평소 관계와 지속적으로 다르다고 봅니다.'
+    : al.length ? '정해진 기준을 넘었습니다.' : key === 'unk' ? '판단할 값이 부족합니다. 정상으로 표시하지 않습니다.' : '규칙 기준과 평소 패턴 모두 이상 없습니다.';
+  const vals = (o.length ? o : (ai.evidence ?? []).slice(0, 2)).slice(0, 2).map(e => `<div class="tile glass lvl-${o.length ? c : 'normal'}">
+      <div class="lab"><span>${LABEL[e.field]?.[0] ?? e.field}</span></div>
+      <div class="num">${fmt(e.field, e.value)}<small>${LABEL[e.field]?.[1] ?? ''}</small></div>
+      <div class="was">평소 ${fmt(e.field, e.expected)} ${LABEL[e.field]?.[1] ?? ''}</div></div>`).join('');
   const checks = [...new Set([...al.flatMap(x => x.checks ?? []), ...o.map(e => CHECKS[e.field]).filter(Boolean)])].slice(0, 3);
   const tr = estimateOilLimitTime(a.history);
-  const max = ai.threshold ? Math.max(ai.threshold * 3, ai.score * 1.1) : 1;
-  $('detail').className = `detail lvl-${c}`; $('detail').hidden = false;
-  $('detail').innerHTML = `<h2>${NAMES[a.id]} · ${txt}</h2><div class="lead">${esc(lead)}</div>
-    ${cmp ? `<div class="cmp">${cmp}</div>` : ''}
-    ${ai.score != null ? `<div class="sec">AI 판정 (평소 관계와의 거리)</div><div class="bar"><i style="width:${Math.min(100, ai.score / max * 100)}%"></i><s style="left:${ai.threshold / max * 100}%"></s></div>
-      <div class="muted">${ai.score.toFixed(1)} / 기준선 ${ai.threshold.toFixed(1)} · 고장 확률이 아닙니다</div>` : ''}
-    ${checks.length ? `<div class="sec">점검 순서</div><ol>${checks.map(x => `<li>${esc(x)}</li>`).join('')}</ol>` : ''}
-    ${tr.status === 'estimated' ? `<div class="sec">${esc(tr.label)}</div><div><b style="font-size:24px">약 ${tr.minutes.toFixed(0)}분</b> <span class="muted">현재 추세 유지 가정 · 고장 시점 아님</span></div>` : ''}
-    <details><summary>전체 계측값 · 기술 정보</summary>
+  $('bento').innerHTML = `
+    <div class="tile glass lvl-${c} span4"><div class="lab"><span>${NAMES[a.id]} · ${txt}</span><span>${esc(a.id)}</span></div><p class="lead">${esc(lead)}</p></div>
+    ${vals}
+    ${ai.score != null ? `<div class="tile glass lvl-${c === 'normal' ? 'normal' : 'ai'} span2"><div class="lab"><span>AI 판정 · 평소 관계와의 거리</span><span>연속 ${Math.min(ai.streak ?? 0, 99)}/${ai.persistence_windows ?? 3}</span></div>
+      <div class="ring">${ring(ai.score, ai.threshold)}<div><div class="num">${ai.score.toFixed(1)}<small>/ 기준선 ${ai.threshold.toFixed(1)}</small></div>
+      <div class="was">고장 확률이 아닙니다 · 추론 ${ai.inference_ms} ms</div></div></div></div>` : ''}
+    ${checks.length ? `<div class="tile glass lvl-${c} span2"><div class="lab"><span>점검 순서</span></div><ol>${checks.map(x => `<li>${esc(x)}</li>`).join('')}</ol></div>` : ''}
+    ${tr.status === 'estimated' ? `<div class="tile glass lvl-watch span2"><div class="lab"><span>${esc(tr.label)}</span></div>
+      <div class="num">${tr.minutes.toFixed(0)}<small>분</small></div><div class="was">현재 추세 유지 가정 · 고장 시점 아님</div></div>` : ''}
+    ${liveTile}
+    <div class="tile glass span4"><details><summary>전체 계측값 · 기술 정보</summary>
       <table><tr><th>항목</th><th>값</th><th>상태</th></tr>${Object.entries(a.res.metrics).map(([k, m]) => `<tr><td>${esc(PROFILE.fields.find(f => f.key === k)?.label ?? k)}</td><td>${typeof m.value === 'number' ? +m.value.toFixed(3) : '—'} ${esc(m.unit ?? '')}</td><td>${esc(m.status)}</td></tr>`).join('')}</table>
-      <p class="muted">발전기 값은 모의 입력입니다. AI: ${esc(ai.engine ?? '-')} · 모델 ${esc(ai.model_id ?? '-')} · 연속 ${ai.streak ?? 0}/${ai.persistence_windows ?? 3} · 추론 ${ai.inference_ms ?? '-'} ms · ${esc(why)}</p>
-      ${tr.status !== 'estimated' ? `<p class="muted">유압 추세: ${esc(tr.message ?? tr.reason)}</p>` : ''}</details>`;
+      <div class="note">발전기 값은 모의 입력입니다. AI ${esc(ai.engine ?? '-')} · 모델 ${esc(ai.model_id ?? '-')} · ${esc(tr.status !== 'estimated' ? '유압 추세: ' + (tr.message ?? tr.reason) : '')}</div></details></div>`;
 }
+function render() { renderFleet(); renderBento(); }
 
 async function stepAsset(a, ctl) {
   if (ctl.run !== a.run) { Object.assign(a, { run: ctl.run, scenario: ctl.scenario, ramp: ctl.ramp, oil: null, t: 0, state: createDemoState(), history: [] }); }
@@ -146,22 +194,20 @@ async function stepAsset(a, ctl) {
   const r = snap.readings;
   if (r.oil_kgf_cm2) { a.history.push({ t_s: snap.t_s, phase: snap.phase, oil_kgf_cm2: r.oil_kgf_cm2.value, engine_rpm: r.engine_rpm?.value, load_pct: r.load_pct?.value, ambient_c: r.ambient_c?.value, source: 'scenario', quality: 'ok' }); if (a.history.length > 90) a.history.shift(); }
 }
-
 async function loop() {
   let ctl; try { ctl = await (await fetch('/api/control')).json(); } catch { return; }
   fast = ctl.fast;
   for (const a of assets) await stepAsset(a, ctl.assets[a.id]);
-  renderList(); renderDetail();
+  render();
 }
 async function head() {
-  try { const s = await (await fetch('/api/status')).json();
-    $('chip').textContent = `${s.engine.startsWith('clikart') ? 'ClikaRT 온디바이스 AI' : s.engine} · ${s.network_reachable ? '온라인' : '오프라인 동작'}`; } catch {}
+  try { const s = await (await fetch('/api/status')).json(); const on = s.engine.startsWith('clikart');
+    $('chip').innerHTML = `<span class="dot" style="--c:${s.network_reachable ? 'var(--watch)' : 'var(--ok)'}"></span>${on ? 'ClikaRT 온디바이스 AI' : esc(s.engine)} · ${s.network_reachable ? '온라인' : '오프라인 동작'}`; } catch {}
 }
 async function liveLoop() {
   try { const l = await (await fetch('/api/live')).json();
-    if (l.rms_g != null && l.age_s < 3) { live.push(l.rms_g); $('lv').textContent = l.rms_g.toFixed(3) + ' g'; } else $('lv').textContent = l.connected ? '대기' : '미연결';
-    if (live.length > 120) live.shift(); const mx = Math.max(0.02, ...live);
-    $('ls').innerHTML = `<polyline fill="none" stroke="var(--ai)" stroke-width="2" points="${live.map((v, i) => `${i * 300 / 119},${34 - v / mx * 32}`).join(' ')}"/>`; } catch {}
+    if (l.rms_g != null && l.age_s < 3) live.push(l.rms_g); if (live.length > 120) live.shift();
+    const el = $('lv'); if (el && live.length) el.innerHTML = `${live[live.length - 1].toFixed(3)}<small>g RMS</small>`; } catch {}
 }
 head(); setInterval(head, 10000); setInterval(loop, 1000); setInterval(liveLoop, 500);
 </script>
