@@ -1,0 +1,27 @@
+[
+  {
+    "event": "record_start_ui_return",
+    "time": "2026-10-10T07:58:36.085Z"
+  },
+  {
+    "event": "Y_positive_1mm_requested",
+    "time": "2026-10-10T07:58:57.195Z"
+  },
+  {
+    "event": "first_click_not_sent_window_resized",
+    "time": "2026-10-10T07:59:33.580Z"
+  },
+  {
+    "event": "Y_UI_positive_1mm_click",
+    "time": "2026-10-10T07:59:45.843Z"
+  },
+  {
+    "event": "Y_UI_positive_1mm_full_window_click",
+    "time": "2026-10-10T08:00:23.622Z"
+  },
+  {
+    "event": "record_stop_ui_return",
+    "time": "2026-10-10T08:02:50.403Z",
+    "note": "Motion not yet confirmed by camera or IMU; planned 10 mm cycles not executed."
+  }
+]

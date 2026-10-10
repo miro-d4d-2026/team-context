@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10191f">
+  <title>진동 테스트 랩 · T4-6</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="page-head">
+      <div class="brand"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M2 14h5l3-8 5 17 4-14 3 5h4"/></svg></span><div><p class="eyebrow">T4-6 / MILESTONE 01</p><h1>진동 테스트 랩</h1><p class="subtitle">UNO Q · QWIIC IMU → USB</p></div></div>
+      <div class="head-note"><span class="local-dot"></span>내 컴퓨터에서 실행<span class="head-note-small">측정 → 기록 → 다시 확인</span></div>
+    </header>
+
+    <section class="steps" aria-label="첫 계측 순서">
+      <div><span class="step-number">01</span><p><strong>UNO Q 연결</strong><span>QWIIC 센서와 USB 연결을 확인하세요.</span></p></div>
+      <div><span class="step-number">02</span><p><strong>정지 상태 확인</strong><span>값과 수집 속도가 안정적인지 봅니다.</span></p></div>
+      <div><span class="step-number">03</span><p><strong>조건별 기록</strong><span>같은 동작을 반복하고 파일을 비교합니다.</span></p></div>
+    </section>
+
+    <div id="error-banner" class="error-banner" role="alert" hidden></div>
+
+    <div class="workspace">
+      <section class="panel signal-panel" aria-labelledby="signal-heading">
+        <div class="panel-heading"><div><p class="eyebrow">가속도 · 3축</p><h2 id="signal-heading">실시간 신호</h2></div><span id="signal-badge" class="badge neutral"><span></span>연결 대기</span></div>
+        <div class="chart-meta"><div class="legend"><span class="x-axis">X</span><span class="y-axis">Y</span><span class="z-axis">Z</span></div><span>최근 8초 · 단위 g</span></div>
+        <div class="chart-wrap"><canvas id="signal-chart" aria-label="최근 8초의 X, Y, Z 가속도 그래프" role="img"></canvas><div id="chart-empty" class="chart-empty"><span class="wave-symbol" aria-hidden="true">⌁</span><strong>첫 신호를 기다리고 있어요</strong><span>센서가 연결되면 실제 측정값이 여기에 표시됩니다.</span></div><div id="chart-stale" class="chart-stale" hidden>수신 중단 · 마지막으로 받은 데이터</div></div>
+        <div id="replay-bar" class="replay-bar" hidden><button id="replay-toggle" class="button small">일시정지</button><button id="replay-restart" class="button ghost small">처음부터</button><input id="replay-progress" type="range" min="0" max="1000" value="0" aria-label="재생 위치"><span id="replay-time">0.0 / 0.0초</span><button id="return-live" class="button ghost small">실시간으로</button></div>
+        <div class="metrics">
+          <div><span class="metric-label">수집 속도</span><strong id="metric-rate">—</strong><small id="metric-rate-note">Hz · 실제 수신 기준</small></div>
+          <div><span class="metric-label">수신 샘플</span><strong id="metric-count">—</strong><small id="metric-count-note">연결 후 누적</small></div>
+          <div><span class="metric-label">변동 RMS</span><strong id="metric-rms">—</strong><small>g · 최근 1초 · 축별 평균 제외</small></div>
+          <div><span class="metric-label">누락 샘플</span><strong id="metric-dropped">—</strong><small id="metric-dropped-note">순번 간격 기준</small></div>
+        </div>
+        <p id="signal-note" class="panel-footnote">정지 상태에도 중력으로 인해 축별 가속도에 약 1 g가 나타날 수 있습니다.</p>
+      </section>
+
+      <aside class="side-stack">
+        <section class="panel" aria-labelledby="connection-heading">
+          <div class="panel-heading"><h2 id="connection-heading">장치 연결</h2><span id="connection-badge" class="tiny-status">미연결</span></div>
+          <p class="field-hint">IMU는 UNO Q의 QWIIC 포트에, UNO Q는 컴퓨터의 USB에 연결합니다.</p>
+          <div class="connection-actions"><button id="connect" class="button primary">UNO Q 연결하기 <span aria-hidden="true">→</span></button><button id="disconnect" class="button ghost" disabled>연결 해제</button></div>
+          <dl class="device-info"><div><dt>보드</dt><dd id="device-board">미확인</dd></div><div><dt>센서</dt><dd id="device-sensor">미확인</dd></div><div><dt>센서 설정 속도</dt><dd id="device-odr">—</dd></div><div><dt>IMU 준비</dt><dd id="gateway-sensor">미확인</dd></div><div><dt>LED 표시 준비</dt><dd id="gateway-led">미확인</dd></div></dl>
+          <p id="connection-message" class="connection-message" aria-live="polite">UNO Q 연결하기를 누르면 측정 수신을 시작합니다.</p>
+          <div id="gateway-led-note" class="led-note"><strong>UNO Q LED 표시</strong><span>연결 아이콘 / 진동 크기 막대 / 수신 중단 표시</span><span>진동 크기는 고장 판정이 아닙니다.</span></div>
+        </section>
+
+        <section class="panel recording-panel" aria-labelledby="record-heading">
+          <div class="panel-heading"><h2 id="record-heading">조건별 기록</h2><span id="record-badge" class="tiny-status">준비</span></div>
+          <label for="record-label">기록 이름</label><input id="record-label" maxlength="100" placeholder="예: A1 mini · 기준 동작 01" autocomplete="off">
+          <label for="record-condition">측정 조건</label><select id="record-condition"><option value="연결 확인">연결 확인</option><option value="정지 상태">정지 상태</option><option value="기준 동작">기준 동작</option><option value="운전 조건 변경">운전 조건 변경</option></select>
+          <label for="record-notes">조건 메모 <span class="optional">선택</span></label><input id="record-notes" maxlength="200" placeholder="센서 위치, 속도, 변경한 설정 등" autocomplete="off">
+          <button id="record-start" class="button primary record-action" disabled><span class="record-dot" aria-hidden="true"></span>기록 시작</button><button id="record-stop" class="button danger record-action" hidden>기록 종료 · 저장</button>
+          <p id="record-message" class="field-hint" aria-live="polite">신호 수신 후 이름을 입력하면 기록할 수 있습니다.</p>
+        </section>
+      </aside>
+
+      <section class="panel readings-panel" aria-labelledby="readings-heading">
+        <div class="panel-heading"><h2 id="readings-heading">현재 측정값</h2><span id="readings-source" class="tiny-status">실측 대기</span></div>
+        <div class="readings-grid"><div><p>가속도 <span>g</span></p><dl><div><dt class="x-axis">X</dt><dd id="ax-value">—</dd></div><div><dt class="y-axis">Y</dt><dd id="ay-value">—</dd></div><div><dt class="z-axis">Z</dt><dd id="az-value">—</dd></div></dl></div><div><p>각속도 <span>°/s</span></p><dl><div><dt class="x-axis">X</dt><dd id="gx-value">—</dd></div><div><dt class="y-axis">Y</dt><dd id="gy-value">—</dd></div><div><dt class="z-axis">Z</dt><dd id="gz-value">—</dd></div></dl></div></div>
+      </section>
+    </div>
+
+    <section class="panel library-panel" aria-labelledby="library-heading">
+      <div class="panel-heading"><div><p class="eyebrow">내 컴퓨터에 저장</p><h2 id="library-heading">측정 기록</h2></div><button id="refresh-recordings" class="button ghost small">목록 새로고침</button></div>
+      <div id="recordings-empty" class="library-empty"><strong>아직 저장된 기록이 없습니다</strong><span>정지 상태부터 기록해 보세요. 저장한 데이터는 다시 재생하거나 CSV로 받을 수 있습니다.</span></div>
+      <div id="recordings-list" class="recordings-list"></div>
+    </section>
+
+    <footer><p><span class="footer-marker"></span>이 단계에서는 센서 수집과 진동 변화를 확인합니다.</p><p>운전 조건에 따른 변화는 고장이나 잔여수명 판정이 아닙니다.</p></footer>
+  </main>
+</body>
+</html>

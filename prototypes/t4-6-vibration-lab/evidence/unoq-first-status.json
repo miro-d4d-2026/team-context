@@ -1,0 +1,58 @@
+{
+  "connected": true,
+  "port": "UNO Q · QWIIC → USB",
+  "source": "unoq_qwiic",
+  "gateway": {
+    "board": "Arduino UNO Q",
+    "transport": "QWIIC",
+    "router_connected": true,
+    "sensor_ready": true,
+    "sample_count": 1944,
+    "last_sample_age_s": 0.027541302000031465,
+    "led_ready": true,
+    "led_error": null,
+    "led_verification": "MCU matrix.begin() result; physical visibility unverified",
+    "acquired_count": 1951,
+    "ring_overflow_count": 0,
+    "queue_depth": 7,
+    "read_error_count": 0,
+    "led_level": 0,
+    "mcu_rms_g": 0.001238
+  },
+  "board": "Arduino UNO Q",
+  "sensor": "LSM6DS3TR-C",
+  "meta": {
+    "board": "Arduino UNO Q",
+    "sensor": "LSM6DS3TR-C",
+    "address": "0x6A",
+    "who_am_i": "0x6A",
+    "odr_hz": 208,
+    "accel_range_g": 4,
+    "gyro_range_dps": 500
+  },
+  "error": null,
+  "fresh": true,
+  "last_sample_age_s": 0.0009617080067982897,
+  "latest": {
+    "id": 2081,
+    "seq": 2080,
+    "t_us": 10275928,
+    "elapsed_s": 9.939148,
+    "host_time": "2026-10-10T07:44:16.559273+00:00",
+    "ax_g": -0.053801999999999996,
+    "ay_g": 0.205326,
+    "az_g": 1.006866,
+    "gx_dps": 1.0325000000000002,
+    "gy_dps": -3.9550000000000005,
+    "gz_dps": 1.0675000000000001
+  },
+  "stats": {
+    "sample_count": 2081,
+    "sample_rate_hz": 210.42870679459176,
+    "dropped": 0,
+    "invalid_lines": 0,
+    "ac_rms_g": 0.0012535047381295838,
+    "peak_g": 0.0028491216707194713
+  },
+  "recording": null
+}

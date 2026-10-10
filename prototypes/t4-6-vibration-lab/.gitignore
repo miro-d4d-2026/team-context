@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+/recordings/
+build/
+*.log
+!evidence/unoq-onboard-compile.log
+!evidence/unoq-upload.log
+.tools/
+.DS_Store
+*.uf2
+*.UF2
+*.bin
+*.elf
+*.o
+*.a

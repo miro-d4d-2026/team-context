@@ -1,0 +1,38 @@
+{
+  "id": "20261010T074432-2c6a1881",
+  "label": "UNOQ_QWIIC_연결검증_01",
+  "condition": "연결 확인 · 실제 IMU 수신·저장 검증. 고정 위치 및 운전 상태 미확인.",
+  "samples": 10608,
+  "started_at": "2026-10-10T07:44:32.689957+00:00",
+  "ended_at": "2026-10-10T07:45:23.478573+00:00",
+  "stop_reason": "user_stopped",
+  "source": "hardware",
+  "transport": "unoq_qwiic",
+  "port": "UNO Q · QWIIC → USB",
+  "meta": {
+    "board": "Arduino UNO Q",
+    "sensor": "LSM6DS3TR-C",
+    "address": "0x6A",
+    "who_am_i": "0x6A",
+    "odr_hz": 208,
+    "accel_range_g": 4,
+    "gyro_range_dps": 500
+  },
+  "gateway": {
+    "board": "Arduino UNO Q",
+    "transport": "QWIIC",
+    "router_connected": true,
+    "sensor_ready": true,
+    "sample_count": 5382,
+    "last_sample_age_s": 0.028555781000022762,
+    "led_ready": true,
+    "led_error": null,
+    "led_verification": "MCU matrix.begin() result; physical visibility unverified",
+    "acquired_count": 5390,
+    "ring_overflow_count": 0,
+    "queue_depth": 8,
+    "read_error_count": 0,
+    "led_level": 0,
+    "mcu_rms_g": 0.001212
+  }
+}
