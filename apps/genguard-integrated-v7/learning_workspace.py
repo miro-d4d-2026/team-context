@@ -16,6 +16,7 @@ from pathlib import Path
 from review_learning.service import Service, pack, canonical_frame, signature
 from review_learning.model import PROFILES, METRICS
 from review_learning.label_model import POLICY
+from review_learning.monitor import LiveMonitor
 
 FEATURE_VERSION='axis-demean-vector-rms__100ms-bin-demean-cv-v1'
 ROOT=Path(__file__).resolve().parent
@@ -26,6 +27,7 @@ class LearningWorkspace:
         self.root=Path(root or ROOT)
         self.service=Service(directory)
         self.directory=Path(directory)
+        self.monitor=LiveMonitor(self.service)
         self._sensor=None
         self._sensor_time=None
         self._stream=None
@@ -66,21 +68,24 @@ class LearningWorkspace:
               'age_s':time.monotonic()-self._sensor_time if self._sensor_time else None,
               'stream_id':self._stream,'features':['vibration_rms_g','envelope_cv'],
               'source':'live_imu','existing_monitor_preserved':True}
+            snap['monitoring']=self.summary()
             snap['capture_error']=self._capture_error
             snap['source_notice']='실측 진동과 모의 제어반은 별도 출처로 학습합니다. 아이폰 진동은 실제 발전기 결함 라벨이 아닙니다.'
             return snap
 
     def summary(self):
-        s=self.service
-        with s.lock:
-            sid=s.live_id
-            latest=s.frames(sid,1)[-1] if sid and self.service.session(sid)['count'] else None
-            age=time.monotonic()-s.last_rx if s.last_rx else None
-            result=copy.deepcopy(latest['result']) if latest else {'state':'collecting','score':None,'reason':'검토 학습용 운전 기록 대기'}
-            if sid and (age is None or age>5):
-                result.update(state='unknown',reason='센서 수신 대기 또는 중단',score=None,ratio=None)
-            return {'live':bool(sid),'session_id':sid,'source_kind':s.session(sid)['meta']['source_kind'] if sid else None,
-              'fresh':bool(sid and age is not None and age<=5),'age_s':age,'result':result}
+        with self.service.lock:
+            result=self.monitor.summary()
+            result.update(live=bool(self.service.live_id), recording=bool(self.service.live_id),
+                          session_id=self.service.live_id)
+            return result
+
+    @staticmethod
+    def _actual_identity(packet):
+        return {'asset_id':packet.get('asset_id','GEN-10K-001'),
+                'installation_id':packet.get('installation_id'),
+                'sensor_config':f"{packet.get('configured_sample_rate_hz',packet.get('sample_rate_hz'))}Hz;{packet.get('accel_range_g')}g;{FEATURE_VERSION}",
+                'feature_version':FEATURE_VERSION}
 
     def session_detail(self,sid):
         s=self.service
@@ -149,10 +154,11 @@ class LearningWorkspace:
             if (isinstance(q,dict) and q.get('valid') is not True) or (isinstance(q,str) and q!='ok'):
                 raise ValueError('유효한 IMU 창을 수신한 뒤 수집을 시작하세요.')
             if packet.get('source')!='live_imu':raise ValueError('실시간 IMU 출처만 새 운전 수집에 사용합니다.')
+            cohort,_=self.monitor.resolve(self._actual_identity(packet))
             meta={'asset_id':packet.get('asset_id','GEN-10K-001'),
               'installation_id':packet['installation_id'],'profile':'vibration','source_kind':'hardware',
               'label':body.get('label') or '실측 진동 운전 기록',
-              'condition':body.get('condition') or '아이폰·IMU 고정 실험',
+              'condition':body.get('condition') or (cohort['meta']['condition'] if cohort else '아이폰·IMU 고정 실험'),
               'sensor_config':f"{packet.get('configured_sample_rate_hz',packet.get('sample_rate_hz'))}Hz;{packet.get('accel_range_g')}g;{FEATURE_VERSION}"}
             sid=self.service.start(meta)
             self._capture_stream=self._stream;self._seq=0;self._elapsed_origin=None;self._window_origin=None;self._last_window=None;self._capture_error=None
@@ -163,10 +169,11 @@ class LearningWorkspace:
         if not isinstance(body,dict):return None
         packet=copy.deepcopy(body)
         with self.service.lock:
+            live_result=self.monitor.ingest(packet,self._actual_identity(packet),baseline_analysis)
             self._sensor=packet;self._sensor_time=time.monotonic();self._stream=packet.get('stream_id')
             self._last_existing_analysis=copy.deepcopy(baseline_analysis)
             sid=self.service.live_id
-            if not sid or self.service.session(sid)['meta']['source_kind']!='hardware':return None
+            if not sid or self.service.session(sid)['meta']['source_kind']!='hardware':return live_result
             window=packet.get('window_id',(packet.get('stream_id'),packet.get('window_seq')))
             if window==self._last_window:return None
             previous_window=self._last_window
@@ -195,7 +202,10 @@ class LearningWorkspace:
             frame={'seq':self._seq,'elapsed_s':elapsed,'duration_s':duration,'phase':'running','quality':quality,
               'values':{k:packet.get('features',{}).get(k) for k in PROFILES['vibration']['targets']},
               'sources':{k:packet.get('source','unknown') for k in PROFILES['vibration']['targets']}}
-            out=self.service.ingest(sid,frame)
+            continuous=self.monitor.summary()
+            matching=continuous.get('signature')==signature(meta)
+            if matching: frame['phase']='stopped' if live_result.get('state')=='idle' else frame['phase']
+            out=self.service.ingest(sid,frame,live_result if matching else None)
             # Keep the existing monitor's evidence immutable and separate.
             out['existing_monitor']=copy.deepcopy(baseline_analysis)
             self.service.db.execute('UPDATE frames SET result=? WHERE session_id=? AND seq=?',(pack(out),sid,self._seq))

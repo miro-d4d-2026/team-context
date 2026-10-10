@@ -178,7 +178,7 @@ class Service(AutomaticTrainingMixin, FeedbackMixin):
             self.streak = 0
             return sid
 
-    def ingest(self, sid, raw):
+    def ingest(self, sid, raw, analyzed_result=None):
         f = canonical_frame(raw)
         with self.lock:
             sess = self.session(sid)
@@ -203,37 +203,49 @@ class Service(AutomaticTrainingMixin, FeedbackMixin):
                 raise ValueError('시간 또는 순번이 역행했습니다.')
             if prev and (f['seq'] != prev[0]+1 or (f['elapsed_s']-prev[1] > 5 and raw.get('intentional_gap') is not True)):
                 f['quality'] = 'invalid'
-            result = {'state':'collecting','reason':'검증·활성화된 정상 기준이 없습니다. 기록은 계속 저장합니다.',
-                      'score':None,'ratio':None,'threshold':None,'evidence':[], 'model_id':sess['model_id']}
-            from .model import values
-            try: values(f, PROFILES[sess['meta']['profile']]['context']+PROFILES[sess['meta']['profile']]['targets'])
-            except ValueError: f['quality']='invalid'
-            if f['quality'] != 'ok':
-                result.update(state='unknown',reason='계측 품질 또는 시간 간격 문제입니다. 장비 고장으로 판정하지 않습니다.')
-                self.streak = 0
-            elif sess['model_id']:
-                mr = self.db.execute('SELECT data FROM models WHERE id=?', (sess['model_id'],)).fetchone()
-                model = json.loads(mr[0])
-                try:
-                    if not self.dependencies_valid(model):
-                        raise ValueError('정상 기준의 승인 상태가 변경되었습니다. 새 기준을 검토하세요.')
-                    result.update(score(model,f))
-                    self.streak = self.streak+1 if result['ratio'] > 1 else 0
-                    state = 'attention' if self.streak >= 3 else 'observe' if self.streak else 'reference'
-                    result.update(state=state,reason={'attention':'평소와 다른 변화가 3개 창 연속으로 지속됩니다.',
-                      'observe':'평소 패턴과 차이가 있습니다. 지속 여부를 확인합니다.',
-                      'reference':'학습한 운전 조건의 참고 패턴과 유사합니다.'}[state], consecutive_windows=self.streak)
-                except ValueError as e:
-                    self.streak=0
-                    result.update(state='unknown',reason=str(e))
-            elif f['phase'] != 'running':
-                result.update(state='unknown',reason='안정 운전 전용 기준입니다. 현재 운전 단계는 분석 대상이 아닙니다.')
-            self.apply_feedback(sess, f, result)
+            if analyzed_result is None:
+                counters = {'normal': self.streak, 'feedback': self.feedback_streak}
+                result = self.analyze_frame(sess, f, counters)
+                self.streak, self.feedback_streak = counters['normal'], counters['feedback']
+            else:
+                # Live hardware stores the already computed result of this exact
+                # window. Starting/stopping a report cannot reset monitoring.
+                result = json.loads(pack(analyzed_result))
             self.db.execute('INSERT INTO frames VALUES(?,?,?,?,?)', (sid,f['seq'],f['elapsed_s'],pack(f),pack(result)))
             self.db.execute('UPDATE sessions SET count=count+1,max_ratio=MAX(max_ratio,?) WHERE id=?', (result.get('ratio') or 0,sid))
             self.db.commit()
             self.last_rx = time.monotonic()
             return result
+
+    def analyze_frame(self, sess, f, counters):
+        """Score one accepted window; report storage does not own live streaks."""
+        result = {'state':'collecting','reason':'검증·활성화된 정상 기준이 없습니다. 기록은 계속 저장합니다.',
+                  'score':None,'ratio':None,'threshold':None,'evidence':[], 'model_id':sess['model_id']}
+        from .model import values
+        try: values(f, PROFILES[sess['meta']['profile']]['context']+PROFILES[sess['meta']['profile']]['targets'])
+        except ValueError: f['quality']='invalid'
+        if f['quality'] != 'ok':
+            result.update(state='unknown',reason='계측 품질 또는 시간 간격 문제입니다. 장비 고장으로 판정하지 않습니다.')
+            counters['normal'] = 0
+        elif sess['model_id']:
+            mr = self.db.execute('SELECT data FROM models WHERE id=?', (sess['model_id'],)).fetchone()
+            model = json.loads(mr[0])
+            try:
+                if not self.dependencies_valid(model):
+                    raise ValueError('정상 기준의 승인 상태가 변경되었습니다. 새 기준을 검토하세요.')
+                result.update(score(model,f))
+                counters['normal'] = counters['normal']+1 if result['ratio'] > 1 else 0
+                state = 'attention' if counters['normal'] >= 3 else 'observe' if counters['normal'] else 'reference'
+                result.update(state=state,reason={'attention':'평소와 다른 변화가 3개 창 연속으로 지속됩니다.',
+                  'observe':'평소 패턴과 차이가 있습니다. 지속 여부를 확인합니다.',
+                  'reference':'학습한 운전 조건의 참고 패턴과 유사합니다.'}[state], consecutive_windows=counters['normal'])
+            except ValueError as e:
+                counters['normal']=0
+                result.update(state='unknown',reason=str(e))
+        elif f['phase'] != 'running':
+            result.update(state='unknown',reason='안정 운전 전용 기준입니다. 현재 운전 단계는 분석 대상이 아닙니다.')
+        self.apply_feedback(sess, f, result, counters)
+        return result
 
     def list_sessions(self):
         with self.lock:

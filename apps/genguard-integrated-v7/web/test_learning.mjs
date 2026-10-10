@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {REVIEW_LABELS,sourceText,profileText,escapeLearning,candidateStatus,reviewPayload,intervalPayload,labelRows,captureCaption,candidateMarkup,sessionSignature,currentFeedbackLabel,runPresentation,experimentField,experimentHistory,experimentChart,durationText,modelLearningFacts,workflowSummary,reportWindowCaption,latestReportId,currentModelMarkup,storedMonitorSummary,storedMonitorMarkup,reviewedReportSummary,learningCohorts,reviewedRecordCaption,trainingSummaryMarkup,suggestedCaptureCondition,captureConditionValue,capturePayload,autoTrainingPayload,autoTrainingBlocker,autoPlanKey,autoPlanCaption,candidateTrainingCounts,excludedTrainingMarkup} from './learning.mjs';
+import {continuousMonitorPresentation,REVIEW_LABELS,sourceText,profileText,escapeLearning,candidateStatus,reviewPayload,intervalPayload,labelRows,captureCaption,candidateMarkup,sessionSignature,currentFeedbackLabel,runPresentation,experimentField,experimentHistory,experimentChart,durationText,modelLearningFacts,workflowSummary,reportWindowCaption,latestReportId,currentModelMarkup,storedMonitorSummary,storedMonitorMarkup,reviewedReportSummary,learningCohorts,reviewedRecordCaption,trainingSummaryMarkup,suggestedCaptureCondition,captureConditionValue,capturePayload,autoTrainingPayload,autoTrainingBlocker,autoPlanKey,autoPlanCaption,candidateTrainingCounts,excludedTrainingMarkup} from './learning.mjs';
 const meta={asset_id:'GEN-1',installation_id:'phone-1',source_kind:'hardware',profile:'vibration',condition:'same',sensor_config:{odr:208,range:4}};
 const session=(id,review,role)=>({id,review,role,ended:20,started:1,count:40,meta:{...meta,label:id}});
 const normal=Array.from({length:4},(_,i)=>session('n'+(i+1),'normal','none'));
@@ -47,8 +47,8 @@ test('pending and invalidated real models are not advertised as applied models',
 });
 test('workflow prioritizes ended human review and current recording controls',()=>{
  const snapshot={sessions:[...normal,session('pending','unreviewed','none'),{...session('live','unreviewed','none'),ended:null}]};
- const summary=workflowSummary(snapshot);assert.equal(summary.closedRuns,5);assert.equal(summary.reviewWaiting,1);assert.equal(summary.next.href,'#records');assert.equal(summary.button,'운전 기록 시작');
- assert.equal(workflowSummary({...snapshot,live:true,session:{meta:{source_kind:'hardware'}}}).button,'기록 종료 · 검토');
+ const summary=workflowSummary(snapshot);assert.equal(summary.closedRuns,5);assert.equal(summary.reviewWaiting,1);assert.equal(summary.next.href,'#records');assert.equal(summary.button,'보고서 기록 시작');
+ assert.equal(workflowSummary({...snapshot,live:true,session:{meta:{source_kind:'hardware'}}}).button,'보고서 기록 종료');
  assert.equal(workflowSummary({...snapshot,live:true,session:{meta:{source_kind:'synthetic'}}}).button,'합성 운전 확인');
  assert.match(workflowSummary(snapshot,true).summary,/마지막 기록/);
 });
@@ -71,7 +71,7 @@ test('existing ready baseline is shown without inventing reviewed-label training
 test('registered reviewed models retain provenance and exclude invalidated candidates',()=>{
  const m={id:'synthetic-label',active:true,passed:true,labels_current:true,signature:{source_kind:'synthetic'}};
  const markup=currentModelMarkup({feedback_models:[m,{...m,id:'invalidated',labels_current:false}]});
- assert.match(markup,/모의 데이터 · 라벨 분류 · 다음 운전 적용/);assert.match(markup,/synthetic-label/);assert.doesNotMatch(markup,/invalidated/);
+ assert.match(markup,/모의 데이터 · 라벨 분류 · 적용 중/);assert.match(markup,/synthetic-label/);assert.doesNotMatch(markup,/invalidated/);
 });
 test('disconnected current model panel never asserts current baseline application',()=>{
  const s={preserved_baseline:{baseline_id:'imu-old',state:'ready'}};
@@ -172,4 +172,19 @@ test('capture request sends the visible operating condition rather than a fixed 
  assert.throws(()=>capturePayload({name:'run',condition:' '}),/운전 조건/);
  assert.throws(()=>capturePayload({name:'run',condition:'x'.repeat(181)}),/운전 조건/);
  const html=readFileSync(new URL('./operation.html',import.meta.url),'utf8');assert.match(html,/name="condition"[^>]*value="same-installation"/);assert.match(html,/id="lw-capture-condition-help"/);
+});
+
+
+test('continuous model result is visible before and after report recording',()=>{
+ const monitoring={fresh:true,age_s:1,model_id:'new-normal',feedback_model_id:'new-feedback',recording:false,result:{state:'attention',reason:'진동 변화',feedback:{state:'abnormal_like'}}};
+ const shown=continuousMonitorPresentation({live:false,monitoring});assert.equal(shown.reason,'진동 변화');assert.equal(shown.feedback,'검토된 비정상과 유사');assert.equal(shown.modelId,'new-normal');
+ const recording=continuousMonitorPresentation({live:true,monitoring:{...monitoring,recording:true}});assert.equal(recording.reason,shown.reason);
+ assert.equal(continuousMonitorPresentation({monitoring:{...monitoring,fresh:false}}).feedback,'판단 대기');
+ assert.equal(continuousMonitorPresentation({monitoring},true).stale,true);
+ assert.equal(continuousMonitorPresentation({}),null);
+});
+test('monitor display does not turn stopped or incompatible input into normal classification',()=>{
+ const m={fresh:true,model_id:'normal',feedback_model_id:'feedback',result:{state:'unknown',reason:'정지 상태 · 운전 판단 대기'}};
+ assert.equal(continuousMonitorPresentation({monitoring:m}).feedback,'정지 상태 · 운전 판단 대기');
+ assert.equal(continuousMonitorPresentation({monitoring:{...m,feedback_model_id:null}}).feedback,'분류 모델 미적용');
 });

@@ -1,0 +1,24 @@
+# GenGuard managed user unit v1
+[Unit]
+Description=GenGuard local monitoring, reviewed ML and IMU receiver
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+WorkingDirectory=@BASE@/app
+ExecStart=/usr/bin/python3 @BASE@/app/deployment/supervise_on_unoq.py --base @BASE@ --gateway-root @GATEWAY@
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=35
+KillMode=control-group
+UMask=0077
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONPATH=/home/arduino/clikart/site
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=genguard
+LogRateLimitIntervalSec=30s
+LogRateLimitBurst=200
+
+[Install]
+WantedBy=default.target

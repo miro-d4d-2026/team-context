@@ -249,7 +249,7 @@ class FeedbackMixin:
             self.audit('feedback_activated', {'id': mid})
             self.db.commit()
 
-    def apply_feedback(self, session, frame, result):
+    def apply_feedback(self, session, frame, result, counters=None):
         mid = session.get('feedback_model_id')
         out = {'state': 'unavailable', 'reason': '검토 라벨 모델 미등록', 'score': None, 'model_id': mid}
         if mid:
@@ -261,13 +261,16 @@ class FeedbackMixin:
                 out = predict_label(model, frame)
             except (ValueError, TypeError) as exc:
                 out = {'state': 'unknown', 'reason': str(exc), 'score': None, 'model_id': mid}
-        self.feedback_streak = self.feedback_streak+1 if out['state'] == 'abnormal_like' else 0
-        out['consecutive_windows'] = self.feedback_streak
+        previous = self.feedback_streak if counters is None else counters['feedback']
+        streak = previous+1 if out['state'] == 'abnormal_like' else 0
+        if counters is None: self.feedback_streak = streak
+        else: counters['feedback'] = streak
+        out['consecutive_windows'] = streak
         result['feedback'] = out
         # A normal classifier output never suppresses novelty or invalid data.
         # An abnormal label classifier adds a second, independent reason to inspect.
         if out['state'] == 'abnormal_like' and result['state'] != 'unknown':
-            if self.feedback_streak >= 3:
+            if streak >= 3:
                 result.update(state='attention', reason='검토된 비정상 사례와 유사한 특징이 3개 창 연속 확인됩니다. 확인이 필요합니다.')
             elif result['state'] != 'attention':
                 result.update(state='observe', reason='검토된 비정상 사례 쪽으로 분류됩니다. 지속 여부를 확인합니다.')

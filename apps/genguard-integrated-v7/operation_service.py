@@ -108,8 +108,8 @@ class OperationService(VibrationService):
                 'source': body['source'], 'valid': valid,
                 'rms_g': body['features']['vibration_rms_g'] if valid else None,
                 'envelope_cv': body['features']['envelope_cv'] if valid else None})
-            if self.linked_simulation_enabled:
-                self.linked_simulator.update(self.imu_status(), self.baseline, self.monotonic())
+            live_pattern = self.linked_simulator.update(self.imu_status(), self.baseline, self.monotonic())
+            overview = None
             # Sensor arrival drives inference even when no browser is polling.
             if self.operation_input['mode'] == 'hybrid':
                 try:
@@ -120,27 +120,47 @@ class OperationService(VibrationService):
                         'execution': self.execution, 'source': body['source'],
                         'baseline_id': self.calibration.get('baseline_id'),
                         'vibration': copy.deepcopy(channel),
-                        'pattern': overview.get('linked_simulation', {}).get('pattern'),
+                        'pattern': live_pattern.get('pattern'),
                         'state': overview['operational_status']['state'],
                         'summary': overview['operational_status']['summary']}
                 except BridgeError as exc:
                     self.latest_edge_analysis = {'window_id': result['id'], 'analyzed_at': self._now(),
                         'execution': self.execution, 'state': 'unavailable', 'error': exc.code}
-                with self.runtime.db:
-                    self.runtime.db.execute("INSERT OR REPLACE INTO operation_metadata VALUES ('latest_edge_analysis',?)",
-                                            (canonical(self.latest_edge_analysis),))
+            else:
+                self.latest_edge_analysis = {'window_id': result['id'], 'analyzed_at': self._now(),
+                    'execution': self.execution, 'source': body['source'],
+                    'pattern': live_pattern.get('pattern')}
             try:
                 self.learning_workspace.ingest_imu(body, result, self.latest_edge_analysis)
             except Exception as exc:
                 # A failed review archive must never interrupt the existing sensor
                 # receiver; surface the failure instead of claiming successful storage.
-                self.learning_capture_error = '검토용 기록 저장을 중단했습니다. 기존 실측 감시는 유지됩니다. 서버 기록을 확인하세요.'
+                self.learning_capture_error = '학습 모델 분석 또는 기록 저장을 보류했습니다. 기존 실측 감시는 유지됩니다. 서버 기록을 확인하세요.'
+                try:
+                    with self.learning_workspace.service.lock:
+                        self.learning_workspace.monitor.invalidate(self.learning_capture_error, result['id'])
+                except Exception:
+                    pass  # In-memory unknown state is set before any persistence attempt.
                 import sys
                 print(f'[review capture error] {type(exc).__name__}', file=sys.stderr)
                 try:
                     self.learning_workspace.dispatch('stop', {})
                 except Exception:
                     pass
+            # Persist the reviewed judgment for the same accepted window. Browser
+            # polling and report capture are neither inference triggers nor gates.
+            reviewed = self.learning_workspace.summary()
+            self.latest_edge_analysis['review_learning'] = reviewed
+            if overview is not None:
+                current = self._learning_overlay(overview)
+                self.latest_edge_analysis.update(state=current['operational_status']['state'],
+                    summary=current['operational_status']['summary'])
+            else:
+                self.latest_edge_analysis.update(state=reviewed['result']['state'],
+                    summary=reviewed['result']['reason'])
+            with self.runtime.db:
+                self.runtime.db.execute("INSERT OR REPLACE INTO operation_metadata VALUES ('latest_edge_analysis',?)",
+                                        (canonical(self.latest_edge_analysis),))
         return result
 
     def imu_status(self):
@@ -326,7 +346,7 @@ class OperationService(VibrationService):
         result['review_learning'] = reviewed
         # A reviewed classifier can add an independent inspection reason. It can
         # never erase fixed limits, live-baseline changes, or missing-data flags.
-        if (result['view']['mode'] == 'hybrid' and reviewed.get('live')
+        if (result['view']['mode'] == 'hybrid' and reviewed.get('monitoring')
                 and reviewed.get('fresh') and reviewed.get('source_kind') == 'hardware'
                 and reviewed.get('result', {}).get('state') == 'attention'):
             reason = reviewed['result'].get('reason', '검토 학습 기준과 다른 진동이 이어집니다.')

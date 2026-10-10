@@ -90,7 +90,7 @@ class LearningAPITests(unittest.TestCase):
         service.learning_workspace = Mock()
         base = {'view': {'mode': 'hybrid'}, 'operational_status': {
             'state': 'urgent', 'alerts': [{'id': 'existing_heat'}], 'headline': '기존 보호 경보'}}
-        learned = {'live': True, 'fresh': True, 'source_kind': 'hardware',
+        learned = {'monitoring': True, 'live': False, 'fresh': True, 'source_kind': 'hardware',
                    'result': {'state': 'stable', 'reason': '검토 사례와 유사'}}
         service.learning_workspace.summary.return_value = learned
         self.assertEqual(service._learning_overlay(copy.deepcopy(base))['operational_status'], base['operational_status'])

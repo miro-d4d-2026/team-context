@@ -3,6 +3,17 @@ set -eu
 # This release lives beside the team's original app, gateway and Clika runtime.
 BASE=$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)
 APP="$BASE/app"
+# Once installed, one service owns gateway/API/receiver together. Do not spawn
+# a second manual API alongside it, even when that service is currently stopped.
+if [ -f "$HOME/.config/systemd/user/genguard.service" ]; then
+    if ! grep -Fqx "WorkingDirectory=$APP" "$HOME/.config/systemd/user/genguard.service"; then
+        echo 'Existing genguard.service belongs to another installation; no process was started.' >&2
+        exit 1
+    fi
+    export XDG_RUNTIME_DIR="/run/user/$(id -u)"
+    export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/bus"
+    exec systemctl --user start genguard.service
+fi
 export PYTHONPATH=/home/arduino/clikart/site
 export PATH="$BASE/runtime/node-v22.23.3-linux-arm64/bin:$PATH"
 export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1

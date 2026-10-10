@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-11",
+  "scope": "아이폰·IMU 같은 부착 조건 실측. 발전기 정확도 아님. 새 모델 재학습 없음.",
+  "normal": {
+    "unique_windows": 5,
+    "all_without_report": true,
+    "all_fresh": true,
+    "states": [
+      "reference"
+    ],
+    "feedback": [
+      "normal_like"
+    ]
+  },
+  "strong": {
+    "unique_windows": 7,
+    "all_without_report": true,
+    "all_fresh": true,
+    "states": [
+      "attention"
+    ],
+    "feedback": [
+      "abnormal_like"
+    ]
+  },
+  "intermittent": {
+    "unique_windows": 7,
+    "all_without_report": true,
+    "all_fresh": true,
+    "states": [
+      "attention"
+    ],
+    "feedback": [
+      "abnormal_like"
+    ]
+  },
+  "report": {
+    "windows": 5,
+    "ended": true,
+    "review": "unreviewed",
+    "model_id": "review-4f2f18fe0b80",
+    "feedback_model_id": "fb-85695ee21e12"
+  },
+  "models_preserved": true,
+  "original_reports_preserved": 8,
+  "total_reports": 9,
+  "software": {
+    "python": 282,
+    "javascript": 163,
+    "autostart": 11
+  },
+  "power_cycle": {
+    "method": "사용자 USB 전원 분리 후 재연결",
+    "boot_id_changed": true,
+    "service": "active/running",
+    "enabled": true,
+    "linger": true,
+    "restart_count_new_boot": 0,
+    "manual_app_start_after_boot": false,
+    "mac_action": "기존 보드의 화면 접속용 USB 터널만 복원",
+    "live_sensor_fresh": true,
+    "report_recording": false,
+    "models_unchanged": true,
+    "report_count": 9,
+    "baseline_file_sha256_unchanged": true,
+    "bundle_sha256_unchanged": true,
+    "live_model_result_after_restart": "reference / normal_like",
+    "old_report_metadata_unchanged": true
+  }
+}
