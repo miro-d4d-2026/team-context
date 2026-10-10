@@ -58,14 +58,21 @@ def fit_phase(frames, profile):
     }
 
 
-def score_phase(frame, profile, phase_model):
-    x, y = vectors(frame, profile)
-    low, high = np.asarray(phase_model["context_low"]), np.asarray(phase_model["context_high"])
-    outside = [profile["context"][i] for i in range(len(x)) if not low[i] <= x[i] <= high[i]]
+def raw_score(x, y, phase_model):
+    """NumPy scoring: (expected, standardized residual z, score)."""
     design = np.r_[1.0, (x - phase_model["context_mean"]) / phase_model["context_scale"]]
     expected = design @ np.asarray(phase_model["weights"]) + phase_model["residual_mean"]
     z = (y - expected) / phase_model["residual_scale"]
     score = float(np.sqrt(max(float(z @ np.asarray(phase_model["precision"]) @ z), 0) / len(y)))
+    return expected, z, score
+
+
+def score_phase(frame, profile, phase_model, scorer=raw_score):
+    """`scorer` computes the same three values; clikart_engine supplies an on-device one."""
+    x, y = vectors(frame, profile)
+    low, high = np.asarray(phase_model["context_low"]), np.asarray(phase_model["context_high"])
+    outside = [profile["context"][i] for i in range(len(x)) if not low[i] <= x[i] <= high[i]]
+    expected, z, score = scorer(x, y, phase_model)
     evidence = []
     for i in np.argsort(-np.abs(z))[:3]:
         key = profile["targets"][int(i)]
@@ -76,13 +83,15 @@ def score_phase(frame, profile, phase_model):
     return {"score": score, "outside_context": outside, "evidence": evidence}
 
 
-def predict(frame, profile, bundle):
+def predict(frame, profile, bundle, scorer=raw_score):
     phase = bundle["phases"].get(frame["phase"])
     if phase is None:
         return {"state": "unknown", "reason": "untrained_phase", "score": None,
                 "threshold": None, "evidence": []}
-    result = score_phase(frame, profile, phase)
+    result = score_phase(frame, profile, phase, scorer)
     result.update(threshold=phase["threshold"])
+    if scorer is not raw_score:
+        result.update(engine=scorer.label)
     if result["outside_context"]:
         result.update(state="unknown", reason="unseen_operating_context")
     else:

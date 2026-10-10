@@ -2,7 +2,8 @@
 """Run the GenGuard edge model (context-ridge-residual-covariance/1) on ClikaRT.
 
 The trained model JSON from genguard-edge-v1 is rebuilt as an ONNX graph with
-ClikaRT's own builder, so scoring needs no extra converter:
+ClikaRT's own builder (genguard.clikart_engine.build_onnx), so scoring needs no
+extra converter:
 
     xs = (X - context_mean) / context_scale
     expected = xs @ W[1:] + (W[0] + residual_mean)
@@ -39,39 +40,6 @@ def feature_value(value: float, spec: dict) -> float:
     return float(value)
 
 
-def build_onnx(crt, phase: dict, n_context: int, n_targets: int, path: str) -> None:
-    f32 = lambda a: crt.tensor(np.asarray(a, dtype=np.float32))
-    weights = np.asarray(phase["weights"], dtype=np.float64)
-    model = crt.io.OnnxModel.create("genguard_edge_score", opset_version=21)
-    model.add_input("X", crt.float32, [-1, n_context])
-    model.add_input("Y", crt.float32, [-1, n_targets])
-    mean = model.add_initializer(f32(phase["context_mean"]))
-    inv_scale = model.add_initializer(f32(1.0 / np.asarray(phase["context_scale"])))
-    w = model.add_initializer(f32(weights[1:]))
-    bias = model.add_initializer(f32(weights[0] + np.asarray(phase["residual_mean"])))
-    inv_rscale = model.add_initializer(f32(1.0 / np.asarray(phase["residual_scale"])))
-    precision = model.add_initializer(f32(phase["precision"]))
-    ones = model.add_initializer(f32(np.ones((n_targets, 1))))
-    inv_n = model.add_initializer(f32([1.0 / n_targets]))
-
-    (centered,) = model.add_node("Sub", ["X", mean])
-    (xs,) = model.add_node("Mul", [centered, inv_scale])
-    (lin,) = model.add_node("MatMul", [xs, w])
-    (expected,) = model.add_node("Add", [lin, bias])
-    (resid,) = model.add_node("Sub", ["Y", expected])
-    (z,) = model.add_node("Mul", [resid, inv_rscale])
-    (zp,) = model.add_node("MatMul", [z, precision])
-    (zpz,) = model.add_node("Mul", [zp, z])
-    (quad,) = model.add_node("MatMul", [zpz, ones])
-    (nonneg,) = model.add_node("Relu", [quad])
-    (mean_sq,) = model.add_node("Mul", [nonneg, inv_n])
-    (score,) = model.add_node("Sqrt", [mean_sq])
-    model.add_output(score, crt.float32, [-1, 1])
-    model.add_output(z, crt.float32, [-1, n_targets])
-    model.add_output(expected, crt.float32, [-1, n_targets])
-    model.save(path)
-
-
 def frame_arrays(frames: list[dict], profile: dict) -> tuple[np.ndarray, np.ndarray]:
     x = [[f["elapsed_s"] if k == "elapsed_s" else f["readings"][k]["value"] for k in profile["context"]]
          for f in frames]
@@ -99,9 +67,13 @@ def main() -> int:
     parser.add_argument("--onnx", default="genguard_edge_score.onnx")
     parser.add_argument("--frames", help="JSONL of stored {payload, result} windows to compare")
     parser.add_argument("--output", default="genguard-clikart-compare.json")
+    parser.add_argument("--edge-dir", default=str(Path(__file__).resolve().parents[3] / "apps" / "genguard-edge-v1"),
+                        help="genguard-edge-v1 checkout that provides genguard.clikart_engine")
     args = parser.parse_args()
 
+    sys.path.insert(0, args.edge_dir)
     import clika_runtime as crt
+    from genguard.clikart_engine import build_onnx
 
     bundle = json.loads(Path(args.model).read_text())
     profile = json.loads(Path(args.profile).read_text())

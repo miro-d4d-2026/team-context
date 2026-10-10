@@ -15,7 +15,7 @@ from datetime import datetime, timezone
 
 import numpy as np
 
-from .model import ALGORITHM, fit_phase, predict, score_phase
+from .model import ALGORITHM, fit_phase, predict, raw_score, score_phase
 
 DOMAINS = {
     "live": {"live_imu", "live_controller"},
@@ -183,7 +183,15 @@ class EdgeRuntime:
     activation never change predictions in an already started run.
     """
 
-    def __init__(self, db_path, profile_path):
+    def __init__(self, db_path, profile_path, engine=None):
+        engine = engine or os.environ.get("GENGUARD_ENGINE", "numpy")
+        if engine == "clikart":
+            from .clikart_engine import ClikaScorer
+            self.scorer = ClikaScorer()
+        elif engine == "numpy":
+            self.scorer = raw_score
+        else:
+            raise ValueError(f"Unknown GENGUARD_ENGINE: {engine}")
         self.db_path = str(Path(db_path).resolve())
         self.profile = load_profile(profile_path)
         self.profile_hash = digest(self.profile)
@@ -312,8 +320,8 @@ class EdgeRuntime:
                 current = dict(_unknown("no_accepted_model"), state="baseline_collecting")
                 original = None
             else:
-                current = predict(frame, self.profile, active)
-                original = predict(frame, self.profile, reference) if reference else None
+                current = predict(frame, self.profile, active, self.scorer)
+                original = predict(frame, self.profile, reference, self.scorer) if reference else None
             comparison = [r for r in [current, original] if r]
             changed = any(r["state"] == "change" for r in comparison)
             continuous = (frame["seq"] == session["last_seq"] + 1 and

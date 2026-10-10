@@ -79,6 +79,26 @@ $ADB shell 'cd ~/clikart/genguard && PYTHONPATH=$HOME/clikart/site python3 gengu
 
 결과: [results/genguard-edge/compare.json](results/genguard-edge/compare.json), 그래프: [genguard_edge_score.onnx](results/genguard-edge/genguard_edge_score.onnx). 입력 창(`fusion-windows.jsonl`, 15MB)은 우지 데모 DB에서 뽑았고 저장소에는 올리지 않았다.
 
+## 6. GenGuard 앱 판정 경로에 연결
+
+`apps/genguard-edge-v1`의 실시간 판정(`EdgeRuntime.ingest`)이 점수 계산 엔진을 고를 수 있다. 학습은 NumPy 그대로이고 판정만 바뀐다. `GENGUARD_ENGINE=clikart`로 실행하면 [genguard/clikart_engine.py](../../../apps/genguard-edge-v1/genguard/clikart_engine.py)가 학습된 모델을 ONNX로 만들어 ClikaRT로 계산하고, 각 판정 결과에 `engine: "clikart-0.6.4"`가 남는다. 설정하지 않으면 기존 NumPy 계산이다.
+
+```sh
+$ADB shell 'cd ~/genguard-edge-v1 && export PYTHONPATH=$HOME/clikart/site:$HOME/genguard-edge-v1 && GENGUARD_ENGINE=clikart python3 -m genguard.demo --output runs/clikart'
+```
+
+**실측 (2026-10-10T15:2xZ, 보드 Wi-Fi disconnected):** 우지 데모 전체(시나리오 5개 × 모델 2개 × 300창)를 보드에서 NumPy와 ClikaRT로 각각 실행했다.
+
+| 항목 | 결과 |
+|---|---|
+| 앱 최종 상태 일치(연속 경보 규칙 포함) | 3,000/3,000 |
+| ClikaRT가 점수를 낸 창 | 2,819개 모두 `engine: clikart-0.6.4` 기록. 나머지는 모델 학습 전(4,800)과 입력 품질 불량(181)으로 원래도 점수가 없는 창 |
+| 점수 최대 차이 | 6.8e-5 |
+| 데모 전체 소요 | NumPy 44초, ClikaRT 54초 (학습·DB 기록 포함) |
+| Mac 단위 테스트 (NumPy 기본) | 53/53 통과 |
+
+결과: [results/genguard-edge/engine-compare.json](results/genguard-edge/engine-compare.json), 비교 스크립트: [compare_engine_runs.py](compare_engine_runs.py).
+
 ## 검증 범위
 
 확인한 것: ClikaRT 설치, Offline 라이선스, 네트워크 없는 실행, 우지 모델 점수 계산의 ClikaRT 이식과 원본 대비 같은 판정. **데모 DB는 합성 시나리오 데이터(`data_domain: scenario`)다.** 이 결과는 계산이 원본과 같다는 증거이고, 실제 발전기 고장 탐지 정확도가 아니다. GenGuard 웹 앱의 판정 경로에 연결하는 작업과 SC1 제출물 구성은 아직 남아 있다.
