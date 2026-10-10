@@ -27,6 +27,10 @@
   <div class="seg" id="seg"></div>
   <div class="scenes" id="scenes"></div>
   <div class="row"><button id="fast">시연 가속 ×10</button><button id="reset">새 운전 시작</button></div>
+  <h1 style="margin-top:22px">실측 진동 (1호기 IMU)</h1>
+  <div class="muted" id="ws" style="margin:0 0 8px">상태 확인 중</div>
+  <div class="row" style="margin-top:0"><button id="learn">기준 학습 시작</button><button id="wreset">기준 초기화</button></div>
+  <div class="muted">폰을 평소 진동으로 둔 채 학습을 시작하세요. 진동이 있는 45초를 모아 평소 범위를 정합니다. 쉬는 구간은 정지로 처리합니다.</div>
   <details><summary>모든 장면</summary><div class="all" id="all"></div></details>
   <div class="muted">버튼은 입력값만 바꿉니다. 경보와 AI 판정은 관제 화면이 실제 계산으로 정합니다.</div>
 </div>
@@ -56,6 +60,11 @@ function render() {
 $('fast').onclick = () => send({ fast: !state?.fast });
 $('reset').onclick = () => send({ asset, reset: true });
 fetch('/api/control').then(r => r.json()).then(s => { state = s; render(); });
+const watchCall = action => fetch('/api/live/watch', { method: 'POST', body: JSON.stringify({ action }) });
+$('learn').onclick = () => watchCall('learn');
+$('wreset').onclick = () => watchCall('reset');
+setInterval(async () => { try { const l = await (await fetch('/api/live')).json(), w = l.watch;
+  $('ws').textContent = `${l.rms_g != null ? l.rms_g.toFixed(3) + ' g · ' : ''}${w.mode === 'learning' ? `학습 중 ${w.learned_s}/${w.learn_target_s}초` : w.mode === 'no_baseline' ? '기준 없음' : `기준 ${w.baseline_g.toFixed(3)} g · ${w.alarm ? '강한 진동 경보' : w.ratio == null ? '정지' : '평소 범위 ' + w.ratio.toFixed(1) + '배'}`}`; } catch {} }, 1000);
 </script>
 </body>
 </html>

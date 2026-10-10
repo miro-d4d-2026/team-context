@@ -6,7 +6,8 @@ Serves the web console (static/) and three JSON endpoints:
   POST /api/score   one snapshot -> pattern judgment from the trained edge model
                     (ClikaRT when GENGUARD_ENGINE=clikart), with per-asset streak
                     so 3 consecutive changes become inspection_suggested
-  GET  /api/live    latest live IMU vibration RMS read from the Qwiic gateway
+  GET  /api/live    latest live IMU vibration RMS read from the Qwiic gateway,
+                    plus the baseline-learned vibration watch (POST /api/live/watch)
   GET  /api/status  engine, model, license and network facts for the header
   GET/POST /api/control  presenter scene per asset (control.html -> index.html)
 
@@ -85,12 +86,66 @@ class Judge:
         return result
 
 
+class VibrationWatch:
+    """Per-installation baseline for the live IMU, then a ratio alarm.
+
+    learn: collect seconds while the machine vibrates (rms >= REST_G) until
+    LEARN_SECONDS; baseline = 95th percentile of those seconds.
+    watch: rms / baseline > RATIO for HOLD_S consecutive vibrating seconds ->
+    "strong vibration" alarm (Woozy's rule: 1.5x the approved baseline).
+    Below REST_G the machine counts as stopped, not normal and not alarmed.
+    Assumed demo values, not limits validated on a real generator.
+    """
+    REST_G, RATIO, HOLD_S, LEARN_SECONDS = 0.006, 1.5, 3, 45
+
+    def __init__(self, path: Path):
+        self.path, self.lock = path, threading.Lock()
+        saved = json.loads(path.read_text()) if path.exists() else {}
+        self.baseline = saved.get("baseline_g")
+        self.mode = "watch" if self.baseline else "no_baseline"
+        self.samples: list[float] = []
+        self.streak, self.alarm, self.ratio = 0, False, None
+
+    def control(self, action: str):
+        with self.lock:
+            if action == "learn":
+                self.mode, self.samples, self.streak, self.alarm = "learning", [], 0, False
+            elif action == "reset":
+                self.mode, self.baseline, self.samples, self.streak, self.alarm = "no_baseline", None, [], 0, False
+                self.path.unlink(missing_ok=True)
+
+    def feed(self, rms: float):
+        with self.lock:
+            moving = rms >= self.REST_G
+            if self.mode == "learning":
+                if moving:
+                    self.samples.append(rms)
+                if len(self.samples) >= self.LEARN_SECONDS:
+                    ordered = sorted(self.samples)
+                    self.baseline = ordered[int(0.95 * (len(ordered) - 1))]
+                    self.mode = "watch"
+                    self.path.write_text(json.dumps({"baseline_g": self.baseline, "seconds": len(ordered),
+                                                     "median_g": ordered[len(ordered) // 2], "learned_at": time.time()}))
+                return
+            if self.mode != "watch":
+                return
+            self.ratio = rms / self.baseline if moving else None
+            self.streak = self.streak + 1 if moving and self.ratio > self.RATIO else 0
+            self.alarm = self.streak >= self.HOLD_S
+
+    def state(self):
+        with self.lock:
+            return {"mode": self.mode, "baseline_g": self.baseline, "learned_s": len(self.samples),
+                    "learn_target_s": self.LEARN_SECONDS, "ratio": self.ratio, "alarm": self.alarm,
+                    "streak_s": self.streak, "rule": f">{self.RATIO}x baseline for {self.HOLD_S}s (demo assumption)"}
+
+
 class LiveIMU(threading.Thread):
     """1-second vibration RMS (std of |a|, gravity removed) from the gateway JSONL."""
 
-    def __init__(self, host="127.0.0.1", port=9877):
+    def __init__(self, watch: "VibrationWatch", host="127.0.0.1", port=9877):
         super().__init__(daemon=True)
-        self.addr = (host, port)
+        self.addr, self.watch = (host, port), watch
         self.latest = {"rms_g": None, "at": None, "samples": 0, "connected": False, "sensor": None}
 
     def run(self):
@@ -111,6 +166,7 @@ class LiveIMU(threading.Thread):
                             mean = sum(mags) / len(mags)
                             rms = math.sqrt(sum((m - mean) ** 2 for m in mags) / len(mags))
                             self.latest.update(rms_g=rms, at=time.time(), samples=len(mags))
+                            self.watch.feed(rms)
                             mags, start = [], time.time()
             except (OSError, ValueError):
                 self.latest["connected"] = False
@@ -178,6 +234,7 @@ def make_handler(judge: Judge, live: LiveIMU, control: Control):
             if self.path == "/api/live":
                 info = dict(live.latest)
                 info["age_s"] = None if info["at"] is None else round(time.time() - info["at"], 2)
+                info["watch"] = live.watch.state()
                 return self.send_json(info)
             if self.path == "/api/control":
                 return self.send_json(control.get())
@@ -192,10 +249,13 @@ def make_handler(judge: Judge, live: LiveIMU, control: Control):
             return super().do_GET()
 
         def do_POST(self):
-            if self.path not in ("/api/score", "/api/control"):
+            if self.path not in ("/api/score", "/api/control", "/api/live/watch"):
                 return self.send_json({"error": "not found"}, 404)
             try:
                 body = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))))
+                if self.path == "/api/live/watch":
+                    live.watch.control(str(body.get("action")))
+                    return self.send_json(live.watch.state())
                 if self.path == "/api/control":
                     return self.send_json(control.update(body))
                 return self.send_json(judge.score(body))
@@ -215,7 +275,7 @@ def main():
     args = p.parse_args()
     sys.path.insert(0, args.edge_dir)
     judge = Judge(Path(args.model_dir))
-    live = LiveIMU()
+    live = LiveIMU(VibrationWatch(HERE / "live-baseline.json"))
     live.start()
     print(f"GenGuard console http://{args.host}:{args.port}  engine={judge.engine}", flush=True)
     ThreadingHTTPServer((args.host, args.port), make_handler(judge, live, Control())).serve_forever()

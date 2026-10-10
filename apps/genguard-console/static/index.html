@@ -85,6 +85,7 @@ const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' })[c]);
 const KGF = 0.980665;
 const NAMES = { 'GEN-10K-001': '1호기', 'GEN-10K-002': '2호기', 'GEN-10K-003': '3호기' };
+const WATCH_TEXT = w => !w ? '' : w.mode === 'learning' ? `기준 학습 중 ${w.learned_s}/${w.learn_target_s}초` : w.mode === 'no_baseline' ? '기준 없음 · 발표자 화면에서 학습' : w.alarm ? `강한 진동 · 평소의 ${w.ratio?.toFixed(1)}배` : w.ratio == null ? '진동 없음 · 정지' : `평소 범위 · ${w.ratio.toFixed(1)}배`;
 const LABEL = { engine_rpm:['회전수','rpm',1], coolant_c:['냉각수 온도','°C',1], oil_bar:['윤활유 압력','kgf/cm²',1/KGF],
   voltage_v:['출력 전압','V',1], vibration_rms_g:['진동 세기','g',1], envelope_cv:['진동 간헐성','',1] };
 const CHECKS = { coolant_c:'냉각수량·누수·라디에이터 통풍 확인', oil_bar:'윤활유량·누유·오일 필터 확인',
@@ -92,7 +93,10 @@ const CHECKS = { coolant_c:'냉각수량·누수·라디에이터 통풍 확인'
   vibration_rms_g:'고정 볼트·방진 마운트·센서 부착 확인', envelope_cv:'간헐 충격원·체결 상태 확인' };
 const assets = Object.keys(NAMES).map(id => ({ id, run: 0, scenario: 'normal', ramp: false, oil: null, t: 0,
   state: createDemoState(), history: [], res: null, ai: null }));
-let open = null, fast = false; const live = [];
+let open = null, fast = false, watch = null; const live = [];
+const LIVE_ASSET = 'GEN-10K-001';
+const LIVE_ALERT = { id: 'live_strong_vibration', severity: 'watch', live: true, title: '강한 진동 (실측 IMU)', fields: [],
+  checks: ['베어링 상태·윤활 확인', '고정 볼트·방진 마운트 확인', '센서 부착 상태 확인'] };
 
 function level(a) {
   const al = a.res?.alerts ?? [], ai = a.ai?.display_state;
@@ -121,6 +125,7 @@ function summary(a) {
 }
 function headline(a) {
   const al = a.res?.alerts ?? [], o = odd(a);
+  if (al[0]?.live) return [(watch?.ratio ?? 0).toFixed(1), '배 · 평소 진동 대비'];
   if (al[0]) { const k = al[0].fields?.[0], m = a.res.metrics[k]; if (m && typeof m.value === 'number') return [+m.value.toFixed(1), m.unit === 'degC' ? '°C' : m.unit]; }
   if (o[0]) return [fmt(o[0].field, o[0].value), LABEL[o[0].field]?.[1] ?? ''];
   const load = a.res?.metrics?.load_pct;
@@ -152,7 +157,7 @@ function ring(score, threshold) {
 
 function renderBento() {
   const a = assets.find(x => x.id === open);
-  const liveTile = `<div class="tile glass lvl-ai ${a ? 'span2' : 'span4'}"><div class="lab"><span>실측 진동 · UNO Q IMU</span><span>판정 모델 입력 아님</span></div>
+  const liveTile = `<div class="tile glass lvl-ai ${a ? 'span2' : 'span4'}"><div class="lab"><span>실측 진동 · UNO Q IMU · 1호기 부착</span><span id="lw">${esc(WATCH_TEXT(watch))}</span></div>
     <div class="num" id="lv">${live.length ? live[live.length - 1].toFixed(3) : '—'}<small>g RMS</small></div>
     <svg class="spark" viewBox="0 0 300 54" preserveAspectRatio="none"><polyline fill="none" stroke="var(--ai)" stroke-width="2.5" stroke-linejoin="round"
       points="${live.map((v, i) => `${i * 300 / 119},${50 - v / Math.max(0.02, ...live) * 46}`).join(' ')}"/></svg></div>`;
@@ -179,7 +184,7 @@ function renderBento() {
     ${liveTile}
     <div class="tile glass span4"><details><summary>전체 계측값 · 기술 정보</summary>
       <table><tr><th>항목</th><th>값</th><th>상태</th></tr>${Object.entries(a.res.metrics).map(([k, m]) => `<tr><td>${esc(PROFILE.fields.find(f => f.key === k)?.label ?? k)}</td><td>${typeof m.value === 'number' ? +m.value.toFixed(3) : '—'} ${esc(m.unit ?? '')}</td><td>${esc(m.status)}</td></tr>`).join('')}</table>
-      <div class="note">발전기 값은 모의 입력입니다. AI ${esc(ai.engine ?? '-')} · 모델 ${esc(ai.model_id ?? '-')} · ${esc(tr.status !== 'estimated' ? '유압 추세: ' + (tr.message ?? tr.reason) : '')}</div></details></div>`;
+      <div class="note">실측 진동 경보는 이 설치에서 학습한 기준의 1.5배를 3초 넘게 넘을 때입니다(시연 가정, AI 모델 아님). 발전기 값은 모의 입력입니다. AI ${esc(ai.engine ?? '-')} · 모델 ${esc(ai.model_id ?? '-')} · ${esc(tr.status !== 'estimated' ? '유압 추세: ' + (tr.message ?? tr.reason) : '')}</div></details></div>`;
 }
 function render() { renderFleet(); renderBento(); }
 
@@ -189,6 +194,7 @@ async function stepAsset(a, ctl) {
   const snap = makeScenario(a.scenario, a.t); snap.scenario_id = `${a.id}-${a.run}`;
   if (a.ramp && snap.readings.oil_kgf_cm2) { a.oil = Math.max(0.3, (a.oil ?? snap.readings.oil_kgf_cm2.value) - 0.002 * (fast ? 10 : 1)); snap.readings.oil_kgf_cm2.value = +a.oil.toFixed(3); }
   a.res = evaluate(snap, a.state);
+  if (a.id === LIVE_ASSET && watch?.alarm) a.res.alerts = [LIVE_ALERT, ...a.res.alerts];
   try { a.ai = await (await fetch('/api/score', { method: 'POST', body: JSON.stringify({ asset_id: `${a.id}-${a.run}`, t_s: snap.t_s, phase: snap.phase, readings: snap.readings }) })).json(); }
   catch { a.ai = { display_state: 'unknown', reason: 'server_unreachable' }; }
   const r = snap.readings;
@@ -207,6 +213,7 @@ async function head() {
 async function liveLoop() {
   try { const l = await (await fetch('/api/live')).json();
     if (l.rms_g != null && l.age_s < 3) live.push(l.rms_g); if (live.length > 120) live.shift();
+    watch = l.watch ?? null; const w = $('lw'); if (w) w.textContent = WATCH_TEXT(watch);
     const el = $('lv'); if (el && live.length) el.innerHTML = `${live[live.length - 1].toFixed(3)}<small>g RMS</small>`; } catch {}
 }
 head(); setInterval(head, 10000); setInterval(loop, 1000); setInterval(liveLoop, 500);
