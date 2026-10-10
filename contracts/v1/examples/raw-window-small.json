@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0.0",
+  "message_type": "raw_window",
+  "is_example": true,
+  "node_id": "example-node-01",
+  "asset_id": "example-generator-01",
+  "sensor_id": "example-imu-01",
+  "boot_id": "f683fa37-34ae-4d9e-a231-e66f6b486e1b",
+  "window_seq": 1,
+  "source_kind": "scenario",
+  "source_ref": "contract-fixture/eight-samples-format-only",
+  "measured_at": "2026-10-10T05:59:00.000Z",
+  "monotonic_start_us": 0,
+  "acceleration_unit": "g",
+  "axis_order": [
+    "x",
+    "y",
+    "z"
+  ],
+  "gravity_removed": false,
+  "full_scale_g": 4,
+  "configured_sample_rate_hz": 416,
+  "sample_rate_hz": 415.998098,
+  "sample_count": 8,
+  "quality": {
+    "dropped_samples": 0,
+    "clipped_samples": 0,
+    "timestamps": "measured"
+  },
+  "samples": [
+    [
+      0,
+      0.0,
+      0.04,
+      1.0
+    ],
+    [
+      2404,
+      0.056806475,
+      0.032919355,
+      1.018700325
+    ],
+    [
+      4808,
+      0.093501624,
+      0.014184195,
+      1.013262453
+    ],
+    [
+      7212,
+      0.097094182,
+      -0.009572627,
+      0.990705537
+    ],
+    [
+      9615,
+      0.066312266,
+      -0.02994043,
+      0.980145823
+    ],
+    [
+      12019,
+      0.012053668,
+      -0.039708355,
+      0.995213687
+    ],
+    [
+      14423,
+      -0.046472317,
+      -0.035418241,
+      1.016459677
+    ],
+    [
+      16827,
+      -0.088545603,
+      -0.018588927,
+      1.016459677
+    ]
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "message_type": "analysis_result",
+  "is_example": true,
+  "node_id": "example-node-01",
+  "asset_id": "example-generator-01",
+  "boot_id": "f683fa37-34ae-4d9e-a231-e66f6b486e1b",
+  "record_seq": 1042,
+  "source_kind": "scenario",
+  "source_ref": "contract-fixture/40hz-sine-not-a-generator",
+  "measured_at": "2026-10-10T06:00:00.000Z",
+  "monotonic_start_us": 60000000,
+  "input_window": {
+    "window_seq": 31,
+    "sample_count": 832,
+    "sample_rate_hz": 416.000032
+  },
+  "features": {
+    "axes": [
+      "x",
+      "y",
+      "z"
+    ],
+    "rms_g": 0.04472136,
+    "rms_ratio": 2.0,
+    "kurtosis": 1.500000005,
+    "dominant_frequency_hz": 40.000003
+  },
+  "baseline": {
+    "id": "example-baseline-v1",
+    "rms_g": 0.02236068
+  },
+  "health_state": "warning",
+  "reason_codes": [
+    "rms_elevated",
+    "persistent_change"
+  ],
+  "quality_state": "ok",
+  "quality_flags": [],
+  "model_version": "example-rms-rule-v1",
+  "warning_event_id": "c1f6f120-6da7-4194-b40c-6e0e1c5d7965",
+  "rul": null,
+  "additional_measurements": {
+    "surface_temperature_c": null,
+    "current_a": null,
+    "oil_level_pct": null
+  }
+}

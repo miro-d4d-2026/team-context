@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "T4-6 raw IMU window v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "message_type", "is_example", "node_id", "asset_id", "sensor_id", "boot_id", "window_seq", "source_kind", "source_ref", "measured_at", "monotonic_start_us", "acceleration_unit", "axis_order", "gravity_removed", "full_scale_g", "configured_sample_rate_hz", "sample_rate_hz", "sample_count", "quality", "samples"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "message_type": {"const": "raw_window"},
+    "is_example": {"type": "boolean"},
+    "node_id": {"$ref": "#/$defs/id"},
+    "asset_id": {"$ref": "#/$defs/id"},
+    "sensor_id": {"$ref": "#/$defs/id"},
+    "boot_id": {"type": "string", "format": "uuid"},
+    "window_seq": {"$ref": "#/$defs/positiveInt"},
+    "source_kind": {"enum": ["live_imu", "scenario"]},
+    "source_ref": {"type": "string", "minLength": 1, "maxLength": 256},
+    "measured_at": {"type": ["string", "null"], "format": "date-time", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}([.][0-9]{1,6})?Z$"},
+    "monotonic_start_us": {"$ref": "#/$defs/nonnegativeInt"},
+    "acceleration_unit": {"const": "g"},
+    "axis_order": {"const": ["x", "y", "z"]},
+    "gravity_removed": {"const": false},
+    "full_scale_g": {"enum": [2, 4, 8, 16]},
+    "configured_sample_rate_hz": {"type": "number", "exclusiveMinimum": 0},
+    "sample_rate_hz": {"type": "number", "exclusiveMinimum": 0},
+    "sample_count": {"type": "integer", "minimum": 2, "maximum": 50000},
+    "quality": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dropped_samples", "clipped_samples", "timestamps"],
+      "properties": {
+        "dropped_samples": {"type": ["integer", "null"], "minimum": 0},
+        "clipped_samples": {"type": ["integer", "null"], "minimum": 0},
+        "timestamps": {"enum": ["measured", "reconstructed"]}
+      }
+    },
+    "samples": {
+      "type": "array", "minItems": 2, "maxItems": 50000,
+      "items": {
+        "type": "array", "minItems": 4, "maxItems": 4,
+        "prefixItems": [
+          {"$ref": "#/$defs/nonnegativeInt"},
+          {"type": "number"}, {"type": "number"}, {"type": "number"}
+        ],
+        "items": false
+      }
+    }
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$"},
+    "nonnegativeInt": {"type": "integer", "minimum": 0, "maximum": 9007199254740991},
+    "positiveInt": {"type": "integer", "minimum": 1, "maximum": 9007199254740991}
+  }
+}

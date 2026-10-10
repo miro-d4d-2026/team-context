@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "T4-6 analysis result v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "message_type", "is_example", "node_id", "asset_id", "boot_id", "record_seq", "source_kind", "source_ref", "measured_at", "monotonic_start_us", "input_window", "features", "baseline", "health_state", "reason_codes", "quality_state", "quality_flags", "model_version", "warning_event_id", "rul", "additional_measurements"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "message_type": {"const": "analysis_result"},
+    "is_example": {"type": "boolean"},
+    "node_id": {"$ref": "#/$defs/id"},
+    "asset_id": {"$ref": "#/$defs/id"},
+    "boot_id": {"type": "string", "format": "uuid"},
+    "record_seq": {"type": "integer", "minimum": 1, "maximum": 9007199254740991},
+    "source_kind": {"enum": ["live_imu", "xjtu_replay", "scenario"]},
+    "source_ref": {"type": "string", "minLength": 1, "maxLength": 256},
+    "measured_at": {"type": ["string", "null"], "format": "date-time", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}([.][0-9]{1,6})?Z$"},
+    "monotonic_start_us": {"type": "integer", "minimum": 0, "maximum": 9007199254740991},
+    "input_window": {
+      "anyOf": [
+        {"type": "null"},
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["window_seq", "sample_count", "sample_rate_hz"],
+          "properties": {
+            "window_seq": {"type": "integer", "minimum": 1, "maximum": 9007199254740991},
+            "sample_count": {"type": "integer", "minimum": 2, "maximum": 50000},
+            "sample_rate_hz": {"type": "number", "exclusiveMinimum": 0}
+          }
+        }
+      ]
+    },
+    "features": {
+      "type": "object", "additionalProperties": false,
+      "required": ["axes", "rms_g", "rms_ratio", "kurtosis", "dominant_frequency_hz"],
+      "properties": {
+        "axes": {"enum": [["x", "y", "z"], ["x", "y"]]},
+        "rms_g": {"$ref": "#/$defs/nonnegativeNullable"},
+        "rms_ratio": {"$ref": "#/$defs/nonnegativeNullable"},
+        "kurtosis": {"type": ["number", "null"], "minimum": 1},
+        "dominant_frequency_hz": {"$ref": "#/$defs/nonnegativeNullable"}
+      }
+    },
+    "baseline": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "rms_g"],
+      "properties": {
+        "id": {"type": ["string", "null"], "minLength": 1},
+        "rms_g": {"type": ["number", "null"], "exclusiveMinimum": 0}
+      }
+    },
+    "health_state": {"enum": ["calibrating", "normal", "watch", "warning", "unknown"]},
+    "reason_codes": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"enum": ["baseline_collecting", "within_baseline", "rms_elevated", "persistent_change", "poor_signal", "baseline_unstable", "model_not_ready", "insufficient_history"]}
+    },
+    "quality_state": {"enum": ["ok", "invalid"]},
+    "quality_flags": {
+      "type": "array", "uniqueItems": true,
+      "items": {"enum": ["sample_loss", "clipping", "timing_unverified", "sensor_missing", "quality_unknown", "insufficient_samples"]}
+    },
+    "model_version": {"type": "string", "minLength": 1},
+    "warning_event_id": {"type": ["string", "null"], "format": "uuid"},
+    "rul": {
+      "anyOf": [
+        {"type": "null"},
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["value", "unit", "target", "dataset", "bearing_id", "as_of_minute", "model_version", "evaluation_id", "validation_scope"],
+          "properties": {
+            "value": {"type": "number", "minimum": 0},
+            "unit": {"const": "min"},
+            "target": {"const": "bearing_test_endpoint"},
+            "dataset": {"const": "XJTU-SY"},
+            "bearing_id": {"type": "string", "pattern": "^Bearing[123]_[1-5]$"},
+            "as_of_minute": {"type": "integer", "minimum": 0},
+            "model_version": {"type": "string", "minLength": 1},
+            "evaluation_id": {"type": "string", "minLength": 1},
+            "validation_scope": {"const": "exploratory"}
+          }
+        }
+      ]
+    },
+    "additional_measurements": {
+      "type": "object", "additionalProperties": false,
+      "required": ["surface_temperature_c", "current_a", "oil_level_pct"],
+      "properties": {
+        "surface_temperature_c": {"type": "null"},
+        "current_a": {"type": "null"},
+        "oil_level_pct": {"type": "null"}
+      }
+    }
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$"},
+    "nonnegativeNullable": {"type": ["number", "null"], "minimum": 0}
+  }
+}

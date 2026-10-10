@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "message_type": "analysis_result",
+  "is_example": true,
+  "node_id": "example-replay-01",
+  "asset_id": "example-bearing-1-5",
+  "boot_id": "f683fa37-34ae-4d9e-a231-e66f6b486e1b",
+  "record_seq": 1,
+  "source_kind": "xjtu_replay",
+  "source_ref": "XJTU-SY/Bearing1_5/record-31",
+  "measured_at": null,
+  "monotonic_start_us": 0,
+  "input_window": {
+    "window_seq": 31,
+    "sample_count": 32768,
+    "sample_rate_hz": 25600
+  },
+  "features": {
+    "axes": [
+      "x",
+      "y"
+    ],
+    "rms_g": 0.08,
+    "rms_ratio": null,
+    "kurtosis": null,
+    "dominant_frequency_hz": null
+  },
+  "baseline": {
+    "id": null,
+    "rms_g": null
+  },
+  "health_state": "unknown",
+  "reason_codes": [
+    "model_not_ready"
+  ],
+  "quality_state": "ok",
+  "quality_flags": [],
+  "model_version": "example-rms-rule-v1",
+  "warning_event_id": null,
+  "rul": {
+    "value": 20.5,
+    "unit": "min",
+    "target": "bearing_test_endpoint",
+    "dataset": "XJTU-SY",
+    "bearing_id": "Bearing1_5",
+    "as_of_minute": 30,
+    "model_version": "example-only-rf-v1",
+    "evaluation_id": "example-not-evaluated",
+    "validation_scope": "exploratory"
+  },
+  "additional_measurements": {
+    "surface_temperature_c": null,
+    "current_a": null,
+    "oil_level_pct": null
+  }
+}
