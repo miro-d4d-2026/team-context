@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "repository": "miro-d4d-2026/team-context",
+  "deadline": "2026-10-11T10:00:00+09:00",
+  "members": {
+    "miro": {
+      "nickname": "미로",
+      "aliases": ["미로", "miro", "기범"],
+      "background": "전자전기 · 하드웨어/펌웨어/보드 소프트웨어",
+      "brief": "team/roles/miro.md",
+      "branch": "work/miro-t4-6",
+      "first_task": "기존 실측 경로를 보존하고 실제 IMU raw_window 한 개를 생성·검증",
+      "owned_paths": ["prototypes/t4-6-vibration-lab/", "runtime/hardware/"]
+    },
+    "woozy": {
+      "nickname": "우지",
+      "aliases": ["우지", "woozy", "woozy-a"],
+      "background": "군 네트워크/통신 현업 경력 · 데이터 계약 작성자",
+      "brief": "team/roles/woozy.md",
+      "branch": "work/woozy-t4-6",
+      "first_task": "기존 계약 원본을 공유하고 예시 결과 한 개의 영구 저장·중복 처리를 구현",
+      "owned_paths": ["contracts/", "runtime/storage/", "services/", "dashboard/"]
+    },
+    "ichi": {
+      "nickname": "이치",
+      "aliases": ["이치", "ichi"],
+      "background": "기계공학 · 진동 데이터/전처리/분석/모델 검증 책임",
+      "brief": "team/roles/ichi.md",
+      "branch": "work/ichi-t4-6",
+      "first_task": "데이터셋 원본 접근을 확인하고 출처·열/단위·베어링별 분할 목록과 첫 분석 입출력 확보",
+      "owned_paths": ["analysis/", "datasets/", "evaluations/"]
+    }
+  },
+  "identity_note": "hana5111의 별칭 연결은 미확인. git user.name이나 로그인 계정만으로 이치로 추정하지 않는다."
+}
