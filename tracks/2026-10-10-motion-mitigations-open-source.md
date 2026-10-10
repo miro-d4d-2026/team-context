@@ -1,0 +1,129 @@
+# 즉흥 모션 인터페이스: 현실적인 대책·오픈소스·실패 사례
+
+2026-10-10 KST. 상태: **추가 조사와 발산. 후보 선정·구현·보드 실행·사용자 시험 없음.**
+
+[앞선 즉흥 모션 조사](2026-10-10-improvised-motion-deep-research.md)의 후속이다. 사용자가 원하는 **연속 웨이브 입력**과 **소수 예시로 개인 동작을 가르치기**를 함께 유지하면서, 우지가 제기한 불규칙 모션·유지보수 우려에 대응할 기존 방법을 조사했다. 범위는 교육용 시뮬레이터의 일반적인 입력·인식·유지보수다.
+
+‘현직자 관점’은 공개된 제품 설계, 원 연구, upstream 문서·이슈를 유지보수 담당자·사용자·개발자 관점에서 해석한 것이다. 이번 행사 현직자나 심사위원에게 직접 받은 의견이 아니다. 제품 문서는 구현된 기능의 근거이며, 우리 조건의 성능이나 독립 비교 실험을 대신하지 않는다.
+
+## 1. 이번 조사로 달라진 판단
+
+**해결에 쓸 재료는 상당히 있다.** 입력을 받아들일 구간 표시, 센서 보정, 속도에 따라 달라지는 필터, 시간축이 다른 동작 비교, 일상 행동을 이용한 오인식 억제, 예시를 고치는 학습 과정, 기록 재생은 각각 선행이 있다. 다만 이들을 연결해 임의의 춤·개인 동작·재착용·끊김을 한 번에 해결하는, 우리 보드에서 검증된 완제품 OSS를 이번 조사에서 확보하지는 못했다.
+
+**개인 동작 등록과 등록 실패 피드백까지 가까운 선행이 있다.** 새로 확인한 CHI 2022 연구는 기존 동작과의 유사성, 예시 간 불일치, 일상 행동과의 혼동을 검사했다. 따라서 ‘내 동작을 세 번 가르친다’ 또는 ‘헷갈리는 동작을 알려준다’만으로 독창성을 주장하기 어렵다.
+
+**오작동을 줄이는 방법이 표현의 자유도 줄일 수 있다.** 같은 연구에서 사용자가 만든 느린 웨이브가 일상 행동과 유사하다는 이유로 등록되지 않았다. 우리가 원하는 웨이브를 무조건 배경 동작으로 학습하면 핵심 경험을 없앨 수 있다. 어떤 맥락에서는 입력이고 어떤 맥락에서는 무시할 동작인지 정하는 문제가 남는다.
+
+## 2. 우려별로 지금 쓸 수 있는 방법과 남는 부담
+
+아래 적용 방안은 자료를 바탕으로 한 제안이다. ‘기존’은 방법이나 기능이 존재한다는 뜻이며, 우리 장치에서 검증했다는 뜻이 아니다.
+
+| 우려 | 현실적인 방안 | 기존 근거·도구 | 남는 부담과 확인할 결과 |
+|---|---|---|---|
+| 인사·컵 집기에도 명령이 나감 | 입력 활성 구간을 사용자가 표시하는 방식, 현재 상태 표시, 실제 생활 동작을 비명령 예시로 추가하는 방식을 비교 | 상용 혼합 입력, MAGIC Summoning, CHI 2022 | 버튼·확인 동작은 추가 부담. 비명령 학습은 원하는 웨이브까지 거부할 수 있음. 오명령 수와 유효 입력의 누락을 함께 확인 |
+| 연속 웨이브 중 개인 명령이 끼어듦 | 연속 입력과 명령 등록·인식의 상태를 구분하고 사용자에게 보이게 함. 동시에 허용할 경우 혼동 구간을 별도 평가 | Microsoft의 목표 선택·확인 분리와 상태 피드백은 인접 설계 선행. 우리의 공존 규칙은 설계 가설 | 상태 전환을 잊는 실수가 새로 생길 수 있음. 두 방식을 각각 잘 인식해도 동시 사용이 입증되지는 않음 |
+| 정지하면 떨리고 빨리 움직이면 늦음 | 센서 자세 추정과 화면 입력의 평활화를 분리. 고정 필터와 속도 적응 필터를 같은 기록으로 비교 | x-io Fusion, One Euro Filter | 필터가 의도한 작은 움직임도 지울 수 있음. 단위·샘플 시각·출력 표현에 맞춘 조정 필요. 평활함과 응답 지연을 함께 확인 |
+| 같은 동작을 느리거나 크게 하면 달라짐 | 시간 변화를 흡수하는 템플릿 비교, 또는 속도·크기 변화를 별도 출력으로 추정 | DTW, GRT, GVF | 속도를 무시해야 하는 명령과 속도를 표현으로 써야 하는 연속 입력의 요구가 다름. 동작 종료를 기다리는 시간도 측정 |
+| 벗었다 다시 차면 입력이 달라짐 | 방향이 반복되는 고정구, 착용 방향 표시, 중립 기준 재설정, 사용자별 보정·예시 보관 | Fusion의 축 변환·보정 적용 기능. 고정구·복구 절차는 우리 적용 제안 | Fusion이 사용자 착용 보정을 자동 완성하지 않음. 방향 보정으로 고쳐지는 변화와 위치·느슨함·동작 습관 변화를 구분 |
+| 새 동작이나 사용 조건을 배우니 기존 입력이 달라짐 | 기존 모델을 보존하고 새 후보를 별도 평가. 이전 예시를 함께 쓰는 replay, 별도 출력부 등 비교 | CHI 2022는 새 동작 추가; OWGR 2024는 기존 4동작에 대한 새 사용자·맥락 적응의 인접 근거 | 새 학습 방법마다 기억·연산·데이터 부담이 다름. 옛 동작과 일상 행동 기록을 함께 검사하고 이전 프로필로 복귀 가능해야 함 |
+| 자동 학습이 잘못된 동작까지 외움 | 사용자가 확인한 수정 예시로 갱신하는 방식부터 비교. 자동 라벨과 확인된 라벨을 구분 | uWave의 사용자 피드백 기반 갱신; OWGR의 갱신 정책 연구 | 예측을 정답처럼 재사용하는 무확인 자동 적응과 다름. 수정 횟수·소요 시간·이후 세션 성능이 필요 |
+| 연결 복구 후 멈추거나 오래된 입력이 나옴 | 연결·구독·센서 재시작 상태와 입력 나이를 기록하고, 복구 후 새 유효 입력을 확인하는 처리 | Bleak의 연결 API와 실제 BlueZ 결함 수정 이력 | BLE 라이브러리가 앱의 입력 의미·유효기간·두 보드 시계 정렬을 결정해 주지는 않음 |
+| 가끔만 생겨 원인을 못 찾음 | 원시 입력, 보정값, 필터 출력, 인식 결과, 사용자 상태, 버전을 같은 기록에 보관하고 재생 | MCAP 등 기록 도구 | 저장 형식만으로 결정적 재현이 완성되지는 않음. 모델·전처리·초기 상태·시간·난수 조건도 보존해야 함 |
+| 시연은 되지만 계속 쓰면 팔이 힘듦 | 팔을 내리고 쉴 수 있는 구간, 개인 가동범위에 맞는 작은 입력, 대체 입력을 비교 | Microsoft의 제스처 피로 관련 설계 가이드 | 큰 춤의 표현력과 작은 조작의 지속 사용성은 별도 목표. 짧은 시연 성공을 장시간 사용성으로 일반화하지 않음 |
+
+출처: [DJI RC Motion 3](https://www.dji.com/rc-motion-3), [Microsoft Gaze and commit](https://learn.microsoft.com/en-us/windows/mixed-reality/design/gaze-and-commit), [Microsoft Comfort](https://learn.microsoft.com/en-us/windows/mixed-reality/design/comfort), [MAGIC Summoning 원문](https://jmlr.org/papers/volume14/kohlsdorf13a/kohlsdorf13a.pdf), [CHI 2022 원문](https://arxiv.org/pdf/2203.15239), [OWGR 2024 원문](https://arxiv.org/html/2401.11144v2), [uWave 원문](https://www.yecl.org/publications/liu09percom.pdf). 도구별 공식 근거는 4절에 연결한다.
+
+상용 사례를 가져오는 이유는 손동작과 별도 입력·상태를 함께 쓰는 설계가 이미 존재하기 때문이다. 그 제품의 비행 기능을 우리가 구현하거나 검증한 것은 아니다. Microsoft 자료 역시 광학 MR 환경의 설계 참고이며 IMU 성능 근거가 아니다.
+
+## 3. 가장 가까운 선행: 손목 센서에 내 동작을 가르치는 CHI 2022 연구
+
+[Enabling Hand Gesture Customization on Wrist-Worn Devices](https://machinelearning.apple.com/research/enabling-hand-gesture)는 500명 이상 자료로 사전학습했다. 별도 20명 평가에서 후보 12개 중 **새 동작 하나를 추가할 때**, 예시 1회·3회·5회의 평균 정확도는 **55.3%·83.1%·87.2%**였다. 12개를 동시 등록한 결과나, 우리 팀의 예상 성능이 아니다.
+
+실시간 프로토타입은 **Apple Watch → MacBook Pro에서 학습·인식 → Watch로 결과 반환**이었다. 장치 내 처리·학습과 장기 변화 대응은 후속 과제다. 초록의 on-device customization을 장치 내부 실행 검증으로 해석하지 않는다. 이번 조사에서 공식 코드·가중치는 확인하지 못했다. [원문 4.3·6·7절](https://arxiv.org/pdf/2203.15239)
+
+우리에게 주는 시사점은 ‘등록 때 가르칠 수 있다’와 ‘사용하면서 계속 유지할 수 있다’를 나누라는 것이다. 특히 자유로운 연속 웨이브는 이 연구의 이산 명령 등록과 다른 요구다.
+
+## 4. 오픈소스의 역할과 도입 경계
+
+날짜는 GitHub API의 UTC 커밋·릴리스 날짜다. `pushed_at`이나 별점만으로 관리 상태를 판단하지 않았다. 최근 커밋이 안정 배포본에 포함됐다는 뜻은 아니며, 오래된 커밋도 그 자체로 프로젝트 실패의 증거는 아니다. 설치·컴파일·재현 시험은 하지 않았다.
+
+### 4.1 센서·통신·기록에 쓸 도구
+
+| 도구 | 해결하는 부분 | 라이선스·확인한 유지 상태 | 우리에게 남는 작업 |
+|---|---|---|---|
+| [x-io Fusion](https://github.com/xioTechnologies/Fusion) | 임베디드 C/Python 자세 추정, 바이어스, 축 변환, 센서 거부·복구 상태 | [MIT](https://github.com/xioTechnologies/Fusion/blob/main/LICENSE.md). [2026-09-18 코드 변경](https://github.com/xioTechnologies/Fusion/commit/a8d7224f36a0ec82345ef49a3db50e65f8d3bab8). GitHub Releases 없음 | 센서 드라이버·단위·보정값 산출은 별도. 보정 적용 기능이 보정 절차 전체는 아님. 손끝 절대 위치·의도는 출력하지 않음 |
+| [One Euro Filter](https://github.com/casiez/OneEuroFilter) | 느린 입력의 떨림과 빠른 입력의 지연을 절충하는 가벼운 필터 | 구현별 라이선스: [C MIT](https://github.com/casiez/OneEuroFilter/blob/main/C/SF1eFilter.h), [C++ BSD-3-Clause](https://github.com/casiez/OneEuroFilter/blob/main/cpp/OneEuroFilter.h), [Python BSD-3-Clause](https://github.com/casiez/OneEuroFilter/blob/main/python/LICENSE). [2026-08-04 Rust 추가](https://github.com/casiez/OneEuroFilter/commit/af9351c19511fc19e7f15a7d35d71199812224d1); C++·Python 각각의 최근 수정일은 아님 | 데이터 단위·속도별 튜닝. 인식 기능은 없음. scalar 구현을 회전 quaternion 네 성분에 그대로 적용해도 된다고 가정하지 않음 |
+| [Bleak](https://github.com/hbldh/bleak) | Python BLE GATT 수신·연결·끊김 통지 | [MIT](https://github.com/hbldh/bleak/blob/v3.0.2/LICENSE). 안정 [3.0.2, 2026-05-02](https://github.com/hbldh/bleak/releases/tag/v3.0.2). develop [2026-09-30 코드 변경](https://github.com/hbldh/bleak/commit/c7ca1b04b00b0bda5f98ccf9493e24784cfe869d)은 별도 | Uno Q Linux의 BlueZ·드라이버·권한, 주변장치 펌웨어 확인. 앱의 세션 복구·재구독·오래된 입력 폐기는 별도 |
+| [MCAP](https://github.com/foxglove/mcap) | 시각·채널·스키마를 갖는 원시 값과 결과 기록. ROS 없이도 사용 가능 | [MIT](https://github.com/foxglove/mcap/blob/main/LICENSE). Python [1.5.0, 2026-09-24](https://github.com/foxglove/mcap/releases/tag/releases/python/mcap/v1.5.0). [2026-10-07 코드 변경](https://github.com/foxglove/mcap/commit/f7069e637d66460b138bde275cefcd9021e64a78)은 별도 | 센서 획득 시각·모델·보정·사용자 의도 라벨을 우리가 기록해야 함. 파일 형식과 시뮬레이터 재생기는 다름 |
+
+네 저장소의 API에서 조사 시점 `archived=false`를 확인했다. One Euro는 저장소 전체를 하나의 라이선스로 뭉뚱그리면 안 된다. 구현별 소스 헤더가 근거다. [저자 공식 설명](https://gery.casiez.net/1euro/)에서도 각 구현을 나눠 안내한다.
+
+Fusion은 동적 가속도 영향과 드리프트의 절충을 설명하며, 실제 센서 범위를 벗어난 측정을 복원해 주지 않는다. Bleak은 [Client API](https://bleak.readthedocs.io/en/stable/api/client.html)상 연결이 끊기면 알림 구독이 중지되므로, 앱이 복구 후 유효 입력을 다시 확인해야 한다. MCAP의 [`log_time`·`publish_time`](https://mcap.dev/spec)은 센서 획득 시각이나 두 장치의 공통 시계를 자동으로 보장하지 않는다.
+
+### 4.2 개인 동작 인식·연속 표현에 쓸 도구
+
+| 도구 | 실제 재사용할 기능 | 라이선스·유지 상태 | 적용할 때의 경계 |
+|---|---|---|---|
+| [GVF / ofxGVF](https://github.com/bcaramiaux/ofxGVF) | 템플릿에 대한 동작 종류·진행·속도·크기·회전 변화를 계속 추정. 연속 웨이브의 표현을 살리는 후보 | [LGPL v3 헤더](https://github.com/bcaramiaux/ofxGVF/blob/1ebed670148a2277f3ed94cfa9ce4ac6582aa225/GVFlib/GVF.h). 최신 기본 브랜치 [2021-05-06 README 변경](https://github.com/bcaramiaux/ofxGVF/commit/1ebed670148a2277f3ed94cfa9ce4ac6582aa225). 저자가 지원을 거의 하지 않는다고 이슈에서 설명 | 가장 닮은 템플릿과 변형 추정은 임의 춤의 의미 이해와 다름. 자동 segmentation이 있으므로 항상 버튼이 필수인 도구는 아님. 명령 의도 거부는 별개 |
+| [Wekinator](https://github.com/fiebrink1/wekinator) | 예시 제공 → 학습 → 직접 시험 → 예시 수정. 연속 회귀·분류·DTW를 탐색하는 GUI | [프로젝트 GPL v2](https://github.com/fiebrink1/wekinator/blob/5edfafee38353c1b8efcd46b4a6ca0ad141ab8ed/license.txt), 포함 라이브러리는 별도. 최신 기본 브랜치 [2021-02-15 README 변경](https://github.com/fiebrink1/wekinator/commit/5edfafee38353c1b8efcd46b4a6ca0ad141ab8ed) | 사용자 수정 흐름을 보기 좋지만 Java·저장/불러오기 환경 검증이 필요. 스스로 정답을 알아내는 자동 교정기는 아님 |
+| [GRT](https://github.com/nickgillian/grt) | C++ 센서 처리 파이프라인, DTW, 거부 임계값, 전·후처리. 템플릿 방식의 비교 기준 후보 | README MIT. 최신 기본 브랜치 [2019-06-05](https://github.com/nickgillian/grt/commit/4d4cab1999a349b00d8924da769ff3f0c29d3176). README 0.2.5와 GitHub prerelease [0.2.4](https://github.com/nickgillian/grt/releases/tag/v0.2.4) 구분 | [DTW 거부](https://github.com/nickgillian/grt/wiki/DTW)는 등록 동작과 먼 신호를 걸러내는 기능. 같은 동작의 의도/비의도 구별 보장은 아님. 현대 환경 이식·빌드 미확인 |
+| [RapidLib](https://mzed.github.io/RapidLib/) | C++·JavaScript kNN 분류, MLP 연속 회귀, DTW 시간열 분류, 스트림 처리 | [BSD-3-Clause](https://github.com/mzed/RapidLib/blob/6834501a626e058c14dac0ea86fdc0ae835ef00b/LICENSE). 최신 기본 브랜치 [2025-08-13 Linux include 수정](https://github.com/mzed/RapidLib/commit/6834501a626e058c14dac0ea86fdc0ae835ef00b) | 연속 매핑·개인 사전을 코드로 탐색할 후보. 등록·교정 화면과 의도·저장 관리까지 완성된 제품은 아님. JS 배포와 C++ 소스 상태는 별도로 확인 |
+| [XMM](https://github.com/ircam-ismm/xmm) | C++ GMM·HMM 인식/회귀와 상호작용형 학습. 시간적 패턴과 연속 출력 매핑 | README GPL v3 또는 이후. 최신 기본 브랜치 [2024-07-29](https://github.com/ircam-ismm/xmm/commit/2dafc7eee8e87b7104e370b660bdb9227797fc03). GitHub Release [1.0.0, 2016-09-07](https://github.com/ircam-ismm/xmm/releases/tag/v1.0.0) | 2016-09 v1.0.0에서 기존 API와 비호환인 새 API로 전환. [xmm-client](https://ircam-rnd.github.io/xmm-client/index.html)는 학습기가 아닌 디코더. 장기 개인화·의도 판별은 별도 |
+
+다섯 저장소도 API상 `archived=false`였으나 적극 유지보수의 보장으로 읽지 않는다. Wekinator의 최신 GitHub Release 항목은 수업용 [Kadenze 2.1.0.6, 2016-07-11](https://github.com/fiebrink1/wekinator/releases/tag/kadenze-2.1.0.6)이며, 일반 배포 [2.1.0.4는 2016-04-07](https://github.com/fiebrink1/wekinator/releases/tag/v2.1.0.4)이다. 이 구분 없이 ‘최신판’이라고 묶으면 환경 재현이 어려워진다.
+
+GVF의 [실제 출력 구조](https://github.com/bcaramiaux/ofxGVF/blob/1ebed670148a2277f3ed94cfa9ce4ac6582aa225/GVFlib/GVFUtils.h)는 진행·동역학·크기·회전을 구분한다. 그러나 일반 N차원 입력 지원이 손목의 6개 IMU 채널을 손바닥의 3D 공간 위치처럼 취급해도 된다는 뜻은 아니다. [원 연구](https://baptistecaramiaux.com/assets/pdf/caramiaux_adaptive_2015.pdf)의 10명·지정 3동작·광학 손바닥 위치·음향 과제 조건을 우리 입력과 구분한다.
+
+### 4.3 OSS를 사용할 때 줄어드는 일과 남는 일
+
+센서 필터·인식기 알고리즘을 처음부터 만들 부담은 줄일 수 있다. 그러나 착용 프로필, 예시·라벨의 의미, 두 입력 방식의 공존, 재연결 상태, 저장·복구, 사용자 수정 과정은 여전히 제품에서 확인할 일이다. **알고리즘 재사용과 유지보수성 입증은 별개**다.
+
+상태 확인은 각 공식 저장소의 메타데이터·기본 브랜치 커밋·릴리스 API와 소스 라이선스를 대조했다. 정확한 소스·릴리스 링크를 표에 남겼다. GitHub API에서 일부 후속 요청은 rate limit에 걸려 이미 받은 응답과 공식 웹페이지로 보완했다. 라이선스 표는 확인한 프로젝트·구현의 표기이며 모든 전이 의존성 검토를 마쳤다는 뜻은 아니다.
+
+## 5. 실제로 시도했지만 한계가 드러난 접근
+
+여기서 ‘실패’는 특정 입력·환경에서 원하는 결과를 얻지 못했거나, 기대한 접근의 약점이 보고됐다는 뜻이다. 프로젝트 전체 실패·사업 실패로 확대하지 않는다. 논문 결과와 이슈 신고, 수정 완료도 구분한다.
+
+| 시도 | 보고된 한계·실패 | 상태와 이번 아이디어에 주는 의미 |
+|---|---|---|
+| 화면을 보는 동안 자동으로 입력 활성화 | 병원 종사자 34명의 CHI 2022 연구에서 시선 기반 활성화 인식은 99.1%였지만 가장 덜 선호. 화면을 읽기만 해도 입력 상태가 켜짐 | 단순한 화면 관찰과 명령 의도는 다름. 반통제·1인·Kinect 머리 방향 기반 연구이며 우리 센서 검증이 아님. 활성화 인식률만 높여서는 부족 |
+| 몇 번 보여주면 무엇이든 개인 명령으로 등록 | 손목 개인화 연구의 느린 웨이브가 일상 행동과 비슷해 거부됨 | 명령 오발동 감소와 허용 표현 사이의 절충. 자유 웨이브를 살리려면 맥락·활성 상태와 함께 평가해야 함 |
+| 새 사용자·맥락 자료로 계속 미세조정 | OWGR 연구에서 단순 fine-tuning이 이전 과제를 잊는 현상 | replay 등 대응이 있지만 방법별 조건·저장 부담이 다름. 자동 학습을 켰다는 것만으로 유지보수 문제가 해결되지 않음 |
+| 높은 검증 점수로 사용자 만족을 대신 평가 | CHI 2011의 상호작용형 학습 사례에서 점수가 놓친 오라벨·원치 않는 특성 의존을 직접 시험으로 발견 | 실시간 재시도·예시 수정이 필요. 음악가·학생 연구이며 초보자 독립 복구의 일반적 보장은 아님 |
+| 등록한 동작 개수를 바꾸어 재학습 | GVF [#20](https://github.com/bcaramiaux/ofxGVF/issues/20): Max `gvf.mxo`에서 재학습 시 crash, clear로 회피되지 않았다는 신고 | 댓글상 MuBu 쪽은 수정됐지만 원 저장소의 non-MuBu 이슈는 재개방. 모든 GVF 구현의 현재 결함으로 일반화하지 않음. [MuBu는 무료 배포·proprietary code](https://ircam-ismm.github.io/max-msp/mubu.html)로 동일 OSS가 아님 |
+| 오래된 학습 GUI를 현재 Java에서 실행 | Wekinator [#30](https://github.com/fiebrink1/wekinator/issues/30): 2.1.0.4·2.1.0.1의 DTW 설정에서 예외. [#28](https://github.com/fiebrink1/wekinator/issues/28): Any_OS_k2.1.0.6·Debian·OpenJDK 17.0.11에서 저장 실패 신고 | #30에는 신고자의 JRE 11 해결 댓글이 있음. #28의 원 저장 실패 해결은 확인하지 못함. 초기 DTW 저장 제한은 후속 [2.1.0.1 릴리스](https://github.com/fiebrink1/wekinator/releases/tag/v2.1.0.1)의 저장/불러오기 개선과 구분 |
+| BLE 알림 구독이 항상 같은 경로로 작동 | Bleak [#1951](https://github.com/hbldh/bleak/issues/1951): Linux/BlueZ·ArduinoBleOTA에서 `start_notify`가 멈춘 보고 | [3.0.2](https://github.com/hbldh/bleak/releases/tag/v3.0.2)에서 기본 경로를 StartNotify로 바꾸어 해당 이슈 해결을 명시. 수정된 특정 사례이지 현재 모든 BLE 연결의 결함은 아님. NU 보드 재현 없음 |
+
+연구 출처: [Investigating Clutching Interactions, CHI 2022 원문](https://eprints.gla.ac.uk/269730/1/269730.pdf), [손목 개인화 CHI 2022](https://arxiv.org/pdf/2203.15239), [OWGR 2024](https://arxiv.org/html/2401.11144v2), [Human Model Evaluation, CHI 2011 원문](https://ualresearchonline.arts.ac.uk/id/eprint/16686/1/FiebrinkCookTrueman_CHI2011.pdf).
+
+상시 동작을 대상으로 한 [MAGIC Summoning](https://jmlr.org/papers/volume14/kohlsdorf13a/kohlsdorf13a.pdf)은 일상 동작에서 유사한 표본을 찾아 비명령 NULL 클래스로 학습하는 대책을 비교했다. 4명·4동작 조건에서 단순 임계값보다 오검출을 줄였지만, 비슷한 의도/비의도 신호를 모든 맥락에서 구분한다는 보장은 아니다. **연속 입력에는 유효하지만 별도 명령에는 비명령인 구간**을 따로 다루는 것이 우리 요구에 맞는 평가 가설이다.
+
+## 6. 더 기대해볼 수 있는 연구·자료
+
+**새 사용자·새 사용 맥락에 계속 적응하기:** [Towards Open-World Gesture Recognition, 2024](https://arxiv.org/html/2401.11144v2)는 50명·4동작·25맥락 자료로 갱신 방법을 비교했다. 새 자료에 단순 미세조정하면 이전 과제를 잊는 문제가 나타났고, replay 등 지속학습 방법의 장단점을 비교했다. 유망하지만 이 연구도 오프라인 분석과 과제 구분 정보를 전제로 하며, 어떤 환경에서도 무감독으로 계속 좋아지는 완성품은 아니다. 우리에게는 ‘언제·무엇으로 갱신하고 옛 기능을 어떻게 보존할까’를 구체화할 근거다.
+
+**비명령 동작까지 포함하는 자료:** [OpenWatch, 2026년 사전공개 원문](https://arxiv.org/html/2605.04791v2)은 50명의 손목 IMU·PPG와 일상 행동을 포함한 59개 범주를 소개한다. [공식 데이터 카드](https://huggingface.co/datasets/pietrobonazzi/openwatch)는 CC BY 4.0을 표시하지만 파일 접근에는 로그인·연락처 공유 동의가 필요하다. 이번에는 카드만 확인했으며 동의·다운로드·학습은 하지 않았다. 주 벤치마크는 대표 명령 5개 중심이고 개인화·장기간 배포는 검증 범위 밖이다. 데이터 카드의 85명은 실제 50명과 증강 35개를 합친 수이므로 85명 실험으로 보고하면 안 된다.
+
+이 자료에도 인사 웨이브가 배경 범주에 들어간다. 우리의 입력 의미를 검토하지 않고 그 라벨을 그대로 가져오면 원하던 웨이브를 배제할 수 있다. 또한 센서·단위·착용 조건과 PPG 유무가 NU 보드와 같지 않다. 공개 데이터는 출발점 후보이며 보드 실험을 대신하지 않는다.
+
+## 7. Uno Q·ClikaRT·NU-40·NU-87에 대한 해석
+
+- **NU 보드:** 센서 수집·전송 후보. NU-40과 NU-87은 서로 다른 MCU 계열이다. 같은 C/C++ 소스가 있어도 센서 드라이버·BLE·시간 획득·보드 코어 호환성은 별도다. 실제 대여 리비전과 센서 구성을 먼저 확인해야 한다.
+- **Uno Q의 Linux 측:** 기록, 프로필, 인식기 비교, 로컬 모델 추론을 둘 후보. Linux ARM64라는 사실만으로 각 OSS의 빌드·패키지·주변장치 호환이 입증되지는 않는다. 노트북의 연구용 GUI와 최종 배포 장치는 구분한다.
+- **ClikaRT:** [Linux ARM64 CPU 경로](https://docs.clika.io/clikart/system-requirements/)와 [ONNX 모델 실행 경로](https://docs.clika.io/clikart/how-to/run-an-onnx-model/)가 있다. 호환 신경망을 채택할 경우 추론 실행 후보이지, Fusion·DTW·GVF·Wekinator 프로젝트를 자동으로 변환하는 도구는 아니다. 모델 입력·출력, 연산 지원, 컴파일, 동일 입력의 출력 차이, 오프라인 라이선스와 실제 지연 확인이 남는다.
+- **A1 mini:** 착용 방향이 반복되는 고정구·교체 가능한 센서 케이스를 탐색할 수 있다. 장착 재현성과 착용 불편 감소는 출력만으로 확인되지 않으며, 보정을 없앤다는 주장도 아직 할 수 없다.
+
+보드의 세부 출처·사용자 확보 상태는 [앞선 공식 사양 대조](2026-10-10-t4-6-t4-8-board-ideation.md), 라이선스·행사 제공 상태는 [SC 문서](SPECIAL_CHALLENGES.md)를 따른다. 네 도구를 모두 한 경로에 넣기 위해 필요 없는 학습 모델이나 두 번째 센서를 추가할 이유는 아직 없다. 여러 조합을 열어 두되 각 부품이 줄이는 오류와 늘리는 유지보수 부담을 함께 본다.
+
+## 8. 현직자에게 검토받을 때 보여줄 차이
+
+다음은 공식 배점이나 실제 심사평이 아니라, 공개 근거를 적용한 검토 질문이다. T4-8의 학습 시간·정확도 비교 요구와 연결하며, 이 조사는 T4-6의 예측정비·RUL 근거를 대신하지 않는다.
+
+| 관점 | 납득을 얻기 위해 필요한 비교 | 아직 주장할 수 없는 것 |
+|---|---|---|
+| 실제 사용자 | 처음 배운 사람의 등록·학습 시간, 원한 동작을 거부한 횟수, 오명령 사건, 기존 입력 방식과 같은 화면 과제 수행 | 춤이 직관적이므로 반드시 조이스틱보다 쉽다는 주장 |
+| 유지보수 담당자 | 벗었다 다시 착용하기, 센서·연결 복구, 프로필 복원에 걸린 시간과 개발자 도움 횟수 | 보정 화면·로그 파일이 있으므로 누구나 복구한다는 주장 |
+| ML·임베디드 개발자 | 사람·세션을 분리한 시험, 이전 동작 회귀, 원시 입력부터 출력까지 재생·비교, 시작/종료부터 화면 반응까지 지연 | 잘라 놓은 동작의 정확도나 추론 시간만으로 상시 입력 품질을 보장하는 주장 |
+| 심사 검토 | 기존 템플릿·필터·개인화 연구에서 가져온 부분과, 우리 조건에서 실제 개선한 부분을 분리 | OSS를 조합했다는 사실 또는 센서가 화면을 움직인다는 사실 자체가 독창성·우위라는 주장 |
+
+계속 발산할 수 있는 축은 **자유 동작과 명령 의도의 공존**, **재착용 후 빠른 복구**, **사용자가 고치는 개인 동작 사전**, **오류를 재현해 담당자가 원인을 좁히는 도구**다. 각각 선행 기능이 있으므로 적용 대상과 비교 결과가 필요하다. 어느 축으로 확정하지 않았다.
