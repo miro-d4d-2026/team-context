@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GenGuard 관제</title>
+<style>
+  :root {
+    --bg: #0f1418; --panel: #172026; --line: #26323a; --text: #e6edf0; --muted: #8fa1ab;
+    --ok: #3fb68b; --watch: #e0a23b; --urgent: #e5534b; --unknown: #7d8a93; --ai: #6aa8ff;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f4f6f7; --panel: #ffffff; --line: #dde3e6; --text: #142026; --muted: #5d6d75;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 15px/1.45 -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif; }
+  header { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; padding: 14px 20px;
+           border-bottom: 1px solid var(--line); }
+  header h1 { font-size: 20px; margin: 0 12px 0 0; }
+  .chip { font-size: 12.5px; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+  .chip b { color: var(--text); font-weight: 600; }
+  .chip.ai { border-color: var(--ai); }
+  main { display: grid; grid-template-columns: 300px 1fr 330px; gap: 14px; padding: 14px 20px 30px; }
+  @media (max-width: 1200px) { main { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) { main { grid-template-columns: 1fr; padding: 12px 16px; } header { padding: 12px 16px; } }
+  section { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; }
+  section h2 { font-size: 13px; letter-spacing: .02em; color: var(--muted); margin: 0 0 10px; font-weight: 600; }
+  .col { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+  .lvl-normal { --c: var(--ok); } .lvl-watch { --c: var(--watch); } .lvl-urgent { --c: var(--urgent); }
+  .lvl-unknown { --c: var(--unknown); } .lvl-ai { --c: var(--ai); }
+  .fleet-item { display: grid; grid-template-columns: 28px 1fr; gap: 10px; padding: 10px; border-radius: 8px;
+                border: 1px solid var(--line); margin-bottom: 8px; cursor: pointer; border-left: 4px solid var(--c); }
+  .fleet-item.sel { outline: 2px solid var(--ai); }
+  .rank { font-size: 22px; font-weight: 700; color: var(--c); text-align: center; }
+  .fleet-item .name { font-weight: 600; } .fleet-item .why { font-size: 13px; color: var(--muted); }
+  .banner { border-left: 6px solid var(--c); }
+  .banner .big { font-size: 22px; font-weight: 700; color: var(--c); }
+  .banner .sub { color: var(--muted); margin-top: 4px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+  .card { border: 1px solid var(--line); border-radius: 8px; padding: 9px 10px; border-top: 3px solid var(--c); }
+  .card .lab { font-size: 12px; color: var(--muted); } .card .val { font-size: 21px; font-weight: 700; }
+  .card .unit { font-size: 12px; color: var(--muted); margin-left: 3px; }
+  .card .tag { font-size: 11px; color: var(--muted); }
+  .ai-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .ai-state { font-size: 18px; font-weight: 700; color: var(--c); }
+  .bar { height: 10px; background: var(--line); border-radius: 6px; position: relative; margin: 10px 0 4px; overflow: hidden; }
+  .bar i { position: absolute; inset: 0 auto 0 0; background: var(--c); }
+  .bar .th { position: absolute; top: -2px; bottom: -2px; width: 2px; background: var(--text); }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  td, th { text-align: left; padding: 5px 4px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 500; }
+  .alert { border-left: 4px solid var(--c); padding: 8px 10px; margin-bottom: 8px; background: color-mix(in srgb, var(--c) 8%, transparent); border-radius: 6px; }
+  .alert .t { font-weight: 700; } .alert ul { margin: 4px 0 0 18px; padding: 0; color: var(--muted); font-size: 13px; }
+  .muted { color: var(--muted); font-size: 13px; }
+  .note { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .scen { display: flex; flex-wrap: wrap; gap: 6px; }
+  button { font: inherit; font-size: 13px; padding: 6px 10px; border-radius: 7px; border: 1px solid var(--line);
+           background: transparent; color: var(--text); cursor: pointer; }
+  button.on { border-color: var(--ai); background: color-mix(in srgb, var(--ai) 18%, transparent); }
+  .slider { display: grid; grid-template-columns: 1fr 70px; gap: 4px 8px; align-items: center; margin-top: 6px; font-size: 13px; }
+  .slider input { width: 100%; }
+  .live-val { font-size: 30px; font-weight: 700; }
+  svg.spark { width: 100%; height: 60px; display: block; }
+  .log { font: 12.5px/1.5 ui-monospace, Menlo, monospace; max-height: 260px; overflow: auto; }
+  .log div { border-bottom: 1px dashed var(--line); padding: 2px 0; }
+  .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<header>
+  <h1>GenGuard 관제</h1>
+  <span class="chip">데이터 <b>모의 발전기</b> + 실측 IMU(별도)</span>
+  <span class="chip ai" id="chip-engine">판정 엔진 <b>확인 중</b></span>
+  <span class="chip" id="chip-net">네트워크 <b>확인 중</b></span>
+  <span class="chip" id="chip-model">모델 <b>-</b></span>
+  <span class="chip" id="chip-clock">시연 시간 <b>0초</b></span>
+</header>
+<main>
+  <div class="col">
+    <section>
+      <h2>정비 우선순위 (예비품·인력 배분 순서)</h2>
+      <div id="fleet"></div>
+      <div class="note">순위 기준: 긴급 규칙 경보 → AI 지속 경고 → 점검 규칙 경보 → AI 변화 관찰 → 판정 불가 → 정상. 같은 단계는 AI 점수/임계값 비율 순.</div>
+    </section>
+    <section>
+      <h2>실측 IMU 진동 (UNO Q QWIIC · LSM6DS3TR-C)</h2>
+      <div class="row"><span class="live-val" id="live-val">-</span><span class="muted">g RMS (1초)</span></div>
+      <svg class="spark" id="live-spark" viewBox="0 0 300 60" preserveAspectRatio="none"></svg>
+      <div class="note" id="live-note">실측값입니다. 합성 데이터로 학습한 판정 모델에는 넣지 않습니다.</div>
+    </section>
+  </div>
+
+  <div class="col">
+    <section class="banner" id="banner"><div class="big" id="banner-big">-</div><div class="sub" id="banner-sub"></div></section>
+    <section>
+      <h2 id="cards-title">계측값</h2>
+      <div class="cards" id="cards"></div>
+    </section>
+    <section id="ai">
+      <div class="ai-head"><h2 style="margin:0">AI 패턴 판정 · 같은 부하·외기온의 정상 관계와 비교</h2><span class="ai-state" id="ai-state">-</span></div>
+      <div class="bar"><i id="ai-bar"></i><span class="th" id="ai-th"></span></div>
+      <div class="muted" id="ai-score"></div>
+      <table id="ai-ev"></table>
+      <div class="note">점수는 조건 보정 편차의 크기(마할라노비스 거리)이며 고장 확률·고장 부위가 아닙니다. 3개 창 연속 초과 시 지속 경고입니다.</div>
+    </section>
+    <section>
+      <h2>규칙 경보 · 점검 안내</h2>
+      <div id="alerts"></div>
+    </section>
+    <section>
+      <h2 id="trend-title">추세 · 참고 한계 도달시간</h2>
+      <div id="trend"></div>
+    </section>
+  </div>
+
+  <div class="col">
+    <section>
+      <h2>시연 조작 · <span id="ctl-asset"></span></h2>
+      <div class="scen" id="scen"></div>
+      <div id="sliders"></div>
+      <div class="row" style="margin-top:10px">
+        <button id="ramp">유압 서서히 하락</button>
+        <button id="fast">시연 가속 ×10</button>
+        <button id="reset">새 운전 시작</button>
+      </div>
+      <div class="note">값을 바꾸면 규칙과 AI가 실제 계산으로 다시 판정합니다. 시나리오 이름으로 결과를 정하지 않습니다.</div>
+    </section>
+    <section>
+      <h2>이벤트 로그</h2>
+      <div class="log" id="log"></div>
+    </section>
+  </div>
+</main>
+
+<script type="module">
+import { PROFILE, SCENARIOS, createDemoState, makeScenario, evaluate } from './vendor/engine.mjs';
+import { estimateOilLimitTime } from './vendor/trend.mjs';
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+const FIELDS = Object.fromEntries(PROFILE.fields.map(f => [f.key, f]));
+const LEVEL = { urgent: 5, inspection_suggested: 4, watch: 3, change_observed: 2, unknown: 1, normal: 0 };
+const AI_TEXT = { within_baseline: '정상 패턴', change_observed: '변화 관찰(확인 중)', inspection_suggested: '지속 변화 · 점검 권고',
+                  unknown: '판정 보류', change: '변화' };
+const SLIDERS = ['engine_rpm', 'coolant_c', 'oil_kgf_cm2', 'voltage_ll_v', 'load_pct', 'ambient_c', 'vibration_rms_g', 'envelope_cv', 'fuel_pct'];
+
+const assets = [
+  { id: 'GEN-10K-001', label: '1호기 · 조작 대상', scenario: 'normal' },
+  { id: 'GEN-10K-002', label: '2호기 · 야전 배치', scenario: 'joint_drift' },
+  { id: 'GEN-10K-003', label: '3호기 · 예비', scenario: 'normal' },
+].map(a => ({ ...a, overrides: {}, state: createDemoState(), t: 0, run: 1, history: [], res: null, ai: null, prevAi: null }));
+let sel = assets[0], step = 1, ramp = false, tick = 0;
+const live = [];
+
+function log(msg, lvl = 'normal') {
+  const d = document.createElement('div');
+  d.className = 'lvl-' + lvl; d.style.color = 'var(--c)';
+  d.textContent = `${new Date().toLocaleTimeString('ko-KR', { hour12: false })}  ${msg}`;
+  $('log').prepend(d);
+  while ($('log').children.length > 120) $('log').lastChild.remove();
+}
+
+function newRun(a) { a.state = createDemoState(); a.t = 0; a.run += 1; a.history = []; a.prevAi = null; }
+
+function snapshotFor(a) {
+  const snap = makeScenario(a.scenario, a.t);
+  snap.scenario_id = `${a.id}-run${a.run}`;
+  for (const [k, v] of Object.entries(a.overrides)) if (snap.readings[k]) snap.readings[k].value = v;
+  if ('engine_rpm' in a.overrides && !('frequency_hz' in a.overrides) && snap.readings.frequency_hz)
+    snap.readings.frequency_hz.value = a.overrides.engine_rpm / 30;
+  return snap;
+}
+
+async function scoreAI(a, snap) {
+  try {
+    const r = await fetch('/api/score', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ asset_id: a.id, t_s: snap.t_s, phase: snap.phase, readings: snap.readings }) });
+    return await r.json();
+  } catch (e) { return { display_state: 'unknown', state: 'unknown', reason: 'server_unreachable' }; }
+}
+
+function rank(a) {
+  const alerts = a.res?.alerts ?? [];
+  const urgent = alerts.some(x => x.severity === 'urgent'), watch = alerts.length > 0;
+  const ai = a.ai?.display_state ?? 'unknown';
+  const lvl = urgent ? 'urgent' : ai === 'inspection_suggested' ? 'inspection_suggested' : watch ? 'watch'
+            : ai === 'change_observed' ? 'change_observed' : (ai === 'unknown' || a.res?.coverage?.complete === false) ? 'unknown' : 'normal';
+  const ratio = a.ai?.score != null && a.ai?.threshold ? a.ai.score / a.ai.threshold : 0;
+  return { lvl, key: LEVEL[lvl] * 1000 + ratio };
+}
+const lvlClass = l => ({ urgent: 'urgent', inspection_suggested: 'ai', watch: 'watch', change_observed: 'ai', unknown: 'unknown', normal: 'normal' })[l];
+const lvlText = l => ({ urgent: '긴급', inspection_suggested: 'AI 지속 경고', watch: '점검', change_observed: 'AI 변화 관찰', unknown: '판정 불가', normal: '정상' })[l];
+
+async function stepAsset(a) {
+  a.t += step;
+  if (a === sel && ramp) a.overrides.oil_kgf_cm2 = Math.max(0, +((a.overrides.oil_kgf_cm2 ?? FIELDS.oil_kgf_cm2.default) - 0.002 * step).toFixed(3));
+  const snap = snapshotFor(a);
+  a.res = evaluate(snap, a.state);
+  for (const ev of a.res.events) log(`${a.id} 규칙 ${ev.type === 'raised' ? '발생' : '해제'}: ${ev.id}`, ev.type === 'raised' ? 'watch' : 'normal');
+  a.ai = await scoreAI(a, snap);
+  if (a.prevAi && a.ai.display_state !== a.prevAi) log(`${a.id} AI: ${AI_TEXT[a.prevAi] ?? a.prevAi} → ${AI_TEXT[a.ai.display_state] ?? a.ai.display_state}`, a.ai.display_state === 'within_baseline' ? 'normal' : 'ai');
+  a.prevAi = a.ai.display_state;
+  const r = snap.readings;
+  if (r.oil_kgf_cm2) a.history.push({ t_s: snap.t_s, phase: snap.phase, oil_kgf_cm2: r.oil_kgf_cm2.value, engine_rpm: r.engine_rpm?.value,
+    load_pct: r.load_pct?.value, ambient_c: r.ambient_c?.value, source: 'scenario', quality: 'ok' });
+  if (a.history.length > 90) a.history.shift();
+}
+
+function renderFleet() {
+  const order = [...assets].sort((x, y) => rank(y).key - rank(x).key);
+  $('fleet').innerHTML = order.map((a, i) => {
+    const r = rank(a), top = a.res?.alerts?.[0]?.title;
+    const why = top ?? (a.ai?.display_state && a.ai.display_state !== 'within_baseline' ? AI_TEXT[a.ai.display_state] : '이상 없음');
+    return `<div class="fleet-item lvl-${lvlClass(r.lvl)} ${a === sel ? 'sel' : ''}" data-id="${a.id}">
+      <div class="rank">${i + 1}</div><div><div class="name">${esc(a.id)} · ${lvlText(r.lvl)}</div>
+      <div class="why">${esc(a.label)}<br>${esc(why)}</div></div></div>`;
+  }).join('');
+  for (const el of $('fleet').children) el.onclick = () => { sel = assets.find(a => a.id === el.dataset.id); renderControls(); render(); };
+}
+
+function render() {
+  const a = sel, res = a.res, ai = a.ai;
+  if (!res) return;
+  const r = rank(a);
+  $('banner').className = `banner lvl-${lvlClass(r.lvl)}`;
+  $('banner-big').textContent = `${a.id} · ${lvlText(r.lvl)}`;
+  $('banner-sub').textContent = res.alerts.length ? res.alerts.map(x => x.title).join(' · ')
+    : ai?.display_state === 'inspection_suggested' ? '고정 기준 안이지만 평소 관계와 지속적으로 다릅니다. 점검을 권고합니다.'
+    : ai?.display_state === 'change_observed' ? '평소 관계와 다른 값이 관찰됐습니다. 지속되는지 확인 중입니다.'
+    : res.coverage?.complete === false || ai?.state === 'unknown' ? '일부 값이 없거나 판정 조건 밖입니다. 정상으로 표시하지 않습니다.'
+    : '관측 항목에서 규칙 이탈과 패턴 변화가 없습니다.';
+  $('cards-title').textContent = `계측값 · ${a.id} (모의 입력)`;
+  $('cards').innerHTML = Object.entries(res.metrics).map(([k, m]) => {
+    const f = FIELDS[k]; const lvl = m.status === 'normal' ? 'normal' : m.status === 'inactive' ? 'unknown' : (m.status ?? 'unknown');
+    const v = typeof m.value === 'number' ? (Math.abs(m.value) < 1 ? m.value.toFixed(3) : +m.value.toFixed(1)) : '—';
+    return `<div class="card lvl-${lvl === 'watch' || lvl === 'urgent' ? lvl : lvl === 'normal' ? 'normal' : 'unknown'}">
+      <div class="lab">${esc(f?.label ?? k)}</div><div><span class="val">${v}</span><span class="unit">${esc(m.unit ?? f?.unit ?? '')}</span></div>
+      <div class="tag">${esc(m.pending ? '지속 확인 중' : m.status === 'unknown' ? '미수신·판정 불가' : f?.normal_display ?? '')}</div></div>`;
+  }).join('');
+
+  const st = ai?.display_state ?? 'unknown';
+  $('ai').className = `lvl-${st === 'within_baseline' ? 'normal' : st === 'unknown' ? 'unknown' : 'ai'}`;
+  $('ai-state').textContent = AI_TEXT[st] ?? st;
+  if (ai?.score != null) {
+    const max = Math.max(ai.threshold * 3, ai.score * 1.1);
+    $('ai-bar').style.width = `${Math.min(100, ai.score / max * 100)}%`;
+    $('ai-th').style.left = `${ai.threshold / max * 100}%`;
+    $('ai-score').textContent = `점수 ${ai.score.toFixed(2)} / 임계값 ${ai.threshold.toFixed(2)} · 연속 ${ai.streak}/${ai.persistence_windows} · 추론 ${ai.inference_ms} ms · ${ai.engine}`;
+    $('ai-ev').innerHTML = '<tr><th>항목</th><th>현재</th><th>조건 기대값</th><th>표준화 편차</th></tr>' +
+      (ai.evidence ?? []).map(e => `<tr><td>${esc(e.field)}</td><td>${(+e.value).toFixed(3)} ${esc(e.unit)}</td><td>${(+e.expected).toFixed(3)}</td><td>${(+e.standardized_residual).toFixed(2)}</td></tr>`).join('');
+  } else {
+    $('ai-bar').style.width = '0'; $('ai-score').textContent = `판정 보류: ${ai?.reason ?? '-'}`; $('ai-ev').innerHTML = '';
+  }
+
+  $('alerts').innerHTML = res.alerts.length ? res.alerts.map(x => `<div class="alert lvl-${x.severity}"><div class="t">${esc(x.title)} · ${x.severity === 'urgent' ? '긴급' : '점검'}</div>
+    <div class="muted">${esc(x.reason)} · 근거: ${esc(x.basis?.label ?? '')}</div><ul>${(x.checks ?? []).map(c => `<li>${esc(c)}</li>`).join('')}</ul></div>`).join('')
+    : `<div class="muted">활성 규칙 경보 없음${res.pending_rules?.length ? ` · 지속 확인 중 ${res.pending_rules.length}건` : ''}</div>`;
+
+  const tr = estimateOilLimitTime(a.history);
+  $('trend-title').textContent = tr.label ?? '추세';
+  $('trend').innerHTML = tr.status === 'estimated'
+    ? `<div class="row"><span class="live-val">${tr.minutes.toFixed(1)}분</span><span class="muted">유압 ${tr.current?.toFixed?.(2) ?? ''} → 참고 한계 ${tr.limit} ${esc(tr.unit)}</span></div><div class="note">${esc(tr.assumption)}</div>`
+    : `<div class="muted">계산 불가: ${esc(tr.message ?? tr.reason)}</div><div class="note">${esc(tr.assumption)}</div>`;
+  $('chip-clock').innerHTML = `시연 시간 <b>${a.t}초${step > 1 ? ' · 가속 ×' + step : ''}</b>`;
+  renderFleet();
+}
+
+function renderControls() {
+  $('ctl-asset').textContent = sel.id;
+  $('scen').innerHTML = SCENARIOS.scenarios.map(s => `<button data-s="${s.id}" class="${s.id === sel.scenario ? 'on' : ''}">${esc(s.label)}</button>`).join('');
+  for (const b of $('scen').children) b.onclick = () => { sel.scenario = b.dataset.s; sel.overrides = {}; ramp = false; $('ramp').classList.remove('on');
+    newRun(sel); log(`${sel.id} 시나리오: ${b.textContent}`); renderControls(); };
+  const base = makeScenario(sel.scenario, 0).readings;
+  $('sliders').innerHTML = SLIDERS.filter(k => FIELDS[k]).map(k => {
+    const f = FIELDS[k], v = sel.overrides[k] ?? base[k]?.value ?? f.default;
+    return `<div class="slider"><label>${esc(f.label)} <input type="range" data-k="${k}" min="${f.min}" max="${f.max}" step="${f.step}" value="${v}"></label><span id="sv-${k}">${v} ${esc(f.unit)}</span></div>`;
+  }).join('');
+  for (const inp of $('sliders').querySelectorAll('input')) inp.oninput = () => {
+    sel.overrides[inp.dataset.k] = +inp.value; $('sv-' + inp.dataset.k).textContent = `${inp.value} ${FIELDS[inp.dataset.k].unit}`; };
+}
+
+$('ramp').onclick = () => { ramp = !ramp; $('ramp').classList.toggle('on', ramp); log(`${sel.id} 유압 하락 시연 ${ramp ? '시작' : '중지'}`); };
+$('fast').onclick = () => { step = step === 1 ? 10 : 1; $('fast').classList.toggle('on', step > 1); };
+$('reset').onclick = () => { newRun(sel); log(`${sel.id} 새 운전 시작`); };
+
+async function loop() {
+  for (const a of assets) await stepAsset(a);
+  render();
+  tick += 1;
+  if (tick % 10 === 1) status();
+}
+async function status() {
+  try {
+    const s = await (await fetch('/api/status')).json();
+    $('chip-engine').innerHTML = `판정 엔진 <b>${esc(s.engine.startsWith('clikart') ? 'ClikaRT ' + s.engine.slice(8) + ' · 온디바이스' : s.engine)}</b>`;
+    $('chip-net').innerHTML = `네트워크 <b>${s.network_reachable ? '온라인' : '오프라인 동작'}</b>`;
+    $('chip-model').innerHTML = `모델 <b>${esc(s.model_id)}</b> · ${esc(s.data_domain)}`;
+  } catch {}
+}
+async function liveLoop() {
+  try {
+    const l = await (await fetch('/api/live')).json();
+    if (l.rms_g != null && l.age_s < 3) { live.push(l.rms_g); $('live-val').textContent = l.rms_g.toFixed(4); }
+    else $('live-val').textContent = l.connected ? '대기' : '미연결';
+    if (live.length > 120) live.shift();
+    const mx = Math.max(0.01, ...live);
+    $('live-spark').innerHTML = `<polyline fill="none" stroke="var(--ai)" stroke-width="2" points="${live.map((v, i) => `${i * 300 / 119},${58 - v / mx * 54}`).join(' ')}"/>`;
+  } catch {}
+}
+renderControls(); status();
+setInterval(loop, 1000); setInterval(liveLoop, 500);
+log('관제 시작');
+</script>
+</body>
+</html>
