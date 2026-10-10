@@ -14,6 +14,20 @@
 
 ## SC1 · 준비할 것은 모델보다 실행 경로
 
+### 10/10 Uno Q 대여와 ClikaRT 활용 검토
+
+사용자는 CLIKA 측에서 제공하는 **Arduino Uno Q를 이미 빌렸으며 Clika Runtime 사용을 권장받았다**고 확인했다. 확보한 보드를 선택지로 유지할 가치가 있다는 판단이며, 제품 선정·런타임 채택·SC1 참가 결정은 아니다. 현재 아이디어 발산을 계속한다.
+
+- [Arduino 공식 사양](https://docs.arduino.cc/resources/datasheets/ABX00162-ABX00173-datasheet.pdf): Uno Q는 Debian Linux를 실행하는 ARM64 MPU와 센서·실시간 I/O를 담당할 MCU를 함께 갖추고 Bridge RPC로 연결한다. RAM 2GB와 4GB 버전이 있으며 빌린 보드의 버전은 미확인이다. 필요한 외부 센서의 확보·연동도 별도다.
+- [ClikaRT 지원 플랫폼](https://docs.clika.io/clikart/system-requirements/): Linux ARM64 CPU 경로와 Vulkan 백엔드를 명시한다. Vulkan에는 호환 드라이버가 필요하다. 이것만으로 해당 Uno Q의 GPU 가속·성능이 확인된 것은 아니다. MCU에 직접 설치하는 아두이노 라이브러리로 가정하지 않는다.
+- [ONNX 실행 가이드](https://docs.clika.io/clikart/how-to/run-an-onnx-model/): ONNX 그래프의 컴파일·실행과 작은 신경망 예제가 있다. 특정 센서 모델의 연산·형상·메모리 호환성은 실제 실행으로 확인해야 한다. LLM 도입을 전제할 필요는 없다.
+- 적용 가설: 외부 센서 → MCU 입력 수집 → Uno Q Linux에서 ClikaRT 추론 → 현장 표시·기록. 독립형 상태 감시 장치, 복수 센서의 로컬 분석 허브, 반복 기준 측정 장치 등 여러 발산 방향에서 공통 실행 기반으로 사용할 수 있다. 예측할 현상·데이터·RUL 근거는 별도로 필요하다.
+- 현장 지원에서 확인할 항목은 보드용 실행 예제와 버전, CPU/GPU 백엔드, 작은 사용자 모델의 실행 경로, [오프라인 라이선스](https://docs.clika.io/platform/concepts/runtime-licenses/)다. 앱을 새로 시작한 상태에서 네트워크 없이 실제 입력을 처리해야 오프라인 동작을 확인할 수 있다. 보드 접근·설치·성능 시험은 아직 하지 않았다.
+
+10/10 공식 과제집 SC1을 재확인했다. ClikaRT 앱·네트워크 차단 실동작·코드 저장소가 핵심이며 같은 앱의 서로 다른 기기 종류 실행은 우대다. Uno Q 대여만으로 충족하지 않는다. Mac과 Uno Q의 같은 모델·앱 실행은 검토할 수 있지만 센서 I/O 연결까지 코드 변경 없이 이식된다고 가정하지 않는다.
+
+### 기존 Mac 실행 경로와 행사 안내
+
 CLIKA 공식 시스템 요구사항에는 Apple Silicon macOS의 CPU·Metal 지원이 명시돼 있다. 따라서 팀의 M5 Mac은 문서상 지원 플랫폼 범주에 들어간다. 메모리 요구는 모델에 따라 달라지고, 행사 배포본의 호환성·성능은 아직 실측하지 않았다. [시스템 요구사항](https://docs.clika.io/clikart/system-requirements/)
 
 10/9 확인한 다운로드 문서는 담당자가 평가용 패키지와 체크섬을 제공하는 방식을 설명했다. **10/10 09:31 게시·09:53 수정된 행사 공지**는 팀 대표 1명 가입 후 팀원 초대, 라이선스 발급 후 프로필의 Download ClikaRT에서 플랫폼·언어를 선택하는 경로를 안내했다. 팀당 런타임 하드웨어 좌석 2개·오프라인 라이선스 2개다. 정확한 macOS arm64 배포본·버전·예제와 실제 실행은 별도로 확인한다. [CLIKA 채널](https://discord.com/channels/1508709817861013584/1556820800643014836), [Get ClikaRT](https://docs.clika.io/clikart/getting-started/get-clikart/)
