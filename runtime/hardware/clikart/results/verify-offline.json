@@ -1,0 +1,33 @@
+{
+  "checked_at_utc": "2026-10-10T15:04:18.197487+00:00",
+  "host": {
+    "machine": "aarch64",
+    "system": "Linux",
+    "python": "3.13.5",
+    "libc": "glibc-2.41"
+  },
+  "network": {
+    "default_route": false,
+    "dns_resolves_docs_clika_io": false,
+    "looked_offline": true
+  },
+  "license_source": "file:~/.clika/runtime/license",
+  "clikart_version": "0.6.4",
+  "tiny_mlp": {
+    "output": [
+      [
+        5.25,
+        5.25,
+        5.25
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "matches_expected": true,
+    "first_call_ms": 1.037
+  },
+  "passed": true
+}

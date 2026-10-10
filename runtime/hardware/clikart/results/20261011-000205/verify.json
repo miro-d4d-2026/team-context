@@ -1,0 +1,22 @@
+{
+  "checked_at_utc": "2025-09-09T13:48:17.495405+00:00",
+  "host": {
+    "machine": "aarch64",
+    "system": "Linux",
+    "python": "3.13.5",
+    "libc": "glibc-2.41"
+  },
+  "network": {
+    "default_route": false,
+    "dns_resolves_docs_clika_io": false,
+    "looked_offline": true
+  },
+  "license_source": "none",
+  "clikart_version": "0.6.4",
+  "error": {
+    "type": "InternalError",
+    "code_name": "LICENSE_FAILED",
+    "message": "node 'X': no ClikaRT license is configured for this process — a license key comes from the Licenses page of your project on the CLIKA platform; set CLIKA_RT_LICENSE to the key or to a file holding it, or install it with the clikart-license-init tool"
+  },
+  "passed": false
+}

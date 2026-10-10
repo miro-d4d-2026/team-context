@@ -1,0 +1,22 @@
+{
+  "clikart_version": "0.6.4",
+  "model_id": "gg-236c6ff6e954c5eb39eb",
+  "data_domain": "scenario",
+  "phase": "running",
+  "onnx": "genguard_edge_score.onnx",
+  "onnx_bytes": 1311,
+  "comparison": {
+    "windows": 1319,
+    "max_abs_score_diff": 6.762429042872498e-05,
+    "max_rel_score_diff": 8.664181942058549e-05,
+    "state_agreement": "1319/1319",
+    "original_states": {
+      "change": 353,
+      "unknown": 181,
+      "within_baseline": 785
+    },
+    "batch_ms": 4.97,
+    "single_window_ms_median": 0.92
+  },
+  "passed": true
+}
