@@ -1,0 +1,96 @@
+{
+  "schema_version": "genguard.research.demo_rules/2",
+  "runtime_drop_in": false,
+  "model": "Cummins Onan 7.5HDKAL-1 reference scenario",
+  "control_action": "none",
+  "evaluation_precondition": "유효/최신 값, 올바른 모델·단위·결선, phase=steady; 온도·유압은 정상 운전온도 조건",
+  "missing_policy": "unknown; 0/직전 정상값으로 대체 금지",
+  "rules": [
+    {
+      "id": "rpm_deviation",
+      "field": "engine_rpm",
+      "op": "outside",
+      "value": [
+        1710,
+        1890
+      ],
+      "persistence_s": 10,
+      "severity": "watch",
+      "provenance": "정격 대비 ±5%를 택한 시연 규칙"
+    },
+    {
+      "id": "frequency_deviation",
+      "field": "frequency_hz",
+      "op": "outside",
+      "value": [
+        57,
+        63
+      ],
+      "persistence_s": 10,
+      "severity": "watch",
+      "provenance": "정격 대비 ±5%를 택한 시연 규칙"
+    },
+    {
+      "id": "coolant_above_reference",
+      "field": "coolant_c",
+      "op": "gt",
+      "value": 91,
+      "persistence_s": 10,
+      "severity": "watch",
+      "provenance": "온도 상단은 문서값; 경보화·지속시간은 시연 가정"
+    },
+    {
+      "id": "oil_outside_reference",
+      "field": "oil_bar",
+      "op": "outside",
+      "value": [
+        1.94,
+        4.42
+      ],
+      "persistence_s": 10,
+      "severity": "watch",
+      "provenance": "범위는 문서값; 경보화·지속시간은 시연 가정"
+    },
+    {
+      "id": "voltage_deviation",
+      "field": "voltage_v",
+      "op": "outside",
+      "value": [
+        228,
+        252
+      ],
+      "persistence_s": 5,
+      "severity": "watch",
+      "provenance": "240V ±5% 선택, 제조사 경보 설정 아님"
+    },
+    {
+      "id": "fuel_low",
+      "field": "fuel_pct",
+      "op": "lt",
+      "value": 20,
+      "persistence_s": 5,
+      "severity": "watch",
+      "provenance": "20%는 시연 가정"
+    },
+    {
+      "id": "vibration_relative",
+      "field": "vibration_ratio",
+      "op": "gt",
+      "value": 1.5,
+      "persistence_s": 6,
+      "severity": "watch",
+      "provenance": "1.5배·6초는 개발 기준, 발전기 안전 한계 아님"
+    }
+  ],
+  "derived_fields": {
+    "vibration_ratio": {
+      "formula": "current_vector_ac_rms_g / approved_normal_vector_ac_rms_g",
+      "precondition": "동일 장비·부착·샘플링·운전 조건의 승인된 정상 기준",
+      "invalid_policy": "기준 미확보/0/invalid/다른설치면 unknown",
+      "scenario_baseline_g": 0.1,
+      "baseline_source": "demo_assumption"
+    }
+  },
+  "model_policy": "별도 정상 운전으로 threshold 보정 후 연속 창 판단. 점수는 고장 확률 아님.",
+  "unresolved_protection": "저유압 OEM값 충돌 때문에 이 연구파일로 자동정지 기준 확정하지 않음"
+}

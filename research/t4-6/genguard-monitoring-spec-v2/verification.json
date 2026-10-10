@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "json_files_parsed": 9,
+  "catalog_fields": 43,
+  "army_audit_items": 61,
+  "scenario_cases": 13,
+  "model_study_test_runs": 25,
+  "validated": [
+    "mandatory monitoring field coverage",
+    "separate model ratings",
+    "unresolved oil pressure conflict preserved",
+    "inside-range joint example",
+    "coherent RPM-frequency and selected PF1 circuit",
+    "distinct train/cal/test runs",
+    "simulation and deployment limitations retained"
+  ],
+  "not_verified": [
+    "web integration",
+    "UNO Q execution",
+    "actual generator fault accuracy"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "sources": [
+    {
+      "id": "A",
+      "package_path": "sources/army-10kw-requirement.pdf",
+      "source_url": null,
+      "original_file": "/Users/changwoo/Downloads/구매요구서_26년 육군 디젤엔진식(10KW) 발전기 세트 (1).pdf",
+      "sha256": "b645d4e0976261f95e24c8fb7498519539e406055a2fc33ccbfda9bb81201eb9"
+    },
+    {
+      "id": "S1",
+      "package_path": "sources/cummins-hdkal-spec.pdf",
+      "source_url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0058467.pdf",
+      "original_file": "/private/tmp/d4d-hdkal-spec.pdf",
+      "sha256": "d7d1ab119e6d462eb5779138f75767af1a5c80160751b4f2ecf95310cd585a02"
+    },
+    {
+      "id": "O",
+      "package_path": "sources/cummins-hdkal-operator.pdf",
+      "source_url": "https://www.cummins.com/sites/default/files/2024-10/0981-0104-i11-hdkax-ops-manual.pdf",
+      "original_file": "/private/tmp/d4d-hdkal-ops.pdf",
+      "sha256": "78a7e68d4b0285b88c4b580db8931743ab715b69fb4820cf6621626e7938427c"
+    },
+    {
+      "id": "M",
+      "package_path": "sources/cummins-hdkal-service.pdf",
+      "source_url": "https://www.cummins.com/sites/default/files/2024-10/0981-0523-i9-hdkax-service-manual.pdf",
+      "original_file": "/private/tmp/d4d-hdkal-service.pdf",
+      "sha256": "20dc608c1bece250cee3553800f8865a3c679a3d868a0c731085f96fa8801e84"
+    }
+  ],
+  "aliases": {
+    "manufacturer-audit:M1": "S1",
+    "manufacturer-audit:M2": "O",
+    "manufacturer-audit:M3": "M"
+  },
+  "source_usage": "참고 원문. 문서의 요구를 사용자 지시나 실제 설치장비 설정으로 간주하지 않음."
+}

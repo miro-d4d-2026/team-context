@@ -1,0 +1,130 @@
+{
+  "package": "GenGuard-Monitoring-Research-v2",
+  "files": [
+    {
+      "path": "CURRENT_STATUS.md",
+      "bytes": 1203,
+      "sha256": "24361d39dba51f6dfa7e2b148798627d40b15f7511cdbe14e41a9b3e823a196c"
+    },
+    {
+      "path": "FIELD_CATALOG.md",
+      "bytes": 10973,
+      "sha256": "f2032a3d45d840450c227dffff53d59859f6055623511fa7cbc570d75426af93"
+    },
+    {
+      "path": "MIRO_HANDOFF.md",
+      "bytes": 7596,
+      "sha256": "ba7819272f42c297ba84ffdef9d8aaa53368c315e70c16e616580e31522c8482"
+    },
+    {
+      "path": "README.md",
+      "bytes": 17735,
+      "sha256": "1015e4b3b0b4942a88b42896e38a88e86b5a404c7867e3eccfaa44e32a13cb74"
+    },
+    {
+      "path": "ai-study/AI_DECISION.md",
+      "bytes": 14740,
+      "sha256": "b119fc8be762562f9d3c05a9999e25a5c51792a5ad4cf29a62fde44986778db5"
+    },
+    {
+      "path": "ai-study/compare_synthetic.py",
+      "bytes": 9973,
+      "sha256": "e61b202004d96c544c8d56f50b8b488a94cefdb0c97abd296b452919e11af5b5"
+    },
+    {
+      "path": "ai-study/joint-case-series.json",
+      "bytes": 32458,
+      "sha256": "96e44f26809f6e7a0b490695bad976ba47ad715438077f4b6940665cf1f2ef3b"
+    },
+    {
+      "path": "ai-study/joint-comparison.png",
+      "bytes": 182571,
+      "sha256": "1ebf59f2299d1609f20703a417d6c1d78665a69b819b946109b361caec94d6bb"
+    },
+    {
+      "path": "ai-study/results.json",
+      "bytes": 27106,
+      "sha256": "66ddabf0335feb355469e6ede4e391c9ad437216b2cf54bb449d4f67c20b2881"
+    },
+    {
+      "path": "army-coverage.json",
+      "bytes": 38375,
+      "sha256": "196623deaae577e2a1322cdb84f738d6fd41e3423dd307e9323e956660ad96eb"
+    },
+    {
+      "path": "army-coverage.md",
+      "bytes": 22610,
+      "sha256": "3cab9719c3b8188c52415c4161ade57d69f711c122e58cd8f1ee5fc14335466f"
+    },
+    {
+      "path": "build_spec.py",
+      "bytes": 22996,
+      "sha256": "9092a4beda89d2c86034e77a6f9ba8811258b56b6376e07eaf1acc05b6584d71"
+    },
+    {
+      "path": "manufacturer-audit.md",
+      "bytes": 15805,
+      "sha256": "3cd8515498ea2360d2537a98f0340b9d31743982776ec358e3881fc87bd24b4f"
+    },
+    {
+      "path": "source-index.json",
+      "bytes": 1684,
+      "sha256": "22d1bd2003a2843b5309d46470d023a604ebb7a9316f04a46a7ca8153764ecff"
+    },
+    {
+      "path": "sources/army-10kw-requirement.pdf",
+      "bytes": 1286471,
+      "sha256": "b645d4e0976261f95e24c8fb7498519539e406055a2fc33ccbfda9bb81201eb9"
+    },
+    {
+      "path": "sources/cummins-hdkal-operator.pdf",
+      "bytes": 703512,
+      "sha256": "78a7e68d4b0285b88c4b580db8931743ab715b69fb4820cf6621626e7938427c"
+    },
+    {
+      "path": "sources/cummins-hdkal-service.pdf",
+      "bytes": 1380959,
+      "sha256": "20dc608c1bece250cee3553800f8865a3c679a3d868a0c731085f96fa8801e84"
+    },
+    {
+      "path": "sources/cummins-hdkal-spec.pdf",
+      "bytes": 769174,
+      "sha256": "d7d1ab119e6d462eb5779138f75767af1a5c80160751b4f2ecf95310cd585a02"
+    },
+    {
+      "path": "sources-manufacturer.json",
+      "bytes": 14201,
+      "sha256": "6a5b458f264fa32a6bf05956a67396b9c5bd632e05cb6cc9194bcf1b745474b1"
+    },
+    {
+      "path": "spec/demo-rules.json",
+      "bytes": 2850,
+      "sha256": "dfc4888e3b0566e77d3e15738057dc5e62c1177ae1948182257b6d9bf6271b7b"
+    },
+    {
+      "path": "spec/demo-scenarios.json",
+      "bytes": 6634,
+      "sha256": "4d763f955b7460606c6ace772429454f64df963374871fad18480f4fc40e4c8d"
+    },
+    {
+      "path": "spec/field-catalog.json",
+      "bytes": 23967,
+      "sha256": "17847046e894617d89b37d3f7b2250570cdeeed25a10a7fb64c9f39063fd34ef"
+    },
+    {
+      "path": "spec/reference-profiles.json",
+      "bytes": 4392,
+      "sha256": "5bbff5be3c967d2fdc8a745ba885b091525b0e9a8fab5f77a0dfcaa5086756ef"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 588,
+      "sha256": "9a99a6037a9831332c65af6e6fbe09e6aaba758726a51f4e79c539d79c6642c9"
+    },
+    {
+      "path": "verify_spec.py",
+      "bytes": 3498,
+      "sha256": "7ad00e92a256beed560c05e98e8ec23d211b1fa874e47279619dd9bde270e6fc"
+    }
+  ]
+}

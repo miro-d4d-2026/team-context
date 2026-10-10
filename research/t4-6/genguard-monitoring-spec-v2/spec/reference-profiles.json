@@ -1,0 +1,164 @@
+{
+  "schema_version": "genguard.research.references/2",
+  "operational_use_approved": false,
+  "army_requirement": {
+    "kind": "procurement_acceptance_requirement",
+    "not_a_manufacturer_model": true,
+    "rating": {
+      "continuous_kw_min": 10,
+      "maximum_kw_min": 11,
+      "rpm": 1800,
+      "hz": 60,
+      "phases": 3,
+      "voltage_options_v": [
+        [
+          120,
+          208
+        ],
+        [
+          240,
+          416
+        ]
+      ]
+    },
+    "protection": [
+      {
+        "id": "overspeed",
+        "value_rated_pct": 110,
+        "derived_rpm": 1980,
+        "response_within_s": 10,
+        "action": "alarm_and_engine_stop",
+        "ref": "A3.4.1.2"
+      },
+      {
+        "id": "low_oil",
+        "operator": "lte",
+        "original_value": 0.6,
+        "original_unit": "kg/cm² (원문)",
+        "interpreted_unit": "kgf/cm²",
+        "derived_bar": 0.588399,
+        "response_within_s": 60,
+        "action": "alarm_and_engine_stop",
+        "ref": "A3.4.1.3",
+        "conversion_note": "압력 단위를 kgf/cm²로 해석한 환산. 1kgf/cm²=0.980665bar."
+      },
+      {
+        "id": "high_coolant",
+        "trip_setting_interval_c": [
+          95,
+          100
+        ],
+        "response_within_s": 60,
+        "action": "alarm_and_engine_stop",
+        "ref": "A3.4.1.4",
+        "note": "95~100은 정상범위가 아니라 과열 보호 요구 구간. 정확한 장비 설정 확인 필요."
+      },
+      {
+        "id": "overload",
+        "operator": "gte",
+        "value_rated_pct": 110,
+        "example_kw_if_rated_10kw": 11,
+        "response_within_s": 60,
+        "action": "circuit_disconnect",
+        "ref": "A3.4.2.2",
+        "note": "실제 명판 연속정격으로 계산. 구매요구는10kW이상."
+      }
+    ],
+    "timing_note": "N초 이내 동작 요구는 앱이 N초 기다려야 한다는 뜻이 아님. 실제 보호기 신호 우선.",
+    "digital_interface_guaranteed": false
+  },
+  "manufacturer_reference": {
+    "model": "Cummins Onan 7.5HDKAL-1",
+    "manual_scope": "HDKAL Spec B-J; 실물 spec/serial 미확인",
+    "profile_id": "cummins-onan-7.5hdkal-1-reference",
+    "rating": {
+      "kw": 7.5,
+      "rating_kind": "intermittent",
+      "rpm": 1800,
+      "hz": 60,
+      "phases": 1,
+      "voltage_v": [
+        120,
+        240
+      ],
+      "rated_current_a": {
+        "120V": 62.5,
+        "240V": 31.3
+      },
+      "source": "S1",
+      "note": "외기온·고도·연료 등 사양서 조건 및 출력 저감 별도. 이번 시연에서 저감 계산 미구현. 군 연속정격과 구분."
+    },
+    "operating_ranges": [
+      {
+        "field": "coolant_c",
+        "range": [
+          71,
+          91
+        ],
+        "unit": "degC",
+        "kind": "manufacturer_gauge_range",
+        "condition": "부하·외기온 의존",
+        "ref": "O8/PDF12"
+      },
+      {
+        "field": "oil_bar",
+        "range": [
+          1.94,
+          4.42
+        ],
+        "unit": "bar",
+        "kind": "converted_manufacturer_gauge_range",
+        "condition": "정상 운전온도",
+        "original": "194~442kPa",
+        "ref": "O7/PDF11"
+      },
+      {
+        "field": "battery_dc_v",
+        "range": [
+          12.5,
+          15
+        ],
+        "unit": "V_DC",
+        "kind": "manufacturer_gauge_range",
+        "condition": "배터리 상태/충전상태 의존",
+        "ref": "O8/PDF12"
+      },
+      {
+        "field": "battery_dc_v",
+        "range": [
+          13.5,
+          15
+        ],
+        "unit": "V_DC",
+        "kind": "manufacturer_charging_check",
+        "condition": "엔진 운전 중 충전",
+        "ref": "M3-1/PDF19"
+      }
+    ],
+    "voltage_regulation": {
+      "no_to_full_load_pct": 2.5,
+      "constant_load_pct": 1,
+      "kind": "performance_spec_not_alarm",
+      "ref": "S1/PDF2"
+    },
+    "high_coolant_shutdown": {
+      "value_c": 106,
+      "delay_s": null,
+      "ref": "O23/PDF27;M2-4/PDF14"
+    },
+    "low_oil_shutdown": {
+      "values_bar": [
+        0.97,
+        0.62
+      ],
+      "kind": "document_conflict",
+      "refs": [
+        "O23/PDF27",
+        "M2-2/PDF12"
+      ],
+      "operational_selected_value": null
+    },
+    "normal_population_averages_available": false,
+    "note": "공식 문서의 참고값이며 실제 장비 등록·경보 설정 승인이 아님."
+  }
+}

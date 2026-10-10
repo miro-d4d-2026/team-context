@@ -1,0 +1,188 @@
+{
+  "schema_version": "genguard.research.scenarios/2",
+  "runtime_drop_in": false,
+  "model": "Cummins Onan 7.5HDKAL-1",
+  "source_kind": "scenario",
+  "is_example": true,
+  "baseline": {
+    "engine_rpm": 1800,
+    "frequency_hz": 60,
+    "coolant_c": 80,
+    "oil_bar": 3.2,
+    "voltage_v": 240,
+    "current_a": 15.625,
+    "active_power_kw": 3.75,
+    "load_pct": 50,
+    "ambient_c": 25,
+    "vibration_rms_g": 0.1,
+    "envelope_cv": 0.15,
+    "battery_dc_v": 14.1,
+    "fuel_pct": 65
+  },
+  "baseline_origin": "designer_selected_not_manufacturer_average",
+  "phase": "steady",
+  "electrical_assumption": "단상240V 균형/PF1 합성; kW=240*I/1000. 실물 계통 일반화 금지.",
+  "cases": [
+    {
+      "id": "normal",
+      "title_ko": "기준 운전",
+      "hold_s": 30,
+      "changes": {},
+      "expected_ui": "관측 항목 기준 이탈 없음",
+      "mechanism": "rules_and_model",
+      "note": "아래 기준값 모두 설명용 합성값. 실제 장비 정상 평균 아님."
+    },
+    {
+      "id": "vibration",
+      "title_ko": "다른 값 유지·진동 변화",
+      "hold_s": 20,
+      "changes": {
+        "vibration_rms_g": 0.22,
+        "envelope_cv": 0.6
+      },
+      "expected_ui": "진동 패턴 변화: 부착·접촉·고정 상태 우선 확인",
+      "mechanism": "baseline_or_model",
+      "note": "실측 시에는 진동 값 두 개만 센서에서 대체하고 hybrid_demo로 표시. 베어링 고장 확정 금지."
+    },
+    {
+      "id": "rpm",
+      "title_ko": "회전수와 주파수 동반 증가",
+      "hold_s": 20,
+      "changes": {
+        "engine_rpm": 1950,
+        "frequency_hz": 65
+      },
+      "expected_ui": "회전수/주파수 기준 편차: 부하·조속 상태 확인",
+      "mechanism": "demo_rule",
+      "note": "4극 동기식 관계를 유지한 합성 예. 1950rpm은 군 과속 보호1980rpm과 다름."
+    },
+    {
+      "id": "coolant",
+      "title_ko": "RPM 정상·냉각수 높음",
+      "hold_s": 30,
+      "changes": {
+        "coolant_c": 96
+      },
+      "expected_ui": "RPM 기준 이탈 없음 / 냉각수 문서상 범위 초과 / 종합 주의",
+      "mechanism": "reference_range_and_demo_rule",
+      "note": "이 Onan 시연은 106℃ 정지 참고값 미도달. 군 프로필이면95~100℃ 보호요구구간이라 같은 문구 사용 금지."
+    },
+    {
+      "id": "combined",
+      "title_ko": "개별 문서 범위 안·평소 조합과 다름",
+      "hold_s": 30,
+      "changes": {
+        "coolant_c": 89,
+        "oil_bar": 2.1
+      },
+      "expected_ui": "표시 범위 안이지만 같은 부하의 과거 패턴과 차이: 냉각·윤활 점검 권고",
+      "mechanism": "conditional_model_candidate",
+      "note": "검증된 모델이 실제 점수/지속조건을 통과할 때만 이 문구 출력. 스냅샷만으로 IF탐지 보장하지 않음."
+    },
+    {
+      "id": "oem_alarm",
+      "title_ko": "기존 보호기 경보 수신",
+      "hold_s": 1,
+      "changes": {
+        "oem_low_oil": true
+      },
+      "expected_ui": "기존 컨트롤러 저유압 경보 수신",
+      "mechanism": "event_rule",
+      "note": "AI 정상 점수와 관계없이 우선 표시. 값 예측과 실제 보호기 동작 구분."
+    },
+    {
+      "id": "output_trip",
+      "title_ko": "RPM 정상·출력 차단",
+      "hold_s": 1,
+      "changes": {
+        "output_breaker_state": "tripped",
+        "loadside_voltage_v": 0,
+        "current_a": 0,
+        "active_power_kw": 0,
+        "load_pct": 0
+      },
+      "expected_ui": "엔진 운전 중 / 출력 차단기 트립 / 부하측 전원 없음",
+      "mechanism": "event_and_electrical_rule",
+      "note": "단자측 voltage_v=240V와 부하측0V는 측정점이 다름. 낮아진 부하는 전력차단 결과일 수 있고 단순새부하로 경보를 숨기지 않음."
+    },
+    {
+      "id": "low_fuel",
+      "title_ko": "연료 부족",
+      "hold_s": 20,
+      "changes": {
+        "fuel_pct": 12
+      },
+      "expected_ui": "연료 잔량 낮음: 보충 계획 확인",
+      "mechanism": "demo_rule",
+      "note": "20%는 가정. 진동 변화에서 연료량을 추론한 결과 아님."
+    },
+    {
+      "id": "telemetry_stale",
+      "title_ko": "RPM 마지막 값 정상·현재 수신 끊김",
+      "hold_s": 15,
+      "changes": {
+        "quality_override": {
+          "engine_rpm": "stale",
+          "coolant_c": "stale",
+          "oil_bar": "stale"
+        }
+      },
+      "expected_ui": "컨트롤러 데이터 미수신: 현재 상태 판정 불가",
+      "mechanism": "quality_gate",
+      "note": "정상도 발전기 고장 확정도 아님. 진동 개별 판정은 남은 신호로 계속 가능."
+    },
+    {
+      "id": "warming_up",
+      "title_ko": "시동 후 워밍업",
+      "hold_s": 30,
+      "changes": {
+        "phase": "warming_up",
+        "coolant_c": 35
+      },
+      "expected_ui": "워밍업 중: 정상 운전 모델 판정 대기",
+      "mechanism": "phase_gate",
+      "note": "cold조건은 학습/정상 온도 범위 비교에서 제외. OEM 경보 수신은 계속 우선. 시동전 예열램프와 구분."
+    },
+    {
+      "id": "new_load",
+      "title_ko": "학습하지 않은 부하",
+      "hold_s": 30,
+      "changes": {
+        "load_pct": 90,
+        "active_power_kw": 6.75,
+        "current_a": 28.125
+      },
+      "expected_ui": "학습 조건 부족: 이 부하의 패턴 판정 보류",
+      "mechanism": "support_gate",
+      "note": "부하 변화 자체를 고장이라 하지 않음. 문서/정격 규칙은 계속 적용."
+    },
+    {
+      "id": "inconsistent_rpm",
+      "title_ko": "RPM만 변하고 독립 주파수는 유지",
+      "hold_s": 20,
+      "changes": {
+        "engine_rpm": 1950
+      },
+      "expected_ui": "RPM·주파수 불일치: 센서·시각·연동 확인",
+      "mechanism": "cross_sensor_rule_candidate",
+      "note": "직결4극동기식의 독립 측정값에 한정. 주파수에서 계산한RPM과 비교하면 자기검증에 불과."
+    },
+    {
+      "id": "repeat_trend",
+      "title_ko": "동일 시점의 점검 추세",
+      "hold_s": 1,
+      "changes": {
+        "historical_coolant_at_10min_c": [
+          79,
+          80,
+          82,
+          85,
+          89
+        ]
+      },
+      "expected_ui": "최근 점검의 온도 상승 추세 확인",
+      "mechanism": "run_summary_trend_candidate",
+      "note": "부하50%·외기25℃·시동후10분으로 조건 맞춘 합성 예. 과거 관측값을 그대로 iforest에 넣는 것만으로 시간 추세 학습 안 됨."
+    }
+  ]
+}

@@ -1,0 +1,499 @@
+{
+  "schema_version": "1.0",
+  "reference_model": "Cummins Onan 7.5HDKAL-1",
+  "not_the_army_10kw_product": true,
+  "exact_spec_letter_and_serial_verified": false,
+  "sources": [
+    {
+      "id": "M1",
+      "title": "Cummins Onan Standard Diesel SD7.5/6.0 A-1390g",
+      "url": "https://mart.cummins.com/imagelibrary/data/assetfiles/0058467.pdf",
+      "local_path": "/private/tmp/d4d-hdkal-spec.pdf",
+      "sha256": "d7d1ab119e6d462eb5779138f75767af1a5c80160751b4f2ecf95310cd585a02",
+      "pages": 4,
+      "verified_on": "2026-10-10",
+      "source_type": "manufacturer_primary_document",
+      "title_page": "Cummins®, Onan®, the \"C\" logo, Performance you rely on.TM and Standard DieselTM are \nservicemarks, trademarks and/or registered trademarks of Cummins Inc. \nRacor® is a registered trademark of Parker Hannifin Corp. \nSpecifications are subject to change without notice  \n©2011 Cummins Power Generation. All Rights Reserved. \nA-1390g (4/11) \nCommercial generator set \nStandard DieselTM Series \nSD 7.5 60 Hz/6.0 50 Hz \n \n \nFeatures and benefits  Weight, size and sound level \n Smooth operation - focalized mounting system with \n4-point vibration isolation \n Glow plugs for reliable all-weather starting \n Installation flexibility with remountable 90° exhaust \nelbow, remountable DC control and multiple oil \nfill/check points \n Cross-flow radiator for increased cooling efficiency \n Water resistant "
+    },
+    {
+      "id": "M2",
+      "title": "HDKAL Spec B-J / HDKAS Spec B-F Operator Manual 0981-0104 Issue11",
+      "url": "https://www.cummins.com/sites/default/files/2024-10/0981-0104-i11-hdkax-ops-manual.pdf",
+      "local_path": "/private/tmp/d4d-hdkal-ops.pdf",
+      "sha256": "78a7e68d4b0285b88c4b580db8931743ab715b69fb4820cf6621626e7938427c",
+      "pages": 40,
+      "verified_on": "2026-10-10",
+      "source_type": "manufacturer_primary_document",
+      "title_page": "Operator Manual\nOnan Generator Set for Commercial Mobile\nHDKAL (Spec B−J)\nHDKAS (Spec B−F)\nEnglish\nOriginal Instructions 9-2024 0981 −0104 (Issue 11)"
+    },
+    {
+      "id": "M3",
+      "title": "HDKAL/HDKAS Service Manual 0981-0523 Issue9",
+      "url": "https://www.cummins.com/sites/default/files/2024-10/0981-0523-i9-hdkax-service-manual.pdf",
+      "local_path": "/private/tmp/d4d-hdkal-service.pdf",
+      "sha256": "20dc608c1bece250cee3553800f8865a3c679a3d868a0c731085f96fa8801e84",
+      "pages": 58,
+      "verified_on": "2026-10-10",
+      "source_type": "manufacturer_primary_document",
+      "title_page": "Service Manual\nOnan Generator Set for Commercial Mobile\nHDKAL (Spec B−J)\nHDKAQ (Spec A)\nHDKAR (Spec A )\nHDKAS (Spec B−E)\nEnglish\nOriginal Instructions 1-2019 0981 −0523 (Issue 9)"
+    }
+  ],
+  "claims": [
+    {
+      "id": "model_rpm",
+      "field": "engine_rpm",
+      "value_kind": "nominal",
+      "value": 1800,
+      "unit": "rpm",
+      "source_id": "M1",
+      "pdf_page": 1,
+      "printed_page": null,
+      "conditions": "60Hz model",
+      "notes": null
+    },
+    {
+      "id": "model_voltage",
+      "field": "voltage_v",
+      "value_kind": "nominal",
+      "value": [
+        120,
+        240
+      ],
+      "unit": "V",
+      "source_id": "M1",
+      "pdf_page": 1,
+      "printed_page": null,
+      "conditions": "7.5HDKAL-1 single-phase connection options; do not add current ratings or mix with three-phase",
+      "notes": null
+    },
+    {
+      "id": "model_freq",
+      "field": "frequency_hz",
+      "value_kind": "nominal",
+      "value": 60,
+      "unit": "Hz",
+      "source_id": "M1",
+      "pdf_page": 1,
+      "printed_page": null,
+      "conditions": null,
+      "notes": null
+    },
+    {
+      "id": "model_power",
+      "field": "rated_power_kw",
+      "value_kind": "rating",
+      "value": 7.5,
+      "unit": "kW",
+      "source_id": "M1",
+      "pdf_page": 1,
+      "printed_page": null,
+      "conditions": "intermittent rating, altitude and inlet ambient conditions apply",
+      "notes": null
+    },
+    {
+      "id": "model_current",
+      "field": "current_a",
+      "value_kind": "rating",
+      "value": {
+        "120V": 62.5,
+        "240V": 31.3
+      },
+      "unit": "A",
+      "source_id": "M1",
+      "pdf_page": 1,
+      "printed_page": null,
+      "conditions": null,
+      "notes": null
+    },
+    {
+      "id": "breaker",
+      "field": "breaker_rating_a",
+      "value_kind": "component_rating",
+      "value": 35,
+      "unit": "A",
+      "source_id": "M1",
+      "pdf_page": 1,
+      "printed_page": null,
+      "conditions": null,
+      "notes": "2-pole; not a verified instantaneous trip threshold"
+    },
+    {
+      "id": "voltage_regulation",
+      "field": "voltage_regulation",
+      "value_kind": "performance_tolerance",
+      "value": {
+        "no_load_to_rated": 2.5,
+        "constant_load": 1
+      },
+      "unit": "%",
+      "source_id": "M1",
+      "pdf_page": 2,
+      "printed_page": null,
+      "conditions": null,
+      "notes": "Not OEM alarm setting"
+    },
+    {
+      "id": "freq_regulation",
+      "field": "frequency_regulation",
+      "value_kind": "performance_tolerance",
+      "value": {
+        "no_load_to_rated": 2.5,
+        "constant_load": 1
+      },
+      "unit": "%",
+      "source_id": "M1",
+      "pdf_page": 2,
+      "printed_page": null,
+      "conditions": null,
+      "notes": "Not OEM alarm setting"
+    },
+    {
+      "id": "coolant_normal",
+      "field": "coolant_c",
+      "value_kind": "normal_gauge_range",
+      "value": [
+        71,
+        91
+      ],
+      "unit": "degC",
+      "source_id": "M2",
+      "pdf_page": 12,
+      "printed_page": "8",
+      "conditions": "depends on load and ambient; warmed engine; not startup low-temperature alarm",
+      "notes": null
+    },
+    {
+      "id": "oil_normal",
+      "field": "oil_bar",
+      "value_kind": "normal_gauge_range",
+      "value": [
+        1.94,
+        4.42
+      ],
+      "unit": "bar",
+      "source_id": "M2",
+      "pdf_page": 11,
+      "printed_page": "7",
+      "conditions": "normal operating temperature",
+      "notes": "Converted from 194-442 kPa, not pressure sender voltage"
+    },
+    {
+      "id": "coolant_shutdown_ops",
+      "field": "coolant_c",
+      "value_kind": "documented_shutdown",
+      "value": 106,
+      "unit": "degC",
+      "source_id": "M2",
+      "pdf_page": 27,
+      "printed_page": "23",
+      "conditions": null,
+      "notes": "Delay/recovery not specified"
+    },
+    {
+      "id": "coolant_shutdown_service",
+      "field": "coolant_c",
+      "value_kind": "documented_shutdown",
+      "value": 106,
+      "unit": "degC",
+      "source_id": "M3",
+      "pdf_page": 14,
+      "printed_page": "2-4",
+      "conditions": null,
+      "notes": null
+    },
+    {
+      "id": "oil_shutdown_ops",
+      "field": "oil_bar",
+      "value_kind": "conflicting_shutdown_reference",
+      "value": 0.97,
+      "unit": "bar",
+      "source_id": "M2",
+      "pdf_page": 27,
+      "printed_page": "23",
+      "conditions": null,
+      "notes": "Conflicts with service manual; exact spec/serial requires verification"
+    },
+    {
+      "id": "oil_shutdown_service",
+      "field": "oil_bar",
+      "value_kind": "conflicting_shutdown_reference",
+      "value": 0.62,
+      "unit": "bar",
+      "source_id": "M3",
+      "pdf_page": 12,
+      "printed_page": "2-2",
+      "conditions": null,
+      "notes": "Conflicts with operator manual; do not silently resolve"
+    },
+    {
+      "id": "oil_latch",
+      "field": "oil_bar",
+      "value_kind": "control_latch_switch",
+      "value": 0.34,
+      "unit": "bar",
+      "source_id": "M3",
+      "pdf_page": 12,
+      "printed_page": "2-2",
+      "conditions": null,
+      "notes": "Not low oil shutdown threshold"
+    },
+    {
+      "id": "oil_gauge",
+      "field": "oil_bar",
+      "value_kind": "instrument_scale",
+      "value": [
+        0,
+        7
+      ],
+      "unit": "bar",
+      "source_id": "M3",
+      "pdf_page": 12,
+      "printed_page": "2-2",
+      "conditions": null,
+      "notes": "Not normal range"
+    },
+    {
+      "id": "temp_gauge",
+      "field": "coolant_c",
+      "value_kind": "instrument_scale",
+      "value": [
+        40,
+        121
+      ],
+      "unit": "degC",
+      "source_id": "M3",
+      "pdf_page": 14,
+      "printed_page": "2-4",
+      "conditions": null,
+      "notes": "Not normal range"
+    },
+    {
+      "id": "battery_normal",
+      "field": "battery_v",
+      "value_kind": "normal_gauge_range",
+      "value": [
+        12.5,
+        15
+      ],
+      "unit": "V",
+      "source_id": "M2",
+      "pdf_page": 12,
+      "printed_page": "8",
+      "conditions": "depends on battery condition and state of charge",
+      "notes": null
+    },
+    {
+      "id": "battery_charging",
+      "field": "battery_v",
+      "value_kind": "service_check_range",
+      "value": [
+        13.5,
+        15
+      ],
+      "unit": "V",
+      "source_id": "M3",
+      "pdf_page": 19,
+      "printed_page": "3-1",
+      "conditions": "engine running / charging check",
+      "notes": null
+    },
+    {
+      "id": "battery_cable_drop",
+      "field": "battery_cable_drop_v",
+      "value_kind": "service_check_upper",
+      "value": 0.3,
+      "unit": "V",
+      "source_id": "M3",
+      "pdf_page": 19,
+      "printed_page": "3-1",
+      "conditions": "starter running, positive and negative paths separately; longer cables may be higher",
+      "notes": null
+    },
+    {
+      "id": "oil_level",
+      "field": "oil_level",
+      "value_kind": "manual_inspection_range",
+      "value": [
+        "ADD",
+        "FULL"
+      ],
+      "unit": null,
+      "source_id": "M2",
+      "pdf_page": 17,
+      "printed_page": "13",
+      "conditions": "engine stopped; wait a few minutes",
+      "notes": null
+    },
+    {
+      "id": "coolant_level",
+      "field": "coolant_level",
+      "value_kind": "manual_inspection_range",
+      "value": [
+        "COLD",
+        "HOT"
+      ],
+      "unit": null,
+      "source_id": "M2",
+      "pdf_page": 17,
+      "printed_page": "13",
+      "conditions": "recovery tank level marks",
+      "notes": null
+    },
+    {
+      "id": "oil_volume",
+      "field": "oil_capacity_l",
+      "value_kind": "capacity",
+      "value": 5.1,
+      "unit": "L",
+      "source_id": "M1",
+      "pdf_page": 2,
+      "printed_page": null,
+      "conditions": null,
+      "notes": "Not live oil quantity or fill recommendation independent of dipstick"
+    },
+    {
+      "id": "coolant_volume",
+      "field": "cooling_system_capacity_l",
+      "value_kind": "capacity",
+      "value": 4.73,
+      "unit": "L",
+      "source_id": "M1",
+      "pdf_page": 2,
+      "printed_page": null,
+      "conditions": null,
+      "notes": null
+    },
+    {
+      "id": "belt",
+      "field": "belt_deflection_mm",
+      "value_kind": "manual_service_check",
+      "value": 10,
+      "unit": "mm",
+      "source_id": "M2",
+      "pdf_page": 22,
+      "printed_page": "18",
+      "conditions": "specified span under approx10kg force, engine disabled",
+      "notes": null
+    },
+    {
+      "id": "vibration",
+      "field": "vibration_rms_g",
+      "value_kind": "not_specified",
+      "value": null,
+      "unit": "g",
+      "source_id": "M2",
+      "pdf_page": 18,
+      "printed_page": "14",
+      "conditions": null,
+      "notes": "Manual requires unusual noise/vibration/mount inspection; no numerical baseline"
+    },
+    {
+      "id": "fuel_level",
+      "field": "fuel_pct",
+      "value_kind": "not_specified",
+      "value": null,
+      "unit": "%",
+      "source_id": "M2",
+      "pdf_page": 15,
+      "printed_page": "11",
+      "conditions": null,
+      "notes": "Fuel level check required; no numerical low-fuel percent provided"
+    },
+    {
+      "id": "exercise",
+      "field": "exercise",
+      "value_kind": "manufacturer_recommendation",
+      "value": {
+        "interval_days": 7,
+        "load_pct_approx": 50,
+        "duration_min": 60
+      },
+      "unit": null,
+      "source_id": "M2",
+      "pdf_page": 14,
+      "printed_page": "10",
+      "conditions": "infrequent use",
+      "notes": null
+    },
+    {
+      "id": "maintenance",
+      "field": "maintenance_schedule",
+      "value_kind": "manufacturer_schedule",
+      "value": {
+        "daily_or_8h": [
+          "leaks_general",
+          "oil_level",
+          "coolant_level",
+          "fuel_level"
+        ],
+        "50h": [
+          "air_cleaner_dust_boot"
+        ],
+        "first50h": [
+          "engine_oil_and_filter"
+        ],
+        "monthly_or_100h": [
+          "battery",
+          "v_belt",
+          "water_in_fuel_drain",
+          "engine_oil_and_filter"
+        ],
+        "6months_or_250h": [
+          "fuel_filter"
+        ],
+        "yearly_or_500h": [
+          "air_cleaner_element",
+          "coolant",
+          "valve_lash_authorized_service"
+        ],
+        "2years": [
+          "pressure_cap"
+        ],
+        "5years": [
+          "generator_bearing_authorized_service"
+        ]
+      },
+      "unit": null,
+      "source_id": "M2",
+      "pdf_page": 15,
+      "printed_page": "11",
+      "conditions": null,
+      "notes": "Follow table footnotes, including dusty conditions, battery maker and B20 fuel"
+    }
+  ],
+  "no_verified_normal_range": [
+    "fuel_pressure",
+    "coolant_pressure",
+    "lube_oil_temperature",
+    "local_surface_temperature",
+    "relative_humidity",
+    "vibration_rms_g"
+  ],
+  "conflicts": [
+    {
+      "field": "oil_low_shutdown",
+      "claim_ids": [
+        "oil_shutdown_ops",
+        "oil_shutdown_service"
+      ],
+      "resolution": "unresolved"
+    },
+    {
+      "field": "battery_v",
+      "claim_ids": [
+        "battery_normal",
+        "battery_charging"
+      ],
+      "resolution": "preserve differing stated applicability"
+    },
+    {
+      "field": "fuel_consumption_and_altitude_derating",
+      "resolution": "manual/spec differ; excluded from quantitative alarm profile"
+    }
+  ],
+  "interface_status": {
+    "modbus_can": "not established by these documents",
+    "existing_analog_senders": "described; acquisition engineering required",
+    "existing_protection_circuit": "preserve; no retrofit replacement approval established"
+  }
+}
