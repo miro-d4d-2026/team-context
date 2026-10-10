@@ -1,0 +1,112 @@
+{
+  "schema_version": "genguard.edge.model/1",
+  "algorithm": "context-ridge-residual-covariance/1",
+  "profile_hash": "7d1c84b72946ed3150251f3f2496ae604db5e5c0a58c74ae2d28ef204328fe67",
+  "asset_id": "GEN-DEMO-001",
+  "installation_id": "synthetic-fixture-v1",
+  "data_domain": "scenario",
+  "created_at": "2026-10-10T13:31:36.003549+00:00",
+  "phases": {
+    "running": {
+      "context_mean": [
+        53.87894036076031,
+        25.26956680420444,
+        301.0
+      ],
+      "context_scale": [
+        14.022995634028803,
+        0.6120068245637594,
+        173.20411850376615
+      ],
+      "context_low": [
+        24.639886687741598,
+        21.174107143010257,
+        -28.0
+      ],
+      "context_high": [
+        75.50117510304165,
+        29.520446744479234,
+        630.0
+      ],
+      "weights": [
+        [
+          -3.4777067403552513,
+          0.12679643549031733
+        ],
+        [
+          0.08450635585596324,
+          0.006995890353712665
+        ],
+        [
+          0.001901566975395322,
+          0.0005561103146209701
+        ],
+        [
+          0.0011280463537616814,
+          0.0002156779856121203
+        ]
+      ],
+      "residual_mean": [
+        3.4361402612148594e-15,
+        -6.006769156149024e-17
+      ],
+      "residual_scale": [
+        0.03461523409119766,
+        0.015
+      ],
+      "precision": [
+        [
+          1.0001351302257364,
+          -0.01890930452631895
+        ],
+        [
+          -0.01890930452631895,
+          2.64605343268327
+        ]
+      ],
+      "fit_count": 1200,
+      "threshold": 2.172697062714828,
+      "calibration_count": 600
+    }
+  },
+  "fit_sessions": [
+    "fit-1",
+    "fit-2",
+    "fit-3",
+    "fit-4"
+  ],
+  "calibration_sessions": [
+    "cal-1",
+    "cal-2"
+  ],
+  "validation_sessions": [
+    "val-1",
+    "val-2"
+  ],
+  "training_fingerprint": "a5d9d9bf9fedbe6670982331147294395d418435f4769d62ca96ec5f0c738ddf",
+  "scope": "상태 변화 탐지. 고장 원인 확정/잔여수명/제조사 보호장치 대체 아님.",
+  "validation": {
+    "passed": true,
+    "runs": [
+      {
+        "session_id": "val-1",
+        "windows": 300,
+        "unknown": 0,
+        "change_windows": 0,
+        "change_fraction": 0.0,
+        "passed": true
+      },
+      {
+        "session_id": "val-2",
+        "windows": 300,
+        "unknown": 0,
+        "change_windows": 1,
+        "change_fraction": 0.0033333333333333335,
+        "passed": true
+      }
+    ],
+    "meaning": "보류한 정상 기록의 오경보/조건범위 검사. 고장 탐지 성능 보증 아님."
+  },
+  "training_seconds": 0.06890404099976877,
+  "model_id": "gg-bc2a555dd695d47c3acb"
+}

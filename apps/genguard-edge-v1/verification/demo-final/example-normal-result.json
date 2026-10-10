@@ -1,0 +1,165 @@
+{
+  "schema_version": "genguard.edge.result/1",
+  "asset_id": "GEN-DEMO-001",
+  "session_id": "test-normal",
+  "seq": 156,
+  "measured_at": null,
+  "elapsed_s": 312.0,
+  "phase": "running",
+  "data_domain": "scenario",
+  "is_demonstration": true,
+  "input_sources": {
+    "load_pct": "scenario",
+    "ambient_c": "scenario",
+    "engine_rpm": "scenario",
+    "coolant_c": "scenario",
+    "oil_bar": "scenario",
+    "voltage_v": "scenario",
+    "current_a": "scenario",
+    "vibration_rms_g": "scenario",
+    "envelope_cv": "scenario"
+  },
+  "readings": {
+    "load_pct": {
+      "value": 30.398813085010843,
+      "unit": "%",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "ambient_c": {
+      "value": 24.755179557376287,
+      "unit": "degC",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "engine_rpm": {
+      "value": 1800.5858005149873,
+      "unit": "rpm",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "coolant_c": {
+      "value": 72.8332877889806,
+      "unit": "degC",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "oil_bar": {
+      "value": 3.2244414020209633,
+      "unit": "bar",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "voltage_v": {
+      "value": 240.04351469015123,
+      "unit": "V",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "current_a": {
+      "value": 9.18700826301152,
+      "unit": "A",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "vibration_rms_g": {
+      "value": 0.02743656951387279,
+      "unit": "g",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "envelope_cv": {
+      "value": 0.10744821194044998,
+      "unit": "1",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    }
+  },
+  "state": "within_baseline",
+  "quality_flags": [],
+  "model_id": "gg-236c6ff6e954c5eb39eb",
+  "reference_model_id": "gg-236c6ff6e954c5eb39eb",
+  "current_comparison": {
+    "score": 1.364401004245091,
+    "outside_context": [],
+    "evidence": [
+      {
+        "field": "current_a",
+        "value": 9.18700826301152,
+        "expected": 9.508575928668925,
+        "unit": "A",
+        "standardized_residual": -2.7415014393188524,
+        "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+      },
+      {
+        "field": "coolant_c",
+        "value": 72.8332877889806,
+        "expected": 73.64577499391683,
+        "unit": "degC",
+        "standardized_residual": -1.9988580644955019,
+        "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+      },
+      {
+        "field": "oil_bar",
+        "value": 3.2244414020209633,
+        "expected": 3.1695084367451454,
+        "unit": "bar",
+        "standardized_residual": 1.7421245739224718,
+        "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+      }
+    ],
+    "threshold": 2.0,
+    "state": "within_baseline",
+    "reason": "within_baseline"
+  },
+  "initial_comparison": {
+    "score": 1.364401004245091,
+    "outside_context": [],
+    "evidence": [
+      {
+        "field": "current_a",
+        "value": 9.18700826301152,
+        "expected": 9.508575928668925,
+        "unit": "A",
+        "standardized_residual": -2.7415014393188524,
+        "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+      },
+      {
+        "field": "coolant_c",
+        "value": 72.8332877889806,
+        "expected": 73.64577499391683,
+        "unit": "degC",
+        "standardized_residual": -1.9988580644955019,
+        "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+      },
+      {
+        "field": "oil_bar",
+        "value": 3.2244414020209633,
+        "expected": 3.1695084367451454,
+        "unit": "bar",
+        "standardized_residual": 1.7421245739224718,
+        "meaning": "조건 대비 편차이며 고장 원인 기여도나 확률이 아님"
+      }
+    ],
+    "threshold": 2.0,
+    "state": "within_baseline",
+    "reason": "within_baseline"
+  },
+  "persistent_change": false,
+  "change_streak": 0,
+  "open_alert_in_session": false,
+  "checks": [],
+  "rul": null,
+  "fault_diagnosis": null,
+  "summary": "현재 비교 가능한 항목에서 학습 기준 내입니다. 모든 부품의 정상 보증은 아닙니다.",
+  "record_id": 2556
+}

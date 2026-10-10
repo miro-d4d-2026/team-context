@@ -1,0 +1,217 @@
+{
+  "protocol": "source-file-disjoint/1",
+  "fixed_before_model_evaluation": true,
+  "roles": {
+    "fit": [
+      {
+        "source_file": "AF_Clogging/AF_Clogging_40_Load.csv",
+        "source_rows": 4820,
+        "source_sha256": "25eea4dcd84a55a010fc7f685b8e70b98911aea809a39fa4da920838071d00e7",
+        "source_labels": {
+          "0": 1690,
+          "1": 3130
+        },
+        "nominal_load_pct": 40.0,
+        "selected_segment": "normal",
+        "source_first_row_omitted_by_replay": true
+      },
+      {
+        "source_file": "AF_Clogging/AF_Clogging_60_Load.csv",
+        "source_rows": 6819,
+        "source_sha256": "2c721cae168a7a49a0a6f10e273629212d8d4e87793169b7b14de336685b7dd6",
+        "source_labels": {
+          "0": 2095,
+          "1": 4724
+        },
+        "nominal_load_pct": 60.0,
+        "selected_segment": "normal",
+        "source_first_row_omitted_by_replay": true
+      },
+      {
+        "source_file": "AF_Clogging/AF_Clogging_75_Load.csv",
+        "source_rows": 5918,
+        "source_sha256": "41e926e31cef239a252930f2e8b2760fa767d8ef14f52500ab4020bbbaeb0fb8",
+        "source_labels": {
+          "0": 2368,
+          "1": 3550
+        },
+        "nominal_load_pct": 75.0,
+        "selected_segment": "normal",
+        "source_first_row_omitted_by_replay": true
+      },
+      {
+        "source_file": "AF_Clogging/AF_Clogging_85_Load.csv",
+        "source_rows": 6398,
+        "source_sha256": "316f194d7e4508619aff8df6b888450695237f21a250286be6e7093c7ee4598a",
+        "source_labels": {
+          "0": 2728,
+          "1": 3670
+        },
+        "nominal_load_pct": 85.0,
+        "selected_segment": "normal",
+        "source_first_row_omitted_by_replay": true
+      },
+      {
+        "source_file": "AC_Fouling/AC_Fouling_75_Load.csv",
+        "source_rows": 6354,
+        "source_sha256": "33856607029950635b802abd8f049174a9d1e9ef063f2920a63fd318a9c07910",
+        "source_labels": {
+          "0": 1665,
+          "1": 4689
+        },
+        "nominal_load_pct": 75.0,
+        "selected_segment": "normal",
+        "source_first_row_omitted_by_replay": true
+      },
+      {
+        "source_file": "AC_Fouling/AC_Fouling_85_Load.csv",
+        "source_rows": 5801,
+        "source_sha256": "de8dac9c62b42ea222484fb68e9968752dfeed0519ba8dc7ffc27269791aa801",
+        "source_labels": {
+          "0": 1091,
+          "1": 4710
+        },
+        "nominal_load_pct": 85.0,
+        "selected_segment": "normal",
+        "source_first_row_omitted_by_replay": true
+      }
+    ],
+    "calibration": [
+      {
+        "source_file": "AC_Fouling/AC_Fouling_40_Load.csv",
+        "source_rows": 4678,
+        "source_sha256": "32c5972e06024aaedf2b85191416debf7ddce0b5eb0c56ab503539a69db715d6",
+        "source_labels": {
+          "0": 1218,
+          "1": 3460
+        },
+        "nominal_load_pct": 40.0,
+        "selected_segment": "normal",
+        "source_first_row_omitted_by_replay": true
+      },
+      {
+        "source_file": "AC_Fouling/AC_Fouling_60_Load.csv",
+        "source_rows": 6698,
+        "source_sha256": "179ed0b616ae209bea64900d53366fd160d7d3d5c02b0311b38212023f800225",
+        "source_labels": {
+          "0": 2057,
+          "1": 4641
+        },
+        "nominal_load_pct": 60.0,
+        "selected_segment": "normal",
+        "source_first_row_omitted_by_replay": true
+      }
+    ],
+    "validation": [
+      {
+        "source_file": "Turbine_Degradation/Turbine_Degradation_40_Load.csv",
+        "source_rows": 6397,
+        "source_sha256": "ea6afb36af910cdf5d87d5e085f8a6c2f4effefc0953f032ae3b175dc1703bad",
+        "source_labels": {
+          "0": 3847,
+          "1": 2550
+        },
+        "nominal_load_pct": 40.0,
+        "selected_segment": "normal",
+        "source_first_row_omitted_by_replay": true
+      },
+      {
+        "source_file": "Turbine_Degradation/Turbine_Degradation_60_Load.csv",
+        "source_rows": 4905,
+        "source_sha256": "a7ba2fc1e25510e8f8363ec19df71fe9d2e9ba5c42b2c5928a19c63398b8c296",
+        "source_labels": {
+          "0": 2234,
+          "1": 2671
+        },
+        "nominal_load_pct": 60.0,
+        "selected_segment": "normal",
+        "source_first_row_omitted_by_replay": true
+      }
+    ],
+    "test": [
+      {
+        "source_file": "Turbine_Degradation/Turbine_Degradation_85_Load.csv",
+        "source_rows": 5289,
+        "source_sha256": "18cd3384a8a0499c40860c39b0303557b5f55ce08361195e087d634c6cce96db",
+        "source_labels": {
+          "0": 2664,
+          "1": 2625
+        },
+        "nominal_load_pct": 85.0,
+        "selected_segment": "all",
+        "source_first_row_omitted_by_replay": true
+      },
+      {
+        "source_file": "Pump_Cavitation/CW_Pump_Cavitation_60_Load.csv",
+        "source_rows": 5845,
+        "source_sha256": "08a42a48b817b41b17019453ac5ebbcd3c60051366b7e5f410455a4540789503",
+        "source_labels": {
+          "0": 1380,
+          "1": 4465
+        },
+        "nominal_load_pct": 60.0,
+        "selected_segment": "all",
+        "source_first_row_omitted_by_replay": true
+      },
+      {
+        "source_file": "Pump_Cavitation/CW_Pump_Cavitation_85_Load.csv",
+        "source_rows": 6263,
+        "source_sha256": "62b8a6d81a20ae272ef77a34c2f909fc83a633073e81fe035311001851d8119d",
+        "source_labels": {
+          "0": 1554,
+          "1": 4709
+        },
+        "nominal_load_pct": 85.0,
+        "selected_segment": "all",
+        "source_first_row_omitted_by_replay": true
+      }
+    ],
+    "excluded": [
+      {
+        "source_file": "Reference_Data.csv",
+        "source_rows": 25302,
+        "source_sha256": "37d7e2de51eadcff71610392a97ad3ec87574a31ada4e0bcb5041b60a0881268",
+        "source_labels": {
+          "reference": 25302
+        },
+        "nominal_load_pct": null,
+        "selected_segment": "none",
+        "source_first_row_omitted_by_replay": true
+      },
+      {
+        "source_file": "Injector_Nozzle/Clogged_Injector_Nozzle1_40_60_85_Load.csv",
+        "source_rows": 6492,
+        "source_sha256": "bf168c4687954b695301603378f22143a3d3e089a325171dd11de3b20e643619",
+        "source_labels": {
+          "1": 6492
+        },
+        "nominal_load_pct": null,
+        "selected_segment": "none",
+        "source_first_row_omitted_by_replay": true
+      },
+      {
+        "source_file": "Injector_Nozzle/Clogged_Injector_Nozzle2_LoadProgram.csv",
+        "source_rows": 6791,
+        "source_sha256": "9a233777ceb5b76972942c174d2994e126deba043c90d10165ca48ddbb3ded1b",
+        "source_labels": {
+          "1": 6791
+        },
+        "nominal_load_pct": null,
+        "selected_segment": "none",
+        "source_first_row_omitted_by_replay": true
+      }
+    ]
+  },
+  "independent_engine_count": 1,
+  "same_engine_different_runs": true,
+  "no_random_row_split": true,
+  "exclude_fault_suffix_from_fit_cal_validation_files": true,
+  "no_test_label_features": true,
+  "labels": "0=before intervention;1=after intervention;not RUL",
+  "limitations": [
+    "Calibration/validation/test are different experiments, not new engines.",
+    "Normal environmental and speed shifts can cause false alerts or unknown results.",
+    "Reference and Injector load programs not used because per-row nominal load percent is unavailable.",
+    "Test subset covers only turbine restriction and cooling pump cavitation scenarios."
+  ]
+}

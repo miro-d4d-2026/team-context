@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checks": [
+    "status identifies synthetic domain and active model",
+    "bounded ordered results and exact allowed origin",
+    "cursor advances without duplicates; other origins receive no CORS permission",
+    "invalid limit rejected"
+  ],
+  "scope": "Mac loopback API with synthetic history, not UNO Q deployment"
+}

@@ -1,0 +1,6980 @@
+{
+  "archive": {
+    "sha256": "3fba7aa0c288ae1bc05383fb54bf67cbde209d61b26e3e811d4bc2f22f97442b",
+    "md5": "f4d246c1bb46e05b26e56221acc2606c",
+    "size_bytes": 26538633
+  },
+  "total_rows": 114770,
+  "files": [
+    {
+      "file": "AC_Fouling/AC_Fouling_40_Load.csv",
+      "rows": 4678,
+      "columns": 73,
+      "labels": {
+        "0": 1218,
+        "1": 3460
+      },
+      "time_range": [
+        0.0,
+        7999.0
+      ],
+      "time_nonincreasing": 0,
+      "delta_counts": {
+        "2.0": 3320,
+        "1.0": 1356,
+        "3.0": 1
+      },
+      "normal": {
+        "Engine Speed": {
+          "min": 302.5598729,
+          "max": 308.6420697,
+          "mean": 306.27985125623974,
+          "std": 1.189278035781195
+        },
+        "Engine room Temp.": {
+          "min": 22.07072,
+          "max": 24.15794,
+          "mean": 23.061381412151068,
+          "std": 0.5391102050642426
+        },
+        "Shaft Power": {
+          "min": 102.1675663,
+          "max": 107.4691676,
+          "mean": 104.17888778374385,
+          "std": 0.6732948110059184
+        },
+        "Cooling Water Temp. Engine In": {
+          "min": 58.07853,
+          "max": 58.64679,
+          "mean": 58.43837995073891,
+          "std": 0.1016017616446264
+        },
+        "Cooling Water Temp. Engine Out I": {
+          "min": 59.07503,
+          "max": 60.37761,
+          "mean": 59.8544707635468,
+          "std": 0.2295675549592652
+        },
+        "LO Temp. Engine In": {
+          "min": 44.65625,
+          "max": 54.54003,
+          "mean": 48.6055999589491,
+          "std": 3.0798052628043364
+        },
+        "LO Temp. Engine Out": {
+          "min": 48.98899,
+          "max": 56.1921,
+          "mean": 53.38689861247948,
+          "std": 1.6322321727852727
+        },
+        "LO Circulating Pump Press.": {
+          "min": 0.13263907,
+          "max": 0.153316644,
+          "mean": 0.1459567506502463,
+          "std": 0.006259653399326819
+        },
+        "Fresh Cooling Water Press.": {
+          "min": 1.052568785,
+          "max": 1.162639501,
+          "mean": 1.1053787529343186,
+          "std": 0.020004166443358916
+        }
+      },
+      "channels": [
+        {
+          "name": "Time_abs",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Time_rel",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Anomaly State",
+          "symbol": "",
+          "unit": ""
+        },
+        {
+          "name": "Engine Speed",
+          "symbol": "N",
+          "unit": "rpm"
+        },
+        {
+          "name": "Compressor Filter Loss",
+          "symbol": "dPf",
+          "unit": "Pa"
+        },
+        {
+          "name": "Turbine Back Pressure",
+          "symbol": "dPex",
+          "unit": "Pa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.1",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.1",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.2",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.2",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.3",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.3",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Charge Air Press.",
+          "symbol": "Pturb",
+          "unit": "kgf/cm2"
+        },
+        {
+          "name": "Water Brake Weight",
+          "symbol": "F",
+          "unit": "kgf"
+        },
+        {
+          "name": "Fuel Flow",
+          "symbol": "Qfuel",
+          "unit": "m3/h"
+        },
+        {
+          "name": "No.1 Exh.Gas Temp.",
+          "symbol": "T1",
+          "unit": "°C"
+        },
+        {
+          "name": "No.2 Exh.Gas Temp.",
+          "symbol": "T2",
+          "unit": "°C"
+        },
+        {
+          "name": "No.3 Exh.Gas Temp.",
+          "symbol": "T3",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine In",
+          "symbol": "T4",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine Out",
+          "symbol": "T5",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine In",
+          "symbol": "T6",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out I",
+          "symbol": "T7",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out II",
+          "symbol": "T8",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out III",
+          "symbol": "T9",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine In",
+          "symbol": "T10",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine Out",
+          "symbol": "T11",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. In",
+          "symbol": "T12",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. Out",
+          "symbol": "T13",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. In",
+          "symbol": "T14",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. Out",
+          "symbol": "T15",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. In",
+          "symbol": "T16",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. Out",
+          "symbol": "T17",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Temp.",
+          "symbol": "T18",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH In",
+          "symbol": "T19",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH Out",
+          "symbol": "T20",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Oil Temp. Flow meter In",
+          "symbol": "T21",
+          "unit": "°C"
+        },
+        {
+          "name": "Engine room Temp.",
+          "symbol": "T22",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Circulating Pump Press.",
+          "symbol": "Pl_lo",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel transfer pump Press.",
+          "symbol": "Pl_fuel",
+          "unit": "V"
+        },
+        {
+          "name": "Fresh Cooling Water Press.",
+          "symbol": "Pl_water1",
+          "unit": "V"
+        },
+        {
+          "name": "Sea Cooling Water Press.",
+          "symbol": "Pl_water2",
+          "unit": "V"
+        },
+        {
+          "name": "TCH LO pump Press.",
+          "symbol": "Pl_loturb",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel Injector Cooling Oil Press.",
+          "symbol": "Pl_valve",
+          "unit": "V"
+        },
+        {
+          "name": "Engine Cooling water flow",
+          "symbol": "Qw_eng",
+          "unit": "m3/h"
+        },
+        {
+          "name": "LO Cooling water flow",
+          "symbol": "Qw_lo",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Charge Air IC Cooling water flow",
+          "symbol": "Qw_air",
+          "unit": "m3/h"
+        },
+        {
+          "name": "TCH LO Cooling water flow",
+          "symbol": "Qw_turb",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Total Input Energy",
+          "symbol": "Qtotal",
+          "unit": "W"
+        },
+        {
+          "name": "Indicated Work No.1",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.2",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.3",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Total Indicated work",
+          "symbol": "Wi_tot",
+          "unit": "J"
+        },
+        {
+          "name": "Effective Work No.1",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.2",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.3",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Effective Work",
+          "symbol": "We_tot",
+          "unit": "kW"
+        },
+        {
+          "name": "Shaft Torque",
+          "symbol": "Tq",
+          "unit": "Nm"
+        },
+        {
+          "name": "Shaft Power",
+          "symbol": "Ws",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Loss",
+          "symbol": "Wm",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with cooling water",
+          "symbol": "Qrej_eng",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with LO",
+          "symbol": "Qrej_lo",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss in Charge Air IC",
+          "symbol": "Qrej_air",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with TCH LO",
+          "symbol": "Qrej_turb",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Heat Loss in Heat Exchangers",
+          "symbol": "Qrej",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Vol. Flow (From Engine Speed)",
+          "symbol": "qexh",
+          "unit": "NL/min"
+        },
+        {
+          "name": "Exh. Gas Mass Flow",
+          "symbol": "Mexh",
+          "unit": "kg/s"
+        },
+        {
+          "name": "Exh.Gas Total Power",
+          "symbol": "Qexh1",
+          "unit": "kW"
+        },
+        {
+          "name": "TCH Power",
+          "symbol": "Qturb",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Power",
+          "symbol": "Qexh2",
+          "unit": "kW"
+        },
+        {
+          "name": "Other Loss",
+          "symbol": "Qother",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Efficiency",
+          "symbol": "Effn",
+          "unit": "%"
+        },
+        {
+          "name": "Indicated Efficiency",
+          "symbol": "Effi",
+          "unit": "%"
+        },
+        {
+          "name": "Effective Efficiency",
+          "symbol": "Efft",
+          "unit": "%"
+        }
+      ],
+      "sha256": "32c5972e06024aaedf2b85191416debf7ddce0b5eb0c56ab503539a69db715d6"
+    },
+    {
+      "file": "AC_Fouling/AC_Fouling_60_Load.csv",
+      "rows": 6698,
+      "columns": 73,
+      "labels": {
+        "0": 2057,
+        "1": 4641
+      },
+      "time_range": [
+        0.0,
+        10401.0
+      ],
+      "time_nonincreasing": 0,
+      "delta_counts": {
+        "2.0": 3704,
+        "1.0": 2993
+      },
+      "normal": {
+        "Engine Speed": {
+          "min": 354.1125365,
+          "max": 356.4623007,
+          "mean": 355.4026154098201,
+          "std": 0.3756677791635017
+        },
+        "Engine room Temp.": {
+          "min": 28.75416,
+          "max": 30.23869,
+          "mean": 29.491669771511912,
+          "std": 0.32191779950117616
+        },
+        "Shaft Power": {
+          "min": 155.3363959,
+          "max": 159.148214,
+          "mean": 157.35316103228,
+          "std": 0.5839171617646973
+        },
+        "Cooling Water Temp. Engine In": {
+          "min": 58.56631,
+          "max": 58.85999,
+          "mean": 58.70998819154108,
+          "std": 0.05813462410576487
+        },
+        "Cooling Water Temp. Engine Out I": {
+          "min": 60.46872,
+          "max": 61.25717,
+          "mean": 60.79067965969859,
+          "std": 0.13323675576436278
+        },
+        "LO Temp. Engine In": {
+          "min": 44.18785,
+          "max": 999.0,
+          "mean": 53.411984613514825,
+          "std": 86.32002938541068
+        },
+        "LO Temp. Engine Out": {
+          "min": 54.55312,
+          "max": 55.13159,
+          "mean": 54.88081011181332,
+          "std": 0.11249170827559007
+        },
+        "LO Circulating Pump Press.": {
+          "min": 0.167267717,
+          "max": 0.168133398,
+          "mean": 0.16760828979776374,
+          "std": 0.00016926577529855033
+        },
+        "Fresh Cooling Water Press.": {
+          "min": 1.025945765,
+          "max": 1.179947721,
+          "mean": 1.0936764946660185,
+          "std": 0.02833291056157619
+        }
+      },
+      "channels": [
+        {
+          "name": "Time_abs",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Time_rel",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Anomaly State",
+          "symbol": "",
+          "unit": ""
+        },
+        {
+          "name": "Engine Speed",
+          "symbol": "N",
+          "unit": "rpm"
+        },
+        {
+          "name": "Compressor Filter Loss",
+          "symbol": "dPf",
+          "unit": "Pa"
+        },
+        {
+          "name": "Turbine Back Pressure",
+          "symbol": "dPex",
+          "unit": "Pa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.1",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.1",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.2",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.2",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.3",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.3",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Charge Air Press.",
+          "symbol": "Pturb",
+          "unit": "kgf/cm2"
+        },
+        {
+          "name": "Water Brake Weight",
+          "symbol": "F",
+          "unit": "kgf"
+        },
+        {
+          "name": "Fuel Flow",
+          "symbol": "Qfuel",
+          "unit": "m3/h"
+        },
+        {
+          "name": "No.1 Exh.Gas Temp.",
+          "symbol": "T1",
+          "unit": "°C"
+        },
+        {
+          "name": "No.2 Exh.Gas Temp.",
+          "symbol": "T2",
+          "unit": "°C"
+        },
+        {
+          "name": "No.3 Exh.Gas Temp.",
+          "symbol": "T3",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine In",
+          "symbol": "T4",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine Out",
+          "symbol": "T5",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine In",
+          "symbol": "T6",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out I",
+          "symbol": "T7",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out II",
+          "symbol": "T8",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out III",
+          "symbol": "T9",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine In",
+          "symbol": "T10",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine Out",
+          "symbol": "T11",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. In",
+          "symbol": "T12",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. Out",
+          "symbol": "T13",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. In",
+          "symbol": "T14",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. Out",
+          "symbol": "T15",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. In",
+          "symbol": "T16",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. Out",
+          "symbol": "T17",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Temp.",
+          "symbol": "T18",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH In",
+          "symbol": "T19",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH Out",
+          "symbol": "T20",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Oil Temp. Flow meter In",
+          "symbol": "T21",
+          "unit": "°C"
+        },
+        {
+          "name": "Engine room Temp.",
+          "symbol": "T22",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Circulating Pump Press.",
+          "symbol": "Pl_lo",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel transfer pump Press.",
+          "symbol": "Pl_fuel",
+          "unit": "V"
+        },
+        {
+          "name": "Fresh Cooling Water Press.",
+          "symbol": "Pl_water1",
+          "unit": "V"
+        },
+        {
+          "name": "Sea Cooling Water Press.",
+          "symbol": "Pl_water2",
+          "unit": "V"
+        },
+        {
+          "name": "TCH LO pump Press.",
+          "symbol": "Pl_loturb",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel Injector Cooling Oil Press.",
+          "symbol": "Pl_valve",
+          "unit": "V"
+        },
+        {
+          "name": "Engine Cooling water flow",
+          "symbol": "Qw_eng",
+          "unit": "m3/h"
+        },
+        {
+          "name": "LO Cooling water flow",
+          "symbol": "Qw_lo",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Charge Air IC Cooling water flow",
+          "symbol": "Qw_air",
+          "unit": "m3/h"
+        },
+        {
+          "name": "TCH LO Cooling water flow",
+          "symbol": "Qw_turb",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Total Input Energy",
+          "symbol": "Qtotal",
+          "unit": "W"
+        },
+        {
+          "name": "Indicated Work No.1",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.2",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.3",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Total Indicated work",
+          "symbol": "Wi_tot",
+          "unit": "J"
+        },
+        {
+          "name": "Effective Work No.1",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.2",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.3",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Effective Work",
+          "symbol": "We_tot",
+          "unit": "kW"
+        },
+        {
+          "name": "Shaft Torque",
+          "symbol": "Tq",
+          "unit": "Nm"
+        },
+        {
+          "name": "Shaft Power",
+          "symbol": "Ws",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Loss",
+          "symbol": "Wm",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with cooling water",
+          "symbol": "Qrej_eng",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with LO",
+          "symbol": "Qrej_lo",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss in Charge Air IC",
+          "symbol": "Qrej_air",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with TCH LO",
+          "symbol": "Qrej_turb",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Heat Loss in Heat Exchangers",
+          "symbol": "Qrej",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Vol. Flow (From Engine Speed)",
+          "symbol": "qexh",
+          "unit": "NL/min"
+        },
+        {
+          "name": "Exh. Gas Mass Flow",
+          "symbol": "Mexh",
+          "unit": "kg/s"
+        },
+        {
+          "name": "Exh.Gas Total Power",
+          "symbol": "Qexh1",
+          "unit": "kW"
+        },
+        {
+          "name": "TCH Power",
+          "symbol": "Qturb",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Power",
+          "symbol": "Qexh2",
+          "unit": "kW"
+        },
+        {
+          "name": "Other Loss",
+          "symbol": "Qother",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Efficiency",
+          "symbol": "Effn",
+          "unit": "%"
+        },
+        {
+          "name": "Indicated Efficiency",
+          "symbol": "Effi",
+          "unit": "%"
+        },
+        {
+          "name": "Effective Efficiency",
+          "symbol": "Efft",
+          "unit": "%"
+        }
+      ],
+      "sha256": "179ed0b616ae209bea64900d53366fd160d7d3d5c02b0311b38212023f800225"
+    },
+    {
+      "file": "AC_Fouling/AC_Fouling_75_Load.csv",
+      "rows": 6354,
+      "columns": 73,
+      "labels": {
+        "0": 1665,
+        "1": 4689
+      },
+      "time_range": [
+        0.0,
+        10030.0
+      ],
+      "time_nonincreasing": 0,
+      "delta_counts": {
+        "2.0": 3667,
+        "1.0": 2681,
+        "3.0": 5
+      },
+      "normal": {
+        "Engine Speed": {
+          "min": 378.884835,
+          "max": 381.872042,
+          "mean": 380.317695453994,
+          "std": 0.4964789795367181
+        },
+        "Engine room Temp.": {
+          "min": 13.76723,
+          "max": 17.5478,
+          "mean": 15.738130552552553,
+          "std": 0.9960216202673188
+        },
+        "Shaft Power": {
+          "min": 189.0379644,
+          "max": 195.5963056,
+          "mean": 191.79350887951952,
+          "std": 1.281559429292157
+        },
+        "Cooling Water Temp. Engine In": {
+          "min": 58.33337,
+          "max": 59.02104,
+          "mean": 58.557643519519516,
+          "std": 0.07141610976719222
+        },
+        "Cooling Water Temp. Engine Out I": {
+          "min": 60.2728,
+          "max": 61.4732,
+          "mean": 60.815160336336334,
+          "std": 0.1745862130672412
+        },
+        "LO Temp. Engine In": {
+          "min": 38.77116,
+          "max": 999.0,
+          "mean": 57.92417754354354,
+          "std": 95.67993923818156
+        },
+        "LO Temp. Engine Out": {
+          "min": 40.35027,
+          "max": 58.65891,
+          "mean": 52.76516808408408,
+          "std": 4.793175192584686
+        },
+        "LO Circulating Pump Press.": {
+          "min": 0.151545571,
+          "max": 0.176696392,
+          "mean": 0.16480552775255256,
+          "std": 0.006204974908327021
+        },
+        "Fresh Cooling Water Press.": {
+          "min": 0.970795684,
+          "max": 1.128269767,
+          "mean": 1.0411750084558558,
+          "std": 0.025392540479755445
+        }
+      },
+      "channels": [
+        {
+          "name": "Time_abs",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Time_rel",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Anomaly State",
+          "symbol": "",
+          "unit": ""
+        },
+        {
+          "name": "Engine Speed",
+          "symbol": "N",
+          "unit": "rpm"
+        },
+        {
+          "name": "Compressor Filter Loss",
+          "symbol": "dPf",
+          "unit": "Pa"
+        },
+        {
+          "name": "Turbine Back Pressure",
+          "symbol": "dPex",
+          "unit": "Pa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.1",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.1",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.2",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.2",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.3",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.3",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Charge Air Press.",
+          "symbol": "Pturb",
+          "unit": "kgf/cm2"
+        },
+        {
+          "name": "Water Brake Weight",
+          "symbol": "F",
+          "unit": "kgf"
+        },
+        {
+          "name": "Fuel Flow",
+          "symbol": "Qfuel",
+          "unit": "m3/h"
+        },
+        {
+          "name": "No.1 Exh.Gas Temp.",
+          "symbol": "T1",
+          "unit": "°C"
+        },
+        {
+          "name": "No.2 Exh.Gas Temp.",
+          "symbol": "T2",
+          "unit": "°C"
+        },
+        {
+          "name": "No.3 Exh.Gas Temp.",
+          "symbol": "T3",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine In",
+          "symbol": "T4",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine Out",
+          "symbol": "T5",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine In",
+          "symbol": "T6",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out I",
+          "symbol": "T7",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out II",
+          "symbol": "T8",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out III",
+          "symbol": "T9",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine In",
+          "symbol": "T10",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine Out",
+          "symbol": "T11",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. In",
+          "symbol": "T12",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. Out",
+          "symbol": "T13",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. In",
+          "symbol": "T14",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. Out",
+          "symbol": "T15",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. In",
+          "symbol": "T16",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. Out",
+          "symbol": "T17",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Temp.",
+          "symbol": "T18",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH In",
+          "symbol": "T19",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH Out",
+          "symbol": "T20",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Oil Temp. Flow meter In",
+          "symbol": "T21",
+          "unit": "°C"
+        },
+        {
+          "name": "Engine room Temp.",
+          "symbol": "T22",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Circulating Pump Press.",
+          "symbol": "Pl_lo",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel transfer pump Press.",
+          "symbol": "Pl_fuel",
+          "unit": "V"
+        },
+        {
+          "name": "Fresh Cooling Water Press.",
+          "symbol": "Pl_water1",
+          "unit": "V"
+        },
+        {
+          "name": "Sea Cooling Water Press.",
+          "symbol": "Pl_water2",
+          "unit": "V"
+        },
+        {
+          "name": "TCH LO pump Press.",
+          "symbol": "Pl_loturb",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel Injector Cooling Oil Press.",
+          "symbol": "Pl_valve",
+          "unit": "V"
+        },
+        {
+          "name": "Engine Cooling water flow",
+          "symbol": "Qw_eng",
+          "unit": "m3/h"
+        },
+        {
+          "name": "LO Cooling water flow",
+          "symbol": "Qw_lo",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Charge Air IC Cooling water flow",
+          "symbol": "Qw_air",
+          "unit": "m3/h"
+        },
+        {
+          "name": "TCH LO Cooling water flow",
+          "symbol": "Qw_turb",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Total Input Energy",
+          "symbol": "Qtotal",
+          "unit": "W"
+        },
+        {
+          "name": "Indicated Work No.1",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.2",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.3",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Total Indicated work",
+          "symbol": "Wi_tot",
+          "unit": "J"
+        },
+        {
+          "name": "Effective Work No.1",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.2",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.3",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Effective Work",
+          "symbol": "We_tot",
+          "unit": "kW"
+        },
+        {
+          "name": "Shaft Torque",
+          "symbol": "Tq",
+          "unit": "Nm"
+        },
+        {
+          "name": "Shaft Power",
+          "symbol": "Ws",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Loss",
+          "symbol": "Wm",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with cooling water",
+          "symbol": "Qrej_eng",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with LO",
+          "symbol": "Qrej_lo",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss in Charge Air IC",
+          "symbol": "Qrej_air",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with TCH LO",
+          "symbol": "Qrej_turb",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Heat Loss in Heat Exchangers",
+          "symbol": "Qrej",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Vol. Flow (From Engine Speed)",
+          "symbol": "qexh",
+          "unit": "NL/min"
+        },
+        {
+          "name": "Exh. Gas Mass Flow",
+          "symbol": "Mexh",
+          "unit": "kg/s"
+        },
+        {
+          "name": "Exh.Gas Total Power",
+          "symbol": "Qexh1",
+          "unit": "kW"
+        },
+        {
+          "name": "TCH Power",
+          "symbol": "Qturb",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Power",
+          "symbol": "Qexh2",
+          "unit": "kW"
+        },
+        {
+          "name": "Other Loss",
+          "symbol": "Qother",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Efficiency",
+          "symbol": "Effn",
+          "unit": "%"
+        },
+        {
+          "name": "Indicated Efficiency",
+          "symbol": "Effi",
+          "unit": "%"
+        },
+        {
+          "name": "Effective Efficiency",
+          "symbol": "Efft",
+          "unit": "%"
+        }
+      ],
+      "sha256": "33856607029950635b802abd8f049174a9d1e9ef063f2920a63fd318a9c07910"
+    },
+    {
+      "file": "AC_Fouling/AC_Fouling_85_Load.csv",
+      "rows": 5801,
+      "columns": 73,
+      "labels": {
+        "0": 1091,
+        "1": 4710
+      },
+      "time_range": [
+        0.0,
+        8940.0
+      ],
+      "time_nonincreasing": 0,
+      "delta_counts": {
+        "2.0": 3138,
+        "1.0": 2661,
+        "3.0": 1
+      },
+      "normal": {
+        "Engine Speed": {
+          "min": 395.3723386,
+          "max": 397.7437371,
+          "mean": 396.6038777026581,
+          "std": 0.3717307404771228
+        },
+        "Engine room Temp.": {
+          "min": 28.82327,
+          "max": 30.19901,
+          "mean": 29.587225692025665,
+          "std": 0.2169559440178723
+        },
+        "Shaft Power": {
+          "min": 221.463104,
+          "max": 226.8039438,
+          "mean": 223.9294523700275,
+          "std": 0.8375779302983768
+        },
+        "Cooling Water Temp. Engine In": {
+          "min": 56.65436,
+          "max": 58.02242,
+          "mean": 57.80627282309808,
+          "std": 0.2643049394771001
+        },
+        "Cooling Water Temp. Engine Out I": {
+          "min": 59.42339,
+          "max": 60.98009,
+          "mean": 60.459183088909256,
+          "std": 0.28636675370763137
+        },
+        "LO Temp. Engine In": {
+          "min": 49.94267,
+          "max": 52.07206,
+          "mean": 50.72633190650779,
+          "std": 0.49464097100422094
+        },
+        "LO Temp. Engine Out": {
+          "min": 60.81609,
+          "max": 63.0344,
+          "mean": 61.522780375802014,
+          "std": 0.5917700639559683
+        },
+        "LO Circulating Pump Press.": {
+          "min": 0.163857888,
+          "max": 0.167674438,
+          "mean": 0.16638033966269478,
+          "std": 0.000957682639893143
+        },
+        "Fresh Cooling Water Press.": {
+          "min": 1.043295179,
+          "max": 1.165107929,
+          "mean": 1.097517976252979,
+          "std": 0.02511085763724602
+        }
+      },
+      "channels": [
+        {
+          "name": "Time_abs",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Time_rel",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Anomaly State",
+          "symbol": "",
+          "unit": ""
+        },
+        {
+          "name": "Engine Speed",
+          "symbol": "N",
+          "unit": "rpm"
+        },
+        {
+          "name": "Compressor Filter Loss",
+          "symbol": "dPf",
+          "unit": "Pa"
+        },
+        {
+          "name": "Turbine Back Pressure",
+          "symbol": "dPex",
+          "unit": "Pa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.1",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.1",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.2",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.2",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.3",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.3",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Charge Air Press.",
+          "symbol": "Pturb",
+          "unit": "kgf/cm2"
+        },
+        {
+          "name": "Water Brake Weight",
+          "symbol": "F",
+          "unit": "kgf"
+        },
+        {
+          "name": "Fuel Flow",
+          "symbol": "Qfuel",
+          "unit": "m3/h"
+        },
+        {
+          "name": "No.1 Exh.Gas Temp.",
+          "symbol": "T1",
+          "unit": "°C"
+        },
+        {
+          "name": "No.2 Exh.Gas Temp.",
+          "symbol": "T2",
+          "unit": "°C"
+        },
+        {
+          "name": "No.3 Exh.Gas Temp.",
+          "symbol": "T3",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine In",
+          "symbol": "T4",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine Out",
+          "symbol": "T5",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine In",
+          "symbol": "T6",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out I",
+          "symbol": "T7",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out II",
+          "symbol": "T8",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out III",
+          "symbol": "T9",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine In",
+          "symbol": "T10",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine Out",
+          "symbol": "T11",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. In",
+          "symbol": "T12",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. Out",
+          "symbol": "T13",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. In",
+          "symbol": "T14",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. Out",
+          "symbol": "T15",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. In",
+          "symbol": "T16",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. Out",
+          "symbol": "T17",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Temp.",
+          "symbol": "T18",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH In",
+          "symbol": "T19",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH Out",
+          "symbol": "T20",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Oil Temp. Flow meter In",
+          "symbol": "T21",
+          "unit": "°C"
+        },
+        {
+          "name": "Engine room Temp.",
+          "symbol": "T22",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Circulating Pump Press.",
+          "symbol": "Pl_lo",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel transfer pump Press.",
+          "symbol": "Pl_fuel",
+          "unit": "V"
+        },
+        {
+          "name": "Fresh Cooling Water Press.",
+          "symbol": "Pl_water1",
+          "unit": "V"
+        },
+        {
+          "name": "Sea Cooling Water Press.",
+          "symbol": "Pl_water2",
+          "unit": "V"
+        },
+        {
+          "name": "TCH LO pump Press.",
+          "symbol": "Pl_loturb",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel Injector Cooling Oil Press.",
+          "symbol": "Pl_valve",
+          "unit": "V"
+        },
+        {
+          "name": "Engine Cooling water flow",
+          "symbol": "Qw_eng",
+          "unit": "m3/h"
+        },
+        {
+          "name": "LO Cooling water flow",
+          "symbol": "Qw_lo",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Charge Air IC Cooling water flow",
+          "symbol": "Qw_air",
+          "unit": "m3/h"
+        },
+        {
+          "name": "TCH LO Cooling water flow",
+          "symbol": "Qw_turb",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Total Input Energy",
+          "symbol": "Qtotal",
+          "unit": "W"
+        },
+        {
+          "name": "Indicated Work No.1",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.2",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.3",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Total Indicated work",
+          "symbol": "Wi_tot",
+          "unit": "J"
+        },
+        {
+          "name": "Effective Work No.1",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.2",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.3",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Effective Work",
+          "symbol": "We_tot",
+          "unit": "kW"
+        },
+        {
+          "name": "Shaft Torque",
+          "symbol": "Tq",
+          "unit": "Nm"
+        },
+        {
+          "name": "Shaft Power",
+          "symbol": "Ws",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Loss",
+          "symbol": "Wm",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with cooling water",
+          "symbol": "Qrej_eng",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with LO",
+          "symbol": "Qrej_lo",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss in Charge Air IC",
+          "symbol": "Qrej_air",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with TCH LO",
+          "symbol": "Qrej_turb",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Heat Loss in Heat Exchangers",
+          "symbol": "Qrej",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Vol. Flow (From Engine Speed)",
+          "symbol": "qexh",
+          "unit": "NL/min"
+        },
+        {
+          "name": "Exh. Gas Mass Flow",
+          "symbol": "Mexh",
+          "unit": "kg/s"
+        },
+        {
+          "name": "Exh.Gas Total Power",
+          "symbol": "Qexh1",
+          "unit": "kW"
+        },
+        {
+          "name": "TCH Power",
+          "symbol": "Qturb",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Power",
+          "symbol": "Qexh2",
+          "unit": "kW"
+        },
+        {
+          "name": "Other Loss",
+          "symbol": "Qother",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Efficiency",
+          "symbol": "Effn",
+          "unit": "%"
+        },
+        {
+          "name": "Indicated Efficiency",
+          "symbol": "Effi",
+          "unit": "%"
+        },
+        {
+          "name": "Effective Efficiency",
+          "symbol": "Efft",
+          "unit": "%"
+        }
+      ],
+      "sha256": "de8dac9c62b42ea222484fb68e9968752dfeed0519ba8dc7ffc27269791aa801"
+    },
+    {
+      "file": "AF_Clogging/AF_Clogging_40_Load.csv",
+      "rows": 4820,
+      "columns": 73,
+      "labels": {
+        "0": 1690,
+        "1": 3130
+      },
+      "time_range": [
+        0.0,
+        8373.0
+      ],
+      "time_nonincreasing": 0,
+      "delta_counts": {
+        "2.0": 3538,
+        "1.0": 1274,
+        "3.0": 6,
+        "5.0": 1
+      },
+      "normal": {
+        "Engine Speed": {
+          "min": 308.7455256,
+          "max": 311.893568,
+          "mean": 310.8382316887574,
+          "std": 0.40712160741014
+        },
+        "Engine room Temp.": {
+          "min": 24.26316,
+          "max": 25.423,
+          "mean": 24.8379084852071,
+          "std": 0.2693012149364093
+        },
+        "Shaft Power": {
+          "min": 104.3638513,
+          "max": 108.7889839,
+          "mean": 106.06741638278106,
+          "std": 0.5574686973378835
+        },
+        "Cooling Water Temp. Engine In": {
+          "min": 57.92527,
+          "max": 58.83717,
+          "mean": 58.24731315384616,
+          "std": 0.21793627761790094
+        },
+        "Cooling Water Temp. Engine Out I": {
+          "min": 59.15521,
+          "max": 60.37876,
+          "mean": 59.57915708284024,
+          "std": 0.22859125788017715
+        },
+        "LO Temp. Engine In": {
+          "min": 35.78325,
+          "max": 999.0,
+          "mean": 54.37634758579882,
+          "std": 92.35236754610686
+        },
+        "LO Temp. Engine Out": {
+          "min": 53.15176,
+          "max": 53.79102,
+          "mean": 53.47504010059171,
+          "std": 0.1557169410196669
+        },
+        "LO Circulating Pump Press.": {
+          "min": 0.153401586,
+          "max": 0.155631501,
+          "mean": 0.15442583075443786,
+          "std": 0.0005141112210464327
+        },
+        "Fresh Cooling Water Press.": {
+          "min": 1.025868665,
+          "max": 1.186625511,
+          "mean": 1.095568519783432,
+          "std": 0.02124419582270998
+        }
+      },
+      "channels": [
+        {
+          "name": "Time_abs",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Time_rel",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Anomaly State",
+          "symbol": "",
+          "unit": ""
+        },
+        {
+          "name": "Engine Speed",
+          "symbol": "N",
+          "unit": "rpm"
+        },
+        {
+          "name": "Compressor Filter Loss",
+          "symbol": "dPf",
+          "unit": "Pa"
+        },
+        {
+          "name": "Turbine Back Pressure",
+          "symbol": "dPex",
+          "unit": "Pa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.1",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.1",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.2",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.2",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.3",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.3",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Charge Air Press.",
+          "symbol": "Pturb",
+          "unit": "kgf/cm2"
+        },
+        {
+          "name": "Water Brake Weight",
+          "symbol": "F",
+          "unit": "kgf"
+        },
+        {
+          "name": "Fuel Flow",
+          "symbol": "Qfuel",
+          "unit": "m3/h"
+        },
+        {
+          "name": "No.1 Exh.Gas Temp.",
+          "symbol": "T1",
+          "unit": "°C"
+        },
+        {
+          "name": "No.2 Exh.Gas Temp.",
+          "symbol": "T2",
+          "unit": "°C"
+        },
+        {
+          "name": "No.3 Exh.Gas Temp.",
+          "symbol": "T3",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine In",
+          "symbol": "T4",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine Out",
+          "symbol": "T5",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine In",
+          "symbol": "T6",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out I",
+          "symbol": "T7",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out II",
+          "symbol": "T8",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out III",
+          "symbol": "T9",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine In",
+          "symbol": "T10",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine Out",
+          "symbol": "T11",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. In",
+          "symbol": "T12",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. Out",
+          "symbol": "T13",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. In",
+          "symbol": "T14",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. Out",
+          "symbol": "T15",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. In",
+          "symbol": "T16",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. Out",
+          "symbol": "T17",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Temp.",
+          "symbol": "T18",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH In",
+          "symbol": "T19",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH Out",
+          "symbol": "T20",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Oil Temp. Flow meter In",
+          "symbol": "T21",
+          "unit": "°C"
+        },
+        {
+          "name": "Engine room Temp.",
+          "symbol": "T22",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Circulating Pump Press.",
+          "symbol": "Pl_lo",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel transfer pump Press.",
+          "symbol": "Pl_fuel",
+          "unit": "V"
+        },
+        {
+          "name": "Fresh Cooling Water Press.",
+          "symbol": "Pl_water1",
+          "unit": "V"
+        },
+        {
+          "name": "Sea Cooling Water Press.",
+          "symbol": "Pl_water2",
+          "unit": "V"
+        },
+        {
+          "name": "TCH LO pump Press.",
+          "symbol": "Pl_loturb",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel Injector Cooling Oil Press.",
+          "symbol": "Pl_valve",
+          "unit": "V"
+        },
+        {
+          "name": "Engine Cooling water flow",
+          "symbol": "Qw_eng",
+          "unit": "m3/h"
+        },
+        {
+          "name": "LO Cooling water flow",
+          "symbol": "Qw_lo",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Charge Air IC Cooling water flow",
+          "symbol": "Qw_air",
+          "unit": "m3/h"
+        },
+        {
+          "name": "TCH LO Cooling water flow",
+          "symbol": "Qw_turb",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Total Input Energy",
+          "symbol": "Qtotal",
+          "unit": "W"
+        },
+        {
+          "name": "Indicated Work No.1",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.2",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.3",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Total Indicated work",
+          "symbol": "Wi_tot",
+          "unit": "J"
+        },
+        {
+          "name": "Effective Work No.1",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.2",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.3",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Effective Work",
+          "symbol": "We_tot",
+          "unit": "kW"
+        },
+        {
+          "name": "Shaft Torque",
+          "symbol": "Tq",
+          "unit": "Nm"
+        },
+        {
+          "name": "Shaft Power",
+          "symbol": "Ws",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Loss",
+          "symbol": "Wm",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with cooling water",
+          "symbol": "Qrej_eng",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with LO",
+          "symbol": "Qrej_lo",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss in Charge Air IC",
+          "symbol": "Qrej_air",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with TCH LO",
+          "symbol": "Qrej_turb",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Heat Loss in Heat Exchangers",
+          "symbol": "Qrej",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Vol. Flow (From Engine Speed)",
+          "symbol": "qexh",
+          "unit": "NL/min"
+        },
+        {
+          "name": "Exh. Gas Mass Flow",
+          "symbol": "Mexh",
+          "unit": "kg/s"
+        },
+        {
+          "name": "Exh.Gas Total Power",
+          "symbol": "Qexh1",
+          "unit": "kW"
+        },
+        {
+          "name": "TCH Power",
+          "symbol": "Qturb",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Power",
+          "symbol": "Qexh2",
+          "unit": "kW"
+        },
+        {
+          "name": "Other Loss",
+          "symbol": "Qother",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Efficiency",
+          "symbol": "Effn",
+          "unit": "%"
+        },
+        {
+          "name": "Indicated Efficiency",
+          "symbol": "Effi",
+          "unit": "%"
+        },
+        {
+          "name": "Effective Efficiency",
+          "symbol": "Efft",
+          "unit": "%"
+        }
+      ],
+      "sha256": "25eea4dcd84a55a010fc7f685b8e70b98911aea809a39fa4da920838071d00e7"
+    },
+    {
+      "file": "AF_Clogging/AF_Clogging_60_Load.csv",
+      "rows": 6819,
+      "columns": 73,
+      "labels": {
+        "0": 2095,
+        "1": 4724
+      },
+      "time_range": [
+        0.0,
+        11190.0
+      ],
+      "time_nonincreasing": 0,
+      "delta_counts": {
+        "2.0": 4370,
+        "1.0": 2447,
+        "3.0": 1
+      },
+      "normal": {
+        "Engine Speed": {
+          "min": 351.6005417,
+          "max": 354.3281198,
+          "mean": 352.97848262310265,
+          "std": 0.4673156293395242
+        },
+        "Engine room Temp.": {
+          "min": 22.24644,
+          "max": 24.91908,
+          "mean": 23.725656062052504,
+          "std": 0.5511010041148771
+        },
+        "Shaft Power": {
+          "min": 153.6541734,
+          "max": 157.5759623,
+          "mean": 155.61974468735085,
+          "std": 0.5855786479065181
+        },
+        "Cooling Water Temp. Engine In": {
+          "min": 58.53078,
+          "max": 58.91037,
+          "mean": 58.717369474940334,
+          "std": 0.05726516609457174
+        },
+        "Cooling Water Temp. Engine Out I": {
+          "min": 60.18817,
+          "max": 60.88453,
+          "mean": 60.50284263484487,
+          "std": 0.1216707957080769
+        },
+        "LO Temp. Engine In": {
+          "min": 41.71841,
+          "max": 999.0,
+          "mean": 44.96725963245824,
+          "std": 41.73391093754074
+        },
+        "LO Temp. Engine Out": {
+          "min": 52.58067,
+          "max": 56.12263,
+          "mean": 53.165420295942724,
+          "std": 0.6313703798374185
+        },
+        "LO Circulating Pump Press.": {
+          "min": 0.163020409,
+          "max": 0.170378915,
+          "mean": 0.169106608500716,
+          "std": 0.0013284610671045003
+        },
+        "Fresh Cooling Water Press.": {
+          "min": 1.034953926,
+          "max": 1.194913322,
+          "mean": 1.1052443964863963,
+          "std": 0.02873178210327318
+        }
+      },
+      "channels": [
+        {
+          "name": "Time_abs",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Time_rel",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Anomaly State",
+          "symbol": "",
+          "unit": ""
+        },
+        {
+          "name": "Engine Speed",
+          "symbol": "N",
+          "unit": "rpm"
+        },
+        {
+          "name": "Compressor Filter Loss",
+          "symbol": "dPf",
+          "unit": "Pa"
+        },
+        {
+          "name": "Turbine Back Pressure",
+          "symbol": "dPex",
+          "unit": "Pa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.1",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.1",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.2",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.2",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.3",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.3",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Charge Air Press.",
+          "symbol": "Pturb",
+          "unit": "kgf/cm2"
+        },
+        {
+          "name": "Water Brake Weight",
+          "symbol": "F",
+          "unit": "kgf"
+        },
+        {
+          "name": "Fuel Flow",
+          "symbol": "Qfuel",
+          "unit": "m3/h"
+        },
+        {
+          "name": "No.1 Exh.Gas Temp.",
+          "symbol": "T1",
+          "unit": "°C"
+        },
+        {
+          "name": "No.2 Exh.Gas Temp.",
+          "symbol": "T2",
+          "unit": "°C"
+        },
+        {
+          "name": "No.3 Exh.Gas Temp.",
+          "symbol": "T3",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine In",
+          "symbol": "T4",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine Out",
+          "symbol": "T5",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine In",
+          "symbol": "T6",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out I",
+          "symbol": "T7",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out II",
+          "symbol": "T8",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out III",
+          "symbol": "T9",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine In",
+          "symbol": "T10",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine Out",
+          "symbol": "T11",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. In",
+          "symbol": "T12",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. Out",
+          "symbol": "T13",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. In",
+          "symbol": "T14",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. Out",
+          "symbol": "T15",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. In",
+          "symbol": "T16",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. Out",
+          "symbol": "T17",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Temp.",
+          "symbol": "T18",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH In",
+          "symbol": "T19",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH Out",
+          "symbol": "T20",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Oil Temp. Flow meter In",
+          "symbol": "T21",
+          "unit": "°C"
+        },
+        {
+          "name": "Engine room Temp.",
+          "symbol": "T22",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Circulating Pump Press.",
+          "symbol": "Pl_lo",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel transfer pump Press.",
+          "symbol": "Pl_fuel",
+          "unit": "V"
+        },
+        {
+          "name": "Fresh Cooling Water Press.",
+          "symbol": "Pl_water1",
+          "unit": "V"
+        },
+        {
+          "name": "Sea Cooling Water Press.",
+          "symbol": "Pl_water2",
+          "unit": "V"
+        },
+        {
+          "name": "TCH LO pump Press.",
+          "symbol": "Pl_loturb",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel Injector Cooling Oil Press.",
+          "symbol": "Pl_valve",
+          "unit": "V"
+        },
+        {
+          "name": "Engine Cooling water flow",
+          "symbol": "Qw_eng",
+          "unit": "m3/h"
+        },
+        {
+          "name": "LO Cooling water flow",
+          "symbol": "Qw_lo",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Charge Air IC Cooling water flow",
+          "symbol": "Qw_air",
+          "unit": "m3/h"
+        },
+        {
+          "name": "TCH LO Cooling water flow",
+          "symbol": "Qw_turb",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Total Input Energy",
+          "symbol": "Qtotal",
+          "unit": "W"
+        },
+        {
+          "name": "Indicated Work No.1",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.2",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.3",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Total Indicated work",
+          "symbol": "Wi_tot",
+          "unit": "J"
+        },
+        {
+          "name": "Effective Work No.1",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.2",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.3",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Effective Work",
+          "symbol": "We_tot",
+          "unit": "kW"
+        },
+        {
+          "name": "Shaft Torque",
+          "symbol": "Tq",
+          "unit": "Nm"
+        },
+        {
+          "name": "Shaft Power",
+          "symbol": "Ws",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Loss",
+          "symbol": "Wm",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with cooling water",
+          "symbol": "Qrej_eng",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with LO",
+          "symbol": "Qrej_lo",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss in Charge Air IC",
+          "symbol": "Qrej_air",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with TCH LO",
+          "symbol": "Qrej_turb",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Heat Loss in Heat Exchangers",
+          "symbol": "Qrej",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Vol. Flow (From Engine Speed)",
+          "symbol": "qexh",
+          "unit": "NL/min"
+        },
+        {
+          "name": "Exh. Gas Mass Flow",
+          "symbol": "Mexh",
+          "unit": "kg/s"
+        },
+        {
+          "name": "Exh.Gas Total Power",
+          "symbol": "Qexh1",
+          "unit": "kW"
+        },
+        {
+          "name": "TCH Power",
+          "symbol": "Qturb",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Power",
+          "symbol": "Qexh2",
+          "unit": "kW"
+        },
+        {
+          "name": "Other Loss",
+          "symbol": "Qother",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Efficiency",
+          "symbol": "Effn",
+          "unit": "%"
+        },
+        {
+          "name": "Indicated Efficiency",
+          "symbol": "Effi",
+          "unit": "%"
+        },
+        {
+          "name": "Effective Efficiency",
+          "symbol": "Efft",
+          "unit": "%"
+        }
+      ],
+      "sha256": "2c721cae168a7a49a0a6f10e273629212d8d4e87793169b7b14de336685b7dd6"
+    },
+    {
+      "file": "AF_Clogging/AF_Clogging_75_Load.csv",
+      "rows": 5918,
+      "columns": 73,
+      "labels": {
+        "0": 2368,
+        "1": 3550
+      },
+      "time_range": [
+        0.0,
+        9364.0
+      ],
+      "time_nonincreasing": 0,
+      "delta_counts": {
+        "2.0": 3413,
+        "1.0": 2491,
+        "3.0": 8,
+        "4.0": 3,
+        "5.0": 1,
+        "6.0": 1
+      },
+      "normal": {
+        "Engine Speed": {
+          "min": 379.25947,
+          "max": 381.3921145,
+          "mean": 380.38209908399494,
+          "std": 0.3306890589195163
+        },
+        "Engine room Temp.": {
+          "min": 17.47507,
+          "max": 20.92058,
+          "mean": 19.067511900337838,
+          "std": 0.872811125767889
+        },
+        "Shaft Power": {
+          "min": 192.1003516,
+          "max": 196.7775837,
+          "mean": 194.5690341477196,
+          "std": 0.6835752841349856
+        },
+        "Cooling Water Temp. Engine In": {
+          "min": 57.63204,
+          "max": 58.16496,
+          "mean": 57.88021038851351,
+          "std": 0.12891202363964865
+        },
+        "Cooling Water Temp. Engine Out I": {
+          "min": 59.88348,
+          "max": 60.90445,
+          "mean": 60.28413924831081,
+          "std": 0.16795073575426156
+        },
+        "LO Temp. Engine In": {
+          "min": 44.10685,
+          "max": 999.0,
+          "mean": 55.351567267736485,
+          "std": 97.47521489192509
+        },
+        "LO Temp. Engine Out": {
+          "min": 55.30882,
+          "max": 55.62104,
+          "mean": 55.44099823902027,
+          "std": 0.05134595585668316
+        },
+        "LO Circulating Pump Press.": {
+          "min": 0.169316254,
+          "max": 0.170123432,
+          "mean": 0.1697372971402027,
+          "std": 0.00017668406804322023
+        },
+        "Fresh Cooling Water Press.": {
+          "min": 0.971214681,
+          "max": 1.126786391,
+          "mean": 1.045772710683277,
+          "std": 0.026962962437288795
+        }
+      },
+      "channels": [
+        {
+          "name": "Time_abs",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Time_rel",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Anomaly State",
+          "symbol": "",
+          "unit": ""
+        },
+        {
+          "name": "Engine Speed",
+          "symbol": "N",
+          "unit": "rpm"
+        },
+        {
+          "name": "Compressor Filter Loss",
+          "symbol": "dPf",
+          "unit": "Pa"
+        },
+        {
+          "name": "Turbine Back Pressure",
+          "symbol": "dPex",
+          "unit": "Pa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.1",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.1",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.2",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.2",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.3",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.3",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Charge Air Press.",
+          "symbol": "Pturb",
+          "unit": "kgf/cm2"
+        },
+        {
+          "name": "Water Brake Weight",
+          "symbol": "F",
+          "unit": "kgf"
+        },
+        {
+          "name": "Fuel Flow",
+          "symbol": "Qfuel",
+          "unit": "m3/h"
+        },
+        {
+          "name": "No.1 Exh.Gas Temp.",
+          "symbol": "T1",
+          "unit": "°C"
+        },
+        {
+          "name": "No.2 Exh.Gas Temp.",
+          "symbol": "T2",
+          "unit": "°C"
+        },
+        {
+          "name": "No.3 Exh.Gas Temp.",
+          "symbol": "T3",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine In",
+          "symbol": "T4",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine Out",
+          "symbol": "T5",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine In",
+          "symbol": "T6",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out I",
+          "symbol": "T7",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out II",
+          "symbol": "T8",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out III",
+          "symbol": "T9",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine In",
+          "symbol": "T10",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine Out",
+          "symbol": "T11",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. In",
+          "symbol": "T12",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. Out",
+          "symbol": "T13",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. In",
+          "symbol": "T14",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. Out",
+          "symbol": "T15",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. In",
+          "symbol": "T16",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. Out",
+          "symbol": "T17",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Temp.",
+          "symbol": "T18",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH In",
+          "symbol": "T19",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH Out",
+          "symbol": "T20",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Oil Temp. Flow meter In",
+          "symbol": "T21",
+          "unit": "°C"
+        },
+        {
+          "name": "Engine room Temp.",
+          "symbol": "T22",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Circulating Pump Press.",
+          "symbol": "Pl_lo",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel transfer pump Press.",
+          "symbol": "Pl_fuel",
+          "unit": "V"
+        },
+        {
+          "name": "Fresh Cooling Water Press.",
+          "symbol": "Pl_water1",
+          "unit": "V"
+        },
+        {
+          "name": "Sea Cooling Water Press.",
+          "symbol": "Pl_water2",
+          "unit": "V"
+        },
+        {
+          "name": "TCH LO pump Press.",
+          "symbol": "Pl_loturb",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel Injector Cooling Oil Press.",
+          "symbol": "Pl_valve",
+          "unit": "V"
+        },
+        {
+          "name": "Engine Cooling water flow",
+          "symbol": "Qw_eng",
+          "unit": "m3/h"
+        },
+        {
+          "name": "LO Cooling water flow",
+          "symbol": "Qw_lo",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Charge Air IC Cooling water flow",
+          "symbol": "Qw_air",
+          "unit": "m3/h"
+        },
+        {
+          "name": "TCH LO Cooling water flow",
+          "symbol": "Qw_turb",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Total Input Energy",
+          "symbol": "Qtotal",
+          "unit": "W"
+        },
+        {
+          "name": "Indicated Work No.1",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.2",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.3",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Total Indicated work",
+          "symbol": "Wi_tot",
+          "unit": "J"
+        },
+        {
+          "name": "Effective Work No.1",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.2",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.3",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Effective Work",
+          "symbol": "We_tot",
+          "unit": "kW"
+        },
+        {
+          "name": "Shaft Torque",
+          "symbol": "Tq",
+          "unit": "Nm"
+        },
+        {
+          "name": "Shaft Power",
+          "symbol": "Ws",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Loss",
+          "symbol": "Wm",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with cooling water",
+          "symbol": "Qrej_eng",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with LO",
+          "symbol": "Qrej_lo",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss in Charge Air IC",
+          "symbol": "Qrej_air",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with TCH LO",
+          "symbol": "Qrej_turb",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Heat Loss in Heat Exchangers",
+          "symbol": "Qrej",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Vol. Flow (From Engine Speed)",
+          "symbol": "qexh",
+          "unit": "NL/min"
+        },
+        {
+          "name": "Exh. Gas Mass Flow",
+          "symbol": "Mexh",
+          "unit": "kg/s"
+        },
+        {
+          "name": "Exh.Gas Total Power",
+          "symbol": "Qexh1",
+          "unit": "kW"
+        },
+        {
+          "name": "TCH Power",
+          "symbol": "Qturb",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Power",
+          "symbol": "Qexh2",
+          "unit": "kW"
+        },
+        {
+          "name": "Other Loss",
+          "symbol": "Qother",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Efficiency",
+          "symbol": "Effn",
+          "unit": "%"
+        },
+        {
+          "name": "Indicated Efficiency",
+          "symbol": "Effi",
+          "unit": "%"
+        },
+        {
+          "name": "Effective Efficiency",
+          "symbol": "Efft",
+          "unit": "%"
+        }
+      ],
+      "sha256": "41e926e31cef239a252930f2e8b2760fa767d8ef14f52500ab4020bbbaeb0fb8"
+    },
+    {
+      "file": "AF_Clogging/AF_Clogging_85_Load.csv",
+      "rows": 6398,
+      "columns": 73,
+      "labels": {
+        "0": 2728,
+        "1": 3670
+      },
+      "time_range": [
+        0.0,
+        9899.0
+      ],
+      "time_nonincreasing": 0,
+      "delta_counts": {
+        "2.0": 3498,
+        "1.0": 2897,
+        "3.0": 2
+      },
+      "normal": {
+        "Engine Speed": {
+          "min": 397.197334921413,
+          "max": 399.469109858831,
+          "mean": 398.30920191562706,
+          "std": 0.35087597730828357
+        },
+        "Engine room Temp.": {
+          "min": 23.79041,
+          "max": 25.25066,
+          "mean": 24.515319248533725,
+          "std": 0.25954530377963186
+        },
+        "Shaft Power": {
+          "min": 217.771590016724,
+          "max": 223.130722746131,
+          "mean": 220.45517642571107,
+          "std": 0.8179217438883118
+        },
+        "Cooling Water Temp. Engine In": {
+          "min": 58.15873,
+          "max": 58.51546,
+          "mean": 58.326067305718475,
+          "std": 0.05759466626728781
+        },
+        "Cooling Water Temp. Engine Out I": {
+          "min": 60.14725,
+          "max": 61.0068,
+          "mean": 60.598550120967744,
+          "std": 0.151381599592982
+        },
+        "LO Temp. Engine In": {
+          "min": 44.07798,
+          "max": 999.0,
+          "mean": 62.18216125733138,
+          "std": 118.55868125831495
+        },
+        "LO Temp. Engine Out": {
+          "min": 54.35102,
+          "max": 58.85284,
+          "mean": 57.621758394428156,
+          "std": 1.134487871954539
+        },
+        "LO Circulating Pump Press.": {
+          "min": 0.169820882344246,
+          "max": 0.176956915020943,
+          "mean": 0.1718636428636365,
+          "std": 0.001737741078526547
+        },
+        "Fresh Cooling Water Press.": {
+          "min": 1.02506564866304,
+          "max": 1.21639880206585,
+          "mean": 1.1101176274723061,
+          "std": 0.032807280918801994
+        }
+      },
+      "channels": [
+        {
+          "name": "Time_abs",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Time_rel",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Anomaly State",
+          "symbol": "",
+          "unit": ""
+        },
+        {
+          "name": "Engine Speed",
+          "symbol": "N",
+          "unit": "rpm"
+        },
+        {
+          "name": "Compressor Filter Loss",
+          "symbol": "dPf",
+          "unit": "Pa"
+        },
+        {
+          "name": "Turbine Back Pressure",
+          "symbol": "dPex",
+          "unit": "Pa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.1",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.1",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.2",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.2",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.3",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.3",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Charge Air Press.",
+          "symbol": "Pturb",
+          "unit": "kgf/cm2"
+        },
+        {
+          "name": "Water Brake Weight",
+          "symbol": "F",
+          "unit": "kgf"
+        },
+        {
+          "name": "Fuel Flow",
+          "symbol": "Qfuel",
+          "unit": "m3/h"
+        },
+        {
+          "name": "No.1 Exh.Gas Temp.",
+          "symbol": "T1",
+          "unit": "°C"
+        },
+        {
+          "name": "No.2 Exh.Gas Temp.",
+          "symbol": "T2",
+          "unit": "°C"
+        },
+        {
+          "name": "No.3 Exh.Gas Temp.",
+          "symbol": "T3",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine In",
+          "symbol": "T4",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine Out",
+          "symbol": "T5",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine In",
+          "symbol": "T6",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out I",
+          "symbol": "T7",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out II",
+          "symbol": "T8",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out III",
+          "symbol": "T9",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine In",
+          "symbol": "T10",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine Out",
+          "symbol": "T11",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. In",
+          "symbol": "T12",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. Out",
+          "symbol": "T13",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. In",
+          "symbol": "T14",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. Out",
+          "symbol": "T15",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. In",
+          "symbol": "T16",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. Out",
+          "symbol": "T17",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Temp.",
+          "symbol": "T18",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH In",
+          "symbol": "T19",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH Out",
+          "symbol": "T20",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Oil Temp. Flow meter In",
+          "symbol": "T21",
+          "unit": "°C"
+        },
+        {
+          "name": "Engine room Temp.",
+          "symbol": "T22",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Circulating Pump Press.",
+          "symbol": "Pl_lo",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel transfer pump Press.",
+          "symbol": "Pl_fuel",
+          "unit": "V"
+        },
+        {
+          "name": "Fresh Cooling Water Press.",
+          "symbol": "Pl_water1",
+          "unit": "V"
+        },
+        {
+          "name": "Sea Cooling Water Press.",
+          "symbol": "Pl_water2",
+          "unit": "V"
+        },
+        {
+          "name": "TCH LO pump Press.",
+          "symbol": "Pl_loturb",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel Injector Cooling Oil Press.",
+          "symbol": "Pl_valve",
+          "unit": "V"
+        },
+        {
+          "name": "Engine Cooling water flow",
+          "symbol": "Qw_eng",
+          "unit": "m3/h"
+        },
+        {
+          "name": "LO Cooling water flow",
+          "symbol": "Qw_lo",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Charge Air IC Cooling water flow",
+          "symbol": "Qw_air",
+          "unit": "m3/h"
+        },
+        {
+          "name": "TCH LO Cooling water flow",
+          "symbol": "Qw_turb",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Total Input Energy",
+          "symbol": "Qtotal",
+          "unit": "W"
+        },
+        {
+          "name": "Indicated Work No.1",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.2",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.3",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Total Indicated work",
+          "symbol": "Wi_tot",
+          "unit": "J"
+        },
+        {
+          "name": "Effective Work No.1",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.2",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.3",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Effective Work",
+          "symbol": "We_tot",
+          "unit": "kW"
+        },
+        {
+          "name": "Shaft Torque",
+          "symbol": "Tq",
+          "unit": "Nm"
+        },
+        {
+          "name": "Shaft Power",
+          "symbol": "Ws",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Loss",
+          "symbol": "Wm",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with cooling water",
+          "symbol": "Qrej_eng",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with LO",
+          "symbol": "Qrej_lo",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss in Charge Air IC",
+          "symbol": "Qrej_air",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with TCH LO",
+          "symbol": "Qrej_turb",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Heat Loss in Heat Exchangers",
+          "symbol": "Qrej",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Vol. Flow (From Engine Speed)",
+          "symbol": "qexh",
+          "unit": "NL/min"
+        },
+        {
+          "name": "Exh. Gas Mass Flow",
+          "symbol": "Mexh",
+          "unit": "kg/s"
+        },
+        {
+          "name": "Exh.Gas Total Power",
+          "symbol": "Qexh1",
+          "unit": "kW"
+        },
+        {
+          "name": "TCH Power",
+          "symbol": "Qturb",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Power",
+          "symbol": "Qexh2",
+          "unit": "kW"
+        },
+        {
+          "name": "Other Loss",
+          "symbol": "Qother",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Efficiency",
+          "symbol": "Effn",
+          "unit": "%"
+        },
+        {
+          "name": "Indicated Efficiency",
+          "symbol": "Effi",
+          "unit": "%"
+        },
+        {
+          "name": "Effective Efficiency",
+          "symbol": "Efft",
+          "unit": "%"
+        }
+      ],
+      "sha256": "316f194d7e4508619aff8df6b888450695237f21a250286be6e7093c7ee4598a"
+    },
+    {
+      "file": "Injector_Nozzle/Clogged_Injector_Nozzle1_40_60_85_Load.csv",
+      "rows": 6492,
+      "columns": 73,
+      "labels": {
+        "1": 6492
+      },
+      "time_range": [
+        0.0,
+        10694.0
+      ],
+      "time_nonincreasing": 0,
+      "delta_counts": {
+        "2.0": 4176,
+        "1.0": 2308,
+        "3.0": 4,
+        "7.0": 1,
+        "6.0": 1,
+        "9.0": 1
+      },
+      "normal": {},
+      "channels": [
+        {
+          "name": "Time_abs",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Time_rel",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Anomaly State",
+          "symbol": "",
+          "unit": ""
+        },
+        {
+          "name": "Engine Speed",
+          "symbol": "N",
+          "unit": "rpm"
+        },
+        {
+          "name": "Compressor Filter Loss",
+          "symbol": "dPf",
+          "unit": "Pa"
+        },
+        {
+          "name": "Turbine Back Pressure",
+          "symbol": "dPex",
+          "unit": "Pa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.1",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.1",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.2",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.2",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.3",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.3",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Charge Air Press.",
+          "symbol": "Pturb",
+          "unit": "kgf/cm2"
+        },
+        {
+          "name": "Water Brake Weight",
+          "symbol": "F",
+          "unit": "kgf"
+        },
+        {
+          "name": "Fuel Flow",
+          "symbol": "Qfuel",
+          "unit": "m3/h"
+        },
+        {
+          "name": "No.1 Exh.Gas Temp.",
+          "symbol": "T1",
+          "unit": "°C"
+        },
+        {
+          "name": "No.2 Exh.Gas Temp.",
+          "symbol": "T2",
+          "unit": "°C"
+        },
+        {
+          "name": "No.3 Exh.Gas Temp.",
+          "symbol": "T3",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine In",
+          "symbol": "T4",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine Out",
+          "symbol": "T5",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine In",
+          "symbol": "T6",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out I",
+          "symbol": "T7",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out II",
+          "symbol": "T8",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out III",
+          "symbol": "T9",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine In",
+          "symbol": "T10",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine Out",
+          "symbol": "T11",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. In",
+          "symbol": "T12",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. Out",
+          "symbol": "T13",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. In",
+          "symbol": "T14",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. Out",
+          "symbol": "T15",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. In",
+          "symbol": "T16",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. Out",
+          "symbol": "T17",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Temp.",
+          "symbol": "T18",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH In",
+          "symbol": "T19",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH Out",
+          "symbol": "T20",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Oil Temp. Flow meter In",
+          "symbol": "T21",
+          "unit": "°C"
+        },
+        {
+          "name": "Engine room Temp.",
+          "symbol": "T22",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Circulating Pump Press.",
+          "symbol": "Pl_lo",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel transfer pump Press.",
+          "symbol": "Pl_fuel",
+          "unit": "V"
+        },
+        {
+          "name": "Fresh Cooling Water Press.",
+          "symbol": "Pl_water1",
+          "unit": "V"
+        },
+        {
+          "name": "Sea Cooling Water Press.",
+          "symbol": "Pl_water2",
+          "unit": "V"
+        },
+        {
+          "name": "TCH LO pump Press.",
+          "symbol": "Pl_loturb",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel Injector Cooling Oil Press.",
+          "symbol": "Pl_valve",
+          "unit": "V"
+        },
+        {
+          "name": "Engine Cooling water flow",
+          "symbol": "Qw_eng",
+          "unit": "m3/h"
+        },
+        {
+          "name": "LO Cooling water flow",
+          "symbol": "Qw_lo",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Charge Air IC Cooling water flow",
+          "symbol": "Qw_air",
+          "unit": "m3/h"
+        },
+        {
+          "name": "TCH LO Cooling water flow",
+          "symbol": "Qw_turb",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Total Input Energy",
+          "symbol": "Qtotal",
+          "unit": "W"
+        },
+        {
+          "name": "Indicated Work No.1",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.2",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.3",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Total Indicated work",
+          "symbol": "Wi_tot",
+          "unit": "J"
+        },
+        {
+          "name": "Effective Work No.1",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.2",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.3",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Effective Work",
+          "symbol": "We_tot",
+          "unit": "kW"
+        },
+        {
+          "name": "Shaft Torque",
+          "symbol": "Tq",
+          "unit": "Nm"
+        },
+        {
+          "name": "Shaft Power",
+          "symbol": "Ws",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Loss",
+          "symbol": "Wm",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with cooling water",
+          "symbol": "Qrej_eng",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with LO",
+          "symbol": "Qrej_lo",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss in Charge Air IC",
+          "symbol": "Qrej_air",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with TCH LO",
+          "symbol": "Qrej_turb",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Heat Loss in Heat Exchangers",
+          "symbol": "Qrej",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Vol. Flow (From Engine Speed)",
+          "symbol": "qexh",
+          "unit": "NL/min"
+        },
+        {
+          "name": "Exh. Gas Mass Flow",
+          "symbol": "Mexh",
+          "unit": "kg/s"
+        },
+        {
+          "name": "Exh.Gas Total Power",
+          "symbol": "Qexh1",
+          "unit": "kW"
+        },
+        {
+          "name": "TCH Power",
+          "symbol": "Qturb",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Power",
+          "symbol": "Qexh2",
+          "unit": "kW"
+        },
+        {
+          "name": "Other Loss",
+          "symbol": "Qother",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Efficiency",
+          "symbol": "Effn",
+          "unit": "%"
+        },
+        {
+          "name": "Indicated Efficiency",
+          "symbol": "Effi",
+          "unit": "%"
+        },
+        {
+          "name": "Effective Efficiency",
+          "symbol": "Efft",
+          "unit": "%"
+        }
+      ],
+      "sha256": "bf168c4687954b695301603378f22143a3d3e089a325171dd11de3b20e643619"
+    },
+    {
+      "file": "Injector_Nozzle/Clogged_Injector_Nozzle2_LoadProgram.csv",
+      "rows": 6791,
+      "columns": 73,
+      "labels": {
+        "1": 6791
+      },
+      "time_range": [
+        0.0,
+        11246.0
+      ],
+      "time_nonincreasing": 0,
+      "delta_counts": {
+        "2.0": 4439,
+        "1.0": 2344,
+        "3.0": 5,
+        "4.0": 1,
+        "5.0": 1
+      },
+      "normal": {},
+      "channels": [
+        {
+          "name": "Time_abs",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Time_rel",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Anomaly State",
+          "symbol": "",
+          "unit": ""
+        },
+        {
+          "name": "Engine Speed",
+          "symbol": "N",
+          "unit": "rpm"
+        },
+        {
+          "name": "Compressor Filter Loss",
+          "symbol": "dPf",
+          "unit": "Pa"
+        },
+        {
+          "name": "Turbine Back Pressure",
+          "symbol": "dPex",
+          "unit": "Pa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.1",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.1",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.2",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.2",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.3",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.3",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Charge Air Press.",
+          "symbol": "Pturb",
+          "unit": "kgf/cm2"
+        },
+        {
+          "name": "Water Brake Weight",
+          "symbol": "F",
+          "unit": "kgf"
+        },
+        {
+          "name": "Fuel Flow",
+          "symbol": "Qfuel",
+          "unit": "m3/h"
+        },
+        {
+          "name": "No.1 Exh.Gas Temp.",
+          "symbol": "T1",
+          "unit": "°C"
+        },
+        {
+          "name": "No.2 Exh.Gas Temp.",
+          "symbol": "T2",
+          "unit": "°C"
+        },
+        {
+          "name": "No.3 Exh.Gas Temp.",
+          "symbol": "T3",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine In",
+          "symbol": "T4",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine Out",
+          "symbol": "T5",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine In",
+          "symbol": "T6",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out I",
+          "symbol": "T7",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out II",
+          "symbol": "T8",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out III",
+          "symbol": "T9",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine In",
+          "symbol": "T10",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine Out",
+          "symbol": "T11",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. In",
+          "symbol": "T12",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. Out",
+          "symbol": "T13",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. In",
+          "symbol": "T14",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. Out",
+          "symbol": "T15",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. In",
+          "symbol": "T16",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. Out",
+          "symbol": "T17",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Temp.",
+          "symbol": "T18",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH In",
+          "symbol": "T19",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH Out",
+          "symbol": "T20",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Oil Temp. Flow meter In",
+          "symbol": "T21",
+          "unit": "°C"
+        },
+        {
+          "name": "Engine room Temp.",
+          "symbol": "T22",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Circulating Pump Press.",
+          "symbol": "Pl_lo",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel transfer pump Press.",
+          "symbol": "Pl_fuel",
+          "unit": "V"
+        },
+        {
+          "name": "Fresh Cooling Water Press.",
+          "symbol": "Pl_water1",
+          "unit": "V"
+        },
+        {
+          "name": "Sea Cooling Water Press.",
+          "symbol": "Pl_water2",
+          "unit": "V"
+        },
+        {
+          "name": "TCH LO pump Press.",
+          "symbol": "Pl_loturb",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel Injector Cooling Oil Press.",
+          "symbol": "Pl_valve",
+          "unit": "V"
+        },
+        {
+          "name": "Engine Cooling water flow",
+          "symbol": "Qw_eng",
+          "unit": "m3/h"
+        },
+        {
+          "name": "LO Cooling water flow",
+          "symbol": "Qw_lo",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Charge Air IC Cooling water flow",
+          "symbol": "Qw_air",
+          "unit": "m3/h"
+        },
+        {
+          "name": "TCH LO Cooling water flow",
+          "symbol": "Qw_turb",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Total Input Energy",
+          "symbol": "Qtotal",
+          "unit": "W"
+        },
+        {
+          "name": "Indicated Work No.1",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.2",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.3",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Total Indicated work",
+          "symbol": "Wi_tot",
+          "unit": "J"
+        },
+        {
+          "name": "Effective Work No.1",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.2",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.3",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Effective Work",
+          "symbol": "We_tot",
+          "unit": "kW"
+        },
+        {
+          "name": "Shaft Torque",
+          "symbol": "Tq",
+          "unit": "Nm"
+        },
+        {
+          "name": "Shaft Power",
+          "symbol": "Ws",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Loss",
+          "symbol": "Wm",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with cooling water",
+          "symbol": "Qrej_eng",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with LO",
+          "symbol": "Qrej_lo",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss in Charge Air IC",
+          "symbol": "Qrej_air",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with TCH LO",
+          "symbol": "Qrej_turb",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Heat Loss in Heat Exchangers",
+          "symbol": "Qrej",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Vol. Flow (From Engine Speed)",
+          "symbol": "qexh",
+          "unit": "NL/min"
+        },
+        {
+          "name": "Exh. Gas Mass Flow",
+          "symbol": "Mexh",
+          "unit": "kg/s"
+        },
+        {
+          "name": "Exh.Gas Total Power",
+          "symbol": "Qexh1",
+          "unit": "kW"
+        },
+        {
+          "name": "TCH Power",
+          "symbol": "Qturb",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Power",
+          "symbol": "Qexh2",
+          "unit": "kW"
+        },
+        {
+          "name": "Other Loss",
+          "symbol": "Qother",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Efficiency",
+          "symbol": "Effn",
+          "unit": "%"
+        },
+        {
+          "name": "Indicated Efficiency",
+          "symbol": "Effi",
+          "unit": "%"
+        },
+        {
+          "name": "Effective Efficiency",
+          "symbol": "Efft",
+          "unit": "%"
+        }
+      ],
+      "sha256": "9a233777ceb5b76972942c174d2994e126deba043c90d10165ca48ddbb3ded1b"
+    },
+    {
+      "file": "Pump_Cavitation/CW_Pump_Cavitation_60_Load.csv",
+      "rows": 5845,
+      "columns": 73,
+      "labels": {
+        "0": 1380,
+        "1": 4465
+      },
+      "time_range": [
+        0.0,
+        9519.0
+      ],
+      "time_nonincreasing": 0,
+      "delta_counts": {
+        "2.0": 3668,
+        "1.0": 2173,
+        "3.0": 2,
+        "4.0": 1
+      },
+      "normal": {
+        "Engine Speed": {
+          "min": 352.1807816,
+          "max": 355.4383375,
+          "mean": 353.8373091423913,
+          "std": 0.6179589050004081
+        },
+        "Engine room Temp.": {
+          "min": 23.47017,
+          "max": 26.53865,
+          "mean": 25.268460050724638,
+          "std": 0.8295731293911051
+        },
+        "Shaft Power": {
+          "min": 153.7107668,
+          "max": 158.3032034,
+          "mean": 156.0122187444203,
+          "std": 0.811093011699236
+        },
+        "Cooling Water Temp. Engine In": {
+          "min": 58.49012,
+          "max": 58.81851,
+          "mean": 58.62260852898551,
+          "std": 0.054514255946374636
+        },
+        "Cooling Water Temp. Engine Out I": {
+          "min": 60.07699,
+          "max": 60.95267,
+          "mean": 60.4775885,
+          "std": 0.1659146558647577
+        },
+        "LO Temp. Engine In": {
+          "min": 43.25846,
+          "max": 999.0,
+          "mean": 48.83744043478261,
+          "std": 44.507387021552475
+        },
+        "LO Temp. Engine Out": {
+          "min": 48.84617,
+          "max": 57.24665,
+          "mean": 53.930393673913045,
+          "std": 1.6508417756129867
+        },
+        "LO Circulating Pump Press.": {
+          "min": 0.149254546,
+          "max": 0.170118144,
+          "mean": 0.16417413542391304,
+          "std": 0.006316977744387495
+        },
+        "Fresh Cooling Water Press.": {
+          "min": 1.029786232,
+          "max": 1.190572954,
+          "mean": 1.1019885694115943,
+          "std": 0.029022033972320335
+        }
+      },
+      "channels": [
+        {
+          "name": "Time_abs",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Time_rel",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Anomaly State",
+          "symbol": "",
+          "unit": ""
+        },
+        {
+          "name": "Engine Speed",
+          "symbol": "N",
+          "unit": "rpm"
+        },
+        {
+          "name": "Compressor Filter Loss",
+          "symbol": "dPf",
+          "unit": "Pa"
+        },
+        {
+          "name": "Turbine Back Pressure",
+          "symbol": "dPex",
+          "unit": "Pa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.1",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.1",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.2",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.2",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.3",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.3",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Charge Air Press.",
+          "symbol": "Pturb",
+          "unit": "kgf/cm2"
+        },
+        {
+          "name": "Water Brake Weight",
+          "symbol": "F",
+          "unit": "kgf"
+        },
+        {
+          "name": "Fuel Flow",
+          "symbol": "Qfuel",
+          "unit": "m3/h"
+        },
+        {
+          "name": "No.1 Exh.Gas Temp.",
+          "symbol": "T1",
+          "unit": "°C"
+        },
+        {
+          "name": "No.2 Exh.Gas Temp.",
+          "symbol": "T2",
+          "unit": "°C"
+        },
+        {
+          "name": "No.3 Exh.Gas Temp.",
+          "symbol": "T3",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine In",
+          "symbol": "T4",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine Out",
+          "symbol": "T5",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine In",
+          "symbol": "T6",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out I",
+          "symbol": "T7",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out II",
+          "symbol": "T8",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out III",
+          "symbol": "T9",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine In",
+          "symbol": "T10",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine Out",
+          "symbol": "T11",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. In",
+          "symbol": "T12",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. Out",
+          "symbol": "T13",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. In",
+          "symbol": "T14",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. Out",
+          "symbol": "T15",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. In",
+          "symbol": "T16",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. Out",
+          "symbol": "T17",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Temp.",
+          "symbol": "T18",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH In",
+          "symbol": "T19",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH Out",
+          "symbol": "T20",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Oil Temp. Flow meter In",
+          "symbol": "T21",
+          "unit": "°C"
+        },
+        {
+          "name": "Engine room Temp.",
+          "symbol": "T22",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Circulating Pump Press.",
+          "symbol": "Pl_lo",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel transfer pump Press.",
+          "symbol": "Pl_fuel",
+          "unit": "V"
+        },
+        {
+          "name": "Fresh Cooling Water Press.",
+          "symbol": "Pl_water1",
+          "unit": "V"
+        },
+        {
+          "name": "Sea Cooling Water Press.",
+          "symbol": "Pl_water2",
+          "unit": "V"
+        },
+        {
+          "name": "TCH LO pump Press.",
+          "symbol": "Pl_loturb",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel Injector Cooling Oil Press.",
+          "symbol": "Pl_valve",
+          "unit": "V"
+        },
+        {
+          "name": "Engine Cooling water flow",
+          "symbol": "Qw_eng",
+          "unit": "m3/h"
+        },
+        {
+          "name": "LO Cooling water flow",
+          "symbol": "Qw_lo",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Charge Air IC Cooling water flow",
+          "symbol": "Qw_air",
+          "unit": "m3/h"
+        },
+        {
+          "name": "TCH LO Cooling water flow",
+          "symbol": "Qw_turb",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Total Input Energy",
+          "symbol": "Qtotal",
+          "unit": "W"
+        },
+        {
+          "name": "Indicated Work No.1",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.2",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.3",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Total Indicated work",
+          "symbol": "Wi_tot",
+          "unit": "J"
+        },
+        {
+          "name": "Effective Work No.1",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.2",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.3",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Effective Work",
+          "symbol": "We_tot",
+          "unit": "kW"
+        },
+        {
+          "name": "Shaft Torque",
+          "symbol": "Tq",
+          "unit": "Nm"
+        },
+        {
+          "name": "Shaft Power",
+          "symbol": "Ws",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Loss",
+          "symbol": "Wm",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with cooling water",
+          "symbol": "Qrej_eng",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with LO",
+          "symbol": "Qrej_lo",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss in Charge Air IC",
+          "symbol": "Qrej_air",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with TCH LO",
+          "symbol": "Qrej_turb",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Heat Loss in Heat Exchangers",
+          "symbol": "Qrej",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Vol. Flow (From Engine Speed)",
+          "symbol": "qexh",
+          "unit": "NL/min"
+        },
+        {
+          "name": "Exh. Gas Mass Flow",
+          "symbol": "Mexh",
+          "unit": "kg/s"
+        },
+        {
+          "name": "Exh.Gas Total Power",
+          "symbol": "Qexh1",
+          "unit": "kW"
+        },
+        {
+          "name": "TCH Power",
+          "symbol": "Qturb",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Power",
+          "symbol": "Qexh2",
+          "unit": "kW"
+        },
+        {
+          "name": "Other Loss",
+          "symbol": "Qother",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Efficiency",
+          "symbol": "Effn",
+          "unit": "%"
+        },
+        {
+          "name": "Indicated Efficiency",
+          "symbol": "Effi",
+          "unit": "%"
+        },
+        {
+          "name": "Effective Efficiency",
+          "symbol": "Efft",
+          "unit": "%"
+        }
+      ],
+      "sha256": "08a42a48b817b41b17019453ac5ebbcd3c60051366b7e5f410455a4540789503"
+    },
+    {
+      "file": "Pump_Cavitation/CW_Pump_Cavitation_85_Load.csv",
+      "rows": 6263,
+      "columns": 73,
+      "labels": {
+        "0": 1554,
+        "1": 4709
+      },
+      "time_range": [
+        0.0,
+        9597.0
+      ],
+      "time_nonincreasing": 0,
+      "delta_counts": {
+        "2.0": 3331,
+        "1.0": 2929,
+        "3.0": 2
+      },
+      "normal": {
+        "Engine Speed": {
+          "min": 392.8825078,
+          "max": 396.0362369,
+          "mean": 394.4866032122265,
+          "std": 0.7127778325027708
+        },
+        "Engine room Temp.": {
+          "min": 26.97716,
+          "max": 29.48171,
+          "mean": 28.644727580437582,
+          "std": 0.5090990853011877
+        },
+        "Shaft Power": {
+          "min": 217.1246385,
+          "max": 227.4634619,
+          "mean": 222.27842710418275,
+          "std": 2.6638237083296814
+        },
+        "Cooling Water Temp. Engine In": {
+          "min": 58.14095,
+          "max": 58.82528,
+          "mean": 58.34271716216216,
+          "std": 0.09115808842368972
+        },
+        "Cooling Water Temp. Engine Out I": {
+          "min": 60.67709,
+          "max": 61.38734,
+          "mean": 61.00869476190476,
+          "std": 0.1370838524340986
+        },
+        "LO Temp. Engine In": {
+          "min": 46.06777,
+          "max": 999.0,
+          "mean": 51.509833886743884,
+          "std": 58.99263079616023
+        },
+        "LO Temp. Engine Out": {
+          "min": 55.93016,
+          "max": 59.22994,
+          "mean": 57.98225761904762,
+          "std": 0.8097937559183315
+        },
+        "LO Circulating Pump Press.": {
+          "min": 0.169688581,
+          "max": 0.174534768,
+          "mean": 0.17144688824195625,
+          "std": 0.001328914217728202
+        },
+        "Fresh Cooling Water Press.": {
+          "min": 1.029406389,
+          "max": 1.182879958,
+          "mean": 1.1009153196061776,
+          "std": 0.024455820707770703
+        }
+      },
+      "channels": [
+        {
+          "name": "Time_abs",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Time_rel",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Anomaly State",
+          "symbol": "",
+          "unit": ""
+        },
+        {
+          "name": "Engine Speed",
+          "symbol": "N",
+          "unit": "rpm"
+        },
+        {
+          "name": "Compressor Filter Loss",
+          "symbol": "dPf",
+          "unit": "Pa"
+        },
+        {
+          "name": "Turbine Back Pressure",
+          "symbol": "dPex",
+          "unit": "Pa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.1",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.1",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.2",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.2",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.3",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.3",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Charge Air Press.",
+          "symbol": "Pturb",
+          "unit": "kgf/cm2"
+        },
+        {
+          "name": "Water Brake Weight",
+          "symbol": "F",
+          "unit": "kgf"
+        },
+        {
+          "name": "Fuel Flow",
+          "symbol": "Qfuel",
+          "unit": "m3/h"
+        },
+        {
+          "name": "No.1 Exh.Gas Temp.",
+          "symbol": "T1",
+          "unit": "°C"
+        },
+        {
+          "name": "No.2 Exh.Gas Temp.",
+          "symbol": "T2",
+          "unit": "°C"
+        },
+        {
+          "name": "No.3 Exh.Gas Temp.",
+          "symbol": "T3",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine In",
+          "symbol": "T4",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine Out",
+          "symbol": "T5",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine In",
+          "symbol": "T6",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out I",
+          "symbol": "T7",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out II",
+          "symbol": "T8",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out III",
+          "symbol": "T9",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine In",
+          "symbol": "T10",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine Out",
+          "symbol": "T11",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. In",
+          "symbol": "T12",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. Out",
+          "symbol": "T13",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. In",
+          "symbol": "T14",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. Out",
+          "symbol": "T15",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. In",
+          "symbol": "T16",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. Out",
+          "symbol": "T17",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Temp.",
+          "symbol": "T18",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH In",
+          "symbol": "T19",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH Out",
+          "symbol": "T20",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Oil Temp. Flow meter In",
+          "symbol": "T21",
+          "unit": "°C"
+        },
+        {
+          "name": "Engine room Temp.",
+          "symbol": "T22",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Circulating Pump Press.",
+          "symbol": "Pl_lo",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel transfer pump Press.",
+          "symbol": "Pl_fuel",
+          "unit": "V"
+        },
+        {
+          "name": "Fresh Cooling Water Press.",
+          "symbol": "Pl_water1",
+          "unit": "V"
+        },
+        {
+          "name": "Sea Cooling Water Press.",
+          "symbol": "Pl_water2",
+          "unit": "V"
+        },
+        {
+          "name": "TCH LO pump Press.",
+          "symbol": "Pl_loturb",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel Injector Cooling Oil Press.",
+          "symbol": "Pl_valve",
+          "unit": "V"
+        },
+        {
+          "name": "Engine Cooling water flow",
+          "symbol": "Qw_eng",
+          "unit": "m3/h"
+        },
+        {
+          "name": "LO Cooling water flow",
+          "symbol": "Qw_lo",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Charge Air IC Cooling water flow",
+          "symbol": "Qw_air",
+          "unit": "m3/h"
+        },
+        {
+          "name": "TCH LO Cooling water flow",
+          "symbol": "Qw_turb",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Total Input Energy",
+          "symbol": "Qtotal",
+          "unit": "W"
+        },
+        {
+          "name": "Indicated Work No.1",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.2",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.3",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Total Indicated work",
+          "symbol": "Wi_tot",
+          "unit": "J"
+        },
+        {
+          "name": "Effective Work No.1",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.2",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.3",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Effective Work",
+          "symbol": "We_tot",
+          "unit": "kW"
+        },
+        {
+          "name": "Shaft Torque",
+          "symbol": "Tq",
+          "unit": "Nm"
+        },
+        {
+          "name": "Shaft Power",
+          "symbol": "Ws",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Loss",
+          "symbol": "Wm",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with cooling water",
+          "symbol": "Qrej_eng",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with LO",
+          "symbol": "Qrej_lo",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss in Charge Air IC",
+          "symbol": "Qrej_air",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with TCH LO",
+          "symbol": "Qrej_turb",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Heat Loss in Heat Exchangers",
+          "symbol": "Qrej",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Vol. Flow (From Engine Speed)",
+          "symbol": "qexh",
+          "unit": "NL/min"
+        },
+        {
+          "name": "Exh. Gas Mass Flow",
+          "symbol": "Mexh",
+          "unit": "kg/s"
+        },
+        {
+          "name": "Exh.Gas Total Power",
+          "symbol": "Qexh1",
+          "unit": "kW"
+        },
+        {
+          "name": "TCH Power",
+          "symbol": "Qturb",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Power",
+          "symbol": "Qexh2",
+          "unit": "kW"
+        },
+        {
+          "name": "Other Loss",
+          "symbol": "Qother",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Efficiency",
+          "symbol": "Effn",
+          "unit": "%"
+        },
+        {
+          "name": "Indicated Efficiency",
+          "symbol": "Effi",
+          "unit": "%"
+        },
+        {
+          "name": "Effective Efficiency",
+          "symbol": "Efft",
+          "unit": "%"
+        }
+      ],
+      "sha256": "62b8a6d81a20ae272ef77a34c2f909fc83a633073e81fe035311001851d8119d"
+    },
+    {
+      "file": "Reference_Data.csv",
+      "rows": 25302,
+      "columns": 70,
+      "labels": {
+        "reference": 25302
+      },
+      "time_range": [
+        653.0,
+        41920.0
+      ],
+      "time_nonincreasing": 0,
+      "delta_counts": {
+        "2.0": 15928,
+        "1.0": 9355,
+        "3.0": 16,
+        "4.0": 2
+      },
+      "normal": {
+        "Engine Speed": {
+          "min": 261.56,
+          "max": 403.75,
+          "mean": 347.68786143387877,
+          "std": 36.939137045893325
+        },
+        "Engine room Temp.": {
+          "min": 25.74831,
+          "max": 35.80888,
+          "mean": 32.49066924788554,
+          "std": 2.3157850423603517
+        },
+        "Shaft Power": {
+          "min": 56.2081,
+          "max": 243.7153,
+          "mean": 154.65204418227808,
+          "std": 46.78085128336174
+        },
+        "Cooling Water Temp. Engine In": {
+          "min": 33.38214,
+          "max": 59.9467,
+          "mean": 58.375175354122206,
+          "std": 2.917237672494102
+        },
+        "Cooling Water Temp. Engine Out I": {
+          "min": 33.93086,
+          "max": 63.5356,
+          "mean": 60.540989490554104,
+          "std": 3.234231516321564
+        },
+        "LO Temp. Engine In": {
+          "min": 31.29768,
+          "max": 999.0,
+          "mean": 61.101734933997314,
+          "std": 102.47084289547124
+        },
+        "LO Temp. Engine Out": {
+          "min": 32.23082,
+          "max": 67.5235,
+          "mean": 57.047671550075094,
+          "std": 5.557522089845596
+        },
+        "LO Circulating Pump Press.": {
+          "min": 0.1226,
+          "max": 0.1829,
+          "mean": 0.15769293336495138,
+          "std": 0.009986537528254874
+        },
+        "Fresh Cooling Water Press.": {
+          "min": 1.033,
+          "max": 1.2082,
+          "mean": 1.1111815113429768,
+          "std": 0.02332820727285111
+        }
+      },
+      "channels": [
+        {
+          "name": "Time",
+          "symbol": "T",
+          "unit": "sec"
+        },
+        {
+          "name": "Engine Speed",
+          "symbol": "N",
+          "unit": "rpm"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.1",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.1",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.2",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.2",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.3",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.3",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Compressor Filter Loss",
+          "symbol": "dPf",
+          "unit": "Pa"
+        },
+        {
+          "name": "Charge Air Press.",
+          "symbol": "Pturb",
+          "unit": "kgf/cm2"
+        },
+        {
+          "name": "Water Brake Weight",
+          "symbol": "F",
+          "unit": "kgf"
+        },
+        {
+          "name": "Fuel Flow",
+          "symbol": "Qfuel",
+          "unit": "m3/h"
+        },
+        {
+          "name": "No.1 Exh.Gas Temp.",
+          "symbol": "T1",
+          "unit": "°C"
+        },
+        {
+          "name": "No.2 Exh.Gas Temp.",
+          "symbol": "T2",
+          "unit": "°C"
+        },
+        {
+          "name": "No.3 Exh.Gas Temp.",
+          "symbol": "T3",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine In",
+          "symbol": "T4",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine Out",
+          "symbol": "T5",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine In",
+          "symbol": "T6",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out I",
+          "symbol": "T7",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out II",
+          "symbol": "T8",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out III",
+          "symbol": "T9",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine In",
+          "symbol": "T10",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine Out",
+          "symbol": "T11",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. In",
+          "symbol": "T12",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. Out",
+          "symbol": "T13",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. In",
+          "symbol": "T14",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. Out",
+          "symbol": "T15",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. In",
+          "symbol": "T16",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. Out",
+          "symbol": "T17",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Temp.",
+          "symbol": "T18",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH In",
+          "symbol": "T19",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH Out",
+          "symbol": "T20",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Oil Temp. Flow meter In",
+          "symbol": "T21",
+          "unit": "°C"
+        },
+        {
+          "name": "Engine room Temp.",
+          "symbol": "T22",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Circulating Pump Press.",
+          "symbol": "Pl_lo",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel transfer pump Press.",
+          "symbol": "Pl_fuel",
+          "unit": "V"
+        },
+        {
+          "name": "Fresh Cooling Water Press.",
+          "symbol": "Pl_water1",
+          "unit": "V"
+        },
+        {
+          "name": "Sea Cooling Water Press.",
+          "symbol": "Pl_water2",
+          "unit": "V"
+        },
+        {
+          "name": "TCH LO pump Press.",
+          "symbol": "Pl_loturb",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel Injector Cooling Oil Press.",
+          "symbol": "Pl_valve",
+          "unit": "V"
+        },
+        {
+          "name": "Engine Cooling water flow",
+          "symbol": "Qw_eng",
+          "unit": "m3/h"
+        },
+        {
+          "name": "LO Cooling water flow",
+          "symbol": "Qw_lo",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Charge Air IC Cooling water flow",
+          "symbol": "Qw_air",
+          "unit": "m3/h"
+        },
+        {
+          "name": "TCH LO Cooling water flow",
+          "symbol": "Qw_turb",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Total Input Energy",
+          "symbol": "Qtotal",
+          "unit": "W"
+        },
+        {
+          "name": "Indicated Work No.1",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.2",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.3",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Total Indicated work",
+          "symbol": "Wi_tot",
+          "unit": "J"
+        },
+        {
+          "name": "Effective Work No.1",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.2",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.3",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Effective Work",
+          "symbol": "We_tot",
+          "unit": "kW"
+        },
+        {
+          "name": "Shaft Torque",
+          "symbol": "Tq",
+          "unit": "Nm"
+        },
+        {
+          "name": "Shaft Power",
+          "symbol": "Ws",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Loss",
+          "symbol": "Wm",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with cooling water",
+          "symbol": "Qrej_eng",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with LO",
+          "symbol": "Qrej_lo",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss in Charge Air IC",
+          "symbol": "Qrej_air",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with TCH LO",
+          "symbol": "Qrej_turb",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Heat Loss in Heat Exchangers",
+          "symbol": "Qrej",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Vol. Flow (From Engine Speed)",
+          "symbol": "qexh",
+          "unit": "NL/min"
+        },
+        {
+          "name": "Exh. Gas Mass Flow",
+          "symbol": "Mexh",
+          "unit": "kg/s"
+        },
+        {
+          "name": "Exh.Gas Total Power",
+          "symbol": "Qexh1",
+          "unit": "kW"
+        },
+        {
+          "name": "TCH Power",
+          "symbol": "Qturb",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Power",
+          "symbol": "Qexh2",
+          "unit": "kW"
+        },
+        {
+          "name": "Other Loss",
+          "symbol": "Qother",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Efficiency",
+          "symbol": "Effn",
+          "unit": "%"
+        },
+        {
+          "name": "Indicated Efficiency",
+          "symbol": "Effi",
+          "unit": "%"
+        },
+        {
+          "name": "Effective Efficiency",
+          "symbol": "Efft",
+          "unit": "%"
+        }
+      ],
+      "sha256": "37d7e2de51eadcff71610392a97ad3ec87574a31ada4e0bcb5041b60a0881268"
+    },
+    {
+      "file": "Turbine_Degradation/Turbine_Degradation_40_Load.csv",
+      "rows": 6397,
+      "columns": 73,
+      "labels": {
+        "0": 3847,
+        "1": 2550
+      },
+      "time_range": [
+        0.0,
+        11099.0
+      ],
+      "time_nonincreasing": 0,
+      "delta_counts": {
+        "2.0": 4692,
+        "1.0": 1699,
+        "3.0": 4,
+        "4.0": 1
+      },
+      "normal": {
+        "Engine Speed": {
+          "min": 308.7460025,
+          "max": 312.1378321,
+          "mean": 310.67634395851314,
+          "std": 0.4859942095398578
+        },
+        "Engine room Temp.": {
+          "min": 24.37473,
+          "max": 25.94508,
+          "mean": 25.234523737977646,
+          "std": 0.3312459422101435
+        },
+        "Shaft Power": {
+          "min": 104.1806441,
+          "max": 108.450758,
+          "mean": 106.26955770735638,
+          "std": 0.598586821965046
+        },
+        "Cooling Water Temp. Engine In": {
+          "min": 57.89864,
+          "max": 58.49918,
+          "mean": 58.17863363140109,
+          "std": 0.1366001526219017
+        },
+        "Cooling Water Temp. Engine Out I": {
+          "min": 59.24353,
+          "max": 60.40839,
+          "mean": 59.73382502209514,
+          "std": 0.23021073623818578
+        },
+        "LO Temp. Engine In": {
+          "min": 41.10919,
+          "max": 999.0,
+          "mean": 49.52494164023915,
+          "std": 59.407492616257905
+        },
+        "LO Temp. Engine Out": {
+          "min": 53.05192,
+          "max": 54.41797,
+          "mean": 53.68920544060307,
+          "std": 0.3436343090460869
+        },
+        "LO Circulating Pump Press.": {
+          "min": 0.151182596,
+          "max": 0.155880939,
+          "mean": 0.15370375947673512,
+          "std": 0.0013436090403282695
+        },
+        "Fresh Cooling Water Press.": {
+          "min": 1.033984276,
+          "max": 1.166099382,
+          "mean": 1.0994123136340006,
+          "std": 0.020497771452797638
+        }
+      },
+      "channels": [
+        {
+          "name": "Time_abs",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Time_rel",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Anomaly State",
+          "symbol": "",
+          "unit": ""
+        },
+        {
+          "name": "Engine Speed",
+          "symbol": "N",
+          "unit": "rpm"
+        },
+        {
+          "name": "Compressor Filter Loss",
+          "symbol": "dPf",
+          "unit": "Pa"
+        },
+        {
+          "name": "Turbine Back Pressure",
+          "symbol": "dPex",
+          "unit": "Pa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.1",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.1",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.2",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.2",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.3",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.3",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Charge Air Press.",
+          "symbol": "Pturb",
+          "unit": "kgf/cm2"
+        },
+        {
+          "name": "Water Brake Weight",
+          "symbol": "F",
+          "unit": "kgf"
+        },
+        {
+          "name": "Fuel Flow",
+          "symbol": "Qfuel",
+          "unit": "m3/h"
+        },
+        {
+          "name": "No.1 Exh.Gas Temp.",
+          "symbol": "T1",
+          "unit": "°C"
+        },
+        {
+          "name": "No.2 Exh.Gas Temp.",
+          "symbol": "T2",
+          "unit": "°C"
+        },
+        {
+          "name": "No.3 Exh.Gas Temp.",
+          "symbol": "T3",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine In",
+          "symbol": "T4",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine Out",
+          "symbol": "T5",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine In",
+          "symbol": "T6",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out I",
+          "symbol": "T7",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out II",
+          "symbol": "T8",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out III",
+          "symbol": "T9",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine In",
+          "symbol": "T10",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine Out",
+          "symbol": "T11",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. In",
+          "symbol": "T12",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. Out",
+          "symbol": "T13",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. In",
+          "symbol": "T14",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. Out",
+          "symbol": "T15",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. In",
+          "symbol": "T16",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. Out",
+          "symbol": "T17",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Temp.",
+          "symbol": "T18",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH In",
+          "symbol": "T19",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH Out",
+          "symbol": "T20",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Oil Temp. Flow meter In",
+          "symbol": "T21",
+          "unit": "°C"
+        },
+        {
+          "name": "Engine room Temp.",
+          "symbol": "T22",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Circulating Pump Press.",
+          "symbol": "Pl_lo",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel transfer pump Press.",
+          "symbol": "Pl_fuel",
+          "unit": "V"
+        },
+        {
+          "name": "Fresh Cooling Water Press.",
+          "symbol": "Pl_water1",
+          "unit": "V"
+        },
+        {
+          "name": "Sea Cooling Water Press.",
+          "symbol": "Pl_water2",
+          "unit": "V"
+        },
+        {
+          "name": "TCH LO pump Press.",
+          "symbol": "Pl_loturb",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel Injector Cooling Oil Press.",
+          "symbol": "Pl_valve",
+          "unit": "V"
+        },
+        {
+          "name": "Engine Cooling water flow",
+          "symbol": "Qw_eng",
+          "unit": "m3/h"
+        },
+        {
+          "name": "LO Cooling water flow",
+          "symbol": "Qw_lo",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Charge Air IC Cooling water flow",
+          "symbol": "Qw_air",
+          "unit": "m3/h"
+        },
+        {
+          "name": "TCH LO Cooling water flow",
+          "symbol": "Qw_turb",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Total Input Energy",
+          "symbol": "Qtotal",
+          "unit": "W"
+        },
+        {
+          "name": "Indicated Work No.1",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.2",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.3",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Total Indicated work",
+          "symbol": "Wi_tot",
+          "unit": "J"
+        },
+        {
+          "name": "Effective Work No.1",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.2",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.3",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Effective Work",
+          "symbol": "We_tot",
+          "unit": "kW"
+        },
+        {
+          "name": "Shaft Torque",
+          "symbol": "Tq",
+          "unit": "Nm"
+        },
+        {
+          "name": "Shaft Power",
+          "symbol": "Ws",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Loss",
+          "symbol": "Wm",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with cooling water",
+          "symbol": "Qrej_eng",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with LO",
+          "symbol": "Qrej_lo",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss in Charge Air IC",
+          "symbol": "Qrej_air",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with TCH LO",
+          "symbol": "Qrej_turb",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Heat Loss in Heat Exchangers",
+          "symbol": "Qrej",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Vol. Flow (From Engine Speed)",
+          "symbol": "qexh",
+          "unit": "NL/min"
+        },
+        {
+          "name": "Exh. Gas Mass Flow",
+          "symbol": "Mexh",
+          "unit": "kg/s"
+        },
+        {
+          "name": "Exh.Gas Total Power",
+          "symbol": "Qexh1",
+          "unit": "kW"
+        },
+        {
+          "name": "TCH Power",
+          "symbol": "Qturb",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Power",
+          "symbol": "Qexh2",
+          "unit": "kW"
+        },
+        {
+          "name": "Other Loss",
+          "symbol": "Qother",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Efficiency",
+          "symbol": "Effn",
+          "unit": "%"
+        },
+        {
+          "name": "Indicated Efficiency",
+          "symbol": "Effi",
+          "unit": "%"
+        },
+        {
+          "name": "Effective Efficiency",
+          "symbol": "Efft",
+          "unit": "%"
+        }
+      ],
+      "sha256": "ea6afb36af910cdf5d87d5e085f8a6c2f4effefc0953f032ae3b175dc1703bad"
+    },
+    {
+      "file": "Turbine_Degradation/Turbine_Degradation_60_Load.csv",
+      "rows": 4905,
+      "columns": 73,
+      "labels": {
+        "0": 2234,
+        "1": 2671
+      },
+      "time_range": [
+        0.0,
+        7580.0
+      ],
+      "time_nonincreasing": 0,
+      "delta_counts": {
+        "2.0": 2674,
+        "1.0": 2229,
+        "3.0": 1
+      },
+      "normal": {
+        "Engine Speed": {
+          "min": 349.2935867,
+          "max": 352.3129184,
+          "mean": 350.8233573434199,
+          "std": 0.4813516374473386
+        },
+        "Engine room Temp.": {
+          "min": 26.84509,
+          "max": 29.29312,
+          "mean": 28.247612654431514,
+          "std": 0.5743948974628912
+        },
+        "Shaft Power": {
+          "min": 151.7937835,
+          "max": 155.8065692,
+          "mean": 153.72713487994628,
+          "std": 0.6446884874832643
+        },
+        "Cooling Water Temp. Engine In": {
+          "min": 58.69306,
+          "max": 59.06144,
+          "mean": 58.85950986571173,
+          "std": 0.05982668828937467
+        },
+        "Cooling Water Temp. Engine Out I": {
+          "min": 60.63586,
+          "max": 61.3898,
+          "mean": 60.971579377797674,
+          "std": 0.13058866302024805
+        },
+        "LO Temp. Engine In": {
+          "min": 44.48133,
+          "max": 999.0,
+          "mean": 63.34425435094002,
+          "std": 129.51638149916857
+        },
+        "LO Temp. Engine Out": {
+          "min": 53.96299,
+          "max": 55.17191,
+          "mean": 54.51698434198747,
+          "std": 0.33052796282231195
+        },
+        "LO Circulating Pump Press.": {
+          "min": 0.164051677,
+          "max": 0.167840783,
+          "mean": 0.16650976428961503,
+          "std": 0.0010052200098532335
+        },
+        "Fresh Cooling Water Press.": {
+          "min": 1.016818753,
+          "max": 1.161815239,
+          "mean": 1.0899052136714413,
+          "std": 0.02592104101114047
+        }
+      },
+      "channels": [
+        {
+          "name": "Time_abs",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Time_rel",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Anomaly State",
+          "symbol": "",
+          "unit": ""
+        },
+        {
+          "name": "Engine Speed",
+          "symbol": "N",
+          "unit": "rpm"
+        },
+        {
+          "name": "Compressor Filter Loss",
+          "symbol": "dPf",
+          "unit": "Pa"
+        },
+        {
+          "name": "Turbine Back Pressure",
+          "symbol": "dPex",
+          "unit": "Pa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.1",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.1",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.2",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.2",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.3",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.3",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Charge Air Press.",
+          "symbol": "Pturb",
+          "unit": "kgf/cm2"
+        },
+        {
+          "name": "Water Brake Weight",
+          "symbol": "F",
+          "unit": "kgf"
+        },
+        {
+          "name": "Fuel Flow",
+          "symbol": "Qfuel",
+          "unit": "m3/h"
+        },
+        {
+          "name": "No.1 Exh.Gas Temp.",
+          "symbol": "T1",
+          "unit": "°C"
+        },
+        {
+          "name": "No.2 Exh.Gas Temp.",
+          "symbol": "T2",
+          "unit": "°C"
+        },
+        {
+          "name": "No.3 Exh.Gas Temp.",
+          "symbol": "T3",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine In",
+          "symbol": "T4",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine Out",
+          "symbol": "T5",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine In",
+          "symbol": "T6",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out I",
+          "symbol": "T7",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out II",
+          "symbol": "T8",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out III",
+          "symbol": "T9",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine In",
+          "symbol": "T10",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine Out",
+          "symbol": "T11",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. In",
+          "symbol": "T12",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. Out",
+          "symbol": "T13",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. In",
+          "symbol": "T14",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. Out",
+          "symbol": "T15",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. In",
+          "symbol": "T16",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. Out",
+          "symbol": "T17",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Temp.",
+          "symbol": "T18",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH In",
+          "symbol": "T19",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH Out",
+          "symbol": "T20",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Oil Temp. Flow meter In",
+          "symbol": "T21",
+          "unit": "°C"
+        },
+        {
+          "name": "Engine room Temp.",
+          "symbol": "T22",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Circulating Pump Press.",
+          "symbol": "Pl_lo",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel transfer pump Press.",
+          "symbol": "Pl_fuel",
+          "unit": "V"
+        },
+        {
+          "name": "Fresh Cooling Water Press.",
+          "symbol": "Pl_water1",
+          "unit": "V"
+        },
+        {
+          "name": "Sea Cooling Water Press.",
+          "symbol": "Pl_water2",
+          "unit": "V"
+        },
+        {
+          "name": "TCH LO pump Press.",
+          "symbol": "Pl_loturb",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel Injector Cooling Oil Press.",
+          "symbol": "Pl_valve",
+          "unit": "V"
+        },
+        {
+          "name": "Engine Cooling water flow",
+          "symbol": "Qw_eng",
+          "unit": "m3/h"
+        },
+        {
+          "name": "LO Cooling water flow",
+          "symbol": "Qw_lo",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Charge Air IC Cooling water flow",
+          "symbol": "Qw_air",
+          "unit": "m3/h"
+        },
+        {
+          "name": "TCH LO Cooling water flow",
+          "symbol": "Qw_turb",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Total Input Energy",
+          "symbol": "Qtotal",
+          "unit": "W"
+        },
+        {
+          "name": "Indicated Work No.1",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.2",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.3",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Total Indicated work",
+          "symbol": "Wi_tot",
+          "unit": "J"
+        },
+        {
+          "name": "Effective Work No.1",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.2",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.3",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Effective Work",
+          "symbol": "We_tot",
+          "unit": "kW"
+        },
+        {
+          "name": "Shaft Torque",
+          "symbol": "Tq",
+          "unit": "Nm"
+        },
+        {
+          "name": "Shaft Power",
+          "symbol": "Ws",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Loss",
+          "symbol": "Wm",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with cooling water",
+          "symbol": "Qrej_eng",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with LO",
+          "symbol": "Qrej_lo",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss in Charge Air IC",
+          "symbol": "Qrej_air",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with TCH LO",
+          "symbol": "Qrej_turb",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Heat Loss in Heat Exchangers",
+          "symbol": "Qrej",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Vol. Flow (From Engine Speed)",
+          "symbol": "qexh",
+          "unit": "NL/min"
+        },
+        {
+          "name": "Exh. Gas Mass Flow",
+          "symbol": "Mexh",
+          "unit": "kg/s"
+        },
+        {
+          "name": "Exh.Gas Total Power",
+          "symbol": "Qexh1",
+          "unit": "kW"
+        },
+        {
+          "name": "TCH Power",
+          "symbol": "Qturb",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Power",
+          "symbol": "Qexh2",
+          "unit": "kW"
+        },
+        {
+          "name": "Other Loss",
+          "symbol": "Qother",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Efficiency",
+          "symbol": "Effn",
+          "unit": "%"
+        },
+        {
+          "name": "Indicated Efficiency",
+          "symbol": "Effi",
+          "unit": "%"
+        },
+        {
+          "name": "Effective Efficiency",
+          "symbol": "Efft",
+          "unit": "%"
+        }
+      ],
+      "sha256": "a7ba2fc1e25510e8f8363ec19df71fe9d2e9ba5c42b2c5928a19c63398b8c296"
+    },
+    {
+      "file": "Turbine_Degradation/Turbine_Degradation_85_Load.csv",
+      "rows": 5289,
+      "columns": 73,
+      "labels": {
+        "0": 2664,
+        "1": 2625
+      },
+      "time_range": [
+        0.0,
+        8000.0
+      ],
+      "time_nonincreasing": 0,
+      "delta_counts": {
+        "2.0": 2712,
+        "1.0": 2576
+      },
+      "normal": {
+        "Engine Speed": {
+          "min": 395.4182032,
+          "max": 398.1140805,
+          "mean": 396.75387595213965,
+          "std": 0.36267721186407564
+        },
+        "Engine room Temp.": {
+          "min": 30.96084,
+          "max": 32.04028,
+          "mean": 31.46512499249249,
+          "std": 0.17917793993488498
+        },
+        "Shaft Power": {
+          "min": 214.3804604,
+          "max": 219.5401843,
+          "mean": 216.89558398993995,
+          "std": 0.7860023145610127
+        },
+        "Cooling Water Temp. Engine In": {
+          "min": 58.37164,
+          "max": 58.66858,
+          "mean": 58.520379834834834,
+          "std": 0.05055453612556064
+        },
+        "Cooling Water Temp. Engine Out I": {
+          "min": 60.79086,
+          "max": 61.41341,
+          "mean": 61.108153003003004,
+          "std": 0.11068847869067429
+        },
+        "LO Temp. Engine In": {
+          "min": 48.3067,
+          "max": 999.0,
+          "mean": 53.27718150525526,
+          "std": 51.90527630502669
+        },
+        "LO Temp. Engine Out": {
+          "min": 58.97124,
+          "max": 61.03646,
+          "mean": 60.30381082207207,
+          "std": 0.5185157909112911
+        },
+        "LO Circulating Pump Press.": {
+          "min": 0.166390921,
+          "max": 0.169192795,
+          "mean": 0.16735545318506007,
+          "std": 0.0006400696237893829
+        },
+        "Fresh Cooling Water Press.": {
+          "min": 1.037865102,
+          "max": 1.15781723,
+          "mean": 1.096380094621997,
+          "std": 0.02217330135147863
+        }
+      },
+      "channels": [
+        {
+          "name": "Time_abs",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Time_rel",
+          "symbol": "",
+          "unit": "sec"
+        },
+        {
+          "name": "Anomaly State",
+          "symbol": "",
+          "unit": ""
+        },
+        {
+          "name": "Engine Speed",
+          "symbol": "N",
+          "unit": "rpm"
+        },
+        {
+          "name": "Compressor Filter Loss",
+          "symbol": "dPf",
+          "unit": "Pa"
+        },
+        {
+          "name": "Turbine Back Pressure",
+          "symbol": "dPex",
+          "unit": "Pa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.1",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.1",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.2",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.2",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Max. In-Cylinder Press. No.3",
+          "symbol": "Pmax",
+          "unit": "MPa"
+        },
+        {
+          "name": "Min. In-Cylinder Press. No.3",
+          "symbol": "Pmin",
+          "unit": "MPa"
+        },
+        {
+          "name": "Charge Air Press.",
+          "symbol": "Pturb",
+          "unit": "kgf/cm2"
+        },
+        {
+          "name": "Water Brake Weight",
+          "symbol": "F",
+          "unit": "kgf"
+        },
+        {
+          "name": "Fuel Flow",
+          "symbol": "Qfuel",
+          "unit": "m3/h"
+        },
+        {
+          "name": "No.1 Exh.Gas Temp.",
+          "symbol": "T1",
+          "unit": "°C"
+        },
+        {
+          "name": "No.2 Exh.Gas Temp.",
+          "symbol": "T2",
+          "unit": "°C"
+        },
+        {
+          "name": "No.3 Exh.Gas Temp.",
+          "symbol": "T3",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine In",
+          "symbol": "T4",
+          "unit": "°C"
+        },
+        {
+          "name": "Exh.Gas Temp. Turbine Out",
+          "symbol": "T5",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine In",
+          "symbol": "T6",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out I",
+          "symbol": "T7",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out II",
+          "symbol": "T8",
+          "unit": "°C"
+        },
+        {
+          "name": "Cooling Water Temp. Engine Out III",
+          "symbol": "T9",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine In",
+          "symbol": "T10",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. Engine Out",
+          "symbol": "T11",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. In",
+          "symbol": "T12",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Cooling Water Temp. Out",
+          "symbol": "T13",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. In",
+          "symbol": "T14",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Air Temp. Out",
+          "symbol": "T15",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. In",
+          "symbol": "T16",
+          "unit": "°C"
+        },
+        {
+          "name": "Charge Air IC Cooling Water Temp. Out",
+          "symbol": "T17",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Temp.",
+          "symbol": "T18",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH In",
+          "symbol": "T19",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Temp. TCH Out",
+          "symbol": "T20",
+          "unit": "°C"
+        },
+        {
+          "name": "Fuel Oil Temp. Flow meter In",
+          "symbol": "T21",
+          "unit": "°C"
+        },
+        {
+          "name": "Engine room Temp.",
+          "symbol": "T22",
+          "unit": "°C"
+        },
+        {
+          "name": "LO Circulating Pump Press.",
+          "symbol": "Pl_lo",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel transfer pump Press.",
+          "symbol": "Pl_fuel",
+          "unit": "V"
+        },
+        {
+          "name": "Fresh Cooling Water Press.",
+          "symbol": "Pl_water1",
+          "unit": "V"
+        },
+        {
+          "name": "Sea Cooling Water Press.",
+          "symbol": "Pl_water2",
+          "unit": "V"
+        },
+        {
+          "name": "TCH LO pump Press.",
+          "symbol": "Pl_loturb",
+          "unit": "V"
+        },
+        {
+          "name": "Fuel Injector Cooling Oil Press.",
+          "symbol": "Pl_valve",
+          "unit": "V"
+        },
+        {
+          "name": "Engine Cooling water flow",
+          "symbol": "Qw_eng",
+          "unit": "m3/h"
+        },
+        {
+          "name": "LO Cooling water flow",
+          "symbol": "Qw_lo",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Charge Air IC Cooling water flow",
+          "symbol": "Qw_air",
+          "unit": "m3/h"
+        },
+        {
+          "name": "TCH LO Cooling water flow",
+          "symbol": "Qw_turb",
+          "unit": "m3/h"
+        },
+        {
+          "name": "Total Input Energy",
+          "symbol": "Qtotal",
+          "unit": "W"
+        },
+        {
+          "name": "Indicated Work No.1",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.2",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Indicated Work No.3",
+          "symbol": "Wi",
+          "unit": "J"
+        },
+        {
+          "name": "Total Indicated work",
+          "symbol": "Wi_tot",
+          "unit": "J"
+        },
+        {
+          "name": "Effective Work No.1",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.2",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Effective Work No.3",
+          "symbol": "We",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Effective Work",
+          "symbol": "We_tot",
+          "unit": "kW"
+        },
+        {
+          "name": "Shaft Torque",
+          "symbol": "Tq",
+          "unit": "Nm"
+        },
+        {
+          "name": "Shaft Power",
+          "symbol": "Ws",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Loss",
+          "symbol": "Wm",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with cooling water",
+          "symbol": "Qrej_eng",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with LO",
+          "symbol": "Qrej_lo",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss in Charge Air IC",
+          "symbol": "Qrej_air",
+          "unit": "kW"
+        },
+        {
+          "name": "Loss with TCH LO",
+          "symbol": "Qrej_turb",
+          "unit": "kW"
+        },
+        {
+          "name": "Total Heat Loss in Heat Exchangers",
+          "symbol": "Qrej",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Vol. Flow (From Engine Speed)",
+          "symbol": "qexh",
+          "unit": "NL/min"
+        },
+        {
+          "name": "Exh. Gas Mass Flow",
+          "symbol": "Mexh",
+          "unit": "kg/s"
+        },
+        {
+          "name": "Exh.Gas Total Power",
+          "symbol": "Qexh1",
+          "unit": "kW"
+        },
+        {
+          "name": "TCH Power",
+          "symbol": "Qturb",
+          "unit": "kW"
+        },
+        {
+          "name": "Exh.Gas Power",
+          "symbol": "Qexh2",
+          "unit": "kW"
+        },
+        {
+          "name": "Other Loss",
+          "symbol": "Qother",
+          "unit": "kW"
+        },
+        {
+          "name": "Mechanical Efficiency",
+          "symbol": "Effn",
+          "unit": "%"
+        },
+        {
+          "name": "Indicated Efficiency",
+          "symbol": "Effi",
+          "unit": "%"
+        },
+        {
+          "name": "Effective Efficiency",
+          "symbol": "Efft",
+          "unit": "%"
+        }
+      ],
+      "sha256": "18cd3384a8a0499c40860c39b0303557b5f55ce08361195e087d634c6cce96db"
+    }
+  ]
+}

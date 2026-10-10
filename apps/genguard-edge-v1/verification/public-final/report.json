@@ -1,0 +1,132 @@
+{
+  "status": "evaluated_candidate_not_activated",
+  "normal_validation_passed": true,
+  "fault_trials_with_any_post_intervention_alarm": 0,
+  "fault_trials": 3,
+  "operational_use_approved": false,
+  "source": "https://zenodo.org/records/19857425",
+  "model_id": "gg-0e605fd896c180ec28a4",
+  "scope": "실제 공개 선박 디젤엔진 시험대의 별도 원본 파일 평가. IMU/발전 전압·전류 없음.",
+  "algorithm": "context-ridge-residual-covariance/1",
+  "validation": {
+    "passed": true,
+    "runs": [
+      {
+        "session_id": "public-turbine-degradation-40-load-normal",
+        "windows": 1915,
+        "unknown": 0,
+        "change_windows": 0,
+        "change_fraction": 0.0,
+        "passed": true
+      },
+      {
+        "session_id": "public-turbine-degradation-60-load-normal",
+        "windows": 1096,
+        "unknown": 0,
+        "change_windows": 0,
+        "change_fraction": 0.0,
+        "passed": true
+      }
+    ],
+    "meaning": "보류한 정상 기록의 오경보/조건범위 검사. 고장 탐지 성능 보증 아님."
+  },
+  "training_seconds": 0.6566774580060155,
+  "training_split": {
+    "fit": [
+      "public-af-clogging-40-load-normal",
+      "public-af-clogging-60-load-normal",
+      "public-af-clogging-75-load-normal",
+      "public-af-clogging-85-load-normal",
+      "public-ac-fouling-75-load-normal",
+      "public-ac-fouling-85-load-normal"
+    ],
+    "calibration": [
+      "public-ac-fouling-40-load-normal",
+      "public-ac-fouling-60-load-normal"
+    ],
+    "validation": [
+      "public-turbine-degradation-40-load-normal",
+      "public-turbine-degradation-60-load-normal"
+    ]
+  },
+  "test": [
+    {
+      "source_file": "Turbine_Degradation/Turbine_Degradation_85_Load.csv",
+      "labels": {
+        "0": {
+          "total": 2663,
+          "unknown": 8,
+          "change": 0,
+          "within_baseline": 2655
+        },
+        "1": {
+          "total": 2625,
+          "unknown": 84,
+          "change": 0,
+          "within_baseline": 2541
+        }
+      },
+      "fault_intervention_s": 4030.0,
+      "first_pre_intervention_alarm_s": null,
+      "first_post_intervention_alarm_s": null,
+      "post_intervention_delay_s": null,
+      "interpretation": "고장 개입 시점 이후 변화 검사. 고장 전 예지 시간이나 RUL이 아님."
+    },
+    {
+      "source_file": "Pump_Cavitation/CW_Pump_Cavitation_60_Load.csv",
+      "labels": {
+        "0": {
+          "total": 1379,
+          "unknown": 3,
+          "change": 0,
+          "within_baseline": 1376
+        },
+        "1": {
+          "total": 4465,
+          "unknown": 15,
+          "change": 0,
+          "within_baseline": 4450
+        }
+      },
+      "fault_intervention_s": 2251.0,
+      "first_pre_intervention_alarm_s": null,
+      "first_post_intervention_alarm_s": null,
+      "post_intervention_delay_s": null,
+      "interpretation": "고장 개입 시점 이후 변화 검사. 고장 전 예지 시간이나 RUL이 아님."
+    },
+    {
+      "source_file": "Pump_Cavitation/CW_Pump_Cavitation_85_Load.csv",
+      "labels": {
+        "0": {
+          "total": 1553,
+          "unknown": 6,
+          "change": 0,
+          "within_baseline": 1547
+        },
+        "1": {
+          "total": 4709,
+          "unknown": 5,
+          "change": 0,
+          "within_baseline": 4704
+        }
+      },
+      "fault_intervention_s": 2383.0,
+      "first_pre_intervention_alarm_s": null,
+      "first_post_intervention_alarm_s": null,
+      "post_intervention_delay_s": null,
+      "interpretation": "고장 개입 시점 이후 변화 검사. 고장 전 예지 시간이나 RUL이 아님."
+    }
+  ],
+  "hardware": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "uno_q_measured": false
+  },
+  "process_peak_rss_mib": 197.453125,
+  "limitations": [
+    "고장 개입 전후 라벨이며 실제 발전기 장기 열화/RUL 검증이 아님.",
+    "동일 원본 파일의 정상 prefix와 고장 suffix를 서로 다른 train/test 역할에 넣지 않음.",
+    "미학습 조건·품질불량은 unknown; 이를 정상 또는 탐지 성공으로 세지 않음.",
+    "모델/프로파일/분할은 테스트 결과에 맞춰 변경하지 않음."
+  ]
+}

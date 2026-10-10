@@ -1,0 +1,197 @@
+{
+  "scope": "합성 운전 데이터의 통합 동작 실험. 실제 발전기 성능/보드 성능 아님.",
+  "hardware": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.14",
+    "uno_q_measured": false
+  },
+  "profiles": {
+    "fusion_targets": [
+      "engine_rpm",
+      "coolant_c",
+      "oil_bar",
+      "voltage_v",
+      "current_a",
+      "vibration_rms_g",
+      "envelope_cv"
+    ],
+    "vibration_targets": [
+      "vibration_rms_g",
+      "envelope_cv"
+    ],
+    "shared_context": [
+      "load_pct",
+      "ambient_c"
+    ]
+  },
+  "models": {
+    "fusion": {
+      "model_id": "gg-236c6ff6e954c5eb39eb",
+      "training_seconds": 0.0777924170033657,
+      "validation": {
+        "passed": true,
+        "runs": [
+          {
+            "session_id": "val-1",
+            "windows": 300,
+            "unknown": 0,
+            "change_windows": 0,
+            "change_fraction": 0.0,
+            "passed": true
+          },
+          {
+            "session_id": "val-2",
+            "windows": 300,
+            "unknown": 0,
+            "change_windows": 0,
+            "change_fraction": 0.0,
+            "passed": true
+          }
+        ],
+        "meaning": "보류한 정상 기록의 오경보/조건범위 검사. 고장 탐지 성능 보증 아님."
+      },
+      "model_bytes": 4756
+    },
+    "vibration": {
+      "model_id": "gg-72a07ac254dcc4e7edd9",
+      "training_seconds": 0.06786591700074496,
+      "validation": {
+        "passed": true,
+        "runs": [
+          {
+            "session_id": "val-1",
+            "windows": 300,
+            "unknown": 0,
+            "change_windows": 0,
+            "change_fraction": 0.0,
+            "passed": true
+          },
+          {
+            "session_id": "val-2",
+            "windows": 300,
+            "unknown": 0,
+            "change_windows": 1,
+            "change_fraction": 0.0033333333333333335,
+            "passed": true
+          }
+        ],
+        "meaning": "보류한 정상 기록의 오경보/조건범위 검사. 고장 탐지 성능 보증 아님."
+      },
+      "model_bytes": 2499
+    }
+  },
+  "trials": [
+    {
+      "scenario": "normal",
+      "source_kind": "scenario",
+      "is_example": true,
+      "injection_start_s": null,
+      "models": {
+        "fusion": {
+          "first_persistent_change_s": null,
+          "pre_injection_change_windows": 0,
+          "unknown_windows": 0,
+          "total_windows": 300
+        },
+        "vibration": {
+          "first_persistent_change_s": null,
+          "pre_injection_change_windows": 1,
+          "unknown_windows": 0,
+          "total_windows": 300
+        }
+      }
+    },
+    {
+      "scenario": "thermal_pressure",
+      "source_kind": "scenario",
+      "is_example": true,
+      "injection_start_s": 240,
+      "models": {
+        "fusion": {
+          "first_persistent_change_s": 262.0,
+          "pre_injection_change_windows": 0,
+          "unknown_windows": 0,
+          "total_windows": 300
+        },
+        "vibration": {
+          "first_persistent_change_s": null,
+          "pre_injection_change_windows": 1,
+          "unknown_windows": 0,
+          "total_windows": 300
+        }
+      }
+    },
+    {
+      "scenario": "vibration",
+      "source_kind": "scenario",
+      "is_example": true,
+      "injection_start_s": 240,
+      "models": {
+        "fusion": {
+          "first_persistent_change_s": 244.0,
+          "pre_injection_change_windows": 0,
+          "unknown_windows": 0,
+          "total_windows": 300
+        },
+        "vibration": {
+          "first_persistent_change_s": 244.0,
+          "pre_injection_change_windows": 0,
+          "unknown_windows": 0,
+          "total_windows": 300
+        }
+      }
+    },
+    {
+      "scenario": "stale_controller",
+      "source_kind": "scenario",
+      "is_example": true,
+      "injection_start_s": 240,
+      "models": {
+        "fusion": {
+          "first_persistent_change_s": null,
+          "pre_injection_change_windows": 0,
+          "unknown_windows": 181,
+          "total_windows": 300
+        },
+        "vibration": {
+          "first_persistent_change_s": null,
+          "pre_injection_change_windows": 2,
+          "unknown_windows": 0,
+          "total_windows": 300
+        }
+      }
+    },
+    {
+      "scenario": "unseen_load",
+      "source_kind": "scenario",
+      "is_example": true,
+      "injection_start_s": 240,
+      "models": {
+        "fusion": {
+          "first_persistent_change_s": null,
+          "pre_injection_change_windows": 0,
+          "unknown_windows": 181,
+          "total_windows": 300
+        },
+        "vibration": {
+          "first_persistent_change_s": null,
+          "pre_injection_change_windows": 1,
+          "unknown_windows": 181,
+          "total_windows": 300
+        }
+      }
+    }
+  ],
+  "ingest_including_sqlite_ms": {
+    "median": 0.1906254983623512,
+    "p95": 0.2412687532341806,
+    "max": 4.247042001225054
+  },
+  "process_peak_rss_mib": 65.9375,
+  "notes": [
+    "Both comparators see load/ambient context; the difference is target sensor channels.",
+    "Predeclared profiles and seeds; no tuning on these test runs.",
+    "Synthetic injected changes are test cases, not diagnosed faults."
+  ]
+}

@@ -1,0 +1,75 @@
+full_name,symbol,unit,dtype,in_reference,in_scenario_files,category,note
+Time_abs,,sec,number,FALSE,TRUE,time / labeling,
+Time_rel,,sec,number,FALSE,TRUE,time / labeling,
+Anomaly State,,,integer,FALSE,TRUE,time / labeling,
+Engine Speed,N,rpm,number,TRUE,TRUE,operating / load,
+Compressor Filter Loss,dPf,Pa,number,TRUE,TRUE,pressure / derived pressure,"Present in all scenario files for schema uniformity; recorded values in 10 of 15 scenario files. Empty (not recorded) in: AC_Fouling_85_Load.csv, Clogged_Injector_Nozzle1_40_60_85_Load.csv, Clogged_Injector_Nozzle2_LoadProgram.csv, CW_Pump_Cavitation_60_Load.csv, CW_Pump_Cavitation_85_Load.csv."
+Turbine Back Pressure,dPex,Pa,number,FALSE,TRUE,pressure / derived pressure,"Present in all scenario files for schema uniformity; recorded values in 10 of 15 scenario files. Empty (not recorded) in: AC_Fouling_85_Load.csv, Clogged_Injector_Nozzle1_40_60_85_Load.csv, Clogged_Injector_Nozzle2_LoadProgram.csv, CW_Pump_Cavitation_60_Load.csv, CW_Pump_Cavitation_85_Load.csv."
+Max. In-Cylinder Press. No.1,Pmax,MPa,number,TRUE,TRUE,pressure / derived pressure,shorthand label is reused across cylinder-resolved and/or aggregate variables; use the full variable-name row during preprocessing
+Min. In-Cylinder Press. No.1,Pmin,MPa,number,TRUE,TRUE,pressure / derived pressure,shorthand label is reused across cylinder-resolved and/or aggregate variables; use the full variable-name row during preprocessing
+Max. In-Cylinder Press. No.2,Pmax,MPa,number,TRUE,TRUE,pressure / derived pressure,shorthand label is reused across cylinder-resolved and/or aggregate variables; use the full variable-name row during preprocessing
+Min. In-Cylinder Press. No.2,Pmin,MPa,number,TRUE,TRUE,pressure / derived pressure,shorthand label is reused across cylinder-resolved and/or aggregate variables; use the full variable-name row during preprocessing
+Max. In-Cylinder Press. No.3,Pmax,MPa,number,TRUE,TRUE,pressure / derived pressure,shorthand label is reused across cylinder-resolved and/or aggregate variables; use the full variable-name row during preprocessing
+Min. In-Cylinder Press. No.3,Pmin,MPa,number,TRUE,TRUE,pressure / derived pressure,shorthand label is reused across cylinder-resolved and/or aggregate variables; use the full variable-name row during preprocessing
+Charge Air Press.,Pturb,kgf/cm2,number,TRUE,TRUE,pressure / derived pressure,
+Water Brake Weight,F,kgf,number,TRUE,TRUE,operating / load,
+Fuel Flow,Qfuel,m3/h,number,TRUE,TRUE,flow / fuel / air,
+No.1 Exh.Gas Temp.,T1,°C,number,TRUE,TRUE,temperature,
+No.2 Exh.Gas Temp.,T2,°C,number,TRUE,TRUE,temperature,
+No.3 Exh.Gas Temp.,T3,°C,number,TRUE,TRUE,temperature,
+Exh.Gas Temp. Turbine In,T4,°C,number,TRUE,TRUE,temperature,
+Exh.Gas Temp. Turbine Out,T5,°C,number,TRUE,TRUE,temperature,
+Cooling Water Temp. Engine In,T6,°C,number,TRUE,TRUE,temperature,
+Cooling Water Temp. Engine Out I,T7,°C,number,TRUE,TRUE,temperature,
+Cooling Water Temp. Engine Out II,T8,°C,number,TRUE,TRUE,temperature,
+Cooling Water Temp. Engine Out III,T9,°C,number,TRUE,TRUE,temperature,
+LO Temp. Engine In,T10,°C,number,TRUE,TRUE,temperature,
+LO Temp. Engine Out,T11,°C,number,TRUE,TRUE,temperature,
+LO Cooling Water Temp. In,T12,°C,number,TRUE,TRUE,temperature,
+LO Cooling Water Temp. Out,T13,°C,number,TRUE,TRUE,temperature,
+Charge Air IC Air Temp. In,T14,°C,number,TRUE,TRUE,temperature,
+Charge Air IC Air Temp. Out,T15,°C,number,TRUE,TRUE,temperature,
+Charge Air IC Cooling Water Temp. In,T16,°C,number,TRUE,TRUE,temperature,
+Charge Air IC Cooling Water Temp. Out,T17,°C,number,TRUE,TRUE,temperature,
+Fuel Temp.,T18,°C,number,TRUE,TRUE,temperature,
+LO Temp. TCH In,T19,°C,number,TRUE,TRUE,temperature,
+LO Temp. TCH Out,T20,°C,number,TRUE,TRUE,temperature,
+Fuel Oil Temp. Flow meter In,T21,°C,number,TRUE,TRUE,temperature,
+Engine room Temp.,T22,°C,number,TRUE,TRUE,temperature,
+LO Circulating Pump Press.,Pl_lo,V,number,TRUE,TRUE,pressure / derived pressure,raw voltage signal associated with main LO pump pressure; not converted to engineering pressure units
+Fuel transfer pump Press.,Pl_fuel,V,number,TRUE,TRUE,pressure / derived pressure,raw voltage signal associated with fuel-side pressure; not converted to engineering pressure units
+Fresh Cooling Water Press.,Pl_water1,V,number,TRUE,TRUE,pressure / derived pressure,raw voltage signal associated with HT cooling-water pump pressure; not converted to engineering pressure units
+Sea Cooling Water Press.,Pl_water2,V,number,TRUE,TRUE,pressure / derived pressure,raw voltage signal associated with LT cooling-water pump pressure; not converted to engineering pressure units
+TCH LO pump Press.,Pl_loturb,V,number,TRUE,TRUE,pressure / derived pressure,raw voltage signal associated with turbocharger LO pump pressure; not converted to engineering pressure units
+Fuel Injector Cooling Oil Press.,Pl_valve,V,number,TRUE,TRUE,pressure / derived pressure,
+Engine Cooling water flow,Qw_eng,m3/h,number,TRUE,TRUE,flow / fuel / air,
+LO Cooling water flow,Qw_lo,m3/h,number,TRUE,TRUE,flow / fuel / air,
+Charge Air IC Cooling water flow,Qw_air,m3/h,number,TRUE,TRUE,flow / fuel / air,
+TCH LO Cooling water flow,Qw_turb,m3/h,number,TRUE,TRUE,flow / fuel / air,
+Total Input Energy,Qtotal,W,number,TRUE,TRUE,other,
+Indicated Work No.1,Wi,J,number,TRUE,TRUE,performance / derived,shorthand label is reused across cylinder-resolved and/or aggregate variables; use the full variable-name row during preprocessing
+Indicated Work No.2,Wi,J,number,TRUE,TRUE,performance / derived,shorthand label is reused across cylinder-resolved and/or aggregate variables; use the full variable-name row during preprocessing
+Indicated Work No.3,Wi,J,number,TRUE,TRUE,performance / derived,shorthand label is reused across cylinder-resolved and/or aggregate variables; use the full variable-name row during preprocessing
+Total Indicated work,Wi_tot,J,number,TRUE,TRUE,performance / derived,
+Effective Work No.1,We,kW,number,TRUE,TRUE,performance / derived,shorthand label is reused across cylinder-resolved and/or aggregate variables; use the full variable-name row during preprocessing
+Effective Work No.2,We,kW,number,TRUE,TRUE,performance / derived,shorthand label is reused across cylinder-resolved and/or aggregate variables; use the full variable-name row during preprocessing
+Effective Work No.3,We,kW,number,TRUE,TRUE,performance / derived,shorthand label is reused across cylinder-resolved and/or aggregate variables; use the full variable-name row during preprocessing
+Total Effective Work,We_tot,kW,number,TRUE,TRUE,performance / derived,
+Shaft Torque,Tq,Nm,number,TRUE,TRUE,other,
+Shaft Power,Ws,kW,number,TRUE,TRUE,other,
+Mechanical Loss,Wm,kW,number,TRUE,TRUE,performance / derived,
+Loss with cooling water,Qrej_eng,kW,number,TRUE,TRUE,performance / derived,
+Loss with LO,Qrej_lo,kW,number,TRUE,TRUE,performance / derived,
+Loss in Charge Air IC,Qrej_air,kW,number,TRUE,TRUE,performance / derived,
+Loss with TCH LO,Qrej_turb,kW,number,TRUE,TRUE,performance / derived,
+Total Heat Loss in Heat Exchangers,Qrej,kW,number,TRUE,TRUE,performance / derived,
+Exh.Gas Vol. Flow (From Engine Speed),qexh,NL/min,number,TRUE,TRUE,flow / fuel / air,
+Exh. Gas Mass Flow,Mexh,kg/s,number,TRUE,TRUE,flow / fuel / air,
+Exh.Gas Total Power,Qexh1,kW,number,TRUE,TRUE,other,
+TCH Power,Qturb,kW,number,TRUE,TRUE,other,
+Exh.Gas Power,Qexh2,kW,number,TRUE,TRUE,other,
+Other Loss,Qother,kW,number,TRUE,TRUE,performance / derived,
+Mechanical Efficiency,Effn,%,number,TRUE,TRUE,performance / derived,
+Indicated Efficiency,Effi,%,number,TRUE,TRUE,performance / derived,
+Effective Efficiency,Efft,%,number,TRUE,TRUE,performance / derived,
+Time,T,sec,number,TRUE,FALSE,time / labeling,

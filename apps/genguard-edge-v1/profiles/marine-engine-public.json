@@ -1,0 +1,39 @@
+{
+  "schema_version": "genguard.edge.profile/1",
+  "profile_id": "marine-engine-public-v1",
+  "asset_id": "MATSUI-MU323DGSC-RESEARCH",
+  "data_domain": "public_replay",
+  "description": "실제 선박용 디젤엔진 시험대의 제어계측 데이터 재생. 군 비상발전기/IMU 통합 실측 모델이 아님.",
+  "phases": ["running"],
+  "context": ["load_pct", "ambient_c"],
+  "context_tolerance": {"load_pct": 5, "ambient_c": 3},
+  "targets": ["engine_rpm", "coolant_c", "oil_temp_c", "oil_pressure_signal_v", "coolant_pressure_signal_v"],
+  "max_window_gap_s": 10,
+  "fields": {
+    "load_pct": {"unit": "%", "max_age_s": 10, "valid_min": 0, "valid_max": 150},
+    "ambient_c": {"unit": "degC", "max_age_s": 10, "valid_min": -50, "valid_max": 100},
+    "engine_rpm": {"unit": "rpm", "max_age_s": 10, "valid_min": 0, "valid_max": 10000, "scale_floor": 1.0, "checks": ["동일 부하의 회전수 변화와 계측 상태를 확인하세요. 이 시험대의 rpm은 비상발전기 정격 rpm과 다릅니다."]},
+    "coolant_c": {"unit": "degC", "max_age_s": 10, "valid_min": -50, "valid_max": 200, "scale_floor": 0.2, "checks": ["냉각수 출구 I의 온도 변화입니다. 부하·유량·센서 위치와 냉각계통을 확인하세요."]},
+    "oil_temp_c": {"unit": "degC", "max_age_s": 10, "valid_min": -50, "valid_max": 200, "scale_floor": 0.2, "checks": ["윤활유 입구 온도 변화입니다. 운전 조건과 윤활계통·센서 상태를 확인하세요."]},
+    "oil_pressure_signal_v": {"unit": "V", "max_age_s": 10, "valid_min": -20, "valid_max": 20, "scale_floor": 0.005, "checks": ["윤활유 순환펌프 압력 센서의 원시 전압입니다. 보정식이 없어 bar 압력이나 저유압 경보로 해석할 수 없습니다."]},
+    "coolant_pressure_signal_v": {"unit": "V", "max_age_s": 10, "valid_min": -20, "valid_max": 20, "scale_floor": 0.005, "checks": ["청수 냉각 압력 센서의 원시 전압입니다. 센서 보정·유량·펌프 조건을 함께 확인하세요."]}
+  },
+  "model": {
+    "ridge_alpha": 1.0,
+    "covariance_shrinkage": 0.15,
+    "calibration_quantile": 0.99,
+    "threshold_margin": 1.1,
+    "minimum_score_threshold": 2.0,
+    "persistence_windows": 3,
+    "min_rows_per_session": 30,
+    "max_rows_per_session": 2000,
+    "max_sessions_per_training": 30,
+    "max_invalid_fraction": 0.05,
+    "max_validation_alert_fraction": 0.05
+  },
+  "parameter_provenance": "입력 단위는 원본 CSV. 측정범위·scale floor·허용 조건차·학습 하이퍼파라미터는 개발 가정이며 제조사 보호 기준이 아니다. 압력 관련 V 채널은 raw voltage를 보존한다.",
+  "context_design": "고정 부하에서 안정화 후 고장을 주입한 공개 실험이므로 elapsed_s를 입력 특징에서 제외한다. 시간은 데이터 순서·샘플 간격·탐지 시각 계산용으로 보존한다. 정상 prefix의 최대 시간 이후라는 이유만으로 고장 suffix 전체를 미학습 시간으로 거부하지 않도록 했다. 이는 시동/예열 모델이 아니며 실제 발전기 예열 프로파일에는 그대로 적용하지 않는다.",
+  "manufacturer_protection": "실험 변화 탐지용이다. 실제 발전기 보호 경보·정지 제어를 수행하지 않는다.",
+  "source_dataset": "https://doi.org/10.5281/zenodo.19857425",
+  "absent_channels": ["imu", "electrical_output_voltage", "electrical_output_current", "oil_pressure_bar"]
+}

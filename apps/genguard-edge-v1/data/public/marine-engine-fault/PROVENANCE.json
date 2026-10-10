@@ -1,0 +1,40 @@
+{
+  "dataset_title": "Marine Engine Fault",
+  "dataset_doi": "10.5281/zenodo.19857425",
+  "source_url": "https://zenodo.org/records/19857425",
+  "download_url": "https://zenodo.org/api/records/19857425/files/Marine_Engine_Fault_Data_v1.zip/content",
+  "accessed_date": "2026-10-10",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "authors": [
+    "BahooToroody, Ahmad",
+    "Bondarenko, Oleksiy",
+    "Abaei, Mohammad Mahdi",
+    "Niki, Yoichi",
+    "Zio, Enrico"
+  ],
+  "paper_url": "https://arxiv.org/abs/2607.19444",
+  "paper_status": "preprint; downloaded README says submitted/under review",
+  "file": "Marine_Engine_Fault_Data_v1.zip",
+  "archive": {
+    "sha256": "3fba7aa0c288ae1bc05383fb54bf67cbde209d61b26e3e811d4bc2f22f97442b",
+    "md5": "f4d246c1bb46e05b26e56221acc2606c",
+    "size_bytes": 26538633
+  },
+  "total_csv_data_files": 16,
+  "total_source_rows": 114770,
+  "metadata_dates_note": "Zenodo API publication_date is 2026-04-28; description issued date is 2026-07-27. Original metadata retained; no new publication chronology inferred.",
+  "changes": "Source ZIP untouched. README/LICENSE/CITATION/dictionary/index copied unmodified. Inspection and research loader added. Replay frames use documented field names and retain units. Unknown channels null, no joined IMU.",
+  "known_scope": "Single marine diesel engine test bench; physical induced faults; no future RUL; no simultaneous team IMU or electrical generator output data.",
+  "download_verified": true,
+  "quality_observation": {
+    "channel": "LO Temp. Engine In",
+    "observed_value": 999.0,
+    "unit": "degC",
+    "all_source_rows": 842,
+    "normal_prefix_rows": 196,
+    "anomaly_rows": 348,
+    "reference_rows": 298,
+    "handling": "Retain raw value and mark quality invalid; do not interpolate or learn as normal. Exact sentinel semantics undocumented."
+  }
+}

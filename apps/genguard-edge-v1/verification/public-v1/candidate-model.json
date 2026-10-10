@@ -1,0 +1,148 @@
+{
+  "schema_version": "genguard.edge.model/1",
+  "algorithm": "context-ridge-residual-covariance/1",
+  "profile_hash": "bb8e34b5f73076bfcd62b12383eab0b25aed49d935d5ff329b08cf372bf39bde",
+  "asset_id": "MATSUI-MU323DGSC-RESEARCH",
+  "installation_id": "marine-engine-fault-v1",
+  "data_domain": "public_replay",
+  "created_at": "2026-10-10T13:33:05.420561+00:00",
+  "phases": {
+    "running": {
+      "context_mean": [
+        68.7321114737635,
+        22.55860099297017
+      ],
+      "context_scale": [
+        16.673506393416822,
+        4.52302684193001
+      ],
+      "context_low": [
+        35.0,
+        10.76723
+      ],
+      "context_high": [
+        90.0,
+        33.19901
+      ],
+      "weights": [
+        [
+          367.404644101272,
+          60.35119572307296,
+          46.68697175495885,
+          0.16531447022001888,
+          1.080965539472307
+        ],
+        [
+          32.077048435111585,
+          0.3452043487648822,
+          1.4283683395450624,
+          0.005074974368472169,
+          -0.0029626308371133525
+        ],
+        [
+          -0.9035069682409863,
+          -0.1412781076241296,
+          0.46868341038861383,
+          -0.0002991242606820908,
+          0.02428222415240813
+        ]
+      ],
+      "residual_mean": [
+        -3.227787106138325e-13,
+        9.566727414161911e-14,
+        -2.6829276658432493e-13,
+        2.0861280176180641e-16,
+        -6.555862779305506e-15
+      ],
+      "residual_scale": [
+        1.1607626580558397,
+        0.2768474287399462,
+        2.6880648548028674,
+        0.005,
+        0.030320828691621785
+      ],
+      "precision": [
+        [
+          1.5319021495731608,
+          -0.42239014929231367,
+          0.07352940147752608,
+          -0.7517317415931049,
+          -0.06175783688910797
+        ],
+        [
+          -0.4223901492923136,
+          1.1637422171633942,
+          -0.2401986846575577,
+          -0.06734134802458648,
+          -0.141664370750548
+        ],
+        [
+          0.07352940147752632,
+          -0.2401986846575578,
+          3.015540459282278,
+          2.673680490544409,
+          0.0730747317127991
+        ],
+        [
+          -0.7517317415931043,
+          -0.06734134802458658,
+          2.673680490544409,
+          4.068805317305532,
+          -0.09778004583966873
+        ],
+        [
+          -0.06175783688910799,
+          -0.141664370750548,
+          0.0730747317127991,
+          -0.09778004583966873,
+          1.0615522722863902
+        ]
+      ],
+      "fit_count": 7966,
+      "threshold": 4.09861676905533,
+      "calibration_count": 2236
+    }
+  },
+  "fit_sessions": [
+    "public-af-clogging-40-load-normal",
+    "public-af-clogging-60-load-normal",
+    "public-af-clogging-75-load-normal",
+    "public-af-clogging-85-load-normal",
+    "public-ac-fouling-75-load-normal",
+    "public-ac-fouling-85-load-normal"
+  ],
+  "calibration_sessions": [
+    "public-ac-fouling-40-load-normal",
+    "public-ac-fouling-60-load-normal"
+  ],
+  "validation_sessions": [
+    "public-turbine-degradation-40-load-normal",
+    "public-turbine-degradation-60-load-normal"
+  ],
+  "training_fingerprint": "66516d1a0dcba80301c40e9301bd018088e0e1b9bcaf45a9af6dbfacf15a603d",
+  "scope": "상태 변화 탐지. 고장 원인 확정/잔여수명/제조사 보호장치 대체 아님.",
+  "validation": {
+    "passed": true,
+    "runs": [
+      {
+        "session_id": "public-turbine-degradation-40-load-normal",
+        "windows": 1915,
+        "unknown": 0,
+        "change_windows": 0,
+        "change_fraction": 0.0,
+        "passed": true
+      },
+      {
+        "session_id": "public-turbine-degradation-60-load-normal",
+        "windows": 1096,
+        "unknown": 0,
+        "change_windows": 0,
+        "change_fraction": 0.0,
+        "passed": true
+      }
+    ],
+    "meaning": "보류한 정상 기록의 오경보/조건범위 검사. 고장 탐지 성능 보증 아님."
+  },
+  "training_seconds": 0.627787042001728,
+  "model_id": "gg-d61622472614775bebd5"
+}

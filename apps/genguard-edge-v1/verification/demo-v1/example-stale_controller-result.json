@@ -1,0 +1,112 @@
+{
+  "schema_version": "genguard.edge.result/1",
+  "asset_id": "GEN-DEMO-001",
+  "session_id": "test-stale_controller",
+  "seq": 156,
+  "measured_at": null,
+  "elapsed_s": 312.0,
+  "phase": "running",
+  "data_domain": "scenario",
+  "is_demonstration": true,
+  "input_sources": {
+    "load_pct": "scenario",
+    "ambient_c": "scenario",
+    "engine_rpm": "scenario",
+    "coolant_c": "scenario",
+    "oil_bar": "scenario",
+    "voltage_v": "scenario",
+    "current_a": "scenario",
+    "vibration_rms_g": "scenario",
+    "envelope_cv": "scenario"
+  },
+  "readings": {
+    "load_pct": {
+      "value": 30.775577999357537,
+      "unit": "%",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "ambient_c": {
+      "value": 25.431314134701854,
+      "unit": "degC",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "engine_rpm": {
+      "value": 1800.6430522440971,
+      "unit": "rpm",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "coolant_c": {
+      "value": 73.81359010810496,
+      "unit": "degC",
+      "source": "scenario",
+      "age_s": 60.0,
+      "quality": "ok"
+    },
+    "oil_bar": {
+      "value": 3.1530837021838787,
+      "unit": "bar",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "voltage_v": {
+      "value": 240.48859284354558,
+      "unit": "V",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "current_a": {
+      "value": 9.531046525562392,
+      "unit": "A",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "vibration_rms_g": {
+      "value": 0.026202188551989112,
+      "unit": "g",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "envelope_cv": {
+      "value": 0.10822484330835075,
+      "unit": "1",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    }
+  },
+  "state": "unknown",
+  "quality_flags": [
+    "stale_or_unknown_age:coolant_c"
+  ],
+  "model_id": "gg-def33dae8ecc960692e0",
+  "reference_model_id": "gg-def33dae8ecc960692e0",
+  "current_comparison": {
+    "state": "unknown",
+    "reason": "input_quality",
+    "score": null,
+    "threshold": null,
+    "evidence": [],
+    "quality_flags": [
+      "stale_or_unknown_age:coolant_c"
+    ]
+  },
+  "initial_comparison": null,
+  "persistent_change": false,
+  "change_streak": 0,
+  "open_alert_in_session": false,
+  "checks": [],
+  "rul": null,
+  "fault_diagnosis": null,
+  "summary": "입력 품질 또는 운전 조건 때문에 현재 모델로 판단할 수 없습니다.",
+  "record_id": 3456
+}

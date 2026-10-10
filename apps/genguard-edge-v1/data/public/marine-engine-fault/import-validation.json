@@ -1,0 +1,182 @@
+{
+  "check": "all primary source rows converted and validated",
+  "files": {
+    "AF_Clogging/AF_Clogging_40_Load.csv": {
+      "frames": 4819,
+      "quality_flags": {
+        "outside_measurement_range:oil_temp_c": 44,
+        "quality:oil_temp_c": 44
+      },
+      "invalid_frames": 44,
+      "source_labels": {
+        "0": 1689,
+        "1": 3130
+      },
+      "role": "fit"
+    },
+    "AF_Clogging/AF_Clogging_60_Load.csv": {
+      "frames": 6818,
+      "quality_flags": {
+        "outside_measurement_range:oil_temp_c": 25,
+        "quality:oil_temp_c": 25
+      },
+      "invalid_frames": 25,
+      "source_labels": {
+        "0": 2094,
+        "1": 4724
+      },
+      "role": "fit"
+    },
+    "AF_Clogging/AF_Clogging_75_Load.csv": {
+      "frames": 5917,
+      "quality_flags": {
+        "outside_measurement_range:oil_temp_c": 67,
+        "quality:oil_temp_c": 67
+      },
+      "invalid_frames": 67,
+      "source_labels": {
+        "0": 2367,
+        "1": 3550
+      },
+      "role": "fit"
+    },
+    "AF_Clogging/AF_Clogging_85_Load.csv": {
+      "frames": 6397,
+      "quality_flags": {
+        "outside_measurement_range:oil_temp_c": 75,
+        "quality:oil_temp_c": 75
+      },
+      "invalid_frames": 75,
+      "source_labels": {
+        "0": 2727,
+        "1": 3670
+      },
+      "role": "fit"
+    },
+    "AC_Fouling/AC_Fouling_75_Load.csv": {
+      "frames": 6353,
+      "quality_flags": {
+        "outside_measurement_range:oil_temp_c": 44,
+        "quality:oil_temp_c": 44
+      },
+      "invalid_frames": 44,
+      "source_labels": {
+        "0": 1664,
+        "1": 4689
+      },
+      "role": "fit"
+    },
+    "AC_Fouling/AC_Fouling_85_Load.csv": {
+      "frames": 5800,
+      "quality_flags": {
+        "outside_measurement_range:oil_temp_c": 5,
+        "quality:oil_temp_c": 5
+      },
+      "invalid_frames": 5,
+      "source_labels": {
+        "0": 1090,
+        "1": 4710
+      },
+      "role": "fit"
+    },
+    "AC_Fouling/AC_Fouling_40_Load.csv": {
+      "frames": 4677,
+      "quality_flags": {
+        "outside_measurement_range:oil_temp_c": 18,
+        "quality:oil_temp_c": 18
+      },
+      "invalid_frames": 18,
+      "source_labels": {
+        "0": 1217,
+        "1": 3460
+      },
+      "role": "calibration"
+    },
+    "AC_Fouling/AC_Fouling_60_Load.csv": {
+      "frames": 6697,
+      "quality_flags": {
+        "outside_measurement_range:oil_temp_c": 35,
+        "quality:oil_temp_c": 35
+      },
+      "invalid_frames": 35,
+      "source_labels": {
+        "0": 2056,
+        "1": 4641
+      },
+      "role": "calibration"
+    },
+    "Turbine_Degradation/Turbine_Degradation_40_Load.csv": {
+      "frames": 6396,
+      "quality_flags": {
+        "outside_measurement_range:oil_temp_c": 24,
+        "quality:oil_temp_c": 24
+      },
+      "invalid_frames": 24,
+      "source_labels": {
+        "0": 3846,
+        "1": 2550
+      },
+      "role": "validation"
+    },
+    "Turbine_Degradation/Turbine_Degradation_60_Load.csv": {
+      "frames": 4904,
+      "quality_flags": {
+        "outside_measurement_range:oil_temp_c": 96,
+        "quality:oil_temp_c": 96
+      },
+      "invalid_frames": 96,
+      "source_labels": {
+        "0": 2233,
+        "1": 2671
+      },
+      "role": "validation"
+    },
+    "Turbine_Degradation/Turbine_Degradation_85_Load.csv": {
+      "frames": 5288,
+      "quality_flags": {
+        "outside_measurement_range:oil_temp_c": 27,
+        "quality:oil_temp_c": 27
+      },
+      "invalid_frames": 27,
+      "source_labels": {
+        "0": 2663,
+        "1": 2625
+      },
+      "role": "test"
+    },
+    "Pump_Cavitation/CW_Pump_Cavitation_60_Load.csv": {
+      "frames": 5844,
+      "quality_flags": {
+        "outside_measurement_range:oil_temp_c": 18,
+        "quality:oil_temp_c": 18
+      },
+      "invalid_frames": 18,
+      "source_labels": {
+        "0": 1379,
+        "1": 4465
+      },
+      "role": "test"
+    },
+    "Pump_Cavitation/CW_Pump_Cavitation_85_Load.csv": {
+      "frames": 6262,
+      "quality_flags": {
+        "outside_measurement_range:oil_temp_c": 11,
+        "quality:oil_temp_c": 11
+      },
+      "invalid_frames": 11,
+      "source_labels": {
+        "0": 1553,
+        "1": 4709
+      },
+      "role": "test"
+    }
+  },
+  "total_frames": 76172,
+  "invalid_frames": 489,
+  "unique_source_files_across_roles": true,
+  "missing_channels_stayed_missing": true,
+  "pressure_voltage_units_preserved": true,
+  "separate_labels": true,
+  "first_row_omitted": true,
+  "sentinel_note": "LO inlet 999 degC is retained with quality invalid; exact source meaning undocumented."
+}

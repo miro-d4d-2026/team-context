@@ -1,0 +1,18 @@
+{
+  "unit_tests": {
+    "passed": true,
+    "count": 53,
+    "seconds": 0.94,
+    "command": "python -m unittest discover -s tests -v"
+  },
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "platform": "macOS-27.2-arm64-arm-64bit",
+  "physical_UNO_Q_verified": false,
+  "physical_generator_verified": false,
+  "notes": [
+    "53 tests are code and synthetic transport checks.",
+    "Local HTTP test in web-smoke.json.",
+    "Benchmarks in demo-final/report.json and public-final/report.json are Mac measurements."
+  ]
+}

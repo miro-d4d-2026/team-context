@@ -1,0 +1,76 @@
+{
+  "schema_version": "genguard.edge.window/1",
+  "asset_id": "GEN-DEMO-001",
+  "session_id": "example-scenario",
+  "installation_id": "synthetic-fixture-v1",
+  "seq": 1,
+  "elapsed_s": 2.0,
+  "duration_s": 2.0,
+  "phase": "running",
+  "measured_at": null,
+  "readings": {
+    "load_pct": {
+      "value": 50.65396009826377,
+      "unit": "%",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "ambient_c": {
+      "value": 25.181882504255046,
+      "unit": "degC",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "engine_rpm": {
+      "value": 1800.7112054913732,
+      "unit": "rpm",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "coolant_c": {
+      "value": 75.85407974433659,
+      "unit": "degC",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "oil_bar": {
+      "value": 3.1779828205038143,
+      "unit": "bar",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "voltage_v": {
+      "value": 240.21936803971326,
+      "unit": "V",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "current_a": {
+      "value": 15.873111218249758,
+      "unit": "A",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "vibration_rms_g": {
+      "value": 0.03062980875024574,
+      "unit": "g",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    },
+    "envelope_cv": {
+      "value": 0.12555435797965828,
+      "unit": "1",
+      "source": "scenario",
+      "age_s": 0.0,
+      "quality": "ok"
+    }
+  }
+}
