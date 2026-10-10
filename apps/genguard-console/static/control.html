@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GenGuard 발표자 조작</title>
+<style>
+  :root { --bg:#f5f6f7; --panel:#fff; --line:#dfe4e7; --text:#14202a; --muted:#61707a; --ai:#2f6fd6; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f1418; --panel:#172026; --line:#28343c; --text:#e8eef1; --muted:#93a3ac; } }
+  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.5 -apple-system,"Apple SD Gothic Neo",system-ui,sans-serif; }
+  .wrap { max-width:520px; margin:0 auto; padding:18px 16px 40px; }
+  h1 { font-size:20px; margin:0 0 12px; }
+  .seg { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-bottom:14px; }
+  button { font:inherit; padding:14px 10px; border:1px solid var(--line); background:var(--panel); color:var(--text); border-radius:10px; cursor:pointer; text-align:left; }
+  button.on { border:2px solid var(--ai); }
+  .scenes { display:grid; gap:8px; }
+  .scenes small { display:block; color:var(--muted); font-size:13px; }
+  .row { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:14px; }
+  details { margin-top:16px; } summary { color:var(--muted); cursor:pointer; }
+  .all { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; } .all button { padding:8px 10px; font-size:14px; }
+  .muted { color:var(--muted); font-size:13px; margin-top:12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>발표자 조작</h1>
+  <div class="seg" id="seg"></div>
+  <div class="scenes" id="scenes"></div>
+  <div class="row"><button id="fast">시연 가속 ×10</button><button id="reset">새 운전 시작</button></div>
+  <details><summary>모든 장면</summary><div class="all" id="all"></div></details>
+  <div class="muted">버튼은 입력값만 바꿉니다. 경보와 AI 판정은 관제 화면이 실제 계산으로 정합니다.</div>
+</div>
+<script type="module">
+import { SCENARIOS } from './vendor/engine.mjs';
+const $ = id => document.getElementById(id);
+const NAMES = { 'GEN-10K-001': '1호기', 'GEN-10K-002': '2호기', 'GEN-10K-003': '3호기' };
+const SCENES = [
+  ['normal', false, '정상', '모든 값 평소 수준'],
+  ['coolant_high', false, '수온 과열', '규칙 경보와 AI가 함께 잡음'],
+  ['joint_drift', false, '복합 변화', '각 값은 기준 안 · AI만 잡음'],
+  ['normal', true, '저유압 추세', '유압이 서서히 하락 · 가속과 함께'],
+  ['missing', false, '값 끊김', '정상으로 표시하지 않음'],
+];
+let asset = 'GEN-10K-001', state = null;
+const send = body => fetch('/api/control', { method: 'POST', body: JSON.stringify(body) }).then(r => r.json()).then(s => { state = s; render(); });
+function render() {
+  $('seg').innerHTML = Object.entries(NAMES).map(([id, n]) => `<button data-a="${id}" class="${id === asset ? 'on' : ''}">${n}</button>`).join('');
+  for (const b of $('seg').children) b.onclick = () => { asset = b.dataset.a; render(); };
+  const cur = state?.assets?.[asset];
+  $('scenes').innerHTML = SCENES.map(([s, ramp, t, d], i) => `<button data-i="${i}" class="${cur && cur.scenario === s && cur.ramp === ramp ? 'on' : ''}">${t}<small>${d}</small></button>`).join('');
+  for (const b of $('scenes').children) b.onclick = () => { const [s, ramp] = SCENES[b.dataset.i]; send({ asset, scenario: s, ramp, ...(ramp ? { fast: true } : {}) }); };
+  $('fast').className = state?.fast ? 'on' : '';
+  $('all').innerHTML = SCENARIOS.scenarios.map(s => `<button data-s="${s.id}">${s.label}</button>`).join('');
+  for (const b of $('all').children) b.onclick = () => send({ asset, scenario: b.dataset.s, ramp: false });
+}
+$('fast').onclick = () => send({ fast: !state?.fast });
+$('reset').onclick = () => send({ asset, reset: true });
+fetch('/api/control').then(r => r.json()).then(s => { state = s; render(); });
+</script>
+</body>
+</html>

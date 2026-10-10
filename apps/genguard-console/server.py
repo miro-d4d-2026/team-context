@@ -8,6 +8,7 @@ Serves the web console (static/) and three JSON endpoints:
                     so 3 consecutive changes become inspection_suggested
   GET  /api/live    latest live IMU vibration RMS read from the Qwiic gateway
   GET  /api/status  engine, model, license and network facts for the header
+  GET/POST /api/control  presenter scene per asset (control.html -> index.html)
 
 Fixed alarm rules and the trend estimate run in the browser (Woozy's engine.mjs
 and trend.mjs). The model never sees the live IMU: it was trained on synthetic
@@ -132,7 +133,31 @@ def network_reachable() -> bool:
     return result["ok"]
 
 
-def make_handler(judge: Judge, live: LiveIMU):
+class Control:
+    """Presenter settings (control.html) that the console (index.html) follows."""
+
+    def __init__(self, assets=("GEN-10K-001", "GEN-10K-002", "GEN-10K-003")):
+        self.lock = threading.Lock()
+        self.state = {"fast": False, "assets": {a: {"scenario": "normal", "ramp": False, "run": 1} for a in assets}}
+
+    def get(self):
+        with self.lock:
+            return json.loads(json.dumps(self.state))
+
+    def update(self, body: dict):
+        with self.lock:
+            if "fast" in body:
+                self.state["fast"] = bool(body["fast"])
+            asset = self.state["assets"].get(body.get("asset"))
+            if asset is not None:
+                if "scenario" in body:
+                    asset.update(scenario=str(body["scenario"]), ramp=bool(body.get("ramp", False)), run=asset["run"] + 1)
+                if body.get("reset"):
+                    asset["run"] += 1
+            return json.loads(json.dumps(self.state))
+
+
+def make_handler(judge: Judge, live: LiveIMU, control: Control):
     class Handler(SimpleHTTPRequestHandler):
         def __init__(self, *a, **kw):
             super().__init__(*a, directory=str(HERE / "static"), **kw)
@@ -154,6 +179,8 @@ def make_handler(judge: Judge, live: LiveIMU):
                 info = dict(live.latest)
                 info["age_s"] = None if info["at"] is None else round(time.time() - info["at"], 2)
                 return self.send_json(info)
+            if self.path == "/api/control":
+                return self.send_json(control.get())
             if self.path == "/api/status":
                 lic = "env" if os.environ.get("CLIKA_RT_LICENSE") else (
                     "file" if (Path.home() / ".clika/runtime/license").exists() else "none")
@@ -165,10 +192,12 @@ def make_handler(judge: Judge, live: LiveIMU):
             return super().do_GET()
 
         def do_POST(self):
-            if self.path != "/api/score":
+            if self.path not in ("/api/score", "/api/control"):
                 return self.send_json({"error": "not found"}, 404)
             try:
                 body = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))))
+                if self.path == "/api/control":
+                    return self.send_json(control.update(body))
                 return self.send_json(judge.score(body))
             except Exception as err:  # report, keep serving
                 return self.send_json({"state": "unknown", "reason": f"server_error:{type(err).__name__}",
@@ -189,7 +218,7 @@ def main():
     live = LiveIMU()
     live.start()
     print(f"GenGuard console http://{args.host}:{args.port}  engine={judge.engine}", flush=True)
-    ThreadingHTTPServer((args.host, args.port), make_handler(judge, live)).serve_forever()
+    ThreadingHTTPServer((args.host, args.port), make_handler(judge, live, Control())).serve_forever()
 
 
 if __name__ == "__main__":
