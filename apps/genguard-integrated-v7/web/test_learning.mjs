@@ -1,24 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {REVIEW_LABELS,sourceText,profileText,escapeLearning,selectionSummary,trainingBlocker,candidateStatus,reviewPayload,intervalPayload,labelRows,captureCaption,candidateMarkup,sessionSignature,currentFeedbackLabel,runPresentation,experimentField,experimentHistory,experimentChart,durationText,modelLearningFacts,workflowSummary,reportWindowCaption,latestReportId,currentModelMarkup,storedMonitorSummary,storedMonitorMarkup,reviewedReportSummary,learningCohorts,autoTrainingPayload,autoTrainingBlocker,autoPlanKey,autoPlanCaption,candidateTrainingCounts,excludedTrainingMarkup} from './learning.mjs';
+import {REVIEW_LABELS,sourceText,profileText,escapeLearning,candidateStatus,reviewPayload,intervalPayload,labelRows,captureCaption,candidateMarkup,sessionSignature,currentFeedbackLabel,runPresentation,experimentField,experimentHistory,experimentChart,durationText,modelLearningFacts,workflowSummary,reportWindowCaption,latestReportId,currentModelMarkup,storedMonitorSummary,storedMonitorMarkup,reviewedReportSummary,learningCohorts,reviewedRecordCaption,trainingSummaryMarkup,suggestedCaptureCondition,captureConditionValue,capturePayload,autoTrainingPayload,autoTrainingBlocker,autoPlanKey,autoPlanCaption,candidateTrainingCounts,excludedTrainingMarkup} from './learning.mjs';
 const meta={asset_id:'GEN-1',installation_id:'phone-1',source_kind:'hardware',profile:'vibration',condition:'same',sensor_config:{odr:208,range:4}};
 const session=(id,review,role)=>({id,review,role,ended:20,started:1,count:40,meta:{...meta,label:id}});
-const normal=[session('n1','normal','fit'),session('n2','normal','fit'),session('n3','normal','calibration'),session('n4','normal','validation')];
-const abnormal=[session('a1','abnormal','fit'),session('a2','abnormal','fit'),session('a3','abnormal','calibration'),session('a4','abnormal','validation')];
-const state=sessions=>({sessions,live:false,job:{state:'idle'}}),ids=rows=>rows.map(s=>s.id);
+const normal=Array.from({length:4},(_,i)=>session('n'+(i+1),'normal','none'));
 test('five human labels and segmented state remain independent labels',()=>{assert.equal(REVIEW_LABELS.abnormal,'비정상 확인');assert.equal(REVIEW_LABELS.exclude,'측정 오류 / 제외');assert.equal(REVIEW_LABELS.segmented,'구간별 라벨');});
-test('all-normal independent 2/1/1 permits normal candidate, never supervised classifier',()=>{assert.equal(trainingBlocker(state(normal),ids(normal),'normal'),null);assert.match(trainingBlocker(state(normal),ids(normal),'feedback'),/비정상/);});
-test('two original recordings cannot pretend to be four independent runs',()=>{const originals=normal.slice(0,2);assert.match(trainingBlocker(state(originals),ids(originals)),/독립된 운전/);});
-test('normal and abnormal independent 2/1/1 permits classifier selection',()=>{const rows=[...normal,...abnormal];assert.equal(trainingBlocker(state(rows),ids(rows),'feedback'),null);assert.match(trainingBlocker(state(rows),ids(rows),'normal'),/정상으로/);});
-test('same recording cannot occupy two roles in selected ID list',()=>{const sum=selectionSummary(normal,['n1','n1','n2']);assert.equal(sum.chosen.length,2);assert.equal(sum.roles.fit,2);});
-test('changing provenance or installation rejects combined training',()=>{for(const change of [{source_kind:'synthetic'},{installation_id:'moved-phone'},{profile:'fusion'},{condition:'new-load'}]){const rows=normal.map((s,i)=>i===0?{...s,meta:{...s.meta,...change}}:s);assert.match(trainingBlocker(state(rows),ids(rows)),/출처/);}});
 test('signature ignores display label and metadata key order',()=>{assert.equal(sessionSignature(normal[0]),sessionSignature({...normal[0],meta:{...meta,sensor_config:{range:4,odr:208},label:'new name'}}));});
-test('current operation and current learning block new candidate',()=>{assert.match(trainingBlocker({...state(normal),live:true},ids(normal)),/종료/);assert.match(trainingBlocker({...state(normal),job:{state:'running'}},ids(normal)),/진행 중/);});
-test('unreviewed/uncertain/excluded never become labels by default',()=>{for(const review of ['unreviewed','uncertain','exclude']){const rows=normal.map((s,i)=>i===0?{...s,review}:s);assert.match(trainingBlocker(state(rows),ids(rows),'feedback'),/라벨/);}});
-test('running recording cannot enter fit, even if review is normal',()=>{const rows=normal.map((s,i)=>i===0?{...s,ended:null}:s);assert.match(trainingBlocker(state(rows),ids(rows)),/종료한/);});
-test('segmented cases defer numeric class-window sufficiency to server',()=>{const rows=normal.map(s=>({...s,review:'segmented'}));assert.equal(trainingBlocker(state(rows),ids(rows),'feedback'),null);assert.match(trainingBlocker(state(rows),ids(rows),'normal'),/전체/);});
-test('review edit requires author, grounds and known independent role',()=>{assert.throws(()=>reviewPayload('1',{status:'normal',role:'fit',reviewer:'',note:'yes'}));assert.throws(()=>reviewPayload('1',{status:'normal',role:'whatever',reviewer:'우지',note:'yes'}));assert.deepEqual(reviewPayload('1',{status:'abnormal',role:'validation',reviewer:' 우지 ',note:' 강도 증가 ',fault_kind:'자극 변화'}),{session_id:'1',status:'abnormal',role:'validation',reviewer:'우지',note:'강도 증가',fault_kind:'자극 변화'});});
+test('review edit requires author, grounds and a known human label',()=>{assert.throws(()=>reviewPayload('1',{status:'normal',reviewer:'',note:'yes'}));assert.throws(()=>reviewPayload('1',{status:'normal',reviewer:'우지',note:' '}));assert.throws(()=>reviewPayload('1',{status:'whatever',reviewer:'우지',note:'yes'}));assert.deepEqual(reviewPayload('1',{status:'abnormal',reviewer:' 우지 ',note:' 강도 증가 ',fault_kind:'자극 변화'}),{session_id:'1',status:'abnormal',reviewer:'우지',note:'강도 증가',fault_kind:'자극 변화'});});
 test('interval requires positive ordered observed-time bounds and a real label',()=>{const review={reviewer:'우지',note:'기준 진동'};assert.throws(()=>intervalPayload('s',{start_s:'10',end_s:'2',label:'normal'},review));assert.throws(()=>intervalPayload('s',{start_s:'0',end_s:'2',label:'unreviewed'},review));assert.deepEqual(intervalPayload('s',{start_s:'2',end_s:'8',label:'normal'},review),{session_id:'s',label:'normal',start_s:2,end_s:8,reviewer:'우지',note:'기준 진동'});});
 test('invalidated or failed model cannot activate; active is separate from passed',()=>{assert.equal(candidateStatus({passed:true,labels_current:false}).canActivate,false);assert.equal(candidateStatus({passed:false}).canActivate,false);assert.equal(candidateStatus({passed:true,active:true}).canActivate,false);assert.equal(candidateStatus({passed:true,active:false,labels_current:true}).canActivate,true);});
 test('candidate UI shows validation coverage not fabricated fault probability',()=>{const output=candidateMarkup({id:'m<1',passed:true,validation:{false_positive_rate:.02,abnormal_recall:.8,coverage:.96},signature:meta},'feedback',true);assert.match(output,/2.0%/);assert.match(output,/80.0%/);assert.match(output,/실제 고장 확률 아님/);assert.match(output,/disabled/);assert.match(output,/m&lt;1/);});
@@ -117,7 +106,7 @@ test('stored monitor source text is escaped and feedback-only reports do not ask
 
 
 test('simple human review omits ML split role while retaining author and rationale',()=>{
- const body=reviewPayload('run-1',{status:'abnormal',reviewer:'우지',note:'강한 진동 확인'});
+ const body=reviewPayload('run-1',{status:'abnormal',role:'validation',reviewer:'우지',note:'강한 진동 확인'});
  assert.equal(body.status,'abnormal');assert.equal(Object.hasOwn(body,'role'),false);assert.equal(body.note,'강한 진동 확인');
 });
 test('automatic training cohorts keep actual, synthetic and installation conditions separate',()=>{
@@ -130,7 +119,7 @@ test('automatic record eligibility excludes unreviewed, held, excluded and curre
 });
 test('one AI learning action respects server readiness and explains normal-only learning',()=>{
  const c=learningCohorts(normal)[0];assert.match(autoTrainingBlocker({},c,null,true),/확인하고/);assert.equal(autoTrainingBlocker({},c,{ready:true}),null);assert.equal(autoTrainingBlocker({},c,{ready:false,reason:'독립 운전 추가 필요'}),'독립 운전 추가 필요');
- assert.match(autoTrainingBlocker({live:true},c,{ready:true}),/종료/);assert.match(autoPlanCaption({ready:true,feedback:{ready:false,reason:'비정상 기록 부족'}}),/정상 패턴부터 학습/);assert.match(autoPlanCaption({ready:true,feedback:{ready:false,reason:'비정상 기록 부족'}}),/비정상 기록 부족/);assert.match(autoPlanCaption({ready:true,feedback:{ready:true}}),/정상·비정상으로 학습/);
+ assert.match(autoTrainingBlocker({live:true},c,{ready:true}),/종료/);assert.match(autoTrainingBlocker({job:{state:'running'}},c,{ready:true}),/학습 중/);assert.match(autoPlanCaption({ready:true,feedback:{ready:false,reason:'비정상 기록 부족'}}),/정상 패턴부터 학습/);assert.match(autoPlanCaption({ready:true,feedback:{ready:false,reason:'비정상 기록 부족'}}),/비정상 기록 부족/);assert.match(autoPlanCaption({ready:true,feedback:{ready:true}}),/정상·비정상으로 학습/);
 });
 test('over 30 reviewed runs has an explicit recoverable record-scope limit',()=>{
  const c=learningCohorts(Array.from({length:31},(_,i)=>session('run-'+i,'normal','none')))[0];assert.match(autoTrainingBlocker({},c,null),/30회/);assert.equal(autoTrainingBlocker({}, {...c,eligible:c.eligible.slice(0,30)}, {ready:true}),null);
@@ -148,4 +137,39 @@ test('basic learning and review screens have no manual algorithm or split select
 
 test('excluded short or low-quality records have an escaped actionable explanation',()=>{
  const html=excludedTrainingMarkup({excluded:[{session_id:'n',label:'normal',reason:'유효 구간 30개 필요 <test>'}]},[{id:'n',meta:{label:'측정 <원본>'}}]);assert.match(html,/측정 &lt;원본&gt;/);assert.match(html,/유효 구간 30개 필요 &lt;test&gt;/);assert.match(html,/정상 확인/);
+});
+
+test('segmented reviews are visible without inventing whole-run normal or abnormal labels',()=>{
+ const rows=Array.from({length:4},(_,i)=>session('seg-'+i,'segmented','none'));
+ const caption=reviewedRecordCaption(rows),markup=trainingSummaryMarkup(learningCohorts(rows)[0]);
+ assert.match(caption,/전체 정상 0회 · 전체 비정상 0회 · 구간 검토 4회/);
+ assert.match(markup,/<span>구간 검토<\/span><strong>4<small>회/);
+ assert.match(markup,/<span>전체 정상<\/span><strong>0<small>회/);
+ assert.match(markup,/<span>전체 비정상<\/span><strong>0<small>회/);
+});
+test('review counts keep held and active runs separate from reviewed complete runs',()=>{
+ const rows=[session('normal','normal','none'),session('abnormal','abnormal','none'),session('segments','segmented','none'),session('held','uncertain','none'),session('excluded','exclude','none'),{...session('running','segmented','none'),ended:null}];
+ assert.match(reviewedRecordCaption(rows),/전체 정상 1회 · 전체 비정상 1회 · 구간 검토 1회/);
+ const cohort=learningCohorts(rows)[0];assert.equal(cohort.held,2);assert.equal(cohort.segmented,1);
+ assert.match(trainingSummaryMarkup(),/<span>구간 검토<\/span><strong>0<small>회/);
+});
+
+test('new hardware capture suggests the latest applied live vibration condition only',()=>{
+ const model=(condition,created_at,change={})=>({active:true,passed:true,labels_current:true,created_at,signature:{...meta,condition,dataset_id:'',...change}});
+ const state={models:[model('older hardware',10),model('mock newer',100,{source_kind:'synthetic'}),model('fusion newer',110,{profile:'fusion'}),model('imported newer',120,{dataset_id:'old-recording'})],feedback_models:[model('current hardware',20),{...model('invalidated newer',130),labels_current:false},{...model('inactive newer',140),active:false},{...model('failed newer',150),passed:false}]};
+ assert.equal(suggestedCaptureCondition(state),'current hardware');assert.equal(captureConditionValue(state,'same-installation'),'current hardware');
+ assert.equal(suggestedCaptureCondition({models:[model('recorded only',160,{source_kind:'recorded'})]}),'');
+});
+test('capture condition preserves user edits and shows the pinned condition during capture',()=>{
+ const state={feedback_models:[{active:true,passed:true,created_at:20,signature:{...meta,condition:'applied model condition'}}]};
+ assert.equal(captureConditionValue(state,'user changed installation',true),'user changed installation');
+ assert.equal(captureConditionValue(state,'',true),'');
+ assert.equal(captureConditionValue({},''),'same-installation');
+ assert.equal(captureConditionValue({live:true,session:{meta:{source_kind:'hardware',condition:'running condition'}}},'same-installation'),'running condition');
+});
+test('capture request sends the visible operating condition rather than a fixed default',()=>{
+ assert.deepEqual(capturePayload({name:' normal run ',condition:' same phone installation '}),{source_kind:'hardware',label:'normal run',condition:'same phone installation'});
+ assert.throws(()=>capturePayload({name:'run',condition:' '}),/운전 조건/);
+ assert.throws(()=>capturePayload({name:'run',condition:'x'.repeat(181)}),/운전 조건/);
+ const html=readFileSync(new URL('./operation.html',import.meta.url),'utf8');assert.match(html,/name="condition"[^>]*value="same-installation"/);assert.match(html,/id="lw-capture-condition-help"/);
 });
