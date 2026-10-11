@@ -64,14 +64,14 @@ test('long report distinguishes saved windows from bounded analysis',()=>{
 
 test('existing ready baseline is shown without inventing reviewed-label training',()=>{
  const s={preserved_baseline:{baseline_id:'imu-old',state:'ready'}};const markup=currentModelMarkup(s);
- assert.match(markup,/정상 진동으로 학습한 기준/);assert.match(markup,/imu-old/);assert.match(markup,/새 검토 모델은 별도로 학습/);
+ assert.match(markup,/현재 정상 기준/);assert.match(markup,/적용 중/);assert.doesNotMatch(markup,/imu-old/);
  assert.match(workflowSummary(s).model,/진동 정상 기준 적용 · 검토 라벨 학습 대기/);
  assert.doesNotMatch(workflowSummary({preserved_baseline:{baseline_id:'imu-old',state:'pending'}}).model,/진동 정상 기준 적용/);
 });
 test('registered reviewed models retain provenance and exclude invalidated candidates',()=>{
  const m={id:'synthetic-label',active:true,passed:true,labels_current:true,signature:{source_kind:'synthetic'}};
  const markup=currentModelMarkup({feedback_models:[m,{...m,id:'invalidated',labels_current:false}]});
- assert.match(markup,/모의 데이터 · 라벨 분류 · 적용 중/);assert.match(markup,/synthetic-label/);assert.doesNotMatch(markup,/invalidated/);
+ assert.match(markup,/학습 필요/);assert.doesNotMatch(markup,/synthetic-label|invalidated/);
 });
 test('disconnected current model panel never asserts current baseline application',()=>{
  const s={preserved_baseline:{baseline_id:'imu-old',state:'ready'}};
@@ -187,4 +187,23 @@ test('monitor display does not turn stopped or incompatible input into normal cl
  const m={fresh:true,model_id:'normal',feedback_model_id:'feedback',result:{state:'unknown',reason:'정지 상태 · 운전 판단 대기'}};
  assert.equal(continuousMonitorPresentation({monitoring:m}).feedback,'정지 상태 · 운전 판단 대기');
  assert.equal(continuousMonitorPresentation({monitoring:{...m,feedback_model_id:null}}).feedback,'분류 모델 미적용');
+});
+
+import {normalReference,referenceMarkup,readinessMarkup,reviewEvidenceMarkup} from './learning.mjs';
+test('normal reference only includes approved valid running frames, no unlabeled or abnormal values',()=>{
+ const row=(seq,value,quality='ok',phase='running')=>({frame:{seq,elapsed_s:seq*2,quality,phase,values:{vibration_rms_g:value,envelope_cv:.02}}});
+ const d={session:{review:'segmented'},frames:[row(1,.03),row(2,.04),row(3,4),row(4,5),row(5,6,'missing'),row(6,7,'ok','stopped')],labels:{labels:[{active:1,label:'normal',start_seq:1,end_seq:2},{active:1,label:'abnormal',start_seq:3,end_seq:3},{active:0,label:'normal',start_seq:4,end_seq:4},{active:1,label:'normal',start_seq:5,end_seq:6}]}};
+ assert.deepEqual(normalReference([d])[0],{key:'vibration_rms_g',count:2,min:.03,max:.04});
+ assert.match(referenceMarkup([d]),/경보 한계값은 아닙니다/);
+ assert.equal(normalReference([{...d,session:{review:'uncertain'}}])[0].count,0);
+});
+test('review graph uses stored values and historical expected values, keeps labels escaped',()=>{
+ const d={session:{count:2},frames:[{frame:{elapsed_s:2,quality:'ok',values:{vibration_rms_g:.04,envelope_cv:.02}},result:{state:'attention',reason:'<script>bad</script>',evidence:[{key:'vibration_rms_g',expected:.03}]}}],labels:{labels:[]}};
+ const html=reviewEvidenceMarkup(d);
+ assert.match(html,/저장된 운전 기록/);assert.match(html,/진동 세기 변동성/);assert.match(html,/&lt;script&gt;/);assert.doesNotMatch(html,/<script>|합성 실험/);assert.match(html,/전체 2개 중 조회된 1개/);
+});
+test('readiness uses eligible backend counts, still blocks when four runs fail evaluation constraints',()=>{
+ const plan={ready:false,reason:'새 평가 기록 필요',normal:{normal_sessions:4},feedback:{abnormal_sessions:2}};
+ assert.match(readinessMarkup(plan),/4 \/ 4/);assert.match(readinessMarkup(plan),/2 \/ 4/);
+ assert.equal(autoTrainingBlocker({}, {eligible:[{id:'a'}]},plan),'새 평가 기록 필요');
 });

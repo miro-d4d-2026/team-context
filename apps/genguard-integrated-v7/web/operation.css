@@ -775,3 +775,27 @@ body[data-page="dashboard"] #status-chip {
 body[data-page="dashboard"] #status-title {
   font-size: 13px; font-weight: 600; line-height: 1.45; margin-top: 6px;
 }
+
+/* Keep review evidence ahead of form fields; technical history stays folded. */
+[hidden] { display: none !important; }
+.lw-review-dialog { max-width: 920px; }
+.lw-review-charts,.lw-reference-values,.lw-readiness { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px; }
+.lw-review-charts article { border:1px solid #dfe8ed;border-radius:12px;padding:12px;min-width:0; }
+.lw-review-charts h3 { font-size:13px;margin:0 0 8px; }
+.lw-review-charts svg { width:100%;display:block; }
+.lw-review-evidence { background:#f0f6f5;border-radius:10px;padding:12px;margin:12px 0;font-size:12px; }
+.lw-review-evidence p { margin:5px 0; }
+.lw-reviewed-segments { font-size:12px;line-height:2.2; }
+.lw-review-dialog textarea { min-height:42px; }
+.lw-review-download { margin-top:12px;font-size:12px;color:#738a97; }
+.lw-reference-values span,.lw-readiness span { display:block;font-size:12px;color:#738a97; }
+.lw-reference-values strong { display:block;font-size:22px;margin:8px 0; }
+.lw-reference-values small,.lw-readiness small { font-size:12px; }
+.lw-readiness strong { display:block;font-size:30px;margin-top:8px;color:#247d6e; }
+.lw-readiness p { font-size:12px;color:#738a97;margin:5px 0; }
+#lw-training-summary { display:block; }
+.lw-model-archive { grid-column:1/-1;font-size:13px; }
+.lw-model-archive>.lw-candidate { margin-top:12px; }
+@media(max-width:650px){.lw-review-charts,.lw-reference-values,.lw-readiness{grid-template-columns:1fr;}}
+
+.lw-reference-values strong small { display:inline; }
