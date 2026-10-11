@@ -765,3 +765,13 @@ body[data-page="dashboard"] footer { margin-top: 8px; padding-top: 0; font-size:
 .lw-record-scope-list label { display:flex; align-items:flex-start; gap:7px; border:1px solid #e3ecef; border-radius:7px; padding:8px; }
 .lw-record-scope-list small { display:block; margin-top:3px; color:#8a9da8; }
 @media(max-width:700px){.lw-record-scope-list { grid-template-columns:1fr; }}
+
+/* Overall judgment leads; the operating phase remains secondary. */
+body[data-page="dashboard"] #status-chip {
+  display: block; width: fit-content; padding: 0; background: transparent;
+  font-size: clamp(28px, 3vw, 36px); font-weight: 800;
+  line-height: 1.15; letter-spacing: -1px;
+}
+body[data-page="dashboard"] #status-title {
+  font-size: 13px; font-weight: 600; line-height: 1.45; margin-top: 6px;
+}
